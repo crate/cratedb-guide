@@ -1,3 +1,6 @@
+.. _analysis:
+.. _visualization:
+
 ###############################
 Data Analysis and Visualization
 ###############################
