@@ -21,15 +21,16 @@ massive amounts of machine data in real-time.
 .. rubric:: Table of contents
 
 .. toctree::
-   :maxdepth: 3
-   :titlesonly:
+    :maxdepth: 3
+    :titlesonly:
 
-   admin/index
-   handbook/index
-   reference-architectures/index
-   t/analysis/index
-   t/timeseries/index
-   t/ml/index
+    getting-started/index
+    admin/index
+    handbook/index
+    reference-architectures/index
+    t/analysis/index
+    t/timeseries/index
+    t/ml/index
 
 
 .. _Tutorials: https://crate.io/docs/crate/tutorials/en/latest/

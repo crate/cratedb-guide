@@ -1,8 +1,8 @@
 .. _sharding-partitioning:
 
-===============================
-About Sharding and Partitioning
-===============================
+#########################
+Sharding and Partitioning
+#########################
 
 .. rubric:: Table of contents
 
