@@ -1,8 +1,8 @@
 .. _index:
 
-=====================
-CrateDB How-To Guides
-=====================
+==============
+CrateDB Guides
+==============
 
 CrateDB is a distributed SQL database that makes it simple to store and analyze
 massive amounts of machine data in real-time.
@@ -35,4 +35,4 @@ massive amounts of machine data in real-time.
 
 
 .. _Tutorials: https://crate.io/docs/crate/tutorials/en/latest/
-.. _GitHub: https://github.com/crate/crate-howtos
+.. _GitHub: https://github.com/crate/cratedb-guides

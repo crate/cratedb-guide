@@ -1,10 +1,10 @@
-=====================
-CrateDB How-To Guides
-=====================
+==============
+CrateDB Guides
+==============
 
 |ci| |rtd| |build|
 
-How-to guides for CrateDB_.
+Guidelines, handbooks, and cookbooks for CrateDB_.
 
 Contributing
 ============
@@ -23,22 +23,22 @@ Looking for more help?
 - Check out our `support channels`_
 
 .. _contribution docs: CONTRIBUTING.rst
-.. _Crate.io: http://crate.io/
+.. _Crate.io: https://cratedb.com/
 .. _CrateDB: https://github.com/crate/crate
 .. _developer docs: DEVELOP.rst
-.. _project docs: https://crate.io/docs/crate/howtos/en/latest/
-.. _support channels: https://crate.io/support/
+.. _project docs: https://cratedb.com/docs/guide/en/latest/
+.. _support channels: https://cratedb.com/support/
 
 
-.. |ci| image:: https://github.com/crate/crate-howtos/actions/workflows/docs.yml/badge.svg
+.. |ci| image:: https://github.com/crate/cratedb-guides/actions/workflows/docs.yml/badge.svg
     :alt: CI status
     :scale: 100%
-    :target: https://github.com/crate/crate-howtos/actions/workflows/docs.yml
+    :target: https://github.com/crate/cratedb-guides/actions/workflows/docs.yml
 
-.. |rtd| image:: https://readthedocs.org/projects/crate-howtos/badge/?version=latest
+.. |rtd| image:: https://readthedocs.org/projects/cratedb-guides/badge/?version=latest
     :alt: Read The Docs status
-    :target: https://readthedocs.org/projects/crate-howtos
+    :target: https://readthedocs.org/projects/cratedb-guides
 
-.. |build| image:: https://img.shields.io/endpoint.svg?color=blue&url=https%3A%2F%2Fraw.githubusercontent.com%2Fcrate%2Fcrate-howtos%2Fmaster%2Fdocs%2Fbuild.json
+.. |build| image:: https://img.shields.io/endpoint.svg?color=blue&url=https%3A%2F%2Fraw.githubusercontent.com%2Fcrate%2Fcratedb-guides%2Fmaster%2Fdocs%2Fbuild.json
     :alt: Build version
-    :target: https://github.com/crate/crate-howtos/blob/master/docs/build.json
+    :target: https://github.com/crate/cratedb-guides/blob/master/docs/build.json

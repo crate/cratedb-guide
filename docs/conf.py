@@ -1,4 +1,4 @@
-from crate.theme.rtd.conf.crate_howtos import *
+from crate.theme.rtd.conf.cratedb_guides import *
 
 linkcheck_ignore = [
     # Forbidden by WordPress
