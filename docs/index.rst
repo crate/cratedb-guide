@@ -1,4 +1,5 @@
 .. _index:
+.. _getting-started:
 
 ==============
 CrateDB Guides
@@ -23,15 +24,12 @@ massive amounts of machine data in real-time.
    :maxdepth: 3
    :titlesonly:
 
-   getting-started/index
    admin/index
-   clustering/index
-   performance/index
-   going-into-production
-   best-practices/index
+   handbook/index
    reference-architectures/index
-   integrations/index
-   troubleshooting/index
+   t/analysis/index
+   t/timeseries/index
+   t/ml/index
 
 
 .. _Tutorials: https://crate.io/docs/crate/tutorials/en/latest/

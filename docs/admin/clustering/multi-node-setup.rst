@@ -150,7 +150,7 @@ instructions.
    verify that the cluster has auto-bootstrapped with three nodes. You should see
    something like this:
 
-   .. image:: ../_assets/img/multi-node-cluster.png
+   .. image:: /_assets/img/multi-node-cluster.png
       :alt: The CrateDB Admin UI showing a multi-node cluster
 
 

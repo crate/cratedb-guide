@@ -11,5 +11,7 @@ A collection of guides and tools for troubleshooting CrateDB.
 .. toctree::
    :maxdepth: 1
 
+   crate-node
    docker-jcmd
+   systables
 

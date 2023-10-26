@@ -22,7 +22,7 @@ Before kicking off an upgrade, there is a set of guidelines to ensure the best o
    This is not an exhaustive list, so you should consider your organization's specific needs and incorporate any additional steps or considerations that are relevant to your environment.
 
 Acknowledge breaking changes
------------------------------
+----------------------------
 
 Review the `release notes`_ and documentation for the target version to understand any potential impact on existing functionality. 
 Ensure to review the intermediate versions' documentation also. For example, when upgrading from 4.8 to 5.3, besides reviewing 5.3 release notes, check for version 5.0, 5.1, and so on.
@@ -45,7 +45,7 @@ For the newly written records, you should consider using a mechanism to queue th
    Before starting the upgrade process, ensure no backup processes are triggered, so disable any scheduled backup.
 
 Define a rollback plan
------------------------
+----------------------
 
 The rollback plan may vary depending on the specific infrastructure and upgrade process in use. It is also essential to adapt this outline to your organization's specific needs and incorporate any additional steps or considerations that are relevant to your environment. A set of steps to serve as an example is listed below:
 
