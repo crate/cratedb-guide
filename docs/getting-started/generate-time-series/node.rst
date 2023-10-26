@@ -171,7 +171,7 @@ Success!
 In the :ref:`crate-admin-ui:index`, you should see the new table when you navigate to
 the *Tables* screen using the left-hand navigation menu:
 
-.. image:: ../_assets/img/generate-time-series/table.png
+.. image:: /_assets/img/getting-started/generate-time-series/table.png
 
 
 Record the ISS position
@@ -323,14 +323,14 @@ Run the script from the command line:
 As the script runs, you should see the table filling up in the CrateDB Admin
 UI:
 
-.. image:: ../_assets/img/generate-time-series/rows.png
+.. image:: /_assets/img/getting-started/generate-time-series/rows.png
 
 Lots of freshly generated time series data, ready for use.
 
 And, for bonus points, if you select the arrow next to the location data, it
 will open up a map view showing the current position of the ISS:
 
-.. image:: ../_assets/img/generate-time-series/map.png
+.. image:: /_assets/img/getting-started/generate-time-series/map.png
 
 .. TIP::
 

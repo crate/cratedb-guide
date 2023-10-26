@@ -13,7 +13,7 @@ data-driven dashboards and reporting.
 
 .. _figure_1:
 
-.. figure:: cratedb-azure-iot.png
+.. figure:: /_assets/img/reference-architectures/cratedb-azure-iot.png
    :align: center
 
 

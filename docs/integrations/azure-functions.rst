@@ -21,7 +21,7 @@ new data flowing into an IoT Hub.
 
 .. _figure_1:
 
-.. figure:: azfunc.png
+.. figure:: /_assets/img/integrations/azfunc.png
    :align: center
 
 An Azure Function is a short-lived, serverless computation that is triggered

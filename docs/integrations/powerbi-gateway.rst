@@ -52,7 +52,7 @@ Follow Microsoft's documentation on how to `install`_ and `configure`_ the
 on-premises gateway. When it is finished installing and configuring, you
 should see something like the following status:
 
-.. figure:: powerbi-gateway-status.png
+.. figure:: /_assets/img/integrations/powerbi-gateway-status.png
    :align: center
 
 Ensure that the **Power BI** status for the gateway is **Ready**.
@@ -68,7 +68,7 @@ guide to do this.
 
 After running through that guide, we should have the following report:
 
-.. figure:: powerbi-pie-chart.png
+.. figure:: /_assets/img/integrations/powerbi-pie-chart.png
    :align: center
 
 
@@ -79,16 +79,16 @@ With your report created on Power BI desktop, you can now publish it to the
 online Power BI service. First, click the *Publish* button in the ribbon. Next,
 choose a destination to publish to:
 
-.. figure:: powerbi-publish-destination.png
+.. figure:: /_assets/img/integrations/powerbi-publish-destination.png
    :align: center
 
 When your publishing is successful, you can then open the report in the
 Power BI service:
 
-.. figure:: powerbi-publish-success.png
+.. figure:: /_assets/img/integrations/powerbi-publish-success.png
    :align: center
 
-.. figure:: powerbi-published-report.png
+.. figure:: /_assets/img/integrations/powerbi-published-report.png
    :align: center
 
 The report can now be shared via its URL. However, this is just a static
@@ -107,13 +107,13 @@ Configuring The Gateway
 
 Within the Power BI service's settings, select *Manage Gateways*:
 
-.. figure:: powerbi-manage-gateways.png
+.. figure:: /_assets/img/integrations/powerbi-manage-gateways.png
    :align: center
 
 You should see the gateway cluster you set up. When you click *Test all
 connections*, you should see your cluster has the 'Online' status:
 
-.. figure:: powerbi-gateway-clusters.png
+.. figure:: /_assets/img/integrations/powerbi-gateway-clusters.png
    :align: center
 
 Click *Add data sources to use the gateway*. In the data source settings,
@@ -130,7 +130,7 @@ the DSN when connecting Power BI Desktop to CrateDB. In this case, it was
 Hit apply, and if the settings are correct it will display that the connection
 was successful:
 
-.. figure:: powerbi-connection-successful.png
+.. figure:: /_assets/img/integrations/powerbi-connection-successful.png
    :align: center
 
 Once successful, go to the *Users* tab and select the users you would like to
@@ -139,13 +139,13 @@ be able to access this data source to publish reports.
 Now, navigate back to the Power BI Service and click on the extra options
 for your ``population report`` data set, and click *Schedule refresh*.
 
-.. figure:: powerbi-schedule-refresh.png
+.. figure:: /_assets/img/integrations/powerbi-schedule-refresh.png
    :align: center
 
 In the *Gateway connection* section of the dataset's settings, configure
 the dataset to use the data gateway you set up previously and click apply:
 
-.. figure:: powerbi-gateway-connection.png
+.. figure:: /_assets/img/integrations/powerbi-gateway-connection.png
    :align: center
 
 The report is now configured to use the gateway.
@@ -172,20 +172,20 @@ Now that the dataset powering our report has changed, you can refresh it. As
 before, click on the extra settings for the ``population report`` dataset, and
 click *Refresh now*.
 
-.. figure:: powerbi-refresh-now.png
+.. figure:: /_assets/img/integrations/powerbi-refresh-now.png
    :align: center
 
 If you navigate to the dataset settings, you should see that a refresh is in
 progress:
 
-.. figure:: powerbi-refresh-in-progress.png
+.. figure:: /_assets/img/integrations/powerbi-refresh-in-progress.png
    :align: center
 
 Once it succeeds, you should see a message in its place about when the
 successful refresh occurred. Once done, you can navigate back to your report
 and refresh it to see the new dataset underlying the pie chart:
 
-.. figure:: powerbi-refreshed-report.png
+.. figure:: /_assets/img/integrations/powerbi-refreshed-report.png
    :align: center
 
 As you can see, the report no longer contains 'Europe' as one of the regions.

@@ -23,7 +23,7 @@ Prometheus node running in the cloud layer.
 
 .. _figure_1:
 
-.. figure:: distributed-ml.png
+.. figure:: /_assets/img/reference-architectures/distributed-ml.png
    :align: center
 
 

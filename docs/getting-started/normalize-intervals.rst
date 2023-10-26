@@ -6,8 +6,8 @@ Normalize time series data intervals
 
 .. sidebar:: The ISS Orbit
 
-    .. image:: _assets/img/normalize-intervals/orbit.gif
-        :alt: An animated visualization of the ISS orbit
+    .. image:: /_assets/img/getting-started/normalize-intervals/orbit.png
+        :alt: A visualization of the ISS orbit
         :target: https://en.wikipedia.org/wiki/International_Space_Station#Orbit
 
     The ISS travels at 27,724 kilometers per hour and orbits Earth
@@ -122,7 +122,7 @@ the top right-hand corner), then *Notebook* → *Python 3*.
 Type your Python code at the input prompt. Then, select *Run* (Shift-Enter ⇧⏎)
 to evaluate the code:
 
-.. image:: _assets/img/normalize-intervals/jupyter-hello-world.png
+.. image:: /_assets/img/getting-started/normalize-intervals/jupyter-hello-world.png
 
 You can re-evaluate input blocks as many times as you like.
 
@@ -367,7 +367,7 @@ You can test the ``plot()`` function by passing in the return value of
 
 Jupyter should display a plot like this:
 
-.. image:: _assets/img/normalize-intervals/raw-data.png
+.. image:: /_assets/img/getting-started/normalize-intervals/raw-data.png
 
 Above, notice that:
 
@@ -490,7 +490,7 @@ You can plot this data like before:
 
     plot(data_by_minute())
 
-.. image:: _assets/img/normalize-intervals/data-by-minute.png
+.. image:: /_assets/img/getting-started/normalize-intervals/data-by-minute.png
 
 Here, notice that the individual data points are now visible (i.e., the
 apparent line in the previous diagram is now discernible as a series of
@@ -662,7 +662,7 @@ Plot the data:
 
     plot(null_by_minute_24h())
 
-.. image:: _assets/img/normalize-intervals/null-by-minute-24h.png
+.. image:: /_assets/img/getting-started/normalize-intervals/null-by-minute-24h.png
 
 This plot displays null values for a full 24 hour period.
 
@@ -748,11 +748,11 @@ Plot the data:
 
     plot(data_24h())
 
-.. image:: _assets/img/normalize-intervals/data-24h.png
+.. image:: /_assets/img/getting-started/normalize-intervals/data-24h.png
 
 And here's what it looks like if you wait a few more hours:
 
-.. image:: _assets/img/normalize-intervals/data-24h-more.png
+.. image:: /_assets/img/getting-started/normalize-intervals/data-24h-more.png
 
 The finished result is a visualization that uses time series normalization and
 resamples raw data to regular intervals with the interpolation of missing values.

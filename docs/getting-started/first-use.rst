@@ -35,7 +35,7 @@ CrateDB is running on.
 
 You should see something like this:
 
-.. image:: _assets/img/first-use/admin-ui.png
+.. image:: /_assets/img/getting-started/first-use/admin-ui.png
 
 
 .. _use-crash:

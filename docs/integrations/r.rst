@@ -179,7 +179,7 @@ of these properties across each species.
     > boxplot(petal_length~species, data=iris_dataset, main="Petal Length by Species")
     > boxplot(petal_width~species, data=iris_dataset, main="Petal Width by Species")
 
-.. figure:: r-iris-features.png
+.. figure:: /_assets/img/integrations/r-iris-features.png
    :align: center
 
 As we can see, the lengths and widths of sepals and petals are very good

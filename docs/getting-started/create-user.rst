@@ -51,7 +51,7 @@ Grant all privileges to the newly created user:
 
    cr> GRANT ALL PRIVILEGES TO username;
 
-.. image:: _assets/img/create-user.png
+.. image:: /_assets/img/getting-started/create-user.png
 
 Now try navigating to the :ref:`crate-admin-ui:index` in your browser. In the URL
 below, please replace ``cratedb.example.org`` with the host name or IP address
@@ -62,7 +62,7 @@ account::
 
 You should see something like this:
 
-.. image:: _assets/img/first-use/admin-ui.png
+.. image:: /_assets/img/getting-started/first-use/admin-ui.png
 
 
 After creating the user and granting all privileges, you should be able to

@@ -332,7 +332,7 @@ successive epochs by stopping training, using the ``EarlyStopping`` callback.
     plt.plot(hist.history["loss"])
     plt.show()
 
-.. figure:: mlp_model_train_loss.png
+.. figure:: /_assets/img/integrations/mlp_model_train_loss.png
    :align: left
 
 This figure shows us the loss of each epoch. In the first 200 epochs it is

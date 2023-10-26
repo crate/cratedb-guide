@@ -38,7 +38,7 @@ This results in the following architecture:
 
 .. _figure_1:
 
-.. figure:: kafka-connect.png
+.. figure:: /_assets/img/integrations/kafka-connect.png
    :align: center
 
 
