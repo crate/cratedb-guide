@@ -1,5 +1,6 @@
 .. highlight:: sh
 
+.. _upgrade-planning:
 .. _general_upgrade_guidelines:
 
 

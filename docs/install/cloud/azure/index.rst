@@ -11,5 +11,6 @@ servers, containers, application images and much more.
 .. toctree::
    :maxdepth: 1
 
-   azure-vm-setup
-   azure-terraform-setup
+   vm
+   terraform
+

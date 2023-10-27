@@ -1,8 +1,10 @@
+.. highlight:: bash
+
 .. _windows-install:
 
-=======
-Windows
-=======
+##########################
+Running CrateDB on Windows
+##########################
 
 This section of the documentation outlines how to use the release archives to
 run CrateDB on Microsoft Windows.
@@ -58,6 +60,8 @@ run CrateDB on Microsoft Windows.
     .. code-block:: doscon
 
         PS> ./bin/crate
+
+.. include:: _post-install.rst
 
 
 .. _7-Zip: https://www.7-zip.org/

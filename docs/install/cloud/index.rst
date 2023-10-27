@@ -1,6 +1,6 @@
-=========================
-CrateDB and cloud hosting
-=========================
+#############
+Cloud Hosting
+#############
 
 CrateDB provides packages and executables that will work on any operating
 system capable of running Java.
@@ -11,5 +11,6 @@ system capable of running Java.
    :maxdepth: 3
    :titlesonly:
 
-   aws/index
-   azure/index
+   Amazon AWS <aws/index>
+   Microsoft Azure <azure/index>
+

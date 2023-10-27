@@ -1,3 +1,4 @@
+.. _use:
 .. _getting-started:
 
 ###############
@@ -11,7 +12,7 @@ A collection of CrateDB best practices and tips for common scenarios.
 .. toctree::
     :maxdepth: 1
 
-    first-use
+    introduction
     create-user
     migrate/mysql
     migrate/mongodb
