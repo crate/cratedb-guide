@@ -1,6 +1,8 @@
 .. highlight:: bash
 
 .. _install-deb:
+.. _install-debian:
+.. _install-ubuntu:
 
 ########################################
 CrateDB on Debian, Ubuntu, and Derivates

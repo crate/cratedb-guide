@@ -4,26 +4,16 @@
 Installation
 ############
 
-This part of the documentation covers the installation of CrateDB on different
+This section of the documentation covers the installation of CrateDB on different
 kinds of operating systems and environments, both suitable for on-premises and
 development sandbox operations.
 The first step to using any software package is getting it properly installed.
 Please read this section carefully.
 
 
-********
-Variants
-********
-
-We recommend to use the package-based installation methods for :ref:`install-deb` and
-:ref:`install-rpm`, by subscribing to the corresponding package release channels.
-
-Alternatively, you can also download release archives and run CrateDB manually,
-by using the :ref:`install-adhoc` method.
-
 .. toctree::
     :maxdepth: 3
-    :titlesonly:
+    :hidden:
 
     Debian, Ubuntu <debian-ubuntu>
     Red Hat, SUSE <redhat>
@@ -35,6 +25,128 @@ by using the :ref:`install-adhoc` method.
     cloud/index
 
     configure
+
+
+.. Layout stolen from Streamlink.
+.. https://github.com/streamlink/streamlink/blob/master/docs/install.rst?plain=1
+
+.. Icons from sphinx{design}.
+.. https://sphinx-design.readthedocs.io/en/latest/badges_buttons.html#inline-icons
+.. https://fontawesome.com/icons/
+
+.. sphinx-design currently doesn't support autosectionlabel, so set labels for
+.. the following sections explicitly
+
+
+.. grid:: 4
+    :padding: 0
+    :class-container: installation-grid
+
+    .. grid-item-card:: Debian, Ubuntu
+        :link: install-debian
+        :link-type: ref
+        :link-alt: Debian and Ubuntu Linux
+        :padding: 3
+        :text-align: center
+        :class-card: sd-pt-3
+        :class-body: sd-fs-1
+        :class-title: sd-fs-6
+
+        :fab:`linux`
+        :fab:`ubuntu`
+
+    .. grid-item-card:: Red Hat, SUSE
+        :link: install-rpm
+        :link-type: ref
+        :link-alt: RPM Linux: Red Hat, SUSE
+        :padding: 3
+        :text-align: center
+        :class-card: sd-pt-3
+        :class-body: sd-fs-1
+        :class-title: sd-fs-6
+
+        :fab:`redhat`
+        :fab:`suse`
+
+    .. grid-item-card:: macOS
+        :link: install-macos
+        :link-type: ref
+        :link-alt: macOS
+        :padding: 3
+        :text-align: center
+        :class-card: sd-pt-3
+        :class-body: sd-fs-1
+        :class-title: sd-fs-6
+
+        :fab:`apple`
+
+    .. grid-item-card:: Windows
+        :link: install-windows
+        :link-type: ref
+        :link-alt: Windows
+        :padding: 3
+        :text-align: center
+        :class-card: sd-pt-3
+        :class-body: sd-fs-1
+        :class-title: sd-fs-6
+
+        :fab:`windows`
+
+    .. grid-item-card:: Tarball Archive
+        :link: install-tarball
+        :link-type: ref
+        :link-alt: Installation from Tarball
+        :padding: 3
+        :text-align: center
+        :class-card: sd-pt-3
+        :class-body: sd-fs-1
+        :class-title: sd-fs-6
+
+        :octicon:`archive`
+
+    .. grid-item-card:: Container Setup
+        :link: install-container
+        :link-type: ref
+        :link-alt: Container Setup
+        :padding: 3
+        :text-align: center
+        :class-card: sd-pt-3
+        :class-body: sd-fs-1
+        :class-title: sd-fs-6
+
+        :octicon:`container`
+
+    .. grid-item-card:: Cloud Hosting
+        :link: install-cloud
+        :link-type: ref
+        :link-alt: Cloud Hosting
+        :padding: 3
+        :text-align: center
+        :class-card: sd-pt-3
+        :class-body: sd-fs-1
+        :class-title: sd-fs-6
+
+        :fa:`cloud`
+
+    .. grid-item-card:: Config Settings
+        :link: install-configure
+        :link-type: ref
+        :link-alt: Configuration Settings
+        :padding: 3
+        :text-align: center
+        :class-card: sd-pt-3
+        :class-body: sd-fs-1
+        :class-title: sd-fs-6
+
+        :octicon:`gear`
+
+
+
+We recommend to use the package-based installation methods for :ref:`install-deb` and
+:ref:`install-rpm`, by subscribing to the corresponding package release channels.
+
+Alternatively, you can also download release archives and run CrateDB manually,
+by using the :ref:`install-adhoc` method.
 
 
 *****

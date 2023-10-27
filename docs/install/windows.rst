@@ -1,6 +1,6 @@
 .. highlight:: bash
 
-.. _windows-install:
+.. _install-windows:
 
 ##########################
 Running CrateDB on Windows

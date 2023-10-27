@@ -1,3 +1,5 @@
+.. _install-cloud:
+
 #############
 Cloud Hosting
 #############

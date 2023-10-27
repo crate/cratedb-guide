@@ -1,5 +1,5 @@
-.. _tarball:
-.. _install-adhoc:
+.. _install-tarball:
+.. _install-macos:
 
 #################################
 Installation from Tarball Archive
