@@ -20,6 +20,7 @@ massive amounts of machine data in real-time.
     :maxdepth: 3
     :titlesonly:
 
+    install/index
     handbook/index
     admin/index
 
