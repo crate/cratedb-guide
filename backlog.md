@@ -1,10 +1,19 @@
 # Backlog
 
-- Add homepage with better guidance
-- Add content from `crate-tutorials` at `/install`
+## Iteration +1
+- Improve guidance on install/index
+- Improve guidance on main index page
+- Link to tutorials in community forum
+- Rework container/index
+- Update HTTP links, use Sphinx references instead
+- Update remaining links from crate.io to cratedb.com
+
+## Iteration +2
+- Render Jupyter Notebooks?
 - ML: Add original content by PF
 - ML: Add content from other patches and repositories
-- Link to tutorials in community forum
 - Backport high-quality content from community forum
-- Update HTTP links, use Sphinx references instead
-- Render Jupyter Notebooks?
+- Alternatively to "Docker", also verify and mention "Podman"
+
+## Done
+- Add content from `crate-tutorials` at `/install`
