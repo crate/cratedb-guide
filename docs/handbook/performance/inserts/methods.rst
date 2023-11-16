@@ -290,6 +290,11 @@ To test :ref:`bulk operations <inserts_bulk_operations>`, you should:
 
 Try out different setups and re-run the test.
 
+Please note that ``INSERT INTO`` statements using a query, and the ``COPY FROM``
+statement, are using overload protection to ensure performance of other queries
+in parallel. Refer to the :ref:`Overload Protection <crate-reference:overload_protection>`
+documentation on how to modify these parameters.
+
 At the end of this process, you will have a better understanding of the
 throughput of your cluster with different setups and under different loads.
 
