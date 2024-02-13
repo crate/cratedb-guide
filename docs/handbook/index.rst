@@ -13,7 +13,6 @@ around the topics of sharding, partitioning, and performance tuning.
 .. toctree::
     :maxdepth: 1
 
-    getting-started/index
     sharding-partitioning
     performance/index
 

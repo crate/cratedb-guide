@@ -16,6 +16,7 @@ massive amounts of data in real-time.
     :titlesonly:
 
     install/index
+    getting-started/index
     handbook/index
     admin/index
 
