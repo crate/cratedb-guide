@@ -14,6 +14,3 @@ A collection of CrateDB best practices and tips for common scenarios.
 
     introduction
     create-user
-    migrate/mysql
-    migrate/mongodb
-

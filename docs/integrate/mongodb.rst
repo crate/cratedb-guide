@@ -2,9 +2,9 @@
 
 .. _migrating-mongodb:
 
-======================
-Migrating from MongoDB
-======================
+========================
+Import data from MongoDB
+========================
 
 .. rubric:: Table of contents
 

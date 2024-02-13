@@ -13,21 +13,3 @@ tools, with respect to time-series use-cases.
 
     generate/index
     normalize-intervals
-
-
-.. rubric:: Ingestion
-
-.. toctree::
-    :maxdepth: 1
-
-    kafka-connect
-    streamsets
-
-
-.. rubric:: Enrichment
-
-.. toctree::
-    :maxdepth: 1
-
-    azure-functions
-

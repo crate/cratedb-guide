@@ -2,9 +2,9 @@
 
 .. _migrating-mysql:
 
-====================
-Migrating from MySQL
-====================
+======================
+Import data from MySQL
+======================
 
 Various ways exist to migrate your existing data from MySQL_ to CrateDB_.
 However, these methods may differ in performance. A fast and reliable way to

@@ -20,6 +20,7 @@ massive amounts of data in real-time.
     admin/index
 
     reference-architectures/index
+    integrate/index
     t/analysis/index
     t/timeseries/index
     t/ml/index
