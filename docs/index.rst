@@ -18,10 +18,9 @@ massive amounts of data in real-time.
     install/index
     getting-started/index
     handbook/index
-    admin/index
+    integrate/index
 
     reference-architectures/index
-    integrate/index
     t/analysis/index
     t/timeseries/index
     t/ml/index
