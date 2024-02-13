@@ -1,4 +1,4 @@
-from crate.theme.rtd.conf.cratedb_guides import *
+from crate.theme.rtd.conf.cratedb_guide import *
 
 # Disable version chooser.
 html_context.update({
