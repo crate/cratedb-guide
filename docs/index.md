@@ -170,5 +170,5 @@ issue tracker on [GitHub].
 :::
 
 
-[GitHub]: https://github.com/crate/cratedb-guides
+[GitHub]: https://github.com/crate/cratedb-guide
 [Overview of CrateDB integration tutorials]: https://community.cratedb.com/t/overview-of-cratedb-integration-tutorials/1015

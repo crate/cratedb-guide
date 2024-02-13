@@ -30,15 +30,15 @@ Looking for more help?
 .. _support channels: https://cratedb.com/support/
 
 
-.. |ci| image:: https://github.com/crate/cratedb-guides/actions/workflows/docs.yml/badge.svg
+.. |ci| image:: https://github.com/crate/cratedb-guide/actions/workflows/docs.yml/badge.svg
     :alt: CI status
     :scale: 100%
-    :target: https://github.com/crate/cratedb-guides/actions/workflows/docs.yml
+    :target: https://github.com/crate/cratedb-guide/actions/workflows/docs.yml
 
-.. |rtd| image:: https://readthedocs.org/projects/cratedb-guides/badge/?version=latest
+.. |rtd| image:: https://readthedocs.org/projects/cratedb-guide/badge/?version=latest
     :alt: Read The Docs status
-    :target: https://readthedocs.org/projects/cratedb-guides
+    :target: https://readthedocs.org/projects/cratedb-guide
 
-.. |build| image:: https://img.shields.io/endpoint.svg?color=blue&url=https%3A%2F%2Fraw.githubusercontent.com%2Fcrate%2Fcratedb-guides%2Fmaster%2Fdocs%2Fbuild.json
+.. |build| image:: https://img.shields.io/endpoint.svg?color=blue&url=https%3A%2F%2Fraw.githubusercontent.com%2Fcrate%2Fcratedb-guide%2Fmaster%2Fdocs%2Fbuild.json
     :alt: Build version
-    :target: https://github.com/crate/cratedb-guides/blob/master/docs/build.json
+    :target: https://github.com/crate/cratedb-guide/blob/master/docs/build.json
