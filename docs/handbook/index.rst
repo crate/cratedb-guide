@@ -1,3 +1,4 @@
+.. _handbook:
 .. _handbooks:
 .. _user-handbooks:
 

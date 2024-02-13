@@ -1,3 +1,5 @@
+.. _reference-architectures:
+
 =======================
 Reference Architectures
 =======================

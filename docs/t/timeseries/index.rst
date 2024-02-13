@@ -1,3 +1,5 @@
+.. _timeseries:
+
 ################
 Time Series Data
 ################
