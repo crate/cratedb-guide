@@ -5,11 +5,11 @@
 
 # CrateDB Guides and Tutorials
 
+About how to use CrateDB and CrateDB Cloud in practice.
+
 CrateDB is a distributed and scalable SQL database for storing and analyzing
 massive amounts of data in near real-time, even with complex queries. It is
 PostgreSQL-compatible, and based on Lucene. 
-
-This section of the documentation guides you how to use CrateDB in practice.
 
 
 ::::{grid} 3
@@ -64,8 +64,8 @@ This section of the documentation guides you how to use CrateDB in practice.
 
 ## Reference Architectures
 
-Reference architectures involving
-CrateDB for various use-cases.
+Reference architectures illustrating how CrateDB can be used in a variety of
+use-cases.
 
 ::::{grid} 1
 :padding: 0
@@ -90,7 +90,7 @@ CrateDB for various use-cases.
 
 
 
-## Topics
+## Application Domains
 
 Native features of CrateDB paired with auxiliary software components provide
 optimal coverage of different application domains.
@@ -160,6 +160,10 @@ t/ml/index
 ```
 
 
+:::{tip}
+Please also visit the [Overview of CrateDB integration tutorials].
+:::
+
 :::{seealso}
 CrateDB and its documentation are open source projects. We host the source code and
 issue tracker on [GitHub].
@@ -167,3 +171,4 @@ issue tracker on [GitHub].
 
 
 [GitHub]: https://github.com/crate/cratedb-guides
+[Overview of CrateDB integration tutorials]: https://community.cratedb.com/t/overview-of-cratedb-integration-tutorials/1015

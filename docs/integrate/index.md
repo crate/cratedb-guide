@@ -22,7 +22,7 @@ streamsets
 
 
 :::{tip}
-Please also visit [Overview of CrateDB integration tutorials].
+Please also visit the [Overview of CrateDB integration tutorials].
 :::
 
 
