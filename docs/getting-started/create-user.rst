@@ -55,7 +55,7 @@ Grant all privileges to the newly created user:
 
 Now try navigating to the :ref:`crate-admin-ui:index` in your browser. In the URL
 below, please replace ``cratedb.example.org`` with the host name or IP address
-of the machine CreateDB is running on and sign in with your newly created user
+of the machine CrateDB is running on and sign in with your newly created user
 account::
 
    http://cratedb.example.org:4200/
