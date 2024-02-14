@@ -154,9 +154,9 @@ handbook/index
 integrate/index
 
 reference-architectures/index
-t/analysis/index
-t/timeseries/index
-t/ml/index
+topic/analysis/index
+topic/timeseries/index
+topic/ml/index
 ```
 
 
