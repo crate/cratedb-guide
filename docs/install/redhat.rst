@@ -53,6 +53,14 @@ With everything set up, you can install CrateDB::
     sudo yum install crate
 
 
+Configure CrateDB
+=================
+
+Please visit the :ref:`install-configure` documentation section to learn
+about the location and meaning of CrateDB's configuration files.
+
+
+
 .. include:: _control-linux.rst
 .. include:: _post-install.rst
 

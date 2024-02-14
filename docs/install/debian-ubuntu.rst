@@ -59,6 +59,13 @@ Once the service is up and running, you can access CrateDB by visiting::
     http://localhost:4200/
 
 
+Configure CrateDB
+=================
+
+Please visit the :ref:`install-configure` documentation section to learn
+about the location and meaning of CrateDB's configuration files.
+
+
 .. include:: _control-linux.rst
 .. include:: _post-install.rst
 

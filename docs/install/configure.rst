@@ -23,8 +23,13 @@ Environment Variables
 =====================
 
 For the vanilla package-based setup flavor, the CrateDB startup script reads
-:ref:`crate-reference:conf-env` from the ``/etc/default/crate`` file on Debian systems.
-On RPM systems, the ``/etc/sysconfig/crate`` file is used.
+:ref:`crate-reference:conf-env` from the ``/etc/default/crate`` file as
+environment variables.
+
+.. Note::
+
+    RPM packages of CrateDB versions up to `5.2.11`_, `5.3.8`_, `5.4.7`_
+    and `5.5.2`_ are using the ``/etc/sysconfig/crate`` file instead.
 
 When using the :ref:`install-adhoc` setup, or the :ref:`Microsoft Windows <windows-install>`
 setup, the environment variables will be defined by ``bin/crate{.sh,.bat}`` relative to the
@@ -50,4 +55,9 @@ Here is an example::
     CRATE_USE_IPV4=true
 
 
+
+.. _5.2.11: https://cratedb.com/docs/crate/reference/en/latest/appendices/release-notes/5.2.11.html
+.. _5.3.8: https://cratedb.com/docs/crate/reference/en/latest/appendices/release-notes/5.3.8.html
+.. _5.4.7: https://cratedb.com/docs/crate/reference/en/latest/appendices/release-notes/5.4.7.html
+.. _5.5.2: https://cratedb.com/docs/crate/reference/en/latest/appendices/release-notes/5.5.2.html
 .. _sources: https://en.wikipedia.org/wiki/Source_(command)
