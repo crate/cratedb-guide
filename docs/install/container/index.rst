@@ -17,7 +17,7 @@ horizontally scalable architecture that lends itself well to containerization.
 In order to spin up a container using the most recent stable version of the
 official `CrateDB Docker image`_, use::
 
-    docker run --publish=4200:4200 --publish=5432:5432 --pull=always crate
+    docker run --publish=4200:4200 --publish=5432:5432 --env CRATE_HEAP_SIZE=1g --pull=always crate
 
 .. TIP::
 

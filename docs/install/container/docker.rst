@@ -69,7 +69,7 @@ You can then create your first CrateDB container and node, like this::
           --name=crate01 \
           --net=crate \
           -p 4201:4200 \
-          --env CRATE_HEAP_SIZE=2g \
+          --env CRATE_HEAP_SIZE=1g \
           crate -Cnetwork.host=_site_ \
                 -Cnode.name=crate01 \
                 -Cdiscovery.seed_hosts=crate02,crate03 \
@@ -148,7 +148,7 @@ Now add the second node, ``crate02``, to the cluster::
           --name=crate02 \
           --net=crate \
           -p 4202:4200 \
-          --env CRATE_HEAP_SIZE=2g \
+          --env CRATE_HEAP_SIZE=1g \
           crate -Cnetwork.host=_site_ \
                 -Cnode.name=crate02 \
                 -Cdiscovery.seed_hosts=crate01,crate03 \
@@ -175,7 +175,7 @@ You can now add ``crate03`` like this::
     sh$ docker run --rm -d \
           --name=crate03 \
           --net=crate -p 4203:4200  \
-          --env CRATE_HEAP_SIZE=2g \
+          --env CRATE_HEAP_SIZE=1g \
           crate -Cnetwork.host=_site_ \
                 -Cnode.name=crate03 \
                 -Cdiscovery.seed_hosts=crate01,crate02 \
@@ -217,7 +217,7 @@ can be bypassed by passing the ``-Cnode.store.allow_mmap=false`` option to
 the ``crate`` command::
 
     sh$ docker run -d --name=crate01 \
-          --net=crate -p 4201:4200 --env CRATE_HEAP_SIZE=2g \
+          --net=crate -p 4201:4200 --env CRATE_HEAP_SIZE=1g \
           crate -Cnetwork.host=_site_ \
                 -Cnode.store.allow_mmap=false
 
@@ -230,7 +230,7 @@ You can also start a single node without any bootstrap checks by passing the
 
     sh$ docker run -d --name=crate01 \
           --net=crate -p 4201:4200 \
-          --env CRATE_HEAP_SIZE=2g \
+          --env CRATE_HEAP_SIZE=1g \
           crate -Cnetwork.host=_site_ \
                 -Cdiscovery.type=single-node
 
@@ -377,7 +377,7 @@ per host machine.
 If you are running one container per machine, you can map the container ports
 to the host ports so that the host acts like a native installation. For example::
 
-    $ docker run -d -p 4200:4200 -p 4300:4300 -p 5432:5432 crate \
+    $ docker run -d -p 4200:4200 -p 4300:4300 -p 5432:5432 --env CRATE_HEAP_SIZE=1g crate \
         crate -Cnetwork.host=_site_
 
 
@@ -389,7 +389,7 @@ and go, and any data inside them is lost when the container is removed. For
 this reason, you should mount a persistent ``data`` directory on your host
 machine to the ``/data`` directory inside the container::
 
-    $ docker run -d -v /srv/crate/data:/data crate \
+    $ docker run -d -v /srv/crate/data:/data --env CRATE_HEAP_SIZE=1g crate \
         crate -Cnetwork.host=_site_
 
 Here, ``/srv/crate/data`` is an example path, and should be replaced with the
@@ -409,7 +409,8 @@ removed.
 Here is an example of how you could mount the ``crate.yml`` config file::
 
     $ docker run -d \
-        -v /srv/crate/config/crate.yml:/crate/config/crate.yml crate \
+        -v /srv/crate/config/crate.yml:/crate/config/crate.yml \
+        --env CRATE_HEAP_SIZE=1g crate \
         crate -Cnetwork.host=_site_
 
 Here, ``/srv/crate/config/crate.yml`` is an example path, and should be

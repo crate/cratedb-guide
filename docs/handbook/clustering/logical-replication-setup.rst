@@ -39,6 +39,7 @@ sake of simplicity, we will refer to the two clusters as
         --detach \
         --publish 4201:4200 \
         --publish 5433:5432 \
+        --env CRATE_HEAP_SIZE=1g \
         crate:latest \
         -Cdiscovery.type=single-node
   sh$ docker run \
@@ -46,6 +47,7 @@ sake of simplicity, we will refer to the two clusters as
         --detach \
         --publish 4202:4200 \
         --publish 5434:5432 \
+        --env CRATE_HEAP_SIZE=1g \
         crate:latest \
         -Cdiscovery.type=single-node
 
