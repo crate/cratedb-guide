@@ -7,6 +7,7 @@ Integrations of CrateDB with other tools, specifically related to business
 analytics and intelligence software.
 
 
+(powerbi)=
 ## PowerBI
 
 ```{toctree}
