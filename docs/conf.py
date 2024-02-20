@@ -9,9 +9,12 @@ html_context.update({
 
 # Configure link checker.
 linkcheck_ignore = [
-    # Forbidden by WordPress
-    "https://crate.io/wp-content/uploads/2018/11/copy_from_population_data.zip",
-    r'http://localhost:\d+/',
+    # Generic ignores.
+    r"http://localhost:\d+/",
+    # Forbidden by WordPress.
+    r"https://crate.io/wp-content/uploads/2018/11/copy_from_population_data.zip",
+    # Forbidden by Stack Overflow.
+    r"https://stackoverflow.com/.*",
 ]
 
 if "sphinx.ext.intersphinx" not in extensions:
