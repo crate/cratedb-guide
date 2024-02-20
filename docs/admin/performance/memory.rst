@@ -1,20 +1,34 @@
 .. _memory:
 
 ====================
-Memory configuration
+Memory Configuration
 ====================
+
+Introduction
+============
 
 CrateDB is a Java application running on top of a Java Virtual Machine (JVM).
 
-For optimal performance you must configure the amount of memory that is
+For optimal performance, you must configure the amount of memory that is
 available to the JVM for **heap** allocations. The **heap** is a memory region
 used for allocations of objects. For example, if you invoke a ``SELECT``
-statement, parts of the result set are temporarily allocated in the **heap**.
+statement, parts of the result set are temporarily allocated on the **heap**
+memory.
 
-The amount of memory that CrateDB can use for heap allocations is set using the
-`CRATE_HEAP_SIZE`_ environment variable.
+The amount of memory that CrateDB can use for heap allocations is configured
+using the `CRATE_HEAP_SIZE`_ environment variable.
 
 The right memory configuration depends on your workloads.
+
+Recommendation
+==============
+
+A good starting point for the heap space is 25% of the system memory. However,
+it shouldn't be set below 1GB and not above 30.5GB, see the limits section
+below.
+
+Considerations
+==============
 
 Consider the following when determining the right value:
 
@@ -32,66 +46,8 @@ Consider the following when determining the right value:
   result sets in memory. The size of the intermediate and final result sets
   depend entirely on the type of queries you are running.
 
-- CrateDB also uses `Memory mapped files`_ via `Lucene`_. This reduces the
+- CrateDB uses `Memory mapped files`_ via `Lucene`_. This reduces the
   amount of heap space required and benefits from the file system cache.
-
-A good starting point for the heap space is 25% of the systems memory. However,
-it shouldn't be set below 1GB and not above 30.5GB, see the limits section
-below.
-
-.. rubric:: Table of contents
-
-.. contents::
-   :local:
-
-
-.. _memory-limits:
-
-Limits
-======
-
-
-30.5 gigabytes total
---------------------
-
-On `x64 architectures`_, the `HotSpot Java Virtual Machine`_ (JVM) uses a
-performance optimization technique called `Compressed Oops`_. This technique
-allows the JVM to use 4 byte instead of 8 byte for object references. This can
-save a lot of memory.
-
-Unfortunately the JVM can only address up to about 32 GB of memory with
-`Compressed Oops` and the optimization is disabled if a HEAP of more than 32 GB
-is configured.
-
-If `Compressed Oops` is disabled, the object overhead will increase compared to
-having it enabled. Because of this, a cluster that is configured to use 30 GB
-heap may have more real memory available for objects than a cluster that has
-only slightly more than 32GB of heap.
-
-.. NOTE::
-
-    On some JVMs this value is as low as 30.5 gigabytes. To verify that
-    *Compressed Oops* is enabled you can use the `jcmd` tool:
-
-    .. code-block:: console
-
-        sh$ jcmd 624140 VM.info | grep "Compressed Oops"
-
-        Heap address: 0x0000000414200000, size: 16062 MB, Compressed Oops mode: Zero
-        based, Oop shift amount: 3
-
-    Here 624140 is the PID of the CrateDB progress. If the output is empty,
-    *Compressed Oops* are not in use.
-
-For this reason, you should aim to stay below 30.5 GB.
-
-If you want to use more than 30.5 GB, you should configure the total amount to
-offset the memory lost due to the lack of *Compressed Oops*.
-
-.. TIP::
-
-    When configuring the heap size via `CRATE_HEAP_SIZE`_, you can specify 30.5
-    gigabytes with the value ``30500m``.
 
 
 .. _swap:
@@ -109,11 +65,60 @@ like so:
       bootstrap.memory_lock: true
 
 
-.. _bootstrap.memory_lock: https://crate.io/docs/crate/reference/en/latest/config/node.html#memory
+.. _memory-limits:
+
+Memory Limits
+=============
+
+About Compressed Oops
+---------------------
+On `x64 architectures`_, the `HotSpot Java Virtual Machine`_ (JVM) uses a
+performance optimization technique called `Compressed Oops`_. This technique
+allows the JVM to use 4 bytes instead of 8 bytes for object references. This
+saves a lot of memory.
+
+Unfortunately, the JVM can only address up to about 32 GB of memory with
+`Compressed Oops`, and the optimization is disabled if a heap size of more
+than 32 GB is configured.
+
+If `Compressed Oops` is disabled, the object overhead will increase compared to
+having it enabled. Because of this, a cluster that is configured to use 30 GB
+heap memory may have more real memory available for objects than a cluster that
+uses only slightly more than 32GB of heap memory.
+
+Considerations
+--------------
+On some JVMs, this value is as low as 30.5 gigabytes. To verify that
+*Compressed Oops* is enabled you can use the ``jcmd`` program:
+
+.. code-block:: console
+
+    sh$ jcmd 624140 VM.info | grep "Compressed Oops"
+
+    Heap address: 0x0000000414200000, size: 16062 MB, Compressed Oops mode: Zero
+    based, Oop shift amount: 3
+
+Here, 624140 is the PID of the CrateDB progress. If the output is empty,
+*Compressed Oops* are not in use.
+
+Recommendation
+--------------
+For this reason, you should aim to stay below 30.5 GB.
+
+If you want to use more than 30.5 GB, you should configure the total amount to
+offset the memory lost due to the lack of *Compressed Oops*.
+
+.. TIP::
+
+    When configuring the heap size via `CRATE_HEAP_SIZE`_, you can specify 30.5
+    gigabytes with the value ``30500m``.
+
+
+.. _bootstrap.memory_lock: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#memory
 .. _Compressed Oops: https://wiki.openjdk.java.net/display/HotSpot/CompressedOops
-.. _configuration: https://crate.io/docs/crate/reference/en/latest/config/index.html
-.. _configurations: https://crate.io/docs/crate/reference/en/latest/config/index.html
-.. _CRATE_HEAP_SIZE: https://crate.io/docs/crate/reference/en/latest/config/environment.html#conf-env-heap-size
+.. _configuration: https://cratedb.com/docs/crate/reference/en/latest/config/index.html
+.. _configurations: https://cratedb.com/docs/crate/reference/en/latest/config/index.html
+.. _CRATE_HEAP_SIZE: https://cratedb.com/docs/crate/reference/en/latest/config/environment.html#conf-env-heap-size
 .. _G1GC: https://docs.oracle.com/javase/10/gctuning/garbage-first-garbage-collector.htm
 .. _Garbage Collection: https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)
 .. _HotSpot Java Virtual Machine: https://www.oracle.com/java/technologies/javase/javase-core-technologies-apis.html
