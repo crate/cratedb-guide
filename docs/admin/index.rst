@@ -1,10 +1,9 @@
-.. _handbook:
-.. _handbooks:
-.. _user-handbooks:
+.. _admin:
+.. _administration:
 
-########
-Handbook
-########
+##############
+Administration
+##############
 
 This section of the documentation covers CrateDB database
 administration practices.

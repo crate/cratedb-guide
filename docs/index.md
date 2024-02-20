@@ -44,10 +44,10 @@ PostgreSQL-compatible, and based on Lucene.
 :::
 
 
-:::{grid-item-card} Handbook
-:link: handbook
+:::{grid-item-card} Administration
+:link: administration
 :link-type: ref
-:link-alt: CrateDB Handbook
+:link-alt: CrateDB Administration
 :padding: 3
 :text-align: center
 :class-card: sd-pt-3
@@ -150,7 +150,7 @@ optimal coverage of different application domains.
 
 install/index
 getting-started/index
-handbook/index
+admin/index
 integrate/index
 
 reference-architectures/index
