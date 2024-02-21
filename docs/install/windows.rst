@@ -6,8 +6,7 @@
 Running CrateDB on Windows
 ##########################
 
-This section of the documentation outlines how to use the release archives to
-run CrateDB on Microsoft Windows.
+How to use the release archives to run CrateDB on Microsoft Windows.
 
 .. CAUTION::
 

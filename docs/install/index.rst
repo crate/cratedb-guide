@@ -7,6 +7,7 @@ Installation
 This section of the documentation covers the installation of CrateDB on different
 kinds of operating systems and environments, both suitable for on-premises and
 development sandbox operations.
+
 The first step to using any software package is getting it properly installed.
 Please read this section carefully.
 

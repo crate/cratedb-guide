@@ -8,9 +8,10 @@
 CrateDB on Debian, Ubuntu, and Derivates
 ########################################
 
-This section of the documentation outlines how to install CrateDB deb_ packages
-using the apt_ package manager.
+Install CrateDB deb_ packages using the apt_ package manager.
 
+This installation method is suitable for Debian systems and derivates
+like Ubuntu.
 
 Configure package repository
 ============================

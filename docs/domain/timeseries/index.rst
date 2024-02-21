@@ -4,8 +4,7 @@
 Time Series Data
 ################
 
-This section of the documentation covers integrations of CrateDB with other
-tools, with respect to time-series use-cases.
+Integrations of CrateDB with other tools, with respect to time-series use-cases.
 
 
 .. .. rubric:: Basics

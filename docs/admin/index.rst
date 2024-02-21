@@ -5,8 +5,7 @@
 Administration
 ##############
 
-This section of the documentation covers CrateDB database
-administration practices.
+CrateDB database administration practices.
 
 .. toctree::
     :maxdepth: 1

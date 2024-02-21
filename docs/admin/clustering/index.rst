@@ -5,9 +5,7 @@ Clustering
 ==========
 
 One of the benefits of CrateDB is that you can scale out your cluster by
-adding more nodes.
-
-This section of the documentation shows you how to cluster and scale CrateDB.
+adding more nodes. This section of the documentation covers that topic.
 
 .. rubric:: Table of contents
 

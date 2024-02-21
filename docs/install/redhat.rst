@@ -8,8 +8,7 @@
 CrateDB on Red Hat, SUSE, and Derivates
 #######################################
 
-This section of the documentation outlines how to install CrateDB RPM_ packages
-using the YUM_ package manager.
+Install CrateDB RPM_ packages using the YUM_ package manager.
 
 This installation method is suitable for RedHat Enterprise Linux (RHEL) and compatible
 systems like Fedora, CentOS, Rocky Linux, AlmaLinux, AWS Linux, Oracle Linux, or
