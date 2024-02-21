@@ -75,7 +75,7 @@ Using CrateDB as a Destination
 
 Firstly, create a new Data Collector Pipeline:
 
-.. figure:: /_assets/img/integrations/streamsets-new-pipeline.png
+.. figure:: /_assets/img/integrations/streamsets/streamsets-new-pipeline.png
    :align: center
 
 You can then add an origin for the pipeline. In this case, you will be reading
@@ -83,7 +83,7 @@ from the .csv file you downloaded earlier. To do this, add a **Directory** origi
 for the pipeline. You should then configure the directory origin so that it picks
 up the New York taxi CSV file:
 
-.. figure:: /_assets/img/integrations/streamsets-directory-files.png
+.. figure:: /_assets/img/integrations/streamsets/streamsets-directory-files.png
    :align: center
 
 You can then also configure the data format of the file. The data format
@@ -91,7 +91,7 @@ should be **delimited**, with the format type being **Default CSV**. The CSV
 file also includes a header line, so ensure the header line setting is **With
 Header Line**:
 
-.. figure:: /_assets/img/integrations/streamsets-directory-format.png
+.. figure:: /_assets/img/integrations/streamsets/streamsets-directory-format.png
    :align: center
 
 Before you can ingest this data into CrateDB, you need to perform some lightweight
@@ -103,7 +103,7 @@ To do this, add a new **Field Type Converter** processor that connects to the
 Directory origin you created in the previous step. Once created, add the
 following field conversions to the field type converter's configuration:
 
-.. figure:: /_assets/img/integrations/streamsets-field-type-conversions.png
+.. figure:: /_assets/img/integrations/streamsets/streamsets-field-type-conversions.png
    :align: center
 
 Once configured, you can finally add CrateDB as a destination for the pipeline.
@@ -113,27 +113,27 @@ connect to your CrateDB instance.
 
 The JDBC settings should be as follows:
 
-.. figure:: /_assets/img/integrations/streamsets-jdbc-producer-settings.png
+.. figure:: /_assets/img/integrations/streamsets/streamsets-jdbc-producer-settings.png
    :align: center
 
-.. figure:: /_assets/img/integrations/streamsets-jdbc-producer-credentials.png
+.. figure:: /_assets/img/integrations/streamsets/streamsets-jdbc-producer-credentials.png
    :align: center
 
 You can also look at the external libraries of the JDBC producer to ensure
 the CrateDB JDBC driver is present:
 
-.. figure:: /_assets/img/integrations/streamsets-jdbc-driver.png
+.. figure:: /_assets/img/integrations/streamsets/streamsets-jdbc-driver.png
    :align: center
 
 Once created, your pipeline should look something like this:
 
-.. figure:: /_assets/img/integrations/streamsets-pipeline.png
+.. figure:: /_assets/img/integrations/streamsets/streamsets-pipeline.png
    :align: center
 
 You can now start the pipeline by clicking the **Start** button, and data will
 flow from the CSV file, through the type transformer and into CrateDB:
 
-.. figure:: /_assets/img/integrations/streamsets-running-pipeline.png
+.. figure:: /_assets/img/integrations/streamsets/streamsets-running-pipeline.png
    :align: center
 
 You can verify that the data is now in CrateDB:

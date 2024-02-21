@@ -100,13 +100,13 @@ Creating a DSN for CrateDB
 First, verify that you have installed the PostgreSQL ODBC driver by searching
 for and opening the ODBC Data Sources application for your architecture:
 
-.. figure:: /_assets/img/integrations/powerbi-start-menu.png
+.. figure:: /_assets/img/integrations/powerbi/powerbi-start-menu.png
    :align: center
 
 Navigate to the drivers tab, where you should see the PostgreSQL ODBC drivers
 you have installed:
 
-.. figure:: /_assets/img/integrations/powerbi-postgres-drivers.png
+.. figure:: /_assets/img/integrations/powerbi/powerbi-postgres-drivers.png
    :align: center
 
 If this is correct, you can add a User DSN by navigating to the User DSN tab
@@ -119,7 +119,7 @@ are using a 64-bit Windows. Otherwise, select *PostgreSQL Unicode(x32)*.
    <cratedb-powerbi-service>` integration document, then you should create
    this DSN as a **System DSN**, not a **User DSN**.
 
-.. figure:: /_assets/img/integrations/powerbi-driver-select.png
+.. figure:: /_assets/img/integrations/powerbi/powerbi-driver-select.png
    :align: center
 
 Set up the data source with the following parameters:
@@ -140,7 +140,7 @@ If your CrateDB instance uses SSL, enable the SSL mode. If the CrateDB user
 you're connecting with is password protected, add its password to the Password
 field.
 
-.. figure:: /_assets/img/integrations/powerbi-dsn-setup.png
+.. figure:: /_assets/img/integrations/powerbi/powerbi-dsn-setup.png
    :align: center
 
 You can click *Test* to verify that the DSN is configured correctly. Once this
@@ -153,18 +153,18 @@ Connecting Power BI to CrateDB
 Once you have created the DSN, open up Power BI and click *Get Data* from the
 menu ribbon. Select *ODBC* from the list of available data sources:
 
-.. figure:: /_assets/img/integrations/powerbi-source.png
+.. figure:: /_assets/img/integrations/powerbi/powerbi-source.png
    :align: center
 
 Select CrateDB from the DSN list and click *OK*:
 
-.. figure:: /_assets/img/integrations/powerbi-crate-dsn.png
+.. figure:: /_assets/img/integrations/powerbi/powerbi-crate-dsn.png
    :align: center
 
 Within the ``doc`` schema, you should see and be able to add the
 ``population_data`` table:
 
-.. figure:: /_assets/img/integrations/powerbi-table-navigator.png
+.. figure:: /_assets/img/integrations/powerbi/powerbi-table-navigator.png
    :align: center
 
 From here you can transform the data as you wish, or click *Load* to load
@@ -184,7 +184,7 @@ panel into the *Legend* section of the visualizations tab.
 
 The pie chart will be updated automatically, and will produce the following:
 
-.. figure:: /_assets/img/integrations/powerbi-pie-chart.png
+.. figure:: /_assets/img/integrations/powerbi/powerbi-pie-chart.png
    :align: center
 
 

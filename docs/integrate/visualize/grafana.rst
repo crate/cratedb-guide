@@ -30,7 +30,7 @@ To visualize data with Grafana, a dataset is needed first. In this sample,
 demo data is added directly via the CrateDB Cloud Console. To import the data
 go to the Overview page of your deployed cluster. 
 
-.. image:: ../../_assets/img/integrations/cloud-cluster-overview.png
+.. image:: /_assets/img/integrations/cloud-cluster-overview.png
    :alt: Cloud Console Clusters overview
 
 Once on the Overview page, click on the *import the demo data* link in the
@@ -41,7 +41,7 @@ statement imports the data into the table created in the first step. These
 statements must be executed in the shown order. First "1. Create the table" 
 and then "2. Import the data".
 
-.. image:: ../../_assets/img/integrations/grafana/grafana-import.png
+.. image:: /_assets/img/integrations/grafana/grafana-import.png
    :alt: Importing data to Admin UI
 
 When you click on either of the *Execute* buttons, you will be brought to the
@@ -49,7 +49,7 @@ CrateDB Admin UI which is the admin UI of your cluster. When accessing it for
 the first time, you will need the username and password that you set when you
 deployed the cluster.
 
-.. image:: ../../_assets/img/integrations/grafana/grafana-admin-create-table.png
+.. image:: /_assets/img/integrations/grafana/grafana-admin-create-table.png
    :alt: Creating table in Admin UI
 
 After executing the second SQL statement, the "nyc_taxi" table will be
@@ -74,27 +74,27 @@ Connect Grafana to CrateDB Cloud
 After setting up and logging into Grafana, you should be greeted by
 Grafana Home page.
 
-.. image:: ../../_assets/img/integrations/grafana/grafana-welcome.png
+.. image:: /_assets/img/integrations/grafana/grafana-welcome.png
    :alt: Grafana Home page
 
 To visualize the data, you must add a data source. To do this, click on the
 cogwheel "Settings" icon in the left menu bar. This should take you to the 
 Data sources Configuration page. 
 
-.. image:: ../../_assets/img/integrations/grafana/grafana-settings.png
+.. image:: /_assets/img/integrations/grafana/grafana-settings.png
    :alt: Grafana Settings
 
 Once there, click on the *Add data source* button. Here, look up and choose
 "PostgreSQL".
 
-.. image:: ../../_assets/img/integrations/grafana/grafana-search.png
+.. image:: /_assets/img/integrations/grafana/grafana-search.png
    :alt: Grafana integrations
 
 Once "PostgreSQL" is chosen, you will be brought to a form that you must fill
 out to connect to the CrateDB Cloud. A completed example might look like the
 screenshot below.
 
-.. image:: ../../_assets/img/integrations/grafana/grafana-connection.png
+.. image:: /_assets/img/integrations/grafana/grafana-connection.png
    :alt: Grafana connection form
 
 The *host* and *user* credentials may appear differently to you. The host can
@@ -107,7 +107,7 @@ something like:
 
   samplecluster.aks1.eastus.azure.cratedb-dev.net
 
-.. image:: ../../_assets/img/integrations/grafana/grafana-psql.png
+.. image:: /_assets/img/integrations/grafana/grafana-psql.png
    :alt: Grafana psql connection
 
 After submitting all that to the Grafana connection form, it should return
@@ -126,7 +126,7 @@ Dashboards. To create a new dashboard click on the *Create your first
 dashboard* on the Grafana homepage. You will be greeted by a dashboard 
 creation page.
 
-.. image:: ../../_assets/img/integrations/grafana/grafana-new-dashboard.png
+.. image:: /_assets/img/integrations/grafana/grafana-new-dashboard.png
    :alt: Grafana Dashboard creation
 
 In Grafana, dashboards are composed of individual blocks called panels, to
@@ -142,7 +142,7 @@ recommended to look into the documentation on `Grafana panels`_.
 To create a panel, you start by defining the query. To do that click on the
 *Edit SQL* button.
 
-.. image:: ../../_assets/img/integrations/grafana/grafana-new-panel.png
+.. image:: /_assets/img/integrations/grafana/grafana-new-panel.png
    :alt: Grafana panel creation
 
 A console into which you write the SQL statements will appear. This panel will
@@ -177,7 +177,7 @@ make:
 
 After that, you should get a panel similar to this:
 
-.. image:: ../../_assets/img/integrations/grafana/grafana-panel1.png
+.. image:: /_assets/img/integrations/grafana/grafana-panel1.png
    :alt: Grafana panel 1
 
 When you're satisfied with the look of the panel, click *Apply*. This will
@@ -185,7 +185,7 @@ bring you back to the overview of the dashboard. Now it will have 1 panel
 created in it. Click on the *Add panel* in the top menu bar and you can create
 another one.
 
-.. image:: ../../_assets/img/integrations/grafana/grafana-add-panel.png
+.. image:: /_assets/img/integrations/grafana/grafana-add-panel.png
    :alt: Grafana add another panel to dashboard
 
 Another question worth asking might be: What was the average distance per ride
@@ -209,13 +209,13 @@ show only the value we are interested in. Also, in the right menu under "Graph
 style" select "Bars" once again. After that, you should have a panel similar 
 to this:
 
-.. image:: ../../_assets/img/integrations/grafana/grafana-panel2.png
+.. image:: /_assets/img/integrations/grafana/grafana-panel2.png
    :alt: Grafana panel 2
 
 When you're happy with the panel, click *Apply*. Now, when brought back to the
 Dashboard overview, you will have a collection of two very useful graphs.
 
-.. image:: ../../_assets/img/integrations/grafana/grafana-dashboard-final.png
+.. image:: /_assets/img/integrations/grafana/grafana-dashboard-final.png
    :alt: Grafana completed dashboard
 
 Now you know how to get started with data visualization in Grafana. To find 

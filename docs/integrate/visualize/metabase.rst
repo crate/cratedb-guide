@@ -34,7 +34,7 @@ choose, the first step will be adding your CrateDB cluster as a new database.
 To do that, go to the ``Admin Settings`` -> ``Setup``, and choose 
 the ``Add a database`` option.
 
-.. image:: ../../_assets/img/integrations/metabase/metabase-add-database.png
+.. image:: /_assets/img/integrations/metabase/metabase-add-database.png
    :alt: Add new database
 
 Database configuration is relatively simple, these are the necessary fields:
@@ -51,14 +51,14 @@ Database configuration is relatively simple, these are the necessary fields:
     Make sure you also select "Use a secure connection (SSL)" option, unless
     your cluster is not configured for SSL.
 
-.. image:: ../../_assets/img/integrations/metabase/metabase-database-configuration.png
+.. image:: /_assets/img/integrations/metabase/metabase-database-configuration.png
    :alt: Configure new database
 
 After submitting your details, Metabase will sync with your CrateDB cluster for
 a few moments. When that completes, you will get a message saying, "Syncing
 complete".
 
-.. image:: ../../_assets/img/integrations/metabase/metabase-sync-done.png
+.. image:: /_assets/img/integrations/metabase/metabase-sync-done.png
    :alt: Database sync complete
 
 .. _integration-metabase-questions:
@@ -75,19 +75,19 @@ database and a table from it.
 As an example, we ask about the Average tip amount,
 sorted by the passenger count. 
 
-.. image:: ../../_assets/img/integrations/metabase/metabase-question.png
+.. image:: /_assets/img/integrations/metabase/metabase-question.png
    :alt: Asking a question
 
 Metabase then provides a visualization of that question.
 
-.. image:: ../../_assets/img/integrations/metabase/metabase-answer.png
+.. image:: /_assets/img/integrations/metabase/metabase-answer.png
    :alt: Answer
 
 The answer that you get can be saved. When you save a question, you will also
 be asked if you want to add it to a dashboard. Dashboards provide an easy way
 to monitor your data.
 
-.. image:: ../../_assets/img/integrations/metabase/metabase-dashboard.png
+.. image:: /_assets/img/integrations/metabase/metabase-dashboard.png
    :alt: Dashboard
 
 .. _integration-metabase-conclusion:
