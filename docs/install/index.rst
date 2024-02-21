@@ -38,7 +38,7 @@ Please read this section carefully.
 .. the following sections explicitly
 
 
-.. grid:: 4
+.. grid:: 2 2 2 4
     :padding: 0
     :class-container: installation-grid
 
