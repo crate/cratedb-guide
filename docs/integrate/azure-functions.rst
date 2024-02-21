@@ -1,4 +1,4 @@
-.. _cratedb-azure-functions:
+.. _azure-functions:
 
 ===========================================================
 Data Enrichment using IoT Hubs, Azure Functions and CrateDB

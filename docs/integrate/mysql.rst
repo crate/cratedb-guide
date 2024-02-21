@@ -1,5 +1,6 @@
 .. highlight:: psql
 
+.. _integrate-mysql:
 .. _migrating-mysql:
 
 ======================

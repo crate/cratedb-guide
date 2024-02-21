@@ -157,6 +157,7 @@ reference-architectures/index
 topic/analysis/index
 topic/timeseries/index
 topic/ml/index
+topic/testing
 ```
 
 

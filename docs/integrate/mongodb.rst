@@ -1,5 +1,6 @@
 .. highlight:: psql
 
+.. _integrate-mongodb:
 .. _migrating-mongodb:
 
 ========================

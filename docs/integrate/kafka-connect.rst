@@ -1,3 +1,5 @@
+.. _kafka-connect:
+
 ============================================
 Data Ingestion using Kafka and Kafka Connect
 ============================================

@@ -1,8 +1,11 @@
+.. _ml-tensorflow:
 .. _cratedb-distributed-ml:
 
-=====================================================
-Distributed Deep-Learning with CrateDB and TensorFlow
-=====================================================
+======================
+TensorFlow and CrateDB
+======================
+
+*Distributed Deep-Learning with CrateDB and TensorFlow.*
 
 Using deep learning algorithms for Machine Learning use cases has become more
 and more common in the world of data science. A common library used for solving
