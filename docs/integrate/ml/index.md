@@ -3,8 +3,7 @@
 
 # Machine Learning
 
-This section of the documentation covers integrations of CrateDB with machine
-learning frameworks and tools.
+Guidelines about integrating CrateDB with machine learning frameworks and tools.
 
 (langchain)=
 ## LangChain

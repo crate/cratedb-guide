@@ -1,10 +1,8 @@
-(analysis)=
 (visualization)=
 
-# Data Analysis and Visualization
+# Data Visualization
 
-This section of the documentation covers integrations of CrateDB with other
-tools, specifically related to data analysis and visualization.
+Guidelines about data analysis and visualization with CrateDB.
 
 
 ## Apache Superset / Preset
@@ -71,16 +69,6 @@ into a CrateDB Cloud database cluster.
   [![Open on GitHub](https://img.shields.io/badge/Open%20on-GitHub-lightgray?logo=GitHub)](https://github.com/crate/cratedb-examples/blob/main/topic/timeseries/timeseries-queries-and-visualization.ipynb) [![Open in Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/timeseries/timeseries-queries-and-visualization.ipynb)
 
 - Alternatively, you are welcome to explore the canonical [Dash Examples].
-
-
-## PowerBI
-
-```{toctree}
-:maxdepth: 1
-
-powerbi-desktop
-powerbi-gateway
-```
 
 
 ## R
