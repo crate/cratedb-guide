@@ -13,6 +13,8 @@ optimally.
 ```{toctree}
 :maxdepth: 2
 
+orm
+df
 etl/index
 metrics/index
 visualize/index
