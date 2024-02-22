@@ -1,0 +1,20 @@
+(timeseries)=
+# Time Series Data
+
+This section of the documentation covers integrations of CrateDB with
+other tools, with respect to time-series use-cases.
+
+:::{toctree}
+:maxdepth: 1
+
+generate/index
+normalize-intervals
+:::
+
+
+- [Automating financial data collection and storage in CrateDB with Python and pandas 2.0.0]
+- [](inv:cloud#time-series)
+- [](inv:cloud#time-series-advanced)
+
+
+[Automating financial data collection and storage in CrateDB with Python and pandas 2.0.0]: https://community.crate.io/t/automating-financial-data-collection-and-storage-in-cratedb-with-python-and-pandas-2-0-0/916
