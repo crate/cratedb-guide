@@ -4,14 +4,13 @@
 Generate time series data
 =========================
 
+To work with time series data, you are going to need a source of time series
+data. Fortunately, there are many ways to generate time series data, for
+example by sampling system metrics on your workstation or server.
+
 CrateDB is purpose-built for working with massive amounts of time series data,
 like the type of data produced by smart sensors and other `Internet of Things`_
 (IoT) devices.
-
-If you want to get a feel for using CrateDB to work with time series data, you
-are going to need a source of time series data. Fortunately, there are many
-ways to generate time series data by sampling the systems running on your local
-computer.
 
 This collection of tutorials will show you how to generate mock time series
 data about the `International Space Station`_ (ISS) and write it to CrateDB

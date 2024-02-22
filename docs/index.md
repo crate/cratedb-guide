@@ -2,6 +2,7 @@
 (guides)=
 (howtos)=
 (tutorials)=
+(use-more-tutorials)=
 
 # The CrateDB Guide
 
@@ -229,7 +230,7 @@ frameworks.
 :hidden:
 
 install/index
-getting-started/index
+getting-started
 admin/index
 reference-architectures/index
 

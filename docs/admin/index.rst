@@ -12,6 +12,7 @@ administration practices.
     :maxdepth: 1
 
     bootstrap-checks
+    create-user
     going-into-production
     troubleshooting/index
 
