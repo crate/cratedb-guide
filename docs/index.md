@@ -108,7 +108,7 @@ application and topic domains.
 :class-body: sd-fs-1
 :class-title: sd-fs-5
 
-{material-outlined}`query_stats;1.3em`
+{material-outlined}`stacked_line_chart;1.3em`
 :::
 
 
