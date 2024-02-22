@@ -90,19 +90,61 @@ use-cases.
 
 
 
-## Application Domains
+## Integrations
 
-Native features of CrateDB paired with auxiliary software components provide
-optimal coverage of different application domains.
+Learn how to use CrateDB with 3rd-party software applications, libraries, and
+frameworks.
 
 ::::{grid} 3
 :padding: 0
 
 
-:::{grid-item-card} Analysis and Visualization
+:::{grid-item-card} ETL
+:link: etl
+:link-type: ref
+:link-alt: Load and export data into/from CrateDB
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-5
+
+{material-outlined}`transform;1.3em`
+:::
+
+
+:::{grid-item-card} Metrics
+:link: metrics
+:link-type: ref
+:link-alt: CrateDB with metrics collection agents, brokers, and stores
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-5
+
+{material-outlined}`query_stats;1.3em`
+:::
+
+
+:::{grid-item-card} Data Visualization
 :link: analysis
 :link-type: ref
-:link-alt: Data Analysis and Visualization with CrateDB
+:link-alt: Data visualization with CrateDB
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-5
+
+{material-outlined}`bar_chart;1.3em`
+:::
+
+
+:::{grid-item-card} Business Intelligence
+:link: bi
+:link-type: ref
+:link-alt: Analyse information with CrateDB
 :padding: 3
 :text-align: center
 :class-card: sd-pt-3
@@ -112,6 +154,45 @@ optimal coverage of different application domains.
 {material-outlined}`analytics;1.3em`
 :::
 
+
+:::{grid-item-card} Machine Learning
+:link: machine-learning
+:link-type: ref
+:link-alt: Machine Learning with CrateDB
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-5
+
+{material-outlined}`model_training;1.3em`
+:::
+
+
+:::{grid-item-card} Software Testing
+:link: testing
+:link-type: ref
+:link-alt: Software testing with CrateDB
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-5
+
+{material-outlined}`integration_instructions;1.3em`
+:::
+
+
+::::
+
+
+## Application Domains
+
+Learn how to apply CrateDB's features to optimally cover different
+application and topic domains.
+
+::::{grid} 3
+:padding: 0
 
 :::{grid-item-card} Time Series Data
 :link: timeseries
@@ -140,9 +221,7 @@ optimal coverage of different application domains.
 {material-outlined}`model_training;1.3em`
 :::
 
-
 ::::
-
 
 
 ```{toctree}
@@ -152,12 +231,9 @@ install/index
 getting-started/index
 admin/index
 integrate/index
-
 reference-architectures/index
-topic/analysis/index
-topic/timeseries/index
-topic/ml/index
-topic/testing
+
+domain/index
 ```
 
 
