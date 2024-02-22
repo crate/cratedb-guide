@@ -1,3 +1,4 @@
+.. _timeseries-normalize:
 .. _normalize-intervals:
 
 ====================================

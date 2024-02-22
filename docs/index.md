@@ -98,6 +98,35 @@ application and topic domains.
 ::::{grid} 3
 :padding: 0
 
+
+:::{grid-item-card} Document Store
+:link: document
+:link-type: ref
+:link-alt: Storing JSON documents using CrateDB's `OBJECT` data type
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-5
+
+{material-outlined}`article;1.3em`
+:::
+
+
+:::{grid-item-card} Full-Text Search
+:link: fts
+:link-type: ref
+:link-alt: About CrateDB's full-text search capabilities
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-5
+
+{material-outlined}`manage_search;1.3em`
+:::
+
+
 :::{grid-item-card} Time Series Data
 :link: timeseries
 :link-type: ref
@@ -124,6 +153,7 @@ application and topic domains.
 
 {material-outlined}`model_training;1.3em`
 :::
+
 
 ::::
 
