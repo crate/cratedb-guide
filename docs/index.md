@@ -89,6 +89,43 @@ use-cases.
 
 
 
+## Application Domains
+
+Learn how to apply CrateDB's features to optimally cover use-cases in different
+application and topic domains.
+
+::::{grid} 3
+:padding: 0
+
+:::{grid-item-card} Time Series Data
+:link: timeseries
+:link-type: ref
+:link-alt: Managing Time Series Data with CrateDB
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-5
+
+{material-outlined}`query_stats;1.3em`
+:::
+
+
+:::{grid-item-card} Machine Learning
+:link: machine-learning
+:link-type: ref
+:link-alt: Machine Learning with CrateDB
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-5
+
+{material-outlined}`model_training;1.3em`
+:::
+
+::::
+
 
 ## Integrations
 
@@ -186,42 +223,6 @@ frameworks.
 ::::
 
 
-## Application Domains
-
-Learn how to apply CrateDB's features to optimally cover different
-application and topic domains.
-
-::::{grid} 3
-:padding: 0
-
-:::{grid-item-card} Time Series Data
-:link: timeseries
-:link-type: ref
-:link-alt: Managing Time Series Data with CrateDB
-:padding: 3
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-
-{material-outlined}`query_stats;1.3em`
-:::
-
-
-:::{grid-item-card} Machine Learning
-:link: machine-learning
-:link-type: ref
-:link-alt: Machine Learning with CrateDB
-:padding: 3
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-
-{material-outlined}`model_training;1.3em`
-:::
-
-::::
 
 
 ```{toctree}
@@ -230,10 +231,10 @@ application and topic domains.
 install/index
 getting-started/index
 admin/index
-integrate/index
 reference-architectures/index
 
 domain/index
+integrate/index
 ```
 
 
