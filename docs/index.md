@@ -3,9 +3,9 @@
 (howtos)=
 (tutorials)=
 
-# CrateDB Guides and Tutorials
+# The CrateDB Guide
 
-About how to use CrateDB and CrateDB Cloud in practice.
+Guides and tutorials about how to use CrateDB and CrateDB Cloud in practice.
 
 CrateDB is a distributed and scalable SQL database for storing and analyzing
 massive amounts of data in near real-time, even with complex queries. It is
@@ -242,8 +242,13 @@ Please also visit the [Overview of CrateDB integration tutorials].
 :::
 
 :::{seealso}
-CrateDB and its documentation are open source projects. We host the source code and
-issue tracker on [GitHub].
+CrateDB and its documentation are open source projects.
+Contributions to the pages in this section and subsections are much appreciated.
+If you can spot a flaw, or would like to contribute additional content, you
+are most welcome.
+
+You will find corresponding links within the topmost right navigation element
+on each page, linking to the relevant page where this project is hosted on [GitHub].
 :::
 
 
