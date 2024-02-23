@@ -22,8 +22,7 @@ Integrations
 
 This architecture makes use of the following integrations with CrateDB:
 
-1. :ref:`cratedb-azure-functions`
+1. :ref:`azure-functions`
 2. :ref:`cratedb-r`
-3. :ref:`cratedb-powerbi-desktop` or :ref:`cratedb-powerbi-service`, depending
+3. :ref:`powerbi-desktop` or :ref:`powerbi-service`, depending
    on your requirements and use case.
-

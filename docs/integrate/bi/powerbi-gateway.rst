@@ -1,4 +1,4 @@
-.. _cratedb-powerbi-service:
+.. _powerbi-service:
 
 ===========================================
 Real Time Reports with CrateDB and Power BI

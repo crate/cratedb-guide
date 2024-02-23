@@ -1,4 +1,4 @@
-.. _cratedb-powerbi-desktop:
+.. _powerbi-desktop:
 
 =========================================
 Reports with CrateDB and Power BI Desktop
