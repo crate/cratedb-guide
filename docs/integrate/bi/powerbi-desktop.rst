@@ -116,7 +116,7 @@ are using a 64-bit Windows. Otherwise, select *PostgreSQL Unicode(x32)*.
 .. note::
    If you intend to use this connection in conjunction with an On-Premises
    Data Gateway as detailed in our :ref:`CrateDB and Power BI
-   <cratedb-powerbi-service>` integration document, then you should create
+   <powerbi-service>` integration document, then you should create
    this DSN as a **System DSN**, not a **User DSN**.
 
 .. figure:: /_assets/img/integrations/powerbi/powerbi-driver-select.png
