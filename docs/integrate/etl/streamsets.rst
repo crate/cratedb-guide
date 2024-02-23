@@ -37,8 +37,8 @@ then be used in analytics/visualization queries.
 Prerequisites
 -------------
 
-- `A running and accessable CrateDB cluster`_
-- `A running and accessable StreamSets Data Collector`_
+- :ref:`A running and accessible CrateDB cluster <install>`
+- `A running and accessible StreamSets Data Collector`_
 - StreamSet's `New York taxi dataset`_ downloaded to a location that can be
   accessed by the Data Collector.
 - The `CrateDB JDBC driver`_ installed as an external library for the data
@@ -149,10 +149,9 @@ You can verify that the data is now in CrateDB:
     SELECT 1 row in set (0.050 sec)
 
 
-.. _A running and accessable CrateDB cluster: https://crate.io/docs/crate/howtos/en/latest/deployment/index.html
-.. _A running and accessable StreamSets Data Collector: https://streamsets.com/products/dataops-platform-2/data-collector-engine/
+.. _A running and accessible StreamSets Data Collector: https://streamsets.com/products/dataops-platform-2/data-collector-engine/
 .. _Maven Repository: https://repo1.maven.org/maven2/io/crate/crate-jdbc-standalone/
-.. _CrateDB JDBC driver: https://crate.io/docs/jdbc/en/latest/
+.. _CrateDB JDBC driver: https://cratedb.com/docs/jdbc/
 .. _external libraries: https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Configuration/ExternalLibs.html
 .. _New York taxi dataset: https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Tutorial/BeforeYouBegin.html?hl=nyc_taxi_data/
 .. _StreamSets Data Collector: https://streamsets.com/products/dataops-platform-2/data-collector-engine/

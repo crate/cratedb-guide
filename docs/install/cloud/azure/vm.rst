@@ -87,8 +87,8 @@ Install CrateDB
 
 *Note that these instructions should be followed on each VM in your cluster.*
 
-To Install CrateDB, ssh into your VMs and follow `the standard process for
-Linux installation`_, this will automatically start an instance of CrateDB,
+To Install CrateDB, ssh into your VMs and follow :ref:`the standard process for
+Linux installation <install>`, this will automatically start an instance of CrateDB,
 which we will need to restart after the next step.
 
 
@@ -122,8 +122,8 @@ Uncomment / add these lines:
 |                 |           |       - 10.0.1.103:4300               |
 +-----------------+-----------+---------------------------------------+
 
-Note You might want to try DNS based discovery for inter-node communication,
-`find more details`_ in our documentation.
+Note: You might want to try :ref:`DNS based discovery
+<crate-reference:conf_dns_discovery>` for inter-node communication.
 
 Uncomment and set the cluster name
 
@@ -159,8 +159,8 @@ Ensure that the ``JAVA*HOME`` environment variable is set.
 .. image:: /_assets/img/install/cloud/azure-envvar.png
    :alt: Environment Variables
 
-Next `download the CrateDB Tarball`_, expand it and move to a convenient
-location.
+Next :ref:`download the CrateDB Tarball <install-tarball>`, expand it, and move
+it to a convenient location.
 
 
 Configure CrateDB and Windows
@@ -179,10 +179,7 @@ We need to allow the ports CrateDB uses through the Windows Firewall
 Start crate by running ``bin/crate``.
 
 
-.. _3.3: https://crate.io/docs/crate/reference/en/3.3/config/cluster.html#discovery
-.. _download the CrateDB Tarball: https://crate.io/docs/crate/tutorials/en/latest/install.html#install-adhoc
-.. _find more details: https://crate.io/docs/crate/reference/en/latest/config/cluster.html#discovery-via-dns
+.. _3.3: https://cratedb.com/docs/crate/reference/en/3.3/config/cluster.html#discovery
 .. _Java JDK installed: https://www.oracle.com/java/technologies/downloads/#java8
-.. _latest: https://crate.io/docs/crate/reference/en/latest/config/cluster.html#discovery
+.. _latest: https://cratedb.com/docs/crate/reference/en/latest/config/cluster.html#discovery
 .. _Learn how to install here: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli
-.. _the standard process for Linux installation: https://crate.io/docs/crate/tutorials/en/latest/install.html

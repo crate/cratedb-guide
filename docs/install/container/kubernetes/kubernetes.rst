@@ -98,8 +98,9 @@ For our purposes, we define two services: an `internal service`_ and an
 Internal service
 ................
 
-CrateDB uses the internal service for `node discovery via DNS`_ and
-:ref:`inter-node communication <inter-node-comms>`.
+CrateDB uses the internal service for :ref:`node discovery via DNS
+<crate-reference:conf_dns_discovery>` and :ref:`inter-node communication
+<inter-node-comms>`.
 
 Here's an example configuration snippet:
 
@@ -300,10 +301,11 @@ CrateDB 5.1.1 cluster:
 
 .. SEEALSO::
 
-   CrateDB supports `configuration via command-line options`_ and `node
-   discovery via DNS`_.
+   CrateDB supports :ref:`configuration via command-line options
+   <crate-reference:config>` and :ref:`node discovery via DNS
+   <crate-reference:conf_dns_discovery>`.
 
-   :ref:`Configure memory <memory>` by hand for optimum performance.
+   Explicitly :ref:`configure heap memory <memory>` for optimum performance.
 
    You must set memory map limits correctly. Consult the :ref:`bootstrap checks
    <bootstrap-checks>` documentation for more information.
@@ -365,7 +367,6 @@ You can then use this in your controller configuration with something like this:
                 storage: 100g
 
 .. _Azure Managed Disks: https://azure.microsoft.com/en-us/pricing/details/managed-disks/
-.. _configuration via command-line options: https://crate.io/docs/crate/reference/en/latest/config/index.html
 .. _configuration: https://kubernetes.io/docs/concepts/configuration/overview/
 .. _containerization: https://www.docker.com/resources/what-container
 .. _CrateDB Docker image: https://hub.docker.com/_/crate/
@@ -376,14 +377,13 @@ You can then use this in your controller configuration with something like this:
 .. _LoadBalancer: https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer
 .. _managed: https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/
 .. _Minikube: https://kubernetes.io/docs/setup/minikube/
-.. _node discovery via DNS: https://crate.io/docs/crate/reference/en/latest/config/cluster.html#discovery-via-dns
 .. _persistent volume: https://kubernetes.io/docs/concepts/storage/persistent-volumes/
 .. _persistent volumes: https://kubernetes.io/docs/concepts/storage/persistent-volumes/
 .. _pod: https://kubernetes.io/docs/concepts/workloads/pods/
 .. _rolling update strategy: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#rolling-updates
 .. _service: https://kubernetes.io/docs/concepts/services-networking/service/
 .. _services: https://kubernetes.io/docs/concepts/services-networking/service/
-.. _setting up your first CrateDB cluster on Kubernetes: https://crate.io/a/run-your-first-cratedb-cluster-on-kubernetes-part-one/
+.. _setting up your first CrateDB cluster on Kubernetes: https://cratedb.com/blog/run-your-first-cratedb-cluster-on-kubernetes-part-one
 .. _shared-nothing architecture : https://en.wikipedia.org/wiki/Shared-nothing_architecture
 .. _StatefulSet: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
 .. _StorageClass: https://kubernetes.io/docs/concepts/storage/storage-classes/

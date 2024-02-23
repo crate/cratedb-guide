@@ -25,7 +25,7 @@ Before kicking off an upgrade, there is a set of guidelines to ensure the best o
 Acknowledge breaking changes
 ----------------------------
 
-Review the `release notes`_ and documentation for the target version to understand any potential impact on existing functionality. 
+Review the :ref:`release notes <crate-reference:release_notes>` and documentation for the target version to understand any potential impact on existing functionality.
 Ensure to review the intermediate versions' documentation also. For example, when upgrading from 4.8 to 5.3, besides reviewing 5.3 release notes, check for version 5.0, 5.1, and so on.
 
 Set up a test environment
@@ -37,7 +37,7 @@ Create a test environment that closely resembles your production environment, in
 Back up and plan recovery
 -------------------------
 
-Perform a cluster-wide backup of your production CrateDB and ensure you have a reliable recovery mechanism in place. Read more in the `snapshots`_ documentation.
+Perform a cluster-wide backup of your production CrateDB and ensure you have a reliable recovery mechanism in place. Read more in the :ref:`snapshots <crate-reference:snapshot-restore>` documentation.
 
 For the newly written records, you should consider using a mechanism to queue them (e.g. message queue), so these messages can be replayed if needed.
 
@@ -70,7 +70,3 @@ Choose the upgrade strategy below that works best for your scenario.
 - :ref:`rolling_upgrade` 
 
 - :ref:`full_restart_upgrade`
-
-
-.. _release notes: https://crate.io/docs/crate/reference/en/latest/appendices/release-notes/index.html
-.. _snapshots: https://crate.io/docs/crate/reference/en/latest/admin/snapshots.html

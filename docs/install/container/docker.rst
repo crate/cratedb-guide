@@ -15,7 +15,8 @@ This document covers the essentials of running CrateDB on Docker.
 .. NOTE::
 
    If you are just getting started with CrateDB and Docker, check out the
-   introductory guides for `spinning up your first CrateDB instance`_.
+   introductory guides for :ref:`spinning up your first container-based
+   CrateDB instance <install-container>`.
 
 .. SEEALSO::
 
@@ -87,8 +88,8 @@ Breaking the command down:
   :ref:`docker-compose` as reference).
 - Puts the container into the ``crate`` network and maps port ``4201`` on your
   host machine to port ``4200`` on the container (admin UI).
-- Defines the environment variable ``CRATE_HEAP_SIZE`` which is used by CrateDB
-  to allocate 2G for its heap.
+- Defines the environment variable:ref:`CRATE_HEAP_SIZE <manual:conf-env-heap-size>`,
+  which is used by CrateDB to allocate 2G for its heap.
 - Runs the command ``crate`` inside the container with parameters:
     * ``network.host``: The ``_site_`` value results in the binding of the
       CrateDB process to a site-local IP address.
@@ -200,7 +201,8 @@ Success! You just created a three-node CrateDB cluster with Docker.
 
    This is only a quick start example and you will notice some failing checks
    in the admin UI. For a more robust cluster, you should, at the very least,
-   configure the `Metadata Gateway`_ and `Discovery`_ settings.
+   configure the :ref:`Metadata Gateway <crate-reference:metadata_gateway>` and
+   :ref:`Discovery <crate-reference:conf_discovery>` settings.
 
 
 .. _docker-troubleshooting:
@@ -225,8 +227,8 @@ the ``crate`` command::
 
    This will result in degraded performance.
 
-You can also start a single node without any bootstrap checks by passing the
-``-Cdiscovery.type=single-node`` option::
+You can also start a single node without any :ref:`bootstrap checks
+<bootstrap-checks>` by passing the ``-Cdiscovery.type=single-node`` option::
 
     sh$ docker run -d --name=crate01 \
           --net=crate -p 4201:4200 \
@@ -242,7 +244,7 @@ You can also start a single node without any bootstrap checks by passing the
 Taking it further
 -----------------
 
-`CrateDB settings <https://crate.io/docs/stable/configuration.html>`_ are set
+:ref:`CrateDB settings <crate-reference:config>` are set
 using the ``-C`` flag, as shown in the examples above.
 
 Check out the `Docker docs <https://docs.docker.com/engine/reference/run/>`_
@@ -452,9 +454,10 @@ Bootstrap checks
 
 When using CrateDB with Docker, CrateDB binds by default to any site-local IP
 address on the system (i.e. 192.168.0.1). This performs a number of checks
-during bootstrap. The settings listed in `Bootstrap Checks`_ must be addressed on
-the Docker **host system** in order to start CrateDB successfully and when
-`going into production`_.
+during bootstrap. The settings listed in :ref:`bootstrap checks
+<bootstrap-checks>` must be addressed on the Docker **host system** in order
+to start CrateDB successfully and when :ref:`going into production
+<going-into-production>`.
 
 
 Memory
@@ -465,8 +468,8 @@ can use. This is dependent on your host system and should typically be as high
 as possible.
 
 You must then calculate the appropriate heap size (typically half the container's
-memory limit, see `CRATE_HEAP_SIZE`_ for details) and pass this to CrateDB,
-which in turn passes it to the JVM.
+memory limit, see :ref:`CRATE_HEAP_SIZE <crate-reference:conf-env-heap-size>`
+for details), and pass this to CrateDB, which in turn passes it to the JVM.
 
 It is not necessary to configure swap memory since CrateDB does not use swap.
 
@@ -494,24 +497,17 @@ example::
         crate -Cnetwork.host=_site_
 
 
-.. _Bootstrap Checks: https://crate.io/docs/crate/howtos/en/latest/admin/bootstrap-checks.html
 .. _compose file version: https://docs.docker.com/compose/compose-file/compose-versioning/
 .. _containerization: https://www.docker.com/resources/what-container
-.. _CRATE_HEAP_SIZE: https://crate.io/docs/crate/reference/en/latest/config/environment.html#conf-env-heap-size
 .. _CrateDB Docker image: https://hub.docker.com/_/crate/
 .. _default bridge network: https://docs.docker.com/network/drivers/bridge/#use-the-default-bridge-network
-.. _Discovery: https://crate.io/docs/crate/reference/en/latest/config/cluster.html#discovery
 .. _Docker Stack YAML file: https://docs.docker.com/docker-cloud/apps/stack-yaml-reference/
 .. _Docker Swarm: https://docs.docker.com/engine/swarm/
 .. _Docker volume: https://docs.docker.com/engine/tutorials/dockervolumes/
 .. _Docker: https://www.docker.com/
-.. _going into production: https://crate.io/docs/crate/howtos/en/latest/going-into-production.html
 .. _healthcheck: https://docs.docker.com/engine/reference/builder/#healthcheck
 .. _horizontally scalable: https://en.wikipedia.org/wiki/Scalability#Horizontal_(scale_out)_and_vertical_scaling_(scale_up)
-.. _Metadata Gateway: https://crate.io/docs/crate/reference/en/latest/config/cluster.html#metadata-gateway
-.. _running Docker locally: https://crate.io/docs/crate/tutorials/en/latest/install.html#docker
 .. _set the maximum memory: https://docs.docker.com/config/containers/resource_constraints/#memory
 .. _set the maximum number of CPUs: https://docs.docker.com/config/containers/resource_constraints/#cpu
-.. _shared-nothing architecture : https://en.wikipedia.org/wiki/Shared-nothing_architecture
-.. _spinning up your first CrateDB instance: https://crate.io/docs/crate/tutorials/en/latest/install.html#docker
+.. _shared-nothing architecture: https://en.wikipedia.org/wiki/Shared-nothing_architecture
 .. _user-defined network: https://docs.docker.com/network/bridge/

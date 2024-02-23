@@ -59,8 +59,8 @@ off::
     CREATE OK, 1 row affected (... sec)
 
 For fields that contain text consider using a full-text analyzer. This will
-enable great full-text search capabilities. See `Indices and Fulltext Search`_
-for more information.
+enable great full-text search capabilities. See :ref:`Indices and Fulltext
+Search <crate-reference:fulltext-indices>` for more information.
 
 CrateDB is able to create dynamically defined table schemas, which can be
 extended as data is inserted, so it is not necessary to define all the columns
@@ -125,21 +125,17 @@ This can be useful for collections with complex or heavily-nested schemas.
 
 .. SEEALSO::
 
- - `Data Definition`_
- - `CREATE TABLE`_
+ - :ref:`Data Definition <crate-reference:ddl>`
+ - :ref:`CREATE TABLE <crate-reference:sql-create-table>`
 
 
 After the table has been created the file can be imported using
-`COPY FROM`_.
+:ref:`COPY FROM <crate-reference:sql-copy-from>`.
 
 .. SEEALSO::
 
     :ref:`bulk-inserts`
 
 
-.. _COPY FROM: https://crate.io/docs/crate/reference/sql/reference/copy_from.html
-.. _CREATE TABLE: https://crate.io/docs/crate/reference/sql/reference/create_table.html
-.. _Data Definition: https://crate.io/docs/crate/reference/sql/ddl/index.html
-.. _Indices and Fulltext Search: https://crate.io/docs/crate/reference/sql/ddl/indices_full_search.html
 .. _MongoDB Extended JSON: https://docs.mongodb.com/manual/reference/mongodb-extended-json/
 .. _MongoDB migration tool: https://github.com/crate/mongodb-cratedb-migration-tool

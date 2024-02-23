@@ -118,8 +118,8 @@ throughput of your cluster with different setups and under different loads.
 .. _Executor: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executor.html
 .. _HAProxy: https://www.haproxy.org/
 .. _HikariCP: https://github.com/brettwooldridge/HikariCP
-.. _JDBC client: https://crate.io/docs/clients/jdbc/en/latest/
-.. _PHP PDO client: https://crate.io/docs/clients/pdo/en/latest/
-.. _Python client: https://crate.io/docs/clients/python/en/latest/
+.. _JDBC client: https://cratedb.com/docs/clients/jdbc/
+.. _PHP PDO client: https://cratedb.com/docs/clients/pdo/
+.. _Python client: https://cratedb.com/docs/clients/python/
 .. _supplyAsync: https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CompletableFuture.html#supplyAsync-java.util.function.Supplier-java.util.concurrent.Executor-
 .. _vibur-dbcp: https://www.vibur.org/

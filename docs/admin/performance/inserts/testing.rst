@@ -1,19 +1,12 @@
 .. _testing_inserts_performance:
 
-===========================
-Testing inserts performance
-===========================
+==========================
+Testing Insert Performance
+==========================
 
-The easiest way to test inserts performance is with the `cr8`_ tool.
+The easiest way to test insert performance is by using the `cr8`_ tool.
 
-.. NOTE::
-
-    The `cr8`_ tool is not maintained by Crate.IO.
-
-    The `clients and tools`_ section has more information about the maintenance
-    status of various CrateDB-related software.
-
-Inserts generally scale linearly with cluster size, so it's a good idea start
+Inserts generally scale linearly with cluster size, so it is a good idea start
 by testing insert performance on a single node.
 
 You should only increase the size of your cluster for testing once you have
@@ -34,7 +27,8 @@ If you already have a table full of data that you want to test, the best thing
 to do is to export that data and test inserting some portion of it into an
 identical table that you have created for testing purposes.
 
-You can export the data using `COPY TO`_ like so:
+You can export the data using :ref:`COPY TO <crate-reference:sql-copy-to>`,
+like so:
 
 .. code-block:: psql
 
@@ -87,7 +81,7 @@ It's important to generate the fake data as a separate step so that our
 performance testing isn't also measuring the fake data generation, which in
 some situations, might actually end up being the performance bottleneck.
 
-Now, export the fake data as JSON using `COPY TO`_:
+Now, export the fake data as JSON using :ref:`COPY TO <crate-reference:sql-copy-to>`:
 
 .. code-block:: psql
 
@@ -144,6 +138,4 @@ understand the performance profile of your setup.
    Setting the bulk records size to `1` approximates the performance of single
    inserts.
 
-.. _COPY TO: https://crate.io/docs/crate/reference/en/latest/sql/reference/copy_to.html
 .. _cr8: https://github.com/mfussenegger/cr8/
-.. _clients and tools: https://crate.io/docs/crate/clients-tools/en/latest/

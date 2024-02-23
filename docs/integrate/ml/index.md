@@ -96,9 +96,9 @@ tensorflow
 [LangChain: Chatbots]: https://python.langchain.com/docs/use_cases/chatbots
 [LangChain: Retrieval augmented generation]: https://python.langchain.com/docs/use_cases/question_answering/
 [LangChain and CrateDB: Code Examples]: https://github.com/crate/cratedb-examples/tree/main/topic/machine-learning/llm-langchain
-[Machine Learning and CrateDB: An introduction]: https://crate.io/blog/machine-learning-and-cratedb-part-one
-[Machine Learning and CrateDB: Getting Started With Jupyter]: https://crate.io/blog/machine-learning-cratedb-jupyter
-[Machine Learning and CrateDB: Experiment Design & Linear Regression]: https://crate.io/blog/machine-learning-and-cratedb-part-three-experiment-design-and-linear-regression
+[Machine Learning and CrateDB: An introduction]: https://cratedb.com/blog/machine-learning-and-cratedb-part-one
+[Machine Learning and CrateDB: Getting Started With Jupyter]: https://cratedb.com/blog/machine-learning-cratedb-jupyter
+[Machine Learning and CrateDB: Experiment Design & Linear Regression]: https://cratedb.com/blog/machine-learning-and-cratedb-part-three-experiment-design-and-linear-regression
 [MLflow]: https://mlflow.org/
 [MLflow and CrateDB]: https://github.com/crate/cratedb-examples/tree/main/topic/machine-learning/mlops-mlflow
 [pandas]: https://pandas.pydata.org/

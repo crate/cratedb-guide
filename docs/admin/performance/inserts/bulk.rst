@@ -3,7 +3,7 @@
 .. _bulk-inserts:
 
 ============
-Bulk inserts
+Bulk Inserts
 ============
 
 If you have a lot of pre-existing data that you need to import in bulk, follow
@@ -34,8 +34,8 @@ The rest of this document goes into more detail.
     for this reason.
 
     Another way to increase import speed is to add more disks by adding more
-    nodes. CrateDB is a `distributed database`_, and so, increasing overall
-    cluster size is generally a good way to improve performance.
+    nodes. CrateDB is a :ref:`distributed database <crate-reference:concept-clustering>`,
+    and so, increasing overall cluster size is generally a good way to improve performance.
 
 .. rubric:: Table of contents
 
@@ -46,11 +46,11 @@ The rest of this document goes into more detail.
 
     :ref:`Insert performance: Methods <insert-methods>`
 
+    :ref:`CrateDB Reference: Import and export <crate-reference:dml-import-export>`
+
     :ref:`Best practices: Migrating from MySQL <migrating-mysql>`
 
     :ref:`Best practices: Migrating from MongoDB <migrating-mongodb>`
-
-    `CrateDB Reference: Import and export`_
 
 
 .. _bulk-configure-tables:
@@ -89,12 +89,14 @@ various types. You can create this table with the following statement::
 Shards and replicas
 -------------------
 
-For each table, if you do not set the number of `shards`_ or the number of
-`replicas`_, the default configuration is as follows:
+For each table, if you do not set the number of :ref:`shards
+<crate-reference:ddl-sharding>` or the number of
+:ref:`replicas <crate-reference:ddl-replication>`, the default configuration
+is as follows:
 
 **Shards**
-    Dependent on the number of data-nodes in the cluster (see `CLUSTERED
-    clause`_)
+    Dependent on the number of data-nodes in the cluster, see :ref:`CLUSTERED
+    <crate-reference:sql-create-table-clustered>`.
 
 **Replicas**
     One
@@ -112,9 +114,9 @@ scaling needs, but use as few as possible to keep the resource overhead (e.g.,
 file descriptors and memory) as small as possible.
 
 When importing data, you should set the number of replicas to a minimum,
-ideally zero. If the import fails, you can `drop`_ the table and import
-again. When the import succeeds, adjust the number of replicas according to
-your `availability`_ requirements.
+ideally zero. If the import fails, you can :ref:`drop <crate-reference:drop-table>`
+the table and import again. When the import succeeds, adjust the number of replicas
+according to your `availability`_ requirements.
 
 For example, the ``CREATE TABLE`` statement we used before could be changed
 to the following::
@@ -138,14 +140,15 @@ to the following::
 Refresh interval
 ----------------
 
-Another way to speed up importing is to set the `refresh_interval`_ of the
+Another way to speed up importing is to set the :ref:`refresh_interval
+<crate-reference:sql-create-table-refresh-interval>` of the
 table to zero::
 
     cr> ALTER TABLE users SET (refresh_interval = 0);
     ALTER OK, -1 rows affected (... sec)
 
-This will disable the periodic `refresh`_ of the table which will, in turn,
-will minimize processing overhead during import.
+This will disable the periodic :ref:`refresh <crate-reference:refresh_data>`
+of the table which will, in turn, will minimize processing overhead during import.
 
 .. HIDE:
 
@@ -185,7 +188,8 @@ Import the data
 
 Once the table is created, you can start importing the data.
 
-When importing, CrateDB has `native support for JSON data`_. Specifically, for
+When importing, CrateDB has :ref:`native support for JSON data
+<crate-reference:data-type-json>`. Specifically, for
 bulk inserts, you can use a format called `JSON Lines`_. In a JSON Lines file,
 each line is a JSON string representing a single record. Empty lines are
 skipped. The keys of the JSON objects are mapped to columns when
@@ -199,7 +203,8 @@ For example, a JSON Lines file might look like this:
     {"id": 2, "name": "bar", "day_joined": 1408312800, "bio": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.", "address": {"city": "Berlin", "country": "Germany"}}
 
 
-Use the `COPY FROM`_ statement to import JSON data directly from a file::
+Use the :ref:`COPY FROM <crate-reference:sql-copy-from>` statement to import
+JSON data directly from a file::
 
     cr> COPY users FROM '/tmp/best_practice_data/users.jsonl';
     COPY OK, 150 rows affected (... sec)
@@ -237,7 +242,8 @@ the cluster to import data from a file called ``users.jsonl``.
 
     Additionally, when importing data using ``COPY FROM``, CrateDB does not
     check whether both the types from the columns and the types from the import
-    file match. CrateDB does not `cast`_ the imported data types to the the
+    file match. CrateDB does not :ref:`cast <crate-reference:fn-cast>` the
+    imported data types to the the
     target column type. Instead, CrateDB will import the data *as given* in the
     source file.
 
@@ -247,8 +253,8 @@ the cluster to import data from a file called ``users.jsonl``.
 Bulk size
 ---------
 
-You can improve on the example above by configuring the `bulk_size`_
-option, like so::
+You can improve on the example above by configuring the :ref:`bulk size
+<crate-reference:sql-copy-from-bulk_size>` option, like so::
 
     cr> COPY users FROM '/tmp/best_practice_data/users.jsonl'
     ... WITH (bulk_size = 2000);
@@ -306,7 +312,8 @@ need to specify ``gzip`` compression, like so::
 Split your tables into partitions
 =================================
 
-You can split your table into `partitions`_ to improve performance.
+You can split your table into :ref:`partitions <crate-reference:partitioned-tables>`,
+in order to improve performance.
 
 .. HIDE:
 
@@ -332,8 +339,8 @@ Partitions can be created using the ``CREATE TABLE`` statement and a
 
 .. NOTE::
 
-    If a `primary key`_ was explicitly declared, the partition column has to be a
-    component of the primary key.
+    If a :ref:`primary key <crate-reference:constraints-primary-key>` was explicitly
+    declared, the partition column has to be a component of the primary key.
 
 A value identifying the target partition column *should* be defined in the
 ``COPY FROM`` statement using the ``PARTITION`` clause::
@@ -364,11 +371,11 @@ from the JSON. You must omit this column if you use the ``PARTITIONED`` clause.
 
 .. SEEALSO::
 
-    `CrateDB Reference: Partitioned tables`_
+    :ref:`CrateDB Reference: Partitioned tables <crate-reference:partitioned-tables>`
 
-    `CrateDB Reference: PARTITIONED BY`_
+    :ref:`CrateDB Reference: PARTITIONED BY <crate-reference:sql-create-table-partitioned-by>`
 
-    `CrateDB Reference: Alter a partitioned table`_
+    :ref:`CrateDB Reference: Alter a partitioned table <crate-reference:partitioned-alter>`
 
 
 .. _bulk-disable-refresh-new-shards:
@@ -378,8 +385,9 @@ Disable table refresh for new shards
 
 When importing data into a table that already has partitions, you can optimize
 the insert operation for newly created shards by disabling the
-`refresh_interval`_ for those partitions (only) using the `ALTER TABLE ONLY`_
-statement.
+:ref:`refresh_interval <crate-reference:sql-create-table-refresh-interval>`
+for those partitions (only) using the :ref:`ALTER TABLE ONLY
+<crate-reference:partitioned-alter-table>` statement.
 
 .. SEEALSO::
 
@@ -391,7 +399,8 @@ statement.
 Increase the number of shards
 -----------------------------
 
-The ``ALTER TABLE`` clause can also be used to `alter the number of shards`_
+The ``ALTER TABLE`` clause can also be used to :ref:`alter the number of shards
+<crate-reference:partitioned-alter-shards>`
 for newly created partitions, which may improve performance over the previous
 configuration when handling a lot more data than before.
 
@@ -405,27 +414,8 @@ For exmaple::
     section about shards <bulk-shards-replicas>` for more information.
 
 
-.. _ALTER TABLE ONLY: https://crate.io/docs/crate/reference/en/latest/sql/partitioned_tables.html#alter-table-only
-.. _alter the number of shards: https://crate.io/docs/crate/reference/en/latest/general/ddl/partitioned-tables.html#changing-the-number-of-shards
 .. _availability: https://en.wikipedia.org/wiki/High_availability
-.. _bulk_size: https://crate.io/docs/crate/reference/en/latest/sql/statements/copy-from.html#bulk-size
-.. _cast: https://crate.io/docs/crate/reference/en/latest/general/ddl/data-types.html#cast
-.. _CLUSTERED clause: https://crate.io/docs/crate/reference/en/latest/sql/statements/create-table.html#clustered
-.. _COPY FROM: https://crate.io/docs/crate/reference/en/latest/sql/reference/copy_from.html
-.. _CrateDB Reference\: Alter a partitioned table: https://crate.io/docs/crate/reference/en/latest/sql/partitioned_tables.html#alter
-.. _CrateDB Reference\: Import and export: https://crate.io/docs/crate/reference/en/latest/general/dml.html#import-and-export
-.. _CrateDB Reference\: PARTITIONED BY: https://crate.io/docs/crate/reference/en/latest/sql/statements/create-table.html#partitioned-by
-.. _CrateDB Reference\: Partitioned tables: https://crate.io/docs/crate/reference/en/latest/sql/partitioned_tables.html
-.. _distributed database: https://crate.io/docs/crate/reference/en/latest/concepts/clustering.html
-.. _drop: https://crate.io/docs/crate/reference/en/latest/sql/statements/drop-table.html
 .. _gzip: https://www.gnu.org/software/gzip/
 .. _IOPS: https://en.wikipedia.org/wiki/IOPS
 .. _JSON lines: https://jsonlines.org/
-.. _native support for JSON data: https://crate.io/docs/crate/reference/en/latest/general/ddl/data-types.html#json
-.. _partitions: https://crate.io/docs/crate/reference/en/latest/general/ddl/partitioned-tables.html
-.. _primary key: https://crate.io/docs/crate/reference/en/latest/general/ddl/constraints.html#primary-key
-.. _refresh_interval: https://crate.io/docs/crate/reference/en/latest/sql/reference/create_table.html#refresh-interval
-.. _refresh: https://crate.io/docs/crate/reference/en/latest/sql/refresh.html
-.. _replicas: https://crate.io/docs/crate/reference/en/latest/general/ddl/replication.html
-.. _shards: https://crate.io/docs/crate/reference/en/latest/general/ddl/sharding.html
 .. _Windows documentation: https://docs.microsoft.com/en-us/dotnet/standard/io/file-path-formats

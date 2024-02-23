@@ -40,7 +40,7 @@ report uses the latest data.
 Prerequisites
 -------------
 
-- `A running and accessable CrateDB cluster`_
+- :ref:`A running and accessible CrateDB cluster <install>`
 - `Power BI Desktop`_
 - `Microsoft Work/School account`_ or a `Power BI Pro/Trial account`_
 - The `On-Premises Data Gateway`_ installed on a Windows machine that can access
@@ -63,7 +63,7 @@ Creating a Report With CrateDB and Power BI Desktop
 
 Before you can publish your report, you need to have created it first.
 You can do this using the data from CrateDB. Please follow the
-:ref:`CrateDB and PowerBI Desktop<cratedb-powerbi-desktop>` integration
+:ref:`CrateDB and PowerBI Desktop <powerbi-desktop>` integration
 guide to do this.
 
 After running through that guide, we should have the following report:
@@ -197,7 +197,6 @@ updated periodically.
 
 .. _Power BI service: https://powerbi.microsoft.com/en-us/
 .. _World Economic Outlook survey: https://www.imf.org/en/Publications/WEO
-.. _A running and accessable CrateDB cluster: https://crate.io/docs/crate/howtos/en/latest/deployment/index.html
 .. _Power BI Desktop: https://powerbi.microsoft.com/en-us/desktop/
 .. _Microsoft Work/School account: https://support.microsoft.com/en-ca/help/4013943/sign-in-using-work-or-school-account
 .. _Power BI Pro/Trial account: https://app.powerbi.com/signupredirect?pbi_source=web

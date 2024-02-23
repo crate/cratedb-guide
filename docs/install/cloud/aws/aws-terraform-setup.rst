@@ -198,4 +198,4 @@ to destroy all associated resources:
 .. _How to view VPC properties: https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#view-default-vpc
 .. _How to view subnet properties: https://docs.aws.amazon.com/vpc/latest/userguide/modify-subnets.html#view-subnet
 .. _How to create EC2 key pairs: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-key-pairs.html
-.. _community post: https://community.crate.io/t/deploying-cratedb-to-the-cloud-via-terraform/849
+.. _community post: https://community.cratedb.com/t/deploying-cratedb-to-the-cloud-via-terraform/849

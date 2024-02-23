@@ -64,7 +64,7 @@ How to use the release archives to run CrateDB on Microsoft Windows.
 
 
 .. _7-Zip: https://www.7-zip.org/
-.. _contact us: https://crate.io/contact/
+.. _contact us: https://cratedb.com/contact/
 .. _CrateDB release archive: https://cdn.crate.io/downloads/releases/cratedb/x64_windows/
 .. _msvcrt ARM64: https://aka.ms/vs/16/release/VC_redist.arm64.exe
 .. _msvcrt x86-32: https://aka.ms/vs/16/release/vc_redist.x86.exe

@@ -31,11 +31,13 @@ Some examples:
     CrateDB. If you are upgrading to a testing version you must perform a full
     cluster restart.
 
-    Check the `release notes`_ for the version you are upgrading to for any
-    specific instructions that may override this.
+    Check the :ref:`release notes <crate-reference:release_notes>` for the
+    version you are upgrading to for any specific instructions that may override
+    this.
 
 To perform a rolling upgrade of a cluster, one node at a time has to be stopped
-using the graceful stop procedure (see `Signal Handling`_).
+using the :ref:`graceful stop <crate-reference:conf_graceful_stop>` procedure
+(see :ref:`Signal Handling <crate-reference:cli-crate-signals>`).
 
 This procedure will disable a node, which will cause it to reject any new
 requests but will make sure that any pending requests are finished.
@@ -46,7 +48,8 @@ requests but will make sure that any pending requests are finished.
    fail during a rolling upgrade.
 
 This process will ensure a certain data availability. Which can either be
-``none``, ``primaries``, or ``full`` and can be configured using `SET`_.
+``none``, ``primaries``, or ``full`` and can be configured using the
+:ref:`SET <crate-reference:ref-set>` statement.
 
 Using ``full``, all shards currently located on the node will be moved to the
 other nodes in order to stop gracefully. Using this setting the cluster will
@@ -105,7 +108,8 @@ Upgrade Process
 
 .. WARNING::
 
-    Before upgrading, you should `back up your data`_.
+    Before upgrading, you should :ref:`back up your data
+    <crate-reference:snapshot-restore>`.
 
 Step 1: Disable allocations
 ---------------------------
@@ -114,7 +118,7 @@ First, you have to prevent the cluster from re-distributing shards and replicas
 while certain nodes are not available. You can do that by disabling
 re-allocations and only allowing new primary allocations.
 
-Use the `SET`_ command to do so:
+Use the :ref:`SET <crate-reference:ref-set>` command to do so:
 
 .. code-block:: psql
 
@@ -130,7 +134,8 @@ Step 2: Graceful stop
 ---------------------
 
 To initiate a graceful shutdown that behaves as described in the introduction
-of this document, the `Decommission Statement`_ must be used.
+of this document, the :ref:`DECOMMISSION <crate-reference:alter_cluster_decommission>`
+statement must be used.
 
 Stopping a node via the ``TERM`` user signal (Often invoked via ``Ctrl+C`` or
 ``systemctl stop crate``), will cause a normal shutdown of CrateDB, **without**
@@ -177,7 +182,7 @@ the reallocating is not finished, you can set the ``force`` setting to
   the graceful stop procedure will fail.
 
 By default, only the ``graceful stop`` command considers the cluster settings
-described at `Graceful Stop`_.
+described at :ref:`graceful stop <crate-reference:conf_graceful_stop>`.
 
 Observing the reallocation
 ..........................
@@ -282,11 +287,3 @@ again that have been disabled in the first step:
   cr> SET GLOBAL TRANSIENT "cluster.routing.allocation.enable" = 'all';
   SET OK, 1 row affected (... sec)
 
-
-.. _back up your data: https://crate.io/docs/crate/reference/en/latest/admin/snapshots.html
-.. _versions: https://crate.io/docs/crate/reference/en/latest/sql/system.html#version
-.. _release notes: https://crate.io/docs/crate/reference/en/latest/appendices/release-notes/index.html
-.. _Signal Handling: https://crate.io/docs/crate/reference/en/latest/cli-tools.html#signal-handling
-.. _SET: https://crate.io/docs/crate/reference/en/latest/sql/statements/set.html
-.. _Graceful Stop: https://crate.io/docs/crate/reference/en/latest/config/cluster.html#graceful-stop
-.. _Decommission Statement: https://crate.io/docs/crate/reference/en/latest/sql/statements/alter-cluster.html#decommission-nodeid-nodename

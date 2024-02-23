@@ -41,7 +41,8 @@ from CrateDB relative to how low this value is.
 CPUs
 ----
 
-If your table schemas are complex or make use of `fulltext indexes`_, the
+If your table schemas are complex or make use of :ref:`fulltext indexes
+<crate-reference:sql_dql_fulltext_search>`, the
 additional CPU overhead during the analyzing phase of insert query processing
 might result in a CPU performance bottleneck.
 
@@ -65,8 +66,8 @@ However, using tables with zero replicas is not recommended for anything except
 one-off data imports. You should have at least one configured replica for every
 table in a cluster that has three nodes or more.
 
-Replicas improve availability and durability (in the event of node failure or
-cluster partitions) but they do incur a performance cost.
+Replicas improve availability and :ref:`durability <concept-durability>` in the
+event of node failure or cluster partitions, but they do incur a performance cost.
 
 Shards and partitioning
 -----------------------
@@ -80,22 +81,25 @@ Indexing
 By default, all table columns are indexed. Regular columns use the ``plain``
 index, and fulltext columns use the ``fulltext`` index.
 
-Indexes are expensive, so `turning column indexes off`_ will always improve
-performance. Sometimes significantly. But the downside is that you cannot use
-those columns in the where clause.
+Indexes are expensive, so :ref:`turning column indexes off
+<crate-reference:sql_ddl_index_off>` will always improve performance.
+Sometimes, significantly. The downside is that you cannot use those columns in
+the where clause.
 
 Primary keys
 ------------
 
 If your data does not have a `natural primary key`_ (i.e. data that uniquely
-identifies each row), use the ``_id`` `system column`_ as a primary key. This
+identifies each row), use the ``_id`` :ref:`system column
+<crate-reference:sql_administration_system_columns>` as a primary key. This
 is better than creating your own `surrogate primary key`_ (e.g. manually
 generating a UUID for each row) because there is one less column to index.
 
 Translog
 --------
 
-If `translog.durability`_ is set to ``REQUEST`` (the default), the translog
+If :ref:`translog.durability <crate-reference:sql-create-table-translog-durability>`
+is set to ``REQUEST`` (the default), the translog
 gets flushed after every operation. Setting this to ``ASYNC`` will improve
 insert performance, but it also worsens durability. If a node crashes before a
 translog has been synced, those operations will be lost.
@@ -121,7 +125,8 @@ Refresh interval
 With the exception of primary key lookups, data that has been written to a
 shard cannot be read back until the shard index has been refreshed.
 
-The `refresh_interval`_ table setting specifies how frequently shard indexes
+The :ref:`refresh_interval <crate-reference:sql-create-table-refresh-interval>`
+table setting specifies how frequently shard indexes
 are refreshed. The default value is every 1000 milliseconds.
 
 If you know that your client application can tollerate a higher refresh
@@ -140,7 +145,8 @@ The calculation of statistics happens periodically. The bandwidth used for
 collecting statistics is limited by applying throttling based on the maximum
 amount of bytes per second that can be read from data nodes.
 
-Please refer to the `ANALYZE`_ documentation for further information how to
+Please refer to the :ref:`ANALYZE <crate-reference:analyze>` documentation
+for further information how to
 change the calculation interval, and how to configure throttling settings.
 
 Manual optimizing
@@ -157,15 +163,9 @@ tables yourself.
 
 However, if you are doing a lot of inserts, you may want to optimize tables (or
 even specific partitions) on your own schedule. If so, you can use the
-`OPTIMIZE`_ command.
+:ref:`OPTIMIZE <crate-reference:optimize>` command.
 
-.. _ANALYZE: https://cratedb.com/docs/crate/reference/en/latest/sql/statements/analyze.html
-.. _fulltext indexes: https://crate.io/docs/crate/reference/en/latest/sql/fulltext.html
+
 .. _natural primary key: https://en.wikipedia.org/wiki/Natural_key
-.. _OPTIMIZE: https://crate.io/docs/crate/reference/en/latest/sql/reference/optimize.html
-.. _refresh_interval: https://crate.io/docs/crate/reference/en/latest/sql/reference/create_table.html#refresh-interval
 .. _Solid-State Drives: https://en.wikipedia.org/wiki/Solid-state_drive
 .. _surrogate primary key: https://en.wikipedia.org/wiki/Surrogate_key
-.. _system column: https://crate.io/docs/crate/reference/en/latest/sql/administration/system_columns.html
-.. _translog.durability: https://crate.io/docs/crate/reference/en/latest/sql/reference/create_table.html#translog-durability
-.. _turning column indexes off: https://crate.io/docs/crate/reference/en/latest/sql/ddl/indices_full_search.html#disable-indexing

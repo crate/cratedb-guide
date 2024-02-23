@@ -9,7 +9,8 @@ A ``INSERT INTO`` statement is processed as follows:
  - Plan the operation
  - Execute the operation
 
-CrateDB `calculates the shard ID`_ for every row to be inserted when executing
+CrateDB :ref:`calculates the shard ID <crate-reference:sharding-routing>` for
+every row to be inserted when executing
 the operation. Insert requests are then grouped and sent to the nodes that hold
 each primary shard.
 
@@ -31,4 +32,3 @@ This section of the guide will show you how.
    testing
 
 .. _Abstract Syntax Tree: https://en.wikipedia.org/wiki/Abstract_syntax_tree
-.. _calculates the shard ID: https://crate.io/docs/crate/reference/en/latest/sql/ddl/sharding.html#routing

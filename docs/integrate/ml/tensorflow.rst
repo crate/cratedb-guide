@@ -57,7 +57,7 @@ Using this data with TensorFlow, you will want to accomplish the following:
 Prerequisites
 -------------
 
-- `A running CrateDB cluster`_
+- :ref:`A running CrateDB cluster <install>`
 - `An AWS S3 storage bucket`_
 
 To be able to use the *boto3* AWS client, you will need to provide credentials
@@ -538,7 +538,6 @@ pipeline. The training and prediction stages are decoupled, and can be
 distributed across different machines, contexts, and scenarios.
 
 
-.. _A running CrateDB cluster: https://crate.io/docs/crate/howtos/en/latest/deployment/index.html
 .. _An AWS S3 storage bucket: https://aws.amazon.com/s3/
 .. _boto3: https://boto3.amazonaws.com/v1/documentation/api/latest/index.html
 .. _joblib: https://joblib.readthedocs.io/en/latest/index.html

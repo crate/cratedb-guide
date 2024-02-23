@@ -12,7 +12,7 @@ linkcheck_ignore = [
     # Generic ignores.
     r"http://localhost:\d+/",
     # Forbidden by WordPress.
-    r"https://crate.io/wp-content/uploads/2018/11/copy_from_population_data.zip",
+    r"https://cratedb.com/wp-content/uploads/2018/11/copy_from_population_data.zip",
     # Forbidden by Stack Overflow.
     r"https://stackoverflow.com/.*",
 ]

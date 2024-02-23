@@ -30,8 +30,10 @@ For improved performance and resiliency, you should run production CrateDB
 clusters with three or more nodes and one node per host machine. To do this,
 you must manually configure the bootstrapping process by telling nodes how to:
 
-  a. :ref:`Discover other nodes <node-discovery>`
-  b. :ref:`Elect a master node <master-node-election>`
+a. :ref:`Discover other nodes <node-discovery>`, more details at
+   :ref:`node discovery <crate-reference:concept-discovery>`.
+b. :ref:`Elect a master node <master-node-election>`, more details at
+   :ref:`master node election <crate-reference:concept-master-election>`.
 
 This process is known as *manual bootstrapping*. See the :ref:`how-to guide
 <manual-bootstrapping>` for more information about how to bootstrap a cluster
@@ -52,8 +54,9 @@ Naming
 Configure a logical cluster name
 --------------------------------
 
-The `cluster.name`_ setting allows you to override the default cluster name of
-``crate``. You should use this setting to give a logical name to your cluster.
+The :ref:`crate-reference:cluster.name` setting allows you to override the
+default cluster name of ``crate``. You should use this setting to give a
+logical name to your cluster.
 
 For example, add this to your `configuration`_ file:
 
@@ -64,7 +67,8 @@ For example, add this to your `configuration`_ file:
 The ``acme-prod`` name suggests that this cluster is the production cluster for
 the *Acme* organization. If *Acme* has a cluster running in a staging
 environment, you might want to name it ``acme-staging``. This way, you can
-differentiate your clusters by name (visible in the `Admin UI`_).
+differentiate your clusters by name (visible in the :ref:`Admin UI
+<crate-admin-ui:index>`).
 
 .. TIP::
 
@@ -117,7 +121,7 @@ your operating system configuration.
 
 .. SEEALSO::
 
-    `Host settings`_
+    :ref:`Host settings <crate-reference:conf_hosts>`
 
 
 .. _prod-config-node-labels:
@@ -340,7 +344,7 @@ container.
 On a Unix-like system, you might mount an external volume to a path like
 ``/opt/cratedb``. If you are installing CrateDB by hand, you can then set
 `CRATE_HOME`_ to ``/opt/cratedb``. Make sure to set ``CRATE_HOME`` before
-running `bin/crate`_.
+running :ref:`bin/crate <crate-reference:cli-crate>`.
 
 Then, you could configure your `data paths`_ like this:
 
@@ -400,7 +404,7 @@ there is enough disk space available for heap dumps at this location.
 
 .. SEEALSO::
 
-    `JVM environment variables`_
+    :ref:`JVM environment variables <crate-reference:conf-env-java>`
 
 
 .. _prod-config-gc:
@@ -410,7 +414,7 @@ Garbage collection
 
 CrateDB logs JVM garbage collection times using the built-in *garbage
 collection* (GC) logging provided by the JVM. You can configure this process
-with the `GC logging environment variables`_.
+with the :ref:`GC logging environment variables <conf-logging-gc>`.
 
 You must ensure that the log directory is on a fast-enough disk and has enough
 space. When using Docker, use a path on a mounted volume.
@@ -431,42 +435,29 @@ Configure wire encryption
 
 For security reasons, most production clusters should use wire encryption for
 network traffic between nodes and clients. Check out the reference manual on
-`secured communications`_ for more information.
+:ref:`secured communications <crate-reference:admin_ssl>` for more information.
 
 
-.. _Admin UI: https://crate.io/docs/crate/admin-ui/en/latest/
-.. _bin/crate: https://crate.io/docs/crate/reference/en/latest/cli-tools.html#crate
-.. _cluster.name: https://crate.io/docs/crate/reference/en/latest/config/node.html#cluster-name
-.. _configuration: https://crate.io/docs/crate/reference/en/latest/config/index.html
-.. _configure: https://crate.io/docs/crate/reference/en/latest/config/index.html
-.. _CRATE_HEAP_DUMP_PATH: https://crate.io/docs/crate/reference/en/latest/config/environment.html#conf-env-dump-path
-.. _CRATE_HEAP_SIZE: https://crate.io/docs/crate/reference/en/latest/config/environment.html#crate-heap-size
-.. _CRATE_HOME: https://crate.io/docs/crate/reference/en/latest/config/environment.html#conf-env-crate-home
-.. _CRATE_JAVA_OPTS: https://crate.io/docs/crate/reference/en/latest/config/environment.html#conf-env-java-opts
-.. _data paths: https://crate.io/docs/crate/reference/en/latest/config/node.html#paths
-.. _discovery: https://crate.io/docs/crate/reference/en/latest/concepts/shared-nothing.html#discovery
-.. _elect a master node: https://crate.io/docs/crate/reference/en/latest/concepts/shared-nothing.html#master-node-election
+.. _configuration: https://cratedb.com/docs/crate/reference/en/latest/config/index.html
+.. _configure: https://cratedb.com/docs/crate/reference/en/latest/config/index.html
+.. _CRATE_HEAP_DUMP_PATH: https://cratedb.com/docs/crate/reference/en/latest/config/environment.html#conf-env-dump-path
+.. _CRATE_HEAP_SIZE: https://cratedb.com/docs/crate/reference/en/latest/config/environment.html#crate-heap-size
+.. _CRATE_HOME: https://cratedb.com/docs/crate/reference/en/latest/config/environment.html#conf-env-crate-home
+.. _CRATE_JAVA_OPTS: https://cratedb.com/docs/crate/reference/en/latest/config/environment.html#conf-env-java-opts
+.. _data paths: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#paths
 .. _Filesystem Hierarchy Standard: https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
-.. _GC logging environment variables: https://crate.io/docs/crate/reference/en/latest/config/logging.html#environment-variables
-.. _Host settings: https://crate.io/docs/crate/reference/en/latest/config/node.html#hosts
 .. _IOPS: https://en.wikipedia.org/wiki/IOPS
-.. _JVM environment variables: https://crate.io/docs/crate/reference/en/latest/config/environment.html#jvm-variables
-.. _limits: https://crate.io/docs/crate/howtos/en/latest/performance/memory.html#limits
 .. _Linux Filesystem Hierarchy: https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/index.html
 .. _localhost: https://en.wikipedia.org/wiki/Localhost
-.. _logging: https://crate.io/docs/crate/reference/en/latest/config/logging.html
-.. _multiple types of node: https://crate.io/docs/crate/reference/en/latest/config/node.html#node-types
-.. _network.host: https://crate.io/docs/crate/reference/en/latest/config/node.html#network-host
-.. _node.name: https://crate.io/docs/crate/reference/en/latest/config/node.html#node-name
-.. _path settings: https://crate.io/docs/crate/reference/en/latest/config/node.html#paths
-.. _path.data: https://crate.io/docs/crate/reference/en/latest/config/node.html#path-data
+.. _multiple types of node: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#node-types
+.. _network.host: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#network-host
+.. _node.name: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#node-name
+.. _path settings: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#paths
+.. _path.data: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#path-data
 .. _RAID 0: https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_0
-.. _runtime: https://crate.io/docs/crate/reference/en/latest/admin/runtime-config.html#administration-runtime-config
-.. _secured communications: https://crate.io/docs/crate/reference/en/latest/admin/ssl.html
 .. _shared-nothing: https://en.wikipedia.org/wiki/Shared-nothing_architecture
 .. _STDERR: https://en.wikipedia.org/wiki/Standard_streams
 .. _symbolic links: https://en.wikipedia.org/wiki/Symbolic_link
-.. _sys.summits: https://crate.io/docs/crate/reference/en/latest/admin/system-information.html#summits
 .. _systemd: https://github.com/systemd/systemd
-.. _timeout settings: https://crate.io/docs/crate/reference/en/latest/config/node.html#garbage-collection
+.. _timeout settings: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#garbage-collection
 .. _Unix-like: https://en.wikipedia.org/wiki/Unix-like

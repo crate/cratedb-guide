@@ -187,4 +187,4 @@ to destroy all associated resources:
 .. _git's installation guide: https://git-scm.com/downloads
 .. _Azure provider: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs
 .. _List of Storage Account Types: https://docs.microsoft.com/en-us/azure/templates/microsoft.compute/virtualmachines?tabs=bicep#manageddiskparameters
-.. _community post: https://community.crate.io/t/deploying-cratedb-to-the-cloud-via-terraform/849
+.. _community post: https://community.cratedb.com/t/deploying-cratedb-to-the-cloud-via-terraform/849

@@ -8,10 +8,9 @@ Troubleshooting with sys-tables
 CrateDB maintains a set of diagnostic tables in the **sys** schema. It
 currently consists of ten tables that provide an overview of the cluster state.
 If something is going wrong and you initially don't know why, they help you to
-analyze, identify the problem and start mitigating it. While there is `detailed
-documentation about each single table
-<https://crate.io/docs/reference/sql/system.html>`__, this guide runs you
-through the most common situations.
+analyze, identify the problem and start mitigating it. While there is
+:ref:`detailed information about all system tables <crate-reference:system-information>`,
+this guide runs you through the most common situations.
 
 .. rubric:: Table of contents
 
@@ -252,8 +251,8 @@ allocated on any node.
 If a shard is assigned but cannot be moved or rebalanced, the row includes a
 reason why it remains on the current node.
 
-For a full list of available columns, see the `reference documentation about
-system tables`_.
+For a full list of available columns, see the :ref:`reference documentation
+about the sys.allocations table <crate-reference:sys-allocations>`.
 
 To find out about the different states of shards of a specific table, you can
 simply filter by ``table_schema`` and ``table_name``, e.g.::
@@ -302,5 +301,3 @@ to restore. Suppose you make nightly backups, the command::
 
 shows you last week's snapshots along with their name, the stored indices, and
 how long they took.
-
-.. _reference documentation about system tables: https://crate.io/docs/crate/reference/en/latest/admin/system-information.html#allocations

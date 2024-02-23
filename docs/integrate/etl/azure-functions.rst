@@ -82,7 +82,7 @@ In order to deploy this architecture, there are several prerequisites:
   `data simulators`_.
 - An `Azure storage account`_
 - A `development environment for Azure Functions`_
-- A running `CrateDB cluster`_
+- A running :ref:`CrateDB cluster <azure>`
 
 CrateDB
 -------
@@ -339,7 +339,7 @@ can go through it step by step:
 	    // Construct SQL insertion statement
 	    // We do it this way so we can bulk insert the whole payload of event hub messages at once, rather than inserting row by row.
 	    // However, the pg client does not support bulk inserts on the client side. Instead, we use UNNEST to do bulk insertion on the server side.
-	    // See: https://crate.io/a/bulk-inserts-with-unnest/ for more information.
+	    // See: https://cratedb.com/blog/bulk-inserts-with-unnest for more information.
 	    const stmt = `INSERT INTO ${SINK_TABLE} (${SINK_COLUMN_TIMESTAMPS}, ${SINK_COLUMN_UNMANNED}, ${SINK_COLUMN_MANNED}, ${SINK_COLUMN_DEBUG}) ` +
 	        `(SELECT * FROM UNNEST (['${timestamps.join("','")}'], [${unmanned}], [${manned}], [${debugs}]));`
 
@@ -373,7 +373,6 @@ a new device and send a device-to-cloud (D2C) message for testing purposes.
 .. _Azure CLI: https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-cli-csharp
 .. _node-postgres:  https://www.npmjs.com/package/pg
 .. _Azure Event Hubs bindings for Azure Functions documentation: https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-hubs-trigger?tabs=javascript
-.. _CrateDB cluster: https://crate.io/docs/crate/howtos/en/latest/deployment/cloud/azure.html
 .. _Azure IoT Hub: https://azure.microsoft.com/en-us/services/iot-hub/
 .. _Azure storage account: https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview
 .. _data simulators: https://docs.microsoft.com/en-us/azure/iot-accelerators/quickstart-device-simulation-deploy

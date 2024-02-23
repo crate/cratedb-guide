@@ -76,4 +76,4 @@ its SQL dialect, please also visit the [CrateDB Reference Manual].
 [Database Driver Code Examples]: inv:crate-clients-tools:*:label#connect
 [Drivers and Integrations]: inv:crate-clients-tools:*:label#index
 [Integration Tutorials]: #integrate
-[More integration tutorials]: https://community.crate.io/t/overview-of-cratedb-integration-tutorials/1015
+[More integration tutorials]: https://community.cratedb.com/t/overview-of-cratedb-integration-tutorials/1015

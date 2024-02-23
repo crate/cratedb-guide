@@ -10,8 +10,9 @@ nodes. These factors can have a significant impact on the performance of
 CrateDB clusters. This is especially true when running clusters in multiple
 regions.
 
-This is because replicas are written *synchronously* and making a `write
-operation`_ wait for all the replicas to write somewhere in a data center
+This is because replicas are written *synchronously*, and making a :ref:`write
+operation <crate-reference:concept-data-storage>` wait for all the replicas
+to write somewhere in a data center
 hundreds of miles away can lead to noticeable latency and cause the cluster to
 slow down.
 
@@ -40,7 +41,8 @@ For a multi-zone setup, CrateDB clusters need to fulfill the following:
 3. When querying data, all data should only be collected from shards that are
    inside the same zone as the initial request.
 
-To achieve these requirements, make use of `shard allocation awareness`_, which
+To achieve these requirements, make use of :ref:`shard allocation awareness
+<crate-reference:conf_routing>`, which
 allows you to configure `shard`_ and replica allocation. If you are new to setting
 up a multi-node CrateDB cluster, you should read our :ref:`multi-node setup
 <multi_node_setup>` guide first.
@@ -53,10 +55,12 @@ Tag assignments
 
 Once you have fulfilled the :ref:`multi-zone requirements
 <multi-zone-requirements>`, assign a tag containing the name of the zone to
-the cluster nodes. This enables `shard allocation awareness`_.
+the cluster nodes. This enables :ref:`shard allocation awareness
+<crate-reference:conf_routing>`.
 
 You can assign arbitrary tags to nodes in your `configuration`_ file with
-`node custom attributes`_ or via the ``-C`` option at startup.
+:ref:`node custom attributes <crate-reference:conf-node-attributes>` or via
+the ``-C`` option at startup.
 
 .. SEEALSO::
 
@@ -92,8 +96,8 @@ For example:
 Allocation awareness
 ====================
 
-Once you have assigned zone tags, they can be set as attributes for `shard
-allocation awareness`_ with the
+Once you have assigned zone tags, they can be set as attributes for
+:ref:`shard allocation awareness <crate-reference:conf_routing>` with the
 ``cluster.routing.allocation.awareness.attributes`` setting.
 
 For example, use the ``zone`` tag that you just assigned to your node as an
@@ -115,10 +119,11 @@ them accordingly:
     node.attr.zone: us-west-1
     cluster.routing.allocation.awareness.attributes: zone
 
-Now start your cluster and then `create a table`_ with 6 shards and 1 replica.
+Now start your cluster and then :ref:`create a table <crate-reference:sql-create-table>`
+with 6 shards and 1 replica.
 
 As an example, you can create such a table by executing a statement like this
-in the `CrateDB Shell`_:
+in the :ref:`CrateDB Shell <crate-crash:index>`:
 
 .. code-block:: sql
 
@@ -134,7 +139,7 @@ each node) and the replicas will be allocated on nodes with a different
 
 If this is not possible (i.e. ``num replicas > num zones - 1``), CrateDB will
 still allocate the replicas on nodes with the same ``zone`` value to avoid
-`unassigned shards`_.
+:ref:`unassigned shards <sharding-under-allocation>`.
 
 .. NOTE::
 
@@ -156,7 +161,7 @@ value, it only executes the request on `shards`_ allocated on nodes with the sam
 This means you need to know the different ``zone`` attribute values to force
 awareness on nodes.
 
-You can force `awareness`_ on certain attributes with the
+You can force awareness on certain attributes with the
 ``cluster.routing.allocation.awareness.force.*.values`` setting, where ``*``
 is a placeholder for the awareness attribute, which can be defined using the
 ``cluster.routing.allocation.awareness.attributes`` setting.
@@ -175,7 +180,7 @@ nodes.
 .. TIP::
 
    If you have 2 nodes with the ``zone`` attribute set to ``us-east-1`` and you
-   `create a table`_ with 8 shards and 1 replica, 8 primary shards will be allocated
+   :ref:`create a table <crate-reference:sql-create-table>` with 8 shards and 1 replica, 8 primary shards will be allocated
    and the 8 replica shards will be left unassigned. Only when you add a new node
    with the ``zone`` attribute set to ``us-west-1`` will the replica shards be
    allocated.
@@ -189,16 +194,10 @@ them, you should be able to set up a functioning cluster that spans across
 multiple zones and regions. However, be aware of the drawbacks that a
 multi-region setup can have, specifically in regards to latency.
 
-.. _awareness: https://crate.io/docs/crate/reference/en/latest/config/cluster.html#routing-allocation
-.. _configuration guide: https://crate.io/docs/reference/configuration.html
-.. _configuration: https://crate.io/docs/crate/reference/en/latest/config/index.html
-.. _CrateDB Shell: https://crate.io/docs/crate/crash/en/latest/
-.. _create a table: https://crate.io/docs/crate/reference/en/latest/general/ddl/create-table.html
-.. _node custom attributes: https://crate.io/docs/crate/reference/en/latest/config/node.html#custom-attributes
-.. _replica: https://crate.io/docs/crate/reference/en/latest/general/ddl/replication.html
-.. _replicas: https://crate.io/docs/crate/reference/en/latest/general/ddl/replication.html
-.. _shard allocation awareness: https://crate.io/docs/crate/reference/en/latest/config/cluster.html#routing-allocation
-.. _shard: https://crate.io/docs/crate/reference/en/latest/general/ddl/sharding.html
-.. _shards: https://crate.io/docs/crate/reference/en/latest/general/ddl/sharding.html
-.. _unassigned shards: https://crate.io/docs/crate/howtos/en/latest/performance/sharding.html#under-allocation-is-bad
-.. _write operation: https://crate.io/docs/crate/reference/en/latest/concepts/storage-consistency.html#data-storage
+
+.. _configuration guide: https://cratedb.com/docs/reference/configuration.html
+.. _configuration: https://cratedb.com/docs/crate/reference/en/latest/config/index.html
+.. _replica: https://cratedb.com/docs/crate/reference/en/latest/general/ddl/replication.html
+.. _replicas: https://cratedb.com/docs/crate/reference/en/latest/general/ddl/replication.html
+.. _shard: https://cratedb.com/docs/crate/reference/en/latest/general/ddl/sharding.html
+.. _shards: https://cratedb.com/docs/crate/reference/en/latest/general/ddl/sharding.html

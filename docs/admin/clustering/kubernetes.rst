@@ -142,8 +142,8 @@ Clustering behavior
    The ``discovery.zen.minimum_master_nodes`` setting is :ref:`no longer used
    <node-discovery>` in CrateDB versions 4.x and above.
 
-The `discovery.zen.minimum_master_nodes`_ setting affects `metadata
-master`_ election.
+The `discovery.zen.minimum_master_nodes`_ setting affects :ref:`metadata
+master <crate-reference:concept-clusters>` election.
 
 This setting can be changed while CrateDB is running, like so:
 
@@ -183,7 +183,8 @@ CrateDB has two settings that depend on cluster size and determine how cluster
 
 The values of these settings must be changed via Kubernetes. Unlike with
 clustering behavior reconfiguration, you cannot change these values using
-CrateDB's `runtime configuration`_ capabilities.
+CrateDB's :ref:`runtime configuration <crate-reference:administration-runtime-config>`
+capabilities.
 
 If you are using a controller configuration like the example given in the
 :ref:`Kubernetes deployment guide <cratedb-kubernetes>`, you can make this
@@ -197,33 +198,30 @@ Control`_.
 .. NOTE::
 
     You can scale a CrateDB cluster without updating these values, but the
-    `CrateDB Admin UI`_ will display `node check`_ failures.
+    :ref:`CrateDB Admin UI <crate-admin-ui:index>` will display
+    :ref:`node check <crate-reference:sys-node-checks-settings>` failures.
 
     However, you should only do this on a production cluster if you need to
     scale to handle a load spike quickly.
 
 
-.. _adjust this number carefully: https://crate.io/docs/crate/reference/en/3.3/config/cluster.html#discovery-zen-minimum-master-nodes
+.. _adjust this number carefully: https://cratedb.com/docs/crate/reference/en/3.3/config/cluster.html#discovery-zen-minimum-master-nodes
 .. _containerization: https://www.docker.com/resources/what-container
-.. _CrateDB Admin UI: https://crate.io/docs/crate/admin-ui/en/latest/
 .. _CrateDB Docker image: https://hub.docker.com/_/crate/
 .. _deleted and recreated: https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/#disruptive-updates
-.. _discovery.zen.minimum_master_nodes: https://crate.io/docs/crate/reference/en/3.3/config/cluster.html#discovery-zen-minimum-master-nodes
+.. _discovery.zen.minimum_master_nodes: https://cratedb.com/docs/crate/reference/en/3.3/config/cluster.html#discovery-zen-minimum-master-nodes
 .. _Docker: https://www.docker.com/
-.. _gateway.expected_data_nodes: https://crate.io/docs/crate/reference/en/latest/admin/system-information.html#recovery-expected-data-nodes
-.. _gateway.recover_after_data_nodes: https://crate.io/docs/crate/reference/en/latest/admin/system-information.html#recovery-after-data-nodes
+.. _gateway.expected_data_nodes: https://cratedb.com/docs/crate/reference/en/latest/admin/system-information.html#recovery-expected-data-nodes
+.. _gateway.recover_after_data_nodes: https://cratedb.com/docs/crate/reference/en/latest/admin/system-information.html#recovery-after-data-nodes
 .. _horizontally scalable: https://en.wikipedia.org/wiki/Scalability#Horizontal_(scale_out)_and_vertical_scaling_(scale_up)
 .. _imperative command: https://kubernetes.io/docs/concepts/overview/working-with-objects/object-management/#imperative-commands
 .. _kubectl: https://kubernetes.io/docs/reference/kubectl/overview/
 .. _Kubernetes: https://kubernetes.io/
-.. _metadata master: https://crate.io/docs/crate/reference/en/latest/concepts/shared-nothing.html#cluster-state-management
-.. _metadata: https://crate.io/docs/crate/reference/en/latest/config/cluster.html#metadata-gateway
+.. _metadata: https://cratedb.com/docs/crate/reference/en/latest/config/cluster.html#metadata
 .. _namespace: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
-.. _node check: https://crate.io/docs/crate/reference/en/latest/admin/system-information.html#description-of-checked-node-settings
 .. _persistent volumes: https://kubernetes.io/docs/concepts/storage/persistent-volumes/
 .. _pods: https://kubernetes.io/docs/concepts/workloads/pods/
 .. _rolling update strategy: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#rolling-updates
-.. _runtime configuration: https://crate.io/docs/crate/reference/en/latest/admin/runtime-config.html#administration-runtime-config
 .. _shared-nothing architecture : https://en.wikipedia.org/wiki/Shared-nothing_architecture
 .. _split-brain: https://en.wikipedia.org/wiki/Split-brain
 .. _StatefulSet: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/

@@ -20,7 +20,7 @@ mechanism does not work out of the box.
 Luckily, CrateDB has several built-in mechanisms for unicast host discovery,
 also one for EC2. EC2 discovery uses the `EC2 API`_ to look up other EC2 hosts
 that are then used as unicast hosts for node discovery (see
-`Unicast Host Discovery`_).
+:ref:`Unicast Host Discovery <crate-reference:conf_host_discovery>`).
 
 .. NOTE::
 
@@ -57,8 +57,8 @@ AWS provides `IAM roles`_ to avoid any distribution of your AWS credentials
 to the instances.
 
 CrateDB binds to the loopback interface by default. To get EC2 discovery
-working, you need to update the `Hosts`_ setting to bind to and publish the
-site-local address::
+working, you need to update the :ref:`host <crate-reference:conf_hosts>`
+setting, in order to bind to and publish the site-local address::
 
   network.host: _site_
 
@@ -138,7 +138,7 @@ For example, when you launch your instances with the security group
 The combination with the unique cluster name makes the production setup very
 simple yet secure.
 
-See also `discovery.ec2.groups`_.
+See also :ref:`crate-reference:discovery.ec2.groups`.
 
 Optional Filters
 ================
@@ -184,7 +184,7 @@ within the same security group, e.g::
       tag.env: production
       tag.type: database
 
-See also `discovery.ec2.tags`_.
+See also :ref:`crate-reference:discovery.ec2.tag.name`.
 
 Filter by Availability Zones
 ----------------------------
@@ -199,19 +199,14 @@ discovery by availability zone::
       groups: sg-crate-demo
       availability_zones: us-west-1
 
-See also `discovery.ec2.availability_zones`_.
+See also :ref:`crate-reference:discovery.ec2.availability_zones`.
 
-.. _3.3: https://crate.io/docs/crate/reference/en/3.3/config/cluster.html#discovery
+.. _3.3: https://cratedb.com/docs/crate/reference/en/3.3/config/cluster.html#discovery
 .. _Amazon EC2: https://aws.amazon.com/ec2/
 .. _AWS CLI: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#launch-instance-with-role-cli
 .. _AWS Console: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#launch-instance-with-role-console
 .. _AWS guide: httsp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html
-.. _discovery.ec2.availability_zones: https://crate.io/docs/crate/reference/en/latest/config/cluster.html#discovery-ec2-availability-zones
-.. _discovery.ec2.groups: https://crate.io/docs/crate/reference/en/latest/config/cluster.html#discovery-ec2-groups
-.. _discovery.ec2.tags: https://crate.io/docs/crate/reference/en/latest/config/cluster.html#discovery-ec2-tag-name
 .. _EC2 API: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Welcome.html
-.. _Hosts: https://crate.io/docs/crate/reference/en/latest/config/node.html#hosts
 .. _IAM roles: https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html
 .. _latest: https://crate.io/docs/crate/reference/en/latest/config/cluster.html#discovery
 .. _sign the requests: https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html
-.. _Unicast Host Discovery: https://crate.io/docs/crate/reference/en/latest/config/cluster.html#unicast-host-discovery

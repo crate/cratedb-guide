@@ -36,8 +36,8 @@ the next section.
 Single inserts
 --------------
 
-`Single inserts`_ are the most basic sort of insert statement, and look like
-this:
+:ref:`Single inserts <crate-reference:dml-inserting-data>` are the most basic
+sort of insert statement, and look like this:
 
 .. code-block:: psql
 
@@ -71,7 +71,7 @@ reads, replication, and cluster management).
 ``UNNEST``
 ----------
 
-The `UNNEST`_ function produce rows, like so:
+The :ref:`UNNEST <crate-reference:unnest>` function produce rows, like so:
 
 .. code-block:: psql
 
@@ -201,10 +201,11 @@ For example, using the CrateDB Python client, here's a :ref:`single insert
 Bulk operations
 ---------------
 
-You can use the `bulk operations`_ feature of the `CrateDB HTTP endpoint`_ to
-perform many inserts in a single operation.
+You can use the :ref:`bulk operations <crate-reference:http-bulk-ops>` feature
+of the :ref:`CrateDB HTTP endpoint <crate-reference:interface-http>` to perform
+many inserts in a single operation.
 
-The advantages are the same as using the :ref:`UNNEST method<inserts_unnest>`:
+The advantages are the same as using the :ref:`UNNEST method <inserts_unnest>`:
 
 - Significantly less internal network traffic than executing each insert
   statement individually
@@ -268,7 +269,7 @@ Typically, prepared statements are used :ref:`single insert statements
 Prepared statements with single inserts will usually perform better than
 :ref:`standard querying <inserts_standard_querying>` with single inserts, and
 should be comparable to standard querying with both the :ref:`UNNEST
-method<inserts_unnest>` and :ref:`multiple value expressions
+method <inserts_unnest>` and :ref:`multiple value expressions
 <inserts_multiple_values>`.
 
 
@@ -300,15 +301,9 @@ throughput of your cluster with different setups and under different loads.
 
 
 .. _addBatch: https://docs.oracle.com/javase/7/docs/api/java/sql/Statement.html#addBatch(java.lang.String)
-.. _benchmarking: https://crate.io/a/insert-boost-on-replicas/
-.. _bulk operations: https://crate.io/docs/crate/reference/en/latest/interfaces/http.html#bulk-operations
+.. _benchmarking: https://cratedb.com/blog/insert-boost-on-replicas
 .. _cr8: https://github.com/mfussenegger/cr8/
-.. _CrateDB HTTP endpoint: https://crate.io/docs/crate/reference/en/latest/interfaces/http.html
 .. _executeBatch: https://docs.oracle.com/javase/7/docs/api/java/sql/Statement.html#executeBatch()
-.. _PostgreSQL wire protocol: https://crate.io/docs/crate/reference/en/latest/protocols/postgres.html
-.. _single inserts: https://crate.io/docs/crate/reference/en/latest/general/dml.html#dml-inserting-data
-.. _SQL HTTP endpoint: https://crate.io/docs/crate/reference/protocols/http.html
-.. _the JDBC client: https://crate.io/docs/jdbc/en/latest/
-.. _translog.durability: https://crate.io/docs/crate/reference/en/latest/sql/reference/create_table.html#translog-durability
-.. _UNNEST reference documentation: https://crate.io/docs/crate/reference/en/latest/sql/statements/insert.html?highlight=unnest#description
-.. _UNNEST: https://crate.io/docs/crate/reference/en/latest/sql/table_functions.html#unnest-array-array
+.. _the JDBC client: https://cratedb.com/docs/jdbc/
+.. _translog.durability: https://cratedb.com/docs/crate/reference/en/latest/sql/reference/create_table.html#translog-durability
+.. _UNNEST reference documentation: https://cratedb.com/docs/crate/reference/en/latest/sql/statements/insert.html?highlight=unnest#description

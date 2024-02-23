@@ -24,7 +24,8 @@ done if you want to update CrateDB.
 
 .. CAUTION::
 
-   These instructions work for most ways of installing and running CrateDB.
+   These instructions work for most ways of :ref:`installing <install>` and
+   running CrateDB.
    However, if you are using Docker, take note that ``docker service update``
    performs a :ref:`rolling_upgrade`.
 
@@ -36,7 +37,8 @@ Upgrade process
 
 .. WARNING::
 
-    Before upgrading, you should `back up your data`_.
+    Before upgrading, you should :ref:`back up your data
+    <crate-reference:snapshot-restore>`.
 
 Stop every node
 ---------------
@@ -64,6 +66,4 @@ Once the CrateDB software on node in the cluster has been updated, start the
 appropriate to your setup.
 
 .. _Arch Linux AUR package: https://aur.archlinux.org/packages/crate/
-.. _back up your data: https://crate.io/docs/crate/reference/en/latest/admin/snapshots.html
-.. _install: https://crate.io/docs/install/local/linux/
 .. _release directory: https://cdn.crate.io/downloads/releases/

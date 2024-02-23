@@ -108,4 +108,4 @@ and get started!
 .. _Cloud Console: https://console.cratedb.cloud/
 .. _Metabase: https://www.metabase.com/
 .. _video tutorial: https://www.youtube.com/watch?v=veuR_76njCo
-.. _in this how-to: https://community.crate.io/t/importing-data-to-cratedb-cloud-clusters/1467
+.. _in this how-to: https://community.cratedb.com/t/importing-data-to-cratedb-cloud-clusters/1467

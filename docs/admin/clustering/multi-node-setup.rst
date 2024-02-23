@@ -64,20 +64,21 @@ experimentation purposes, this is probably your best option.
     a single cluster without the risk of data loss.
 
     If you have multiple nodes running on different hosts, you can check
-    whether they have formed independent clusters by visiting the `admin UI`_
+    whether they have formed independent clusters by visiting the
+    :ref:`Admin UI <crate-admin-ui:index>`
     (which runs on every node) and checking the `cluster browser`_.
 
     If you end up with multiple independent clusters and instead want to
     form a single cluster, follow these steps:
 
-      1. `Back up your data`_
-      2. Shut down all the nodes
-      3. Completely wipe each node by deleting the contents of the ``data``
-         directory under `CRATE_HOME`_
-      4. Follow the instructions in :ref:`manual bootstrapping
-         <manual-bootstrapping>`)
-      5. Restart all the nodes and verify that they have formed a single cluster
-      6. Restore your data
+    1. :ref:`Back up your data <crate-reference:snapshot-restore>`
+    2. Shut down all the nodes
+    3. Completely wipe each node by deleting the contents of the ``data``
+       directory under `CRATE_HOME`_
+    4. Follow the instructions in :ref:`manual bootstrapping
+       <manual-bootstrapping>`)
+    5. Restart all the nodes and verify that they have formed a single cluster
+    6. Restore your data
 
 
 .. _auto-bootstrapping-tarball:
@@ -85,7 +86,8 @@ experimentation purposes, this is probably your best option.
 Tarball installation
 ^^^^^^^^^^^^^^^^^^^^
 
-If you are installing CrateDB using the `tarball method`_, you can start a
+If you are installing CrateDB using the :ref:`tarball method <install-tarball>`,
+you can start a
 single-host three-node cluster with auto-bootstrapping by following these
 instructions.
 
@@ -104,10 +106,11 @@ instructions.
 
    .. NOTE::
 
-      Configuring the `metadata gateway`_ is a safeguarding mechanism that is
+      Configuring the :ref:`metadata gateway <metadata-gateway>` is a safeguarding
+      mechanism that is
       useful for production clusters. It is not strictly necessary when running
-      in development. However, the `admin UI`_ will issue warnings if you have
-      not configured the metadata gateway.
+      in development. However, the :ref:`Admin UI <crate-admin-ui:index>` will
+      issue warnings if you have not configured the metadata gateway.
 
    .. SEEALSO::
 
@@ -146,7 +149,8 @@ instructions.
        `bin/crate`_, and leave this process running. You should now have
        multiple concurrent `bin/crate`_ processes.
 
-5. Visit the `admin UI`_ on one of the nodes. Check the `cluster browser`_ to
+5. Visit the :ref:`Admin UI <crate-admin-ui:index>` on one of the nodes. Check the
+   `cluster browser`_ to
    verify that the cluster has auto-bootstrapped with three nodes. You should see
    something like this:
 
@@ -162,8 +166,8 @@ Manual bootstrapping
 To run a CrateDB cluster across multiple hosts, you must manually configure the
 bootstrapping process by telling nodes how to:
 
-  a. :ref:`Discover other nodes <node-discovery>`
-  b. :ref:`Elect a master node <master-node-election>` the first time
+a. :ref:`Discover other nodes <node-discovery>`
+b. :ref:`Elect a master node <master-node-election>` the first time
 
 You can also configure the :ref:`metadata gateway <metadata-gateway>` (as with
 auto-bootstrapping).
@@ -178,8 +182,9 @@ Node discovery
 Seeding manually
 """"""""""""""""
 
-With CrateDB 4.x and above, you can configure a list of nodes to `seed the
-discovery process`_ with the ``discovery.seed_hosts`` setting in your
+With CrateDB 4.x and above, you can configure a list of nodes to :ref:`seed the
+discovery process <crate-reference:conf_discovery>` with the
+``discovery.seed_hosts`` setting in your
 `configuration`_ file. This setting should contain one identifier per
 master-eligible node. For example:
 
@@ -220,7 +225,7 @@ you can configure CrateDB to fetch a list of seed hosts from an external source.
 
 The currently supported sources are:
 
-1. `DNS`_
+1. :ref:`DNS <crate-reference:conf_dns_discovery>`
 
    To enable DNS discovery, configure the ``discovery.seed_providers`` setting
    in your `configuration`_ file to ``srv``:
@@ -232,7 +237,7 @@ The currently supported sources are:
    CrateDB will perform a DNS query using `SRV records`_ and use the results to
    generate a list of `unicast hosts`_ for node discovery.
 
-2. `Amazon EC2`_
+2. :ref:`Amazon EC2 <crate-reference:conf_ec2_discovery>`
 
    To enable Amazon EC2 discovery, configure the ``discovery.seed_providers``
    setting in your `configuration`_ file:
@@ -268,7 +273,8 @@ Master node election
 ^^^^^^^^^^^^^^^^^^^^
 
 The master node is responsible for making changes to the global cluster state.
-The cluster `elects the master node`_ from the configured list of
+The cluster :ref:`elects the master node <crate-reference:concept-master-election>`
+from the configured list of
 master-eligible nodes the first time a cluster is bootstrapped. This is not
 necessary if nodes are added later or are restarted.
 
@@ -323,7 +329,7 @@ a three-node cluster, you must declare all nodes to be master-eligible.
 Metadata gateway
 ^^^^^^^^^^^^^^^^
 
-When running a multi-node cluster, you can configure the `metadata gateway`_
+When running a multi-node cluster, you can configure the :ref:`metadata gateway <metadata-gateway>`
 settings so that CrateDB delays recovery until a certain number of nodes is
 available.
 This is useful because if recovery is started when some nodes are down 
@@ -401,7 +407,7 @@ must specify a list of master-eligible nodes (:ref:`see above
 hostname, or IP address.
 
 By default, CrateDB sets the node name to a random value from the
-`sys.summits`_ table.
+:ref:`crate-reference:sys-summits` table.
 
 You can override this behavior by configuring a custom node name using the
 `node.name`_ setting in your `configuration`_ file. For example:
@@ -462,47 +468,34 @@ Edit the `transport.tcp.port`_ setting in your `configuration`_ file:
 
 .. SEEALSO::
 
-    `More information about port settings`_
+    :ref:`More information about port settings <crate-reference:conf_ports>`
 
 
 .. _127.0.0.1:4200: http://127.0.0.1:4200/
 .. _127.0.0.1:4201: http://127.0.0.1:4201/
-.. _admin UI: https://crate.io/docs/crate/admin-ui/en/latest/
 .. _Amazon EC2 API: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Welcome.html
-.. _Amazon EC2: https://crate.io/docs/crate/reference/en/latest/config/cluster.html#discovery-on-amazon-ec2
 .. _Azure Virtual Machine API: https://docs.microsoft.com/en-us/rest/api/compute/virtualmachines
-.. _Back up your data: https://crate.io/a/backing-up-and-restoring-cratedb/
-.. _bin/crate: https://crate.io/docs/crate/reference/en/latest/cli-tools.html#crate
-.. _cluster browser: https://crate.io/docs/crate/admin-ui/en/latest/cluster.html
-.. _cluster: https://crate.io/docs/crate/reference/en/latest/concepts/shared-nothing.html
-.. _cluster.initial_master_nodes: https://crate.io/docs/crate/reference/en/latest/config/cluster.html#cluster-initial-master-nodes
-.. _cluster.name: https://crate.io/docs/crate/reference/en/latest/config/node.html#cluster-name
-.. _configuration: https://crate.io/docs/crate/reference/en/latest/config/index.html
-.. _CRATE_HOME: https://crate.io/docs/crate/reference/en/latest/config/environment.html#conf-env-crate-home
+.. _bin/crate: https://cratedb.com/docs/crate/reference/en/latest/cli-tools.html#crate
+.. _cluster browser: https://cratedb.com/docs/crate/admin-ui/en/latest/cluster.html
+.. _cluster.initial_master_nodes: https://cratedb.com/docs/crate/reference/en/latest/config/cluster.html#cluster-initial-master-nodes
+.. _cluster.name: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#cluster-name
+.. _configuration: https://cratedb.com/docs/crate/reference/en/latest/config/index.html
+.. _CRATE_HOME: https://cratedb.com/docs/crate/reference/en/latest/config/environment.html#conf-env-crate-home
 .. _daemon: https://en.wikipedia.org/wiki/Daemon_(computing)
-.. _discovery.zen.minimum_master_nodes: https://crate.io/docs/crate/reference/en/3.3/config/cluster.html#discovery-zen-minimum-master-nodes
-.. _discovery.zen.ping.unicast.hosts: https://crate.io/docs/crate/reference/en/3.3/config/cluster.html#unicast-host-discovery
-.. _DNS: https://crate.io/docs/crate/reference/en/latest/config/cluster.html#discovery-via-dns
-.. _elects the master node: https://crate.io/docs/crate/reference/en/latest/concepts/shared-nothing.html#master-node-election
-.. _full cluster restarts: https://crate.io/docs/crate/howtos/en/latest/admin/full-restart-upgrade.html
-.. _gateway.expected_data_nodes: https://crate.io/docs/crate/reference/en/latest/config/cluster.html#gateway-expected-data-nodes
-.. _gateway.recover_after_data_nodes: https://crate.io/docs/crate/reference/en/latest/config/cluster.html#gateway-recover-after-data-nodes
+.. _discovery.zen.minimum_master_nodes: https://cratedb.com/docs/crate/reference/en/3.3/config/cluster.html#discovery-zen-minimum-master-nodes
+.. _discovery.zen.ping.unicast.hosts: https://cratedb.com/docs/crate/reference/en/3.3/config/cluster.html#unicast-host-discovery
+.. _gateway.expected_data_nodes: https://cratedb.com/docs/crate/reference/en/latest/config/cluster.html#gateway-expected-data-nodes
+.. _gateway.recover_after_data_nodes: https://cratedb.com/docs/crate/reference/en/latest/config/cluster.html#gateway-recover-after-data-nodes
 .. _hostname: https://en.wikipedia.org/wiki/Hostname
-.. _latest: https://crate.io/docs/crate/reference/en/latest/config/cluster.html#discovery
-.. _Metadata configuration settings: https://crate.io/docs/crate/reference/en/latest/config/cluster.html#metadata
-.. _metadata gateway: https://crate.io/docs/crate/reference/en/latest/config/cluster.html#metadata-gateway
-.. _More information about port settings: https://crate.io/docs/crate/reference/en/latest/config/node.html#ports
-.. _network.publish_host: https://crate.io/docs/crate/reference/en/latest/config/node.html#network-publish-host
-.. _node.master: https://crate.io/docs/crate/reference/en/latest/config/node.html#node-master
-.. _node.name: https://crate.io/docs/crate/reference/en/latest/config/node.html#node-name
-.. _quorum guide: https://crate.io/docs/crate/howtos/en/latest/architecture/shared-nothing.html#master-node-election
-.. _quorum size: https://crate.io/docs/crate/reference/en/latest/concepts/shared-nothing.html#master-node-election
+.. _Metadata configuration settings: https://cratedb.com/docs/crate/reference/en/latest/config/cluster.html#metadata
+.. _network.publish_host: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#network-publish-host
+.. _node.master: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#node-master
+.. _node.name: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#node-name
+.. _quorum guide: https://cratedb.com/docs/crate/howtos/en/latest/architecture/shared-nothing.html#master-node-election
+.. _quorum size: https://cratedb.com/docs/crate/reference/en/latest/concepts/shared-nothing.html#master-node-election
 .. _quorum: https://en.wikipedia.org/wiki/Quorum_(distributed_computing)
-.. _seed the discovery process: https://crate.io/docs/crate/reference/en/latest/config/cluster.html#discovery
 .. _split-brain: https://en.wikipedia.org/wiki/Split-brain_(computing)
 .. _SRV records: https://en.wikipedia.org/wiki/SRV_record
-.. _sys.summits: https://crate.io/docs/crate/reference/en/latest/admin/system-information.html#summits
-.. _tarball method: https://crate.io/docs/crate/tutorials/en/latest/install.html#install-adhoc
-.. _transport.publish_port: https://crate.io/docs/crate/reference/en/latest/config/node.html#transport-publish-port
-.. _transport.tcp.port: https://crate.io/docs/crate/reference/en/latest/config/node.html#transport-tcp-port
-.. _unicast hosts: https://crate.io/docs/crate/reference/en/latest/config/cluster.html#unicast-host-discovery
+.. _transport.publish_port: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#transport-publish-port
+.. _transport.tcp.port: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#transport-tcp-port
+.. _unicast hosts: https://cratedb.com/docs/crate/reference/en/latest/config/cluster.html#unicast-host-discovery

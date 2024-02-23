@@ -17,7 +17,8 @@ the type of hardware you're using.
 
    This guide assumes you know the basics.
 
-   If you are looking for an intro to sharding, see `Sharding`_.
+   If you are looking for an intro to sharding, see :ref:`sharding
+   <crate-reference:ddl-sharding>`.
 
 .. rubric:: Table of contents
 
@@ -26,6 +27,8 @@ the type of hardware you're using.
 
 Optimising for query performance
 ================================
+
+.. _sharding-under-allocation:
 
 Under-allocation is bad
 -----------------------
@@ -89,7 +92,8 @@ based on the assumption that your nodes have two CPUs each.
 
 .. CAUTION::
 
-   If you are using `partitioned tables`_, note that each partition is
+   If you are using :ref:`partitioned tables <crate-reference:partitioned-tables>`,
+   note that each partition is
    clustered into as many shards as you configure for the table.
 
    For example, a table with four shards and two partitions will have eight
@@ -117,6 +121,5 @@ ingestion throughput.
 It's a good idea to benchmark your particular setup so as to find the sweet
 spot.
 
-.. _we have found: https://crate.io/a/big-cluster-insights-ingesting/
-.. _Sharding: https://crate.io/docs/crate/reference/en/latest/sql/ddl/sharding.html
-.. _partitioned tables: https://crate.io/docs/crate/reference/en/latest/sql/partitioned_tables.html
+
+.. _we have found: https://cratedb.com/blog/big-cluster-insights-ingesting

@@ -51,12 +51,15 @@ huge difference in query response times.
 For some analytics use-cases, this is an acceptable trade-off.
 
 CrateDB users can emulate this down-sampling behaviour with a combination of
-`LIMITs`_ and `sub-selects`_. However, doing so involves costly data merges in
+:ref:`LIMITs <crate-reference:sql-select-limit>` and
+:ref:`sub-selects <crate-reference:sql-select-sub-select>`.
+However, doing so involves costly data merges in
 the query execution plan that reduce the parallelization (and thus performance)
 of a distributed query.
 
 A better way to emulate down-sampling is to filter on the ``_docid`` system
-column using a `modulo (%) operation`_, like this::
+column using a :ref:`modulo (%) operation <crate-reference:arithmetic>`,
+like this::
 
    cr> SELECT
       device_id,
@@ -105,8 +108,5 @@ to the original result.
    based sampling.
 
 .. _down-sampling: https://grisha.org/blog/2015/03/28/on-time-series/#downsampling
-.. _LIMITs: https://crate.io/docs/crate/reference/en/latest/sql/statements/select.html#limit
 .. _Lucene segment: https://stackoverflow.com/a/2705123
-.. _modulo (%) operation: https://crate.io/docs/crate/reference/en/latest/general/builtins/arithmetic.html
 .. _normal distribution: https://en.wikipedia.org/wiki/Normal_distribution
-.. _sub-selects: https://crate.io/docs/crate/reference/en/latest/sql/statements/select.html#subselect

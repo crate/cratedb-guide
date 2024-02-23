@@ -103,9 +103,8 @@ The final export query::
 Importing data into CrateDB
 ===========================
 
-Use the ``COPY FROM`` statement to import your CSV file into CrateDB.
-
-For more in-depth documentation on ``COPY FROM``, see `COPY FROM`_.
+Use the :ref:`COPY FROM <crate-reference:sql-copy-from>` statement to
+import your CSV file into CrateDB.
 
 ::
 
@@ -136,9 +135,8 @@ For example:
   CrateDB, the latest version of the `CrateDB Python package`_ is required.
 
 
-.. _COPY FROM: https://crate.io/docs/crate/reference/sql/reference/copy_from.html
 .. _CrateDB Python package: https://pypi.org/project/crate/
-.. _CrateDB: https://crate.io/
+.. _CrateDB: https://cratedb.com/
 .. _csvkit: https://csvkit.readthedocs.io/en/latest/
 .. _csvsql: https://csvkit.readthedocs.io/en/latest/scripts/csvsql.html
 .. _date/time types in MySQL: https://dev.mysql.com/doc/refman/8.0/en/date-and-time-types.html

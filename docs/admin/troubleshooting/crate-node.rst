@@ -34,7 +34,8 @@ master-eligible nodes in a cluster, you may need to form a new cluster.
 When forming a new cluster, you may have to change the `role`_ of one or more
 nodes. Changing the role of a node is referred to as *repurposing* a node.
 
-Each node checks the contents of its `data path`_ at startup. If CrateDB
+Each node checks the contents of its :ref:`data path <crate-reference:conf-env>`
+at startup. If CrateDB
 discovers unexpected data, it will refuse to start. Specifically:
 
 - Nodes configured with `node.data`_ set to ``false`` will refuse to start if
@@ -44,7 +45,8 @@ discovers unexpected data, it will refuse to start. Specifically:
   set to ``false`` will refuse to start if they have any index metadata at
   startup
 
-The `crate-node`_ ``repurpose`` command can help you clean up the necessary
+The `crate-node`_ :ref:`repurpose command <crate-reference:cli-crate-node-commands>`
+can help you clean up the necessary
 node data so that CrateDB can be restarted with a new role.
 
 
@@ -54,7 +56,7 @@ Procedure
 To repurpose a node, first of all, you must stop the node.
 
 Then, update the settings `node.data`_ and `node.master`_ in the ``crate.yml``
-`configuration file`_ as needed.
+:ref:`configuration file <crate-reference:config>` as needed.
 
 The ``node.data`` and ``node.master`` settings can be configured in four
 different ways, each corresponding to a different type of node:
@@ -149,11 +151,13 @@ node and subsequently perform an unsafe cluster bootstrap.
 
     Before you attempt this, we recommend you try one or both of the following:
 
-    1. Build a new cluster from a recent `snapshot`_ and then re-import any
+    1. Build a new cluster from a recent :ref:`snapshot <crate-reference:snapshot-restore>`
+       and then re-import any
        data that was ingested since the snapshot was taken.
 
     2. Recreate lost nodes using a copy of the data kept in the
-       `CRATE_HOME`_ directory (if you still have access to the file system).
+       :ref:`CRATE_HOME <crate-reference:conf-env>` directory, if you still
+       have access to the file system.
 
 
 Procedure
@@ -299,19 +303,15 @@ When the node is started again, it will be able to join a new cluster.
 
 .. NOTE::
 
-    You may also have to update the `discovery configuration`_ so that
+    You may also have to update the :ref:`discovery configuration
+    <crate-reference:conf_discovery>` so that
     nodes are able to find the new cluster.
 
 
-.. _configuration file: https://crate.io/docs/crate/reference/en/latest/config/index.html
-.. _CRATE_HOME: https://crate.io/docs/crate/reference/en/latest/config/environment.html#application-variables
-.. _crate-node: https://crate.io/docs/crate/reference/en/latest/cli-tools.html#cli-crate-node
-.. _data path: https://crate.io/docs/crate/reference/en/latest/config/environment.html#application-variables
-.. _discovery configuration: https://crate.io/docs/crate/reference/en/latest/config/cluster.html#discovery
-.. _node.data: https://crate.io/docs/crate/reference/en/latest/config/node.html#node-types
-.. _node.master: https://crate.io/docs/crate/reference/en/latest/config/node.html#node-types
-.. _quorum: https://crate.io/docs/crate/reference/en/latest/concepts/clustering.html#master-node-election
-.. _repurpose command: https://crate.io/docs/crate/reference/en/latest/admin/cli-tools.html#repurpose
-.. _role: https://crate.io/docs/crate/reference/en/latest/config/node.html#node-types
-.. _snapshot: https://crate.io/docs/crate/reference/en/latest/admin/snapshots.html
+.. _crate-node: https://cratedb.com/docs/crate/reference/en/latest/cli-tools.html#cli-crate-node
+.. _data path: https://cratedb.com/docs/crate/reference/en/latest/config/environment.html#application-variables
+.. _node.data: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#node-types
+.. _node.master: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#node-types
+.. _quorum: https://cratedb.com/docs/crate/reference/en/latest/concepts/clustering.html#master-node-election
+.. _role: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#node-types
 .. _UUID: https://en.wikipedia.org/wiki/Universally_unique_identifier
