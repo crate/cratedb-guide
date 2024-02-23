@@ -8,10 +8,11 @@ how to use CrateDB optimally, related to different topic domains.
 
 
 ```{toctree}
-:maxdepth: 3
+:maxdepth: 1
 
 document/index
 search/index
+industrial/index
 timeseries/index
 ../integrate/ml/index
 ```

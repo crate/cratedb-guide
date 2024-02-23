@@ -127,6 +127,20 @@ application and topic domains.
 :::
 
 
+:::{grid-item-card} Industrial Data
+:link: industrial
+:link-type: ref
+:link-alt: CrateDB in industrial / IIoT / Industry 4.0 scenarios
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-5
+
+{material-outlined}`precision_manufacturing;1.3em`
+:::
+
+
 :::{grid-item-card} Time Series Data
 :link: timeseries
 :link-type: ref
