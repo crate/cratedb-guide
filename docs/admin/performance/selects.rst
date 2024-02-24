@@ -107,6 +107,58 @@ to the original result.
    read from the file system. This makes it an ideal candidate for modulo
    based sampling.
 
+
+.. _rewrite-join-as-cte:
+
+Rewrite JOINs as CTEs
+=====================
+
+The article about `using common table expressions to speed up queries`_ shares
+a pattern you can use to replace JOINs with CTEs in your SQL queries, in order
+to achieve consistent and faster execution times. Please note that what CTEs to
+use depends on the profile of your data.
+
+**Example**
+
+.. code-block:: sql
+
+    -- Uses JOINs
+
+    SELECT SUM(quantity)
+    FROM invoices
+    JOIN invoice_items USING (invoice_number)
+    JOIN products USING (product_id)
+    WHERE product_description = 'super cool product'
+    AND invoices.issue_date BETWEEN '2024-01-01' AND '2024-02-01';
+
+.. code-block:: sql
+
+    -- Uses CTEs
+
+    WITH relevant_product_ids AS (
+        SELECT product_id
+        FROM products
+        WHERE product_description = 'super cool product'
+    ),
+    relevant_invoice_lines AS (
+        SELECT invoice_number, quantity
+        FROM invoice_items
+        WHERE invoice_items.product_id IN (SELECT relevant_product_ids.product_id FROM relevant_product_ids)
+    ),
+    relevant_invoices AS (
+        SELECT invoice_number, issue_date
+        FROM invoices
+        WHERE invoices.invoice_number IN (SELECT relevant_invoice_lines.invoice_number FROM relevant_invoice_lines)
+    )
+
+    SELECT SUM(quantity)
+    FROM relevant_invoices
+    JOIN relevant_invoice_lines USING (invoice_number)
+    WHERE relevant_invoices.issue_date BETWEEN '2024-01-01' AND '2024-02-01';
+
+
+
 .. _down-sampling: https://grisha.org/blog/2015/03/28/on-time-series/#downsampling
 .. _Lucene segment: https://stackoverflow.com/a/2705123
 .. _normal distribution: https://en.wikipedia.org/wiki/Normal_distribution
+.. _using common table expressions to speed up queries: https://community.cratedb.com/t/using-common-table-expressions-to-speed-up-queries/1719
