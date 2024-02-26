@@ -13,6 +13,7 @@ CrateDB database administration practices.
     bootstrap-checks
     create-user
     going-into-production
+    memory
     troubleshooting/index
 
 
@@ -24,7 +25,7 @@ clustering, sharding, partitioning, and performance tuning.
 
     clustering/index
     sharding-partitioning
-    performance/index
+    ../performance/index
 
 
 Guidelines about upgrading CrateDB.

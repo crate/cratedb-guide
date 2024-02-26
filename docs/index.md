@@ -13,7 +13,7 @@ massive amounts of data in near real-time, even with complex queries. It is
 PostgreSQL-compatible, and based on Lucene. 
 
 
-::::{grid} 3
+::::{grid} 2
 :padding: 0
 
 
@@ -56,6 +56,20 @@ PostgreSQL-compatible, and based on Lucene.
 :class-title: sd-fs-5
 
 {material-outlined}`auto_stories;1.3em`
+:::
+
+
+:::{grid-item-card} Performance Guides
+:link: performance
+:link-type: ref
+:link-alt: CrateDB Performance Guides
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-5
+
+{material-outlined}`speed;1.3em`
 :::
 
 
@@ -272,9 +286,10 @@ use-cases.
 install/index
 getting-started
 admin/index
+performance/index
+
 domain/index
 integrate/index
-
 reference-architectures/index
 ```
 

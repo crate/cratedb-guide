@@ -1,7 +1,7 @@
 .. _sharding_guide:
 
 ==============
-Sharding guide
+Sharding Guide
 ==============
 
 This document is a sharding best practice guide for CrateDB.
