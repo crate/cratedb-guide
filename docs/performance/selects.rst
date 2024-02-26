@@ -110,6 +110,38 @@ to the original result.
    based sampling.
 
 
+.. _downsampling-timestamp-binning:
+
+Downsampling with ``DATE_BIN``
+==============================
+
+For improved downsampling using time-bucketing and resampling, the article
+`resampling time-series data with DATE_BIN`_ shares patterns how to
+group records into time buckets and resample the values.
+
+This technique will improve query performance by reducing the amount of data
+needed to be transferred, by decreasing its granularity on the time dimension.
+Most often, this is applied when querying live system metrics data using
+visualization or dashboarding tools like Grafana and friends.
+
+.. code-block:: sql
+
+    SELECT ts_bin,
+           battery_level,
+           battery_status,
+           battery_temperature
+    FROM (
+      SELECT DATE_BIN('5 minutes'::INTERVAL, "time", 0) AS ts_bin,
+             battery_level,
+             battery_status,
+             battery_temperature,
+             ROW_NUMBER() OVER (PARTITION BY DATE_BIN('5 minutes'::INTERVAL, "time", 0) ORDER BY "time" DESC) AS "row_number"
+      FROM doc.sensor_readings
+    ) x
+    WHERE "row_number" = 1
+    ORDER BY 1 ASC
+
+
 .. _rewrite-join-as-cte:
 
 Rewrite JOINs as CTEs
@@ -198,5 +230,6 @@ and the same PK values, will also have identical ``_id`` values.
 .. _down-sampling: https://grisha.org/blog/2015/03/28/on-time-series/#downsampling
 .. _Lucene segment: https://stackoverflow.com/a/2705123
 .. _normal distribution: https://en.wikipedia.org/wiki/Normal_distribution
+.. _resampling time-series data with DATE_BIN: https://community.cratedb.com/t/resampling-time-series-data-with-date-bin/1009
 .. _retrieving records in bulk with a list of primary key values: https://community.cratedb.com/t/retrieving-records-in-bulk-with-a-list-of-primary-key-values/1721
 .. _using common table expressions to speed up queries: https://community.cratedb.com/t/using-common-table-expressions-to-speed-up-queries/1719
