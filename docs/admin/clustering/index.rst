@@ -14,5 +14,6 @@ adding more nodes. This section of the documentation covers that topic.
 
    multi-node-setup
    multi-zone-setup
+   scale-up-down
    kubernetes
    logical-replication-setup
