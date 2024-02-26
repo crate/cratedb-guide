@@ -3,7 +3,7 @@
 .. _full_restart_upgrade:
 
 ====================
-Full restart upgrade
+Full Restart Upgrade
 ====================
 
 .. rubric:: Table of contents
@@ -32,7 +32,7 @@ done if you want to update CrateDB.
    To do a full restart upgrade with Docker, you must remove the CrateDB
    service and then recreate it.
 
-Upgrade process
+Upgrade Process
 ===============
 
 .. WARNING::

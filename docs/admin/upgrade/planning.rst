@@ -5,7 +5,7 @@
 
 
 ==========================
-General upgrade guidelines
+General Upgrade Guidelines
 ==========================
 
 .. rubric:: Table of contents
@@ -14,7 +14,7 @@ General upgrade guidelines
    :local:
 
 
-Upgrade planning
+Upgrade Planning
 ================
 Before kicking off an upgrade, there is a set of guidelines to ensure the best outcome. Below you may find the fundamental steps to prepare for an upgrade.
 

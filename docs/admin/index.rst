@@ -27,11 +27,9 @@ clustering, sharding, partitioning, and performance tuning.
     performance/index
 
 
-Guidelines about upgrading CrateDB.
+Guidelines about upgrading CrateDB clusters.
 
 .. toctree::
     :maxdepth: 1
 
-    upgrade/planning
-    upgrade/rolling
-    upgrade/full
+    upgrade/index

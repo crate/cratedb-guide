@@ -2,7 +2,7 @@
 .. _rolling_upgrade:
 
 ===============
-Rolling upgrade
+Rolling Upgrade
 ===============
 
 .. rubric:: Table of contents
