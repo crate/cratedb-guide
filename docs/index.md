@@ -62,34 +62,6 @@ PostgreSQL-compatible, and based on Lucene.
 ::::
 
 
-
-## Reference Architectures
-
-Reference architectures illustrating how CrateDB can be used in a variety of
-use-cases.
-
-::::{grid} 1
-:padding: 0
-
-
-:::{grid-item-card} Reference Architectures
-:link: reference-architectures
-:link-type: ref
-:link-alt: Reference Architectures with CrateDB
-:padding: 3
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-
-![](https://cratedb.com/hs-fs/hubfs/nativesql.png?width=480&name=nativesql.png)
-
-:::
-
-::::
-
-
-
 ## Application Domains
 
 Learn how to apply CrateDB's features to optimally cover use-cases in different
@@ -268,6 +240,30 @@ frameworks.
 ::::
 
 
+## Reference Architectures
+
+Reference architectures illustrating how CrateDB can be used in a variety of
+use-cases.
+
+::::{grid} 1
+:padding: 0
+
+
+:::{grid-item-card} Reference Architectures
+:link: reference-architectures
+:link-type: ref
+:link-alt: Reference Architectures with CrateDB
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-5
+
+![](https://cratedb.com/hs-fs/hubfs/nativesql.png?width=480&name=nativesql.png)
+
+:::
+
+::::
 
 
 ```{toctree}
@@ -276,10 +272,10 @@ frameworks.
 install/index
 getting-started
 admin/index
-reference-architectures/index
-
 domain/index
 integrate/index
+
+reference-architectures/index
 ```
 
 
