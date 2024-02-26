@@ -142,6 +142,31 @@ visualization or dashboarding tools like Grafana and friends.
     ORDER BY 1 ASC
 
 
+.. _downsampling-lttb:
+
+Downsampling with LTTB
+======================
+
+`Largest Triangle Three Buckets`_ is a downsampling method that tries to retain
+visual similarity between the downsampled data and the original dataset using
+considerably fewer data points.
+
+The article about `advanced downsampling with the LTTB algorithm`_ explains how
+to use LTTB with CrateDB. This technique is mostly used for the same purposes
+like other downsampling procedures, where, in this case, retaining essential
+details is important for proper visual graph analysis.
+
+.. code-block:: sql
+
+    WITH downsampleddata AS
+      (SELECT lttb_with_parallel_arrays(
+      array(SELECT n FROM demo ORDER BY n),
+      array(SELECT reading FROM demo ORDER BY n), 100) AS lttb)
+    SELECT unnest(lttb['0']) AS n,
+           unnest(lttb['1']) AS reading
+    FROM downsampleddata;
+
+
 .. _rewrite-join-as-cte:
 
 Rewrite JOINs as CTEs
@@ -227,7 +252,9 @@ individual records in different tables, with the same PK definition,
 and the same PK values, will also have identical ``_id`` values.
 
 
+.. _advanced downsampling with the LTTB algorithm: https://community.cratedb.com/t/advanced-downsampling-with-the-lttb-algorithm/1287
 .. _down-sampling: https://grisha.org/blog/2015/03/28/on-time-series/#downsampling
+.. _Largest Triangle Three Buckets: https://github.com/sveinn-steinarsson/flot-downsample
 .. _Lucene segment: https://stackoverflow.com/a/2705123
 .. _normal distribution: https://en.wikipedia.org/wiki/Normal_distribution
 .. _resampling time-series data with DATE_BIN: https://community.cratedb.com/t/resampling-time-series-data-with-date-bin/1009
