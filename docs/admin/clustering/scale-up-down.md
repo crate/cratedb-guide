@@ -1,6 +1,27 @@
 (scaling-clusters)=
-
 # Scaling Clusters Up and Down
+
+A significant feature in CrateDB is that it can scale horizontally, which means
+that instead of adding more RAM, CPU, and disk resources to existing nodes, you
+will add more individual nodes to your CrateDB cluster.
+
+By running your database cluster on multiple nodes, you will gain two benefits.
+
+- Store data volumes larger than being able to be handled on a single machine.
+- Add resiliency to your distributed database cluster, by increasing the number
+  of replica nodes.
+
+
+(scaling-expand)=
+## Expand Cluster
+
+The article about [how to add new nodes to an existing cluster] walks you
+through the process of scaling up your database cluster, and educates you
+about the corresponding details to consider.
+
+
+(scaling-ondemand)=
+## On-Demand Scaling
 
 The article about [scaling CrateDB clusters up and down to cope with peaks in
 demand] shares knowledge about the [shard allocation filtering] feature of
@@ -36,5 +57,6 @@ ALTER CLUSTER DECOMMISSION 'nodename';
 ```
 
 
+[how to add new nodes to an existing cluster]: https://community.cratedb.com/t/how-to-add-new-nodes-to-an-existing-cluster/1546
 [scaling CrateDB clusters up and down to cope with peaks in demand]: https://community.cratedb.com/t/scaling-cratedb-clusters-up-and-down-to-cope-with-peaks-in-demand/1314
 [shard allocation filtering]: inv:crate-reference#ddl_shard_allocation
