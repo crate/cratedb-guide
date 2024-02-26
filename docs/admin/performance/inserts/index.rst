@@ -1,13 +1,13 @@
 ==================
-Insert performance
+Insert Performance
 ==================
 
 A ``INSERT INTO`` statement is processed as follows:
 
- - Parse the statement to create an `abstract syntax tree`_
- - Do some basic semantic validation
- - Plan the operation
- - Execute the operation
+- Parse the statement to create an `abstract syntax tree`_
+- Do some basic semantic validation
+- Plan the operation
+- Execute the operation
 
 CrateDB :ref:`calculates the shard ID <crate-reference:sharding-routing>` for
 every row to be inserted when executing

@@ -1,7 +1,7 @@
 .. _insert-methods:
 
 ==============
-Insert methods
+Insert Methods
 ==============
 
 CrateDB supports multiple ways to insert data.

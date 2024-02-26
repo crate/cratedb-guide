@@ -1,7 +1,7 @@
 .. _concurrent_inserts:
 
 ================
-Parallel inserts
+Parallel Inserts
 ================
 
 If you have a queue of inserts, one way to process them in your client is to

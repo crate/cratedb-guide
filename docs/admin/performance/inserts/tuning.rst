@@ -1,7 +1,7 @@
 .. _config_tuning:
 
 ================================
-Configuration tuning for inserts
+Configuration Tuning for Inserts
 ================================
 
 This document outlines a number of hardware and software configuration changes

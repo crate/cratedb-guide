@@ -1,5 +1,7 @@
+.. _performance-select:
+
 ==================
-Select performance
+Select Performance
 ==================
 
 Aggregations and ``GROUP BY``
