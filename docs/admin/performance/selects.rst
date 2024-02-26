@@ -157,8 +157,44 @@ use depends on the profile of your data.
     WHERE relevant_invoices.issue_date BETWEEN '2024-01-01' AND '2024-02-01';
 
 
+.. _retrieve-bulk-records-by-pks:
+
+Retrieve individual records in bulk
+===================================
+
+The article about `retrieving records in bulk with a list of primary key values`_
+shares a pattern you can use to retrieve a large number of individual records by
+primary key, in order to achieve faster execution times.
+
+Based on a very large table with a primary key made of multiple fields, and
+given tens of thousands of values for these fields, we needed to retrieve all
+specific records constrained by a composite primary key ``(machine_id,
+sensor_type)`` in bulk.
+
+When using a classic SQL statement, the ``WHERE`` clause easily gets too large
+to be processed well, resulting in errors like ``statement is too large (stack
+overflow while parsing)`` or just ``StackOverflowError[null]``.
+
+By taking advantage of a system column called ``_id``, which exists on all
+CrateDB tables, containing a compound string representation of all primary key
+values of that record, and defining a staging table with primary key columns of
+the same representation like the original table, you can use a sub-select to
+retrieve multiple individual records from a large table efficiently.
+
+.. code-block:: sql
+
+    SELECT *
+    FROM sensor_data
+    WHERE _id IN (SELECT _id FROM relevant_pk_values);
+
+The ``_id`` column contains a unique identifier for each record.
+The useful characteristic here is that the value is deterministic: Two
+individual records in different tables, with the same PK definition,
+and the same PK values, will also have identical ``_id`` values.
+
 
 .. _down-sampling: https://grisha.org/blog/2015/03/28/on-time-series/#downsampling
 .. _Lucene segment: https://stackoverflow.com/a/2705123
 .. _normal distribution: https://en.wikipedia.org/wiki/Normal_distribution
+.. _retrieving records in bulk with a list of primary key values: https://community.cratedb.com/t/retrieving-records-in-bulk-with-a-list-of-primary-key-values/1721
 .. _using common table expressions to speed up queries: https://community.cratedb.com/t/using-common-table-expressions-to-speed-up-queries/1719
