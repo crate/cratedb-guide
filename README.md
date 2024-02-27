@@ -60,5 +60,5 @@ See also the [developer docs] and the [contribution docs] for more information.
 
 [contribution docs]: CONTRIBUTING.rst
 [CrateDB]: https://github.com/crate/crate
-[developer docs]: DEVELOP.rst
+[developer docs]: DEVELOP.md
 [searching for "flink"]: https://cratedb.com/docs/guide/search.html?q=flink
