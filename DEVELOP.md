@@ -1,9 +1,5 @@
 # Developer Guide
 
-You can write documentation in both [Markdown] and [reStructuredText]. The
-documentation system is based on [Sphinx], [sphinx-design], and [MyST]. The
-documentation theme is [crate-docs-theme].
-
 The documentation below guides you through the process setting up a development
 sandbox suitable for convenient editing with live reloading, i.e. just type
 `make dev`.
@@ -70,10 +66,4 @@ would be published after integrating your patch.
 
 [sphinx-autobuild]: https://pypi.org/project/sphinx-autobuild/
 [crate-docs]: https://github.com/crate/crate-docs
-[crate-docs-theme]: https://github.com/crate/crate-docs-theme
-[Markdown]: https://daringfireball.net/projects/markdown/
-[MyST]: https://myst-parser.readthedocs.io/
-[reStructuredText]: https://docutils.sourceforge.io/rst.html
-[Sphinx]: https://www.sphinx-doc.org/
-[sphinx-design]: https://sphinx-design.readthedocs.io/
 [Read the Docs]: https://about.readthedocs.com/

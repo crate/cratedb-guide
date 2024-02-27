@@ -30,15 +30,25 @@
 
 ## 👨‍💻 Usage
 
-- This repository contains the sources for the documentation pages over
-  at https://cratedb.com/docs/guide/. The content is optimally consumed
+- This repository contains the sources for the documentation pages rendered
+  to https://cratedb.com/docs/guide/. The content is optimally consumed
   from there.
 
 - If you are looking for something specific, please use the search
   feature, for example, [searching for "flink"].
 
-- You can use the code snippets for educational and knowledge base purposes,
-  or as blueprints within your own projects.
+- You can use the content and code snippets for educational and knowledge base
+  purposes, or as blueprints for your own projects.
+
+
+## 🧐 What's inside
+
+- Documentation about CrateDB written in both [Markdown] or [reStructuredText].
+
+- The documentation system is based on [Sphinx], [MyST], and [sphinx-design].
+  The documentation theme is [crate-docs-theme].
+
+- The project uses [Read the Docs] for publishing.
 
 
 ## 💁 Contributing
@@ -61,7 +71,15 @@ about how to contribute to CrateDB repositories.
 [![Contributors to CrateDB Examples](https://contrib.rocks/image?repo=crate/cratedb-guide)](https://github.com/crate/cratedb-guide/graphs/contributors)
 
 
+
 [contribution docs]: https://github.com/crate/crate/blob/master/CONTRIBUTING.rst
 [CrateDB]: https://github.com/crate/crate
+[crate-docs-theme]: https://github.com/crate/crate-docs-theme
 [developer docs]: DEVELOP.md
+[Markdown]: https://daringfireball.net/projects/markdown/
+[MyST]: https://myst-parser.readthedocs.io/
+[reStructuredText]: https://docutils.sourceforge.io/rst.html
 [searching for "flink"]: https://cratedb.com/docs/guide/search.html?q=flink
+[Sphinx]: https://www.sphinx-doc.org/
+[sphinx-design]: https://sphinx-design.readthedocs.io/
+[Read the Docs]: https://about.readthedocs.com/
