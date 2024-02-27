@@ -74,7 +74,7 @@ about how to contribute to CrateDB repositories.
 
 [contribution docs]: https://github.com/crate/crate/blob/master/CONTRIBUTING.rst
 [CrateDB]: https://github.com/crate/crate
-[crate-docs-theme]: https://github.com/crate/crate-docs-theme
+[crate-docs-theme]: https://crate-docs-theme.readthedocs.io/
 [developer docs]: DEVELOP.md
 [Markdown]: https://daringfireball.net/projects/markdown/
 [MyST]: https://myst-parser.readthedocs.io/
