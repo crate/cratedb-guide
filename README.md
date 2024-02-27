@@ -43,14 +43,17 @@
 
 ## 💁 Contributing
 
-Interested in contributing to this project? Thanks so much for your interest! 
+Interested in contributing to this project? Thank you so much!
 
 As an open-source project, we are always looking for improvements in form of
 contributions, whether it be in the form of a new feature, improved
 infrastructure, or better documentation.
 
-Your bug reports, feature requests, and patches are greatly appreciated.
-See also the [developer docs] and the [contribution docs] for more information.
+Your bug reports, feature requests, and patches are highly appreciated.
+
+See also the [developer docs] to learn how to set up a development sandbox, in
+order to start editing. The [contribution docs] include general information
+about how to contribute to CrateDB repositories.
 
 
 ## 🌟 Contributors
@@ -58,7 +61,7 @@ See also the [developer docs] and the [contribution docs] for more information.
 [![Contributors to CrateDB Examples](https://contrib.rocks/image?repo=crate/cratedb-guide)](https://github.com/crate/cratedb-guide/graphs/contributors)
 
 
-[contribution docs]: CONTRIBUTING.rst
+[contribution docs]: https://github.com/crate/crate/blob/master/CONTRIBUTING.rst
 [CrateDB]: https://github.com/crate/crate
 [developer docs]: DEVELOP.md
 [searching for "flink"]: https://cratedb.com/docs/guide/search.html?q=flink
