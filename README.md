@@ -41,12 +41,15 @@
   purposes, or as blueprints for your own projects.
 
 
-## 🧐 What's inside
+## 🧐 What's Inside
 
-- Documentation about CrateDB written in both [Markdown] or [reStructuredText].
+- Sources for statically rendered documentation about CrateDB written in
+  [Markdown] and/or [reStructuredText].
 
-- The documentation system is based on [Sphinx], [MyST], and [sphinx-design].
-  The documentation theme is [crate-docs-theme].
+- The documentation system is based on [Sphinx], [MyST], [sphinx-design],
+  [sphinx-design-elements], and many other Sphinx addons and plugins.
+
+- The documentation theme is [crate-docs-theme].
 
 - The project uses [Read the Docs] for publishing.
 
@@ -82,4 +85,5 @@ about how to contribute to CrateDB repositories.
 [searching for "flink"]: https://cratedb.com/docs/guide/search.html?q=flink
 [Sphinx]: https://www.sphinx-doc.org/
 [sphinx-design]: https://sphinx-design.readthedocs.io/
+[sphinx-design-elements]: https://sphinx-design-elements.readthedocs.io/
 [Read the Docs]: https://about.readthedocs.com/
