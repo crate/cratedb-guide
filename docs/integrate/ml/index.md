@@ -1,9 +1,14 @@
-(ml)=
-(machine-learning)=
+(integrate-machine-learning)=
 
 # Machine Learning
 
 Guidelines about integrating CrateDB with machine learning frameworks and tools.
+
+:::{tip}
+To learn about the specific area of running machine learning algorithms on time
+series data, please also visit the [](#timeseries-ml-primer).
+:::
+
 
 (langchain)=
 ## LangChain
