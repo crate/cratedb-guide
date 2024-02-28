@@ -15,6 +15,8 @@ linkcheck_ignore = [
     r"https://cratedb.com/wp-content/uploads/2018/11/copy_from_population_data.zip",
     # Forbidden by Stack Overflow.
     r"https://stackoverflow.com/.*",
+    # HTTPSConnectionPool(host='aka.ms', port=443): Read timed out.
+    r"https://aka.ms/vs/.*",
 ]
 
 if "sphinx.ext.intersphinx" not in extensions:
