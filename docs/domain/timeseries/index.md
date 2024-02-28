@@ -93,5 +93,6 @@ and analyzing. Industrial applications.
 Basics <basics>
 Advanced <advanced>
 Connectivity <connect>
-video
+Video Tutorials <video>
+Machine Learning Primer <ml-primer/index>
 :::
