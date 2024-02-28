@@ -1,8 +1,10 @@
-# Experiment Tracking with CrateDB using SQL only
+(tsml-primer-mlops-cratedb-sql)=
+
+# ML Experiment Tracking using SQL
 
 _Introduction to Time Series Modeling with CrateDB (Part 3)._
 
-This is part 3 of our blog series about "Running Time Series Models in Production using CrateDB".
+This is part three of the "Machine Learning for Time Series Data Primer".
 
 
 ## Introduction
@@ -40,8 +42,8 @@ add throughout the experiments, and evolve corresponding details while you go.
 ### 2. Record metrics and parameters 
 
 Instead of recording the metrics and parameters to MLflow, as demonstrated at
-[MLOps powered by CrateDB and MLflow » Experiment Tracking][ml-timeseries-blog-part-2], you will
-record them by directly inserting into the database table.
+[](#tsml-primer-mlops-cratedb-mlflow), you will record them by directly inserting
+into the database table.
 
 ```sql
 INSERT INTO
@@ -93,7 +95,7 @@ schema evolution:
 ```sql
 CREATE TABLE model_config (
   timestamp TIMESTAMP DEFAULT now(),
-  digest TEXT, -- this is the link to the model blog
+  digest TEXT, -- this is the link to the model blob
   run_name TEXT,
   config OBJECT(DYNAMIC)
 );
@@ -137,7 +139,7 @@ cursor.execute(
 
 CrateDB automatically creates all the model config columns.
 
-![crate model config](/_assets/img/ml-timeseries-primer/cratedb-model-configuration.png)
+![crate model config](/_assets/img/ml-timeseries-primer/cratedb-model-configuration.png){width=400px}
 
 ### 3. Read back the model
 
@@ -161,7 +163,5 @@ model = pickle.loads(blob_content)
     
 
 [BLOB data type]: inv:crate-reference#blob_support
-[ml-timeseries-blog-part-1]: https://cratedb.com/blog/introduction-to-time-series-modeling-with-cratedb-machine-learning-time-series-data
-[ml-timeseries-blog-part-2]: https://cratedb.com/blog/introduction-to-time-series-modeling-with-cratedb-part-2?hs_preview=uXVBkYrk-136061503799
 [pickle format]: https://realpython.com/python-pickle-module/
 [SQL `SELECT` statements]: inv:crate-reference#sql-select
