@@ -160,8 +160,8 @@ model = pickle.loads(blob_content)
 ```
     
 
-[BLOB data type]: https://crate.io/docs/crate/reference/en/latest/general/blobs.html
+[BLOB data type]: inv:crate-reference#blob_support
 [ml-timeseries-blog-part-1]: https://cratedb.com/blog/introduction-to-time-series-modeling-with-cratedb-machine-learning-time-series-data
 [ml-timeseries-blog-part-2]: https://cratedb.com/blog/introduction-to-time-series-modeling-with-cratedb-part-2?hs_preview=uXVBkYrk-136061503799
 [pickle format]: https://realpython.com/python-pickle-module/
-[SQL `SELECT` statements]: https://crate.io/docs/crate/reference/en/latest/sql/statements/select.html
+[SQL `SELECT` statements]: inv:crate-reference#sql-select

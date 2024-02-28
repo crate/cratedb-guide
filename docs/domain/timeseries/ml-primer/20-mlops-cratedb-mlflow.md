@@ -467,7 +467,7 @@ mlflow.log_artifact("model")
 #### MLflow UI
 
 Visit the MLflow UI to interact with your flow run, and your artifact. You can do this by running
-`mlflow ui` in your terminal and then navigate to http://localhost:5000 in your browser.
+`mlflow ui` in your terminal and then navigate to `http://localhost:5000` in your browser.
 
 ![MLflow ui](/_assets/img/ml-timeseries-primer/mlflow-experiment.png){width=480px}
 
@@ -627,9 +627,9 @@ make it a valuable asset in the realm of time series modeling and anomaly detect
 
 [CrateDB MLflow examples]: https://github.com/crate-workbench/mlflow-cratedb/tree/main/examples
 [CrateDB MLflow handbook]: https://github.com/crate-workbench/mlflow-cratedb/blob/main/docs/handbook.md
-[database VIEWs]: https://crate.io/docs/crate/reference/en/latest/general/ddl/views.html
+[database VIEWs]: inv:crate-reference#ddl-views
 [DVC (Data Version Control)]: https://dvc.org/
-[dynamic object columns]: https://crate.io/blog/handling-dynamic-objects-in-cratedb
+[dynamic object columns]: https://cratedb.com/blog/handling-dynamic-objects-in-cratedb
 [ETS model]: https://www.statsmodels.org/dev/examples/notebooks/generated/ets.html
 [Kolmogorov-Smirnov test]: https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test
 [Kullback–Leibler Divergence]: https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence
@@ -640,11 +640,11 @@ make it a valuable asset in the realm of time series modeling and anomaly detect
 [MLflow documentation]: https://mlflow.org/docs/latest/index.html
 [MLOps]: https://en.wikipedia.org/wiki/MLOps
 [ml-timeseries-blog-part-1]: https://cratedb.com/blog/introduction-to-time-series-modeling-with-cratedb-machine-learning-time-series-data
-[OBJECT data type]: https://crate.io/docs/crate/reference/en/latest/general/ddl/data-types.html#object
-[Object column policy]: https://crate.io/docs/crate/reference/en/latest/general/ddl/data-types.html#object-column-policy
+[OBJECT data type]: inv:crate-reference#type-object
+[Object column policy]: inv:crate-reference#type-object-column-policy
 [Random Cut Forest]: https://docs.aws.amazon.com/sagemaker/latest/dg/randomcutforest.html
-[Shard allocation filtering]: https://crate.io/docs/crate/reference/en/latest/general/ddl/shard-allocation.html
+[Shard allocation filtering]: inv:crate-reference#ddl_shard_allocation
 [simulating live model deployment]: https://opensource.salesforce.com/Merlion/v1.0.0/examples/anomaly/1_AnomalyFeatures.html#Simulating-Live-Model-Deployment
-[time partitioning]: https://crate.io/docs/crate/reference/en/latest/general/ddl/partitioned-tables.html
+[time partitioning]: inv:crate-reference#partitioned-tables
 [Time Series Analysis in Python – A Comprehensive Guide with Examples]: https://www.machinelearningplus.com/time-series/time-series-analysis-python/
-[window function]: https://crate.io/docs/crate/reference/en/latest/general/builtins/window-functions.html
+[window function]: inv:crate-reference#window-functions

@@ -455,20 +455,20 @@ support an entire MLOps lifecycle. Stay tuned for more.
 [Apache Lucene]: https://lucene.apache.org/
 [Apache Kafka]: https://kafka.apache.org/
 [Apache Spark]: https://spark.apache.org/
-[Apache Superset]: https://crate.io/docs/crate/clients-tools/en/latest/integrate/visualize.html#apache-superset-preset
+[Apache Superset]: inv:crate-clients-tools#apache-superset
 [Cloud Console]: https://console.cratedb.cloud/
 [CrateDB Admin UI]: https://cratedb.com/docs/crate/admin-ui/
-[CrateDB Cloud]: https://crate.io/products/cratedb-cloud
+[CrateDB Cloud]: https://cratedb.com/products/cratedb-cloud
 [Dask]: https://www.dask.org/
-[Data Import]: https://community.crate.io/t/importing-data-to-cratedb-cloud-clusters/1467#import-from-url-1
+[Data Import]: https://community.cratedb.com/t/importing-data-to-cratedb-cloud-clusters/1467#import-from-url-1
 [data modeling]: https://en.wikipedia.org/wiki/Data_modeling
 [ETS model]: https://www.statsmodels.org/dev/examples/notebooks/generated/ets.html
 [Merlion]: https://github.com/salesforce/Merlion
 [Merlion documentation]: https://opensource.salesforce.com/Merlion/v1.0.0/examples/anomaly/1_AnomalyFeatures.html
-[more-integrations]: https://crate.io/partners/technology-partners
+[more-integrations]: https://cratedb.com/partners/technology-partners
 [pandas]: https://pandas.pydata.org/
 [Random Cut Forest]: https://docs.aws.amazon.com/sagemaker/latest/dg/randomcutforest.html
 [SQLAlchemy]: https://www.sqlalchemy.org/
-[Tableau]: https://crate.io/docs/crate/clients-tools/en/latest/integrate/analyze.html#business-intelligence-with-tableau
+[Tableau]: inv:crate-clients-tools#tableau
 [Time Series Analysis in Python – A Comprehensive Guide with Examples]: https://www.machinelearningplus.com/time-series/time-series-analysis-python/
 [time series modeling]: https://en.wikipedia.org/wiki/Time_series#Models
