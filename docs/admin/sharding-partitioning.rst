@@ -64,7 +64,7 @@ partition as a set of shards. For each partition, the number of shards defined
 by ``CLUSTERED INTO x SHARDS`` are created, when a first record with a specific 
 ``partition key`` is inserted.
 
-In the following example - which represents a very simple time-series use-case 
+In the following example - which represents a very simple time series use-case
 - we added another column ``part`` that automatically generates the current 
 month upon insertion from the ``ts`` column. The ``part`` column is further used 
 as the ``partition key``.
@@ -132,12 +132,12 @@ Then, to calculate the number of shards, you should consider that the size of ea
 shard should roughly be between 5 - 100 GB, and that each node can only manage
 up to 1000 shards.
 
-Time-series example
+Time series example
 -------------------
 
 To illustrate the steps above, let's use them on behalf of an example. Imagine
 you want to create a *partitioned table* on a *three-node cluster* to store
-time-series data with the following assumptions:
+time series data with the following assumptions:
 
 - Inserts: 1.000 records/s
 - Record size: 128 byte/record
