@@ -7,7 +7,12 @@ sandbox suitable for convenient editing with live reloading, i.e. just type
 
 ## Prerequisites
 
-You will need an installation of Python on your workstation.
+For running the documentation build and sandbox, you will need an installation
+of Python on your workstation.
+
+For conveniently searching within the content of the working tree from the
+command line, the authors also recommend to install the [ripgrep] or [The
+Silver Searcher] program.
 
 
 ## Setup
@@ -64,6 +69,8 @@ will provide you a rendered preview version to inspect your changes like they
 would be published after integrating your patch.
 
 
-[sphinx-autobuild]: https://pypi.org/project/sphinx-autobuild/
 [crate-docs]: https://github.com/crate/crate-docs
 [Read the Docs]: https://about.readthedocs.com/
+[ripgrep]: https://github.com/burntsushi/ripgrep
+[sphinx-autobuild]: https://pypi.org/project/sphinx-autobuild/
+[The Silver Searcher]: https://github.com/ggreer/the_silver_searcher
