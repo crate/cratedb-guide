@@ -20,6 +20,7 @@ with CrateDB.
 </style>
 
 
+
 (timeseries-anomaly-forecasting)=
 ## Anomaly Detection and Forecasting
 
@@ -78,6 +79,14 @@ to train various timeseries forecasting models.
 :::
 
 ::::
+
+
+:::{tip}
+The primer about [](#tsml-primer) will introduce you to the concept of time
+series modeling, experiment tracking, and corresponding ML Ops paradigms,
+which you can use to apply machine learning procedures to your time series
+data.
+:::
 
 
 (timeseries-decomposition)=
