@@ -18,6 +18,11 @@
 - [Interpolating missing time series values]
 - [](inv:crate-reference#aggregation-percentile)
 
+## Machine Learning
+
+- [](#timeseries-ml-primer)
+- [Machine Learning Integrations](#integrate-machine-learning)
+
 ## Operations
 - [](#sharding-partitioning)
 - [CrateDB partitioned table vs. TimescaleDB Hypertable]
