@@ -6,6 +6,13 @@ _Introduction to Time Series Modeling with CrateDB (Part 1)._
 
 This is part one of the "Machine Learning for Time Series Data Primer".
 
+:::{rubric} Table of contents
+:::
+
+:::{contents}
+:local:
+:::
+
 
 ## About
 

@@ -17,6 +17,14 @@ Merlion model you created [earlier](#tsml-primer-anomaly-detection).
 It will record the parameters as well as the model outcome itself to MLflow.
 
 
+:::{rubric} Table of contents
+:::
+
+:::{contents}
+:local:
+:::
+
+
 ## Prerequisites
 
 Install MLflow, including the CrateDB MLflow adapter.

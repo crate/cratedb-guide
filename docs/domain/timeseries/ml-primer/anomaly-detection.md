@@ -2,6 +2,18 @@
 
 # Anomaly Detection Example for Machine Data
 
+This example will illustrate how to load data into your CrateDB Cluster, and
+run anomaly detection using the Merlion library.
+
+:::{rubric} Table of contents
+:::
+
+:::{contents}
+:local:
+:depth: 1
+:::
+
+
 ## Prologue
 
 **NOTE:** While this example should provide more depth to understanding time series modeling,
@@ -11,6 +23,7 @@ will focus more on how to use machine learning models in production scenarios.
 If you
 are interested in learning more details about time series modeling, we recommend to check out [Time
 Series Analysis in Python – A Comprehensive Guide with Examples], by Selva Prabhakaran.
+
 
 ## About
 

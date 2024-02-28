@@ -6,6 +6,14 @@ _Introduction to Time Series Modeling with CrateDB (Part 2)._
 
 This is part two of the "Machine Learning for Time Series Data Primer".
 
+:::{rubric} Table of contents
+:::
+
+:::{contents}
+:local:
+:::
+
+
 ## Thoughts
 
 While creating a machine learning model itself is an important step, it is only
