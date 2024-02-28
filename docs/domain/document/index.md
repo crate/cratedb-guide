@@ -10,9 +10,14 @@ document-oriented storage layer of Lotus Notes / Domino, CouchDB, MongoDB, and
 PostgreSQL's `JSON(B)` types.
 
 - [](#objects-basics)
+- [](inv:crate-reference#type-object)
+- [](#timeseries-objects)
+- [](#timeseries-analysis)
+- [CrateDB Objects]
 - [Unleashing the Power of Nested Data: Ingesting and Querying JSON Documents with SQL]
 
 
+[CrateDB Objects]: https://youtu.be/aQi9MXs2irU?feature=shared
 [Unleashing the Power of Nested Data: Ingesting and Querying JSON Documents with SQL]: https://youtu.be/S_RHmdz2IQM?feature=shared
 
 ```{toctree}

@@ -1,4 +1,4 @@
-(timeseries-analysis)=
+(timeseries-analysis-weather)=
 
 # Time Series: Analyzing Weather Data
 
