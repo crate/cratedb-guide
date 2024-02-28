@@ -1,4 +1,4 @@
-.. _timeseries-basics:
+.. _timeseries-generate:
 .. _gen-ts:
 
 =========================

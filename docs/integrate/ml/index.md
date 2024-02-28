@@ -63,6 +63,15 @@ Tutorials and Notebooks about using [PyCaret] together with CrateDB.
 
   [![Open on GitHub](https://img.shields.io/badge/Open%20on-GitHub-lightgray?logo=GitHub)](https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/automl/automl_timeseries_forecasting_with_pycaret.ipynb) [![Open in Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/automl/automl_timeseries_forecasting_with_pycaret.ipynb)
 
+- [Exploratory data analysis (EDA) with PyCaret and CrateDB]
+
+  This notebook demonstrates how to access timeseries data from CrateDB using
+  SQL, and how to apply exploratory data analysis (EDA) with PyCaret. It shows
+  how to generate various plots and charts for EDA, helping you to understand
+  data distributions, relationships between variables, and to identify patterns.
+
+  [![Open on GitHub](https://img.shields.io/badge/Open%20on-GitHub-lightgray?logo=GitHub)](https://github.com/crate/cratedb-examples/blob/main/topic/timeseries/exploratory_data_analysis.ipynb) [![Open in Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/timeseries/exploratory_data_analysis.ipynb)
+
 
 (scikit-learn)=
 ## scikit-learn
@@ -89,6 +98,7 @@ tensorflow
 
 
 [AutoML with PyCaret and CrateDB]: https://github.com/crate/cratedb-examples/tree/main/topic/machine-learning/automl
+[Exploratory data analysis (EDA) with PyCaret and CrateDB]: https://github.com/crate/cratedb-examples/blob/main/topic/timeseries/exploratory_data_analysis.ipynb
 [Introduction to Time Series Modeling using Machine Learning]: https://cratedb.com/blog/introduction-to-time-series-modeling-with-cratedb-machine-learning-time-series-data
 [Jupyter Notebook]: https://jupyter.org/
 [LangChain]: https://python.langchain.com/
