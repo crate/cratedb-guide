@@ -1,9 +1,9 @@
 .. highlight:: psql
 .. _systables:
 
-===============================
-Troubleshooting with sys-tables
-===============================
+==================================
+Troubleshooting with system tables
+==================================
 
 CrateDB maintains a set of diagnostic tables in the **sys** schema. It
 currently consists of ten tables that provide an overview of the cluster state.

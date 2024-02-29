@@ -1,7 +1,7 @@
 .. _jcmd-docker:
 
 ===============================================
-Troubleshooting CrateDB on Docker with ``jcmd``
+Troubleshooting CrateDB with ``jcmd`` on Docker
 ===============================================
 
 You can find a lot of troubleshooting guides for Java applications out there on
