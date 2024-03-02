@@ -22,8 +22,65 @@ database access interfaces like ODBC or JDBC, and a proprietary HTTP interface
 on top.
 
 
+(abb)=
+## ABB Insights
+
+Advanced Analytics Platform for Industrial Data.
+
+:Industry:
+  {tags-secondary}`Engineering` {tags-secondary}`Manufacturing`
+  {tags-secondary}`Production`
+
+:Tags:
+  {tags-primary}`SCADA` {tags-primary}`MDE` {tags-primary}`PLC`
+  {tags-primary}`Data Historian` {tags-primary}`Industrial IoT`
+  {tags-primary}`Multi Tenancy` {tags-primary}`Platform`
+
+
+::::{info-card}
+
+:::{grid-item}
+:columns: 8
+
+{material-outlined}`analytics;2em` &nbsp; **ABB Genix: Advanced Analytics Platform**
+
+Learn how ABB recommends tangible actions to optimize operations and increase
+asset availability in industrial use cases by analyzing vast amounts of data
+in real time with CrateDB.
+
+- [ABB: AI and Analytics applied to Industrial Data]
+
+ABB Ability™ Genix Industrial Analytics and AI Suite is an advanced analytics
+platform and application portfolio that unlocks value from industrial data and
+drives better business results.
+
+With high scalability and easy integration, CrateDB is a strategic database
+component of ABB Ability™ Genix across industries.
+:::
+
+:::{grid-item} &nbsp;
+:columns: 4
+
+<iframe width="240" src="https://www.youtube-nocookie.com/embed/45fZYJLh2Qg?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+**Date:** 23 May 2023 \
+**Speakers:** Marko Sommarberg, Christian Lutz
+:::
+
+::::
+
+
 (rauch)=
 ## Rauch Insights
+
+Scaling a high-speed production environment with CrateDB.
+
+:Industry:
+  {tags-secondary}`Food` {tags-secondary}`Packaging` {tags-secondary}`Production`
+
+:Tags:
+  {tags-primary}`SCADA` {tags-primary}`MDE` {tags-primary}`PLC`
+  {tags-primary}`Data Historian` {tags-primary}`Industrial IoT`
 
 ::::{info-card}
 
@@ -31,8 +88,6 @@ on top.
 :columns: 8
 
 {material-outlined}`data_exploration;2em` &nbsp; **Rauch: High-Speed Production Lines**
-
-_Scaling a high-speed production environment with CrateDB._
 
 Rauch is filling 33 cans per second and how that adds up to 400 data records
 per second which are being processed, stored, and analyzed. In total, they are
@@ -44,9 +99,6 @@ The use-case of Rauch demonstrates why traditional databases weren't capable to
 deal with so many data records and unstructured data. The benefits of CrateDB
 made Rauch choose it over other databases, such as PostgreSQL compatibility,
 the support for unstructured data, and its excellent customer support.
-
-:Industry: {tags-secondary}`Food` {tags-secondary}`Packaging` {tags-secondary}`Production`
-:Tags: {tags-primary}`SCADA` {tags-primary}`MDE` {tags-primary}`Data Historian` {tags-primary}`Industrial IoT` {tags-primary}`PLC`
 :::
 
 :::{grid-item} &nbsp;
@@ -64,6 +116,52 @@ the support for unstructured data, and its excellent customer support.
 (tgw)=
 ## TGW Insights
 
+Today's warehouses are complex systems with a very high degree of automation.
+
+:Industry:
+  {tags-secondary}`Logistics` {tags-secondary}`Shipping`
+
+:Tags:
+  {tags-primary}`SCADA` {tags-primary}`MDE` {tags-primary}`PLC`
+  {tags-primary}`Data Historian` {tags-primary}`Industrial IoT`
+  {tags-primary}`Digital Twin`
+
+::::{info-card}
+
+:::{grid-item}
+:columns: 8
+
+{material-outlined}`hub;2em` &nbsp; **TGW: Connected Warehouses**
+
+_CrateDB's support for unstructured data, its fast query engine,
+scalability, and excellent support, is unparalleled._
+
+TGW Logistics Group implements advanced analytics for automated warehouses
+they are operating across the globe for customers like Amazon, Coop, and
+Zalando. Their systems collect a vast amount of data, apply AI to them,
+and support all kinds of data-driven applications.
+
+- [TGW: Connected Warehouses]
+
+TGW removed data silos with all different kinds of data formats, data
+structures from PLCs, databases, sensor information, etc.
+
+NoSQL databases weren't a sustainable solution for their use case. On the
+migration path, it was easy to start with CrateDB, and now it is at the
+heart of everything they are doing, and gives them peace of mind.
+:::
+
+:::{grid-item} &nbsp;
+:columns: 4
+
+<iframe width="240" src="https://www.youtube-nocookie.com/embed/X2o0-W8-mCM?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+**Date:** 20 Mar 2023 \
+**Speaker:** Alexander Mann
+:::
+
+::::
+
 
 ::::{info-card}
 
@@ -74,8 +172,6 @@ the support for unstructured data, and its excellent customer support.
 
 _Storing, querying, and analyzing industrial IoT data and metadata without
 much hassle._
-
-Today's warehouses are complex systems with a very high degree of automation.
 
 TGW Logistics Group implements key factors to the successful operation of these
 warehouses, by having a holistic view on the entire system acquiring data from
@@ -91,9 +187,6 @@ information in various data structures and different ways to access it.
 After trying multiple database systems, TGW Logistics moved to CrateDB for
 its ability to aggregate different data formats and the ability to query this
 information without further ado.
-
-:Industry: {tags-secondary}`Logistics` {tags-secondary}`Shipping`
-:Tags: {tags-primary}`SCADA` {tags-primary}`MDE` {tags-primary}`Data Historian` {tags-primary}`Industrial IoT` {tags-primary}`PLC`
 :::
 
 :::{grid-item} &nbsp;
@@ -139,18 +232,10 @@ high variety, unstructured features, and at different data frequencies.
 - Real-World Applications: Exploration of actual customer use cases to
   illustrate how CrateDB can be applied in various industrial scenarios.
 
-:Industry: {tags-secondary}`Logistics` {tags-secondary}`Shipping`
-:Tags: {tags-primary}`Data Historian` {tags-primary}`Industrial IoT` {tags-primary}`Digital Twin`
 :::
 
 :::{grid-item} &nbsp;
 :columns: 4
-
-<iframe width="240" class="speakerdeck-iframe" style="border: 0px; background: rgba(0, 0, 0, 0.1) padding-box; margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 315;" frameborder="0" src="https://speakerdeck.com/player/acb78531a07e4238ac662539b0c23609" title=" Not all time-series are equal ​  Challenges of storing and analyzing industrial data" allowfullscreen="true" data-ratio="1.7777777777777777"></iframe>
-
-**Date:** 23 Nov 2022 \
-**Speaker:** Marija Selakovic
-
 
 <iframe width="240" src="https://www.youtube-nocookie.com/embed/ugQvihToY0k?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -162,8 +247,9 @@ high variety, unstructured features, and at different data frequencies.
 
 
 
-
+[ABB: AI and Analytics applied to Industrial Data]: https://youtu.be/45fZYJLh2Qg?feature=shared
 [CrateDB: Challenges in industrial data]: https://speakerdeck.com/cratedb/not-all-time-series-are-equal-challenges-of-storing-and-analyzing-industrial-data
 [Rauch: High-Speed Production Lines]: https://youtu.be/gJPmJ0uXeVs?feature=shared
-[TGW: Fixing data silos in a high-speed logistics environment]:  https://youtu.be/6dgjVQJtSKI?feature=shared
+[TGW: Connected Warehouses]: https://youtu.be/X2o0-W8-mCM?feature=shared
+[TGW: Fixing data silos in a high-speed logistics environment]: https://youtu.be/6dgjVQJtSKI?feature=shared
 [TGW: Storing and analyzing real-world industrial data]: https://youtu.be/ugQvihToY0k?feature=shared
