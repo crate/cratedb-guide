@@ -7,7 +7,7 @@
 Learn how to use CrateDB in industrial / IIoT / Industry 4.0 scenarios within
 engineering, manufacturing, production, and other operational domains, or
 within similar environments where billions of data records from any kinds of
-machines or devices need to be processed, stored, and queried.
+machines, devices, or sensors, need to be processed, stored, and queried.
 
 In the realm of Industrial IoT, dealing with diverse data, ranging from
 slow-moving structured data, to high-frequency measurements, presents unique
@@ -108,6 +108,55 @@ the support for unstructured data, and its excellent customer support.
 
 **Date:** 28 Jun 2022 \
 **Speaker:** Arno Breuss
+:::
+
+::::
+
+
+(spgo)=
+## SPGo! Insights
+
+Monitoring conveyor belts in the mining industry.
+
+:Industry:
+  {tags-secondary}`Engineering` {tags-secondary}`Mining`
+  {tags-secondary}`Production`
+
+:Tags:
+  {tags-primary}`Sensor Data Acquisition`
+  {tags-primary}`Data Historian` {tags-primary}`Industrial IoT`
+  {tags-primary}`Machine Monitoring` {tags-primary}`Predictive Maintenance`
+
+
+::::{info-card}
+
+:::{grid-item}
+:columns: 8
+
+{material-outlined}`engineering;2em` &nbsp; **SPGo!: Monitoring and Predictive Maintenance**
+
+SPGo!, by PETROMIN, has developed a system that allows monitoring mining
+material conveyor belts with more than 40,000 sensors in real-time and
+760 million records per day. SPGo! trusts CrateDB as a partner on this journey.
+
+- [SPGo!: Monitoring and Predictive Maintenance]
+
+You will learn about many details of this solution, including real-time
+component monitoring, predictive failure analysis, management of operations,
+data-driven predictive maintenance, large daily data intakes, and KPIs that
+help the mining businesses save resources, workforce, and losses, due to
+decreased downtime.
+:::
+
+:::{grid-item} &nbsp;
+:columns: 4
+
+<iframe width="240" src="https://www.youtube-nocookie.com/embed/eRqn7GhFO-s?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+**Date:** 31 Jan 2023 \
+**Speakers:** Michael Mella Navarro,
+Nixon David Monge Calle,
+Hernán Lionel Cianfagna
 :::
 
 ::::
@@ -250,6 +299,7 @@ high variety, unstructured features, and at different data frequencies.
 [ABB: AI and Analytics applied to Industrial Data]: https://youtu.be/45fZYJLh2Qg?feature=shared
 [CrateDB: Challenges in industrial data]: https://speakerdeck.com/cratedb/not-all-time-series-are-equal-challenges-of-storing-and-analyzing-industrial-data
 [Rauch: High-Speed Production Lines]: https://youtu.be/gJPmJ0uXeVs?feature=shared
+[SPGo!: Monitoring and Predictive Maintenance]: https://youtu.be/eRqn7GhFO-s?feature=shared
 [TGW: Connected Warehouses]: https://youtu.be/X2o0-W8-mCM?feature=shared
 [TGW: Fixing data silos in a high-speed logistics environment]: https://youtu.be/6dgjVQJtSKI?feature=shared
 [TGW: Storing and analyzing real-world industrial data]: https://youtu.be/ugQvihToY0k?feature=shared
