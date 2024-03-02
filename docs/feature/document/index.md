@@ -3,24 +3,6 @@
 
 # Document Store
 
-<style>
-.wrapper-content-right ul {
-  margin-left: 0;
-}
-.rubric-slim p.rubric {
-  margin-bottom: 0;
-}
-.title-slim .sd-col > * {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-.no-margin > * {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;;
-}
-</style>
-
-
 ::::{grid}
 :padding: 0
 :class-row: rubric-slim
@@ -56,8 +38,6 @@ on top.
 - [](inv:crate-reference#scalar-arrays)
 - [](inv:crate-reference#sql_dql_array_comparisons)
 - [Non-existing keys](inv:crate-reference#conf-session-error_on_unknown_object_key)
-
-
 
 ```{rubric} Related
 ```
@@ -380,6 +360,10 @@ nested data.
 [Dynamic Database Schemas] •
 [Nested Data Structure]
 :::
+
+
+```{include} /_include/styles.html
+```
 
 
 [Dynamic Database Schemas]: https://cratedb.com/product/features/dynamic-schemas

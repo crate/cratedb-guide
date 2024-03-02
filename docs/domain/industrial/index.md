@@ -4,10 +4,14 @@
 (industry-40)=
 # Industrial Data
 
+Today's industrial and logistics data acquisition and processing systems
+are complex and distributed, with a very high degree of automation.
+
 Learn how to use CrateDB in industrial / IIoT / Industry 4.0 scenarios within
-engineering, manufacturing, production, and other operational domains, or
-within similar environments where billions of data records from any kinds of
-machines, devices, or sensors, need to be processed, stored, and queried.
+engineering, manufacturing, production, and logistics, as well as other
+operational domains, or within similar environments where billions of data
+records from any kinds of machines or devices need to be processed, stored,
+and queried.
 
 In the realm of Industrial IoT, dealing with diverse data, ranging from
 slow-moving structured data, to high-frequency measurements, presents unique
