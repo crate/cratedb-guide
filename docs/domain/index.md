@@ -12,6 +12,7 @@ how to use CrateDB optimally, related to different topic domains.
 
 document/index
 search/index
+analytics/index
 industrial/index
 timeseries/index
 ml/index
