@@ -81,9 +81,9 @@ about how to contribute to CrateDB repositories.
 [developer docs]: DEVELOP.md
 [Markdown]: https://daringfireball.net/projects/markdown/
 [MyST]: https://myst-parser.readthedocs.io/
+[Read the Docs]: https://about.readthedocs.com/
 [reStructuredText]: https://docutils.sourceforge.io/rst.html
 [searching for "flink"]: https://cratedb.com/docs/guide/search.html?q=flink
 [Sphinx]: https://www.sphinx-doc.org/
 [sphinx-design]: https://sphinx-design.readthedocs.io/
 [sphinx-design-elements]: https://sphinx-design-elements.readthedocs.io/
-[Read the Docs]: https://about.readthedocs.com/
