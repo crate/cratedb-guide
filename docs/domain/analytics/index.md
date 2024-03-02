@@ -18,7 +18,7 @@ on top.
 (bitmovin)=
 ## Bitmovin Insights
 
-Multi tenant analytics on top of billions of records.
+Multi tenant data analytics on top of billions of records.
 
 :Industry:
     {tags-secondary}`Streaming Media` {tags-secondary}`Media Transcoding`

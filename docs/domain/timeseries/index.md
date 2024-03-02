@@ -8,15 +8,8 @@ massive amounts of data in near real-time, even with complex queries. It is
 PostgreSQL-compatible, and based on Lucene. 
 
 
-<style>
-.sd-card {
-    flex-direction: unset;
-}
-.sd-card-body {
-    line-height: 1.1em;
-}
-</style>
-
+```{include} /_include/styles.html
+```
 
 ::::{grid} 1 2 2 2
 :margin: 4 4 0 0
@@ -30,12 +23,10 @@ PostgreSQL-compatible, and based on Lucene.
 :link-alt: Time series basics with CrateDB
 
 Basic introductory tutorials about using CrateDB with time series data.
-
-<small>
-<strong>What's inside</strong>:
++++
+**What's inside:**
 Getting Started, Downsampling and Interpolation,
 Operations: Sharding and Partitioning.
-</small>
 :::
 
 
@@ -45,12 +36,10 @@ Operations: Sharding and Partitioning.
 :link-alt: About time series analysis
 
 Advanced time series data analysis with CrateDB.
-
-<small>
-<strong>What's inside</strong>:
++++
+**What's inside:**
 Exploratory data analysis (EDA), time series decomposition,
 anomaly detection, forecasting.
-</small>
 :::
 
 
@@ -60,12 +49,10 @@ anomaly detection, forecasting.
 :link-alt: About time series data import and export
 
 Import data into and export data from your CrateDB cluster.
-
-<small>
-<strong>What's inside</strong>:
++++
+**What's inside:**
 Connectivity and integration options with database drivers
 and applications, libraries, and frameworks.
-</small>
 :::
 
 
@@ -75,12 +62,10 @@ and applications, libraries, and frameworks.
 :link-alt: Video tutorials about time series with CrateDB
 
 Video tutorials about time series data and CrateDB.
-
-<small>
-<strong>What's inside</strong>:
++++
+**What's inside:**
 Time series introduction. Importing, exporting,
 and analyzing. Industrial applications.
-</small>
 :::
 
 ::::
