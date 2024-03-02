@@ -140,12 +140,16 @@ Georg Traar
 
 ::::{info-card}
 
-:::{grid-item} **High-Speed Production Lines and Logistics**
+:::{grid-item}
 :columns: 9
 
-Learn how Rauch and TGW leverage CrateDB to support high-speed shop-floor
-production lines and logistics databases for warehouses around the world.
+**Industrial Analytics Platform, High-Speed Production Lines, and Logistics**
 
+Learn how ABB, Rauch, and TGW leverage CrateDB to support their application
+platforms, high-speed shop-floor production lines, and logistics databases
+for warehouses around the world.
+
+- [](#abb)
 - [](#rauch)
 - [](#tgw)
 :::
@@ -160,8 +164,10 @@ production lines and logistics databases for warehouses around the world.
 
 Alexander Mann, \
 Arno Breuss, \
+Christian Lutz, \
 Georg Traar, \
-Jan Weber
+Jan Weber, \
+Marko Sommarberg
 :::
 
 ::::
