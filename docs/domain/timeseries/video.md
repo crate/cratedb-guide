@@ -108,6 +108,34 @@ Niklas Schmidtmer
 ::::
 
 
+## CrateDB in Analytics Applications
+
+::::{info-card}
+
+:::{grid-item} **Real-time analytics on raw tracking data**
+:columns: 9
+
+Learn how Bitmovin leverages CrateDB to support real-time analytics on
+top of tracking data from their video streaming broadcasting system.
+
+- [](#bitmovin)
+:::
+
+:::{grid-item} &nbsp;
+:columns: 3
+
+{tags-secondary}`Extensive` \
+{tags-primary}`Time Series` \
+{tags-primary}`Tracking Analytics` \
+{tags-info}`2022`
+
+Daniel Hölbling-Inzko, \
+Georg Traar
+:::
+
+::::
+
+
 ## CrateDB in Industrial Applications
 
 ::::{info-card}
