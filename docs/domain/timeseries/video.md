@@ -145,12 +145,14 @@ Georg Traar
 
 **Industrial Analytics Platform, High-Speed Production Lines, and Logistics**
 
-Learn how ABB, Rauch, and TGW leverage CrateDB to support their application
-platforms, high-speed shop-floor production lines, and logistics databases
-for warehouses around the world.
+Learn how ABB, Rauch, SPGo!, and TGW leverage CrateDB to support their
+application platforms, high-speed shop-floor production lines, machine
+monitoring solutions, and logistics databases for warehouses around the
+world.
 
 - [](#abb)
 - [](#rauch)
+- [](#spgo)
 - [](#tgw)
 :::
 
@@ -161,13 +163,6 @@ for warehouses around the world.
 {tags-primary}`Time Series` \
 {tags-primary}`Industrial IoT` \
 {tags-info}`2022/2023`
-
-Alexander Mann, \
-Arno Breuss, \
-Christian Lutz, \
-Georg Traar, \
-Jan Weber, \
-Marko Sommarberg
 :::
 
 ::::
