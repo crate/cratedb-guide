@@ -3,17 +3,21 @@
 
 # Application Domains
 
-This section of the documentation includes tutorials and guidelines about
-how to use CrateDB optimally, related to different topic domains.
+Tutorials and guidelines about how to use CrateDB within different use case
+scenarios, and how others are using it to build their data management
+solutions.
 
 
 ```{toctree}
 :maxdepth: 1
 
-document/index
-search/index
 analytics/index
 industrial/index
 timeseries/index
 ../integrate/ml/index
 ```
+
+:Related Features:
+  [](#document) •
+  [](#fulltext) •
+  [](#geospatial)
