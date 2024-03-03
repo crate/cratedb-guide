@@ -285,6 +285,7 @@ use-cases.
 
 install/index
 getting-started
+feature/index
 admin/index
 performance/index
 
