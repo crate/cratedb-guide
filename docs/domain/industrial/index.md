@@ -7,12 +7,6 @@
 Today's industrial and logistics data acquisition and processing systems
 are complex and distributed, with a very high degree of automation.
 
-Learn how to use CrateDB in industrial / IIoT / Industry 4.0 scenarios within
-engineering, manufacturing, production, and logistics, as well as other
-operational domains, or within similar environments where billions of data
-records from any kinds of machines or devices need to be processed, stored,
-and queried.
-
 In the realm of Industrial IoT, dealing with diverse data, ranging from
 slow-moving structured data, to high-frequency measurements, presents unique
 challenges.
@@ -20,10 +14,41 @@ The complexities of industrial big data are characterized by its high variety,
 unstructured features, different data sampling rates, and how these attributes
 influence data storage, retention, and integration.
 
-With CrateDB, compatible to PostgreSQL, you can do all of that using plain SQL,
-with excellent integration capabilities into commodity systems using standard
-database access interfaces like ODBC or JDBC, and a proprietary HTTP interface
+Learn how to use CrateDB in long-term storage and analytics scenarios for
+industrial / IIoT / Industry 4.0 application scenarios within
+engineering, manufacturing, production, and logistics, as well as other
+operational domains, or within similar environments where billions of data
+records from any kinds of machines or devices need to be processed, stored,
+and queried.
+
+With CrateDB, compatible to PostgreSQL, you can do all of that using plain SQL.
+Other than integrating well with commodity systems using standard database
+access interfaces like ODBC or JDBC, it provides a proprietary HTTP interface
 on top.
+
+
+:Tags:
+  {tags-primary}`Data Historian`
+  {tags-primary}`Industrial IoT`
+  {tags-primary}`SCADA`
+  {tags-primary}`MDE`
+
+:Technologies:
+  {tags-info}`DAQ`
+  {tags-info}`PLC`
+  {tags-info}`SPS`
+
+:Product:
+  [IoT database] •
+  [IIoT database]
+
+:Related:
+  [](#document) •
+  [](#geospatial) •
+  [](#fulltext) •
+  [](#analytics) •
+  [](#timeseries) •
+  [](#machine-learning)
 
 
 (abb)=
@@ -32,13 +57,16 @@ on top.
 Advanced Analytics Platform for Industrial Data.
 
 :Industry:
-  {tags-secondary}`Engineering` {tags-secondary}`Manufacturing`
+  {tags-secondary}`Engineering`
+  {tags-secondary}`Manufacturing`
   {tags-secondary}`Production`
 
 :Tags:
-  {tags-primary}`SCADA` {tags-primary}`MDE` {tags-primary}`PLC`
-  {tags-primary}`Data Historian` {tags-primary}`Industrial IoT`
-  {tags-primary}`Multi Tenancy` {tags-primary}`Platform`
+  {tags-primary}`Multi Tenancy`
+  {tags-primary}`Data Platform`
+
+:Related:
+  [ABB Genix is improving industrial productivity and operational excellence]
 
 
 ::::{info-card}
@@ -50,7 +78,8 @@ Advanced Analytics Platform for Industrial Data.
 
 Learn how ABB recommends tangible actions to optimize operations and increase
 asset availability in industrial use cases by analyzing vast amounts of data
-in real time with CrateDB.
+in real time with CrateDB, in the range of 30k to 120k events/sec, boiling down
+to a processing rate of roughly 1 million values per second.
 
 - [ABB: AI and Analytics applied to Industrial Data]
 
@@ -77,14 +106,24 @@ component of ABB Ability™ Genix across industries.
 (rauch)=
 ## Rauch Insights
 
-Scaling a high-speed production environment with CrateDB.
+Scaling a high-speed production environment with CrateDB, to
+ensure real-time production quality control.
 
 :Industry:
-  {tags-secondary}`Food` {tags-secondary}`Packaging` {tags-secondary}`Production`
+  {tags-secondary}`Beverage`
+  {tags-secondary}`Food`
+  {tags-secondary}`FMCG`
+  {tags-secondary}`Packaging`
+  {tags-secondary}`Production`
 
 :Tags:
-  {tags-primary}`SCADA` {tags-primary}`MDE` {tags-primary}`PLC`
-  {tags-primary}`Data Historian` {tags-primary}`Industrial IoT`
+  {tags-primary}`Unstructured Data`
+  {tags-primary}`PostgreSQL compatibility`
+  {tags-primary}`Excellency in Support`
+
+:Related:
+  [Scalable, High-Performance Database for FMCG]
+
 
 ::::{info-card}
 
@@ -92,6 +131,9 @@ Scaling a high-speed production environment with CrateDB.
 :columns: 8
 
 {material-outlined}`data_exploration;2em` &nbsp; **Rauch: High-Speed Production Lines**
+
+CrateDB helps Rauch to identify and predict production issues and gives access
+to production data for many years, with no need for additional infrastructure.
 
 Rauch is filling 33 cans per second and how that adds up to 400 data records
 per second which are being processed, stored, and analyzed. In total, they are
@@ -123,13 +165,21 @@ the support for unstructured data, and its excellent customer support.
 Monitoring conveyor belts in the mining industry.
 
 :Industry:
-  {tags-secondary}`Engineering` {tags-secondary}`Mining`
+  {tags-secondary}`Engineering`
+  {tags-secondary}`Mining`
   {tags-secondary}`Production`
 
 :Tags:
   {tags-primary}`Sensor Data Acquisition`
-  {tags-primary}`Data Historian` {tags-primary}`Industrial IoT`
-  {tags-primary}`Machine Monitoring` {tags-primary}`Predictive Maintenance`
+  {tags-primary}`Machine Monitoring`
+  {tags-primary}`Predictive Maintenance`
+
+:Technologies:
+  {tags-info}`BLE Wireless`
+  {tags-info}`MQTT`
+
+:Related:
+  [SPGo!'s digital inspection of conveyor belts revolutionizes the market with CrateDB]
 
 
 ::::{info-card}
@@ -142,6 +192,8 @@ Monitoring conveyor belts in the mining industry.
 SPGo!, by PETROMIN, has developed a system that allows monitoring mining
 material conveyor belts with more than 40,000 sensors in real-time and
 760 million records per day. SPGo! trusts CrateDB as a partner on this journey.
+
+120 billion records each years
 
 - [SPGo!: Monitoring and Predictive Maintenance]
 
@@ -170,14 +222,20 @@ Hernán Lionel Cianfagna
 ## TGW Insights
 
 Today's warehouses are complex systems with a very high degree of automation.
+TGW simplifies aggregating massive volumes of diverse data with CrateDB.
 
 :Industry:
-  {tags-secondary}`Logistics` {tags-secondary}`Shipping`
+  {tags-secondary}`Logistics`
+  {tags-secondary}`Shipping`
+  {tags-secondary}`Warehouse Intelligence`
 
 :Tags:
-  {tags-primary}`SCADA` {tags-primary}`MDE` {tags-primary}`PLC`
-  {tags-primary}`Data Historian` {tags-primary}`Industrial IoT`
+  {tags-primary}`Sensor Data Acquisition`
   {tags-primary}`Digital Twin`
+
+:Related:
+  [TGW Logistics redefines warehouse intelligence]
+
 
 ::::{info-card}
 
@@ -269,7 +327,6 @@ digital twins of physical warehouses around the world, by using its unique set
 of features suitable for storing and querying complex industrial big data with
 high variety, unstructured features, and at different data frequencies.
 
-- [CrateDB: Challenges in industrial data]
 - [TGW: Storing and analyzing real-world industrial data]
 
 **What's inside**
@@ -301,9 +358,14 @@ high variety, unstructured features, and at different data frequencies.
 
 
 [ABB: AI and Analytics applied to Industrial Data]: https://youtu.be/45fZYJLh2Qg?feature=shared
-[CrateDB: Challenges in industrial data]: https://speakerdeck.com/cratedb/not-all-time-series-are-equal-challenges-of-storing-and-analyzing-industrial-data
+[ABB Genix is improving industrial productivity and operational excellence]: https://cratedb.com/customers/abb
+[Scalable, High-Performance Database for FMCG]: https://cratedb.com/fmcg-database
+[IoT database]: https://cratedb.com/solutions/iot-database
+[IIoT database]: https://cratedb.com/iiot-database
 [Rauch: High-Speed Production Lines]: https://youtu.be/gJPmJ0uXeVs?feature=shared
 [SPGo!: Monitoring and Predictive Maintenance]: https://youtu.be/eRqn7GhFO-s?feature=shared
+[SPGo!'s digital inspection of conveyor belts revolutionizes the market with CrateDB]: https://cratedb.com/customers/spgo
+[TGW Logistics redefines warehouse intelligence]: https://cratedb.com/customers/tgw-logistics
 [TGW: Connected Warehouses]: https://youtu.be/X2o0-W8-mCM?feature=shared
 [TGW: Fixing data silos in a high-speed logistics environment]: https://youtu.be/6dgjVQJtSKI?feature=shared
 [TGW: Storing and analyzing real-world industrial data]: https://youtu.be/ugQvihToY0k?feature=shared
