@@ -18,6 +18,7 @@ are using CrateDB to build data management solutions and platforms.
 ```{toctree}
 :maxdepth: 1
 
+Metrics Store <metrics/index>
 analytics/index
 industrial/index
 timeseries/index
@@ -36,6 +37,21 @@ derives many foundational features from.
 :margin: 4 4 0 0
 :padding: 0
 :gutter: 2
+
+
+:::{grid-item-card} {material-outlined}`manage_history;2em` Long Term Metrics Store
+:link: metrics-store
+:link-type: ref
+:link-alt: Using CrateDB as a long term metrics store
+
+Store metrics and telemetry data for the long term, with the benefits of
+using standard database interfaces, SQL query language, and horizontal
+scalability through clustering as you go.
++++
+**What's inside:**
+Never retire old records to cold storage,
+always have them ready for historical analysis.
+:::
 
 
 :::{grid-item-card} {material-outlined}`analytics;2em` Raw-Data Analytics
