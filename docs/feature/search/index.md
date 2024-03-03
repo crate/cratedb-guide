@@ -1,5 +1,7 @@
 (fts)=
+(fulltext)=
 (full-text)=
+
 # Full-Text Search
 
 Learn how to set up your database for full-text search, how to create the
