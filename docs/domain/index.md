@@ -3,9 +3,16 @@
 
 # Application Domains
 
-Tutorials and guidelines about how to use CrateDB within different use case
-scenarios, and how others are using it to build their data management
-solutions.
+Learn how to apply CrateDB within different use case scenarios, and how others
+are using CrateDB to build data management solutions and platforms.
+
+{tags-primary}`Full-Text Search`
+{tags-primary}`Document / Object / JSON`
+{tags-primary}`Long Term Metrics Store`
+{tags-primary}`Time Series Data`
+{tags-primary}`Industrial Data`
+{tags-primary}`Machine Learning`
+:::
 
 
 ```{toctree}
@@ -17,21 +24,13 @@ timeseries/index
 ml/index
 ```
 
-:Related Features:
-  [](#document) •
-  [](#fulltext) •
-  [](#geospatial)
 
-```{include} /_include/styles.html
-```
-
-
-:::{rubric} Features and Use Cases
+:::{rubric} Traditional Use Cases
 :::
 
-Foundational features of CrateDB at a glance, and how they are applied
-within software solutions and application platforms in different scenarios
-and environments.
+CrateDB is being developed in an open-source spirit, and closely together
+with its users and customers. Learn about application scenarios where CrateDB
+derives many foundational features from.
 
 ::::{grid} 1 2 2 2
 :margin: 4 4 0 0
@@ -39,52 +38,24 @@ and environments.
 :gutter: 2
 
 
-:::{grid-item-card} {material-outlined}`description;2em` Document Store
-:link: document/index
-:link-type: doc
-:link-alt: About CrateDB's OBJECT data type
-
-Learn how to use CrateDB's OBJECT data type to efficiently store JSON or
-other structured data, also nested, and how to query this data with ease.
-+++
-**What's inside:**
-CrateDB can do the same like Lotus Notes / Domino, CouchDB, MongoDB,
-and PostgreSQL's JSON data type.
-:::
-
-
-:::{grid-item-card} {material-outlined}`manage_search;2em` Full-Text Search
-:link: search/index
-:link-type: doc
-:link-alt: About CrateDB's full-text search capabilities
-
-Learn how to set up your database for full-text search, and how to query
-text data efficiently, to make sense of large volumes of unstructured
-information.
-+++
-**What's inside:**
-Like Elasticsearch, CrateDB is based on Lucene, the premier industry-grade
-full-text search engine library.
-:::
-
-
 :::{grid-item-card} {material-outlined}`analytics;2em` Raw-Data Analytics
-:link: analytics/index
-:link-type: doc
+:link: analytics
+:link-type: ref
 :link-alt: About CrateDB's analytics features
 
 CrateDB provides real-time analytics on raw data.
-Learn how others are successfully running multi tenant data analytics on
-top of billions of records.
+Learn how others are successfully running real-time multi tenant data
+analytics applications on top of billions of records.
 +++
 **What's inside:**
-Never retire old records to cold storage, always keep them hot instead.
+If you absolutely must keep the records, because they are unique,
+downsampling is not an option.
 :::
 
 
 :::{grid-item-card} {material-outlined}`precision_manufacturing;2em` Industrial Data
-:link: industrial/index
-:link-type: doc
+:link: industrial
+:link-type: ref
 :link-alt: Use CrateDB in industrial data platforms
 
 Learn how others are successfully using CrateDB within industrial,
@@ -98,7 +69,7 @@ About the unique challenges and complexities of industrial big data.
 ::::
 
 
-:::{rubric} Time Series Analysis and Machine Learning
+:::{rubric} Time Series Data Analysis and Machine Learning
 :::
 
 Apply procedures from advanced analysis, scientific computing, and other
@@ -110,10 +81,10 @@ technology domains to your data without further ado.
 :gutter: 2
 
 
-:::{grid-item-card} {material-outlined}`stacked_line_chart;2em` Time Series
-:link: timeseries/index
-:link-type: doc
-:link-alt: About CrateDB for time series data
+:::{grid-item-card} {material-outlined}`stacked_line_chart;2em` Time Series Data
+:link: timeseries
+:link-type: ref
+:link-alt: About CrateDB for time series data analysis
 
 Learn how to use CrateDB for time series use-cases,
 and how to apply time series modeling and analysis procedures
@@ -139,3 +110,16 @@ and TensorFlow.
 
 
 ::::
+
+
+:::{seealso} **Related Features:**
+[](#document) •
+[](#fulltext) •
+[](#geospatial) •
+[](#generated-columns) •
+[](#udf)
+
+
+
+```{include} /_include/styles.html
+```
