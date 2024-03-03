@@ -47,7 +47,7 @@ work optimally with CrateDB.
 
 - [Fundamentals of the COPY FROM statement]
 - [](#etl)
-- [](#metrics)
+- [](#integrate-metrics)
 - [](#performance)
 - [Import weather data using Dask]
 
