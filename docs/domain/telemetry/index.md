@@ -1,9 +1,9 @@
 (metrics-store)=
 
-# Metrics, Telemetry, and Log Data Store
+# Telemetry Data Store
 
-CrateDB works well as a cluster database for storing massive amounts of
-metrics and telemetry data, and log information.
+CrateDB works well for storing massive amounts of telemetry data,
+such as metrics and logs.
 
 It is a spiritual successor, or alternative to, rrdtool, Graphite, InfluxDB,
 Prometheus, Mimir, or Thanos, but with the benefits of long term storage
