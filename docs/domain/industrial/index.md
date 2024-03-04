@@ -14,7 +14,7 @@ The complexities of industrial big data are characterized by its high variety,
 unstructured features, different data sampling rates, and how these attributes
 influence data storage, retention, and integration.
 
-Learn how to use CrateDB in long-term storage and analytics scenarios for
+Learn how to use CrateDB in long term storage and analytics scenarios for
 industrial / IIoT / Industry 4.0 application scenarios within
 engineering, manufacturing, production, and logistics, as well as other
 operational domains, or within similar environments where billions of data

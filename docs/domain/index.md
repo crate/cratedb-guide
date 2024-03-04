@@ -134,7 +134,7 @@ and TensorFlow.
 [](#geospatial) •
 [](#generated-columns) •
 [](#udf)
-
+:::
 
 
 ```{include} /_include/styles.html
