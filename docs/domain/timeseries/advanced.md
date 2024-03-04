@@ -6,10 +6,10 @@
 Learn how to conduct advanced data analysis on large time series datasets
 with CrateDB.
 
-{tags-primary}`Exploratory data analysis`
-{tags-primary}`Time series decomposition`
 {tags-primary}`Anomaly detection`
 {tags-primary}`Forecasting / Prediction`
+{tags-primary}`Time series decomposition`
+{tags-primary}`Exploratory data analysis`
 {tags-primary}`Metadata integration`
 
 
@@ -20,6 +20,12 @@ with CrateDB.
 </style>
 
 
+:::{contents}
+:local:
+:depth: 2
+:::
+
+
 (timeseries-anomaly-forecasting)=
 ## Anomaly Detection and Forecasting
 
@@ -27,8 +33,8 @@ To gain insights from your data in a one-shot or recurring way, based on
 machine learning techniques, you may want to look into applying [anomaly]
 detection and/or [forecasting] methods.
 
-**Examples**
-
+:::{rubric} Examples
+:::
 
 ::::{info-card}
 
@@ -81,7 +87,7 @@ to train various timeseries forecasting models.
 
 
 (timeseries-decomposition)=
-## Decomposition
+## Time Series Decomposition
 
 [Decomposition of time series] is a statistical task that deconstructs a [time
 series] into several components, each representing one of the underlying
@@ -94,7 +100,7 @@ You can use this method to dissect a time series into multiple components,
 typically including trend, seasonal, and random (or irregular) components.
 
 This process helps in understanding the underlying patterns of the time series
-data, such as identifying any long-term direction (trend), recurring patterns
+data, such as identifying any long term direction (trend), recurring patterns
 at fixed intervals (seasonality), and randomness (irregular fluctuations) in
 the data.
 
@@ -102,7 +108,8 @@ Decomposition is crucial for analyzing how these components change over time,
 improving forecasts, and developing strategies for addressing each element
 effectively.
 
-**Examples**
+:::{rubric} Examples
+:::
 
 ::::{info-card}
 
@@ -131,7 +138,7 @@ seasonality, and residual (or irregular) fluctuations.
 
 
 (timeseries-eda)=
-## EDA
+## Exploratory data analysis (EDA)
 
 [Exploratory data analysis (EDA)] is an approach of analyzing data sets to
 summarize their main characteristics, often using statistical graphics and
@@ -144,7 +151,8 @@ The objective of this step is to gain an understanding and intuition of the
 data, identify potential issues, and, in machine learning, guide feature
 engineering and model building.
 
-**Examples**
+:::{rubric} Examples
+:::
 
 ::::{info-card}
 
@@ -174,6 +182,90 @@ identify patterns.
 ::::
 
 
+(timeseries-long-term-storage)=
+## Long Term Storage
+
+CrateDB stores large volumes of data, keeping it accessible for querying
+and insightful analysis, even considering historic data records.
+**Never retire data just because your database can't handle the cardinality.**
+
+:::{rubric} Applications
+:::
+
+::::{info-card}
+
+:::{grid-item} **Storing and analyzing massive amounts of synoptic weather data**
+:columns: 8
+
+Wetterdienst uses CrateDB for mass storage of weather data, allowing you to
+query it efficiently. It provides access to data at more than ten canonical
+sources of raw weather data from domestic weather agencies.
+:::
+
+:::{grid-item}
+:columns: 4
+
+[![Wetterdienst Documentation](https://img.shields.io/badge/Documentation-Wetterdienst%20Export-darkyellow?logo=Markdown)](https://wetterdienst.readthedocs.io/en/latest/usage/python-api.html#export)
+[![Wetterdienst Project](https://img.shields.io/badge/Repository-Wetterdienst-darkblue?logo=GitHub)](https://github.com/earthobservations/wetterdienst)
+
+{tags-primary}`Earth Observations`
+{tags-primary}`Metadata`
+{tags-primary}`Sensor Data`
+{tags-primary}`Rich Time Series`
+
+{tags-secondary}`pandas`
+{tags-secondary}`Polars`
+{tags-secondary}`SQL`
+:::
+
+::::
+
+
+:::{rubric} Use Cases
+:::
+
+
+::::{info-card}
+
+:::{grid-item} **CrateDB as metrics and log data store for the long term**
+:columns: 8
+
+Store and analyze high volumes of system monitoring information.
+:::
+
+:::{grid-item}
+:columns: 4
+
+[](#metrics-store)
+
+{tags-primary}`Long Term Storage`
+{tags-primary}`Metrics`
+{tags-primary}`Logging`
+:::
+
+::::
+
+
+::::{info-card}
+
+:::{grid-item} **CrateDB provides real-time analytics on raw data stored for the long term**
+:columns: 8
+
+Keep massive amounts of data ready in the hot zone for analytics purposes.
+:::
+
+:::{grid-item}
+:columns: 4
+
+[](#analytics)
+
+{tags-primary}`Long Term Storage`
+{tags-primary}`Real-Time Analytics`
+:::
+
+::::
+
+
 (timeseries-analysis-metadata)=
 ## Metadata Integration
 
@@ -186,7 +278,8 @@ CrateDB supports effective time-series analysis with fast aggregations, a
 rich set of built-in functions, and [JOIN](inv:crate-reference#sql_joins)
 operations.
 
-**Examples**
+:::{rubric} Examples
+:::
 
 ::::{info-card}
 
@@ -203,7 +296,7 @@ captures various device readings, such as battery, CPU, and memory information.
 
 [![Navigate to Tutorial](https://img.shields.io/badge/Navigate%20to-Tutorial-lightgray?logo=Markdown)](#timeseries-objects)
 
-{tags-primary}`Rich time series`
+{tags-primary}`Rich Time Series`
 {tags-primary}`Metadata`
 
 {tags-secondary}`SQL`
@@ -254,7 +347,8 @@ significant insights into the characteristics of your data. By using
 best-of-breed data visualization tools, initial data exploration is
 mostly your first encounter with the data.
 
-**Examples**
+:::{rubric} Examples
+:::
 
 ::::{info-card}
 

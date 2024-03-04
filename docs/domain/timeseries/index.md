@@ -1,7 +1,7 @@
 (timeseries)=
 # Time Series Data
 
-Learn how to optimally use CrateDB for time series use-cases.
+Learn how to use CrateDB for time series use cases.
 
 CrateDB is a distributed and scalable SQL database for storing and analyzing
 massive amounts of data in near real-time, even with complex queries. It is
@@ -69,6 +69,23 @@ and analyzing. Industrial applications.
 :::
 
 ::::
+
+
+:::{seealso}
+
+**Features:**
+[](#document) •
+[](#fulltext) •
+[](#geospatial) •
+[](#generated-columns) •
+[](#udf)
+
+**Domains:**
+[](#metrics-store) •
+[](#analytics) •
+[](#industrial) •
+[](#machine-learning)
+:::
 
 
 :::{toctree}
