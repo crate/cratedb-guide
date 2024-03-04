@@ -1,7 +1,7 @@
 (analytics)=
 # Raw-Data Analytics
 
-**CrateDB provides real-time analytics on raw data stored for the long-term**
+**CrateDB provides real-time analytics on raw data stored for the long term**
 
 In all domains of real-time analytics where you absolutely must have access to all
 the records, and can't live with any down-sampled variants, because records are
