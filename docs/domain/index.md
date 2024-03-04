@@ -9,8 +9,8 @@ are using CrateDB to build data management solutions and platforms.
 {tags-primary}`Full-Text Search`
 {tags-primary}`Document / Object / JSON`
 {tags-primary}`Long Term Metrics Store`
-{tags-primary}`Time Series Data`
 {tags-primary}`Industrial Data`
+{tags-primary}`Time Series Data`
 {tags-primary}`Machine Learning`
 :::
 
@@ -18,7 +18,7 @@ are using CrateDB to build data management solutions and platforms.
 ```{toctree}
 :maxdepth: 1
 
-Metrics Store <metrics/index>
+telemetry/index
 analytics/index
 industrial/index
 timeseries/index
