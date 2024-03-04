@@ -51,7 +51,7 @@ export data from CrateDB to a local file system, using the [`COPY TO`] statement
 Rafaela will use the [Quotes Dataset].
 
 For more information about how to import and export
-data from/into CrateDB, please refer to [](#timeseries-io).
+data from/into CrateDB, please refer to [](#import-export).
 :::
 
 :::{grid-item} &nbsp;
