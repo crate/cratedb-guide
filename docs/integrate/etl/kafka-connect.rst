@@ -57,7 +57,7 @@ ingested into a Kafka topic. This data could be used in a reactive sense: for
 example, a micro-controller could consume from this topic to turn on air
 conditioning if the temperature were to rise above a certain threshold. But
 besides this use of the data, we want to ingest them into CrateDB. This allows
-us to do long-term data analytics to predict weather trends. Each payload from
+us to do long term data analytics to predict weather trends. Each payload from
 each sensor looks like this:
 
 .. code-block:: json
