@@ -44,7 +44,7 @@ anomaly detection, forecasting.
 
 
 :::{grid-item-card} {material-outlined}`sync;2em` Import and Export
-:link: timeseries-io
+:link: import-export
 :link-type: ref
 :link-alt: About time series data import and export
 
@@ -74,6 +74,7 @@ and analyzing. Industrial applications.
 :::{seealso}
 
 **Features:**
+[](#connect) •
 [](#document) •
 [](#fulltext) •
 [](#geospatial) •
@@ -93,6 +94,5 @@ and analyzing. Industrial applications.
 
 Basics <basics>
 Advanced <advanced>
-Connectivity <connect>
 video
 :::
