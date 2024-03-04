@@ -298,7 +298,7 @@ use-cases.
 :hidden:
 
 install/index
-getting-started
+getting-started/index
 feature/index
 admin/index
 performance/index

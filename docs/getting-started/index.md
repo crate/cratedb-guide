@@ -45,22 +45,13 @@ about it, please refer to its documentation at [](inv:crate-crash:*:label#index)
 ![image](https://cratedb.com/docs/crate/crash/en/latest/_images/query.png){width=320px}
 
 
-(connect)=
 {#use-dive-in}
 {#use-start-building}
 ## Connect
-
-You have a variety of options to connect to CrateDB, and integrate it with
-off-the-shelf, 3rd-party, open-source, and proprietary applications, mostly
-using [CrateDB's PostgreSQL interface].
-
-To learn more, please refer to the documentation sections about supported
-client drivers, libraries, and frameworks, and corresponding tutorials.
-
-- [Drivers and Integrations]
-- [Database Driver Code Examples]
-- [Integration Tutorials]
-- [More integration tutorials]
+There is a dedicated page which enumerates all the connectivity options.
+```{toctree}
+connect
+```
 
 
 :::{tip}
@@ -69,11 +60,5 @@ its SQL dialect, please also visit the [CrateDB Reference Manual].
 :::
 
 
-
 [CrateDB Cloud]: inv:cloud:*:label#index
 [CrateDB Reference Manual]: inv:crate-reference:*:label#index
-[CrateDB's PostgreSQL interface]: inv:crate-reference:*:label#interface-postgresql
-[Database Driver Code Examples]: inv:crate-clients-tools:*:label#connect
-[Drivers and Integrations]: inv:crate-clients-tools:*:label#index
-[Integration Tutorials]: #integrate
-[More integration tutorials]: https://community.cratedb.com/t/overview-of-cratedb-integration-tutorials/1015

@@ -3,6 +3,7 @@
 
 ## Getting Started
 
+- [](#connect)
 - [](#timeseries-generate)
 - [](#timeseries-normalize)
 - [Financial data collection and processing using pandas]
@@ -27,7 +28,7 @@
 
 :::{tip}
 For more in-depth information, please visit the documentation pages about
-[](#timeseries-connect) and [](#timeseries-advanced). Alternatively, you
+[](#timeseries-advanced). Alternatively, you
 may prefer the [](#timeseries-video).
 :::
 
