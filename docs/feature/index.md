@@ -9,6 +9,7 @@ All features of CrateDB at a glance.
 :maxdepth: 1
 
 document/index
+relational/index
 search/index
 geospatial/index
 generated/index
