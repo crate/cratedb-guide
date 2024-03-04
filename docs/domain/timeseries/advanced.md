@@ -43,7 +43,7 @@ NumPy, Merlion, and Matplotlib.
 :::{grid-item}
 :columns: 3
 
-[![Open on GitHub](https://img.shields.io/badge/Open%20on-GitHub-lightgray?logo=GitHub)](https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/mlops-mlflow/tracking_merlion.ipynb)
+[![Open on GitHub](https://img.shields.io/badge/Open%20on-GitHub-darkblue?logo=GitHub)](https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/mlops-mlflow/tracking_merlion.ipynb)
 [![Open in Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/mlops-mlflow/tracking_merlion.ipynb)
 
 {tags-primary}`Anomaly Detection`
@@ -68,7 +68,7 @@ to train various timeseries forecasting models.
 :::{grid-item}
 :columns: 3
 
-[![Open on GitHub](https://img.shields.io/badge/Open%20on-GitHub-lightgray?logo=GitHub)](https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/automl/automl_timeseries_forecasting_with_pycaret.ipynb)
+[![Open on GitHub](https://img.shields.io/badge/Open%20on-GitHub-darkblue?logo=GitHub)](https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/automl/automl_timeseries_forecasting_with_pycaret.ipynb)
 [![Open in Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/automl/automl_timeseries_forecasting_with_pycaret.ipynb)
 
 {tags-primary}`Forecasting / Prediction`
@@ -118,7 +118,7 @@ seasonality, and residual (or irregular) fluctuations.
 :::{grid-item}
 :columns: 3
 
-[![Open on GitHub](https://img.shields.io/badge/Open%20on-GitHub-lightgray?logo=GitHub)](https://github.com/crate/cratedb-examples/blob/main/topic/timeseries/time-series-decomposition.ipynb)
+[![Open on GitHub](https://img.shields.io/badge/Open%20on-GitHub-darkblue?logo=GitHub)](https://github.com/crate/cratedb-examples/blob/main/topic/timeseries/time-series-decomposition.ipynb)
 [![Open in Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/timeseries/time-series-decomposition.ipynb)
 
 {tags-primary}`Time series decomposition`
@@ -162,7 +162,7 @@ identify patterns.
 :::{grid-item}
 :columns: 3
 
-[![Open on GitHub](https://img.shields.io/badge/Open%20on-GitHub-lightgray?logo=GitHub)](https://github.com/crate/cratedb-examples/blob/main/topic/timeseries/exploratory_data_analysis.ipynb)
+[![Open on GitHub](https://img.shields.io/badge/Open%20on-GitHub-darkblue?logo=GitHub)](https://github.com/crate/cratedb-examples/blob/main/topic/timeseries/exploratory_data_analysis.ipynb)
 [![Open in Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/timeseries/exploratory_data_analysis.ipynb)
 
 {tags-primary}`EDA on time series`
@@ -273,7 +273,7 @@ into a CrateDB Cloud database cluster.
 :::{grid-item}
 :columns: 3
 
-[![Open on GitHub](https://img.shields.io/badge/Open%20on-GitHub-lightgray?logo=GitHub)](https://github.com/crate/cratedb-examples/blob/amo/cloud-datashader/topic/timeseries/explore/cloud-datashader.ipynb)
+[![Open on GitHub](https://img.shields.io/badge/Open%20on-GitHub-darkblue?logo=GitHub)](https://github.com/crate/cratedb-examples/blob/amo/cloud-datashader/topic/timeseries/explore/cloud-datashader.ipynb)
 [![Open in Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/crate/cratedb-examples/blob/amo/cloud-datashader/topic/timeseries/explore/cloud-datashader.ipynb)
 
 {tags-primary}`Time series visualization`
