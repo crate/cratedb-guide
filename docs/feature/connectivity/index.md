@@ -4,9 +4,9 @@
 (import-export)=
 
 
-# Database Connectivity
+# Connectivity
 
-CrateDB connectivity options.
+All the CrateDB connectivity options at a glance.
 
 You have a variety of options to connect to CrateDB, and to integrate it with
 off-the-shelve, 3rd-party, open-source, and proprietary applications.
