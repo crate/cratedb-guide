@@ -5,17 +5,55 @@
 
 All features of CrateDB at a glance.
 
-```{toctree}
-:maxdepth: 1
+:::::{grid} 1 3 3 3
+:margin: 4 4 0 0
+:padding: 0
+:gutter: 2
 
-document/index
+::::{grid-item-card} {material-outlined}`lightbulb;2em` Fundamentals
+:::{toctree}
+:maxdepth: 1
+sql/index
 relational/index
+document/index
 search/index
 geospatial/index
+vector/index
+blob/index
+:::
++++
+CrateDB combines the advantages of traditional SQL databases with the
+best properties of NoSQL databases.
+::::
+
+::::{grid-item-card} {material-outlined}`group;2em` Operational
+:::{toctree}
+:maxdepth: 1
+cluster/index
+snapshot/index
 connectivity/index
+cloud/index
+:::
++++
+CrateDB scales horizontally using a shared-nothing
+architecture, inherited from Elasticsearch.
+::::
+
+::::{grid-item-card} {material-outlined}`read_more;2em` More
+:::{toctree}
+:maxdepth: 1
+query/index
 generated/index
+fdw/index
 udf/index
-```
+replication/index
+:::
++++
+Advanced features supporting daily data
+operations, all based on standard SQL.
+::::
+
+:::::
 
 
 :::{rubric} Features and Use Cases
@@ -60,3 +98,7 @@ full-text search engine library.
 
 
 ::::
+
+
+```{include} /_include/styles.html
+```

@@ -1,4 +1,4 @@
-.. _clustering:
+.. _admin-clustering:
 
 ==========
 Clustering

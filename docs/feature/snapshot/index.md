@@ -1,0 +1,6 @@
+(snapshot)=
+
+# Snapshots
+
+:::{todo} Implement.
+:::
