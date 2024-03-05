@@ -3,62 +3,40 @@
 
 # Document Store
 
-::::{grid}
+:::::{grid}
 :padding: 0
-:class-row: rubric-slim
 
-:::{grid-item}
+::::{grid-item}
+:class: rubric-slimmer
 :columns: 9
 
+
+:::{rubric} Overview
+:::
 Learn how to efficiently store JSON documents or other structured data, also
-nested, using CrateDB's `OBJECT` and `ARRAY` container data types, and how to
+nested, using CrateDB's OBJECT and ARRAY container data types, and how to
 query this data with ease.
+
+CrateDB combines the advantages of typical SQL databases and strict
+schemas with the dynamic properties of NoSQL databases. While traditional
+object-relational databases allow you to store and process JSON data only
+opaquely, CrateDB handles objects as first-level citizens.
+
+:::{rubric} About
+:::
+This feature allows users to access object properties in the same manner as
+columns in a table, including {ref}`full-text indexing <fulltext>` and
+{ref}`aggregation <aggregation>` capabilities.
 
 Even when using dynamic objects, i.e. when working without a strict object
 schema, all attributes are indexed by default, and can be queried efficiently.
 
 Storing documents in CrateDB provides the same convenience like the
 document-oriented storage layers of Lotus Notes / Domino, CouchDB,
-MongoDB, or PostgreSQL's `JSON(B)` types.
+MongoDB, or PostgreSQL's JSON(B) types.
 
-With CrateDB, compatible to PostgreSQL, you can do all of that using plain SQL.
-Other than integrating well with commodity systems using standard database
-access interfaces like ODBC or JDBC, it provides a proprietary HTTP interface
-on top.
+:::{rubric} Details
 :::
-
-:::{grid-item}
-:columns: 3
-
-```{rubric} Reference Manual
-```
-- [](inv:crate-reference#data-types-container)
-- [Querying](inv:crate-reference#sql_dql_container)
-- [](inv:crate-reference#scalar-objects)
-- [](inv:crate-reference#scalar-arrays)
-- [](inv:crate-reference#sql_dql_array_comparisons)
-- [Non-existing keys](inv:crate-reference#conf-session-error_on_unknown_object_key)
-
-```{rubric} Related
-```
-- [](#fulltext)
-- [](#geospatial)
-- [](#machine-learning)
-- [](#analytics)
-
-{tags-primary}`JSON`
-{tags-primary}`Container`
-{tags-primary}`Document`
-{tags-primary}`Object`
-{tags-primary}`Array`
-{tags-primary}`Nested`
-{tags-primary}`Indexed`
-:::
-
-::::
-
-
-## About
 
 CrateDB uses Lucene as a storage layer, so it inherits its concepts
 about storage entities and units, in the same spirit as Elasticsearch.
@@ -72,6 +50,43 @@ about storage entities and units, in the same spirit as Elasticsearch.
 
 While Elasticsearch uses a [query DSL based on JSON], in CrateDB, you can work
 with Lucene Documents using SQL.
+::::
+
+
+::::{grid-item}
+:class: rubric-slim
+:columns: 3
+
+```{rubric} Reference Manual
+```
+- {ref}`crate-reference:data-types-container`
+- [Querying containers](inv:crate-reference#sql_dql_container)
+- {ref}`crate-reference:scalar-objects`
+- {ref}`crate-reference:scalar-arrays`
+- {ref}`crate-reference:sql_dql_array_comparisons`
+- [Non-existing keys](inv:crate-reference#conf-session-error_on_unknown_object_key)
+
+```{rubric} Related
+```
+- {ref}`sql`
+- {ref}`connect`
+- {ref}`fulltext`
+- {ref}`query`
+- {ref}`geospatial`
+- {ref}`machine-learning`
+- {ref}`analytics`
+
+{tags-primary}`JSON`
+{tags-primary}`Container`
+{tags-primary}`Document`
+{tags-primary}`Object`
+{tags-primary}`Array`
+{tags-primary}`Nested`
+{tags-primary}`Indexed`
+::::
+
+:::::
+
 
 
 ## Synopsis
@@ -155,7 +170,7 @@ Working with structured data and container data types in CrateDB.
 ```
 For columns of type OBJECT, CrateDB supports different policies about the
 behaviour with undefined attributes, namely STRICT, DYNAMIC, and IGNORED,
-see [](inv:crate-reference#type-object-column-policy).
+see {ref}`crate-reference:type-object-column-policy`.
 
 :STRICT:
   Reject any sub-column that is not defined upfront.
@@ -175,9 +190,9 @@ see [](inv:crate-reference#type-object-column-policy).
 ```
 To support querying DYNAMIC OBJECTs using SQL, where keys may not exist within
 an OBJECT, CrateDB provides the [error_on_unknown_object_key] session setting. 
-It controls the behaviour of querying unknown object keys to dynamic objects.
+It controls the behaviour when querying unknown object keys to dynamic objects.
 
-By default, CrateDB will throw an error if any of the queried object keys are
+By default, CrateDB will raise an error if any of the queried object keys are
 unknown. When adjusting this setting to `false`, it will return `NULL` as the
 value of the corresponding key.
 
@@ -217,13 +232,7 @@ container data types.
 :::{grid-item} **Blog: Handling Dynamic Objects in CrateDB**
 :columns: 9
 
-CrateDB combines the advantages of typical SQL databases and strict
-schemas with the dynamic properties of NoSQL databases. While traditional
-object-relational databases allow you to store and process JSON data only
-opaquely, CrateDB handles objects as first-level citizens.
-
-This allows users to access object properties in the same manner as columns
-in a table, including full-text indexing and aggregation capabilities.
+Learn fundamentals about CrateDB's OBJECT data type.
 :::
 
 :::{grid-item}
@@ -232,6 +241,7 @@ in a table, including full-text indexing and aggregation capabilities.
 [Handling Dynamic Objects in CrateDB]
 
 {tags-primary}`Fundamentals` \
+{tags-secondary}`OBJECT`
 {tags-secondary}`SQL`
 :::
 
@@ -252,8 +262,9 @@ as video [Getting Started with CrateDB Objects].
 
 [Objects in CrateDB]
 
-{tags-primary}`Fundamentals` \
-{tags-secondary}`Docker`
+{tags-primary}`Fundamentals`
+{tags-primary}`Docker` \
+{tags-secondary}`OBJECT`
 {tags-secondary}`SQL`
 :::
 
@@ -265,7 +276,8 @@ as video [Getting Started with CrateDB Objects].
 :::{grid-item} **Querying Nested Structured Data**
 :columns: 9
 
-Today's data management tasks need to handle multi-structured data from
+Today's data management tasks need to handle multi-structured and
+{ref}`nested <crate-reference:sql_dql_nested>` data from
 different data sources. CrateDB's dynamic OBJECT data type allows you to
 store and analyze complex and nested data efficiently.
 
@@ -277,9 +289,10 @@ URLs.
 :::{grid-item}
 :columns: 3
 
-[](#objects-basics)
+{ref}`objects-basics`
 
 {tags-primary}`Fundamentals`
+{tags-secondary}`OBJECT` \
 {tags-secondary}`SQL`
 :::
 
@@ -316,9 +329,10 @@ data types.
 <iframe width="240" src="https://www.youtube-nocookie.com/embed/aQi9MXs2irU?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 **Date:** 10 Aug 2022 \
-**Speakers:** Rafaela Sant'ana
+**Speaker:** Rafaela Sant'ana
 
 {tags-primary}`Fundamentals` \
+{tags-secondary}`OBJECT`
 {tags-secondary}`SQL`
 :::
 
@@ -345,42 +359,77 @@ nested data.
 <iframe width="240" src="https://www.youtube-nocookie.com/embed/S_RHmdz2IQM?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 **Date:** 15 May 2023 \
-**Speakers:** Georg Traar
+**Speaker:** Georg Traar
 
 {tags-primary}`Fundamentals` \
+{tags-secondary}`OBJECT`
 {tags-secondary}`SQL`
 :::
 
 ::::
 
 
+::::{info-card}
+
+:::{grid-item} **Dynamic Schemas and Indexing Objects**
+:columns: 8
+
+Learn more about OBJECTs from the perspective of dynamic schema evolution
+and about OBJECT indexing.
+
+- [Dynamic Schemas and Indexing Objects]
+
+:::
+
+:::{grid-item}
+:columns: 4
+
+<iframe width="240" src="https://www.youtube-nocookie.com/embed/lp51GphV9vo?start=495&si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+**Date:** 20 Mar 2023 \
+**Speaker:** Marija Selakovic
+
+{tags-primary}`Fundamentals` \
+{tags-secondary}`OBJECT`
+{tags-secondary}`SCHEMA`
+:::
+
+::::
+
+
+
 :::{seealso} **Product:**
 [Multi-model Database] •
 [JSON Database] •
 [Dynamic Database Schemas] •
-[Nested Data Structure]
+[Nested Data Structure] •
+[Relational Database]
 :::
 
 
-```{include} /_include/styles.html
-```
 
-
-[Dynamic Database Schemas]: https://cratedb.com/product/features/dynamic-schemas
+[Dynamic Schemas and Indexing Objects]: https://youtu.be/lp51GphV9vo?t=495s&feature=shared
 [error_on_unknown_object_key]: inv:crate-reference#conf-session-error_on_unknown_object_key
 [generated columns]: #generated-columns
 [Getting Started with CrateDB Objects]: https://youtu.be/aQi9MXs2irU?feature=shared
 [Handling Dynamic Objects in CrateDB]: https://cratedb.com/blog/handling-dynamic-objects-in-cratedb
-[JSON Database]: https://cratedb.com/solutions/json-database
-[Multi-model Database]: https://cratedb.com/solutions/multi-model-database
-[Nested Data Structure]: https://cratedb.com/product/features/nested-data-structure
 [Objects in CrateDB]: https://community.cratedb.com/t/objects-in-cratedb/1188
 [query DSL based on JSON]: https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html
 [Unleashing the Power of Nested Data: Ingesting and Querying JSON Documents with SQL]: https://youtu.be/S_RHmdz2IQM?feature=shared
+
+<!-- shared -->
+[Dynamic Database Schemas]: https://cratedb.com/product/features/dynamic-schemas
+[JSON Database]: https://cratedb.com/solutions/json-database
+[Multi-model Database]: https://cratedb.com/solutions/multi-model-database
+[Nested Data Structure]: https://cratedb.com/product/features/nested-data-structure
+[Relational Database]: https://cratedb.com/solutions/relational-database
 
 ```{toctree}
 :maxdepth: 1
 :hidden:
 
 objects-hands-on
+```
+
+```{include} /_include/styles.html
 ```

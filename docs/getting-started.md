@@ -47,7 +47,7 @@ about it, please refer to its documentation at [](inv:crate-crash:*:label#index)
 
 {#use-dive-in}
 {#use-start-building}
-## Connect
+## How to Connect
 There is a dedicated page which enumerates all the connectivity options.
 
 - {ref}`connect``
