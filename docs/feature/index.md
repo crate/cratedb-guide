@@ -12,6 +12,7 @@ document/index
 relational/index
 search/index
 geospatial/index
+connectivity/index
 generated/index
 udf/index
 ```
