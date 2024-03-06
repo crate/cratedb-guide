@@ -1,5 +1,6 @@
 .. highlight:: bash
 
+.. _red-hat:
 .. _install-rpm:
 .. _install-redhat:
 .. _install-suse:

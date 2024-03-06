@@ -1,5 +1,7 @@
 .. highlight:: bash
 
+.. _debian:
+.. _ubuntu:
 .. _install-deb:
 .. _install-debian:
 .. _install-ubuntu:

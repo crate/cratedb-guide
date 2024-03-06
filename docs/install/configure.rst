@@ -15,7 +15,7 @@ When using the package-based setup flavor for :ref:`install-deb` or
 :ref:`install-rpm`, the main CrateDB configuration files are located within the
 ``/etc/crate`` directory.
 
-When using the :ref:`install-adhoc` setup, or the :ref:`Microsoft Windows <windows-install>`
+When using the :ref:`install-adhoc` setup, or the :ref:`Microsoft Windows <install-windows>`
 setup, the configuration files are located within the ``config/`` directory relative to the
 working directory.
 
@@ -31,7 +31,7 @@ environment variables.
     RPM packages of CrateDB versions up to `5.2.11`_, `5.3.8`_, `5.4.7`_
     and `5.5.2`_ are using the ``/etc/sysconfig/crate`` file instead.
 
-When using the :ref:`install-adhoc` setup, or the :ref:`Microsoft Windows <windows-install>`
+When using the :ref:`install-adhoc` setup, or the :ref:`Microsoft Windows <install-windows>`
 setup, the environment variables will be defined by ``bin/crate{.sh,.bat}`` relative to the
 working directory.
 
