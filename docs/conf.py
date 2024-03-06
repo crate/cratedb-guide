@@ -3,6 +3,9 @@ from crate.theme.rtd.conf.cratedb_guide import *
 # Fallback guards, when parent theme does not introduce them.
 if "html_theme_options" not in globals():
     html_theme_options = {}
+if "intersphinx_mapping" not in globals():
+    intersphinx_mapping = {}
+
 # Configure sitemap generation URLs.
 sitemap_url_scheme = "{link}"
 
@@ -28,12 +31,7 @@ linkcheck_ignore = [
     r"https://stackoverflow.com/.*",
 ]
 
-if "sphinx.ext.intersphinx" not in extensions:
-    extensions += ["sphinx.ext.intersphinx"]
-
-if "intersphinx_mapping" not in globals():
-    intersphinx_mapping = {}
-
+# Configure intersphinx.
 intersphinx_mapping.update({
     'matplotlib': ('https://matplotlib.org/stable/', None),
     'pandas': ('https://pandas.pydata.org/pandas-docs/stable/', None),
