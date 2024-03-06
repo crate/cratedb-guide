@@ -1,5 +1,16 @@
 from crate.theme.rtd.conf.cratedb_guide import *
 
+# Fallback guards, when parent theme does not introduce them.
+if "html_theme_options" not in globals():
+    html_theme_options = {}
+# Configure sitemap generation URLs.
+sitemap_url_scheme = "{link}"
+
+# Configure rel="canonical" link URLs.
+html_theme_options.update({
+        "canonical_url_path": "%s/" % url_path,
+})
+
 # Disable version chooser.
 html_context.update({
     "display_version": False,
