@@ -13,7 +13,7 @@ massive amounts of data in near real-time, even with complex queries. It is
 PostgreSQL-compatible, and based on Lucene. 
 
 
-::::{grid} 2
+::::{grid} 1 2 2 2
 :padding: 0
 
 
@@ -81,7 +81,7 @@ PostgreSQL-compatible, and based on Lucene.
 Learn how to apply CrateDB's features to optimally cover use-cases in different
 application and topic domains.
 
-::::{grid} 3
+::::{grid} 1 2 3 3
 :padding: 0
 
 
@@ -163,7 +163,7 @@ application and topic domains.
 Learn how to use CrateDB with 3rd-party software applications, libraries, and
 frameworks.
 
-::::{grid} 3
+::::{grid} 1 2 3 3
 :padding: 0
 
 
