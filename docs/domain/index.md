@@ -14,5 +14,5 @@ document/index
 search/index
 industrial/index
 timeseries/index
-../integrate/ml/index
+ml/index
 ```

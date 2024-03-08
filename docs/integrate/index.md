@@ -19,7 +19,6 @@ etl/index
 metrics/index
 visualize/index
 bi/index
-ml/index
 testing
 ```
 
