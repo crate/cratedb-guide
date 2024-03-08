@@ -14,8 +14,8 @@ based on various machine data features.
 
 CrateDB can easily be integrated into a Machine Learning application as a data
 source, as well as serving as a data store for the resulting predictions. The
-connection to CrateDB can be established using the `Psycopg2`_ and `Pandas`_
-library. Preparing the data can be done with `Sklearn`_. This guide will
+connection to CrateDB can be established using the `psycopg2`_ and `pandas`_
+library. Preparing the data can be done with `sklearn`_. This guide will
 demonstrate the process.
 
 
@@ -71,15 +71,15 @@ contains:
     aws_access_key_id=<key>
     aws_secret_access_key=<access_key>
 
-- `Python`_
-    - The `tensorflow`_ library
-    - The `numpy`_ library
-    - The `sklearn`_ library
-    - The `pandas`_ library
-    - The `psycopg2`_ library
-    - The `boto3`_ library
-    - The `joblib`_ library
-    - The `matplotlib`_ library
+- The `Python`_ interpreter
+- The `tensorflow`_ library
+- The `numpy`_ library
+- The `sklearn`_ library
+- The `pandas`_ library
+- The `psycopg2`_ library
+- The `boto3`_ library
+- The `joblib`_ library
+- The `matplotlib`_ library
 
 The data from `pump_sensor_data`_ was cleaned before it was inserted into
 CrateDB: in this case, renaming a column that was missing a name and filling in
@@ -183,8 +183,8 @@ To verify that the data has been successfully imported, you can query it:
 Training A Model
 ----------------
 
-First, you can load the data into our Python context with ``Psycopg2`` and
-``Pandas``:
+First, you can load the data into our Python context with ``psycopg2`` and
+``pandas``:
 
 .. code-block:: python
 
@@ -545,10 +545,10 @@ distributed across different machines, contexts, and scenarios.
 .. _matplotlib: https://matplotlib.org/
 .. _Multilayer Perceptron: https://en.wikipedia.org/wiki/Multilayer_perceptron
 .. _numpy: https://numpy.org/
-.. _Pandas: https://pandas.pydata.org/
-.. _Psycopg2: https://pypi.org/project/psycopg2/
+.. _pandas: https://pandas.pydata.org/
+.. _psycopg2: https://pypi.org/project/psycopg2/
 .. _pump_sensor_data: https://www.kaggle.com/nphantawee/pump-sensor-data
 .. _Python: https://www.python.org/
 .. _ReLU: https://en.wikipedia.org/wiki/Rectifier_(neural_networks)
-.. _Sklearn: https://scikit-learn.org/stable/
+.. _sklearn: https://scikit-learn.org/stable/
 .. _TensorFlow: https://www.tensorflow.org/
