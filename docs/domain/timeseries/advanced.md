@@ -269,12 +269,12 @@ Keep massive amounts of data ready in the hot zone for analytics purposes.
 (timeseries-analysis-metadata)=
 ## Metadata Integration
 
-CrateDB is particularly effective when you need to combine time-series data
+CrateDB is particularly effective when you need to combine time series data
 with metadata, for instance, in scenarios where data like sensor readings
 or log entries, need to be augmented with additional context for more
 insightful analysis. See also [](#document).
 
-CrateDB supports effective time-series analysis with fast aggregations, a
+CrateDB supports effective time series analysis with fast aggregations, a
 rich set of built-in functions, and [JOIN](inv:crate-reference#sql_joins)
 operations.
 
@@ -286,8 +286,8 @@ operations.
 :::{grid-item} **Analyzing Device Readings with Metadata Integration**
 :columns: 9
 
-This tutorial illustrates how to augment time-series data with metadata, in
-order to enable more comprehensive analysis. It uses a time-series dataset that
+This tutorial illustrates how to augment time series data with metadata, in
+order to enable more comprehensive analysis. It uses a time series dataset that
 captures various device readings, such as battery, CPU, and memory information. 
 :::
 

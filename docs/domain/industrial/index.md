@@ -320,7 +320,7 @@ information without further ado.
 
 {material-outlined}`dashboard;2em` &nbsp; **TGW: Challenges in storing and analyzing industrial data**
 
-_Not All Time-Series Are Equal: Challenges in Storing and Analyzing Industrial Data._
+_Not All Time Series Are Equal: Challenges in Storing and Analyzing Industrial Data._
 
 In the second presentation, you will learn how TGW leverages CrateDB to build
 digital twins of physical warehouses around the world, by using its unique set

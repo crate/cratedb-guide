@@ -80,15 +80,15 @@ Rafaela Sant'ana
 -- [Time series data: From raw data to fast analysis in only three steps]
 
 In this extensive video tutorial, Karyn and Niklas will show you how to use 
-time-series data and data analysis to help businesses understand patterns,
+time series data and data analysis to help businesses understand patterns,
 trends, and causes over time.
 
 On behalf of the webinar, Crate&#46;io's Solution Engineering team guides you
-through the implementation steps of a time-series use case - from table layout
+through the implementation steps of a time series use case - from table layout
 to querying.  
 
 Our speakers will also show you how to find the right sharding and partitioning
-strategy for your time-series data in CrateDB.
+strategy for your time series data in CrateDB.
 :::
 
 :::{grid-item} &nbsp;
