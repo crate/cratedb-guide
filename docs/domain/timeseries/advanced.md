@@ -38,11 +38,11 @@ detection and/or [forecasting] methods.
 
 ::::{info-card}
 
-:::{grid-item} **Use MLflow for time series anomaly detection and timeseries forecasting**
+:::{grid-item} **Use MLflow for time series anomaly detection and time series forecasting**
 :columns: 9
 
 Guidelines and runnable code to get started with [MLflow] and CrateDB, exercising
-time series anomaly detection and timeseries forecasting / prediction using
+time series anomaly detection and time series forecasting / prediction using
 NumPy, Merlion, and Matplotlib.
 :::
 
@@ -68,7 +68,7 @@ NumPy, Merlion, and Matplotlib.
 :columns: 9
 
 This notebook explores the [PyCaret] framework and shows how to use it
-to train various timeseries forecasting models.
+to train various time series forecasting models.
 :::
 
 :::{grid-item}
