@@ -44,14 +44,12 @@ detection and/or [forecasting] methods.
 Guidelines and runnable code to get started with [MLflow] and CrateDB, exercising
 time series anomaly detection and time series forecasting / prediction using
 NumPy, Merlion, and Matplotlib.
+
+{{ '{}[MLflow and CrateDB]'.format(readme_github) }} {{ '{}[forecasting-merlion-github]'.format(nb_github) }} {{ '{}[forecasting-merlion-colab]'.format(nb_colab) }}
 :::
 
 :::{grid-item}
 :columns: 3
-
-[![Open on GitHub](https://img.shields.io/badge/Open%20on-GitHub-darkblue?logo=GitHub)](https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/mlops-mlflow/tracking_merlion.ipynb)
-[![Open in Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/mlops-mlflow/tracking_merlion.ipynb)
-
 {tags-primary}`Anomaly Detection`
 {tags-primary}`Forecasting / Prediction`
 
@@ -69,13 +67,12 @@ NumPy, Merlion, and Matplotlib.
 
 This notebook explores the [PyCaret] framework and shows how to use it
 to train various time series forecasting models.
+
+{{ '{}[MLflow and CrateDB]'.format(readme_github) }} {{ '{}[forecasting-pycaret-github]'.format(nb_github) }} {{ '{}[forecasting-pycaret-colab]'.format(nb_colab) }}
 :::
 
 :::{grid-item}
 :columns: 3
-
-[![Open on GitHub](https://img.shields.io/badge/Open%20on-GitHub-darkblue?logo=GitHub)](https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/automl/automl_timeseries_forecasting_with_pycaret.ipynb)
-[![Open in Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/automl/automl_timeseries_forecasting_with_pycaret.ipynb)
 
 {tags-primary}`Forecasting / Prediction`
 
@@ -120,14 +117,12 @@ Learn how to extract data from CrateDB for analysis in PyCaret, how to
 further preprocess it and how to use PyCaret to plot time series
 decomposition by breaking it down into its basic components: trend,
 seasonality, and residual (or irregular) fluctuations.
+
+{{ '{}[timeseries-decomposition-github]'.format(nb_github) }} {{ '{}[timeseries-decomposition-colab]'.format(nb_colab) }}
 :::
 
 :::{grid-item}
 :columns: 3
-
-[![Open on GitHub](https://img.shields.io/badge/Open%20on-GitHub-darkblue?logo=GitHub)](https://github.com/crate/cratedb-examples/blob/main/topic/timeseries/time-series-decomposition.ipynb)
-[![Open in Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/timeseries/time-series-decomposition.ipynb)
-
 {tags-primary}`Time series decomposition`
 
 {tags-secondary}`Python`
@@ -165,14 +160,12 @@ exploratory data analysis (EDA) with PyCaret.
 The notebook shows how to generate various plots and charts for EDA, helping
 you to understand data distributions, relationships between variables, and to
 identify patterns.
+
+{{ '{}[timeseries-eda-github]'.format(nb_github) }} {{ '{}[timeseries-eda-colab]'.format(nb_colab) }}
 :::
 
 :::{grid-item}
 :columns: 3
-
-[![Open on GitHub](https://img.shields.io/badge/Open%20on-GitHub-darkblue?logo=GitHub)](https://github.com/crate/cratedb-examples/blob/main/topic/timeseries/exploratory_data_analysis.ipynb)
-[![Open in Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/timeseries/exploratory_data_analysis.ipynb)
-
 {tags-primary}`EDA on time series`
 
 {tags-secondary}`Python`
@@ -289,12 +282,12 @@ operations.
 This tutorial illustrates how to augment time series data with metadata, in
 order to enable more comprehensive analysis. It uses a time series dataset that
 captures various device readings, such as battery, CPU, and memory information. 
+
+{{ '{}(#timeseries-objects)'.format(tutorial) }}
 :::
 
 :::{grid-item}
 :columns: 3
-
-[![Navigate to Tutorial](https://img.shields.io/badge/Navigate%20to-Tutorial-lightgray?logo=Markdown)](#timeseries-objects)
 
 {tags-primary}`Rich Time Series`
 {tags-primary}`Metadata`
@@ -323,12 +316,12 @@ table expressions (CTEs) and LAG / LEAD window functions.
 Find maximum values using the MAX_BY aggregate function, returning
 the value from one column based on the maximum or minimum value of another
 column within a group.
+
+{{ '{}(#timeseries-analysis-weather)'.format(tutorial) }}
 :::
 
 :::{grid-item}
 :columns: 3
-
-[![Navigate to Tutorial](https://img.shields.io/badge/Navigate%20to-Tutorial-lightgray?logo=Markdown)](#timeseries-analysis-weather)
 
 {tags-primary}`Aggregations`
 {tags-primary}`Time series`
@@ -362,14 +355,12 @@ This notebook plots the venerable NYC Taxi dataset after importing it
 into a CrateDB Cloud database cluster.
 
 🚧 _Please note this notebook is a work in progress._ 🚧
+
+{{ '{}[cloud-datashader-github]'.format(nb_github) }} {{ '{}[cloud-datashader-colab]'.format(nb_colab) }}
 :::
 
 :::{grid-item}
 :columns: 3
-
-[![Open on GitHub](https://img.shields.io/badge/Open%20on-GitHub-darkblue?logo=GitHub)](https://github.com/crate/cratedb-examples/blob/amo/cloud-datashader/topic/timeseries/explore/cloud-datashader.ipynb)
-[![Open in Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/crate/cratedb-examples/blob/amo/cloud-datashader/topic/timeseries/explore/cloud-datashader.ipynb)
-
 {tags-primary}`Time series visualization`
 
 {tags-secondary}`Python`
@@ -383,12 +374,23 @@ into a CrateDB Cloud database cluster.
 
 
 [anomaly]: https://en.wikipedia.org/wiki/Anomaly_(natural_sciences)
+[cloud-datashader-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/amo/cloud-datashader/topic/timeseries/explore/cloud-datashader.ipynb
+[cloud-datashader-github]: https://github.com/crate/cratedb-examples/blob/amo/cloud-datashader/topic/timeseries/explore/cloud-datashader.ipynb
 [Data and information visualization]: https://en.wikipedia.org/wiki/Data_and_information_visualization
 [Datashader]: https://datashader.org/
 [Decomposition of time series]: https://en.wikipedia.org/wiki/Decomposition_of_time_series
 [Exploratory data analysis (EDA)]: https://en.wikipedia.org/wiki/Exploratory_data_analysis
 [forecasting]: https://en.wikipedia.org/wiki/Forecasting
+[forecasting-merlion-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/mlops-mlflow/tracking_merlion.ipynb
+[forecasting-merlion-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/mlops-mlflow/tracking_merlion.ipynb
+[forecasting-pycaret-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/automl/automl_timeseries_forecasting_with_pycaret.ipynb
+[forecasting-pycaret-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/automl/automl_timeseries_forecasting_with_pycaret.ipynb
 [HoloViews]: https://www.holoviews.org/
 [MLflow]: https://mlflow.org/
+[MLflow and CrateDB]: https://github.com/crate/cratedb-examples/tree/main/topic/machine-learning/mlops-mlflow
 [PyCaret]: https://www.pycaret.org
 [Time series]: https://en.wikipedia.org/wiki/Time_series
+[timeseries-decomposition-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/timeseries/time-series-decomposition.ipynb
+[timeseries-decomposition-github]: https://github.com/crate/cratedb-examples/blob/main/topic/timeseries/time-series-decomposition.ipynb
+[timeseries-eda-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/timeseries/exploratory_data_analysis.ipynb
+[timeseries-eda-github]: https://github.com/crate/cratedb-examples/blob/main/topic/timeseries/exploratory_data_analysis.ipynb
