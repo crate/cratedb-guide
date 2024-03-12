@@ -39,7 +39,7 @@ detection and/or [forecasting] methods.
 ::::{info-card}
 
 :::{grid-item} **Use MLflow for time series anomaly detection and time series forecasting**
-:columns: 9
+:columns: auto 9 9 9
 
 Guidelines and runnable code to get started with [MLflow] and CrateDB, exercising
 time series anomaly detection and time series forecasting / prediction using
@@ -63,7 +63,7 @@ NumPy, Merlion, and Matplotlib.
 ::::{info-card}
 
 :::{grid-item} **Use PyCaret to train time series forecasting models**
-:columns: 9
+:columns: auto 9 9 9
 
 This notebook explores the [PyCaret] framework and shows how to use it
 to train various time series forecasting models.
@@ -78,6 +78,7 @@ to train various time series forecasting models.
 
 {tags-secondary}`Python`
 {tags-secondary}`PyCaret`
+{tags-secondary}`MLflow`
 :::
 
 ::::
@@ -111,7 +112,7 @@ effectively.
 ::::{info-card}
 
 :::{grid-item} **Analyze trend, seasonality, and fluctuations with PyCaret and CrateDB**
-:columns: 9
+:columns: auto 9 9 9
 
 Learn how to extract data from CrateDB for analysis in PyCaret, how to
 further preprocess it and how to use PyCaret to plot time series
@@ -152,7 +153,7 @@ engineering and model building.
 ::::{info-card}
 
 :::{grid-item} **Exploratory data analysis (EDA) with PyCaret and CrateDB**
-:columns: 9
+:columns: auto 9 9 9
 
 Learn how to access time series data from CrateDB using SQL, and how to apply
 exploratory data analysis (EDA) with PyCaret.
@@ -182,37 +183,6 @@ CrateDB stores large volumes of data, keeping it accessible for querying
 and insightful analysis, even considering historic data records.
 **Never retire data just because your database can't handle the cardinality.**
 
-:::{rubric} Applications
-:::
-
-::::{info-card}
-
-:::{grid-item} **Storing and analyzing massive amounts of synoptic weather data**
-:columns: 8
-
-Wetterdienst uses CrateDB for mass storage of weather data, allowing you to
-query it efficiently. It provides access to data at more than ten canonical
-sources of raw weather data from domestic weather agencies.
-:::
-
-:::{grid-item}
-:columns: 4
-
-[![Wetterdienst Documentation](https://img.shields.io/badge/Documentation-Wetterdienst%20Export-darkyellow?logo=Markdown)](https://wetterdienst.readthedocs.io/en/latest/usage/python-api.html#export)
-[![Wetterdienst Project](https://img.shields.io/badge/Repository-Wetterdienst-darkblue?logo=GitHub)](https://github.com/earthobservations/wetterdienst)
-
-{tags-primary}`Earth Observations`
-{tags-primary}`Metadata`
-{tags-primary}`Sensor Data`
-{tags-primary}`Rich Time Series`
-
-{tags-secondary}`pandas`
-{tags-secondary}`Polars`
-{tags-secondary}`SQL`
-:::
-
-::::
-
 
 :::{rubric} Use Cases
 :::
@@ -221,16 +191,14 @@ sources of raw weather data from domestic weather agencies.
 ::::{info-card}
 
 :::{grid-item} **CrateDB as metrics and log data store for the long term**
-:columns: 8
+:columns: auto 9 9 9
 
 Store and analyze high volumes of system monitoring information.
+Read more about using CrateDB as [](#metrics-store).
 :::
 
 :::{grid-item}
-:columns: 4
-
-[](#metrics-store)
-
+:columns: 3
 {tags-primary}`Long Term Storage`
 {tags-primary}`Metrics`
 {tags-primary}`Logging`
@@ -242,18 +210,47 @@ Store and analyze high volumes of system monitoring information.
 ::::{info-card}
 
 :::{grid-item} **CrateDB provides real-time analytics on raw data stored for the long term**
-:columns: 8
+:columns: auto 9 9 9
 
 Keep massive amounts of data ready in the hot zone for analytics purposes.
+Read more about using CrateDB for [](#analytics).
+:::
+
+:::{grid-item}
+:columns: 3
+{tags-primary}`Long Term Storage`
+{tags-primary}`Real-Time Analytics`
+:::
+
+::::
+
+
+:::{rubric} Applications
+:::
+
+::::{info-card}
+
+:::{grid-item} **Storing and analyzing massive amounts of synoptic weather data**
+:columns: auto 8 8 8
+
+Wetterdienst uses CrateDB for mass storage of weather data, allowing you to
+query it efficiently. It provides access to data at more than ten canonical
+sources of raw weather data from domestic weather agencies.
+
+[![Wetterdienst Documentation](https://img.shields.io/badge/Documentation-Data%20Export-darkgreen?logo=Markdown)](https://wetterdienst.readthedocs.io/en/latest/usage/python-api.html#export)
+[![Wetterdienst Project](https://img.shields.io/badge/Repository-Wetterdienst-darkblue?logo=GitHub)](https://github.com/earthobservations/wetterdienst)
 :::
 
 :::{grid-item}
 :columns: 4
+{tags-primary}`Earth Observations`
+{tags-primary}`Metadata`
+{tags-primary}`Sensor Data`
+{tags-primary}`Rich Time Series`
 
-[](#analytics)
-
-{tags-primary}`Long Term Storage`
-{tags-primary}`Real-Time Analytics`
+{tags-secondary}`pandas`
+{tags-secondary}`Polars`
+{tags-secondary}`SQL`
 :::
 
 ::::
@@ -277,7 +274,7 @@ operations.
 ::::{info-card}
 
 :::{grid-item} **Analyzing Device Readings with Metadata Integration**
-:columns: 9
+:columns: auto 9 9 9
 
 This tutorial illustrates how to augment time series data with metadata, in
 order to enable more comprehensive analysis. It uses a time series dataset that
@@ -346,7 +343,7 @@ mostly your first encounter with the data.
 ::::{info-card}
 
 :::{grid-item} **Display millions of data points using hvPlot, Datashader, and CrateDB**
-:columns: 9
+:columns: auto 9 9 9
 
 [HoloViews] and [Datashader] frameworks enable channeling millions of data
 points from your backend systems to the browser's glass.
