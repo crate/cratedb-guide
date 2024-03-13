@@ -547,7 +547,7 @@ distributed across different machines, contexts, and scenarios.
 .. _numpy: https://numpy.org/
 .. _pandas: https://pandas.pydata.org/
 .. _psycopg2: https://pypi.org/project/psycopg2/
-.. _pump_sensor_data: https://www.kaggle.com/nphantawee/pump-sensor-data
+.. _pump_sensor_data: https://www.kaggle.com/code/shawkyelgendy/pump-sensor-data-timeseriesanalysis
 .. _Python: https://www.python.org/
 .. _ReLU: https://en.wikipedia.org/wiki/Rectifier_(neural_networks)
 .. _sklearn: https://scikit-learn.org/stable/
