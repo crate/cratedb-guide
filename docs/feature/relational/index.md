@@ -5,6 +5,8 @@
 
 :::{include} /_include/links.md
 :::
+:::{include} /_include/styles.html
+:::
 
 :::::{grid}
 :padding: 0
@@ -209,7 +211,3 @@ SET optimizer_reorder_nested_loop_join = false;
 [manual-join-concept]: inv:crate-reference#concept-joins
 [manual-join-types]: inv:crate-reference#sql_joins
 [manual-joined-relation]: inv:crate-reference#sql-select-joined-relation
-
-
-```{include} /_include/styles.html
-```

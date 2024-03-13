@@ -54,6 +54,7 @@ if "myst_substitutions" not in globals():
 
 myst_substitutions.update({
     "nb_colab": "[![Notebook on Colab](https://img.shields.io/badge/Open-Notebook%20on%20Colab-blue?logo=Google%20Colab)]",
+    "nb_binder": "[![Notebook on Binder](https://img.shields.io/badge/Open-Notebook%20on%20Binder-lightblue?logo=binder)]",
     "nb_github": "[![Notebook on GitHub](https://img.shields.io/badge/Open-Notebook%20on%20GitHub-darkgreen?logo=GitHub)]",
     "readme_github": "[![README](https://img.shields.io/badge/Open-README-darkblue?logo=GitHub)]",
     "blog": "[![Blog](https://img.shields.io/badge/Open-Blog-darkblue?logo=Markdown)]",

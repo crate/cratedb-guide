@@ -3,6 +3,11 @@
 
 # Machine Learning
 
+:::{include} /_include/links.md
+:::
+:::{include} /_include/styles.html
+:::
+
 Integrate CrateDB with machine learning frameworks and
 tools, for [MLOps] and [Vector database] operations.
 
@@ -333,16 +338,12 @@ tensorflow
 [LangChain: Chatbots]: https://python.langchain.com/docs/use_cases/chatbots
 [LangChain: Q&A with SQL]: https://python.langchain.com/docs/use_cases/sql/
 [LangChain: Retrieval augmented generation]: https://python.langchain.com/docs/use_cases/question_answering/
-[LangChain and CrateDB: Code Examples]: https://github.com/crate/cratedb-examples/tree/main/topic/machine-learning/llm-langchain
 [langchain-conversational-history-binder]: https://mybinder.org/v2/gh/crate/cratedb-examples/main?labpath=topic%2Fmachine-learning%2Fllm-langchain%2Fconversational_memory.ipynb
 [langchain-conversational-history-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/llm-langchain/conversational_memory.ipynb
 [langchain-conversational-history-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/llm-langchain/conversational_memory.ipynb
 [langchain-document-loader-binder]: https://mybinder.org/v2/gh/crate/cratedb-examples/main?labpath=topic%2Fmachine-learning%2Fllm-langchain%2Fdocument_loader.ipynb
 [langchain-document-loader-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/llm-langchain/document_loader.ipynb
 [langchain-document-loader-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/llm-langchain/document_loader.ipynb
-[langchain-similarity-binder]: https://mybinder.org/v2/gh/crate/cratedb-examples/main?labpath=topic%2Fmachine-learning%2Fllm-langchain%2Fvector_search.ipynb
-[langchain-similarity-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/llm-langchain/vector_search.ipynb
-[langchain-similarity-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/llm-langchain/vector_search.ipynb
 [Machine Learning and CrateDB: An introduction]: https://cratedb.com/blog/machine-learning-and-cratedb-part-one
 [Machine Learning and CrateDB: Getting Started With Jupyter]: https://cratedb.com/blog/machine-learning-cratedb-jupyter
 [Machine Learning and CrateDB: Experiment Design & Linear Regression]: https://cratedb.com/blog/machine-learning-and-cratedb-part-three-experiment-design-and-linear-regression
@@ -356,4 +357,3 @@ tensorflow
 [Time Series Modeling using Machine Learning]: https://cratedb.com/blog/introduction-to-time-series-modeling-with-cratedb-machine-learning-time-series-data
 [tracking-merlion-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/mlops-mlflow/tracking_merlion.ipynb
 [tracking-merlion-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/mlops-mlflow/tracking_merlion.ipynb
-[Vector database]: https://en.wikipedia.org/wiki/Vector_database
