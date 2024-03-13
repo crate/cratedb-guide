@@ -19,6 +19,7 @@ relational/index
 document/index
 search/index
 geospatial/index
+vector/index
 :::
 +++
 CrateDB combines the power of Lucene with the advantages of
