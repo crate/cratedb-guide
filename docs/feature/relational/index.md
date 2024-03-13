@@ -1,9 +1,12 @@
+(join)=
 (relational)=
 
 # Relational / JOINs
 
 :::{todo} Implement.
 :::
+
+See [JOIN](inv:crate-reference#sql_joins).
 
 
 :::{seealso}

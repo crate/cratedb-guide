@@ -23,10 +23,8 @@ on top.
   {tags-primary}`Long Term Storage`
 
 :Related:
-  [](#document) •
-  [](#geospatial) •
-  [](#fulltext) •
   [](#timeseries) •
+  [](#timeseries-longterm) •
   [](#machine-learning)
 
 :Product:

@@ -16,7 +16,7 @@ set of built-in functions.
 
 :::::{info-card}
 
-::::{grid-item} **Analyzing Device Readings with Metadata Integration**
+::::{grid-item} **Analyzing Device Readings**
 :columns: auto 9 9 9
 
 Effectively query measurement readings using enhanced features for time series data.
@@ -59,6 +59,7 @@ ORDER BY location, timestamp;
 {tags-primary}`Interpolation` \
 {tags-primary}`Window Functions`
 
+{tags-secondary}`Time Series` \
 {tags-secondary}`SQL`
 ::::
 
