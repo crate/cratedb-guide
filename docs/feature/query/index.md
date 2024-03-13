@@ -2,6 +2,9 @@
 (querying)=
 # Advanced Querying
 
+:::{include} /_include/links.md
+:::
+
 About all the advanced querying features of CrateDB, unifying data types
 and query characteristics. Mix full-text search with time series aspects,
 and run powerful aggregations or other kinds of complex queries on your data.
@@ -65,6 +68,44 @@ ORDER BY location, timestamp;
 
 :::::
 
+
+:::::{info-card}
+
+::::{grid-item} **Time Bucketing**
+:columns: auto 9 9 9
+
+Based on sensor data, this query calculates:
+- time-buckets of 10 seconds
+- different aggregations per time-bucket and host group
+
+:::{code} sql
+SELECT
+  FLOOR(EXTRACT(epoch FROM m.timestamp) / 10) * 10 AS period,
+  h.host_group,
+  MIN(m.fields['usage_user']) AS "min",
+  AVG(m.fields['usage_user']) AS "avg",
+  MAX(m.fields['usage_user']) AS "max"
+FROM telegraf.metrics m
+LEFT JOIN telegraf.hosts h ON h.host_name = m.tags['host']
+WHERE tags['cpu'] = 'cpu-total'
+  AND m.timestamp > NOW() - '150 seconds'::INTERVAL
+GROUP BY 1, 2
+ORDER BY 1 DESC;
+:::
+::::
+
+::::{grid-item}
+:columns: 3
+{tags-primary}`Aggregation` \
+{tags-primary}`Grouping` \
+{tags-primary}`Time Bucketing` \
+{tags-primary}`Time Intervals`
+
+{tags-secondary}`Time Series` \
+{tags-secondary}`SQL`
+::::
+
+:::::
 
 
 (aggregation)=
@@ -135,6 +176,23 @@ https://community.cratedb.com/t/resampling-time-series-data-with-date-bin/1009
 {material-outlined}`construction;2em` This page is currently under construction.
 It only includes a few pointers to advanced use cases, which need expansion.
 It is also not in the same shape as the other pages in this section.
+:::
+
+
+:::{seealso}
+**Features:**
+[](#relational)
+
+**Domains:**
+[](#metrics-store) •
+[](#analytics) •
+[](#industrial) •
+[](#timeseries) •
+[](#machine-learning)
+
+**Product:**
+[Relational Database] •
+[Indexing, Columnar Storage, and Aggregations]
 :::
 
 
