@@ -3,6 +3,9 @@
 
 # Document Store
 
+:::{include} /_include/links.md
+:::
+
 :::::{grid}
 :padding: 0
 
@@ -408,13 +411,6 @@ and about OBJECT indexing.
 [Objects in CrateDB]: https://community.cratedb.com/t/objects-in-cratedb/1188
 [query DSL based on JSON]: https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html
 [Unleashing the Power of Nested Data: Ingesting and Querying JSON Documents with SQL]: https://youtu.be/S_RHmdz2IQM?feature=shared
-
-<!-- shared -->
-[Dynamic Database Schemas]: https://cratedb.com/product/features/dynamic-schemas
-[JSON Database]: https://cratedb.com/solutions/json-database
-[Multi-model Database]: https://cratedb.com/solutions/multi-model-database
-[Nested Data Structure]: https://cratedb.com/product/features/nested-data-structure
-[Relational Database]: https://cratedb.com/solutions/relational-database
 
 ```{include} /_include/styles.html
 ```
