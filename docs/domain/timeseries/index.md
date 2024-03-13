@@ -56,12 +56,12 @@ and applications, libraries, and frameworks.
 :::
 
 
-:::{grid-item-card} {material-outlined}`smart_display;2em` Video
+:::{grid-item-card} {material-outlined}`smart_display;2em` Video Tutorials
 :link: timeseries-video
 :link-type: ref
 :link-alt: Video tutorials about time series with CrateDB
 
-Video tutorials about time series data and CrateDB.
+Educational videos about time series data and CrateDB.
 +++
 **What's inside:**
 Time series introduction. Importing, exporting,
@@ -75,11 +75,10 @@ and analyzing. Industrial applications.
 
 **Features:**
 [](#connect) •
+[](#querying) •
 [](#document) •
 [](#fulltext) •
-[](#geospatial) •
-[](#generated-columns) •
-[](#udf)
+[](#geospatial)
 
 **Domains:**
 [](#metrics-store) •
@@ -95,4 +94,5 @@ and analyzing. Industrial applications.
 Basics <basics>
 Advanced <advanced>
 video
+Long Term Store <longterm>
 :::

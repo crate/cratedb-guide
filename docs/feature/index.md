@@ -22,8 +22,8 @@ vector/index
 blob/index
 :::
 +++
-CrateDB combines the advantages of traditional SQL databases with the
-best properties of NoSQL databases.
+CrateDB combines the power of Lucene with the advantages of
+industry-standard SQL.
 ::::
 
 ::::{grid-item-card} {material-outlined}`group;2em` Operational
@@ -39,7 +39,7 @@ CrateDB scales horizontally using a shared-nothing
 architecture, inherited from Elasticsearch.
 ::::
 
-::::{grid-item-card} {material-outlined}`read_more;2em` More
+::::{grid-item-card} {material-outlined}`read_more;2em` Advanced
 :::{toctree}
 :maxdepth: 1
 query/index
@@ -61,6 +61,10 @@ operations, all based on standard SQL.
 
 Foundational features of CrateDB, and how they are applied within software
 solutions and application platforms in different scenarios and environments.
+
+
+:::{rubric} Features
+:::
 
 ::::{grid} 1 2 2 2
 :margin: 4 4 0 0
@@ -94,6 +98,43 @@ information.
 **What's inside:**
 Like Elasticsearch, CrateDB is based on Lucene, the premier industry-grade
 full-text search engine library.
+:::
+
+::::
+
+
+:::{rubric} See Also
+:::
+Connect to and integrate with CrateDB.
+
+::::{grid} 1 2 2 2
+:margin: 4 4 0 0
+:padding: 0
+:gutter: 2
+
+:::{grid-item-card} {material-outlined}`link;2em` Connectivity
+:link: connectivity
+:link-type: ref
+:link-alt: About connection options with CrateDB
+
+Connect to your CrateDB cluster using drivers, frameworks, and adapters.
++++
+**What's inside:**
+Connectivity and integration options with database drivers
+and applications, libraries, and frameworks.
+:::
+
+
+:::{grid-item-card} {material-outlined}`sync;2em` Import and Export
+:link: import-export
+:link-type: ref
+:link-alt: About time series data import and export
+
+Import data into and export data from your CrateDB cluster.
++++
+**What's inside:**
+A variety of options to connect and integrate with 3rd-party
+ETL applications.
 :::
 
 

@@ -15,3 +15,6 @@ A collection of guides and tools for troubleshooting CrateDB.
    docker-jcmd
    systables
 
+.. seealso::
+
+    :doc:`Crash CLI Troubleshooting<crate-crash:troubleshooting>`
