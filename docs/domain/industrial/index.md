@@ -96,8 +96,8 @@ component of ABB Ability™ Genix across industries.
 
 <iframe width="240" src="https://www.youtube-nocookie.com/embed/45fZYJLh2Qg?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-**Date:** 23 May 2023 \
-**Speakers:** Marko Sommarberg, Christian Lutz
+---
+{tags-info}`2023`
 :::
 
 ::::
@@ -152,8 +152,8 @@ the support for unstructured data, and its excellent customer support.
 
 <iframe width="240" src="https://www.youtube-nocookie.com/embed/gJPmJ0uXeVs?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-**Date:** 28 Jun 2022 \
-**Speaker:** Arno Breuss
+---
+{tags-info}`2022`
 :::
 
 ::::
@@ -209,10 +209,8 @@ decreased downtime.
 
 <iframe width="240" src="https://www.youtube-nocookie.com/embed/eRqn7GhFO-s?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-**Date:** 31 Jan 2023 \
-**Speakers:** Michael Mella Navarro,
-Nixon David Monge Calle,
-Hernán Lionel Cianfagna
+---
+{tags-info}`2023`
 :::
 
 ::::
@@ -267,8 +265,8 @@ heart of everything they are doing, and gives them peace of mind.
 
 <iframe width="240" src="https://www.youtube-nocookie.com/embed/X2o0-W8-mCM?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-**Date:** 20 Mar 2023 \
-**Speaker:** Alexander Mann
+---
+{tags-info}`2023`
 :::
 
 ::::
@@ -305,8 +303,8 @@ information without further ado.
 
 <iframe width="240" src="https://www.youtube-nocookie.com/embed/6dgjVQJtSKI?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-**Date:** 22 Jun 2022 \
-**Speakers:** Alexander Mann, Jan Weber
+---
+{tags-info}`2022`
 :::
 
 ::::
@@ -349,8 +347,8 @@ high variety, unstructured features, and at different data frequencies.
 
 <iframe width="240" src="https://www.youtube-nocookie.com/embed/ugQvihToY0k?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-**Date:** 5 Oct 2023 \
-**Speakers:** Alexander Mann, Georg Traar
+---
+{tags-info}`2023`
 :::
 
 ::::

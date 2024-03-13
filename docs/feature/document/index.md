@@ -328,9 +328,6 @@ data types.
 
 <iframe width="240" src="https://www.youtube-nocookie.com/embed/aQi9MXs2irU?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-**Date:** 10 Aug 2022 \
-**Speaker:** Rafaela Sant'ana
-
 {tags-primary}`Fundamentals` \
 {tags-secondary}`OBJECT`
 {tags-secondary}`SQL`
@@ -358,9 +355,6 @@ nested data.
 
 <iframe width="240" src="https://www.youtube-nocookie.com/embed/S_RHmdz2IQM?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-**Date:** 15 May 2023 \
-**Speaker:** Georg Traar
-
 {tags-primary}`Fundamentals` \
 {tags-secondary}`OBJECT`
 {tags-secondary}`SQL`
@@ -385,9 +379,6 @@ and about OBJECT indexing.
 :columns: 4
 
 <iframe width="240" src="https://www.youtube-nocookie.com/embed/lp51GphV9vo?start=495&si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-**Date:** 20 Mar 2023 \
-**Speaker:** Marija Selakovic
 
 {tags-primary}`Fundamentals` \
 {tags-secondary}`OBJECT`

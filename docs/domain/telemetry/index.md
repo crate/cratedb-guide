@@ -78,9 +78,6 @@ to use CrateDB as remote storage.
 :columns: 4
 
 <iframe width="240" src="https://www.youtube-nocookie.com/embed/EfIlRXVyfZM?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-**Date:** 14 Jul 2022 \
-**Speaker:** Johannes Faigle
 :::
 
 ::::
