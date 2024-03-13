@@ -2,6 +2,8 @@
 
 # SQL
 
+:::{include} /_include/links.md
+:::
 
 :::::{grid}
 :padding: 0
@@ -14,6 +16,9 @@
 :::
 CrateDB's features are available using plain SQL, and it is wire-protocol
 compatible to PostgreSQL.
+
+CrateDB extends industry-standard SQL with functionalities to support
+its data types, data I/O procedures, and cluster management.
 
 CrateDB integrates well with commodity systems using standard database
 access interfaces like ODBC or JDBC, and it provides a proprietary HTTP
@@ -67,7 +72,9 @@ off-the-shelve, 3rd-party, open-source, and proprietary applications.
 
 ## Synopsis
 
-:::{todo} One or max. two DQL SQL queries using many features at once?
+:::{todo}
+- One or max. two DQL SQL queries using many features, all at once?
+- What else?
 :::
 
 
@@ -79,19 +86,8 @@ off-the-shelve, 3rd-party, open-source, and proprietary applications.
 [](#industrial) •
 [](#timeseries) •
 [](#machine-learning)
-
 :::
-
-
-<!-- shared -->
-[Dynamic Database Schemas]: https://cratedb.com/product/features/dynamic-schemas
-[JSON Database]: https://cratedb.com/solutions/json-database
-[Multi-model Database]: https://cratedb.com/solutions/multi-model-database
-[Nested Data Structure]: https://cratedb.com/product/features/nested-data-structure
-[Relational Database]: https://cratedb.com/solutions/relational-database
 
 
 ```{include} /_include/styles.html
 ```
-
-
