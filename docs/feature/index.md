@@ -13,7 +13,9 @@ All features of CrateDB at a glance.
 ::::{grid-item-card} {material-outlined}`lightbulb;2em` Fundamentals
 :::{toctree}
 :maxdepth: 1
+
 sql/index
+relational/index
 document/index
 search/index
 geospatial/index
