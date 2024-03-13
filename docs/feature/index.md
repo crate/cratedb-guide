@@ -14,12 +14,9 @@ All features of CrateDB at a glance.
 :::{toctree}
 :maxdepth: 1
 sql/index
-relational/index
 document/index
 search/index
 geospatial/index
-vector/index
-blob/index
 :::
 +++
 CrateDB combines the power of Lucene with the advantages of
@@ -29,10 +26,7 @@ industry-standard SQL.
 ::::{grid-item-card} {material-outlined}`group;2em` Operational
 :::{toctree}
 :maxdepth: 1
-cluster/index
-snapshot/index
 connectivity/index
-cloud/index
 :::
 +++
 CrateDB scales horizontally using a shared-nothing
@@ -43,10 +37,6 @@ architecture, inherited from Elasticsearch.
 :::{toctree}
 :maxdepth: 1
 query/index
-generated/index
-fdw/index
-udf/index
-replication/index
 :::
 +++
 Advanced features supporting daily data
