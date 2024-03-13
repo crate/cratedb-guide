@@ -26,8 +26,9 @@ Learn more about CrateDB and [](#timeseries).
 :columns: 3
 
 {tags-secondary}`Introduction` \
-{tags-primary}`Time Series` \
-{tags-info}`21 Feb 2024`
+{tags-primary}`Time Series`
+
+{tags-info}`2024`
 :::
 
 ::::
@@ -44,10 +45,11 @@ Learn more about CrateDB and [](#timeseries).
 
 -- [Importing and Exporting Data with CrateDB]
 
-In this video tutorial, Rafaela will show you how to import JSON and CSV data
-to CrateDB using the [`COPY FROM`] statement. Then, she will demonstrate how to
-export data from CrateDB to a local file system, using the [`COPY TO`] statement.
-Rafaela will use the [Quotes Dataset].
+This video tutorial uses the [Quotes Dataset] to illustrate how importing JSON
+and CSV data into CrateDB works, by using the [`COPY FROM`] statement.
+
+Afterwards, it will demonstrate how to export data from CrateDB to a local file
+system, using the [`COPY TO`] statement.
 
 For more information about how to import and export
 data from/into CrateDB, please refer to [](#import-export).
@@ -57,10 +59,9 @@ data from/into CrateDB, please refer to [](#import-export).
 :columns: 3
 
 {tags-secondary}`Introduction` \
-{tags-primary}`Import and Export` \
-{tags-info}`8 Aug 2022`
+{tags-primary}`Import and Export`
 
-Rafaela Sant'ana
+{tags-info}`2022`
 :::
 
 ::::
@@ -97,11 +98,9 @@ strategy for your time series data in CrateDB.
 {tags-primary}`Time Series` \
 {tags-primary}`Modeling` \
 {tags-primary}`Import and Export` \
-{tags-primary}`Querying` \
-{tags-info}`23 Feb 2023`
+{tags-primary}`Querying`
 
-Karyn Azevedo, \
-Niklas Schmidtmer
+{tags-info}`2023`
 :::
 
 ::::
@@ -125,11 +124,9 @@ top of tracking data from their video streaming broadcasting system.
 
 {tags-secondary}`Extensive` \
 {tags-primary}`Time Series` \
-{tags-primary}`Tracking Analytics` \
-{tags-info}`2022`
+{tags-primary}`Tracking Analytics`
 
-Daniel Hölbling-Inzko, \
-Georg Traar
+{tags-info}`2022`
 :::
 
 ::::
@@ -160,7 +157,8 @@ world.
 
 {tags-secondary}`Extensive` \
 {tags-primary}`Time Series` \
-{tags-primary}`Industrial IoT` \
+{tags-primary}`Industrial IoT`
+
 {tags-info}`2022/2023`
 :::
 
