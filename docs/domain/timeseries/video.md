@@ -19,8 +19,7 @@ CrateDB simplifies the complexity of managing time-series data.
 It provides a comprehensive solution for storing, querying, and extracting
 insights from large-scale and high-volume time-series datasets.
 
-Learn more about CrateDB and time-series data here:
-https://cratedb.com/solutions/time-series-database
+Learn more about CrateDB and [](#timeseries).
 :::
 
 :::{grid-item} &nbsp;

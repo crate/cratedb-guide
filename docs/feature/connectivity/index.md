@@ -1,7 +1,5 @@
 (connect)=
 (connectivity)=
-(io)=
-(import-export)=
 
 
 # Connectivity
@@ -59,26 +57,29 @@ work optimally with CrateDB.
 :::{rubric} Overview
 :::
 - [](#integrate)
-- [More integration tutorials]
 - [](#etl)
 - [](#integrate-metrics)
 - [](#performance)
 
-:::{rubric} Specific Information
+:::{rubric} Community Tutorials
 :::
+- [Community Tutorials Overview]
 - [Fundamentals of the COPY FROM statement]
-- [Import weather data using Dask]
 
 
+:::{todo}
+Bring page into the same shape as the others in this section.
+:::
+
+
+[Community Tutorials Overview]: https://community.cratedb.com/t/overview-of-cratedb-integration-tutorials/1015
 [CrateDB HTTP interface]: inv:crate-reference:*:label#interface-http
 [CrateDB PostgreSQL interface]: inv:crate-reference:*:label#interface-postgresql
 [CrateDB SQL protocol]: inv:crate-reference:*:label#sql
 [Drivers and Integrations]: inv:crate-clients-tools:*:label#index
 [Fundamentals of the COPY FROM statement]: https://community.cratedb.com/t/fundamentals-of-the-copy-from-statement/1178
 [HTTP protocol]: https://en.wikipedia.org/wiki/HTTP
-[Import weather data using Dask]: https://github.com/crate/cratedb-examples/blob/main/topic/timeseries/dask-weather-data-import.ipynb
 [JDBC]: https://en.wikipedia.org/wiki/Java_Database_Connectivity
-[More integration tutorials]: https://community.cratedb.com/t/overview-of-cratedb-integration-tutorials/1015
 [ODBC]: https://en.wikipedia.org/wiki/Open_Database_Connectivity
 [PostgreSQL wire protocol]: https://www.postgresql.org/docs/current/protocol.html
 [SQL]: https://en.wikipedia.org/wiki/Sql

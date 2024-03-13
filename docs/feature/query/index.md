@@ -16,7 +16,7 @@ set of built-in functions.
 
 :::::{info-card}
 
-::::{grid-item} **Analyzing Device Readings with Metadata Integration**
+::::{grid-item} **Analyzing Device Readings**
 :columns: auto 9 9 9
 
 Effectively query measurement readings using enhanced features for time series data.
@@ -59,6 +59,7 @@ ORDER BY location, timestamp;
 {tags-primary}`Interpolation` \
 {tags-primary}`Window Functions`
 
+{tags-secondary}`Time Series` \
 {tags-secondary}`SQL`
 ::::
 
@@ -130,8 +131,27 @@ https://community.cratedb.com/t/resampling-time-series-data-with-date-bin/1009
 
 
 
-:::{todo}
-This page needs to be unflattened.
+:::{note}
+{material-outlined}`construction;2em` This page is currently under construction.
+It only includes a few pointers to advanced use cases, which need expansion.
+It is also not in the same shape as the other pages in this section.
+:::
+
+
+:::{seealso}
+**Features:**
+[](#relational)
+
+**Domains:**
+[](#metrics-store) •
+[](#analytics) •
+[](#industrial) •
+[](#timeseries) •
+[](#machine-learning)
+
+**Product:**
+[Relational Database] •
+[Indexing, Columnar Storage, and Aggregations]
 :::
 
 

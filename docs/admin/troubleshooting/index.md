@@ -72,6 +72,12 @@ infrastructure operations. For example:
 - Clean up stale node data.
 :::
 
+:::{card} {material-outlined}`wysiwyg;1.6em` About `crash`
+:link: https://cratedb.com/docs/crate/crash/en/latest/troubleshooting.html
+Troubleshooting the CLI program `crash`.
+:::
+
+
 :::{note}
 You can find a lot of troubleshooting guides that explain how to perform
 diagnostics on Java applications.
