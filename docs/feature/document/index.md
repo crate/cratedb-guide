@@ -3,6 +3,9 @@
 
 # Document Store
 
+:::{include} /_include/links.md
+:::
+
 :::::{grid}
 :padding: 0
 
