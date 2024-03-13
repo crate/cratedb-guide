@@ -43,16 +43,18 @@ anomaly detection, forecasting.
 :::
 
 
-:::{grid-item-card} {material-outlined}`sync;2em` Import and Export
-:link: import-export
+:::{grid-item-card} {material-outlined}`manage_history;2em` Long Term Storage
+:link: timeseries-longterm
 :link-type: ref
-:link-alt: About time series data import and export
+:link-alt: About storing time series data for the long term
 
-Import data into and export data from your CrateDB cluster.
+Run efficient data operations for current and historical time series data.
+
 +++
 **What's inside:**
-Connectivity and integration options with database drivers
-and applications, libraries, and frameworks.
+Time-based bucketing.
+Import data using Dask.
+Optimizing storage for historic time series data.
 :::
 
 
