@@ -25,6 +25,8 @@ with CrateDB.
 :depth: 2
 :::
 
+:::{include} /_include/links.md
+:::
 
 (timeseries-anomaly-forecasting)=
 ## Anomaly Detection and Forecasting
@@ -260,41 +262,16 @@ mostly your first encounter with the data.
 :::{rubric} Examples
 :::
 
-::::{info-card}
-
-:::{grid-item} **Display millions of data points using hvPlot, Datashader, and CrateDB**
-:columns: auto 9 9 9
-
-[HoloViews] and [Datashader] frameworks enable channeling millions of data
-points from your backend systems to the browser's glass.
-
-This notebook plots the venerable NYC Taxi dataset after importing it
-into a CrateDB Cloud database cluster.
-
-🚧 _Please note this notebook is a work in progress._ 🚧
-
-{{ '{}[cloud-datashader-github]'.format(nb_github) }} {{ '{}[cloud-datashader-colab]'.format(nb_colab) }}
+:::{include} /_include/card/timeseries-explore.md
 :::
 
-:::{grid-item}
-:columns: 3
-{tags-primary}`Time series visualization`
-
-{tags-secondary}`Python`
-{tags-secondary}`HoloViews`
-{tags-secondary}`hvPlot`
-{tags-secondary}`Datashader`
+:::{include} /_include/card/timeseries-datashader.md
 :::
-
-::::
 
 
 
 [anomaly]: https://en.wikipedia.org/wiki/Anomaly_(natural_sciences)
-[cloud-datashader-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/amo/cloud-datashader/topic/timeseries/explore/cloud-datashader.ipynb
-[cloud-datashader-github]: https://github.com/crate/cratedb-examples/blob/amo/cloud-datashader/topic/timeseries/explore/cloud-datashader.ipynb
 [Data and information visualization]: https://en.wikipedia.org/wiki/Data_and_information_visualization
-[Datashader]: https://datashader.org/
 [Decomposition of time series]: https://en.wikipedia.org/wiki/Decomposition_of_time_series
 [Exploratory data analysis (EDA)]: https://en.wikipedia.org/wiki/Exploratory_data_analysis
 [forecasting]: https://en.wikipedia.org/wiki/Forecasting
@@ -302,7 +279,6 @@ into a CrateDB Cloud database cluster.
 [forecasting-merlion-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/mlops-mlflow/tracking_merlion.ipynb
 [forecasting-pycaret-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/automl/automl_timeseries_forecasting_with_pycaret.ipynb
 [forecasting-pycaret-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/automl/automl_timeseries_forecasting_with_pycaret.ipynb
-[HoloViews]: https://www.holoviews.org/
 [MLflow]: https://mlflow.org/
 [MLflow and CrateDB]: https://github.com/crate/cratedb-examples/tree/main/topic/machine-learning/mlops-mlflow
 [PyCaret]: https://www.pycaret.org
