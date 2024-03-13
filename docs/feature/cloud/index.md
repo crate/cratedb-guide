@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 (cloud)=
 
 # Cloud Native
