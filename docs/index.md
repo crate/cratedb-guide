@@ -196,7 +196,7 @@ frameworks.
 
 
 :::{grid-item-card} Data Visualization
-:link: analysis
+:link: visualization
 :link-type: ref
 :link-alt: Data visualization with CrateDB
 :padding: 3
