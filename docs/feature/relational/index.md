@@ -13,7 +13,7 @@
 
 ::::{grid-item}
 :class: rubric-slim
-:columns: 9
+:columns: auto 9 9 9
 
 
 :::{rubric} Overview
@@ -37,7 +37,7 @@ distributed nature, allows you to work with large amounts of data.
 
 ::::{grid-item}
 :class: rubric-slim
-:columns: 3
+:columns: auto 3 3 3
 
 ```{rubric} Reference Manual
 ```
@@ -100,7 +100,7 @@ INNER JOIN (SELECT *
 :::
 
 :::{grid-item}
-:columns: 3
+:columns: auto 3 3 3
 {tags-primary}`Lab Notes`
 
 {tags-secondary}`Join Feature`
@@ -132,7 +132,7 @@ on large tables for their analytics needs.
 :::
 
 :::{grid-item}
-:columns: 3
+:columns: auto 3 3 3
 {tags-primary}`Lab Notes`
 
 {tags-secondary}`CrateDB Internals`
@@ -173,7 +173,7 @@ SET optimizer_reorder_nested_loop_join = false;
 
 
 :::{grid-item}
-:columns: 3
+:columns: auto 3 3 3
 {tags-primary}`Tuning Tipps`
 
 {tags-secondary}`Join Performance`
