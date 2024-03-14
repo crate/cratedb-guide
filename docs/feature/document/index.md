@@ -11,7 +11,7 @@
 
 ::::{grid-item}
 :class: rubric-slimmer
-:columns: 9
+:columns: auto 9 9 9
 
 
 :::{rubric} Overview
@@ -58,7 +58,7 @@ with Lucene Documents using SQL.
 
 ::::{grid-item}
 :class: rubric-slim
-:columns: 3
+:columns: auto 3 3 3
 
 ```{rubric} Reference Manual
 ```
@@ -103,7 +103,7 @@ and using SQL instead of proprietary query languages.
 :class-row: title-slim
 
 :::{grid-item} **DDL**
-:columns: 4
+:columns: auto 4 4 4
 
 ```sql
 CREATE TABLE reading (
@@ -115,7 +115,7 @@ CREATE TABLE reading (
 :::
 
 :::{grid-item} **DML**
-:columns: 4
+:columns: auto 4 4 4
 
 ```text
 INSERT INTO reading (
@@ -137,7 +137,7 @@ INSERT INTO reading (
 :::
 
 :::{grid-item} **DQL**
-:columns: 4
+:columns: auto 4 4 4
 
 ```sql
 SELECT
@@ -233,15 +233,15 @@ container data types.
 ::::{info-card}
 
 :::{grid-item} **Blog: Handling Dynamic Objects in CrateDB**
-:columns: 9
+:columns: auto 9 9 9
 
 Learn fundamentals about CrateDB's OBJECT data type.
+
+{{ '{}[Handling Dynamic Objects in CrateDB]'.format(blog) }}
 :::
 
 :::{grid-item}
-:columns: 3
-
-[Handling Dynamic Objects in CrateDB]
+:columns: auto 3 3 3
 
 {tags-primary}`Fundamentals` \
 {tags-secondary}`OBJECT`
@@ -254,16 +254,16 @@ Learn fundamentals about CrateDB's OBJECT data type.
 ::::{info-card}
 
 :::{grid-item} **The Basics of CrateDB Objects**
-:columns: 9
+:columns: auto 9 9 9
 
 Learn the basics of CrateDB Objects. This tutorial is also available
 as video [Getting Started with CrateDB Objects]. 
+
+{{ '{}[Objects in CrateDB]'.format(tutorial) }}
 :::
 
 :::{grid-item}
-:columns: 3
-
-[Objects in CrateDB]
+:columns: auto 3 3 3
 
 {tags-primary}`Fundamentals`
 {tags-primary}`Docker` \
@@ -287,12 +287,12 @@ store and analyze complex and nested data efficiently.
 In this tutorial, we will explore how to leverage this feature in marketing
 data analysis, along with the use of [generated columns], to parse and manage
 URLs.
+
+{{ '{}(#objects-basics)'.format(tutorial) }}
 :::
 
 :::{grid-item}
-:columns: 3
-
-{ref}`objects-basics`
+:columns: auto 3 3 3
 
 {tags-primary}`Fundamentals`
 {tags-secondary}`OBJECT` \
@@ -311,7 +311,7 @@ URLs.
 ::::{info-card}
 
 :::{grid-item} **Getting Started with CrateDB Objects**
-:columns: 8
+:columns: auto auto 8 8
 
 In this video, you will learn the basics of CrateDB Objects. It illustrates
 a simple use case to demonstrate how CrateDB Objects can add clarity
@@ -327,9 +327,10 @@ data types.
 :::
 
 :::{grid-item}
-:columns: 4
+:columns: auto auto 4 4
 
 <iframe width="240" src="https://www.youtube-nocookie.com/embed/aQi9MXs2irU?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+&nbsp;
 
 {tags-primary}`Fundamentals` \
 {tags-secondary}`OBJECT`
@@ -343,20 +344,20 @@ data types.
 ::::{info-card}
 
 :::{grid-item} **Ingesting and Querying JSON Documents with SQL**
-:columns: 8
+:columns: auto auto 8 8
 
 Learn how to unleash the power of nested data with CrateDB on behalf
 of an IoT use case, and a marketing analytics use case, using deeply
 nested data.
 
 - [Unleashing the Power of Nested Data: Ingesting and Querying JSON Documents with SQL]
-
 :::
 
 :::{grid-item}
-:columns: 4
+:columns: auto auto 4 4
 
 <iframe width="240" src="https://www.youtube-nocookie.com/embed/S_RHmdz2IQM?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+&nbsp;
 
 {tags-primary}`Fundamentals` \
 {tags-secondary}`OBJECT`
@@ -369,7 +370,7 @@ nested data.
 ::::{info-card}
 
 :::{grid-item} **Dynamic Schemas and Indexing Objects**
-:columns: 8
+:columns: auto auto 8 8
 
 Learn more about OBJECTs from the perspective of dynamic schema evolution
 and about OBJECT indexing.
@@ -379,9 +380,10 @@ and about OBJECT indexing.
 :::
 
 :::{grid-item}
-:columns: 4
+:columns: auto auto 4 4
 
 <iframe width="240" src="https://www.youtube-nocookie.com/embed/lp51GphV9vo?start=495&si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+&nbsp;
 
 {tags-primary}`Fundamentals` \
 {tags-secondary}`OBJECT`
@@ -408,15 +410,7 @@ and about OBJECT indexing.
 [Getting Started with CrateDB Objects]: https://youtu.be/aQi9MXs2irU?feature=shared
 [Handling Dynamic Objects in CrateDB]: https://cratedb.com/blog/handling-dynamic-objects-in-cratedb
 [Objects in CrateDB]: https://community.cratedb.com/t/objects-in-cratedb/1188
-[query DSL based on JSON]: https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html
 [Unleashing the Power of Nested Data: Ingesting and Querying JSON Documents with SQL]: https://youtu.be/S_RHmdz2IQM?feature=shared
-
-<!-- shared -->
-[Dynamic Database Schemas]: https://cratedb.com/product/features/dynamic-schemas
-[JSON Database]: https://cratedb.com/solutions/json-database
-[Multi-model Database]: https://cratedb.com/solutions/multi-model-database
-[Nested Data Structure]: https://cratedb.com/product/features/nested-data-structure
-[Relational Database]: https://cratedb.com/solutions/relational-database
 
 ```{toctree}
 :maxdepth: 1

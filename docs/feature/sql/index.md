@@ -10,7 +10,7 @@
 
 ::::{grid-item}
 :class: rubric-slimmer
-:columns: 9
+:columns: auto 9 9 9
 
 :::{rubric} Overview
 :::
@@ -40,7 +40,7 @@ off-the-shelve, 3rd-party, open-source, and proprietary applications.
 
 ::::{grid-item}
 :class: rubric-slim
-:columns: 3
+:columns: auto 3 3 3
 
 :::{rubric} Reference Manual
 :::
