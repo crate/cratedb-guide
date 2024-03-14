@@ -4,23 +4,300 @@
 
 # Full-Text Search
 
-Learn how to set up your database for full-text search, how to create the
-relevant indices, and how to query your text data efficiently. A must-read
-for anyone looking to make sense of large volumes of unstructured text data.
+:::{include} /_include/links.md
+:::
+:::{include} /_include/styles.html
+:::
 
-- [](#search-basics)
+**Inverted index and BM25 term search based on Apache Lucene, using SQL: CrateDB is all you need.**
 
+:::::{grid}
+:padding: 0
 
-:::{note}
+::::{grid-item}
+:class: rubric-slim
+:columns: auto 9 9 9
+
+**BM25 term search based on Apache Lucene, using SQL: CrateDB is all you need.**
+
+:::{rubric} Overview
+:::
+CrateDB can be used as a database to conduct full-text search operations
+building upon Apache Lucene.
+
 CrateDB is an exceptional choice for handling complex queries and large-scale
 data sets. One of its standout features are its full-text search capabilities,
 built on top of the powerful Lucene library. This makes it a great fit for
 organizing, searching, and analyzing extensive datasets.
+
+:::{rubric} About
+:::
+[Full-text search] leverages the [BM25] search ranking algorithm, effectively
+implementing the storage and retrieval parts of a [search engine].
+
+For managing a [full-text search] index for text values, Lucene uses an
+[inverted index] data structure, and the [Okapi BM25] search ranking algorithm. 
+
+The inverted index data structure is a central component of a typical [search
+engine indexing] algorithm. Together with ranking, enabling search result
+relevance features, both effectively provide the storage and retrieval parts
+of a [search engine].
+::::
+
+
+::::{grid-item}
+:class: rubric-slim
+:columns: auto 3 3 3
+
+```{rubric} Reference Manual
+```
+- [](inv:crate-reference#sql_dql_fulltext_search)
+- [](inv:crate-reference#fulltext-indices)
+- [](inv:crate-reference#predicates_match)
+- [](inv:crate-reference#ref-create-analyzer)
+
+```{rubric} Related
+```
+- {ref}`sql`
+- [](#vector)
+- {ref}`machine-learning`
+- {ref}`query`
+
+{tags-primary}`SQL`
+{tags-primary}`Full-Text Search`
+{tags-primary}`Okapi BM25`
+::::
+
+:::::
+
+
+:::{rubric} Full-text search using SQL
+:::
+:::{div}
+CrateDB uses Lucene as a storage layer, so it inherits the implementation
+and concepts of Lucene, in the same spirit as the Apache Solr search server,
+and Elasticsearch.
+While Elasticsearch uses a [query DSL based on JSON], in CrateDB, you can work
+with text search using SQL, using a PostgreSQL-compatible interface.
 :::
 
-```{toctree}
-:maxdepth: 1
+:::{rubric} Details about the inverted index
+:::
+Lucene's indexing strategy for text fields relies on a data structure called
+[inverted index], which enables very efficient search over textual data, and is
+defined as a "data structure storing a mapping from content, such as words and
+numbers, to its location in the database file, document or set of documents".
+
+Depending on the configuration of a column, the index can be plain (default)
+or full-text. An index of type "plain" indexes content of one or more fields
+without analyzing and tokenizing their values into terms.
+
+To create a "full-text" index, the field value is first analyzed and, based on
+the used analyzer, split into smaller units, such as individual words, a
+processing step called tokenization. A full-text index is then created for each
+text unit separately.
+
+:::{rubric} Details about ranking with BM25
+:::
+In information retrieval, {abbr}`Okapi BM25 (BM is an abbreviation of "best
+matching", BM25 stands for "Best Match 25", the 25th iteration of this scoring
+algorithm.)` is a popular ranking function used by search engines to estimate
+the relevance of documents to a given search query.
+The BM25 method has become the default scoring formula in Lucene, and is also
+the relevance scoring formula used by CrateDB.
+
+The article [BM25: The Next Generation of Lucene Relevance] compares
+traditional TF/IDF to BM25, including illustrative graphs.
+To learn more details about what's inside, please also refer to [Similarity in
+Elasticsearch] and [BM25 vs. Lucene Default Similarity].
+
+
+## Synopsis
+
+Populate and query a Lucene full-text index using SQL.
+
+::::{grid}
+:padding: 0
+:class-row: title-slim
+
+:::{grid-item} **DDL**
+:columns: auto 6 6 6
+
+```sql
+CREATE TABLE documents (
+  name STRING PRIMARY KEY,
+  description TEXT,
+  INDEX ft_english
+    USING FULLTEXT(description) WITH (
+      analyzer = 'english'
+    ),
+  INDEX ft_german
+    USING FULLTEXT(description) WITH (
+      analyzer = 'german'
+    )
+);
+```
+:::
+
+:::{grid-item} **DML**
+:columns: auto 6 6 6
+
+```sql
+INSERT INTO documents (name, description)
+VALUES
+  ('Quick fox', 'The quick brown fox jumps over the lazy dog.'),
+  ('Franz jagt', 'Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.')
+;
+```
+:::
+
+:::{grid-item} **DQL**
+:columns: auto 6 6 6
+
+```sql
+SELECT name, _score
+FROM documents
+WHERE
+  MATCH(
+    (ft_english, ft_german),
+    'jump OR verwahrlost'
+  )
+ORDER BY _score DESC;
+```
+:::
+
+:::{grid-item} **Result**
+:columns: auto 6 6 6
+
+```text
++------------+------------+
+| name       |     _score |
++------------+------------+
+| Franz jagt | 0.13076457 |
+| Quick fox  | 0.13076457 |
++------------+------------+
+SELECT 2 rows in set (0.034 sec)
+```
+:::
+
+::::
+
+
+## Usage
+
+Full-text search in CrateDB means using the MATCH predicate, and optionally
+configuring analyzers.
+
+:::{rubric} MATCH predicate
+:::
+CrateDB's [MATCH predicate] performs a fulltext search on one or more indexed
+columns or indices and supports different matching techniques.
+In order to use fulltext searches on a column, a [fulltext index with an
+analyzer](inv:crate-reference#sql_ddl_index_fulltext) must be created for
+this column.
+
+
+:::{rubric} Analyzers, Tokenizers, and Filters
+:::
+Analyzers consist of two parts, tokenizers and filters. With CrateDB, you
+can define custom analyzers, or configure the standard analyzers according
+to your needs.
+
+
+## Learn
+
+Learn how to set up your database for full-text search, how to create the
+relevant indices, and how to query your text data efficiently. A few must-reads
+for anyone looking to make sense of large volumes of unstructured text data.
+
+:::{rubric} Tutorials
+:::
+
+::::{info-card}
+:::{grid-item} **Exploring the Netflix catalog using full-text search**
+:columns: auto 9 9 9
+
+The tutorial illustrates the BM25 ranking algorithm for information retrieval,
+by exploring how to manage a dataset of Netflix titles.
+
+{hyper-navigate}`#search-basics`
+
+:::
+:::{grid-item}
+:columns: auto 3 3 3
+{tags-primary}`Introduction` \
+{tags-secondary}`Full-Text Search` \
+{tags-secondary}`BM25`
+:::
+::::
+
+
+::::{info-card}
+:::{grid-item} **FTS Options**
+:columns: auto 9 9 9
+
+Learn about the stack of options relevant for full-text search,
+like applying [](#fts-fuzzy), or using [](#fts-synonyms).
+
+{hyper-navigate}`Full-Text Search Options <fts-options>`
+
+:::
+:::{grid-item}
+:columns: auto 3 3 3
+{tags-primary}`Introduction` \
+{tags-secondary}`FTS Options` \
+{tags-secondary}`Fuzzy Matching` \
+{tags-secondary}`Synonyms`
+:::
+::::
+
+
+::::{info-card}
+:::{grid-item} **Custom Analyzers**
+:columns: auto 9 9 9
+
+This tutorial illustrates how to define custom analyzers using the `CREATE
+ANALYZER` SQL command, for example to use fuzzy searching, how to use synonym
+files, and corresponding technical backgrounds about their implementations.
+
+{hyper-navigate}`Analyzers, Tokenizers, and Filters <fts-analyzer>`
+
+:::
+:::{grid-item}
+:columns: auto 3 3 3
+{tags-primary}`Introduction` \
+{tags-secondary}`Full-Text Search` \
+{tags-secondary}`Lucene Analyzer`
+:::
+::::
+
+
+:::{toctree}
+:maxdepth: 2
 :hidden:
 
+options
+analyzer
 search-hands-on
-```
+:::
+
+
+:::{todo}
+Refer to [Indexing and Storage in CrateDB] and
+[Indexing Text for Both Effective Search and Accurate Analysis].
+:::
+
+
+[BM25]: https://en.wikipedia.org/wiki/Okapi_BM25
+[BM25: The Next Generation of Lucene Relevance]: https://opensourceconnections.com/blog/2015/10/16/bm25-the-next-generation-of-lucene-relevation/
+[BM25 vs. Lucene Default Similarity]: https://www.elastic.co/blog/found-bm-vs-lucene-default-similarity
+[full-text search]: https://en.wikipedia.org/wiki/Full_text_search
+[Indexing and Storage in CrateDB]: https://cratedb.com/blog/indexing-and-storage-in-cratedb
+[Indexing Text for Both Effective Search and Accurate Analysis]: https://www.qualtrics.com/eng/indexing-text-for-both-effective-search-and-accurate-analysis/
+[inverted index]: https://en.wikipedia.org/wiki/Inverted_index
+[MATCH predicate]: inv:crate-reference#predicates_match
+[Okapi BM25]: https://trec.nist.gov/pubs/trec3/papers/city.ps.gz
+[search engine]: https://en.wikipedia.org/wiki/Search_engine
+[search engine indexing]: https://en.wikipedia.org/wiki/Index_(search_engine)
+[Similarity in Elasticsearch]: https://www.elastic.co/blog/found-similarity-in-elasticsearch
+[TREC-3 proceedings]: https://trec.nist.gov/pubs/trec3/t3_proceedings.html
