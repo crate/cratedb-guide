@@ -116,7 +116,7 @@ Downsampling with ``DATE_BIN``
 ==============================
 
 For improved downsampling using time-bucketing and resampling, the article
-`resampling time-series data with DATE_BIN`_ shares patterns how to
+`resampling time series data with DATE_BIN`_ shares patterns how to
 group records into time buckets and resample the values.
 
 This technique will improve query performance by reducing the amount of data
@@ -257,6 +257,6 @@ and the same PK values, will also have identical ``_id`` values.
 .. _Largest Triangle Three Buckets: https://github.com/sveinn-steinarsson/flot-downsample
 .. _Lucene segment: https://stackoverflow.com/a/2705123
 .. _normal distribution: https://en.wikipedia.org/wiki/Normal_distribution
-.. _resampling time-series data with DATE_BIN: https://community.cratedb.com/t/resampling-time-series-data-with-date-bin/1009
+.. _resampling time series data with DATE_BIN: https://community.cratedb.com/t/resampling-time-series-data-with-date-bin/1009
 .. _retrieving records in bulk with a list of primary key values: https://community.cratedb.com/t/retrieving-records-in-bulk-with-a-list-of-primary-key-values/1721
 .. _using common table expressions to speed up queries: https://community.cratedb.com/t/using-common-table-expressions-to-speed-up-queries/1719
