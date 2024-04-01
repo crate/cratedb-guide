@@ -290,7 +290,7 @@ will open up a map view showing the current position of the ISS:
 .. _ground point: https://en.wikipedia.org/wiki/Ground_track
 .. _International Space Station: https://www.nasa.gov/mission_pages/station/main/index.html
 .. _jq: https://stedolan.github.io/jq/
-.. _let us know: https://github.com/crate/crate-tutorials/issues/new
+.. _let us know: https://github.com/crate/cratedb-guide/issues/new
 .. _open notify: http://open-notify.org/
 .. _pip: https://pypi.org/project/pip/
 .. _pipe: https://www.geeksforgeeks.org/piping-in-unix-or-linux/

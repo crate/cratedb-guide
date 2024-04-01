@@ -13,11 +13,11 @@ Admin UI can be visited at::
 Also, let us outline those information entrypoints as suggestions to explore next:
 
 * Read more details about the :ref:`crate-reference:config`.
-* The background about :ref:`crate-howtos:bootstrap-checks`.
+* The background about :ref:`bootstrap-checks`.
 * Multi-node configuration within the section about :ref:`crate-howtos:clustering`
-  and :ref:`crate-howtos:going-into-production`.
+  and :ref:`going-into-production`.
 * When operating a CrateDB cluster in production, please also take
-  :ref:`performance tuning <crate-howtos:performance>` into consideration.
+  :ref:`performance tuning <performance>` into consideration.
 
 .. NOTE::
 

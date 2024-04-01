@@ -29,6 +29,8 @@ linkcheck_ignore = [
     r"https://cratedb.com/wp-content/uploads/2018/11/copy_from_population_data.zip",
     # Forbidden by Stack Overflow.
     r"https://stackoverflow.com/.*",
+    # Expired certificate.
+    r"https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/index.html",
 ]
 
 # Configure intersphinx.
