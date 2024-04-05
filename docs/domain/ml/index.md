@@ -214,6 +214,7 @@ This feature uses CrateDB's Vector Store implementation.
   - [LangChain: Retrieval augmented generation]
   - [LangChain: Analyzing structured data]
   - [LangChain: Chatbots]
+  - [LangChain: Q&A with SQL]
 
 
 ::::{info-card}
@@ -318,8 +319,9 @@ tensorflow
 [How to set up LangChain with CrateDB]: https://community.cratedb.com/t/how-to-set-up-langchain-with-cratedb/1576
 [Jupyter Notebook]: https://jupyter.org/
 [LangChain]: https://python.langchain.com/
-[LangChain: Analyzing structured data]: https://python.langchain.com/docs/use_cases/qa_structured/sql
+[LangChain: Analyzing structured data]: https://python.langchain.com/docs/use_cases/extraction/
 [LangChain: Chatbots]: https://python.langchain.com/docs/use_cases/chatbots
+[LangChain: Q&A with SQL]: https://python.langchain.com/docs/use_cases/sql/
 [LangChain: Retrieval augmented generation]: https://python.langchain.com/docs/use_cases/question_answering/
 [LangChain and CrateDB: Code Examples]: https://github.com/crate/cratedb-examples/tree/main/topic/machine-learning/llm-langchain
 [langchain-conversational-history-binder]: https://mybinder.org/v2/gh/crate/cratedb-examples/main?labpath=topic%2Fmachine-learning%2Fllm-langchain%2Fconversational_memory.ipynb
