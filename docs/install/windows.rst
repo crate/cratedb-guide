@@ -10,7 +10,7 @@ How to use the release archives to run CrateDB on Microsoft Windows.
 
 .. CAUTION::
 
-    We do not yet officially support CrateDB on Windows for production use. If
+    We do not officially support CrateDB on Windows for production use. If
     you would like to deploy CrateDB on Windows, please feel free to `contact
     us`_ so we can work with you on a solution.
 
