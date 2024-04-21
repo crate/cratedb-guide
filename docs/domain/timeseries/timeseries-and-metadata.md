@@ -1,4 +1,4 @@
-(time-series-advanced-guide)=
+(timeseries-objects)=
 
 # Analyzing Device Readings with Metadata Integration
 

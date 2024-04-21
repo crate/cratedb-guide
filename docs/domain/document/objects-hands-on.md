@@ -1,4 +1,4 @@
-(object-marketing)=
+(objects-basics)=
 
 # Objects: Analyzing Marketing Data
 

@@ -6,8 +6,8 @@ Learn how to optimally use CrateDB for time series use-cases.
 - [](#timeseries-basics)
 - [](#timeseries-normalize)
 - [Financial data collection and processing using pandas]
-- [](#time-series-guide)
-- [](#time-series-advanced-guide)
+- [](#timeseries-analysis)
+- [](#timeseries-objects)
 - [Time-series data: From raw data to fast analysis in only three steps]
 
 :::{toctree}
@@ -15,8 +15,8 @@ Learn how to optimally use CrateDB for time series use-cases.
 
 generate/index
 normalize-intervals
-time-series
-time-series-advanced
+timeseries-querying
+timeseries-and-metadata
 :::
 
 [Financial data collection and processing using pandas]: https://community.cratedb.com/t/automating-financial-data-collection-and-storage-in-cratedb-with-python-and-pandas-2-0-0/916
