@@ -34,8 +34,28 @@ linkcheck_ignore = [
 ]
 
 # Configure intersphinx.
+if "sphinx.ext.intersphinx" not in extensions:
+    extensions += ["sphinx.ext.intersphinx"]
+
+if "intersphinx_mapping" not in globals():
+    intersphinx_mapping = {}
+
 intersphinx_mapping.update({
     'matplotlib': ('https://matplotlib.org/stable/', None),
     'pandas': ('https://pandas.pydata.org/pandas-docs/stable/', None),
     'numpy': ('https://numpy.org/doc/stable/', None),
     })
+
+
+# Configure substitutions.
+if "myst_substitutions" not in globals():
+    myst_substitutions = {}
+
+myst_substitutions.update({
+    "nb_colab": "[![Notebook on Colab](https://img.shields.io/badge/Open-Notebook%20on%20Colab-blue?logo=Google%20Colab)]",
+    "nb_binder": "[![Notebook on Binder](https://img.shields.io/badge/Open-Notebook%20on%20Binder-lightblue?logo=binder)]",
+    "nb_github": "[![Notebook on GitHub](https://img.shields.io/badge/Open-Notebook%20on%20GitHub-darkgreen?logo=GitHub)]",
+    "readme_github": "[![README](https://img.shields.io/badge/Open-README-darkblue?logo=GitHub)]",
+    "blog": "[![Blog](https://img.shields.io/badge/Open-Blog-darkblue?logo=Markdown)]",
+    "tutorial": "[![Navigate to Tutorial](https://img.shields.io/badge/Navigate%20to-Tutorial-darkcyan?logo=Markdown)]",
+})
