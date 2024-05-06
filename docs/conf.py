@@ -6,13 +6,9 @@ if "html_theme_options" not in globals():
 if "intersphinx_mapping" not in globals():
     intersphinx_mapping = {}
 
-# Configure sitemap generation URLs.
+# Re-configure sitemap generation URLs.
+# This is a project without versioning.
 sitemap_url_scheme = "{link}"
-
-# Configure rel="canonical" link URLs.
-html_theme_options.update({
-        "canonical_url_path": "%s/" % url_path,
-})
 
 # Disable version chooser.
 html_context.update({
