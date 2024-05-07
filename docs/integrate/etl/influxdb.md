@@ -65,9 +65,15 @@ And verify that data is indeed in your CrateDB cluster:
 crash --command "SELECT * FROM testdrive.demo;"
 :::
 
-(cratedb-toolkit)=
-## Setup
+## More information
 
-There are many more ways to get and use the CrateDB Toolkit. To see all
-that's possible with it, please visit the 
-[cratedb-toolkit repository](https://github.com/crate-workbench/cratedb-toolkit/tree/main/cratedb_toolkit/io)
+There are many more ways to apply the I/O subsystem of CrateDB Toolkit as pipeline
+elements in your daily data operations routines. Please visit the [CrateDB Toolkit I/O
+Documentation], to learn more about what's possible.
+
+The InfluxDB I/O subsystem is based on the [influxio] package. Please also check its
+documentation to learn about more of its capabilities, supporting you when working
+with InfluxDB.
+
+[influxio]: https://github.com/daq-tools/influxio
+[CrateDB Toolkit I/O Documentation]: https://github.com/crate-workbench/cratedb-toolkit/tree/main/cratedb_toolkit/io
