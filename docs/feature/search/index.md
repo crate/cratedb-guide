@@ -9,7 +9,6 @@
 :::{include} /_include/styles.html
 :::
 
-**Inverted index and BM25 term search based on Apache Lucene, using SQL: CrateDB is all you need.**
 
 :::::{grid}
 :padding: 0
@@ -220,7 +219,8 @@ for anyone looking to make sense of large volumes of unstructured text data.
 The tutorial illustrates the BM25 ranking algorithm for information retrieval,
 by exploring how to manage a dataset of Netflix titles.
 
-{hyper-navigate}`#search-basics`
+{hyper-navigate}`Netflix Tutorial <search-basics>`
+
 
 :::
 :::{grid-item}

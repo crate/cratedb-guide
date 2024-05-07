@@ -1,3 +1,4 @@
+(timeseries-analysis-advanced)=
 (timeseries-analysis-weather)=
 
 # Time Series: Analyzing Weather Data
