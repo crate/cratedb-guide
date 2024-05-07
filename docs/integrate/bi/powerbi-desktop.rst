@@ -192,6 +192,6 @@ The pie chart will be updated automatically, and will produce the following:
 .. _World Economic Outlook survey: https://www.imf.org/en/Publications/WEO
 .. _Power BI Desktop: https://powerbi.microsoft.com/en-us/desktop/
 .. _PostgreSQL ODBC driver: https://odbc.postgresql.org/
-.. _downloads section: https://www.postgresql.org/ftp/odbc/versions/msi/
+.. _downloads section: https://www.postgresql.org/ftp/odbc/versions.old/msi/
 .. _raw data: https://www.imf.org/en/Publications/WEO/weo-database/2017/April/download-entire-database
 .. _preprocessed archive: https://cratedb.com/wp-content/uploads/2018/11/copy_from_population_data.zip
