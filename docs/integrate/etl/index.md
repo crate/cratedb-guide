@@ -72,6 +72,9 @@ Tutorials and resources about configuring the managed variants, Astro and CrateD
 
 - {ref}`integrate-mongodb`
 
+## InfluxDB
+
+- {ref}`integrate-influxdb`
 
 ## MySQL
 
@@ -136,6 +139,7 @@ A demo project which uses SSIS and ODBC to read and write data from CrateDB:
 ```{toctree}
 :hidden:
 
+influxdb
 mongodb
 mysql
 ```

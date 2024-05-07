@@ -1,4 +1,5 @@
-(influxdb-import)=
+(integrate-influxdb)=
+(import-influxdb)=
 # Import data from InfluxDB
 
 In this quick tutorial we use the InfluxDB I/O subsystem of CrateDB Toolkit
