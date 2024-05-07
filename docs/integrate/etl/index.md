@@ -62,19 +62,17 @@ Tutorials and resources about configuring the managed variants, Astro and CrateD
 - [Tutorial: Replicating data to CrateDB with Debezium and Kafka]
 - [Webinar: How to replicate data from other databases to CrateDB with Debezium and Kafka]
 
+## InfluxDB
+
+- {ref}`integrate-influxdb`
 
 ## Kestra
 
 - [Setting up data pipelines with CrateDB and Kestra]
 
-
 ## MongoDB
 
 - {ref}`integrate-mongodb`
-
-## InfluxDB
-
-- {ref}`integrate-influxdb`
 
 ## MySQL
 
