@@ -60,3 +60,7 @@ myst_substitutions.update({
     "blog": "[![Blog](https://img.shields.io/badge/Open-Blog-darkblue?logo=Markdown)]",
     "tutorial": "[![Navigate to Tutorial](https://img.shields.io/badge/Navigate%20to-Tutorial-darkcyan?logo=Markdown)]",
 })
+
+
+# FIXME: Remove after fixing at `crate-docs-theme`.
+language = "en"
