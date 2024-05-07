@@ -12,10 +12,12 @@ There are multiple ways to get and use the this tool, to avoid
 unnecessary installations we will use Docker to run the services.
 **Docker is needed for this:**
 
+:::{code} console
 docker run --rm --network=host ghcr.io/daq-tools/influxio \
     influxio copy \
     "http://example:token@localhost:8086/testdrive/demo" \
     "crate://crate@localhost:4200/testdrive/demo"
+:::
 
 (setup-influxdb)=
 ### InfluxDB setup
