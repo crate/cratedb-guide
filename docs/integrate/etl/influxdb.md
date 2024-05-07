@@ -1,16 +1,8 @@
 (influxdb-import)=
 # Import data from InfluxDB
 
-In this quick tutorial we use [influxio](https://github.com/daq-tools/influxio)
-to import data from InfluxDB into CrateDB. It can be used both as a standalone
-program, and as a library.
-
-:::{note}
-Please note that influxio is alpha-quality software, and a work in progress.
-Contributions of all kinds are very welcome, in order to make it more solid. 
-Breaking changes should be expected until a 1.0 release, so version pinning is
-recommended, especially when you use it as a library.
-:::
+In this quick tutorial we use the InfluxDB I/O subsystem of CrateDB Toolkit
+to import data from InfluxDB into CrateDB.
 
 (setup-influxio)=
 ## Setup
