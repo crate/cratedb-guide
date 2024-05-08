@@ -75,5 +75,5 @@ The InfluxDB I/O subsystem is based on the [influxio] package. Please also check
 documentation to learn about more of its capabilities, supporting you when working
 with InfluxDB.
 
-[influxio]: https://github.com/daq-tools/influxio
-[CrateDB Toolkit I/O Documentation]: https://github.com/crate-workbench/cratedb-toolkit/tree/main/cratedb_toolkit/io
+[influxio]: https://influxio.readthedocs.io/
+[CrateDB Toolkit I/O Documentation]: https://cratedb-toolkit.readthedocs.io/io/influxdb/loader.html
