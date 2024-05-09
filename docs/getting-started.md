@@ -51,7 +51,7 @@ about it, please refer to its documentation at [](inv:crate-crash:*:label#index)
 ## Connect
 
 You have a variety of options to connect to CrateDB, and integrate it with
-off-the-shelve, 3rd-party, open-source, and proprietary applications, mostly
+off-the-shelf, 3rd-party, open-source, and proprietary applications, mostly
 using [CrateDB's PostgreSQL interface].
 
 To learn more, please refer to the documentation sections about supported
