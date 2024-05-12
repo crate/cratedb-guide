@@ -48,7 +48,6 @@ docker exec influxdb influx write --bucket=testdrive --org=example --precision=s
 docker exec influxdb influx write --bucket=testdrive --org=example --precision=s --token=token "demo,region=amazonas temperature=27.9,humidity=91.6,windspeed=3.2 1588736000"
 docker exec influxdb influx write --bucket=testdrive --org=example --precision=s --token=token "demo,region=amazonas temperature=29.1,humidity=88.1,windspeed=2.4 1588922400"
 docker exec influxdb influx write --bucket=testdrive --org=example --precision=s --token=token "demo,region=amazonas temperature=28.6,humidity=93.4,windspeed=2.9 1589108800"
-
 :::
 
 (export-data)=
@@ -59,10 +58,12 @@ is a running instance of CrateDB.**
 
 First, create these aliases so the next part is a bit easier:
 
-::::{code} console
+:::{code} console
 alias crash="docker run --rm -it ghcr.io/crate-workbench/cratedb-toolkit:latest crash"
 alias ctk="docker run --rm -it ghcr.io/crate-workbench/cratedb-toolkit:latest ctk"
 :::
+
+Now you can import data to your CrateDB instance:
 
 :::{code} console
 export CRATEDB_SQLALCHEMY_URL=crate://crate@localhost:4200/testdrive/demo
