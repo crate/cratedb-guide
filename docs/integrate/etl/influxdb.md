@@ -8,7 +8,7 @@ to import data from InfluxDB into CrateDB.
 (integrate-influxdb-quickstart)=
 ## Quickstart
 
-There are multiple ways to get and use the this tool, to avoid 
+There are multiple ways to get and use this tool, to avoid 
 unnecessary installations we will use Docker to run the services.
 **Docker is needed for this:**
 
