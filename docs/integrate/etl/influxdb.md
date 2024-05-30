@@ -6,7 +6,6 @@
 In this quick tutorial we use the InfluxDB I/O subsystem of CrateDB Toolkit
 to demonstrate importing data from InfluxDB into CrateDB.
 
-
 ## Synopsis
 Transfer data from InfluxDB bucket/measurement into CrateDB schema/table.
 :::{code} shell
@@ -20,7 +19,6 @@ Query data in CrateDB.
 export CRATEPW=password
 crash --host=cratedb.example.org --username=user --command="SELECT * FROM testdrive.demo;"
 :::
-
 
 ## Tutorial
 
@@ -55,7 +53,6 @@ docker run --rm -it --name=cratedb \
   crate:latest -Cdiscovery.type=single-node
 :::
 
-
 ### Sample Data
 Command shortcuts. 
 :::{code} shell
@@ -71,7 +68,6 @@ influx-write "demo,region=amazonas temperature=27.9,humidity=91.6,windspeed=3.2 
 influx-write "demo,region=amazonas temperature=29.1,humidity=88.1,windspeed=2.4 1588922400"
 influx-write "demo,region=amazonas temperature=28.6,humidity=93.4,windspeed=2.9 1589108800"
 :::
-
 
 ### Data Import
 
@@ -93,6 +89,51 @@ Verify that relevant data has been transferred to CrateDB.
 crash --host=cratedb --command="SELECT * FROM testdrive.demo;"
 :::
 
+## Cloud to Cloud
+
+If you're interested in importing data from [InfluxDB Cloud] into
+[CrateDB Cloud], the procedure is similar with small adjustments.
+
+First, helpful aliases again:
+:::{code} shell
+alias ctk="docker run --rm -it ghcr.io/crate-workbench/cratedb-toolkit:latest ctk"
+alias crash="docker run --rm -it ghcr.io/crate-workbench/cratedb-toolkit:latest crash"
+:::
+
+You will need your credentials for both CrateDB and InfluxDB. 
+These are, with examples:
+
+**CrateDB Cloud**
+* Host: ```purple-shaak-ti.eks1.eu-west-1.aws.cratedb.net```
+* Username: ```admin```
+* Password: ```dZ..qB```
+
+**InfluxDB Cloud**
+  * Host: ```eu-central-1-1.aws.cloud2.influxdata.com```
+  * Organization ID: ```9fafc869a91a3406```
+  * All-Access API token: ```T2..==```
+
+For CrateDB, the credentials are displayed at time of cluster creation.
+For InfluxDB, they can be found in the [cloud platform] itself.
+
+Now, same as before, import data from InfluxDB bucket/measurement into 
+CrateDB schema/table.
+:::{code} shell
+ctk load table \
+  "influxdb2://9f..06:T2..==@eu-central-1-1.aws.cloud2.influxdata.com/testdrive/demo?ssl=true" \
+  --cratedb-sqlalchemy-url="crate://admin:dZ..qB@purple-shaak-ti.eks1.eu-west-1.aws.cratedb.net:4200/testdrive/demo?ssl=true"
+:::
+
+::: {note}
+Note the **necessary** `ssl=true` query parameter at the end of both database connection URLs
+when working on Cloud-to-Cloud transfers.
+:::
+
+Verify that relevant data has been transferred to CrateDB.
+:::{code} shell
+crash --hosts 'https://admin:dZ..qB@purple-shaak-ti.eks1.eu-west-1.aws.cratedb.net:4200' --command 'SELECT * FROM testdrive.demo;'
+:::
+
 ## More information
 
 There are more ways to apply the I/O subsystem of CrateDB Toolkit as
@@ -103,10 +144,8 @@ The InfluxDB I/O subsystem is based on the [influxio] package. Please also
 check its documentation to learn about more of its capabilities, supporting
 you when working with InfluxDB.
 
-While the tutorial demonstrates corresponding functionality on behalf of
-a workstation setup procedure, you can also connect to relevant managed
-or cloud-based services, most prominently CrateDB Cloud and InfluxDB Cloud.
-
-
+[cloud platform]: https://docs.influxdata.com/influxdb/cloud/admin
+[CrateDB Cloud]: https://console.cratedb.cloud/
 [CrateDB Toolkit I/O Documentation]: https://cratedb-toolkit.readthedocs.io/io/influxdb/loader.html
+[InfluxDB Cloud]: https://cloud2.influxdata.com/
 [influxio]: https://influxio.readthedocs.io/
