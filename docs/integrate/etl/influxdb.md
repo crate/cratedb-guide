@@ -3,8 +3,13 @@
 (import-influxdb)=
 # Import data from InfluxDB
 
-In this quick tutorial we use the InfluxDB I/O subsystem of CrateDB Toolkit
-to demonstrate importing data from InfluxDB into CrateDB.
+In this quick tutorial, you'll use the CrateDB Toolkit's InfluxDB I/O subsystem.
+to import data from [InfluxDB] into [CrateDB].
+
+:::{note}
+**Important:** The tutorial uses adapter software which is currently in beta testing.
+If you discover any issues, please [report them] back to us.
+:::
 
 ## Synopsis
 Transfer data from InfluxDB bucket/measurement into CrateDB schema/table.
@@ -20,12 +25,27 @@ export CRATEPW=password
 crash --host=cratedb.example.org --username=user --command="SELECT * FROM testdrive.demo;"
 :::
 
+## Data Model
+
+InfluxDB stores time series data in buckets and measurements. CrateDB stores
+data in schemas and tables.
+
+- A **bucket** is a named location with a retention policy where time series data is stored.
+- A **series** is a logical grouping of data defined by shared measurement, tag, and field.
+- A **measurement** is similar to an SQL database table.
+- A **tag** is similar to an indexed column in an SQL database.
+- A **field** is similar to an un-indexed column in an SQL database.
+- A **point** is similar to an SQL row.
+
+-- [What are series and bucket in InfluxDB]
+
+
 ## Tutorial
 
 The tutorial heavily uses Docker to provide services and to run jobs.
 Alternatively, you can use the drop-in replacement Podman.
-The walkthrough is a basic example setup using InfluxDB, including
-a few samples worth of data.
+The walkthrough uses basic example setup including InfluxDB 2.x and
+a few samples worth of data that is being transferred to CrateDB.
 
 ### Services
 
@@ -91,8 +111,8 @@ crash --host=cratedb --command="SELECT * FROM testdrive.demo;"
 
 ## Cloud to Cloud
 
-If you're interested in importing data from [InfluxDB Cloud] into
-[CrateDB Cloud], the procedure is similar with small adjustments.
+The procedure for importing data from [InfluxDB Cloud] into [CrateDB Cloud] is
+similar, with a few small adjustments.
 
 First, helpful aliases again:
 :::{code} shell
@@ -138,14 +158,19 @@ crash --hosts 'https://admin:dZ..qB@purple-shaak-ti.eks1.eu-west-1.aws.cratedb.n
 
 There are more ways to apply the I/O subsystem of CrateDB Toolkit as
 pipeline elements in your daily data operations routines. Please visit the 
-[CrateDB Toolkit I/O Documentation], to learn more about what's possible.
+[CrateDB Toolkit InfluxDB I/O subsystem documentation], to learn more about what's possible.
 
 The InfluxDB I/O subsystem is based on the [influxio] package. Please also
 check its documentation to learn about more of its capabilities, supporting
 you when working with InfluxDB.
 
+
 [cloud platform]: https://docs.influxdata.com/influxdb/cloud/admin
+[CrateDB]: https://github.com/crate/crate
 [CrateDB Cloud]: https://console.cratedb.cloud/
-[CrateDB Toolkit I/O Documentation]: https://cratedb-toolkit.readthedocs.io/io/influxdb/loader.html
+[CrateDB Toolkit InfluxDB I/O subsystem documentation]: https://cratedb-toolkit.readthedocs.io/io/influxdb/loader.html
+[InfluxDB]: https://github.com/influxdata/influxdb
 [InfluxDB Cloud]: https://cloud2.influxdata.com/
 [influxio]: https://influxio.readthedocs.io/
+[report them]: https://github.com/crate-workbench/cratedb-toolkit/issues
+[What are series and bucket in InfluxDB]: https://stackoverflow.com/questions/58190272/what-are-series-and-bucket-in-influxdb/69951376#69951376
