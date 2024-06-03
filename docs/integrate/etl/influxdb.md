@@ -3,7 +3,7 @@
 (import-influxdb)=
 # Import data from InfluxDB
 
-In this quick tutorial, you'll use the CrateDB Toolkit's InfluxDB I/O subsystem.
+In this quick tutorial, you'll use the [CrateDB Toolkit InfluxDB I/O subsystem]
 to import data from [InfluxDB] into [CrateDB].
 
 :::{note}
@@ -158,7 +158,7 @@ crash --hosts 'https://admin:dZ..qB@purple-shaak-ti.eks1.eu-west-1.aws.cratedb.n
 
 There are more ways to apply the I/O subsystem of CrateDB Toolkit as
 pipeline elements in your daily data operations routines. Please visit the 
-[CrateDB Toolkit InfluxDB I/O subsystem documentation], to learn more about what's possible.
+[CrateDB Toolkit InfluxDB I/O subsystem] documentation, to learn more about what's possible.
 
 The InfluxDB I/O subsystem is based on the [influxio] package. Please also
 check its documentation to learn about more of its capabilities, supporting
@@ -168,7 +168,7 @@ you when working with InfluxDB.
 [cloud platform]: https://docs.influxdata.com/influxdb/cloud/admin
 [CrateDB]: https://github.com/crate/crate
 [CrateDB Cloud]: https://console.cratedb.cloud/
-[CrateDB Toolkit InfluxDB I/O subsystem documentation]: https://cratedb-toolkit.readthedocs.io/io/influxdb/loader.html
+[CrateDB Toolkit InfluxDB I/O subsystem]: https://cratedb-toolkit.readthedocs.io/io/influxdb/loader.html
 [InfluxDB]: https://github.com/influxdata/influxdb
 [InfluxDB Cloud]: https://cloud2.influxdata.com/
 [influxio]: https://influxio.readthedocs.io/
