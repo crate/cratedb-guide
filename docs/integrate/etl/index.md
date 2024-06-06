@@ -53,6 +53,12 @@ Tutorials and resources about configuring the managed variants, Astro and CrateD
 - [Executable stack: Apache Kafka, Apache Flink, and CrateDB]
 - [Tutorial: Replicating data to CrateDB with Debezium and Kafka]
 
+```{toctree}
+:hidden:
+
+kafka-connect
+```
+
 
 ## Apache NiFi
 
@@ -62,6 +68,12 @@ Tutorials and resources about configuring the managed variants, Astro and CrateD
 ## Azure Functions
 
 - {ref}`azure-functions`
+
+```{toctree}
+:hidden:
+
+azure-functions
+```
 
 
 ## dbt
@@ -78,6 +90,13 @@ Tutorials and resources about configuring the managed variants, Astro and CrateD
 
 - {ref}`integrate-influxdb`
 
+```{toctree}
+:hidden:
+
+influxdb
+```
+
+
 ## Kestra
 
 - [Setting up data pipelines with CrateDB and Kestra]
@@ -86,9 +105,22 @@ Tutorials and resources about configuring the managed variants, Astro and CrateD
 
 - {ref}`integrate-mongodb`
 
+```{toctree}
+:hidden:
+
+mongodb
+```
+
+
 ## MySQL
 
 - {ref}`integrate-mysql`
+
+```{toctree}
+:hidden:
+
+mysql
+```
 
 
 ## Node-RED
@@ -116,6 +148,13 @@ A demo project which uses SSIS and ODBC to read and write data from CrateDB:
 ## StreamSets
 
 - {ref}`streamsets`
+
+```{toctree}
+:hidden:
+
+streamsets
+```
+
 
 
 [Automating recurrent CrateDB queries using Node-RED]: https://community.cratedb.com/t/automating-recurrent-cratedb-queries/788
@@ -147,21 +186,3 @@ A demo project which uses SSIS and ODBC to read and write data from CrateDB:
 [Using dbt with CrateDB]: https://community.cratedb.com/t/using-dbt-with-cratedb/1566
 [Using SQL Server Integration Services with CrateDB]: https://github.com/crate/cratedb-examples/tree/main/application/microsoft-ssis
 [Webinar: How to replicate data from other databases to CrateDB with Debezium and Kafka]: https://cratedb.com/resources/webinars/lp-wb-debezium-kafka
-
-
-
-```{toctree}
-:hidden:
-
-influxdb
-mongodb
-mysql
-```
-
-```{toctree}
-:hidden:
-
-kafka-connect
-azure-functions
-streamsets
-```
