@@ -195,7 +195,7 @@ to destroy all associated resources:
 .. _git's installation guide: https://git-scm.com/downloads
 .. _AWS provider: https://registry.terraform.io/providers/hashicorp/aws/latest/docs
 .. _List of available AWS regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
-.. _How to view VPC properties: https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#view-default-vpc
+.. _How to view VPC properties: https://docs.aws.amazon.com/vpc/latest/userguide/work-with-default-vpc.html#view-default-vpc
 .. _How to view subnet properties: https://docs.aws.amazon.com/vpc/latest/userguide/modify-subnets.html#view-subnet
 .. _How to create EC2 key pairs: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-key-pairs.html
 .. _community post: https://community.cratedb.com/t/deploying-cratedb-to-the-cloud-via-terraform/849

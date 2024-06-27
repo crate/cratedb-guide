@@ -184,8 +184,8 @@ To get started, import the ``pandas`` library:
 
     import pandas
 
-Pandas uses `SQLAlchemy`_ and the :ref:`crate-python:index` to provide support
-for ``crate://`` style :ref:`connection strings <crate-python:database-urls>`.
+Pandas uses `SQLAlchemy`_ and the :ref:`sqlalchemy-cratedb:index` to provide support
+for ``crate://`` style :ref:`connection strings <sqlalchemy-cratedb:database-urls>`.
 
 Then, query the raw data:
 

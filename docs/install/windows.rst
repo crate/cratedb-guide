@@ -70,5 +70,5 @@ How to use the release archives to run CrateDB on Microsoft Windows.
 .. _msvcrt x86-32: https://aka.ms/vs/16/release/vc_redist.x86.exe
 .. _msvcrt x86-64: https://aka.ms/vs/16/release/vc_redist.x64.exe
 .. _Powershell: https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.2
-.. _starting PowerShell: https://docs.microsoft.com/en-us/powershell/scripting/learn/ps101/01-getting-started?view=powershell-7.1#how-do-i-launch-powershell
+.. _starting PowerShell: https://learn.microsoft.com/en-us/powershell/scripting/learn/ps101/01-getting-started?view=powershell-7.4#how-to-launch-powershell
 .. _Windows Server: https://www.microsoft.com/en-us/windows-server
