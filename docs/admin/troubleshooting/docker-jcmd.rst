@@ -1,7 +1,7 @@
 .. _jcmd-docker:
 
 ===============================================
-Troubleshooting CrateDB on Docker with ``jcmd``
+Troubleshooting CrateDB with ``jcmd`` on Docker
 ===============================================
 
 You can find a lot of troubleshooting guides for Java applications out there on
@@ -17,6 +17,14 @@ When it comes to troubleshooting the ``crate`` Docker container, things work a
 bit differently. This document explains why the 'usual' way to run ``jcmd``
 does not work and how to solve it. It does not, however, explain how to analyze
 the output (since that is identical to non-containerized applications)!
+
+.. note::
+
+    Other than telling readers about "You can find a lot of troubleshooting
+    guides out there...", we should provide canonical instructions, optionally
+    supported by corresponding tooling, and tailored to typical environments
+    and scenarios CrateDB users find themselves in.
+
 
 .. rubric:: Table of contents
 
