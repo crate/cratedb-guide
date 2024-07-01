@@ -12,13 +12,15 @@ orphan: true
 
 
 
-# CrateDB Documentation
+# Welcome to CrateDB!
 
-Documentation overview for CrateDB and CrateDB Cloud.
-<br>
-Reference manuals, tutorials, example code, and more.
+CrateDB is designed to handle your demanding analytics and search workloads with
+ease. Here you'll find comprehensive resources including reference manuals,
+tutorials, example code, and more.
 
-::::{grid} 1 1 2 2
+Happy learning and building with CrateDB!
+
+::::{grid} 1
 :margin: 1
 :padding: 2
 
@@ -29,36 +31,37 @@ Reference manuals, tutorials, example code, and more.
 :padding: 2
 :class-title: sd-fs-5
 
-CrateDB Cloud is a fully managed, terabyte-scale, and cost-effective analytics
-database that lets you run analytics over vast amounts of data in near real time,
-even with complex queries.
+Discover the fully managed, scalable SQL database designed for
+real-time search and analytics. It supports fast analytics applications with
+real-time indexing of time-series, JSON, vector, text, and geo data. Perform
+near real-time analytics on vast data sets with complex queries and streamline
+data management across multiple cloud providers.
 
-CrateDB Cloud is an SQL database service for enterprise data warehouse workloads,
-that works across clouds and scales with your data.
-:::
-
-:::{grid-item-card} {material-outlined}`auto_stories;1.7em` Database Manual
-:link: cloud-docs-index
-:link-type: ref
-:link-alt: CrateDB Cloud
-:padding: 2
-:class-title: sd-fs-5
-
-CrateDB is a distributed and scalable SQL database for storing and
-analyzing massive amounts of data in near real-time, even with complex queries.
-It is PostgreSQL-compatible, and based on Lucene. 
-
-CrateDB is an open source multi-model database for time series, documents
-and vectors, combining the simplicity of SQL with the scalability of a
-distributed architecture.
+[Get started now!](https://cratedb.com/docs/cloud/tutorials/quick-start.html)
 :::
 
 ::::
 
 
-::::{grid} 1
+::::{grid} 1 1 2 2
 :margin: 1
 :padding: 2
+
+:::{grid-item-card} {material-outlined}`auto_stories;1.7em` Reference Manual
+:link: https://cratedb.com/docs/reference/
+:link-alt: CrateDB Reference Manual
+:padding: 2
+:class-title: sd-fs-5
+
+Want to dive deep into CrateDB? Explore the comprehensive reference manual.
+
+At the core of CrateDB Cloud sits CrateDB, the open-source, distributed, and
+scalable SQL database system designed for storing and analyzing massive amounts
+of data in real-time, even with complex queries.
+
+Based on Lucene, CrateDB supports time series, documents, and vectors, combining
+the simplicity of SQL with the scalability of a distributed architecture
+:::
 
 :::{grid-item-card} {material-outlined}`link;1.7em` Client Libraries
 :link: https://cratedb.com/docs/crate/clients-tools/en/latest/connect/
@@ -73,7 +76,6 @@ CrateDB supports both the [HTTP protocol] and the [PostgreSQL wire protocol],
 which ensures that many clients that work with PostgreSQL, will also work with
 CrateDB. Through corresponding drivers, CrateDB is compatible with [ODBC],
 [JDBC], and other database API specifications.
-
 :::
 
 ::::
@@ -157,7 +159,7 @@ and integrations with 3rd-party applications.
 
 {material-outlined}`category;3.5em`
 +++
-Discover integrations and solutions from the open source community and CrateDB partners.
+Discover integrations and solutions from the open-source community and CrateDB partners.
 :::
 
 
