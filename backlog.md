@@ -7,6 +7,7 @@
 - Rework container/index
 - Update HTTP links, use Sphinx references instead
 - Update remaining links from crate.io to cratedb.com
+- Gallery: https://python.arviz.org/en/stable/examples/
 
 ## Iteration +2
 - Render Jupyter Notebooks?
