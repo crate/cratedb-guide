@@ -59,8 +59,9 @@ At the core of CrateDB Cloud sits CrateDB, the open-source, distributed, and
 scalable SQL database system designed for storing and analyzing massive amounts
 of data in real-time, even with complex queries.
 
-Based on Lucene, CrateDB supports time series, documents, and vectors, combining
-the simplicity of SQL with the scalability of a distributed architecture
+Based on Lucene and inherited from Elasticsearch/OpenSearch, CrateDB supports
+time series, documents, and vectors, combining the simplicity of SQL with the
+scalability of a distributed architecture.
 :::
 
 :::{grid-item-card} {material-outlined}`link;1.7em` Client Libraries
@@ -86,25 +87,76 @@ CrateDB. Through corresponding drivers, CrateDB is compatible with [ODBC],
 
 :::{rubric} Introduction
 :::
-Learn about the fundamentals of CrateDB and its utility applications.
+Learn about the fundamentals of CrateDB, guided and self-guided.
 
-::::{grid} 2 3 3 3
+::::{grid} 2 2 4 4
 :padding: 0
 
-:::{grid-item-card} Getting Started
+:::{grid-item-card}
 :link: https://cratedb.com/docs/guide/getting-started.html
 :link-alt: Getting started with CrateDB
 :padding: 3
-:class-card: sd-pt-3
-:class-title: sd-fs-5
-:class-body: sd-text-center
+:class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold sd-text-capitalize
+:class-body: sd-text-center sd-fs-5
 :class-footer: text-smaller
-
+Getting Started
+^^^
 {material-outlined}`lightbulb;3.5em`
 +++
 Learn how to interact with the database for the first time.
 :::
 
+:::{grid-item-card}
+:link: https://cratedb.com/docs/guide/
+:link-alt: The CrateDB Guide
+:padding: 3
+:class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold sd-text-capitalize
+:class-body: sd-text-center sd-fs-5
+:class-footer: text-smaller
+The CrateDB Guide
+^^^
+{material-outlined}`hiking;3.5em`
++++
+Guides and tutorials about how to use CrateDB in practice.
+:::
+
+:::{grid-item-card}
+:link: https://learn.cratedb.com/
+:link-alt: The CrateDB Academy
+:padding: 3
+:class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold sd-text-capitalize
+:class-body: sd-text-center sd-fs-5
+:class-footer: text-smaller
+Academy Courses
+^^^
+{material-outlined}`school;3.5em`
++++
+A learning hub dedicated to data enthusiasts.
+:::
+
+:::{grid-item-card}
+:link: https://community.cratedb.com/
+:link-alt: The CrateDB Community Portal
+:padding: 3
+:class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold sd-text-capitalize
+:class-body: sd-text-center sd-fs-5
+:class-footer: text-smaller
+Community Portal
+^^^
+{material-outlined}`groups;3.5em`
++++
+A hangout place for members of the CrateDB community.
+:::
+
+::::
+
+
+:::{rubric} Database Clients and Tools
+:::
+Learn about the fundamental tools and utility programs that support working directly with CrateDB.
+
+::::{grid} 2 3 3 3
+:padding: 0
 
 :::{grid-item-card} Admin UI
 :link: https://cratedb.com/docs/crate/admin-ui/
@@ -114,12 +166,10 @@ Learn how to interact with the database for the first time.
 :class-title: sd-fs-5
 :class-body: sd-text-center
 :class-footer: text-smaller
-
 {material-outlined}`admin_panel_settings;3.5em`
 +++
 Learn about CrateDB's included web administration interface.
 :::
-
 
 :::{grid-item-card} Crash CLI
 :link: https://cratedb.com/docs/crate/crash/
@@ -129,7 +179,6 @@ Learn about CrateDB's included web administration interface.
 :class-title: sd-fs-5
 :class-body: sd-text-center
 :class-footer: text-smaller
-
 {material-outlined}`terminal;3.5em`
 +++
 A command-line interface (CLI) tool for working with CrateDB.
@@ -142,7 +191,7 @@ A command-line interface (CLI) tool for working with CrateDB.
 :::
 
 Learn about database client libraries, drivers, adapters, connectors,
-and integrations with 3rd-party applications.
+and integrations with 3rd-party applications and frameworks.
 
 ::::{grid} 2 3 3 3
 :padding: 0
@@ -156,7 +205,6 @@ and integrations with 3rd-party applications.
 :class-title: sd-fs-5
 :class-body: sd-text-center
 :class-footer: text-smaller
-
 {material-outlined}`category;3.5em`
 +++
 Discover integrations and solutions from the open-source community and CrateDB partners.
@@ -172,8 +220,7 @@ Discover integrations and solutions from the open-source community and CrateDB p
 :class-title: sd-fs-5
 :class-body: sd-text-center
 :class-footer: text-smaller
-
-{material-outlined}`school;3.5em`
+{material-outlined}`integration_instructions;3.5em`
 +++
 Learn about the variety of options to connect and integrate with 3rd-party applications.
 :::
@@ -187,7 +234,6 @@ Learn about the variety of options to connect and integrate with 3rd-party appli
 :class-title: sd-fs-5
 :class-body: sd-text-center
 :class-footer: text-smaller
-
 {material-outlined}`local_library;3.5em`
 +++
 Integration-focused tutorials to help you use CrateDB together with other tools and libraries.
@@ -212,7 +258,6 @@ Learn how to use CrateDB by digesting concise examples.
 :class-title: sd-fs-5
 :class-body: sd-text-center
 :class-footer: text-smaller
-
 {material-outlined}`play_circle;3.5em`
 +++
 A collection of clear and concise examples how to work with CrateDB.
@@ -226,7 +271,6 @@ A collection of clear and concise examples how to work with CrateDB.
 :class-title: sd-fs-5
 :class-body: sd-text-center
 :class-footer: text-smaller
-
 {material-outlined}`apps;3.5em`
 +++
 Different client libraries used by canonical guestbook demo web applications. 
@@ -239,15 +283,20 @@ Different client libraries used by canonical guestbook demo web applications.
 
 ----
 
-**Resources:** [Academy] • [Blog] • [Community] • [Customers] • [GitHub] • [Support]
+**Resources:**
+[Academy] • [Blog] • [Community] • [Customers] • [Examples] • 
+[GitHub] • [Guide] • [Support]
 
 
 [Academy]: https://learn.cratedb.com/
 [Blog]: https://cratedb.com/blog
 [Community]: https://community.cratedb.com/
 [Customers]: https://cratedb.com/customers
+[Examples]: https://github.com/crate/cratedb-examples
 [GitHub]: https://github.com/crate
+[Guide]: https://cratedb.com/docs/guide/
 [HTTP protocol]: https://en.wikipedia.org/wiki/HTTP
+[Integrations]: #integrate
 [JDBC]: https://en.wikipedia.org/wiki/Java_Database_Connectivity 
 [ODBC]: https://en.wikipedia.org/wiki/Open_Database_Connectivity
 [PostgreSQL wire protocol]: https://www.postgresql.org/docs/current/protocol.html
