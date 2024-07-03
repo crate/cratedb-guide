@@ -2,6 +2,8 @@
 [cloud-datashader-github]: https://github.com/crate/cratedb-examples/blob/amo/cloud-datashader/topic/timeseries/explore/cloud-datashader.ipynb
 [Datashader]: https://datashader.org/
 [Dynamic Database Schemas]: https://cratedb.com/product/features/dynamic-schemas
+[Geospatial Data Model]: https://cratedb.com/data-model/geospatial
+[Geospatial Database]: https://cratedb.com/geospatial-spatial-database
 [HoloViews]: https://www.holoviews.org/
 [Indexing, Columnar Storage, and Aggregations]: https://cratedb.com/product/features/indexing-columnar-storage-aggregations
 [JSON Database]: https://cratedb.com/solutions/json-database
