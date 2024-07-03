@@ -4,6 +4,7 @@ Custom styles for efficient tile layouts using card elements.
 TODO: Upstream to crate-docs-theme.
 -->
 <style>
+/* General */
 /*
 .sd-card-body {
     line-height: 1.1em;
@@ -12,6 +13,13 @@ TODO: Upstream to crate-docs-theme.
 .sd-card-footer {
     font-size: small;
 }
+
+/* No margins for images in tight layouts, e.g. badges  */
+/* Needed for domain/timeseries/advanced.md */
+.wrapper-content-right img {
+  margin-bottom: 0 !important;
+}
+
 
 /* Document Store */
 .wrapper-content-right ul {

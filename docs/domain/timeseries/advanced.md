@@ -13,12 +13,6 @@ with CrateDB.
 {tags-primary}`Metadata integration`
 
 
-<style>
-.wrapper-content-right img {
-  margin-bottom: 0 !important;
-}
-</style>
-
 
 :::{contents}
 :local:
