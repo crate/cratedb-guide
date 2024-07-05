@@ -30,7 +30,13 @@ industry-standard SQL.
 ::::{grid-item-card} {material-outlined}`group;2em` Operational
 :::{toctree}
 :maxdepth: 1
+
 connectivity/index
+:::
+:::{toctree}
+:maxdepth: 1
+
+cluster/index
 :::
 +++
 CrateDB scales horizontally using a shared-nothing

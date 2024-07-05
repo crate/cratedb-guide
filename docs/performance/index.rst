@@ -12,6 +12,6 @@ performance tuning and sharding.
 .. toctree::
    :maxdepth: 2
 
-   sharding
+   Sharding <sharding>
    inserts/index
    selects

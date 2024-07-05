@@ -1,8 +1,9 @@
 .. _sharding_guide:
+.. _sharding-performance:
 
-==============
-Sharding Guide
-==============
+==========================
+Sharding Performance Guide
+==========================
 
 This document is a sharding best practice guide for CrateDB.
 
