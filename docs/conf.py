@@ -27,10 +27,15 @@ linkcheck_ignore = [
     r"https://stackoverflow.com/.*",
     # Expired certificate.
     r"https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/index.html",
+    # 403 Client Error: Forbidden for url
+    r"https://www.baeldung.com/.*",
+    # 404 Client Error: Not Found
+    r"https://github.com/crate-workbench/cratedb-toolkit/actions/runs/.*",
 ]
 
 # Configure intersphinx.
 intersphinx_mapping.update({
+    'ctk': ('https://cratedb-toolkit.readthedocs.io/', None),
     'matplotlib': ('https://matplotlib.org/stable/', None),
     'pandas': ('https://pandas.pydata.org/pandas-docs/stable/', None),
     'numpy': ('https://numpy.org/doc/stable/', None),

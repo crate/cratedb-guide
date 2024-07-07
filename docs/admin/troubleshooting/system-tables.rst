@@ -1,14 +1,15 @@
 .. highlight:: psql
 .. _systables:
 
-==================================
-Troubleshooting with system tables
-==================================
+==============================
+Diagnostics with System Tables
+==============================
 
 CrateDB maintains a set of diagnostic tables in the **sys** schema. It
 currently consists of ten tables that provide an overview of the cluster state.
-If something is going wrong and you initially don't know why, they help you to
-analyze, identify the problem and start mitigating it. While there is
+
+If something is going wrong, and you initially don't know why, they help you to
+analyze, identify the problem, and start mitigating it. While there is
 :ref:`detailed information about all system tables <crate-reference:system-information>`,
 this guide runs you through the most common situations.
 
@@ -18,8 +19,8 @@ this guide runs you through the most common situations.
    :local:
 
 
-Step 1: Health check
-====================
+Step 1: Inspect health checks
+=============================
 
 A good point to start is the table **sys.check** that maintains a number of
 health checks. You may know it from the admin UI. Order them by severity::
@@ -32,20 +33,20 @@ health checks. You may know it from the admin UI. Order them by severity::
     SELECT ... in set (... sec)
 
 If a check fails, the description offers some explanation on how to proceed.
-The table reports checks that verify your cluster layout, give recommendations
-for configuration options, and warn you on incompatible software versions. More
-will be added as you go.
+This synthetic table reports checks that verify your cluster layout, gives recommendations
+for configuration options, and warns you on incompatible software versions. More
+checks will be added as we go.
 
 
-Step 2: Activity in the cluster
-===============================
+Step 2: Check cluster activity
+==============================
 
 Statements that are currently executed on the server are tracked in the tables
 **sys.jobs** and **sys.operations**. They give you the opportunity to view the
 ongoing activity in the cluster.
 
 If you're using an earlier version than CrateDB 3.0.0, you will have to enable
-statistics using:
+statistics using::
 
     cr> SET GLOBAL stats.enabled = true;
     SET OK, 1 row affected ( … sec)
@@ -81,10 +82,10 @@ recorded history of finished jobs and operations in the tables **sys.jobs_log**
 and **sys.operations_log**, respectively.
 
 
-Step 3: Analyzing cluster resources
-===================================
+Step 3: Analyze cluster resources
+=================================
 
-Sometimes it's not a single query that causes problems, but a component of your
+Sometimes it is not a single query that causes problems, but a component of your
 distributed cluster. To find out more about it, check the table
 **sys.cluster**, which holds a single row containing the name and ID of the
 current master along with several other settings. To list all available data,
@@ -111,7 +112,7 @@ overloaded or because they have an outdated Java version::
     +-------+--------...+------------------------...+
     SELECT ... in set (... sec)
 
-To list all nodes using more than 98 per cent of the memory, type::
+To list all nodes using more than 98 per cent of system memory, invoke::
 
     cr> SELECT * FROM sys.nodes WHERE mem['used_percent'] > 98;
     +--...+---...+------...-+-...+---...+--...+---...+------...+-...+------...+---...+-----...-+-------...+----------...-+------...+
@@ -120,8 +121,11 @@ To list all nodes using more than 98 per cent of the memory, type::
     ...
     SELECT ... in set (... sec)
 
-The table also contains the performance metrics like the load average, disk,
-memory, heap, or network throughput. Running::
+The table also contains performance metrics like the load average, disk,
+memory, heap, or network throughput.
+The object has the same structure as the **_node** system column of
+**sys.operations** from the previous section.
+This query lists all available attributes::
 
     cr> SHOW columns IN nodes FROM sys;
     +-------------------------------------------------...+-----------...+
@@ -131,8 +135,6 @@ memory, heap, or network throughput. Running::
     +-------------------------------------------------...+-----------...+
     SHOW ... rows in set (... sec)
 
-lists all available attributes. This object has the same structure as the
-**_node** system column of **sys.operations** from the previous section.
 
 
 Step 4: Insights about partitions, shards, and replication
@@ -140,11 +142,13 @@ Step 4: Insights about partitions, shards, and replication
 
 CrateDB divides the rows of each table into shards that are distinctively
 distributed to all nodes in your cluster. Replication uses the same mechanism
-to add redundancy and thus resilience to your data. While most of the time
+to add redundancy and thus resilience to your data.
+
+While most of the time
 CrateDB transparently takes care of distributing and replicating the shards,
-it's useful during troubleshooting to actually find out some more about these
+it is useful in troubleshooting situations to learn more about these
 data structures. The **sys.shards** table provides access to the status and
-size of shards, their names and IDs::
+size of shards, their names, and IDs::
 
     cr> SHOW COLUMNS IN shards FROM sys;
     +--------------------------------+-----------+
@@ -191,9 +195,10 @@ on the admin UI evaluate these values as well.
 The **sys.shards** table contains even more information about the rebalancing
 activities. Sometimes CrateDB needs to transfer a shard to another node, since
 that may be necessary to ensure there are enough replicas of it distributed in
-the cluster. You can estimate the progress of that operation with the
-**recovery** object. To monitor the progress of the shard transfer, run this
-query::
+the cluster.
+
+You can estimate the progress of that operation with the **recovery** object.
+Run this query to monitor the progress of the shard transfer::
 
     cr> select _node['hostname'], id, recovery['stage'], recovery['size']['percent'], routing_state, state from sys.shards
     ... where routing_state in ('RELOCATING','INITIALIZING') order by id;
@@ -215,7 +220,9 @@ until the transfer is done. After that, the source row is deleted from
 **sys.shards** automatically.
 
 To find out on which specific node a shard is stored, also use the object in
-the **_node** system column that is available for this table. As an example::
+the **_node** system column that is available for this table. For example,
+this query lists the hosts and tables with the highest number of rows inside
+a single shard::
 
     cr> SELECT _node['hostname'], table_name, num_docs FROM sys.shards ORDER BY num_docs DESC LIMIT 3;
     +-------------------...+-----------...-+----------+
@@ -224,9 +231,6 @@ the **_node** system column that is available for this table. As an example::
     ...
     +-------------------...+------------...+----------+
     SELECT ... in set (... sec)
-
-This query lists the hosts and tables with the highest number of rows inside a
-single shard.
 
 .. SEEALSO::
 
@@ -245,17 +249,17 @@ apparent reason. You would probably want to find out what is causing the
 cluster to not allocate the shards. For that, there is the ``sys.allocations``
 table, which lists all shards in the cluster.
 
-If a shard is unassigned, the row will also include a reason why it cannot be
-allocated on any node.
+- If a shard is unassigned, the row will also include a reason why it cannot be
+  allocated on any node.
 
-If a shard is assigned but cannot be moved or rebalanced, the row includes a
-reason why it remains on the current node.
+- If a shard is assigned but cannot be moved or rebalanced, the row includes a
+  reason why it remains on the current node.
 
-For a full list of available columns, see the :ref:`reference documentation
-about the sys.allocations table <crate-reference:sys-allocations>`.
+- For a full list of available columns, see the :ref:`reference documentation
+  about the sys.allocations table <crate-reference:sys-allocations>`.
 
-To find out about the different states of shards of a specific table, you can
-simply filter by ``table_schema`` and ``table_name``, e.g.::
+- To find out about the different states of shards of a specific table, you can
+  simply filter by ``table_schema`` and ``table_name``, e.g.::
 
     cr> SELECT table_name, shard_id, node_id, explanations
     ... FROM sys.allocations
@@ -271,13 +275,15 @@ simply filter by ``table_schema`` and ``table_name``, e.g.::
     SELECT ... in set (... sec)
 
 
-Step 6: Managing snapshots
-==========================
+Step 6: Manage snapshots
+========================
 
 Finally: if your repair efforts did not succeed, and your application or users
 accidentally deleted some data, recover one of the previously taken snapshots
 of your cluster. The tables **sys.snapshots** and **sys.repositories** assist
-you in managing your backups. Remember, one or more backups are stored in
+you in managing your backups.
+
+Remember, one or more backups are stored in
 repositories outside the CrateDB cluster initialized with the **CREATE
 REPOSITORY** request. An actual copy of a current database state is made with
 the **CREATE SNAPSHOT** command. If you forgot where you store your snapshots::
@@ -290,7 +296,8 @@ the **CREATE SNAPSHOT** command. If you forgot where you store your snapshots::
     SELECT ... in set (... sec)
 
 might come in handy. To actually recover data, first determine which snapshot
-to restore. Suppose you make nightly backups, the command::
+to restore. Suppose you make nightly backups, this command displays last week's
+snapshots along with their name, the stored indices, and how long they took::
 
     cr> SELECT * FROM sys.snapshots ORDER BY started DESC LIMIT 7;
     +------------------+----------+------+------------+---------+-------+---------+
@@ -298,6 +305,3 @@ to restore. Suppose you make nightly backups, the command::
     +------------------+----------+------+------------+---------+-------+---------+
     +------------------+----------+------+------------+---------+-------+---------+
     SELECT ... in set (... sec)
-
-shows you last week's snapshots along with their name, the stored indices, and
-how long they took.
