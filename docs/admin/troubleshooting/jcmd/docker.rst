@@ -246,9 +246,11 @@ Java Flight Recorder (JFR)
 Notes
 =====
 
-On earlier versions of the CrateDB OCI image, you needed to use ``chroot`` to
-invoke the ``jcmd`` command inside the container. While this procedure still works,
+Previously, you needed to use a ``chroot`` command inside the container, in
+order to invoke the ``jcmd`` command properly. While this procedure still works,
 it is more convenient to use the ``--user`` option as outlined above.
+
+In case you need the old variant, we are displaying it below.
 
 .. code-block:: console
 
@@ -258,6 +260,10 @@ it is more convenient to use the ``--user`` option as outlined above.
    OpenJDK 64-Bit Server VM version 13.0.1+9
    JDK 13.0.1
 
+.. code-block:: console
+
+    docker exec -it cratedb chroot --userspec=1000 / /bin/bash
+    /crate/jdk/bin/jcmd 1 VM.version
 
 .. _entrypoint: https://github.com/crate/docker-crate/blob/master/docker-entrypoint.sh
 .. _jcmd documentation: https://docs.oracle.com/en/java/javase/17/docs/specs/man/jcmd.html
