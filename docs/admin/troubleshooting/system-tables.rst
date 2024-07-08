@@ -65,18 +65,18 @@ listed in the **sys.jobs** table while it's executed::
 Once you identified the dedicated job UUID, you can kill that job with the
 **KILL** command. A single job is split into several operations which run,
 depending on the query, on distributed nodes of your cluster. The table has
-also a system column **_node** indicating on which node CrateDB actually
+also a system column **node** indicating on which node CrateDB actually
 executes the operation::
 
-    cr> SELECT _node['name'], _node['hostname'], * FROM sys.operations;
-    +---------------+------------------...+----+---------------...+---------+---------------+------------+
-    | _node['name'] | _node['hostname']   | id | job_id           | name    |       started | used_bytes |
-    +---------------+------------------...+----+---------------...+---------+---------------+------------+
+    cr> SELECT node['name'], node['id'], * FROM sys.operations;
+    +---------------+----------...+----+---------------...+---------+---------------+------------+
+    | node['name'] | node['id']   | id | job_id           | name    |       started | used_bytes |
+    +---------------+----------...+----+---------------...+---------+---------------+------------+
     ...
-    +---------------+------------------...+----+---------------...+---------+---------------+------------+
+    +---------------+----------...+----+---------------...+---------+---------------+------------+
     SELECT ... in set (... sec)
 
-Find out more about the **_node** system column in the next sections. If there
+Find out more about the **node** system column in the next sections. If there
 are no current jobs nor operations that are causing problems, check the
 recorded history of finished jobs and operations in the tables **sys.jobs_log**
 and **sys.operations_log**, respectively.
@@ -123,7 +123,7 @@ To list all nodes using more than 98 per cent of system memory, invoke::
 
 The table also contains performance metrics like the load average, disk,
 memory, heap, or network throughput.
-The object has the same structure as the **_node** system column of
+The object has the same structure as the **node** system column of
 **sys.operations** from the previous section.
 This query lists all available attributes::
 
@@ -200,12 +200,12 @@ the cluster.
 You can estimate the progress of that operation with the **recovery** object.
 Run this query to monitor the progress of the shard transfer::
 
-    cr> select _node['hostname'], id, recovery['stage'], recovery['size']['percent'], routing_state, state from sys.shards
+    cr> select node['name'], id, recovery['stage'], recovery['size']['percent'], routing_state, state from sys.shards
     ... where routing_state in ('RELOCATING','INITIALIZING') order by id;
-    +-------------------+----+-------------------+-----------------------------+---------------+-------+
-    | _node['hostname'] | id | recovery['stage'] | recovery['size']['percent'] | routing_state | state |
-    +-------------------+----+-------------------+-----------------------------+---------------+-------+
-    +-------------------+----+-------------------+-----------------------------+---------------+-------+
+    +--------------+----+-------------------+-----------------------------+---------------+-------+
+    | node['name'] | id | recovery['stage'] | recovery['size']['percent'] | routing_state | state |
+    +--------------+----+-------------------+-----------------------------+---------------+-------+
+    +--------------+----+-------------------+-----------------------------+---------------+-------+
     SELECT ... in set (... sec)
 
 It lists pairs of rows, in which the first row denotes the destination shard
@@ -220,16 +220,16 @@ until the transfer is done. After that, the source row is deleted from
 **sys.shards** automatically.
 
 To find out on which specific node a shard is stored, also use the object in
-the **_node** system column that is available for this table. For example,
+the **node** system column that is available for this table. For example,
 this query lists the hosts and tables with the highest number of rows inside
 a single shard::
 
-    cr> SELECT _node['hostname'], table_name, num_docs FROM sys.shards ORDER BY num_docs DESC LIMIT 3;
-    +-------------------...+-----------...-+----------+
-    | _node['hostname']    | table_name    | num_docs |
-    +-------------------...+------------...+----------+
+    cr> SELECT node['name'], table_name, num_docs FROM sys.shards ORDER BY num_docs DESC LIMIT 3;
+    +--------------...+-----------...-+----------+
+    | node['name']    | table_name    | num_docs |
+    +--------------...+------------...+----------+
     ...
-    +-------------------...+------------...+----------+
+    +--------------...+------------...+----------+
     SELECT ... in set (... sec)
 
 .. SEEALSO::
@@ -261,17 +261,17 @@ table, which lists all shards in the cluster.
 - To find out about the different states of shards of a specific table, you can
   simply filter by ``table_schema`` and ``table_name``, e.g.::
 
-    cr> SELECT table_name, shard_id, node_id, explanations
+    cr> SELECT table_name, shard_id, node_id, explanation
     ... FROM sys.allocations
     ... WHERE table_schema = 'doc' AND table_name = 'my_table'
     ... ORDER BY current_state, shard_id;
-    +------------+----------+---------+--------------+
-    | table_name | shard_id | node_id | explanations |
-    +------------+----------+---------+--------------+
-    | doc        | my_table | ...     | ...          |
-    +------------+----------+---------+--------------+
+    +------------+----------+---------+-------------+
+    | table_name | shard_id | node_id | explanation |
+    +------------+----------+---------+-------------+
+    | doc        | my_table | ...     | ...         |
+    +------------+----------+---------+-------------+
     ...
-    +------------+----------+---------+--------------+
+    +------------+----------+---------+-------------+
     SELECT ... in set (... sec)
 
 
