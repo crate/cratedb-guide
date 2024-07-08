@@ -32,57 +32,18 @@ Run ``jcmd`` inside container
 The commands below use ``docker``. In the same spirit, you can also use
 ``podman``.
 
-.. rubric:: Problem
+.. rubric:: Connect with user ``crate``
 
-After starting a ``cratedb`` Docker container,
-
-.. code-block:: console
-
-    docker run --rm -it --name=cratedb \
-        --publish=4200:4200 --publish=5432:5432 \
-        --env=CRATE_HEAP_SIZE=2g crate/crate:nightly \
-        -Cdiscovery.type=single-node
-
-you can also run ``jcmd`` inside the container.
+When aiming to invoke ``jcmd`` inside the container, please make sure to
+impersonate as the ``crate`` user.
 
 .. code-block:: console
 
-   $ docker exec -ti cratedb /bin/bash
-   [root@cratedb data]# /crate/jdk/bin/jcmd -l
-   1 io.crate.bootstrap.CrateDB -Cpath.home=/crate -Cnode.name=debug
-   106 jdk.jcmd/sun.tools.jcmd.JCmd -l
+    docker exec -it --user=crate cratedb /bin/bash
+    /crate/jdk/bin/jcmd 1 VM.version
 
-However, when trying to run any command, it fails, even though you are invoking
-the program as ``root`` with full privileges.
-
-.. code-block:: console
-
-   [root@cratedb data]# /crate/jdk/bin/jcmd 1 VM.version
-   1:
-   com.sun.tools.attach.AttachNotSupportedException: Unable to open socket file /proc/1/root/tmp/.java_pid1: target process 1 doesn't respond within 10500ms or HotSpot VM not loaded
-   	at jdk.attach/sun.tools.attach.VirtualMachineImpl.<init>(VirtualMachineImpl.java:100)
-   	at jdk.attach/sun.tools.attach.AttachProviderImpl.attachVirtualMachine(AttachProviderImpl.java:58)
-   	at jdk.attach/com.sun.tools.attach.VirtualMachine.attach(VirtualMachine.java:207)
-   	at jdk.jcmd/sun.tools.jcmd.JCmd.executeCommandForPid(JCmd.java:115)
-   	at jdk.jcmd/sun.tools.jcmd.JCmd.main(JCmd.java:99)
-
-The same happens when you try to run it as user ``crate``, which owns the
-process.
-
-.. code-block:: console
-
-   [root@cratedb data]# su crate -c "/crate/jdk/bin/jcmd 1 VM.version"
-   1:
-   com.sun.tools.attach.AttachNotSupportedException: Unable to open socket file /proc/1/root/tmp/.java_pid1: target process 1 doesn't respond within 10500ms or HotSpot VM not loaded
-   	at jdk.attach/sun.tools.attach.VirtualMachineImpl.<init>(VirtualMachineImpl.java:100)
-   	at jdk.attach/sun.tools.attach.AttachProviderImpl.attachVirtualMachine(AttachProviderImpl.java:58)
-   	at jdk.attach/com.sun.tools.attach.VirtualMachine.attach(VirtualMachine.java:207)
-   	at jdk.jcmd/sun.tools.jcmd.JCmd.executeCommandForPid(JCmd.java:115)
-   	at jdk.jcmd/sun.tools.jcmd.JCmd.main(JCmd.java:99)
-
-On a different note: When looking at the Docker logs of the ``crate``
-container, you can see that when trying to run the ``jcmd`` command, the
-CrateDB instance logs a full thread dump.
+Otherwise, the command will fail with an error like ``AttachNotSupportedException:
+Unable to open socket file /proc/1/root/tmp/.java_pid1``.
 
 
 .. rubric:: Root Cause
@@ -99,14 +60,27 @@ PID. This is not what one wants in a Docker container, where the application
 must (?) run as PID 1.
 
 
-.. rubric:: Solution
+.. rubric:: Examples
 
-With that knowledge in mind, you can use ``chroot`` to execute the ``jcmd``
-command as well.
+Let's start by starting a ``cratedb`` container.
 
 .. code-block:: console
 
-   [root@cratedb data]# chroot --userspec=1000 / /crate/jdk/bin/jcmd 1 VM.version
+    docker run --rm -it --name=cratedb \
+        --publish=4200:4200 --publish=5432:5432 \
+        --env=CRATE_HEAP_SIZE=2g crate/crate:nightly \
+        -Cdiscovery.type=single-node
+
+.. code-block:: console
+
+    docker exec -it --user=crate cratedb /bin/bash
+    $ /crate/jdk/bin/jcmd -l
+    1 io.crate.bootstrap.CrateDB -Cpath.home=/crate -Cdiscovery.type=single-node
+    301 jdk.jcmd/sun.tools.jcmd.JCmd -l
+
+.. code-block:: console
+
+   [crate@cratedb data]# /crate/jdk/bin/jcmd 1 VM.version
    1:
    OpenJDK 64-Bit Server VM version 13.0.1+9
    JDK 13.0.1
@@ -116,7 +90,7 @@ for troubleshooting CrateDB inside the Docker container.
 
 .. code-block:: console
 
-   [root@cratedb data]# chroot --userspec=1000 / /crate/jdk/bin/jcmd 1 help
+   [crate@cratedb data]# /crate/jdk/bin/jcmd 1 help
    1:
    The following commands are available:
    Compiler.CodeHeap_Analytics
@@ -175,14 +149,14 @@ explicitly attaching to it, you can combine the ``docker exec`` command with the
 
 .. code-block:: console
 
-   $ docker exec -ti <ID> /bin/bash -c "chroot --userspec=1000 / /crate/jdk/bin/jcmd 1 <CMD>"
+   $ docker exec -it --user=crate cratedb /crate/jdk/bin/jcmd 1 <CMD>
 
 For example, running ``GC.heap_info`` on Docker container with ID
 ``cratedb``.
 
 .. code-block:: console
 
-   $ docker exec -ti cratedb /bin/bash -c "chroot --userspec=1000 / /crate/jdk/bin/jcmd 1 GC.heap_info"
+   $ docker exec -it --user=crate cratedb /crate/jdk/bin/jcmd 1 GC.heap_info
    1:
     garbage-first heap   total 524288K, used 129716K [0x00000000e0000000, 0x0000000100000000)
      region size 1024K, 126 young (129024K), 22 survivors (22528K)
@@ -206,7 +180,7 @@ Heap Info
 
 .. code-block:: console
 
-   $ docker exec -ti cratedb /bin/bash -c "chroot --userspec=1000 / /crate/jdk/bin/jcmd 1 GC.heap_info"
+   $ docker exec -it --user=crate cratedb /crate/jdk/bin/jcmd 1 GC.heap_info
    1:
    ...
 
@@ -220,7 +194,7 @@ Heap Dump
 
 .. code-block:: console
 
-   $ docker exec -ti cratedb /bin/bash -c "chroot --userspec=1000 / /crate/jdk/bin/jcmd 1 GC.heap_dump /data/crate.hprof"
+   $ docker exec -it --user=crate cratedb /crate/jdk/bin/jcmd 1 GC.heap_dump /data/crate.hprof
    1:
    Heap dump file created
 
@@ -240,7 +214,7 @@ Thread Dump
 
 .. code-block:: console
 
-   $ docker exec -ti cratedb /bin/bash -c "chroot --userspec=1000 / /crate/jdk/bin/jcmd 1 Thread.print"
+   $ docker exec -it --user=crate cratedb /crate/jdk/bin/jcmd 1 Thread.print
    1:
    ...
 
@@ -256,7 +230,7 @@ Java Flight Recorder (JFR)
 
 .. code-block:: console
 
-   $ docker exec -ti cratedb /bin/bash -c "chroot --userspec=1000 / /crate/jdk/bin/jcmd 1 JFR.start name=recording1 duration=60s filename=/data/recording1.jfr"
+   $ docker exec -it --user=crate cratedb /crate/jdk/bin/jcmd 1 JFR.start name=recording1 duration=60s filename=/data/recording1.jfr
    1:
    Started recording 1. The result will be written to:
 
@@ -267,6 +241,22 @@ Java Flight Recorder (JFR)
    The ``<PATH>`` should be a path that resides on a mounted volume, so you can
    access the created jfr dump from ouside of the container and the container
    is not "blown up".
+
+
+Notes
+=====
+
+On earlier versions of the CrateDB OCI image, you needed to use ``chroot`` to
+invoke the ``jcmd`` command inside the container. While this procedure still works,
+it is more convenient to use the ``--user`` option as outlined above.
+
+.. code-block:: console
+
+   [user@host ~]# docker exec -it cratedb /bin/bash
+   [crate@cratedb data]# chroot --userspec=1000 / /crate/jdk/bin/jcmd 1 VM.version
+   1:
+   OpenJDK 64-Bit Server VM version 13.0.1+9
+   JDK 13.0.1
 
 
 .. _entrypoint: https://github.com/crate/docker-crate/blob/master/docker-entrypoint.sh
