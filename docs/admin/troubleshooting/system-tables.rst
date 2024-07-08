@@ -5,8 +5,8 @@
 Diagnostics with System Tables
 ==============================
 
-CrateDB maintains a set of diagnostic tables in the **sys** schema. It
-currently consists of ten tables that provide an overview of the cluster state.
+CrateDB maintains a set of diagnostic tables in the **sys** schema, which
+provide insights into the cluster state.
 
 If something is going wrong, and you initially don't know why, they help you to
 analyze, identify the problem, and start mitigating it. While there is

@@ -99,7 +99,7 @@ JDK distribution, and it is integrated into the JVM.
 :::
 
 :::{card} {material-outlined}`receipt_long;1.6em` Diagnosing a Running JVM
-:link: https://www.baeldung.com/running-jvm-diagnose#7-jfr-command-options
+:link: https://www.baeldung.com/running-jvm-diagnose
 This tutorial examines the jcmd utility, its commands, command options, and
 and how to use it.
 :::
