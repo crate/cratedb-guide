@@ -312,6 +312,7 @@ performance/index
 
 domain/index
 integrate/index
+migrate/index
 reference-architectures/index
 ```
 
