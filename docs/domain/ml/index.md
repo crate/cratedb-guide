@@ -59,8 +59,9 @@ generation (RAG), and other applications.
 Tutorials and Notebooks about using [MLflow] together with CrateDB.
 
 ::::{info-card}
-:::{grid-item} **Blog: Running Time Series Models in Production using CrateDB**
+:::{grid-item}
 :columns: 9
+**Blog: Running Time Series Models in Production using CrateDB**
 
 Part 1: Introduction to [Time Series Modeling using Machine Learning]
 
@@ -79,8 +80,9 @@ an especially good fit for supporting machine learning models in production.
 
 
 ::::{info-card}
-:::{grid-item} **Notebook: Create a Time Series Anomaly Detection Model**
+:::{grid-item}
 :columns: 9
+**Notebook: Create a Time Series Anomaly Detection Model**
 
 Guidelines and runnable code to get started with MLflow and
 CrateDB, exercising time series anomaly detection and time series forecasting /
@@ -106,8 +108,9 @@ prediction using NumPy, Salesforce Merlion, and Matplotlib.
 Tutorials and Notebooks about using [PyCaret] together with CrateDB.
 
 ::::{info-card}
-:::{grid-item} **Notebook: AutoML classification with PyCaret**
+:::{grid-item}
 :columns: 9
+**Notebook: AutoML classification with PyCaret**
 
 Explore the PyCaret framework and show how to use it to train different
 classification models.
@@ -126,8 +129,9 @@ classification models.
 ::::
 
 ::::{info-card}
-:::{grid-item} **Notebook: Train time series forecasting models**
+:::{grid-item}
 :columns: 9
+**Notebook: Train time series forecasting models**
 
 How to train time series forecasting models using PyCaret and CrateDB.
 
@@ -152,8 +156,9 @@ How to train time series forecasting models using PyCaret and CrateDB.
 Use [scikit-learn] with CrateDB.
 
 ::::{info-card}
-:::{grid-item} **Regression analysis with pandas and scikit-learn**
+:::{grid-item}
 :columns: 9
+**Regression analysis with pandas and scikit-learn**
 
 Use [pandas] and [scikit-learn] to run a regression analysis within a
 [Jupyter Notebook].
@@ -176,8 +181,9 @@ Use [pandas] and [scikit-learn] to run a regression analysis within a
 Use [TensorFlow] with CrateDB.
 
 ::::{info-card}
-:::{grid-item} **Predictive Maintenance**
+:::{grid-item}
 :columns: 9
+**Predictive Maintenance**
 
 Build a machine learning model that will predict whether a machine will
 fail within a specified time window in the future.
@@ -218,8 +224,9 @@ This feature uses CrateDB's Vector Store implementation.
 
 
 ::::{info-card}
-:::{grid-item} **Tutorial: Set up LangChain with CrateDB**
+:::{grid-item}
 :columns: 9
+**Tutorial: Set up LangChain with CrateDB**
 
 LangChain is a framework for developing applications powered by language models.
 For this tutorial, we are going to use it to interact with CrateDB using only
@@ -241,8 +248,9 @@ and some Python knowledge.
 
 
 ::::{info-card}
-:::{grid-item} **Notebook: Vector Similarity Search**
+:::{grid-item}
 :columns: 9
+**Notebook: Vector Similarity Search**
 
 CrateDB's `FLOAT_VECTOR` type and its `KNN_MATCH` function can be used
 for storing and retrieving embeddings, and for conducting similarity
@@ -264,8 +272,9 @@ searches.
 
 
 ::::{info-card}
-:::{grid-item} **Notebook: SQLAlchemy Document Loader**
+:::{grid-item}
 :columns: 9
+**Notebook: SQLAlchemy Document Loader**
 
 Database tables in CrateDB can be used as a source provider for
 LangChain documents.
@@ -285,8 +294,9 @@ LangChain documents.
 
 
 ::::{info-card}
-:::{grid-item} **Notebook: Conversational History**
+:::{grid-item}
 :columns: 9
+**Notebook: Conversational History**
 
 CrateDB supports managing LangChain's conversation history.
 
