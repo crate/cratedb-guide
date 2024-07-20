@@ -53,7 +53,7 @@ architecture, inherited from Elasticsearch.
 query/index
 generated/index
 fdw/index
-replication/index
+ccr/index
 :::
 +++
 Advanced features supporting daily data
