@@ -52,6 +52,7 @@ architecture, inherited from Elasticsearch.
 :maxdepth: 1
 query/index
 generated/index
+cursor/index
 fdw/index
 udf/index
 ccr/index
