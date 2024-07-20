@@ -25,12 +25,14 @@ CrateDB implements the relational concept of joining tables.
 When selecting data from CrateDB, you can join one or more relations
 (tables) to combine columns into one result set.
 
+:::{rubric} Details
+:::
 Joins are essential operations in relational databases. They create a
 link between rows based on common values and allow the meaningful
 combination of these rows.
 
-CrateDB supports joins effectively from the beginning and, due to its
-distributed nature, allows you to work with large amounts of data.
+CrateDB was designed to support distributed joins effectively from the
+very beginning.
 ::::
 
 

@@ -74,7 +74,7 @@ When inserting spatial data, you can use [GeoJSON] or [WKT] formats.
 Using spatial search, you can:
 
 - Index points or other shapes.
-- Filter search results by a bounding box or circle or by other shapes.
+- Filter search results by a bounding box, circle, donut, or other shape.
 - Sort or boost scoring by distance between points, or relative area between rectangles.
 - Generate a 2D grid of facet count numbers for heatmap generation or point-plotting.
 
@@ -156,6 +156,7 @@ tutorials, or example applications.
 - [Geospatial Queries with CrateDB]
 - [Berlin and Geo Shapes in CrateDB]
 - [Spatial data demo application using CrateDB and the Express framework]
+- [Plane Spotting with Software Defined Radio (SDN), CrateDB and Node.js]
 
 :::{rubric} Webinars
 :::
@@ -202,7 +203,8 @@ tutorials, or example applications.
 [Geospatial Queries with CrateDB]: https://cratedb.com/blog/geospatial-queries-with-crate-data
 [GolfNow chooses CrateDB]: https://cratedb.com/resources/videos/interview-golfnow-cratedb
 [MATCH predicate for geographical search]: inv:crate-reference#sql_dql_geo_match
-[Spatial data demo application using CrateDB and the Express framework]: https://github.com/simonprickett/cratedb-demo
+[Plane Spotting with Software Defined Radio (SDN), CrateDB and Node.js]: https://github.com/crate/devrel-plane-spotting-with-cratedb
+[Spatial data demo application using CrateDB and the Express framework]: https://github.com/crate/devrel-shipping-forecast-geo-demo
 [Spatially Health chooses CrateDB]: https://cratedb.com/customers/spatially-cratedb-location-analytics
 [SQLAlchemy Geopoint and Geoshape types]: inv:sqlalchemy-cratedb#geopoint
 [WKT]: https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry

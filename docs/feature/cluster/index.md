@@ -1,21 +1,10 @@
 (clustering)=
-
 # Clustering
-
 
 :::{include} /_include/links.md
 :::
 :::{include} /_include/styles.html
 :::
-
-<style>
-.field-list dd {
-  margin-bottom: 1em !important;
-}
-.field-list p {
-  margin-bottom: 0.5em;
-}
-</style>
 
 
 :::::{grid}
@@ -37,7 +26,7 @@ a distributed SQL database.
 :::
 CrateDB relies on Lucene for storage and inherits components from Elasticsearch /
 OpenSearch for cluster consensus. Fundamental concepts of CrateDB are familiar
-to Elasticsearch users, because the fundamental implementation is actually the same.
+to Elasticsearch users, because both are actually using the same implementation.
 
 :::{rubric} Details
 :::
