@@ -8,6 +8,13 @@
 
 Guides and tutorials about how to use CrateDB and CrateDB Cloud in practice.
 
+:::{card} Introduction
+:link: all-features
+:link-type: ref
+
+Start by reading about all features of CrateDB at a glance.
+:::
+
 CrateDB is a distributed and scalable SQL database for storing and analyzing
 massive amounts of data in near real-time, even with complex queries. It is
 PostgreSQL-compatible, and based on Lucene. 
