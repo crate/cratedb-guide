@@ -13,8 +13,9 @@ and insightful analysis, even considering historic data records.
 
 ::::{info-card}
 
-:::{grid-item} **Optimizing storage for historic time series data**
+:::{grid-item}
 :columns: auto 9 9 9
+**Optimizing storage for historic time series data**
 
 This tutorial illustrates how to reduce table storage size by 80%,
 by using arrays for time-based bucketing, a historical table having
@@ -36,8 +37,9 @@ a dedicated layout, and querying using the UNNEST table function.
 
 ::::{info-card}
 
-:::{grid-item} **Notebook: How to Build Time Series Applications with CrateDB**
+:::{grid-item}
 :columns: auto 9 9 9
+**Notebook: How to Build Time Series Applications with CrateDB**
 
 This notebook illustrates how to import and work with time series data in CrateDB.
 It uses Dask to import data into CrateDB.
@@ -63,8 +65,9 @@ Dask is a framework to parallelize operations on pandas data frames.
 
 ::::{info-card}
 
-:::{grid-item} **CrateDB as metrics and log data store for the long term**
+:::{grid-item}
 :columns: auto 9 9 9
+**CrateDB as metrics and log data store for the long term**
 
 Store and analyze high volumes of system monitoring information.
 Read more about using CrateDB as [](#metrics-store).
@@ -82,8 +85,9 @@ Read more about using CrateDB as [](#metrics-store).
 
 ::::{info-card}
 
-:::{grid-item} **CrateDB provides real-time analytics on raw data stored for the long term**
+:::{grid-item}
 :columns: auto 9 9 9
+**CrateDB provides real-time analytics on raw data stored for the long term**
 
 Keep massive amounts of data ready in the hot zone for analytics purposes.
 Read more about using CrateDB for [](#analytics).
@@ -103,8 +107,9 @@ Read more about using CrateDB for [](#analytics).
 
 ::::{info-card}
 
-:::{grid-item} **Storing and analyzing massive amounts of synoptic weather data**
+:::{grid-item}
 :columns: auto 8 8 8
+**Storing and analyzing massive amounts of synoptic weather data**
 
 Wetterdienst uses CrateDB for mass storage of weather data, allowing you to
 query it efficiently. It provides access to data at more than ten canonical

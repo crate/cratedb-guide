@@ -8,8 +8,9 @@ Video tutorials about time series with CrateDB.
 
 ::::{info-card}
 
-:::{grid-item} **A collection of videos about how CrateDB deals with time-series data**
+:::{grid-item}
 :columns: 9
+**A collection of videos about how CrateDB deals with time-series data**
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=C5ayK8bqkhRYovjc&amp;list=PLDZqzXOGoWUKTZwR7zOY8s1sTvZOAa7cy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -22,7 +23,7 @@ insights from large-scale and high-volume time-series datasets.
 Learn more about CrateDB and [](#timeseries).
 :::
 
-:::{grid-item} &nbsp;
+:::{grid-item}
 :columns: 3
 
 {tags-secondary}`Introduction` \
@@ -38,8 +39,9 @@ Learn more about CrateDB and [](#timeseries).
 
 ::::{info-card}
 
-:::{grid-item} **The basics of `COPY FROM` and `COPY TO`**
+:::{grid-item}
 :columns: 9
+**The basics of `COPY FROM` and `COPY TO`**
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/xDypaX37XZQ?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -55,7 +57,7 @@ For more information about how to import and export
 data from/into CrateDB, please refer to [](#import-export).
 :::
 
-:::{grid-item} &nbsp;
+:::{grid-item}
 :columns: 3
 
 {tags-secondary}`Introduction` \
@@ -72,8 +74,9 @@ data from/into CrateDB, please refer to [](#import-export).
 
 ::::{info-card}
 
-:::{grid-item} **From raw data to fast analysis in only three steps**
+:::{grid-item}
 :columns: 9
+**From raw data to fast analysis in only three steps**
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/7biXPnG7dY4?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
@@ -91,7 +94,7 @@ Our speakers will also show you how to find the right sharding and partitioning
 strategy for your time series data in CrateDB.
 :::
 
-:::{grid-item} &nbsp;
+:::{grid-item}
 :columns: 3
 
 {tags-secondary}`Extensive` \
@@ -110,8 +113,9 @@ strategy for your time series data in CrateDB.
 
 ::::{info-card}
 
-:::{grid-item} **Real-time analytics on raw tracking data**
+:::{grid-item}
 :columns: 9
+**Real-time analytics on raw tracking data**
 
 Learn how Bitmovin leverages CrateDB to support real-time analytics on
 top of tracking data from their video streaming broadcasting system.
@@ -119,7 +123,7 @@ top of tracking data from their video streaming broadcasting system.
 - [](#bitmovin)
 :::
 
-:::{grid-item} &nbsp;
+:::{grid-item}
 :columns: 3
 
 {tags-secondary}`Extensive` \
@@ -152,7 +156,7 @@ world.
 - [](#tgw)
 :::
 
-:::{grid-item} &nbsp;
+:::{grid-item}
 :columns: 3
 
 {tags-secondary}`Extensive` \

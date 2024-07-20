@@ -19,8 +19,9 @@ set of built-in functions.
 
 :::::{info-card}
 
-::::{grid-item} **Analyzing Device Readings**
+::::{grid-item}
 :columns: auto 9 9 9
+**Analyzing Device Readings**
 
 Effectively query measurement readings using enhanced features for time series data.
 
@@ -71,8 +72,9 @@ ORDER BY location, timestamp;
 
 :::::{info-card}
 
-::::{grid-item} **Time Bucketing**
+::::{grid-item}
 :columns: auto 9 9 9
+**Time Bucketing**
 
 Based on sensor data, this query calculates:
 - time-buckets of 10 seconds

@@ -102,8 +102,9 @@ and using SQL instead of proprietary query languages.
 :padding: 0
 :class-row: title-slim
 
-:::{grid-item} **DDL**
+:::{grid-item}
 :columns: auto 4 4 4
+**DDL**
 
 ```sql
 CREATE TABLE reading (
@@ -114,8 +115,9 @@ CREATE TABLE reading (
 ```
 :::
 
-:::{grid-item} **DML**
+:::{grid-item}
 :columns: auto 4 4 4
+**DML**
 
 ```text
 INSERT INTO reading (
@@ -136,8 +138,9 @@ INSERT INTO reading (
 ```
 :::
 
-:::{grid-item} **DQL**
+:::{grid-item}
 :columns: auto 4 4 4
+**DQL**
 
 ```sql
 SELECT
@@ -232,8 +235,9 @@ container data types.
 
 ::::{info-card}
 
-:::{grid-item} **Blog: Handling Dynamic Objects in CrateDB**
+:::{grid-item}
 :columns: auto 9 9 9
+**Blog: Handling Dynamic Objects in CrateDB**
 
 Learn fundamentals about CrateDB's OBJECT data type.
 
@@ -253,8 +257,9 @@ Learn fundamentals about CrateDB's OBJECT data type.
 
 ::::{info-card}
 
-:::{grid-item} **The Basics of CrateDB Objects**
+:::{grid-item}
 :columns: auto 9 9 9
+**The Basics of CrateDB Objects**
 
 Learn the basics of CrateDB Objects. This tutorial is also available
 as video [Getting Started with CrateDB Objects]. 
@@ -276,8 +281,9 @@ as video [Getting Started with CrateDB Objects].
 
 ::::{info-card}
 
-:::{grid-item} **Querying Nested Structured Data**
+:::{grid-item}
 :columns: 9
+**Querying Nested Structured Data**
 
 Today's data management tasks need to handle multi-structured and
 {ref}`nested <crate-reference:sql_dql_nested>` data from
@@ -310,8 +316,9 @@ URLs.
 
 ::::{info-card}
 
-:::{grid-item} **Getting Started with CrateDB Objects**
+:::{grid-item}
 :columns: auto auto 8 8
+**Getting Started with CrateDB Objects**
 
 In this video, you will learn the basics of CrateDB Objects. It illustrates
 a simple use case to demonstrate how CrateDB Objects can add clarity
@@ -343,8 +350,9 @@ data types.
 
 ::::{info-card}
 
-:::{grid-item} **Ingesting and Querying JSON Documents with SQL**
+:::{grid-item}
 :columns: auto auto 8 8
+**Ingesting and Querying JSON Documents with SQL**
 
 Learn how to unleash the power of nested data with CrateDB on behalf
 of an IoT use case, and a marketing analytics use case, using deeply
@@ -369,8 +377,9 @@ nested data.
 
 ::::{info-card}
 
-:::{grid-item} **Dynamic Schemas and Indexing Objects**
+:::{grid-item}
 :columns: auto auto 8 8
+**Dynamic Schemas and Indexing Objects**
 
 Learn more about OBJECTs from the perspective of dynamic schema evolution
 and about OBJECT indexing.

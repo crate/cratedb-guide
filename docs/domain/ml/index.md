@@ -216,8 +216,9 @@ or RAG. RAG is a technique for augmenting LLM knowledge with additional data.
 
 ::::{info-card}
 
-:::{grid-item} **How to Use Private Data in Generative AI**
+:::{grid-item}
 :columns: auto auto 8 8
+**How to Use Private Data in Generative AI**
 
 In this video recorded at FOSDEM 2024, we explain how to leverage private data
 in generative AI on behalf of an end-to-end Retrieval Augmented Generation (RAG)

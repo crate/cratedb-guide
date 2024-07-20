@@ -82,7 +82,7 @@ to deal with so many data records and keep them all available for querying in
 real time.
 :::
 
-:::{grid-item} &nbsp;
+:::{grid-item}
 :columns: 4
 
 <iframe width="240" src="https://www.youtube-nocookie.com/embed/4BPApD0Piyc?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

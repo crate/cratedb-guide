@@ -1,7 +1,8 @@
 ::::{info-card}
 
-:::{grid-item} **CrateDB for Time Series Modeling, Exploration, and Visualization**
+:::{grid-item}
 :columns: auto 9 9 9
+**CrateDB for Time Series Modeling, Exploration, and Visualization**
 
 Access time series data from CrateDB via SQL, load it into pandas DataFrames,
 and visualize it using Plotly.

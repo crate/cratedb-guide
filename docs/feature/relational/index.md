@@ -62,9 +62,10 @@ distributed nature, allows you to work with large amounts of data.
 
 ::::{info-card}
 
-:::{grid-item} **Blog: Support for Joins on Multi-Row Sub-Selects**
+:::{grid-item}
 :columns: auto 9 9 9
 :class: rubric-slim
+**Blog: Support for Joins on Multi-Row Sub-Selects**
 
 Joining on virtual tables is a crucial feature for many users, and it is
 especially useful when doing analytics on your data.
@@ -114,8 +115,9 @@ INNER JOIN (SELECT *
 
 ::::{info-card}
 
-:::{grid-item} **Blog: How We Made Joins 23 Thousand Times Faster**
+:::{grid-item}
 :columns: auto 9 9 9
+**Blog: How We Made Joins 23 Thousand Times Faster**
 
 Introduces you to the nested-loop join, equi-join, sorted merge vs.
 hash join, and the block hash join algorithms, and the advancement
@@ -146,9 +148,10 @@ on large tables for their analytics needs.
 
 ::::{info-card}
 
-:::{grid-item} **Blog: Fine-tuning the query optimizer in CrateDB**
+:::{grid-item}
 :columns: auto 9 9 9
 :class: rubric-slim
+**Blog: Fine-tuning the query optimizer in CrateDB**
 
 In cases where you need it, the query optimizer, which tries to find the best
 logical plan possible for a given query, can be fine-tuned for specific

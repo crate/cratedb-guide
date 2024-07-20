@@ -91,7 +91,7 @@ With high scalability and easy integration, CrateDB is a strategic database
 component of ABB Ability™ Genix across industries.
 :::
 
-:::{grid-item} &nbsp;
+:::{grid-item}
 :columns: 4
 
 <iframe width="240" src="https://www.youtube-nocookie.com/embed/45fZYJLh2Qg?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -147,7 +147,7 @@ made Rauch choose it over other databases, such as PostgreSQL compatibility,
 the support for unstructured data, and its excellent customer support.
 :::
 
-:::{grid-item} &nbsp;
+:::{grid-item}
 :columns: 4
 
 <iframe width="240" src="https://www.youtube-nocookie.com/embed/gJPmJ0uXeVs?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -204,7 +204,7 @@ help the mining businesses save resources, workforce, and losses, due to
 decreased downtime.
 :::
 
-:::{grid-item} &nbsp;
+:::{grid-item}
 :columns: 4
 
 <iframe width="240" src="https://www.youtube-nocookie.com/embed/eRqn7GhFO-s?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -260,7 +260,7 @@ migration path, it was easy to start with CrateDB, and now it is at the
 heart of everything they are doing, and gives them peace of mind.
 :::
 
-:::{grid-item} &nbsp;
+:::{grid-item}
 :columns: 4
 
 <iframe width="240" src="https://www.youtube-nocookie.com/embed/X2o0-W8-mCM?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -298,7 +298,7 @@ its ability to aggregate different data formats and the ability to query this
 information without further ado.
 :::
 
-:::{grid-item} &nbsp;
+:::{grid-item}
 :columns: 4
 
 <iframe width="240" src="https://www.youtube-nocookie.com/embed/6dgjVQJtSKI?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -342,7 +342,7 @@ high variety, unstructured features, and at different data frequencies.
 
 :::
 
-:::{grid-item} &nbsp;
+:::{grid-item}
 :columns: 4
 
 <iframe width="240" src="https://www.youtube-nocookie.com/embed/ugQvihToY0k?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

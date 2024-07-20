@@ -1,7 +1,8 @@
 ::::{info-card}
 
-:::{grid-item} **Display millions of data points using hvPlot, Datashader, and CrateDB**
+:::{grid-item}
 :columns: auto 9 9 9
+**Display millions of data points using hvPlot, Datashader, and CrateDB**
 
 [HoloViews] and [Datashader] frameworks enable channeling millions of data
 points from your backend systems to the browser's glass.

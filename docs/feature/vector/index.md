@@ -84,8 +84,9 @@ distance.
 :padding: 0
 :class-row: title-slim
 
-:::{grid-item} **DDL**
+:::{grid-item}
 :columns: auto 6 6 6
+**DDL**
 
 ```sql
 CREATE TABLE word_embeddings (
@@ -95,8 +96,9 @@ CREATE TABLE word_embeddings (
 ```
 :::
 
-:::{grid-item} **DML**
+:::{grid-item}
 :columns: auto 6 6 6
+**DML**
 
 ```sql
 INSERT INTO word_embeddings (text, embedding)
@@ -109,8 +111,9 @@ VALUES
 ```
 :::
 
-:::{grid-item} **DQL**
+:::{grid-item}
 :columns: auto 6 6 6
+**DQL**
 
 ```sql
 SELECT text, _score
@@ -120,8 +123,9 @@ ORDER BY _score DESC;
 ```
 :::
 
-:::{grid-item} **Result**
+:::{grid-item}
 :columns: auto 6 6 6
+**Result**
 
 ```text
 +----------------------+-----------+
@@ -164,8 +168,9 @@ database operations (similarity search).
 :::
 
 ::::{info-card}
-:::{grid-item} **Vector Support and KNN Search through SQL**
+:::{grid-item}
 :columns: auto 9 9 9
+**Vector Support and KNN Search through SQL**
 
 The addition of vector support and KNN search makes CrateDB the optimal
 multi-model database for all types of data. Whether it is structured,
@@ -189,8 +194,9 @@ search, and demonstrate vector capabilities with easy-to-follow examples.
 
 
 ::::{info-card}
-:::{grid-item} **Retrieval Augmented Generation (RAG) with CrateDB and SQL**
+:::{grid-item}
 :columns: auto 9 9 9
+**Retrieval Augmented Generation (RAG) with CrateDB and SQL**
 
 This notebook illustrates CrateDB's vector store using pure SQL on behalf
 of an example exercising a RAG workflow.
@@ -217,8 +223,9 @@ using `FLOAT_VECTOR(1536)`, and queries it using the `KNN_MATCH` function.
 
 ::::{info-card}
 
-:::{grid-item} **Support for Vector Search in Apache Lucene**
+:::{grid-item}
 :columns: auto auto 8 8
+**Support for Vector Search in Apache Lucene**
 
 Uwe Schindler talks at Berlin Buzzwords 2023 about the new vector search
 features of Lucene 9, and about the journey of implementing HNSW from

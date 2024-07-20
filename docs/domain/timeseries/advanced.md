@@ -34,8 +34,9 @@ detection and/or [forecasting] methods.
 
 ::::{info-card}
 
-:::{grid-item} **Use MLflow for time series anomaly detection and time series forecasting**
+:::{grid-item}
 :columns: auto 9 9 9
+**Use MLflow for time series anomaly detection and time series forecasting**
 
 Guidelines and runnable code to get started with [MLflow] and CrateDB, exercising
 time series anomaly detection and time series forecasting / prediction using
@@ -58,8 +59,9 @@ NumPy, Merlion, and Matplotlib.
 
 ::::{info-card}
 
-:::{grid-item} **Use PyCaret to train time series forecasting models**
+:::{grid-item}
 :columns: auto 9 9 9
+**Use PyCaret to train time series forecasting models**
 
 This notebook explores the [PyCaret] framework and shows how to use it
 to train various time series forecasting models.
@@ -107,8 +109,9 @@ effectively.
 
 ::::{info-card}
 
-:::{grid-item} **Analyze trend, seasonality, and fluctuations with PyCaret and CrateDB**
+:::{grid-item}
 :columns: auto 9 9 9
+**Analyze trend, seasonality, and fluctuations with PyCaret and CrateDB**
 
 Learn how to extract data from CrateDB for analysis in PyCaret, how to
 further preprocess it and how to use PyCaret to plot time series
@@ -148,8 +151,9 @@ engineering and model building.
 
 ::::{info-card}
 
-:::{grid-item} **Exploratory data analysis (EDA) with PyCaret and CrateDB**
+:::{grid-item}
 :columns: auto 9 9 9
+**Exploratory data analysis (EDA) with PyCaret and CrateDB**
 
 Learn how to access time series data from CrateDB using SQL, and how to apply
 exploratory data analysis (EDA) with PyCaret.
@@ -189,8 +193,9 @@ operations.
 
 ::::{info-card}
 
-:::{grid-item} **Analyzing Device Readings with Metadata Integration**
+:::{grid-item}
 :columns: auto 9 9 9
+**Analyzing Device Readings with Metadata Integration**
 
 This tutorial illustrates how to augment time series data with metadata, in
 order to enable more comprehensive analysis. It uses a time series dataset that
@@ -220,8 +225,9 @@ CrateDB offers enhanced features for analysing time series data.
 
 ::::{info-card}
 
-:::{grid-item} **Analyzing Weather Data**
+:::{grid-item}
 :columns: 9
+**Analyzing Weather Data**
 
 Run aggregations with gap filling / interpolation, using common
 table expressions (CTEs) and LAG / LEAD window functions.

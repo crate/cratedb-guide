@@ -119,8 +119,9 @@ Populate and query a Lucene full-text index using SQL.
 :padding: 0
 :class-row: title-slim
 
-:::{grid-item} **DDL**
+:::{grid-item}
 :columns: auto 6 6 6
+**DDL**
 
 ```sql
 CREATE TABLE documents (
@@ -138,8 +139,9 @@ CREATE TABLE documents (
 ```
 :::
 
-:::{grid-item} **DML**
+:::{grid-item}
 :columns: auto 6 6 6
+**DML**
 
 ```sql
 INSERT INTO documents (name, description)
@@ -150,8 +152,9 @@ VALUES
 ```
 :::
 
-:::{grid-item} **DQL**
+:::{grid-item}
 :columns: auto 6 6 6
+**DQL**
 
 ```sql
 SELECT name, _score
@@ -165,8 +168,9 @@ ORDER BY _score DESC;
 ```
 :::
 
-:::{grid-item} **Result**
+:::{grid-item}
 :columns: auto 6 6 6
+**Result**
 
 ```text
 +------------+------------+
@@ -213,8 +217,9 @@ for anyone looking to make sense of large volumes of unstructured text data.
 :::
 
 ::::{info-card}
-:::{grid-item} **Exploring the Netflix catalog using full-text search**
+:::{grid-item}
 :columns: auto 9 9 9
+**Exploring the Netflix catalog using full-text search**
 
 The tutorial illustrates the BM25 ranking algorithm for information retrieval,
 by exploring how to manage a dataset of Netflix titles.
@@ -233,8 +238,9 @@ by exploring how to manage a dataset of Netflix titles.
 
 
 ::::{info-card}
-:::{grid-item} **FTS Options**
+:::{grid-item}
 :columns: auto 9 9 9
+**FTS Options**
 
 Learn about the stack of options relevant for full-text search,
 like applying [](#fts-fuzzy), or using [](#fts-synonyms).
@@ -253,8 +259,9 @@ like applying [](#fts-fuzzy), or using [](#fts-synonyms).
 
 
 ::::{info-card}
-:::{grid-item} **Custom Analyzers**
+:::{grid-item}
 :columns: auto 9 9 9
+**Custom Analyzers**
 
 This tutorial illustrates how to define custom analyzers using the `CREATE
 ANALYZER` SQL command, for example to use fuzzy searching, how to use synonym
