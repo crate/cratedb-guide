@@ -1,3 +1,4 @@
+(upgrading)=
 # Upgrading
 
 Guidelines about upgrading CrateDB clusters.
