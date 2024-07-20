@@ -111,7 +111,7 @@ cluster.
     Over-sharding and over-partitioning are common flaws leading to an overall 
     poor performance.
 
-    **As a rule of thumb, a single shard should hold somewhere between 5 - 100 
+    **As a rule of thumb, a single shard should hold somewhere between 5 - 50
     GB of data.**
 
     To avoid oversharding, CrateDB by default limits the number of shards per 
@@ -129,7 +129,7 @@ benchmarks across various strategies. The following steps provide a general guid
 - Calculate the throughput
 
 Then, to calculate the number of shards, you should consider that the size of each
-shard should roughly be between 5 - 100 GB, and that each node can only manage
+shard should roughly be between 5 - 50 GB, and that each node can only manage
 up to 1000 shards.
 
 Time series example
@@ -146,12 +146,12 @@ time series data with the following assumptions:
 Given the daily throughput is around 10 GB/day, the monthly throughput is 30 times
 that (~ 300 GB). The partition column can be day, week, month, quarter, etc. So,
 assuming a monthly partition, the next step is to calculate the number of shards
-with the **shard size recommendation** (5 - 100 GB) and the **number of nodes** in
+with the **shard size recommendation** (5 - 50 GB) and the **number of nodes** in
 the cluster in mind.
 
-With three shards, each shard will hold 100 GB (300 GB / 3 shards), which is too
-close to the upper limit. With six shards, each shard will manage 50 GB
-(300 GB / 6 shards) of data, which is closer to the recommended size range (5 - 100 GB).
+With three shards, each shard would hold 100 GB (300 GB / 3 shards), which is above
+the upper limit. With six shards, each shard will manage 50 GB (300 GB / 6 shards)
+of data, which is right on the spot.
 
 .. code-block:: psql
 
