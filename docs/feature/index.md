@@ -40,6 +40,7 @@ cluster/index
 snapshot/index
 cloud/index
 storage/index
+index/index
 :::
 +++
 CrateDB scales horizontally using a shared-nothing
