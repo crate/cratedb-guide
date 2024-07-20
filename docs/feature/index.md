@@ -53,6 +53,7 @@ architecture, inherited from Elasticsearch.
 query/index
 generated/index
 fdw/index
+udf/index
 ccr/index
 :::
 +++
