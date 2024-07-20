@@ -51,6 +51,9 @@ architecture, inherited from Elasticsearch.
 :::{toctree}
 :maxdepth: 1
 query/index
+generated/index
+fdw/index
+replication/index
 :::
 +++
 Advanced features supporting daily data
