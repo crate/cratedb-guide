@@ -241,6 +241,14 @@ CrateDB's lingua franca is SQL, ready for big data, very similar to
 Rockset's SQL dialect.
 - [CrateDB SQL]
 - [Advanced Querying]
+:::{rubric} Migrating queries from Rockset to CrateDB
+:::
+Because both Rockset and CrateDB use SQL, there is no need for your teams to
+learn a new query language. There are a few differences in the SQL dialect,
+where we provide relevant support information to make transitioning easier.
+:::{toctree}
+Migrate Queries <query>
+:::
 ::::
 
 ::::{grid-item-card}
