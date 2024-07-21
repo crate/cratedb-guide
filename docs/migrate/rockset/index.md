@@ -103,7 +103,7 @@ timely and seamless migration.
 :::::
 
 :::::{card}
-:link: https://cratedb.com/blog/how-cratedb-compares-to-rockbench 
+:link: https://cratedb.com/blog/how-cratedb-compares-to-rockbench
 :link-alt: "Performance Matters"
 :margin: 3
 :class-header: sd-font-weight-bold sd-fs-5
@@ -187,20 +187,25 @@ CrateDB is a scalable and cost-effective real-time analytics database,
 combining complex JSON handling, time series, geospatial data, full-text
 search, and vector search in one single storage engine.
 
-- No vendor lock-in and service sunsetting woes.
-- No capacity limits.
-
-Built on top of Apache Lucene and Elasticsearch, CrateDB automatically
-indexes all your data to achieve millisecond response times for any kind
-of incoming query and aggregation.
-
 - [All features of CrateDB at a glance]
 - [The CrateDB Documentation]
 
+:::{rubric} Foundation
+:::
+Built on top of Apache Lucene and Elasticsearch, CrateDB [automatically
+indexes all your data] in exactly the same way like Rockset's [Converged
+Index™], in order to achieve millisecond response times for any kind
+of query and aggregation workloads.
+
+:::{rubric} Availability
+:::
 CrateDB is offered as a managed service available on AWS, Azure, and GCP,
 and also as a fully open source edition.
-- [CrateDB Cloud]
-- [CrateDB Editions]
+
+- No vendor lock-in and service sunsetting woes.
+- No capacity limits.
+
+See [CrateDB Cloud] and [CrateDB Editions].
 ::::
 
 ::::{grid-item-card}
@@ -265,6 +270,16 @@ integrate with applications and frameworks.
 - [Integration Tutorials I]
 - [Integration Tutorials II]
 - [Software Development Kit]
+
+:::{rubric} Integrating CrateDB technologies into Rockset-based infrastructure
+:::
+The [Rockset HTTP API Adapter for CrateDB] is an experiment to provide
+CrateDB's features through an API that is compatible with the Rockset HTTP
+API, so client programs and libraries can work unmodified.
+
+It has been verified to work for the most basic API calls with plain
+HTTP requests using curl or HTTPie, the Rockset CLI, and Java, JavaScript,
+and Python example programs.
 ::::
 
 :::::
@@ -294,42 +309,12 @@ Link to alpha/beta/wip variants of corresponding adapters.
 ::::
 
 ::::{grid-item-card}
-The [Rockset HTTP API Adapter for CrateDB] is an experiment to provide
-CrateDB's features through an API that is compatible with the Rockset HTTP
-API, so client programs and libraries can work unmodified.
-
-It has been verified to work for the most basic API calls with plain
-HTTP requests using curl or HTTPie, the Rockset CLI, and Java, JavaScript,
-and Python example programs.
-::::
-
-:::::
-
 Our teams are working on improving SQL support and integrating relevant
-features into our managed solutions.
+data integration features into our managed solutions on [CrateDB Cloud].
+
 Feel free to reach out to us any time, in order to share your use cases
 and workload insights. We will be happy to take them into consideration.
 
-:::::{grid} 1 1 2 2
-:gutter: 2
-:padding: 0
-
-::::{grid-item-card}
-In order to overcome deviations and variations on SQL dialect matters,
-we are working on closing the gaps in SQL function support,
-and provide relevant educational material.
-
-:::{todo}
-Add / link to resources shared by @hlcianfagna on another PR.
-- Describe differences on schema matters.
-- Link to list of »known equivalences«.
-- Link to list of »unknown equivalences«, and add encouragements to contribute.
-:::
-::::
- 
-::::{grid-item-card}
-[CrateDB Cloud] will provide Rockset-like convenience features per
-managed services over the course of the next weeks.
 :::{todo}
 Please enumerate a few items which will be served next, and/or suggest a few
 more words to fill the void right here.
@@ -345,7 +330,9 @@ more words to fill the void right here.
 [Amazon DynamoDB Streams]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html
 [Amazon Kinesis Data Streams]: https://aws.amazon.com/kinesis/
 [Apache/Confluent Kafka Streams]: https://kafka.apache.org/documentation/streams/
+[automatically indexes all your data]: https://cratedb-guide--53.org.readthedocs.build/feature/index/
 [clear commitment]: https://cratedb.com/blog/opensource-licensing-founder
+[Converged Index™]: https://rockset.com/blog/converged-indexing-the-secret-sauce-behind-rocksets-fast-queries/
 [CrateDB]: https://cratedb.com/database
 [CrateDB Cloud]: https://cratedb.com/docs/cloud/
 [CrateDB Editions]: https://cratedb.com/database/editions
