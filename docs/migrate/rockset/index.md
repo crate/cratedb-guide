@@ -286,18 +286,18 @@ and Python example programs.
 
 
 
-[Advanced Querying]: https://cratedb-guide--53.org.readthedocs.build/feature/query/
-[All features of CrateDB at a glance]: https://cratedb-guide--53.org.readthedocs.build/feature/
+[Advanced Querying]: project:#advanced-querying
+[All features of CrateDB at a glance]: project:#all-features
 [Amazon DynamoDB Streams]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html
 [Amazon Kinesis Data Streams]: https://aws.amazon.com/kinesis/
 [Apache/Confluent Kafka Streams]: https://kafka.apache.org/documentation/streams/
-[automatically indexes all your data]: https://cratedb-guide--53.org.readthedocs.build/feature/index/
+[automatically indexes all your data]: project:#convergent-index
 [clear commitment]: https://cratedb.com/blog/opensource-licensing-founder
 [Converged Index™]: https://rockset.com/blog/converged-indexing-the-secret-sauce-behind-rocksets-fast-queries/
 [CrateDB]: https://cratedb.com/database
 [CrateDB Cloud]: https://cratedb.com/docs/cloud/
 [CrateDB Editions]: https://cratedb.com/database/editions
-[CrateDB SQL]: https://cratedb-guide--53.org.readthedocs.build/feature/sql/
+[CrateDB SQL]: project:#sql
 [DX]: https://en.wikipedia.org/wiki/User_experience#Developer_experience
 [Ecosystem Catalog]: https://cratedb.com/docs/crate/clients-tools/
 [Integration Tutorials I]: inv:#integrate

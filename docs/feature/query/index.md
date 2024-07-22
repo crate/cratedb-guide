@@ -1,5 +1,6 @@
 (query)=
 (querying)=
+(advanced-querying)=
 # Advanced Querying
 
 :::{include} /_include/links.md
