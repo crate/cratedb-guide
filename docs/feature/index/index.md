@@ -40,7 +40,6 @@ and Elasticsearch.
 
 - [Searching and Indexing With Apache Lucene]
 - [An Introduction to Elasticsearch]
-- [Elasticsearch for Dummies]
 - [Elasticsearch: Documents and Indices]
 
 See also an article by Rockset, which refers to the same powerful indexing
@@ -115,7 +114,7 @@ Inverted Indexes for text values, BKD-trees for numeric values, and Doc Values.
 
 {{ '{}[Time Series Benchmark on CrateDB and MongoDB]'.format(blog) }} {{ '{}[Independent comparison of CrateDB and MongoDB using Time Series Benchmark Suite]'.format(readmore) }}
 
-> When using CrateDB – that got started as a project around those times [^es-advent] –
+> When using CrateDB,
 > it's like you've stumbled into an alternative reality where Elastic is a
 > proper database.
 > 
