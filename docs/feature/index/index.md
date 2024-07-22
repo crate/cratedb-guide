@@ -1,6 +1,5 @@
-(convergent-index)=
-
-# Convergent Index
+(hybrid-indexes)=
+# Hybrid Indexes
 
 :::{include} /_include/links.md
 :::

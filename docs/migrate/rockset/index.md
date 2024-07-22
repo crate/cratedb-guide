@@ -291,7 +291,7 @@ and Python example programs.
 [Amazon DynamoDB Streams]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html
 [Amazon Kinesis Data Streams]: https://aws.amazon.com/kinesis/
 [Apache/Confluent Kafka Streams]: https://kafka.apache.org/documentation/streams/
-[automatically indexes all your data]: project:#convergent-index
+[automatically indexes all your data]: project:#hybrid-indexes
 [clear commitment]: https://cratedb.com/blog/opensource-licensing-founder
 [Converged Index™]: https://rockset.com/blog/converged-indexing-the-secret-sauce-behind-rocksets-fast-queries/
 [CrateDB]: https://cratedb.com/database
