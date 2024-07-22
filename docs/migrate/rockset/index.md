@@ -285,6 +285,45 @@ and Python example programs.
 :::::
 
 
+## What's Next
+
+Our engineers are working on software components that yield immediate leverage
+when aiming to migrate data integration pipelines, based on popular requests
+from Rockset customers.
+
+:::::{grid} 1 1 2 2
+:gutter: 2
+:padding: 0
+
+::::{grid-item-card}
+[Zero-ETL] [DX]/[UX], to make data ingestion work on your fingertips.
+
+- [Amazon DynamoDB Streams]
+- [Amazon Kinesis Data Streams]
+- [Apache/Confluent Kafka Streams]
+- [MongoDB Atlas Change Streams]
+
+:::{todo}
+Link to alpha/beta/wip variants of corresponding adapters.
+:::
+::::
+
+::::{grid-item-card}
+Our teams are working on improving SQL support and integrating relevant
+data integration features into our managed solutions on [CrateDB Cloud].
+
+Feel free to reach out to us any time, in order to share your use cases
+and workload insights. We will be happy to take them into consideration.
+
+:::{todo}
+Please enumerate a few items which will be served next, and/or suggest a few
+more words to fill the void right here.
+:::
+::::
+
+:::::
+
+
 
 [Advanced Querying]: https://cratedb-guide--53.org.readthedocs.build/feature/query/
 [All features of CrateDB at a glance]: https://cratedb-guide--53.org.readthedocs.build/feature/
