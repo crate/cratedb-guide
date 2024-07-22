@@ -193,7 +193,7 @@ search, and vector search in one single storage engine.
 :::{rubric} Foundation
 :::
 Built on top of Apache Lucene and Elasticsearch, CrateDB [automatically
-indexes all your data] in exactly the same way like Rockset's [Converged
+indexes all your data] in exactly the same way as Rockset's [Converged
 Index™], in order to achieve millisecond response times for any kind
 of query and aggregation workloads.
 
