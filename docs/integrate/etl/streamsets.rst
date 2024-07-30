@@ -154,4 +154,4 @@ You can verify that the data is now in CrateDB:
 .. _CrateDB JDBC driver: https://cratedb.com/docs/jdbc/
 .. _external libraries: https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Configuration/ExternalLibs.html
 .. _New York taxi dataset: https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Tutorial/BeforeYouBegin.html?hl=nyc_taxi_data/
-.. _StreamSets Data Collector: https://streamsets.com/products/dataops-platform-2/data-collector-engine/
+.. _StreamSets Data Collector: https://www.softwareag.com/en_corporate/platform/integration-apis/data-collector-engine.html

@@ -16,6 +16,7 @@ optimally.
 orm
 df
 etl/index
+cdc/index
 metrics/index
 visualize/index
 bi/index

@@ -1,15 +1,20 @@
 (etl)=
 (io)=
 (import-export)=
-
 # Load and Export
 
+:::{include} /_include/links.md
+:::
+
+:::{div}
 You have a variety of options to connect and integrate with 3rd-party
 ETL applications, mostly using [CrateDB's PostgreSQL interface].
+:::
 
 This documentation section lists corresponding ETL applications and
 frameworks which can be used together with CrateDB, and outlines how
 to use them optimally.
+Please also have a look at support for [](#cdc) solutions.
 
 
 ## Apache Airflow / Astronomer
@@ -82,11 +87,6 @@ azure-functions
 
 - [Using dbt with CrateDB]
 
-
-## Debezium
-
-- [Tutorial: Replicating data to CrateDB with Debezium and Kafka]
-- [Webinar: How to replicate data from other databases to CrateDB with Debezium and Kafka]
 
 ## InfluxDB
 
@@ -170,7 +170,6 @@ streamsets
 [CrateDB and Apache Airflow: Building a data ingestion pipeline]: https://community.cratedb.com/t/cratedb-and-apache-airflow-building-a-data-ingestion-pipeline/926 
 [CrateDB Apache Hop Bulk Loader transform]: https://hop.apache.org/manual/latest/pipeline/transforms/cratedb-bulkloader.html
 [CrateDB dialect for Apache Hop]: https://hop.apache.org/manual/latest/database/databases/cratedb.html
-[CrateDB's PostgreSQL interface]: inv:crate-reference#interface-postgresql
 [Data Ingestion using Kafka and Kafka Connect]: https://cratedb.com/docs/crate/howtos/en/latest/integrations/kafka-connect.html
 [ETL pipeline using Apache Airflow with CrateDB (Source)]: https://github.com/astronomer/astro-cratedb-blogpost
 [ETL with Astro and CrateDB Cloud in 30min - fully up in the cloud]: https://www.astronomer.io/blog/run-etlelt-with-airflow-and-cratedb/
@@ -182,9 +181,7 @@ streamsets
 [meltano-target-cratedb]: https://github.com/crate-workbench/meltano-target-cratedb
 [Run an ETL pipeline with CrateDB and data quality checks]: https://registry.astronomer.io/dags/etl_pipeline/
 [Setting up data pipelines with CrateDB and Kestra]: https://community.cratedb.com/t/setting-up-data-pipelines-with-cratedb-and-kestra-io/1400
-[Tutorial: Replicating data to CrateDB with Debezium and Kafka]: https://community.cratedb.com/t/replicating-data-to-cratedb-with-debezium-and-kafka/1388
 [Updating stock market data automatically with CrateDB and Apache Airflow]: https://community.cratedb.com/t/updating-stock-market-data-automatically-with-cratedb-and-apache-airflow/1304
 [Using Apache Hop with CrateDB]: https://community.cratedb.com/t/using-apache-hop-with-cratedb/1754
 [Using dbt with CrateDB]: https://community.cratedb.com/t/using-dbt-with-cratedb/1566
 [Using SQL Server Integration Services with CrateDB]: https://github.com/crate/cratedb-examples/tree/main/application/microsoft-ssis
-[Webinar: How to replicate data from other databases to CrateDB with Debezium and Kafka]: https://cratedb.com/resources/webinars/lp-wb-debezium-kafka

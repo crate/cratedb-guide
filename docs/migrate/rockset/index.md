@@ -1,4 +1,8 @@
+(rockset)=
 # Welcome Rockset Developers
+
+:::{include} /_include/links.md
+:::
 
 <style>
 /* Cards with links */
@@ -276,12 +280,14 @@ Migrate Queries <query>
 :::
 :::{rubric} Migrating workloads from Rockset to CrateDB
 :::
-- Replicating CDC Events from DynamoDB into CrateDB. \
-  {hyper-read-more}`Blog <[Replicating CDC Events from DynamoDB to CrateDB]>`
+- [Amazon DynamoDB Streams]: Replicate CDC events from DynamoDB into CrateDB. \
   {hyper-open}`Documentation <[DynamoDB CDC Relay]>`
+  {hyper-read-more}`Blog <[Replicating CDC events from DynamoDB to CrateDB]>`
 
-- Relaying MongoDB Change Streams into CrateDB. \
+- [MongoDB Change Streams]: Relay CDC events from MongoDB into CrateDB. \
   {hyper-open}`Documentation <[MongoDB CDC Relay]>`
+
+- More information about [](#cdc) with CrateDB.
 ::::
 
 ::::{grid-item-card}
@@ -316,7 +322,6 @@ and Python example programs.
 
 [Advanced Querying]: project:#advanced-querying
 [All features of CrateDB at a glance]: project:#all-features
-[Amazon DynamoDB Streams]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html
 [Amazon Kinesis Data Streams]: https://aws.amazon.com/kinesis/
 [Apache/Confluent Kafka Streams]: https://kafka.apache.org/documentation/streams/
 [automatically indexes all your data]: project:#hybrid-index
@@ -327,15 +332,12 @@ and Python example programs.
 [CrateDB Editions]: https://cratedb.com/database/editions
 [CrateDB SQL]: project:#sql
 [DX]: https://en.wikipedia.org/wiki/User_experience#Developer_experience
-[DynamoDB CDC Relay]: https://cratedb-toolkit.readthedocs.io/io/dynamodb/cdc.html
 [Ecosystem Catalog]: https://cratedb.com/docs/crate/clients-tools/
 [Integration Tutorials I]: inv:#integrate
 [Integration Tutorials II]: https://community.cratedb.com/t/overview-of-cratedb-integration-tutorials/1015
 [migration]: https://cratedb.com/migrations/rockset
 [MongoDB Atlas Change Streams]: https://www.mongodb.com/docs/manual/changeStreams/
-[MongoDB CDC Relay]: https://cratedb-toolkit.readthedocs.io/io/mongodb/cdc.html
 [open-source code base]: https://github.com/crate/crate
-[Replicating CDC Events from DynamoDB to CrateDB]: https://cratedb.com/blog/replicating-cdc-events-from-dynamodb-to-cratedb
 [Rockset]: https://rockset.com/product/
 [Rockset's pricing examples]: https://docs.rockset.com/documentation/docs/billing#pricing-examples
 [Rockset HTTP API Adapter for CrateDB]: https://cratedb-toolkit.readthedocs.io/adapter/rockset.html
