@@ -58,8 +58,8 @@ with Lucene Vector Search using SQL.
 
 ```{rubric} Reference Manual
 ```
-- [](inv:crate-reference#type-float_vector)
-- [](inv:crate-reference#scalar_knn_match)
+- [FLOAT_VECTOR](inv:crate-reference#type-float_vector)
+- [KNN_MATCH](inv:crate-reference#scalar_knn_match)
 
 ```{rubric} Related
 ```
@@ -70,8 +70,10 @@ with Lucene Vector Search using SQL.
 - {ref}`query`
 
 {tags-primary}`SQL`
-{tags-primary}`Vector Store`
+{tags-primary}`Semantic Search`
 {tags-primary}`Machine Learning`
+{tags-primary}`ML Embeddings`
+{tags-primary}`Vector Store`
 ::::
 
 :::::

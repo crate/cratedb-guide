@@ -99,4 +99,5 @@ about different re-ranking techniques, and how to apply them in CrateDB using pu
 
 :::{todo}
 Bring page into the same shape like the others in this section.
+"Usage" is missing yet.
 :::

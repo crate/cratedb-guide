@@ -39,7 +39,7 @@ For managing a [full-text search] index for text values, Lucene uses an
 [inverted index] data structure, and the [Okapi BM25] search ranking algorithm. 
 
 The inverted index data structure is a central component of a typical [search
-engine indexing] algorithm. Together with ranking, enabling search result
+engine indexing] algorithm. Together with ranking, which enables search result
 relevance features, both effectively provide the storage and retrieval parts
 of a [search engine].
 ::::
@@ -214,6 +214,51 @@ Learn how to set up your database for full-text search, how to create the
 relevant indices, and how to query your text data efficiently. A few must-reads
 for anyone looking to make sense of large volumes of unstructured text data.
 
+:::{rubric} Advanced Features
+:::
+
+::::{info-card}
+:::{grid-item}
+:columns: auto 9 9 9
+**FTS Options**
+
+Learn about the stack of options relevant for full-text search,
+like applying [](#fts-fuzzy), or using [](#fts-synonyms).
+
+{hyper-navigate}`Full-Text Search Options <project:#fts-options>`
+
+:::
+:::{grid-item}
+:columns: auto 3 3 3
+{tags-primary}`Introduction` \
+{tags-secondary}`FTS Options` \
+{tags-secondary}`Fuzzy Matching` \
+{tags-secondary}`Synonyms`
+:::
+::::
+
+
+::::{info-card}
+:::{grid-item}
+:columns: auto 9 9 9
+**Custom Analyzers**
+
+This tutorial illustrates how to define custom analyzers using the `CREATE
+ANALYZER` SQL command, for example to use fuzzy searching, how to use synonym
+files, and corresponding technical backgrounds about their implementations.
+
+{hyper-navigate}`Analyzers, Tokenizers, and Filters <project:#fts-analyzer>`
+
+:::
+:::{grid-item}
+:columns: auto 3 3 3
+{tags-primary}`Introduction` \
+{tags-secondary}`Full-Text Search` \
+{tags-secondary}`Lucene Analyzer`
+:::
+::::
+
+
 :::{rubric} Tutorials
 :::
 
@@ -238,23 +283,42 @@ by exploring how to manage a dataset of Netflix titles.
 ::::
 
 
+:::{rubric} Articles
+:::
+
 ::::{info-card}
 :::{grid-item}
 :columns: auto 9 9 9
-**FTS Options**
+**Indexing and Storage in CrateDB**
 
-Learn about the stack of options relevant for full-text search,
-like applying [](#fts-fuzzy), or using [](#fts-synonyms).
+This article explores the internal workings of the storage layer in CrateDB,
+with a focus on Lucene's indexing strategies.
 
-{hyper-navigate}`Full-Text Search Options <inv:#fts-options>`
+{hyper-navigate}`Indexing and Storage in CrateDB <[Indexing and Storage in CrateDB]>`
+
+The CrateDB storage layer is based on Lucene indexes.
+Lucene offers scalable and high-performance indexing which enables efficient search
+and aggregations over documents and rapid updates to the existing documents.
+We will look at the three main Lucene structures that are used within CrateDB:
+Inverted Indexes for text values, BKD-Trees for numeric values, and Doc Values.
+
+:Inverted Index:
+    You will learn how inverted indexes are implemented in Lucene and CrateDB.
+
+:BKD Tree:
+    Better understand the BKD tree, starting from KD trees, and how this data
+    structure supports range queries in CrateDB.
+
+:Doc Values:
+    This data structure supports more efficient querying document fields by id,
+    performs column-oriented retrieval of data, and improves the performance of
+    aggregation and sorting operations.
 
 :::
 :::{grid-item}
 :columns: auto 3 3 3
 {tags-primary}`Introduction` \
-{tags-secondary}`FTS Options` \
-{tags-secondary}`Fuzzy Matching` \
-{tags-secondary}`Synonyms`
+{tags-secondary}`Lucene Indexing`
 :::
 ::::
 
@@ -262,20 +326,29 @@ like applying [](#fts-fuzzy), or using [](#fts-synonyms).
 ::::{info-card}
 :::{grid-item}
 :columns: auto 9 9 9
-**Custom Analyzers**
+**Indexing Text for Both Effective Search and Accurate Analysis**
 
-This tutorial illustrates how to define custom analyzers using the `CREATE
-ANALYZER` SQL command, for example to use fuzzy searching, how to use synonym
-files, and corresponding technical backgrounds about their implementations.
+This article explores how Qualtrics uses CrateDB in Text iQ to provide text
+analysis services for everything from sentiment analysis to 
+identifying key topics, and powerful search-based data exploration.
 
-{hyper-navigate}`Analyzers, Tokenizers, and Filters <inv:#fts-analyzer>`
+{hyper-navigate}`Indexing Text for Both Effective Search and Accurate Analysis
+<[Indexing Text for Both Effective Search and Accurate Analysis]>`
+
+CrateDB uses Elasticsearch technology under the hood to manage cluster
+creation and communication, and also exposes an Elasticsearch API that provides
+access to all the indexing capabilities in Elasticsearch that Qualtrics needed.
+
+The articles explains integral parts of an FTS text processing pipeline,
+including analyzers, optionally using tokenizers or character filters,
+and how they can be customized to specific needs, using plugins for CrateDB.
 
 :::
 :::{grid-item}
 :columns: auto 3 3 3
 {tags-primary}`Introduction` \
-{tags-secondary}`Full-Text Search` \
-{tags-secondary}`Lucene Analyzer`
+{tags-secondary}`Analyzer, Tokenizer` \
+{tags-secondary}`Plugin`
 :::
 ::::
 
@@ -289,11 +362,6 @@ analyzer
 learn
 :::
 
-
-:::{todo}
-Refer to [Indexing and Storage in CrateDB] and
-[Indexing Text for Both Effective Search and Accurate Analysis].
-:::
 
 
 [BM25]: https://en.wikipedia.org/wiki/Okapi_BM25
