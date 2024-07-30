@@ -1,7 +1,8 @@
 (hnsw)=
 (vector-store)=
+(vector-search)=
 
-# Vector Store
+# Vector Search
 
 :::{include} /_include/links.md
 :::
@@ -63,7 +64,8 @@ with Lucene Vector Search using SQL.
 ```{rubric} Related
 ```
 - {ref}`sql`
-- {ref}`fulltext`
+- {ref}`fulltext-search`
+- {ref}`hybrid-search`
 - {ref}`machine-learning`
 - {ref}`query`
 

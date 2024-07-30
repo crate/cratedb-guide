@@ -1,4 +1,5 @@
 (hybrid-search)=
+
 # Hybrid Search
 
 :::{rubric} Overview

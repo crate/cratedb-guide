@@ -1,6 +1,7 @@
 (fts)=
 (fulltext)=
 (full-text)=
+(fulltext-search)=
 
 # Full-Text Search
 
@@ -58,8 +59,8 @@ of a [search engine].
 ```{rubric} Related
 ```
 - {ref}`sql`
-- [](inv:#vector)
-- {ref}`machine-learning`
+- {ref}`vector-search`
+- {ref}`hybrid-search`
 - {ref}`query`
 
 {tags-primary}`SQL`
@@ -281,10 +282,11 @@ files, and corresponding technical backgrounds about their implementations.
 
 :::{toctree}
 :maxdepth: 2
+:hidden:
 
-fts-options
-fts-analyzer
-fts-learn
+options
+analyzer
+learn
 :::
 
 

@@ -17,7 +17,7 @@ powerful single-query hybrid search.
 :gutter: 2
 
 ::::{grid-item-card} {material-outlined}`search;2em` Full-Text Search
-:link: fts
+:link: fulltext-search
 :link-type: ref
 Inverted index and Okapi BM25 search ranking based on Apache Lucene
 at scale, using SQL as lingua franca.
@@ -51,7 +51,7 @@ Enhance relevancy and accuracy by combining multiple search algorithms.
 :maxdepth: 2
 :hidden:
 
-fts
-vector
-hybrid
+fts/index
+vector/index
+hybrid/index
 :::

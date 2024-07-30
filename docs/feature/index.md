@@ -19,11 +19,10 @@ All features of CrateDB at a glance.
 
 sql/index
 connectivity/index
-relational/index
 document/index
-search/index
+relational/index
+Search: FTS, Vector, Hybrid <search/index>
 geospatial/index
-vector/index
 blob/index
 :::
 +++
