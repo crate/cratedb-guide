@@ -1,5 +1,5 @@
 (hnsw)=
-(vector)=
+(vector-store)=
 
 # Vector Store
 
