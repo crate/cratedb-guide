@@ -7,11 +7,14 @@
 }
 </style>
 
-::::{grid} 1 1 2 2
+:::::{grid} 1 1 2 2
 :padding: 0
 
-:::{grid-item}
+::::{grid-item}
 :columns: auto auto 8 8
+
+:::{rubric} Introduction
+:::
 Because the [Rockset HTTP API is sunsetting on September 30th, 2024],
 and CrateDB covers a reasonable amount of features, this page
 presents its capabilities to support your analytical workloads
@@ -20,6 +23,8 @@ and data consolidation efforts.
 Both Rockset and CrateDB use SQL, so there is no need for your teams to learn
 a new query language or querying regime.
 
+:::{rubric} Details
+:::
 When it comes to **real-time analytics and hybrid search**,
 CrateDB is the only solution that offers a similar approach to converged indexing,
 full-text search, vector search, and geospatial support in a single storage engine,
@@ -35,10 +40,12 @@ from [Rockset] to [CrateDB], we have built expertise on the details of what
 a [migration] entails. This page shares a few insights on this topic, and
 why CrateDB is your go-to choice when selecting a cost-effective
 replacement solution.
-:::
+::::
 
-:::{grid-item-card}
+::::{grid-item}
 :columns: auto auto 4 4
+
+:::{card}
 :link: https://cratedb.com/resources/webinars/lp-wb-from-rockset-to-cratedb
 :link-alt: "Webinar: From Rockset to CrateDB"
 :class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold sd-text-capitalize
@@ -49,11 +56,12 @@ replacement solution.
 Join our Webinar
 ^^^
 {material-outlined}`event_note;2.5em` Date
-July 25th, 2024
+August 1st, 2024
 
-{material-outlined}`schedule;2.5em` Time
-8:00–8:45 am PST /
-5:00–5:45 pm CET
+{material-outlined}`schedule;2.5em` Time \
+12:00–12:45 pm PST \
+03:00–03:45 pm EST \
+09:00–09:45 pm CET
 
 - Why CrateDB is a perfect \[Rockset\] replacement for real-time analytics and hybrid search. 
 - How CrateDB compares to \[Rockset\] and Elasticsearch/OpenSearch for streaming ingest.
@@ -63,7 +71,19 @@ Register now to learn about our migration services,
 and to have a live Q&A session with our experts.
 :::
 
+:::{card}
+:link: https://cratedb.com/resources/webinars/lp-wb-rockset-migration
+:link-alt: "Webinar Recordings"
+:class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold sd-text-capitalize
+:class-body: text-smaller
+:class-footer: text-smaller
+{material-outlined}`live_tv;2.7em`
+
+Watch recordings of previous sessions from this webinar series.
+:::
+
 ::::
+:::::
 
 
 ## What's Inside
@@ -234,7 +254,7 @@ mostly due to API rate-limiting measures.
 
 
 ## Learn
-Learn how to migrate your database workloads from Rockset to CrateDB.
+Learn how to migrate your database use cases and workloads from Rockset to CrateDB.
 
 :::::{grid} 1 1 2 2
 :gutter: 3
@@ -254,6 +274,14 @@ where we provide relevant support information to make transitioning easier.
 :::{toctree}
 Migrate Queries <query>
 :::
+:::{rubric} Migrating workloads from Rockset to CrateDB
+:::
+- Replicating CDC Events from DynamoDB into CrateDB. \
+  {hyper-read-more}`Blog <[Replicating CDC Events from DynamoDB to CrateDB]>`
+  {hyper-open}`Documentation <[DynamoDB CDC Relay]>`
+
+- Relaying MongoDB Change Streams into CrateDB. \
+  {hyper-open}`Documentation <[MongoDB CDC Relay]>`
 ::::
 
 ::::{grid-item-card}
@@ -299,12 +327,15 @@ and Python example programs.
 [CrateDB Editions]: https://cratedb.com/database/editions
 [CrateDB SQL]: project:#sql
 [DX]: https://en.wikipedia.org/wiki/User_experience#Developer_experience
+[DynamoDB CDC Relay]: https://cratedb-toolkit.readthedocs.io/io/dynamodb/cdc.html
 [Ecosystem Catalog]: https://cratedb.com/docs/crate/clients-tools/
 [Integration Tutorials I]: inv:#integrate
 [Integration Tutorials II]: https://community.cratedb.com/t/overview-of-cratedb-integration-tutorials/1015
 [migration]: https://cratedb.com/migrations/rockset
 [MongoDB Atlas Change Streams]: https://www.mongodb.com/docs/manual/changeStreams/
+[MongoDB CDC Relay]: https://cratedb-toolkit.readthedocs.io/io/mongodb/cdc.html
 [open-source code base]: https://github.com/crate/crate
+[Replicating CDC Events from DynamoDB to CrateDB]: https://cratedb.com/blog/replicating-cdc-events-from-dynamodb-to-cratedb
 [Rockset]: https://rockset.com/product/
 [Rockset's pricing examples]: https://docs.rockset.com/documentation/docs/billing#pricing-examples
 [Rockset HTTP API Adapter for CrateDB]: https://cratedb-toolkit.readthedocs.io/adapter/rockset.html
