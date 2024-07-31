@@ -229,9 +229,8 @@ Written tutorials and video guides about working with CrateDB's
 container data types.
 
 
-:::{rubric} Tutorials
+:::{rubric} Articles
 :::
-
 
 ::::{info-card}
 
@@ -254,6 +253,9 @@ Learn fundamentals about CrateDB's OBJECT data type.
 
 ::::
 
+
+:::{rubric} Tutorials
+:::
 
 ::::{info-card}
 
@@ -425,7 +427,7 @@ and about OBJECT indexing.
 :maxdepth: 1
 :hidden:
 
-objects-hands-on
+learn
 ```
 
 ```{include} /_include/styles.html

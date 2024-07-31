@@ -93,7 +93,7 @@ and analyzing. Industrial applications.
 :::{toctree}
 :hidden:
 
-Basics <basics>
+Fundamentals <fundamentals>
 Advanced <advanced>
 video
 Long Term Store <longterm>

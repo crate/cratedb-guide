@@ -1,4 +1,5 @@
 (timeseries-objects)=
+(timeseries-with-metadata)=
 
 # Analyzing Device Readings with Metadata Integration
 

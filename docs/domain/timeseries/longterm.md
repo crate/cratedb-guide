@@ -35,31 +35,6 @@ a dedicated layout, and querying using the UNNEST table function.
 ::::
 
 
-::::{info-card}
-
-:::{grid-item}
-:columns: auto 9 9 9
-**Notebook: How to Build Time Series Applications with CrateDB**
-
-This notebook illustrates how to import and work with time series data in CrateDB.
-It uses Dask to import data into CrateDB.
-Dask is a framework to parallelize operations on pandas data frames.
- 
-{{ '{}[dask-weather-data-github]'.format(nb_github) }} {{ '{}[dask-weather-data-colab]'.format(nb_colab) }}
-:::
-
-:::{grid-item}
-:columns: 3
-{tags-primary}`Data I/O`
-
-{tags-secondary}`Python`
-{tags-secondary}`Dask`
-{tags-secondary}`SQL`
-:::
-
-::::
-
-
 :::{rubric} Related
 :::
 
@@ -135,6 +110,4 @@ sources of raw weather data from domestic weather agencies.
 
 
 
-[dask-weather-data-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/timeseries/dask-weather-data-import.ipynb
-[dask-weather-data-github]: https://github.com/crate/cratedb-examples/blob/main/topic/timeseries/dask-weather-data-import.ipynb
 [Optimizing storage for historic time series data]: https://community.cratedb.com/t/optimizing-storage-for-historic-time-series-data/762
