@@ -51,9 +51,7 @@ very beginning.
 ```
 - {ref}`sql`
 - {ref}`query`
-- {ref}`fulltext`
-- {ref}`geospatial`
-- {ref}`vector`
+- {ref}`search-overview`
 
 {tags-primary}`SQL`
 {tags-primary}`JOIN`
