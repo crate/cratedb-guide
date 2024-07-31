@@ -186,6 +186,22 @@ SELECT 2 rows in set (0.034 sec)
 
 ::::
 
+:::{rubric} More Examples
+:::
+Tweak fuzziness to get approximate matches.
+```sql
+SELECT _score,
+       city,
+       country,
+       population
+FROM cities
+WHERE MATCH(city_ascii, 'nw yurk') USING best_fields
+WITH (fuzziness = 1)
+ORDER BY
+    _score DESC;
+```
+
+
 
 ## Usage
 
@@ -363,14 +379,11 @@ learn
 :::
 
 
-
-[BM25]: https://en.wikipedia.org/wiki/Okapi_BM25
 [BM25: The Next Generation of Lucene Relevance]: https://opensourceconnections.com/blog/2015/10/16/bm25-the-next-generation-of-lucene-relevation/
 [BM25 vs. Lucene Default Similarity]: https://www.elastic.co/blog/found-bm-vs-lucene-default-similarity
 [full-text search]: https://en.wikipedia.org/wiki/Full_text_search
 [Indexing and Storage in CrateDB]: https://cratedb.com/blog/indexing-and-storage-in-cratedb
 [Indexing Text for Both Effective Search and Accurate Analysis]: https://www.qualtrics.com/eng/indexing-text-for-both-effective-search-and-accurate-analysis/
-[inverted index]: https://en.wikipedia.org/wiki/Inverted_index
 [MATCH predicate]: inv:crate-reference#predicates_match
 [Okapi BM25]: https://trec.nist.gov/pubs/trec3/papers/city.ps.gz
 [search engine]: https://en.wikipedia.org/wiki/Search_engine

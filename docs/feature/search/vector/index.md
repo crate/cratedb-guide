@@ -168,6 +168,10 @@ database operations (similarity search).
 
 ## Learn
 
+Learn how to set up your database for vector search, how to create the relevant
+indices, and how to semantically query your data efficiently. A few must-reads
+for anyone looking to make sense of large volumes of unstructured text data.
+
 :::{rubric} Tutorials
 :::
 
@@ -269,7 +273,6 @@ features of Lucene 9, and about the journey of implementing HNSW from
 
 
 
-[HNSW]: https://arxiv.org/pdf/1603.09320.pdf
 [Lucene Is All You Need]: https://arxiv.org/pdf/2308.14963.pdf
 [making of Lucene vector search]: https://www.apachecon.com/acna2022/slides/04_lucene_vector_search_sokolov.pdf
 [Time series data in manufacturing]: https://github.com/crate/cratedb-datasets/raw/main/machine-learning/fulltext/White%20paper%20-%20Time-series%20data%20in%20manufacturing.pdf
