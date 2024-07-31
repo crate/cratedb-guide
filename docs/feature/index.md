@@ -21,8 +21,7 @@ sql/index
 connectivity/index
 document/index
 relational/index
-Search: FTS, Vector, Hybrid <search/index>
-geospatial/index
+Search: FTS, Geo, Vector, Hybrid <search/index>
 blob/index
 :::
 +++

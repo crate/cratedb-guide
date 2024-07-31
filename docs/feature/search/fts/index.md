@@ -59,6 +59,7 @@ of a [search engine].
 ```{rubric} Related
 ```
 - {ref}`sql`
+- {ref}`geo-search`
 - {ref}`vector-search`
 - {ref}`hybrid-search`
 - {ref}`query`

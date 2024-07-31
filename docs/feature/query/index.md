@@ -163,6 +163,7 @@ CrateDB provides capabilities for full-text search, vector search, and hybrid
 search, all based on vanilla SQL.
 
 - {ref}`fulltext-search`
+- {ref}`geo-search`
 - {ref}`vector-search`
 - {ref}`hybrid-search`
 

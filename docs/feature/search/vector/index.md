@@ -65,6 +65,7 @@ with Lucene Vector Search using SQL.
 ```
 - {ref}`sql`
 - {ref}`fulltext-search`
+- {ref}`geo-search`
 - {ref}`hybrid-search`
 - {ref}`machine-learning`
 - {ref}`query`

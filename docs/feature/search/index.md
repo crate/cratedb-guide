@@ -11,7 +11,7 @@ powerful single-query hybrid search.
 :::{rubric} All search features of CrateDB at a glance.
 :::
 
-:::::{grid} 1 3 3 3
+:::::{grid} auto 3 3 3
 :margin: 4 4 0 0
 :padding: 0
 :gutter: 2
@@ -23,6 +23,15 @@ Inverted index and Okapi BM25 search ranking based on Apache Lucene
 at scale, using SQL as lingua franca.
 +++
 BM25 term search using SQL: CrateDB is all you need.
+::::
+
+::::{grid-item-card} {material-outlined}`travel_explore;2em` Geo Search
+:link: geo-search
+:link-type: ref
+Supports location data for efficiently storing and querying geographic
+and spatial/geospatial data.
++++
+Geospatial search is based on BKD tree index structures.
 ::::
 
 ::::{grid-item-card} {material-outlined}`psychology_alt;2em` Vector Search
@@ -38,7 +47,8 @@ Vector search on machine learning embeddings: CrateDB is all you need.
 ::::{grid-item-card} {material-outlined}`lightbulb;2em` Hybrid Search
 :link: hybrid-search
 :link-type: ref
-Combines FTS and HNSW technologies, and unlocks the best of both worlds
+:columns: auto
+Combines FTS and HNSW technologies, unlocking the best of both worlds
 in term-based and semantic search.
 +++
 Enhance relevancy and accuracy by combining multiple search algorithms.
@@ -52,6 +62,7 @@ Enhance relevancy and accuracy by combining multiple search algorithms.
 :hidden:
 
 fts/index
+geo/index
 vector/index
 hybrid/index
 :::
