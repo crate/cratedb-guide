@@ -1,6 +1,9 @@
 (geo)=
+(geo-search)=
 (geospatial)=
-# Geospatial Data
+(geospatial-search)=
+
+# Geospatial Search
 
 :::{include} /_include/links.md
 :::
@@ -25,6 +28,13 @@ building upon the Prefix Tree and BKD-tree index structures of Apache Lucene.
 
 :::{rubric} About
 :::
+Using spatial search, you can:
+- Index points or other shapes.
+- Filter search results by a bounding box, circle, donut, or other shape.
+- Sort or boost scoring by distance between points, or relative area between rectangles.
+
+:::{rubric} Details
+:::
 CrateDB's GEO_POINT and GEO_SHAPE geographic data types represent points
 or shapes in a 2D world.
 
@@ -34,8 +44,15 @@ or shapes in a 2D world.
     A geographic data type used to store 2D shapes defined as GeoJSON geometry
     objects. It supports Point, MultiPoint, LineString, MultiLineString,
     Polygon, MultiPolygon, and GeometryCollection.
-::::
 
+When inserting spatial data, you can use [GeoJSON] or [WKT] formats.
+
+- Geographic points can be inserted as a double precision array with longitude and
+  latitude values, or by using a WKT string.
+- Geographic shapes can be inserted as GeoJSON object literal or parameter as seen
+  above and as WKT string.
+
+::::
 
 
 ::::{grid-item}
@@ -48,9 +65,19 @@ or shapes in a 2D world.
 - [](inv:crate-reference#data-types-geo-shape)
 - [](inv:crate-reference#sql_dql_geo_search)
 
+- [distance()](inv:crate-reference#scalar-distance)
+- [within()](inv:crate-reference#scalar-within)
+- [intersects()](inv:crate-reference#scalar-intersects)
+- [latitude() and longitude()](inv:crate-reference#scalar-latitude-longitude)
+- [geohash()](inv:crate-reference#scalar-geohash)
+- [area()](inv:crate-reference#scalar-area)
+
 ```{rubric} Related
 ```
 - {ref}`sql`
+- {ref}`fulltext-search`
+- {ref}`vector-search`
+- {ref}`hybrid-search`
 - {ref}`query`
 
 {tags-primary}`SQL`
@@ -61,22 +88,6 @@ or shapes in a 2D world.
 
 :::::
 
-
-:::{rubric} Details
-:::
-When inserting spatial data, you can use [GeoJSON] or [WKT] formats.
-
-- Geographic points can be inserted as a double precision array with longitude and
-  latitude values, or by using a WKT string.
-- Geographic shapes can be inserted as GeoJSON object literal or parameter as seen
-  above and as WKT string.
-
-Using spatial search, you can:
-
-- Index points or other shapes.
-- Filter search results by a bounding box, circle, donut, or other shape.
-- Sort or boost scoring by distance between points, or relative area between rectangles.
-- Generate a 2D grid of facet count numbers for heatmap generation or point-plotting.
 
 :::{rubric} About Lucene
 :::
@@ -187,9 +198,12 @@ tutorials, or example applications.
 :::
 
 
-:::{todo}
-- Improve "examples" sections.
-- Better layout for "Learn" section.
+
+:::{note}
+{material-outlined}`construction;2em` This page is currently under construction.
+For example, the "Example" section is missing completely, the "Learn" section
+deserves a better layout, and it's also not in the same shape like the other
+pages in this section.
 :::
 
 
