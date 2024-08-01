@@ -32,6 +32,7 @@
 [query DSL based on JSON]: https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html
 [RANK]: inv:crate-reference#window-functions-rank
 [Relational Database]: https://cratedb.com/solutions/relational-database
+[Replicating data to CrateDB with Debezium and Kafka]: https://community.cratedb.com/t/replicating-data-to-cratedb-with-debezium-and-kafka/1388
 [TF–IDF]: https://en.wikipedia.org/wiki/Tf%E2%80%93idf
 [Replicating CDC events from DynamoDB to CrateDB]: https://cratedb.com/blog/replicating-cdc-events-from-dynamodb-to-cratedb
 [timeseries-queries-and-visualization-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/timeseries/timeseries-queries-and-visualization.ipynb

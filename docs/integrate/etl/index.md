@@ -55,11 +55,11 @@ Tutorials and resources about configuring the managed variants, Astro and CrateD
 
 
 ## Apache Kafka
-
-- [Data Ingestion using Kafka and Kafka Connect]
-- [Executable stack: Apache Kafka, Apache Flink, and CrateDB]
-- [Tutorial: Replicating data to CrateDB with Debezium and Kafka]
-
+:::{div}
+- {ref}`kafka-connect`
+- [Executable stack with Apache Kafka, Apache Flink, and CrateDB]
+- [Replicating data to CrateDB with Debezium and Kafka]
+:::
 ```{toctree}
 :hidden:
 
@@ -170,11 +170,10 @@ streamsets
 [CrateDB and Apache Airflow: Building a data ingestion pipeline]: https://community.cratedb.com/t/cratedb-and-apache-airflow-building-a-data-ingestion-pipeline/926 
 [CrateDB Apache Hop Bulk Loader transform]: https://hop.apache.org/manual/latest/pipeline/transforms/cratedb-bulkloader.html
 [CrateDB dialect for Apache Hop]: https://hop.apache.org/manual/latest/database/databases/cratedb.html
-[Data Ingestion using Kafka and Kafka Connect]: https://cratedb.com/docs/crate/howtos/en/latest/integrations/kafka-connect.html
 [ETL pipeline using Apache Airflow with CrateDB (Source)]: https://github.com/astronomer/astro-cratedb-blogpost
 [ETL with Astro and CrateDB Cloud in 30min - fully up in the cloud]: https://www.astronomer.io/blog/run-etlelt-with-airflow-and-cratedb/
 [Examples about working with CrateDB and Meltano]: https://github.com/crate/cratedb-examples/tree/amo/meltano/framework/singer-meltano
-[Executable stack: Apache Kafka, Apache Flink, and CrateDB]: https://github.com/crate/cratedb-examples/tree/main/application/apache-kafka-flink
+[Executable stack with Apache Kafka, Apache Flink, and CrateDB]: https://github.com/crate/cratedb-examples/tree/main/application/apache-kafka-flink
 [Implementing a data retention policy in CrateDB using Apache Airflow]: https://community.cratedb.com/t/implementing-a-data-retention-policy-in-cratedb-using-apache-airflow/913 
 [Ingesting MQTT messages into CrateDB using Node-RED]: https://community.cratedb.com/t/ingesting-mqtt-messages-into-cratedb-using-node-red/803
 [meltano-tap-cratedb]: https://github.com/crate-workbench/meltano-tap-cratedb

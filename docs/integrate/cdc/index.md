@@ -25,9 +25,10 @@ to another system, mostly to run OLAP workloads on the data.
 
 Debezium provides connectors for MySQL/MariaDB, MongoDB, PostgreSQL, Oracle,
 SQL Server, IBM DB2, Cassandra, Vitess, Spanner, JDBC, and Informix.
-
-- [Tutorial: Replicating data to CrateDB with Debezium and Kafka]
-- [Webinar: How to replicate data from other databases to CrateDB with Debezium and Kafka]
+:::{div}
+- Tutorial: [Replicating data to CrateDB with Debezium and Kafka]
+- Webinar: [How to replicate data from other databases to CrateDB with Debezium and Kafka]
+:::
 
 ## DynamoDB
 :::{div}
@@ -59,6 +60,5 @@ lives.
 
 
 
-[Tutorial: Replicating data to CrateDB with Debezium and Kafka]: https://community.cratedb.com/t/replicating-data-to-cratedb-with-debezium-and-kafka/1388
-[Webinar: How to replicate data from other databases to CrateDB with Debezium and Kafka]: https://cratedb.com/resources/webinars/lp-wb-debezium-kafka
+[How to replicate data from other databases to CrateDB with Debezium and Kafka]: https://cratedb.com/resources/webinars/lp-wb-debezium-kafka
 [StreamSets Data Collector]: https://www.softwareag.com/en_corporate/platform/integration-apis/data-collector-engine.html
