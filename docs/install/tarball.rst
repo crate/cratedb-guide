@@ -13,7 +13,7 @@ install CrateDB. The walkthrough is suitable to install and run CrateDB on
 
     You may experience performance issues when running releases from the public
     archive on ARM-based macOS systems. For improved performance, we recommend
-    manually building CrateDB suited for macOS. Detailed instructions
+    manually building CrateDB suited for ARM-based macOS. Detailed instructions
     can be found in our `manual build guide`_.
 
 1. Download the latest `CrateDB release archive`_. Please make sure to select
