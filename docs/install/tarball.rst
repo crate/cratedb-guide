@@ -9,6 +9,13 @@ This section of the documentation outlines how to use the release archives to
 install CrateDB. The walkthrough is suitable to install and run CrateDB on
 `Unix-like`_ systems, for example Linux and macOS.
 
+.. CAUTION::
+
+    You may experience performance issues when running releases from the public
+    archive on ARM-based macOS systems. For improved performance, we recommend
+    manually building CrateDB suited for macOS. Detailed instructions
+    can be found in our `manual build guide`_.
+
 1. Download the latest `CrateDB release archive`_. Please make sure to select
    the right release archive matching your system.
 
@@ -28,9 +35,9 @@ install CrateDB. The walkthrough is suitable to install and run CrateDB on
 
 .. NOTE::
 
-    When installing a specific version of CrateDB from tarball on a macOS
-    system for the first time, it is possible that you will encounter an error like:
-    **"java" cannot be openeded because developer cannot be verified.**
+    When running a specific version of CrateDB from tarball on a macOS
+    system for the first time, it is possible that you will encounter an error
+    like: **"java" cannot be openeded because developer cannot be verified.**
 
     This is expected and can be fixed in your system settings:
       - Navigate to **System Preferences** -> **Security and Privacy**
@@ -52,4 +59,5 @@ install CrateDB. The walkthrough is suitable to install and run CrateDB on
 
 .. _7-Zip: https://www.7-zip.org/
 .. _CrateDB release archive: https://cdn.crate.io/downloads/releases/cratedb/
+.. _manual build guide: https://github.com/crate/crate/blob/master/devs/docs/basics.rst
 .. _Unix-like: https://en.wikipedia.org/wiki/Unix-like
