@@ -37,7 +37,7 @@ install CrateDB. The walkthrough is suitable to install and run CrateDB on
 
     When running a specific version of CrateDB from tarball on a macOS
     system for the first time, it is possible that you will encounter an error
-    like: **"java" cannot be openeded because developer cannot be verified.**
+    like: **"java" cannot be opened because developer cannot be verified.**
 
     This is expected and can be fixed in your system settings:
       - Navigate to **System Preferences** -> **Security and Privacy**
