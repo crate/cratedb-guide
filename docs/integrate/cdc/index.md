@@ -17,6 +17,32 @@ to use them optimally.
 Please also have a look at support for [generic ETL](#etl) solutions.
 :::
 
+
+## Amazon DynamoDB
+:::{div}
+Tap into [Amazon DynamoDB Streams], to replicate CDC events from DynamoDB into CrateDB,
+with support for CrateDB's container data types.
+- {hyper-open}`Documentation <[DynamoDB CDC Relay]>`
+- {hyper-read-more}`Blog <[Replicating CDC events from DynamoDB to CrateDB]>`
+:::
+
+## AWS DMS
+[AWS Database Migration Service] (AWS DMS) is a managed migration and replication
+service that helps move your database and analytics workloads quickly, securely,
+and with minimal downtime and zero data loss.
+
+AWS DMS supports migration between 20-plus database and analytics engines, either
+on-premises, or per EC2 instance databases. Supported data migration sources are:
+Amazon Aurora, Amazon DocumentDB, Amazon S3, IBM DB2, MariaDB, Azure SQL Database,
+Microsoft SQL Server, MongoDB, MySQL, Oracle, PostgreSQL, SAP ASE.
+
+CrateDB provides two variants how to conduct data migrations using AWS DMS.
+Either use it standalone / on your own premises, or use it in a completely
+managed environment with services of AWS and CrateDB Cloud.
+
+- {hyper-navigate}`AWS DMS Kinesis Relay (standalone) <[AWS DMS Kinesis Relay]>`
+- {hyper-navigate}`AWS DMS Kinesis Relay (managed) <[AWS DMS Kinesis Relay]>`
+
 ## Debezium
 Debezium is an open source distributed platform for change data capture (CDC).
 It is built on top of Apache Kafka, a distributed streaming platform. It allows
@@ -28,14 +54,6 @@ SQL Server, IBM DB2, Cassandra, Vitess, Spanner, JDBC, and Informix.
 :::{div}
 - Tutorial: [Replicating data to CrateDB with Debezium and Kafka]
 - Webinar: [How to replicate data from other databases to CrateDB with Debezium and Kafka]
-:::
-
-## DynamoDB
-:::{div}
-Tap into [Amazon DynamoDB Streams], to replicate CDC events from DynamoDB into CrateDB,
-with support for CrateDB's container data types.
-- {hyper-open}`Documentation <[DynamoDB CDC Relay]>`
-- {hyper-read-more}`Blog <[Replicating CDC events from DynamoDB to CrateDB]>`
 :::
 
 ## MongoDB
@@ -60,5 +78,6 @@ lives.
 
 
 
+[AWS Database Migration Service]: https://aws.amazon.com/dms/
 [How to replicate data from other databases to CrateDB with Debezium and Kafka]: https://cratedb.com/resources/webinars/lp-wb-debezium-kafka
 [StreamSets Data Collector]: https://www.softwareag.com/en_corporate/platform/integration-apis/data-collector-engine.html
