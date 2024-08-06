@@ -1,4 +1,5 @@
 [Amazon DynamoDB Streams]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html
+[AWS DMS Kinesis Relay]: https://cratedb-toolkit.readthedocs.io/io/dms/index.html
 [BM25]: https://en.wikipedia.org/wiki/Okapi_BM25
 [cloud-datashader-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/amo/cloud-datashader/topic/timeseries/explore/cloud-datashader.ipynb
 [cloud-datashader-github]: https://github.com/crate/cratedb-examples/blob/amo/cloud-datashader/topic/timeseries/explore/cloud-datashader.ipynb
