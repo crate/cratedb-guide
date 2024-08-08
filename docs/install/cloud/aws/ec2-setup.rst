@@ -110,8 +110,8 @@ You could also provide them as system properties or as settings in the
   CrateDB process, which is usually the user ``crate`` in production.
 
 Now you are ready to start your CrateDB instances and they will discover each
-other automatically. Use the `AWS CLI`_ or the `AWS Console`_ to run instances
-and assign them with an IAM role. Note that all CrateDB instances of the same
+other automatically. Use the AWS CLI or the AWS Console to run instances
+and `assign them with an IAM role`_. Note that all CrateDB instances of the same
 region will join the cluster as long as their cluster name is equal and they are
 able to communicate to each other over the transport port.
 
@@ -203,8 +203,7 @@ See also :ref:`crate-reference:discovery.ec2.availability_zones`.
 
 .. _3.3: https://cratedb.com/docs/crate/reference/en/3.3/config/cluster.html#discovery
 .. _Amazon EC2: https://aws.amazon.com/ec2/
-.. _AWS CLI: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#launch-instance-with-role-cli
-.. _AWS Console: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#launch-instance-with-role-console
+.. _assign them with an IAM role: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/attach-iam-role.html
 .. _AWS guide: httsp://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html
 .. _EC2 API: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Welcome.html
 .. _IAM roles: https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html
