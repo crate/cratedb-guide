@@ -61,10 +61,10 @@ A minimal custom resource for a three-node CrateDB cluster may look like this:
      cluster:
        imageRegistry: crate
        name: crate-dev
-       version: 5.0.1
+       version: 5.8.1
      nodes:
        data:
-       - name: my-cluster
+       - name: hot
          replicas: 3
          resources:
            limits:
