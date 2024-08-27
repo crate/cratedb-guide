@@ -114,8 +114,8 @@ Import data to MongoDB:
 mongoimport --db testdrive --collection demo --file demodata.json --jsonArray
 :::
 
-::: {note}
-```mongoimport``` is part of the [MongoDB Database tools]
+:::{note}
+`mongoimport` is part of the [MongoDB Database tools].
 :::
 
 Verify data is present:
