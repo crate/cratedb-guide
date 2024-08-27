@@ -495,7 +495,7 @@ The remaining steps from above remain are applicable without changes.
 .. _Kafka: https://www.confluent.io/what-is-apache-kafka/
 .. _Kafka Connect JDBC connector: https://docs.confluent.io/kafka-connect-jdbc/current/sink-connector/
 .. _Confluent Platform: https://docs.confluent.io/current/cli/index.html
-.. _Avro schema: https://avro.apache.org/docs/current/spec.html
+.. _Avro schema: https://avro.apache.org/docs/1.10.2/spec.html
 .. _PostgreSQL Kafka Connect JDBC driver: https://docs.confluent.io/kafka-connect-jdbc/current/index.html#postgresql-database
 .. _Sink Connector: https://docs.confluent.io/current/connect/kafka-connect-jdbc/sink-connector/index.html
 .. _Source Connector: https://docs.confluent.io/current/connect/kafka-connect-jdbc/source-connector/index.html

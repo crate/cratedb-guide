@@ -501,7 +501,7 @@ example::
 .. _containerization: https://www.docker.com/resources/what-container
 .. _CrateDB Docker image: https://hub.docker.com/_/crate/
 .. _default bridge network: https://docs.docker.com/network/drivers/bridge/#use-the-default-bridge-network
-.. _Docker Stack YAML file: https://docs.docker.com/docker-cloud/apps/stack-yaml-reference/
+.. _Docker Stack YAML file: https://docs.oldtimes.me/docker/docker-cloud/apps/stack-yaml-reference/index.html
 .. _Docker Swarm: https://docs.docker.com/engine/swarm/
 .. _Docker volume: https://docs.docker.com/engine/tutorials/dockervolumes/
 .. _Docker: https://www.docker.com/
