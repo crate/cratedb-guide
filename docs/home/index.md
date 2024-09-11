@@ -14,9 +14,14 @@ orphan: true
 
 # Welcome to CrateDB!
 
-CrateDB is designed to handle your demanding analytics and search workloads with
-ease. Here you'll find comprehensive resources including reference manuals,
-tutorials, example code, and more.
+CrateDB is a hyper-fast open source multi-model database combining the
+simplicity of SQL and flexible schemas with the scalability of a distributed
+architecture. CrateDB is a multi-model database. Its strength lies in the
+efficient handling of multiple data models within the same database and even
+within the same record in a table. This allows you to use one database for all
+structured, semi-structured and unstructured data. For example, tabular data, 
+JSON or documents, time series, vectors, geospatial, full text 
+and binary objects
 
 Happy learning and building with CrateDB!
 
