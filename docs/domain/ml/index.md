@@ -366,10 +366,10 @@ tensorflow
 [How to Use Private Data in Generative AI]: https://youtu.be/icquKckM4o0?feature=shared
 [Jupyter Notebook]: https://jupyter.org/
 [LangChain]: https://python.langchain.com/
-[LangChain: Analyzing structured data]: https://python.langchain.com/docs/use_cases/extraction/
-[LangChain: Chatbots]: https://python.langchain.com/docs/use_cases/chatbots
-[LangChain: Q&A with SQL]: https://python.langchain.com/docs/use_cases/sql/
-[LangChain: Retrieval augmented generation]: https://python.langchain.com/docs/use_cases/question_answering/
+[LangChain: Analyzing structured data]: https://python.langchain.com/docs/how_to/#extraction
+[LangChain: Chatbots]: https://python.langchain.com/docs/how_to/#chatbots
+[LangChain: Q&A with SQL]: https://python.langchain.com/docs/how_to/#qa-over-sql--csv
+[LangChain: Retrieval augmented generation]: https://python.langchain.com/docs/tutorials/sql_qa/
 [langchain-conversational-history-binder]: https://mybinder.org/v2/gh/crate/cratedb-examples/main?labpath=topic%2Fmachine-learning%2Fllm-langchain%2Fconversational_memory.ipynb
 [langchain-conversational-history-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/llm-langchain/conversational_memory.ipynb
 [langchain-conversational-history-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/llm-langchain/conversational_memory.ipynb

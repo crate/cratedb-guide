@@ -274,7 +274,7 @@ features of Lucene 9, and about the journey of implementing HNSW from
 
 
 
-[Lucene Is All You Need]: https://arxiv.org/pdf/2308.14963.pdf
+[Lucene Is All You Need]: https://arxiv.org/pdf/2308.14963
 [making of Lucene vector search]: https://www.apachecon.com/acna2022/slides/04_lucene_vector_search_sokolov.pdf
 [Time series data in manufacturing]: https://github.com/crate/cratedb-datasets/raw/main/machine-learning/fulltext/White%20paper%20-%20Time-series%20data%20in%20manufacturing.pdf
 [Uwe Schindler - What's coming next with Apache Lucene?]: https://youtu.be/EHJjSYWjIF0?t=330s&feature=shared

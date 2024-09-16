@@ -33,6 +33,11 @@ linkcheck_ignore = [
     r"https://github.com/crate-workbench/cratedb-toolkit/actions/runs/.*",
     # 403 Client Error: Forbidden for url
     r"https://www.datacamp.com/.*",
+    # Read timed out. (read timeout=15)
+    r"https://www.imf.org/.*",
+    # -rate limited-, sleeping...
+    r"https://medium.com/.*",
+    r"http://api.open-notify.org/.*",
 ]
 
 # Configure intersphinx.

@@ -13,7 +13,7 @@
 [Geospatial Data Model]: https://cratedb.com/data-model/geospatial
 [Geospatial Database]: https://cratedb.com/geospatial-spatial-database
 [HNSW]: https://en.wikipedia.org/wiki/Hierarchical_navigable_small_world
-[HNSW paper]: https://arxiv.org/pdf/1603.09320.pdf
+[HNSW paper]: https://arxiv.org/pdf/1603.09320
 [HoloViews]: https://www.holoviews.org/
 [Indexing, Columnar Storage, and Aggregations]: https://cratedb.com/product/features/indexing-columnar-storage-aggregations
 [inverted index]: https://en.wikipedia.org/wiki/Inverted_index
