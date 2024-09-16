@@ -17,6 +17,19 @@ to use them optimally.
 Please also have a look at support for [](#cdc) solutions.
 
 
+## Amazon Kinesis
+
+Amazon Kinesis Data Streams is a serverless streaming data service that
+simplifies the capture, processing, and storage of data streams at any
+scale, such as application logs, website clickstreams, and IoT telemetry
+data, for machine learning (ML), analytics, and other applications.
+:::{div}
+The [DynamoDB CDC Relay] pipeline uses Amazon Kinesis to relay a table
+change stream from a DynamoDB table into a CrateDB table, see also
+[DynamoDB CDC](#cdc-dynamodb).
+:::
+
+
 ## Apache Airflow / Astronomer
 
 A set of starter tutorials.
@@ -44,7 +57,8 @@ Tutorials and resources about configuring the managed variants, Astro and CrateD
 - {ref}`kafka-connect`
 - [Build a data ingestion pipeline using Kafka, Flink, and CrateDB]
 - [Community Day: Stream processing with Apache Flink and CrateDB]
-- [Executable stack: Apache Kafka, Apache Flink, and CrateDB]
+- [Executable stack with Apache Kafka, Apache Flink, and CrateDB]
+
 
 
 ## Apache Hop
@@ -57,8 +71,8 @@ Tutorials and resources about configuring the managed variants, Astro and CrateD
 ## Apache Kafka
 :::{div}
 - {ref}`kafka-connect`
-- [Executable stack with Apache Kafka, Apache Flink, and CrateDB]
 - [Replicating data to CrateDB with Debezium and Kafka]
+- [Executable stack with Apache Kafka, Apache Flink, and CrateDB]
 :::
 ```{toctree}
 :hidden:
@@ -88,6 +102,13 @@ azure-functions
 - [Using dbt with CrateDB]
 
 
+## DynamoDB
+:::{div}
+- [DynamoDB Table Loader]
+- [DynamoDB CDC Relay]
+:::
+
+
 ## InfluxDB
 
 - {ref}`integrate-influxdb`
@@ -104,9 +125,11 @@ influxdb
 - [Setting up data pipelines with CrateDB and Kestra]
 
 ## MongoDB
-
-- {ref}`integrate-mongodb`
-
+:::{div}
+- Tutorial: {ref}`integrate-mongodb`
+- Documentation: [MongoDB Table Loader]
+- Documentation: [MongoDB CDC Relay]
+:::
 ```{toctree}
 :hidden:
 

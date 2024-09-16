@@ -17,6 +17,18 @@ to use them optimally.
 Please also have a look at support for [generic ETL](#etl) solutions.
 :::
 
+## Amazon Kinesis
+You can use Amazon Kinesis Data Streams to collect and process large streams of data
+records in real time. A typical Kinesis Data Streams application reads data from a
+data stream as data records.
+
+As such, a common application is to relay DynamoDB table change stream events to a
+Kinesis Stream, and consume that from an adapter to a consolidation database.
+:::{div}
+- About: [Amazon Kinesis Data Streams]
+- See: [](#cdc-dynamodb)
+:::
+
 ## Debezium
 Debezium is an open source distributed platform for change data capture (CDC).
 It is built on top of Apache Kafka, a distributed streaming platform. It allows
@@ -30,19 +42,28 @@ SQL Server, IBM DB2, Cassandra, Vitess, Spanner, JDBC, and Informix.
 - Webinar: [How to replicate data from other databases to CrateDB with Debezium and Kafka]
 :::
 
+(cdc-dynamodb)=
 ## DynamoDB
 :::{div}
-Tap into [Amazon DynamoDB Streams], to replicate CDC events from DynamoDB into CrateDB,
-with support for CrateDB's container data types.
-- {hyper-open}`Documentation <[DynamoDB CDC Relay]>`
-- {hyper-read-more}`Blog <[Replicating CDC events from DynamoDB to CrateDB]>`
+Support for loading DynamoDB tables into CrateDB (full-load), as well as
+[Amazon DynamoDB Streams] and [Amazon Kinesis Data Streams],
+to relay CDC events from DynamoDB into CrateDB.
+
+- [DynamoDB Table Loader]
+- [DynamoDB CDC Relay]
+
+If you are looking into serverless replication using AWS Lambda:
+- [DynamoDB CDC Relay with AWS Lambda]
+- Blog: [Replicating CDC events from DynamoDB to CrateDB]
 :::
 
 ## MongoDB
 :::{div}
-Tap into [MongoDB Change Streams], to relay CDC events from MongoDB into CrateDB,
-with support for CrateDB's container data types.
-- {hyper-open}`Documentation <[MongoDB CDC Relay]>`
+Support for loading MongoDB collections and databases into CrateDB (full-load),
+and [MongoDB Change Streams], to relay CDC events from MongoDB into CrateDB.
+
+- [MongoDB Table Loader]
+- [MongoDB CDC Relay]
 :::
 
 ## StreamSets

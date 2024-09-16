@@ -57,32 +57,12 @@ replacement solution.
 :class-footer: text-smaller
 {material-outlined}`cast_for_education;3.7em`
 
-Join our Webinar
+Watch our Webinars
 ^^^
-{material-outlined}`event_note;2.5em` Date
-August 1st, 2024
-
-{material-outlined}`schedule;2.5em` Time \
-12:00–12:45 pm PST \
-03:00–03:45 pm EST \
-09:00–09:45 pm CET
-
 - Why CrateDB is a perfect \[Rockset\] replacement for real-time analytics and hybrid search. 
 - How CrateDB compares to \[Rockset\] and Elasticsearch/OpenSearch for streaming ingest.
 - Why CrateDB is a cost-effective alternative to \[Rockset\].
 +++
-Register now to learn about our migration services,
-and to have a live Q&A session with our experts.
-:::
-
-:::{card}
-:link: https://cratedb.com/resources/webinars/lp-wb-rockset-migration
-:link-alt: "Webinar Recordings"
-:class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold sd-text-capitalize
-:class-body: text-smaller
-:class-footer: text-smaller
-{material-outlined}`live_tv;2.7em`
-
 Watch recordings of previous sessions from this webinar series.
 :::
 
@@ -258,7 +238,7 @@ mostly due to API rate-limiting measures.
 
 
 ## Learn
-Learn how to migrate your database use cases and workloads from Rockset to CrateDB.
+Learn how to use CrateDB.
 
 :::::{grid} 1 1 2 2
 :gutter: 3
@@ -270,6 +250,9 @@ CrateDB's lingua franca is SQL, ready for big data, very similar to
 Rockset's SQL dialect.
 - [CrateDB SQL]
 - [Advanced Querying]
+::::
+
+::::{grid-item-card}
 :::{rubric} Migrating queries from Rockset to CrateDB
 :::
 Because both Rockset and CrateDB use SQL, there is no need for your teams to
@@ -277,17 +260,33 @@ learn a new query language. There are a few differences in the SQL dialect,
 where we provide relevant support information to make transitioning easier.
 :::{toctree}
 Migrate Queries <query>
-:::
-:::{rubric} Migrating workloads from Rockset to CrateDB
-:::
-- [Amazon DynamoDB Streams]: Replicate CDC events from DynamoDB into CrateDB. \
-  {hyper-open}`Documentation <[DynamoDB CDC Relay]>`
-  {hyper-read-more}`Blog <[Replicating CDC events from DynamoDB to CrateDB]>`
+::::
 
-- [MongoDB Change Streams]: Relay CDC events from MongoDB into CrateDB. \
-  {hyper-open}`Documentation <[MongoDB CDC Relay]>`
+:::::
 
-- More information about [](#cdc) with CrateDB.
+
+## Integrate
+Learn how to migrate your database use cases and workloads from Rockset to CrateDB.
+
+:::::{grid} 1 1 2 2
+:gutter: 3
+
+::::{grid-item-card}
+:::
+:::{rubric} Migrating DynamoDB workloads from Rockset to CrateDB
+:::
+- [DynamoDB Table Loader]
+- [DynamoDB CDC Relay]
+- [DynamoDB CDC Relay with AWS Lambda]
+- Blog: [Replicating CDC events from DynamoDB to CrateDB]
+:::{rubric} Migrating MongoDB workloads from Rockset to CrateDB
+:::
+- [MongoDB Table Loader]
+- [MongoDB CDC Relay]
+:::{rubric} General I/O
+:::
+- [Data loading](#etl) with CrateDB.
+- [](#cdc) with CrateDB.
 ::::
 
 ::::{grid-item-card}
@@ -319,10 +318,8 @@ and Python example programs.
 :::::
 
 
-
 [Advanced Querying]: project:#advanced-querying
 [All features of CrateDB at a glance]: project:#all-features
-[Amazon Kinesis Data Streams]: https://aws.amazon.com/kinesis/
 [Apache/Confluent Kafka Streams]: https://kafka.apache.org/documentation/streams/
 [automatically indexes all your data]: project:#hybrid-index
 [clear commitment]: https://cratedb.com/blog/opensource-licensing-founder
