@@ -17,19 +17,6 @@ to use them optimally.
 Please also have a look at support for [](#cdc) solutions.
 
 
-## Amazon Kinesis
-
-Amazon Kinesis Data Streams is a serverless streaming data service that
-simplifies the capture, processing, and storage of data streams at any
-scale, such as application logs, website clickstreams, and IoT telemetry
-data, for machine learning (ML), analytics, and other applications.
-:::{div}
-The [DynamoDB CDC Relay] pipeline uses Amazon Kinesis to relay a table
-change stream from a DynamoDB table into a CrateDB table, see also
-[DynamoDB CDC](#cdc-dynamodb).
-:::
-
-
 ## Apache Airflow / Astronomer
 
 A set of starter tutorials.
@@ -84,6 +71,41 @@ kafka-connect
 ## Apache NiFi
 
 - [Connecting to CrateDB from Apache NiFi]
+
+
+## AWS DMS
+
+:::{div}
+[AWS Database Migration Service (AWS DMS)] is a managed migration and replication
+service that helps move your database and analytics workloads between different
+kinds of databases quickly, securely, and with minimal downtime and zero data
+loss. It supports migration between 20-plus database and analytics engines.
+
+AWS DMS supports migration between 20-plus database and analytics engines, either
+on-premises, or per EC2 instance databases. Supported data migration sources are:
+Amazon Aurora, Amazon DocumentDB, Amazon S3, IBM DB2, MariaDB, Azure SQL Database,
+Microsoft SQL Server, MongoDB, MySQL, Oracle, PostgreSQL, SAP ASE.
+
+The [AWS DMS Integration with CrateDB] uses Amazon Kinesis Data Streams as
+a DMS target, combined with a CrateDB-specific downstream processor element.
+
+CrateDB provides two variants how to conduct data migrations using AWS DMS.
+Either use it standalone / on your own premises, or use it in a completely
+managed environment with services of AWS and CrateDB Cloud.
+:::
+
+
+## AWS Kinesis
+
+Amazon Kinesis Data Streams is a serverless streaming data service that
+simplifies the capture, processing, and storage of data streams at any
+scale, such as application logs, website clickstreams, and IoT telemetry
+data, for machine learning (ML), analytics, and other applications.
+:::{div}
+The [DynamoDB CDC Relay] pipeline uses Amazon Kinesis to relay a table
+change stream from a DynamoDB table into a CrateDB table, see also
+[DynamoDB CDC](#cdc-dynamodb).
+:::
 
 
 ## Azure Functions

@@ -1,5 +1,7 @@
 [Amazon DynamoDB Streams]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html
 [Amazon Kinesis Data Streams]: https://docs.aws.amazon.com/streams/latest/dev/introduction.html
+[AWS Database Migration Service (AWS DMS)]: https://aws.amazon.com/dms/
+[AWS DMS Integration with CrateDB]: https://cratedb-toolkit.readthedocs.io/io/dms/
 [BM25]: https://en.wikipedia.org/wiki/Okapi_BM25
 [cloud-datashader-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/amo/cloud-datashader/topic/timeseries/explore/cloud-datashader.ipynb
 [cloud-datashader-github]: https://github.com/crate/cratedb-examples/blob/amo/cloud-datashader/topic/timeseries/explore/cloud-datashader.ipynb

@@ -273,13 +273,16 @@ Learn how to migrate your database use cases and workloads from Rockset to Crate
 
 ::::{grid-item-card}
 :::
-:::{rubric} Migrating DynamoDB workloads from Rockset to CrateDB
+:::{rubric} Migrating data using AWS DMS
+:::
+- [AWS DMS Integration with CrateDB]
+:::{rubric} Migrating data from DynamoDB to CrateDB
 :::
 - [DynamoDB Table Loader]
 - [DynamoDB CDC Relay]
 - [DynamoDB CDC Relay with AWS Lambda]
 - Blog: [Replicating CDC events from DynamoDB to CrateDB]
-:::{rubric} Migrating MongoDB workloads from Rockset to CrateDB
+:::{rubric} Migrating data from MongoDB to CrateDB
 :::
 - [MongoDB Table Loader]
 - [MongoDB CDC Relay]
