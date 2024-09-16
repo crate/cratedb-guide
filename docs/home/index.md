@@ -14,6 +14,10 @@ orphan: true
 
 # Welcome to CrateDB!
 
+Based on Lucene and inherited from Elasticsearch/OpenSearch, CrateDB supports
+time series, documents, and vectors, combining the simplicity of SQL with the
+scalability of a distributed architecture.
+
 CrateDB is designed to handle your demanding analytics and search workloads with
 ease. Here you'll find comprehensive resources including reference manuals,
 tutorials, example code, and more.
@@ -68,6 +72,8 @@ adapters, and connectors.
 
 CrateDB supports both the [HTTP protocol] and the [PostgreSQL wire protocol],
 ensuring compatibility with many PostgreSQL clients.
+Through corresponding drivers and adapters, CrateDB is compatible with [ODBC],
+[JDBC], and other database API specifications.
 :::
 
 ::::
