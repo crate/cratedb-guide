@@ -41,7 +41,6 @@ Tutorials and resources about configuring the managed variants, Astro and CrateD
 
 ## Apache Flink
 
-- {ref}`kafka-connect`
 - [Build a data ingestion pipeline using Kafka, Flink, and CrateDB]
 - [Community Day: Stream processing with Apache Flink and CrateDB]
 - [Executable stack with Apache Kafka, Apache Flink, and CrateDB]
@@ -61,12 +60,12 @@ Tutorials and resources about configuring the managed variants, Astro and CrateD
 - [Replicating data to CrateDB with Debezium and Kafka]
 - [Executable stack with Apache Kafka, Apache Flink, and CrateDB]
 :::
+
 ```{toctree}
 :hidden:
 
 kafka-connect
 ```
-
 
 ## Apache NiFi
 
