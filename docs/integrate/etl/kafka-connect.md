@@ -48,13 +48,13 @@ This results in the following architecture:
 ![image](/_assets/img/integrations/kafka-connect.png){width=650px}
 
 ## Setup
-To illustrate how this architecture can be used, we will create a scenario 
-where we have machine sensor data from a series of weather stations being 
+To illustrate how this architecture can be used, let's create a scenario 
+where machine sensor data from a series of weather stations is 
 ingested into a Kafka topic. This data could be used in a reactive sense: for 
 example, a micro-controller could consume from this topic to turn on air 
 conditioning if the temperature were to rise above a certain threshold. Aside
-this use of the data, we want to ingest it into CrateDB. This allows 
-us to do long term data analytics, like predicting the weather trends for 
+this use of the data, it should be stored into CrateDB. This allows 
+to do long term data analytics, like predicting the weather trends for 
 example. Payload from each sensor may look like this:
 
 ```json
