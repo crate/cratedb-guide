@@ -113,10 +113,12 @@ under a different name, or there may be a simple workaround for your use cases.
 | MONTHS(n)| `'n MONTHS'::INTERVAL`  |
 | PARSE_DATE_ISO8601(string)| `date_trunc('day',string::TIMESTAMP)`  |
 | PARSE_DATETIME_ISO8601(string)| `string::TIMESTAMP`  |
+| POSITION(substring IN string)| `strpos(string , substring)`  |
 | POW(x, y)| `power(x,y)`  |
 | RAND()| `random()`  |
 | SEQUENCE(start, stop[, step])| `generate_series`  |
 | SIGN(x)| See [^sign] for CrateDB <5.8  |
+| SPLIT(string, delimiter)[index]| `split_part(string, delimiter, index)` |
 | ST_ASTEXT(geography)| See [](#ST_ASTEXT) for `POLYGON`s  |
 | ST_GEOGFROMTEXT(well_known_text)| `well_known_text::geo_shape`  |
 | ST_GEOGPOINT(longitude, latitude)| `[longitude, latitude]::geo_point`  |
@@ -160,4 +162,4 @@ CREATE FUNCTION ST_ASTEXT(geography geo_shape)
 [OBJECT]: https://cratedb.com/docs/crate/reference/en/latest/general/ddl/data-types.html#objects
 [Rockset]: https://rockset.com/
 [UNNEST]: https://cratedb.com/docs/crate/reference/en/latest/general/builtins/table-functions.html#unnest-array-array
-[user-defined function (UDF)]: https://cratedb-guide--53.org.readthedocs.build/feature/udf/
+[user-defined function (UDF)]: https://cratedb.com/docs/crate/reference/en/latest/general/user-defined-functions.html
