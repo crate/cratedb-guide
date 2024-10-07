@@ -19,7 +19,6 @@ Please read this section carefully.
     Debian, Ubuntu <debian-ubuntu>
     Red Hat, SUSE <redhat>
     Windows <windows>
-    adhoc
     Tarball <tarball>
 
     container/index
@@ -146,8 +145,7 @@ Please read this section carefully.
 We recommend to use the package-based installation methods for :ref:`install-deb` and
 :ref:`install-rpm`, by subscribing to the corresponding package release channels.
 
-Alternatively, you can also download release archives and run CrateDB manually,
-by using the :ref:`install-adhoc` method.
+Alternatively, you can also do a `:ref:install-tarball`.
 
 
 *****
