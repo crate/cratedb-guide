@@ -1,6 +1,7 @@
 # Developer Guide
 
-Set up a development sandbox suitable for convenient editing with live
-reloading, i.e. just type `make dev`. Please refer to the [Authoring Guide].
+To set up a development sandbox and build the docs with live reloading
+functionality, type `make dev` in a terminal while inside the `docs` folder.
+Please refer to the [Authoring Guide] for more information.
 
 [Authoring Guide]: https://crate-docs-theme.readthedocs.io/en/latest/authoring.html
