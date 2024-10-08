@@ -115,7 +115,7 @@ Inverted Indexes for text values, BKD-trees for numeric values, and Doc Values.
 
 > When using CrateDB,
 > it's like you've stumbled into an alternative reality where Elastic is a
-> proper database.
+> proper database. [^es-advent]
 > 
 > -- Henrik Ingo, Nyrkiö Oy, independent database consultant, MongoDB
 
