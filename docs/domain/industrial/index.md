@@ -39,8 +39,7 @@ on top.
   {tags-info}`SPS`
 
 :Product:
-  [IoT database] •
-  [IIoT database]
+  [IoT database]
 
 :Related:
   [](#document) •
@@ -358,8 +357,7 @@ high variety, unstructured features, and at different data frequencies.
 [ABB: AI and Analytics applied to Industrial Data]: https://youtu.be/45fZYJLh2Qg?feature=shared
 [ABB Genix is improving industrial productivity and operational excellence]: https://cratedb.com/customers/abb
 [Scalable, High-Performance Database for FMCG]: https://cratedb.com/fmcg-database
-[IoT database]: https://cratedb.com/solutions/iot-database
-[IIoT database]: https://cratedb.com/iiot-database
+[IoT database]: https://cratedb.com/use-cases/iot-database
 [Rauch: High-Speed Production Lines]: https://youtu.be/gJPmJ0uXeVs?feature=shared
 [SPGo!: Monitoring and Predictive Maintenance]: https://youtu.be/eRqn7GhFO-s?feature=shared
 [SPGo!'s digital inspection of conveyor belts revolutionizes the market with CrateDB]: https://cratedb.com/customers/spgo

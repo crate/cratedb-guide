@@ -208,7 +208,7 @@ you when working with MongoDB.
 [CrateDB]: https://github.com/crate/crate
 [CrateDB Cloud]: https://console.cratedb.cloud/
 [CrateDB Toolkit MongoDB I/O subsystem]: https://cratedb-toolkit.readthedocs.io/io/mongodb/loader.html
-[Databases and Collections]: https://www.mongodb.com/docs/manual/core/databases-and-collections/#databases-and-collections
+[Databases and Collections]: https://www.mongodb.com/docs/manual/core/databases-and-collections/
 [migr8]: https://cratedb-toolkit.readthedocs.io/io/mongodb/migr8.html
 [MongoDB]: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-community-with-docker/
 [MongoDB Atlas]: https://www.mongodb.com/cloud/atlas
