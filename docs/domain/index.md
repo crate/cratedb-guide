@@ -120,8 +120,8 @@ analysis, data visualization, and machine learning.
 Learn how to integrate CrateDB with machine learning frameworks and tools.
 +++
 **What's inside:**
-Use CrateDB with LangChain, MLflow, PyCaret, scikit-learn,
-and TensorFlow.
+Use CrateDB with LangChain, LlamaIndex, MLflow, PyCaret, scikit-learn,
+or TensorFlow.
 :::
 
 
