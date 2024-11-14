@@ -7,6 +7,8 @@
 [cloud-datashader-github]: https://github.com/crate/cratedb-examples/blob/amo/cloud-datashader/topic/timeseries/explore/cloud-datashader.ipynb
 [CTE]: inv:crate-reference#sql_dql_with
 [CrateDB's PostgreSQL interface]: inv:crate-reference#interface-postgresql
+[dask-weather-data-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/timeseries/dask-weather-data-import.ipynb
+[dask-weather-data-github]: https://github.com/crate/cratedb-examples/blob/main/topic/timeseries/dask-weather-data-import.ipynb
 [Datashader]: https://datashader.org/
 [Dynamic Database Schemas]: https://cratedb.com/product/features/dynamic-schemas
 [DynamoDB CDC Relay]: https://cratedb-toolkit.readthedocs.io/io/dynamodb/cdc.html

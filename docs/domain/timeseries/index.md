@@ -17,10 +17,10 @@ PostgreSQL-compatible, and based on Lucene.
 :gutter: 2
 
 
-:::{grid-item-card} {material-outlined}`show_chart;2em` Basics
-:link: timeseries-basics
+:::{grid-item-card} {material-outlined}`show_chart;2em` Fundamentals
+:link: timeseries-fundamentals
 :link-type: ref
-:link-alt: Time series basics with CrateDB
+:link-alt: Time series fundamentals with CrateDB
 
 Basic introductory tutorials about using CrateDB with time series data.
 +++
@@ -43,6 +43,34 @@ anomaly detection, forecasting.
 :::
 
 
+:::{grid-item-card} {material-outlined}`smart_display;2em` Video Tutorials
+:link: timeseries-video
+:link-type: ref
+:link-alt: Video tutorials about time series with CrateDB
+
+Educational videos about time series data and CrateDB.
++++
+**What's inside:**
+Time series introduction. Importing, exporting,
+and analyzing. Industrial applications.
+:::
+
+
+:::{grid-item-card} {material-outlined}`school;2em` Academy » Advanced Time Series
+:link: https://cratedb.com/academy/time-series/
+:link-type: url
+:link-alt: Academy Resources: Advanced Time Series
+
+CrateDB Academy is a learning hub dedicated to empowering data enthusiasts with
+the tools and knowledge to harness the power of CrateDB.
++++
+
+**What's inside:**
+Data manipulation and visualization. Data Storage. Importing.
+Machine Learning on Time Series Data: EDA, Decomposition, AutoML.
+:::
+
+
 :::{grid-item-card} {material-outlined}`manage_history;2em` Long Term Storage
 :link: timeseries-longterm
 :link-type: ref
@@ -58,22 +86,16 @@ Optimizing storage for historic time series data.
 :::
 
 
-:::{grid-item-card} {material-outlined}`smart_display;2em` Video Tutorials
-:link: timeseries-video
-:link-type: ref
-:link-alt: Video tutorials about time series with CrateDB
-
-Educational videos about time series data and CrateDB.
-+++
-**What's inside:**
-Time series introduction. Importing, exporting,
-and analyzing. Industrial applications.
-:::
-
 ::::
 
 
 :::{seealso}
+
+**Domains:**
+[](#metrics-store) •
+[](#analytics) •
+[](#industrial) •
+[](#machine-learning)
 
 **Features:**
 [](#connect) •
@@ -82,11 +104,9 @@ and analyzing. Industrial applications.
 [](#fulltext) •
 [](#geospatial)
 
-**Domains:**
-[](#metrics-store) •
-[](#analytics) •
-[](#industrial) •
-[](#machine-learning)
+**Product:**
+[Time Series Data] •
+[White Paper: Guide for Time Series Data Projects]
 :::
 
 
@@ -98,3 +118,8 @@ Advanced <advanced>
 video
 Long Term Store <longterm>
 :::
+
+
+
+[Time Series Data]: https://cratedb.com/data-model/time-series
+[White Paper: Guide for Time Series Data Projects]: https://cratedb.com/resources/white-papers/lp-wp-time-series-guide
