@@ -72,6 +72,11 @@ When inserting spatial data, you can use [GeoJSON] or [WKT] formats.
 - [geohash()](inv:crate-reference#scalar-geohash)
 - [area()](inv:crate-reference#scalar-area)
 
+```{rubric} SQLAlchemy
+```
+- [Geopoint and Geoshape types][SQLAlchemy: Geopoint and Geoshape types]
+- [Working with geospatial types][SQLAlchemy: Working with geospatial types]
+
 ```{rubric} Related
 ```
 - {ref}`sql`
@@ -162,25 +167,84 @@ It supports the **intersects**, **disjoint**, and **within** operations.
 Learn how to use CrateDB's geospatial data types through ORM adapters,
 tutorials, or example applications.
 
-:::{rubric} Examples and Tutorials
+:::{rubric} Articles
 :::
-- [Geospatial Queries with CrateDB]
-- [Berlin and Geo Shapes in CrateDB]
+- [Geometric Shapes Indexing with BKD-trees]
+
+:::{rubric} Applications
+:::
 - [Spatial data demo application using CrateDB and the Express framework]
 - [Plane Spotting with Software Defined Radio (SDN), CrateDB and Node.js]
 
-:::{rubric} Webinars
+:::{rubric} Tutorials
 :::
-- [CrateDB: Querying Multi-Model Heterogeneous Time-Series Data with SQL]
+- [Geospatial Queries with CrateDB]
+- [Berlin and Geo Shapes in CrateDB]
 
-:::{rubric} Documentation
+:::{rubric} Videos
 :::
-- [SQLAlchemy Geopoint and Geoshape types]
-- [Working with geospatial types in SQLAlchemy]
 
-:::{rubric} In-Depth
+::::{info-card}
+
+:::{grid-item}
+:columns: auto auto 8 8
+**Getting Started with Geospatial Data in CrateDB**
+
+Discover how to effortlessly create a table and seamlessly import weather
+data into CrateDB in this video. Witness the power of CrateDB's time-series
+query capabilities in action with a weather dataset, showcasing the dynamic
+schema flexibility.
+
+[CrateDB: Querying Multi-Model Heterogeneous Time-Series Data with SQL]
+
+Dive deeper into CrateDB's multi-modal features with demonstrations on
+handling JSON, geospatial data, and conducting full-text searches.
 :::
-- [Geometric Shapes Indexing with BKD-trees]
+
+:::{grid-item}
+:columns: auto auto 4 4
+
+<iframe width="240" src="https://www.youtube-nocookie.com/embed/_WQrnu6luP4?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+&nbsp;
+
+{tags-primary}`Fundamentals` \
+{tags-secondary}`Geospatial Data`
+{tags-secondary}`SQL`
+:::
+::::
+
+
+::::{info-card}
+
+:::{grid-item}
+:columns: auto auto 8 8
+**Let's Go Plane Spotting with Software Defined Radio, CrateDB and Node.js!**
+
+Did you know that passing aircraft can be a rich source of real time data?
+This talk will teach you how to receive and make sense of messages from
+aircraft in real time using an ADS-B receiver / software defined radio.
+
+You'll see how to decode the messages, store them in a CrateDB database,
+and make sense of them. Finally, the talk demonstrates a system that alerts
+you when specific types of aircraft are passing by so you can run outside
+and see that 747 go past.
+
+The hardware involved is a Raspberry Pi, a Radarbox flight stick, and a
+flip dot sign. The software is written in JavaScript and runs on Node.js.
+:::
+
+:::{grid-item}
+:columns: auto auto 4 4
+
+<iframe width="240" src="https://www.youtube-nocookie.com/embed/YIUJTbrwlAs?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+&nbsp;
+
+{tags-primary}`Fundamentals` \
+{tags-secondary}`Geospatial Data`
+{tags-secondary}`SQL`
+:::
+::::
+
 
 :::{rubric} Testimonials
 :::
@@ -199,14 +263,6 @@ tutorials, or example applications.
 
 
 
-:::{note}
-{material-outlined}`construction;2em` This page is currently under construction.
-For example, the "Example" section is missing completely, the "Learn" section
-deserves a better layout, and it's also not in the same shape like the other
-pages in this section.
-:::
-
-
 [Apache Solr Spatial Search]: https://solr.apache.org/guide/solr/latest/query-guide/spatial-search.html
 [Berlin and Geo Shapes in CrateDB]: https://cratedb.com/blog/geo-shapes-in-cratedb
 [CrateDB: Querying Multi-Model Heterogeneous Time-Series Data with SQL]: https://cratedb.com/resources/videos/unleashing-the-power-of-multi-model-data-querying-heterogeneous-time-series-data-with-sql-in-cratedb
@@ -220,6 +276,6 @@ pages in this section.
 [Plane Spotting with Software Defined Radio (SDN), CrateDB and Node.js]: https://github.com/crate/devrel-plane-spotting-with-cratedb
 [Spatial data demo application using CrateDB and the Express framework]: https://github.com/crate/devrel-shipping-forecast-geo-demo
 [Spatially Health chooses CrateDB]: https://cratedb.com/customers/spatially-cratedb-location-analytics
-[SQLAlchemy Geopoint and Geoshape types]: inv:sqlalchemy-cratedb#geopoint
+[SQLAlchemy: Geopoint and Geoshape types]: inv:sqlalchemy-cratedb#geopoint
+[SQLAlchemy: Working with geospatial types]: https://cratedb.com/docs/sqlalchemy-cratedb/working-with-types.html#geospatial-types
 [WKT]: https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry
-[Working with geospatial types in SQLAlchemy]: https://cratedb.com/docs/sqlalchemy-cratedb/working-with-types.html#geospatial-types
