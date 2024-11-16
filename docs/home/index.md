@@ -51,29 +51,19 @@ data management across multiple cloud providers.
 :margin: 1
 :padding: 2
 
-:::{grid-item-card} {material-outlined}`lightbulb;1.7em` All Features
-:link: https://cratedb.com/docs/guide/feature/
-:link-alt: CrateDB: All features at a glance
+:::{grid-item-card} {material-outlined}`auto_stories;1.7em` Reference Manual
+:link: https://cratedb.com/docs/reference/
+:link-alt: CrateDB Reference Manual
 :padding: 2
 :class-title: sd-fs-5
 
-Explore all features of CrateDB at a glance.
-```{rubric} Functional
-```
-SQL, PostgreSQL-compatibility, Document Store (JSON),
-Relational / JOINs, Search: FTS+Geospatial+Vector+Hybrid, BLOB Store
-```{rubric} Operational
-```
-Clustering, Snapshots, Hybrid Index, Cloud Native
-```{rubric} Advanced
-```
-Server-Side Cursors, Foreign Data Wrapper, User-Defined
-Functions, Cross-Cluster Replication
+Explore our comprehensive reference manual for detailed information and guidance
+on using CrateDB, the open-source database system at the core of CrateDB Cloud.
 :::
 
 :::{grid-item-card} {material-outlined}`link;1.7em` Client Libraries
 :link: https://cratedb.com/docs/crate/clients-tools/en/latest/connect/
-:link-alt: CrateDB: Client Drivers and Libraries
+:link-alt: CrateDB Client Drivers and Libraries
 :padding: 2
 :class-title: sd-fs-5
 
@@ -82,25 +72,14 @@ adapters, and connectors.
 
 CrateDB supports both the [HTTP protocol] and the [PostgreSQL wire protocol],
 ensuring compatibility with many PostgreSQL clients.
-
 Through corresponding drivers and adapters, CrateDB is compatible with [ODBC],
 [JDBC], and other database API specifications.
 :::
 
-
 ::::
 
-:::{card} {material-outlined}`auto_stories;1.7em` Reference Manual
-:link: https://cratedb.com/docs/reference/
-:link-alt: CrateDB: Reference Manual
-:margin: 2
 
-Explore the comprehensive reference manual for detailed information and guidance
-on using CrateDB, the open-source database system at the core of CrateDB Cloud.
-:::
-
-
-## Learn
+## Guides and Tutorials 
 
 
 :::{rubric} Introduction
@@ -119,7 +98,7 @@ Learn about the fundamentals of CrateDB, guided and self-guided.
 :class-footer: text-smaller
 Getting Started
 ^^^
-{material-outlined}`not_started;3.5em`
+{material-outlined}`lightbulb;3.5em`
 +++
 Learn how to interact with the database for the first time.
 :::
