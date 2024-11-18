@@ -14,15 +14,14 @@ orphan: true
 
 Welcome to the official CrateDB Documentation. Whether you're a developer, database administrator, or just starting your journey with CrateDB, our documentation provides the information and knowledge needed to build real-time analytics and hybrid search applications that leverage CrateDB's unique features. 
 
-* Real-time indexing automatically indexes all columns, including nested structures, as data is ingested, eliminating the need to worry about indexing strategy;
-* The flexible data schema dynamically adapts based on the data you ingest, offering seamless integration and instant readiness for analysis;
+* Real-time indexing automatically indexes all columns, including nested structures, as data is ingested, eliminating the need to worry about indexing strategy.
+* The flexible data schema dynamically adapts based on the data you ingest, offering seamless integration and instant readiness for analysis.
 * Columnar storage enables ultra-fast aggregations, enabling instant AI-ready data-driven decisions and ad-hoc query performance.
-* The fully distributed SQL query engine, built on top of Apache Lucene, ensures performant aggregations and complex joins on large datasets of semi-
-structured data.
+* The fully distributed SQL query engine, built on top of Apache Lucene, ensures performant aggregations and complex joins on large datasets of semi-structured data.
 * Unified data platform approach enables analyzing relational, JSON, time-series, geospatial, full-text, and vector data within a single system, eliminating the need for multiple databases.
 * PostgreSQL wire protocol compatible SQL and HTTP interface makes integration with an extensive 3rd party ecosystem of AI/ML frameworks for advanced data analysis.
 
-::::{grid} 1
+::::::{grid} 1
 :margin: 1
 :padding: 2
 
@@ -34,19 +33,42 @@ structured data.
 :class-title: sd-fs-5
 
 Start with a fully managed CrateDB instance to accelerate and simplify working with analytical data. CrateDB Cloud enables seamless deployment, monitoring, backups, and scaling of CrateDB clusters on AWS, Azure or GCPs, eliminating the need for direct database management. With CrateDB Cloud, you can skip infrastructure setup and focus on delivering value for your business with a query console, SQL Scheduler, table policies and various connectors to import data.
-
-[Start forever free cluster with 8 GB of storage](https://cratedb.com/docs/cloud/tutorials/quick-start.html)
++++
+```{button-link} https://cratedb.com/docs/cloud/tutorials/quick-start.html
+:color: primary
+:expand:
+**Start forever free cluster with 8 GB of storage**
+```
 :::
 
-:::{card} {material-outlined}`auto_stories;1.7em` Database Manual
+:::::{grid-item}
+:margin: 0
+:padding: 2
+
+::::{grid} 2
+:margin: 0
+:padding: 0
+
+:::{grid-item-card} {material-outlined}`lightbulb;1.7em` Database Features
+:link: https://cratedb.com/docs/guide/feature/
+:link-alt: Database Features
+:class-title: sd-fs-5
+
+Explore all functional, operational and advanced features of CrateDB at a glance.
+:::
+
+:::{grid-item-card} {material-outlined}`auto_stories;1.7em` Database Manual
 :link: https://cratedb.com/docs/reference/
 :link-alt: Database Manual
-:margin: 2
+:class-title: sd-fs-5
+
 Learn core CrateDB concepts, including data modeling, querying data, aggregations, sharding, and more.
 :::
 
+::::
+:::::
 
-:::{card} {material-outlined}`link;1.7em` Client Libraries
+:::{grid-item-card} {material-outlined}`link;1.7em` Client Libraries
 :link: https://cratedb.com/docs/crate/clients-tools/en/latest/connect/
 :link-alt: CrateDB: Client Drivers and Libraries
 :padding: 2
@@ -61,6 +83,8 @@ ensuring compatibility with many PostgreSQL clients.
 Through corresponding drivers and adapters, CrateDB is compatible with [ODBC],
 [JDBC], and other database API specifications.
 :::
+
+::::::
 
 
 ## Learn
