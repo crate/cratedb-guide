@@ -12,14 +12,28 @@ orphan: true
 
 # CrateDB Documentation
 
-Welcome to the official CrateDB Documentation. Whether you're a developer, database administrator, or just starting your journey with CrateDB, our documentation provides the information and knowledge needed to build real-time analytics and hybrid search applications that leverage CrateDB's unique features. 
+Welcome to the official CrateDB Documentation. Whether you're a developer,
+database administrator, or just starting your journey with CrateDB, our
+documentation provides the information and knowledge needed to build
+real-time analytics and hybrid search applications that leverage CrateDB's
+unique features.
 
-* Real-time indexing automatically indexes all columns, including nested structures, as data is ingested, eliminating the need to worry about indexing strategy.
-* The flexible data schema dynamically adapts based on the data you ingest, offering seamless integration and instant readiness for analysis.
-* Columnar storage enables ultra-fast aggregations, enabling instant AI-ready data-driven decisions and ad-hoc query performance.
-* The fully distributed SQL query engine, built on top of Apache Lucene, ensures performant aggregations and complex joins on large datasets of semi-structured data.
-* Unified data platform approach enables analyzing relational, JSON, time-series, geospatial, full-text, and vector data within a single system, eliminating the need for multiple databases.
-* PostgreSQL wire protocol compatible SQL and HTTP interface makes integration with an extensive 3rd party ecosystem of AI/ML frameworks for advanced data analysis.
+* Real-time indexing automatically indexes all columns, including nested
+  structures, as data is ingested, eliminating the need to worry about
+  indexing strategy.
+* The flexible data schema dynamically adapts based on the data you ingest,
+  offering seamless integration and instant readiness for analysis.
+* Columnar storage enables ultra-fast aggregations, enabling instant AI-ready
+  data-driven decisions and ad-hoc query performance.
+* The fully distributed SQL query engine, built on top of Apache Lucene,
+  ensures performant aggregations and complex joins on large datasets of
+  semi-structured data.
+* Unified data platform approach enables analyzing relational, JSON,
+  time-series, geospatial, full-text, and vector data within a single system,
+  eliminating the need for multiple databases.
+* PostgreSQL wire protocol compatible SQL and HTTP interface makes integration
+  with an extensive 3rd party ecosystem of AI/ML frameworks for advanced data
+  analysis.
 
 ::::::{grid} 1
 :margin: 1
@@ -32,7 +46,13 @@ Welcome to the official CrateDB Documentation. Whether you're a developer, datab
 :padding: 2
 :class-title: sd-fs-5
 
-Start with a fully managed CrateDB instance to accelerate and simplify working with analytical data. CrateDB Cloud enables seamless deployment, monitoring, backups, and scaling of CrateDB clusters on AWS, Azure or GCPs, eliminating the need for direct database management. With CrateDB Cloud, you can skip infrastructure setup and focus on delivering value for your business with a query console, SQL Scheduler, table policies and various connectors to import data.
+Start with a fully managed CrateDB instance to accelerate and simplify working
+with analytical data. CrateDB Cloud enables seamless deployment, monitoring,
+backups, and scaling of CrateDB clusters on AWS, Azure or GCPs, eliminating
+the need for direct database management.
+With CrateDB Cloud, you can skip infrastructure setup and focus on delivering
+value for your business with a query console, SQL Scheduler, table policies
+and various connectors to import data.
 +++
 ```{button-link} https://cratedb.com/docs/cloud/tutorials/quick-start.html
 :color: primary
@@ -62,7 +82,8 @@ Explore all functional, operational and advanced features of CrateDB at a glance
 :link-alt: Database Manual
 :class-title: sd-fs-5
 
-Learn core CrateDB concepts, including data modeling, querying data, aggregations, sharding, and more.
+Learn core CrateDB concepts, including data modeling, querying data,
+aggregations, sharding, and more.
 :::
 
 ::::
