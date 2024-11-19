@@ -12,28 +12,33 @@ orphan: true
 
 # CrateDB Documentation
 
-Welcome to the official CrateDB Documentation. Whether you're a developer,
+Welcome to the official CrateDB Documentation. Whether you are a developer,
 database administrator, or just starting your journey with CrateDB, our
 documentation provides the information and knowledge needed to build
 real-time analytics and hybrid search applications that leverage CrateDB's
 unique features.
 
+:::{rubric} Benefits
+:::
+* In a unified data platform approach, CrateDB includes analyzing relational, JSON,
+  time-series, geospatial, full-text, and vector data within a single system,
+  eliminating the need for multiple databases.
+* The fully distributed SQL query engine, built on top of Apache Lucene,
+  and inheriting technologies from Elasticsearch/OpenSearch, provides performant
+  aggregations and advanced SQL features like JOINs and CTEs on large datasets
+  of semi-structured data.
 * Real-time indexing automatically indexes all columns, including nested
   structures, as data is ingested, eliminating the need to worry about
   indexing strategy.
 * The flexible data schema dynamically adapts based on the data you ingest,
   offering seamless integration and instant readiness for analysis.
-* Columnar storage enables ultra-fast aggregations, enabling instant AI-ready
-  data-driven decisions and ad-hoc query performance.
-* The fully distributed SQL query engine, built on top of Apache Lucene,
-  ensures performant aggregations and complex joins on large datasets of
-  semi-structured data.
-* Unified data platform approach enables analyzing relational, JSON,
-  time-series, geospatial, full-text, and vector data within a single system,
-  eliminating the need for multiple databases.
-* PostgreSQL wire protocol compatible SQL and HTTP interface makes integration
+* Columnar storage enables fast search query and aggregation performance.
+* PostgreSQL wire protocol compatibility and a HTTP interface provide versatile
+  integration capabilities.
+* AI-ready: The vector store subsystem integrates well
   with an extensive 3rd party ecosystem of AI/ML frameworks for advanced data
-  analysis.
+  analysis and data-driven decisions.
+
 
 ::::::{grid} 1
 :margin: 1
