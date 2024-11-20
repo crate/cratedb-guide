@@ -23,8 +23,8 @@
 :::
 CrateDB can be used as a [vector database] (VDBMS) for storing and retrieving
 vector embeddings based on the FLOAT_VECTOR data type and its accompanying
-KNN_MATCH function, effectively conducting HNSW semantic similarity searches
-on them, also known as vector search.
+KNN_MATCH and VECTOR_SIMILARITY functions, effectively conducting HNSW
+semantic similarity searches on them, also known as vector search.
 
 :::{rubric} About
 :::
@@ -60,6 +60,7 @@ with Lucene Vector Search using SQL.
 ```
 - [FLOAT_VECTOR](inv:crate-reference#type-float_vector)
 - [KNN_MATCH](inv:crate-reference#scalar_knn_match)
+- [VECTOR_SIMILARITY](inv:crate-reference#scalar_vector_similarity)
 
 ```{rubric} Related
 ```
@@ -121,10 +122,16 @@ VALUES
 **DQL**
 
 ```sql
-SELECT text, _score
+WITH param AS
+  (SELECT [0.3, 0.6, 0.0, 0.9] AS sv)
+SELECT
+  text,
+  VECTOR_SIMILARITY(embedding,
+    (SELECT sv FROM param)) AS score
 FROM word_embeddings
-WHERE KNN_MATCH(embedding,[0.3, 0.6, 0.0, 0.9], 2)
-ORDER BY _score DESC;
+WHERE KNN_MATCH(
+  embedding, (SELECT sv FROM param), 2)
+ORDER BY score DESC;
 ```
 :::
 
@@ -134,7 +141,7 @@ ORDER BY _score DESC;
 
 ```text
 +----------------------+-----------+
-| text                 |    _score |
+| text                 |     score |
 +----------------------+-----------+
 | Discovering galaxies | 0.9174312 |
 | Exploring the cosmos | 0.9090909 |
@@ -212,7 +219,8 @@ of an example exercising a RAG workflow.
 
 It uses the white-paper [Time series data in manufacturing] as input data,
 generates embeddings using OpenAI's ChatGPT, stores them into a table
-using `FLOAT_VECTOR(1536)`, and queries it using the `KNN_MATCH` function.
+using `FLOAT_VECTOR(1536)`, and queries it using the `KNN_MATCH` and
+`VECTOR_SIMILARITY` functions.
 
 {{ '{}[langchain-rag-sql-github]'.format(nb_github) }} {{ '{}[langchain-rag-sql-colab]'.format(nb_colab) }} {{ '{}[langchain-rag-sql-binder]'.format(nb_binder) }}
 :::
