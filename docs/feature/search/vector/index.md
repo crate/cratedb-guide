@@ -91,7 +91,7 @@ distance.
 :class-row: title-slim
 
 :::{grid-item}
-:columns: auto 6 6 6
+:columns: auto 5 5 5
 **DDL**
 
 ```sql
@@ -103,7 +103,7 @@ CREATE TABLE word_embeddings (
 :::
 
 :::{grid-item}
-:columns: auto 6 6 6
+:columns: auto 7 7 7
 **DML**
 
 ```sql
@@ -118,7 +118,7 @@ VALUES
 :::
 
 :::{grid-item}
-:columns: auto 6 6 6
+:columns: auto 7 7 7
 **DQL**
 
 ```sql
@@ -126,17 +126,19 @@ WITH param AS
   (SELECT [0.3, 0.6, 0.0, 0.9] AS sv)
 SELECT
   text,
-  VECTOR_SIMILARITY(embedding,
-    (SELECT sv FROM param)) AS score
-FROM word_embeddings
-WHERE KNN_MATCH(
-  embedding, (SELECT sv FROM param), 2)
-ORDER BY score DESC;
+  VECTOR_SIMILARITY(embedding, (SELECT sv FROM param))
+    AS score
+FROM
+  word_embeddings
+WHERE
+  KNN_MATCH(embedding, (SELECT sv FROM param), 2)
+ORDER BY
+  score DESC;
 ```
 :::
 
 :::{grid-item}
-:columns: auto 6 6 6
+:columns: auto 5 5 5
 **Result**
 
 ```text
