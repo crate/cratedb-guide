@@ -50,6 +50,7 @@ Start with a fully managed CrateDB instance to accelerate and simplify working
 with analytical data. CrateDB Cloud enables seamless deployment, monitoring,
 backups, and scaling of CrateDB clusters on AWS, Azure or GCPs, eliminating
 the need for direct database management.
+
 With CrateDB Cloud, you can skip infrastructure setup and focus on delivering
 value for your business with a query console, SQL Scheduler, table policies
 and various connectors to import data.
