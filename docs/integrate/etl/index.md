@@ -41,10 +41,11 @@ Tutorials and resources about configuring the managed variants, Astro and CrateD
 
 ## Apache Flink
 
-- [Build a data ingestion pipeline using Kafka, Flink, and CrateDB]
-- [Community Day: Stream processing with Apache Flink and CrateDB]
-- [Executable stack with Apache Kafka, Apache Flink, and CrateDB]
+:::{toctree}
+:maxdepth: 1
 
+../apache-flink/index
+:::
 
 
 ## Apache Hop
@@ -207,9 +208,7 @@ streamsets
 [Automating export of CrateDB data to S3 using Apache Airflow]: https://community.cratedb.com/t/cratedb-and-apache-airflow-automating-data-export-to-s3/901
 [Automating stock data collection and storage with CrateDB and Apache Airflow]: https://community.cratedb.com/t/automating-stock-data-collection-and-storage-with-cratedb-and-apache-airflow/990
 [Automating the import of Parquet files with Apache Airflow]: https://community.cratedb.com/t/automating-the-import-of-parquet-files-with-apache-airflow/1247
-[Build a data ingestion pipeline using Kafka, Flink, and CrateDB]: https://dev.to/crate/build-a-data-ingestion-pipeline-using-kafka-flink-and-cratedb-1h5o
 [Building a hot and cold storage data retention policy in CrateDB with Apache Airflow]: https://community.cratedb.com/t/cratedb-and-apache-airflow-building-a-hot-cold-storage-data-retention-policy/934
-[Community Day: Stream processing with Apache Flink and CrateDB]: https://cratedb.com/blog/cratedb-community-day-2nd-edition-summary-and-highlights
 [Connecting to CrateDB from Apache NiFi]: https://community.cratedb.com/t/connecting-to-cratedb-from-apache-nifi/647
 [CrateDB and Apache Airflow: Building a data ingestion pipeline]: https://community.cratedb.com/t/cratedb-and-apache-airflow-building-a-data-ingestion-pipeline/926 
 [CrateDB Apache Hop Bulk Loader transform]: https://hop.apache.org/manual/latest/pipeline/transforms/cratedb-bulkloader.html
