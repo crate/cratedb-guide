@@ -54,6 +54,7 @@ Kinesis Stream, and consume that from an adapter to a consolidation database.
 - See: [](#cdc-dynamodb)
 :::
 
+(debezium)=
 ## Debezium
 Debezium is an open source distributed platform for change data capture (CDC).
 It is built on top of Apache Kafka, a distributed streaming platform. It allows

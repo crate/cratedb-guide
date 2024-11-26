@@ -1,5 +1,6 @@
 (analysis)=
 (bi)=
+(bi-tools)=
 
 # Business Intelligence
 

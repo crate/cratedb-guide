@@ -17,6 +17,8 @@ to use them optimally.
 Please also have a look at support for [](#cdc) solutions.
 
 
+(airflow)=
+(apache-airflow)=
 ## Apache Airflow / Astronomer
 
 A set of starter tutorials.
@@ -121,7 +123,11 @@ azure-functions
 
 ## dbt
 
-- [Using dbt with CrateDB]
+:::{toctree}
+:maxdepth: 1
+
+../dbt/index
+:::
 
 
 ## DynamoDB
@@ -216,7 +222,7 @@ streamsets
 [ETL pipeline using Apache Airflow with CrateDB (Source)]: https://github.com/astronomer/astro-cratedb-blogpost
 [ETL with Astro and CrateDB Cloud in 30min - fully up in the cloud]: https://www.astronomer.io/blog/run-etlelt-with-airflow-and-cratedb/
 [Examples about working with CrateDB and Meltano]: https://github.com/crate/cratedb-examples/tree/amo/meltano/framework/singer-meltano
-[Executable stack with Apache Kafka, Apache Flink, and CrateDB]: https://github.com/crate/cratedb-examples/tree/main/application/apache-kafka-flink
+[Executable stack with Apache Kafka, Apache Flink, and CrateDB]: https://github.com/crate/cratedb-examples/tree/main/framework/flink/kafka-jdbcsink-java
 [Implementing a data retention policy in CrateDB using Apache Airflow]: https://community.cratedb.com/t/implementing-a-data-retention-policy-in-cratedb-using-apache-airflow/913 
 [Ingesting MQTT messages into CrateDB using Node-RED]: https://community.cratedb.com/t/ingesting-mqtt-messages-into-cratedb-using-node-red/803
 [meltano-tap-cratedb]: https://github.com/crate-workbench/meltano-tap-cratedb
@@ -225,5 +231,4 @@ streamsets
 [Setting up data pipelines with CrateDB and Kestra]: https://community.cratedb.com/t/setting-up-data-pipelines-with-cratedb-and-kestra-io/1400
 [Updating stock market data automatically with CrateDB and Apache Airflow]: https://community.cratedb.com/t/updating-stock-market-data-automatically-with-cratedb-and-apache-airflow/1304
 [Using Apache Hop with CrateDB]: https://community.cratedb.com/t/using-apache-hop-with-cratedb/1754
-[Using dbt with CrateDB]: https://community.cratedb.com/t/using-dbt-with-cratedb/1566
 [Using SQL Server Integration Services with CrateDB]: https://github.com/crate/cratedb-examples/tree/main/application/microsoft-ssis
