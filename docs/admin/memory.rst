@@ -23,9 +23,16 @@ The right memory configuration depends on your workloads.
 Recommendation
 ==============
 
-A good starting point for the heap space is 25% of the system memory. However,
-it shouldn't be set below 1GB and not above 30.5GB, see the limits section
-below.
+A good starting point for the heap space is 25% of the system memory.
+
+Be careful when configuring this, as making the heap too large may lead to OutOfMemory errors,
+if the operating system cannot allocate memory for other needs, and on the other hand, making
+the heap too small may lead to OutOfMemory errors when new Java objects cannot be allocated
+inside the heap.
+
+In any case, it shouldn't be set below 1GB and not above 30.5GB,
+See the limits section below.
+
 
 Considerations
 ==============
@@ -40,6 +47,10 @@ Consider the following when determining the right value:
   collection times **increase** with a bigger heap, leading to **increased**
   latency. Therefore, your heap size shouldn't be too large.
 
+- The optimal heap size is workload dependent. Be sure to test carefully
+  if you want to change the default, as wrong values may cause CrateDB to crash
+  with OutOfMemory errors.
+
 - CrateDB needs to be able to hold all the structures required to process
   queries in memory. The biggest offender are intermediate or final result
   sets. Therefore, the heap region must be large enough to hold the biggest
@@ -49,6 +60,9 @@ Consider the following when determining the right value:
 - CrateDB uses `Memory mapped files`_ via `Lucene`_. This reduces the
   amount of heap space required and benefits from the file system cache.
 
+- Both to keep latency down, and to enable use of heap sizes above 32 GB,
+  it is also possible to use one of the newer garbage collectors, such as ZGC.
+  These are known to have worked, but aren't officially tested nor supported.
 
 .. _swap:
 
