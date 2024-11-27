@@ -12,26 +12,70 @@ By running your database cluster on multiple nodes, you will gain two benefits.
   of replica nodes.
 
 
+:::{toctree}
+:maxdepth: 1
+:hidden:
+
+Expand <expand>
+On-Demand <demand>
+Autoscale <auto>
+On Kubernetes <kubernetes>
+:::
+
+
+## Learn
+
+:::::{grid}
+
+::::{grid-item-card}
+:link: scale-expand
+:link-type: ref
 (scaling-expand)=
-## Expand Cluster
+:::{rubric} Expand Cluster
+:::
+Learn how to add new nodes to an existing CrateDB database cluster
+running on your premises, in order to expand its capacity using
+horizontal scaling.
++++
+{hyper-tutorial}`scale-expand`
+::::
 
-The article about [how to add new nodes to an existing cluster] walks you
-through the process of scaling up your database cluster, and educates you
-about the corresponding details to consider.
-
-
+::::{grid-item-card}
+:link: scale-demand
+:link-type: ref
 (scaling-ondemand)=
-## Scale On-Demand
+:::{rubric} On-Demand Scaling
+:::
+Learn how to use CrateDB's [shard allocation filtering] feature in
+practice, in order to scale CrateDB clusters up and down to cope
+with peaks in high-demand situations. 
++++
+{hyper-tutorial}`scale-demand`
+::::
 
-The article about [scaling CrateDB clusters up and down to cope with peaks in
-demand] shares knowledge about the [shard allocation filtering] feature of
-CrateDB.
+::::{grid-item-card}
+:link: scale-auto
+:link-type: ref
+(scaling-autoscale)=
+:::{rubric} Automatic Scaling
+:::
+Learn how to automatically scale your CrateDB Cloud Cluster based on a
+threshold on the number of shards in a cluster, using the
+CrateDB Cloud REST API.
++++
+{hyper-tutorial}`scale-auto`
+::::
+:::::
 
-Along the lines, it demonstrates how this functionality is applied in a real-
-world data management scenario, which is about tuning your database cluster to
-cope with high-demand situations.
 
-Prepare adding extra nodes to the database cluster.
+## Synopsis
+
+A rough walkthrough how resource management works in CrateDB, to manage
+high-demand / peak situations.
+
+:::{rubric} Provision Resources
+:::
+Prepare by adding extra nodes to the database cluster.
 ```sql
 /* Apply routing setting to all existing partitions and new partitions. */
 ALTER TABLE test SET ("routing.allocation.exclude.storage" = 'temporarynodes');
@@ -40,13 +84,18 @@ ALTER TABLE test SET ("routing.allocation.exclude.storage" = 'temporarynodes');
 ALTER TABLE ONLY test RESET ("routing.allocation.exclude.storage");
 ```
 
-Before the high-demand event, properly configure table routing accordingly.
+:::{rubric} Scale Up
+:::
+Right before the high-demand event, adjust the table routing,
+so the cluster will use additional resources.
 ```sql
 ALTER TABLE ONLY test SET ("routing.allocation.total_shards_per_node" = 2);
 ```
 
-To decommission extra database nodes, we need to move the data collected during
-the days of the event.
+:::{rubric} Scale Down
+:::
+To decommission excess database nodes, move the data collected during
+the days of the event away.
 ```sql
 -- Move the collected data off the extra nodes.
 ALTER TABLE test SET ("routing.allocation.exclude.storage" = 'temporarynodes');
@@ -58,5 +107,5 @@ ALTER CLUSTER DECOMMISSION 'nodename';
 
 
 [how to add new nodes to an existing cluster]: https://community.cratedb.com/t/how-to-add-new-nodes-to-an-existing-cluster/1546
-[scaling CrateDB clusters up and down to cope with peaks in demand]: https://community.cratedb.com/t/scaling-cratedb-clusters-up-and-down-to-cope-with-peaks-in-demand/1314
+[how to scale CrateDB clusters up and down to cope with peaks in demand]: https://community.cratedb.com/t/scaling-cratedb-clusters-up-and-down-to-cope-with-peaks-in-demand/1314
 [shard allocation filtering]: inv:crate-reference#ddl_shard_allocation

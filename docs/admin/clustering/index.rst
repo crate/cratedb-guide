@@ -12,8 +12,7 @@ adding more nodes. This section of the documentation covers that topic.
 .. toctree::
    :maxdepth: 1
 
-   multi-node-setup
-   multi-zone-setup
-   scale/index
-   scale/kubernetes
-   logical-replication-setup
+   Multi-Node Setup <multi-node-setup>
+   Multi-Zone Setup <multi-zone-setup>
+   Scale Clusters <scale/index>
+   Logical Replication <logical-replication-setup>
