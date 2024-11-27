@@ -252,46 +252,15 @@ solution.
 :::
 
 
-(llamaindex)=
+(ml-llamaindex)=
 ### LlamaIndex
 
-[LlamaIndex] is a data framework for Large Language Models (LLMs). It comes with
-pre-trained models on massive public datasets such as GPT-4 or Llama 2, and
-provides an interface to external data sources allowing for natural language
-querying on your private data.
+:::{toctree}
+:maxdepth: 1
 
-Azure Open AI Service is a fully managed service that runs on the Azure global
-infrastructure and allows developers to integrate OpenAI models into their
-applications. Through Azure Open AI API one can easily access a wide range of
-AI models in a scalable and reliable way.
-
-What can you do with LlamaIndex?
-
-- [LlamaIndex: Building a RAG pipeline]
-- [LlamaIndex: Building an Agent]
-- [LlamaIndex: Using Workflows]
-
-::::{info-card}
-:::{grid-item}
-:columns: 9
-**Demo: Using LlamaIndex with OpenAI and CrateDB**
-
-- Connect your CrateDB data to an LLM using OpenAI or Azure OpenAI.
-- Query the database in human language,
-  i.e. query CrateDB in plain English.
-
-{hyper-tutorial}`[LlamaIndex and CrateDB: Tutorial]`
-[![README](https://img.shields.io/badge/Open-README-darkblue?logo=GitHub)][LlamaIndex and CrateDB: Code Examples]
-[![Program on GitHub](https://img.shields.io/badge/Open%20on-GitHub-darkgreen?logo=GitHub)][llamaindex-nlquery-github]
+../../integrate/llamaindex/index
 :::
-:::{grid-item}
-:columns: 3
-{tags-primary}`Fundamentals` \
-{tags-secondary}`LLM` \
-{tags-secondary}`NLP` \
-{tags-secondary}`RAG`
-:::
-::::
+
 
 
 ```{toctree}
@@ -310,13 +279,6 @@ tensorflow
 [How to set up LangChain with CrateDB]: https://community.cratedb.com/t/how-to-set-up-langchain-with-cratedb/1576
 [How to Use Private Data in Generative AI]: https://youtu.be/icquKckM4o0?feature=shared
 [Jupyter Notebook]: https://jupyter.org/
-[LlamaIndex]: https://www.llamaindex.ai/framework
-[LlamaIndex: Building a RAG pipeline]: https://docs.llamaindex.ai/en/stable/understanding/rag/
-[LlamaIndex: Building an Agent]: https://docs.llamaindex.ai/en/stable/understanding/agent/
-[LlamaIndex: Using Workflows]: https://docs.llamaindex.ai/en/stable/understanding/workflows/
-[LlamaIndex and CrateDB: Code Examples]: https://github.com/crate/cratedb-examples/tree/main/topic/machine-learning/llama-index
-[LlamaIndex and CrateDB: Tutorial]: https://community.cratedb.com/t/how-to-connect-your-cratedb-data-to-llm-with-llamaindex-and-azure-openai/1612
-[llamaindex-nlquery-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/llama-index/main.py
 [Machine Learning and CrateDB: An introduction]: https://cratedb.com/blog/machine-learning-and-cratedb-part-one
 [Machine Learning and CrateDB: Getting Started With Jupyter]: https://cratedb.com/blog/machine-learning-cratedb-jupyter
 [Machine Learning and CrateDB: Experiment Design & Linear Regression]: https://cratedb.com/blog/machine-learning-and-cratedb-part-three-experiment-design-and-linear-regression
