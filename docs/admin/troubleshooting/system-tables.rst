@@ -275,7 +275,73 @@ table, which lists all shards in the cluster.
     SELECT ... in set (... sec)
 
 
-Step 6: Manage snapshots
+Step 6: Analyze queries
+=======================
+
+To understand the load on the cluster, analyzing resource consumption of
+queries issued against the cluster can give good indications.
+
+CrateDB exposes currently running and already running queries through some
+system table, namely:
+
+- :ref:`sys.jobs <crate-reference:sys-jobs>`
+  This exposes information about a complete, still running, query.
+- :ref:`sys.jobs_log <crate-reference:sys-logs>`
+  Same as :ref:`sys.jobs <crate-reference:sys-jobs>`, but contains only finished
+  queries.
+- :ref:`sys.operations <crate-reference:sys-operations>`
+  This exposes information about concrete execution operations of each query.
+- :ref:`sys.operations_log <crate-reference:sys-logs>`
+  Same as :ref:`sys.operations <crate-reference:sys-operations>`, but contains
+  only finished operations.
+
+See also :ref:`crate-reference:jobs_operations_logs` for more detailed information
+about these tables.
+
+To figure out the runtime of a currently running query and how much memory it
+used, these table must be joined together as the memory is accounted per
+*operation*. On an idling cluster with no other query running, this will just
+show our own diagnostic query::
+
+
+    cr> SELECT
+    ...   j.id,
+    ...   now() - j.started as runtime,
+    ...   sum(used_bytes) as used_bytes,
+    ...   count(*) as ops,
+    ...   j.stmt
+    ... FROM sys.jobs j
+    ... JOIN sys.operations o ON j.id = o.job_id
+    ... GROUP BY j.id, j.stmt, runtime;
+    +--...-+---...----+------------+-----+----------------------...------------------------+
+    | id   | runtime  | used_bytes | ops | stmt                                            |
+    +--...-+---...----+------------+-----+----------------------...------------------------+
+    | ...  | ...      |    ...     |  13 | select j.id, now() - j.started as runtime, ...; |
+    +--...-+---...----+------------+-----+----------------------...------------------------+
+    SELECT 1 row in set (... sec)
+
+To get the same information about already ran queries, the ``sys.jobs_log`` and
+``sys.operations_log`` must be used, otherwise the query is almost the same::
+
+
+    cr> SELECT
+    ...   j.id,
+    ...   j.ended - j.started as runtime,
+    ...   sum(used_bytes) as used_bytes,
+    ...   count(*) as ops,
+    ...   j.stmt
+    ... FROM sys.jobs_log j
+    ... JOIN sys.operations_log o ON j.id = o.job_id
+    ... GROUP BY j.id, j.stmt, runtime;
+    +--...-+---...----+------------+-----+----------------------...------------------------+
+    | id   | runtime  | used_bytes | ops | stmt                                            |
+    +--...-+---...----+------------+-----+----------------------...------------------------+
+    | ...  | ...      |    ...     |  13 | select j.id, now() - j.started as runtime, ...; |
+    +--...-+---...----+------------+-----+----------------------...------------------------+
+    SELECT 1 row in set (... sec)
+
+
+Step 7: Manage snapshots
 ========================
 
 Finally: if your repair efforts did not succeed, and your application or users
