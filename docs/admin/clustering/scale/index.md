@@ -1,5 +1,5 @@
 (scaling-clusters)=
-# Scaling Clusters Up and Down
+# Scale Clusters Up and Down
 
 A significant feature in CrateDB is that it can scale horizontally, which means
 that instead of adding more RAM, CPU, and disk resources to existing nodes, you
@@ -21,7 +21,7 @@ about the corresponding details to consider.
 
 
 (scaling-ondemand)=
-## On-Demand Scaling
+## Scale On-Demand
 
 The article about [scaling CrateDB clusters up and down to cope with peaks in
 demand] shares knowledge about the [shard allocation filtering] feature of

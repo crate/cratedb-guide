@@ -1,8 +1,8 @@
 .. _scaling-kube:
 
-=============================
-Scaling CrateDB on Kubernetes
-=============================
+===========================
+Scale CrateDB on Kubernetes
+===========================
 
 CrateDB and `Docker`_ are a great match thanks to CrateDB’s `horizontally
 scalable`_ `shared-nothing architecture`_ that lends itself well to
