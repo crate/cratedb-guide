@@ -106,6 +106,36 @@ ALTER CLUSTER DECOMMISSION 'nodename';
 ```
 
 
+## Advices
+
+Please apply best-practice operation guidelines when managing your database
+cluster.
+
+:::{tip}
+:class: hero font-large
+
+For safely adding or decommissioning nodes, it is a good idea to
+add and remove only one node at a time.
+:::
+
+:::{caution}
+:class: hero font-large
+
+When restarting, shutting down, or when removing nodes from a cluster, using
+the `DECOMMISSION` command, you must be conscious about maintaining a quorum
+of nodes up and connected to the cluster as a whole, even if some nodes would
+no longer have any data.
+:::
+
+
+
+<style>
+.font-large {
+  font-size: large !important;
+}
+</style>
+
+
 [how to add new nodes to an existing cluster]: https://community.cratedb.com/t/how-to-add-new-nodes-to-an-existing-cluster/1546
 [how to scale CrateDB clusters up and down to cope with peaks in demand]: https://community.cratedb.com/t/scaling-cratedb-clusters-up-and-down-to-cope-with-peaks-in-demand/1314
 [shard allocation filtering]: inv:crate-reference#ddl_shard_allocation
