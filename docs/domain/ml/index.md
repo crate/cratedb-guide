@@ -242,111 +242,14 @@ solution.
 ::::
 
 
-(langchain)=
+(ml-langchain)=
 ### LangChain
 
-Tutorials and Notebooks about using [LangChain] together with CrateDB.
-LangChain has a number of components designed to help build Q&A applications,
-and RAG applications more generally.
-This feature uses CrateDB's Vector Store implementation.
+:::{toctree}
+:maxdepth: 1
 
-- What can you build with LangChain?
-
-  - [LangChain: Retrieval augmented generation]
-  - [LangChain: Analyzing structured data]
-  - [LangChain: Chatbots]
-  - [LangChain: Q&A with SQL]
-
-
-::::{info-card}
-:::{grid-item}
-:columns: 9
-**Tutorial: Set up LangChain with CrateDB**
-
-LangChain is a framework for developing applications powered by language models.
-For this tutorial, we are going to use it to interact with CrateDB using only
-natural language without writing any SQL.
-
-To achieve that, you will need a CrateDB instance running, an OpenAI API key,
-and some Python knowledge.
-
-[![Navigate to Tutorial](https://img.shields.io/badge/Navigate%20to-Tutorial-darkblue?logo=Markdown)][How to set up LangChain with CrateDB]
+../../integrate/langchain/index
 :::
-:::{grid-item}
-:columns: 3
-{tags-primary}`Fundamentals` \
-{tags-secondary}`Vector Store` \
-{tags-secondary}`LLM` \
-{tags-secondary}`RAG`
-:::
-::::
-
-
-::::{info-card}
-:::{grid-item}
-:columns: 9
-**Notebook: Vector Similarity Search**
-
-CrateDB's `FLOAT_VECTOR` type and its `KNN_MATCH` function can be used
-for storing and retrieving embeddings, and for conducting similarity
-searches.
-
-[![README](https://img.shields.io/badge/Open-README-darkblue?logo=GitHub)][LangChain and CrateDB: Code Examples]
-[![Notebook on GitHub](https://img.shields.io/badge/Open%20on-GitHub-darkgreen?logo=GitHub)][langchain-similarity-github]
-[![Notebook on Colab](https://img.shields.io/badge/Open%20on-Colab-blue?logo=Google%20Colab)][langchain-similarity-colab]
-[![Notebook on Binder](https://img.shields.io/badge/Open%20on-Binder-lightblue?logo=binder)][langchain-similarity-binder]
-:::
-:::{grid-item}
-:columns: 3
-{tags-primary}`Fundamentals` \
-{tags-secondary}`Vector Store` \
-{tags-secondary}`LLM` \
-{tags-secondary}`RAG`
-:::
-::::
-
-
-::::{info-card}
-:::{grid-item}
-:columns: 9
-**Notebook: SQLAlchemy Document Loader**
-
-Database tables in CrateDB can be used as a source provider for
-LangChain documents.
-
-[![README](https://img.shields.io/badge/Open-README-darkblue?logo=GitHub)][LangChain and CrateDB: Code Examples]
-[![Notebook on GitHub](https://img.shields.io/badge/Open%20on-GitHub-darkgreen?logo=GitHub)][langchain-document-loader-github]
-[![Notebook on Colab](https://img.shields.io/badge/Open%20on-Colab-blue?logo=Google%20Colab)][langchain-document-loader-colab]
-[![Notebook on Binder](https://img.shields.io/badge/Open%20on-Binder-lightblue?logo=binder)][langchain-document-loader-binder]
-:::
-:::{grid-item}
-:columns: 3
-{tags-primary}`Fundamentals` \
-{tags-secondary}`Vector Store` \
-{tags-secondary}`Data I/O`
-:::
-::::
-
-
-::::{info-card}
-:::{grid-item}
-:columns: 9
-**Notebook: Conversational History**
-
-CrateDB supports managing LangChain's conversation history.
-
-[![README](https://img.shields.io/badge/Open-README-darkblue?logo=GitHub)][LangChain and CrateDB: Code Examples]
-[![Notebook on GitHub](https://img.shields.io/badge/Open%20on-GitHub-darkgreen?logo=GitHub)][langchain-conversational-history-github]
-[![Notebook on Colab](https://img.shields.io/badge/Open%20on-Colab-blue?logo=Google%20Colab)][langchain-conversational-history-colab]
-[![Notebook on Binder](https://img.shields.io/badge/Open%20on-Binder-lightblue?logo=binder)][langchain-conversational-history-binder]
-:::
-:::{grid-item}
-:columns: 3
-{tags-primary}`Fundamentals` \
-{tags-secondary}`Vector Store` \
-{tags-secondary}`History`
-:::
-::::
 
 
 (llamaindex)=
@@ -407,17 +310,6 @@ tensorflow
 [How to set up LangChain with CrateDB]: https://community.cratedb.com/t/how-to-set-up-langchain-with-cratedb/1576
 [How to Use Private Data in Generative AI]: https://youtu.be/icquKckM4o0?feature=shared
 [Jupyter Notebook]: https://jupyter.org/
-[LangChain]: https://python.langchain.com/
-[LangChain: Analyzing structured data]: https://python.langchain.com/docs/how_to/#extraction
-[LangChain: Chatbots]: https://python.langchain.com/docs/how_to/#chatbots
-[LangChain: Q&A with SQL]: https://python.langchain.com/docs/how_to/#qa-over-sql--csv
-[LangChain: Retrieval augmented generation]: https://python.langchain.com/docs/tutorials/sql_qa/
-[langchain-conversational-history-binder]: https://mybinder.org/v2/gh/crate/cratedb-examples/main?labpath=topic%2Fmachine-learning%2Fllm-langchain%2Fconversational_memory.ipynb
-[langchain-conversational-history-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/llm-langchain/conversational_memory.ipynb
-[langchain-conversational-history-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/llm-langchain/conversational_memory.ipynb
-[langchain-document-loader-binder]: https://mybinder.org/v2/gh/crate/cratedb-examples/main?labpath=topic%2Fmachine-learning%2Fllm-langchain%2Fdocument_loader.ipynb
-[langchain-document-loader-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/llm-langchain/document_loader.ipynb
-[langchain-document-loader-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/llm-langchain/document_loader.ipynb
 [LlamaIndex]: https://www.llamaindex.ai/framework
 [LlamaIndex: Building a RAG pipeline]: https://docs.llamaindex.ai/en/stable/understanding/rag/
 [LlamaIndex: Building an Agent]: https://docs.llamaindex.ai/en/stable/understanding/agent/
