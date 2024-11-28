@@ -48,8 +48,7 @@ We want to make sure that the addition of the temporary nodes does not result on
 
 We will be able to identify the new nodes by using a custom attribute (`node.attr.storage=temporarynodes`) (see further down for details on how to configure this), so the first step is to configure the existing partitions so that they do not consider the new nodes as suitable targets for shard allocation.
 
-In CrateDB 5.1.2 or higher we can achieve this with:
-
+In CrateDB 5.1.2 or higher, you can achieve this with:
 ```sql
 /* this applies the setting to all existing partitions and new partitions */
 ALTER TABLE test SET ("routing.allocation.exclude.storage" = 'temporarynodes');
@@ -57,6 +56,14 @@ ALTER TABLE test SET ("routing.allocation.exclude.storage" = 'temporarynodes');
 /* then we run this other command so that the setting does not apply to new partitions */
 ALTER TABLE ONLY test RESET ("routing.allocation.exclude.storage");
 ```
+In CrateDB 5.9.0 or higher, you don't need to change shard allocations for each
+individual table any longer. Instead, default allocation rules can be set on
+the cluster level:
+> [CrateDB 5.9.0] added support to override `routing.allocation.*` cluster
+> settings with a `routing.allocation.*` table setting. This can be used to
+> define the default routing behavior for all tables with a cluster setting
+> and reroute individual tables by assigning the table setting using `ALTER
+> TABLE SET`.
 
 No data gets reallocated when running this, and there is no impact on querying or ingestion.
 
@@ -161,8 +168,7 @@ INSERT INTO test (ts) VALUES ('2022-12-19'), ('2022-12-20');
 
 When we are ready to decommission the temporary nodes, we need to move the data collected during the days of the event.
 
-In CrateDB 5.1.2 or higher we can achieve this with:
-
+In CrateDB 5.1.2 or higher, you can achieve this with:
 ```sql
 ALTER TABLE test SET ("routing.allocation.exclude.storage" = 'temporarynodes');
 ALTER TABLE test RESET ("routing.allocation.total_shards_per_node");
@@ -185,4 +191,5 @@ Once this is done, the machines can safely be shutdown.
 If desired, new nodes can be deployed reusing the same names that were used for the temporary nodes before.
 
 
+[CrateDB 5.9.0]: https://cratedb.com/docs/crate/reference/en/latest/appendices/release-notes/5.9.0.html
 [shard allocation filtering]: inv:crate-reference#ddl_shard_allocation
