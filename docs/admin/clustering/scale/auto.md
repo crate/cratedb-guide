@@ -153,21 +153,21 @@ In this example, I created a 3-node CrateDB Cloud cluster and created this table
 
 ``` sql
 CREATE TABLE ta (
-    "keyword" TEXT INDEX using fulltext
-    ,"ts" TIMESTAMP
-    ,"day" TIMESTAMP GENERATED ALWAYS AS date_trunc('day', ts)
-    )
+    "keyword" TEXT INDEX using fulltext,
+    "ts" TIMESTAMP,
+    "day" TIMESTAMP GENERATED ALWAYS AS date_trunc('day', ts)
+)
 CLUSTERED INTO 24 SHARDS;
 ```
 
 This will create 8 primary shards per node plus 8 replicas. This can be checked by looking at the number of shards. This can be done for example using the console by running this:
 
 ```sql
-select node ['name'], count(*)
-from sys.shards
-group by node ['name']
-order by 1
-limit 100;
+SELECT node ['name'], count(*)
+FROM sys.shards
+GROUP BY node ['name']
+ORDER BY 1
+LIMIT 100;
 ```
 
 In this example, the amount of shards is 16 per node.
@@ -185,10 +185,10 @@ To trigger the scale-out you can add a table. For example:
 
 ```sql
 CREATE TABLE tb (
-    "keyword" TEXT INDEX using fulltext
-    ,"ts" TIMESTAMP
-    ,"day" TIMESTAMP GENERATED ALWAYS AS date_trunc('day', ts)
-    )
+    "keyword" TEXT INDEX using fulltext,
+    "ts" TIMESTAMP,
+    "day" TIMESTAMP GENERATED ALWAYS AS date_trunc('day', ts)
+)
 CLUSTERED INTO 18 SHARDS;
 ```
 

@@ -43,7 +43,7 @@ The settings that we need are:
 * `initial_master_nodes` set to the hostname or the `node.name` of the node
 * optionally we can set a `cluster.name`
 
-If you are using containers you would pass these settings with lines in the `args` section of your YAML file, otherwise you could create `/etc/crate/crate.yml` before deploying the package for your distribution (refer to https://github.com/crate/crate/blob/master/app/src/main/dist/config/crate.yml for the template), or you could prevent the package installation from auto-starting the daemon by using a mechanism such as `policy-rcd-declarative`, then edit the configuration file (`crate.yml` ), and start the `crate` daemon once all settings are ready.
+If you are using containers you would pass these settings with lines in the `args` section of your YAML file, otherwise you could create `/etc/crate/crate.yml` before deploying the package for your distribution (refer to https://github.com/crate/crate/blob/master/app/src/main/dist/config/crate.yml for the template), or you could prevent the package installation from auto-starting the daemon by using a mechanism such as `policy-rcd-declarative`, then edit the configuration file (`crate.yml`), and start the `crate` daemon once all settings are ready.
 
 ## Networking considerations
 

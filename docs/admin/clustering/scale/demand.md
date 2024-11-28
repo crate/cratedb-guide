@@ -31,12 +31,12 @@ CREATE TABLE test (
   ts TIMESTAMP,
   recorddetails TEXT,
   "day" GENERATED ALWAYS AS date_trunc('day',ts)
-  )
+)
 PARTITIONED BY ("day")
-CLUSTERED  INTO 4 SHARDS
-WITH (number_of_replicas=1);
+CLUSTERED INTO 4 SHARDS
+WITH (number_of_replicas = 1);
 
-INSERT INTO test (ts) VALUES ('2022-11-18'),('2022-11-19');
+INSERT INTO test (ts) VALUES ('2022-11-18'), ('2022-11-19');
 ```
 
 The shards will initially look like this:
@@ -109,13 +109,13 @@ Let’s now simulate the arrival of data during the event:
 
 ```sql
 INSERT INTO test (ts) VALUES 
-('2022-11-20'),('2022-11-21'),('2022-11-22'),('2022-11-23'),
-('2022-11-24'),('2022-11-25'),('2022-11-26'),('2022-11-27'),
-('2022-11-28'),('2022-11-29'),('2022-11-30'),('2022-12-01'),
-('2022-12-02'),('2022-12-03'),('2022-12-04'),('2022-12-05'),
-('2022-12-06'),('2022-12-07'),('2022-12-08'),('2022-12-09'),
-('2022-12-10'),('2022-12-11'),('2022-12-12'),('2022-12-13'),
-('2022-12-14'),('2022-12-15'),('2022-12-16'),('2022-12-17'),
+('2022-11-20'), ('2022-11-21'), ('2022-11-22'), ('2022-11-23'),
+('2022-11-24'), ('2022-11-25'), ('2022-11-26'), ('2022-11-27'),
+('2022-11-28'), ('2022-11-29'), ('2022-11-30'), ('2022-12-01'),
+('2022-12-02'), ('2022-12-03'), ('2022-12-04'), ('2022-12-05'),
+('2022-12-06'), ('2022-12-07'), ('2022-12-08'), ('2022-12-09'),
+('2022-12-10'), ('2022-12-11'), ('2022-12-12'), ('2022-12-13'),
+('2022-12-14'), ('2022-12-15'), ('2022-12-16'), ('2022-12-17'),
 ('2022-12-18')
 ```
 
@@ -126,15 +126,15 @@ We can see that data from before the event stays on the baseline nodes while dat
 The same can be checked programmatically with this query:
 
 ```sql
-SELECT   table_partitions.table_schema,
-         table_partitions.table_name,
-         table_partitions.values['day']::TIMESTAMP,
-         shards.primary,
-         shards.node['name']
+SELECT table_partitions.table_schema,
+       table_partitions.table_name,
+       table_partitions.values['day']::TIMESTAMP,
+       shards.primary,
+       shards.node['name']
 FROM sys.shards
 JOIN information_schema.table_partitions
-  ON shards.partition_ident=table_partitions.partition_ident
-ORDER BY 1,2,3,4,5;
+  ON shards.partition_ident = table_partitions.partition_ident
+ORDER BY 1, 2, 3, 4, 5;
 ```
 
 ## The day the event ends
@@ -154,7 +154,7 @@ New data should now again go the baseline nodes only.
 Let’s confirm it:
 
 ```sql
-INSERT INTO test (ts) VALUES ('2022-12-19'),('2022-12-20')
+INSERT INTO test (ts) VALUES ('2022-12-19'), ('2022-12-20');
 ```
 
 ![image|690x73](https://global.discourse-cdn.com/flex020/uploads/crate/original/1X/72b9f0bd28fb88402ea951f9f8a9a15c7c491ad2.png)
