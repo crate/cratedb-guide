@@ -86,6 +86,30 @@ options apply like outlined on the [dbt Postgres Setup] documentation
 page.
 
 
+## Usage
+
+### Custom Schemas
+By default, dbt writes the models into the schema you configured in your
+profile, but in some dbt projects you may need to write data into different
+target schemas. You can adjust the target schema using [custom schemas with
+dbt].
+
+If your dbt project has a custom macro called `generate_schema_name`, dbt
+will use it instead of the default macro. This allows you to customize
+the name generation according to your needs.
+
+```jinja
+{% macro generate_schema_name(custom_schema_name, node) -%}
+  {%- set default_schema = target.schema -%}
+  {%- if custom_schema_name is none -%}
+    {{ default_schema }}
+  {%- else -%}
+    {{ custom_schema_name | trim }}
+  {%- endif -%}
+{%- endmacro %}
+```
+
+
 ## Learn
 
 :::{rubric} Tutorials
@@ -127,6 +151,7 @@ and then publish your project to a GitHub repository.
 
 
 
+[custom schemas with dbt]: https://docs.getdbt.com/docs/build/custom-schemas
 [dbt]: https://www.getdbt.com/
 [dbt-cratedb2]: https://pypi.org/project/dbt-cratedb2/
 [dbt Cloud]: https://www.getdbt.com/product/dbt-cloud/
