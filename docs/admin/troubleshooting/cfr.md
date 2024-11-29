@@ -44,7 +44,7 @@ and architecture of the corresponding system where you intend to run CFR.
 ::::{grid} 1 2 2 2
 
 :::{grid-item-card} {material-outlined}`download_for_offline;1.4em` Linux x64
-:link: https://github.com/crate-workbench/cratedb-toolkit/actions/runs/9826830191/artifacts/1674929097
+:link: https://github.com/crate/cratedb-toolkit/actions/runs/17050832642/artifacts/3792142004
 :link-alt: CFR for Linux x64
 :padding: 0
 :class-title: sd-fs-5
@@ -53,7 +53,7 @@ cratedb-cfr-linux-x64.zip
 :::
 
 :::{grid-item-card} {material-outlined}`download_for_offline;1.4em` macOS x64
-:link: https://github.com/crate-workbench/cratedb-toolkit/actions/runs/9826830191/artifacts/1674929134
+:link: https://github.com/crate/cratedb-toolkit/actions/runs/17050832642/artifacts/3792153874
 :link-alt: CFR for macOS x64
 :padding: 0
 :class-title: sd-fs-5
@@ -62,7 +62,7 @@ cratedb-cfr-macos-x64.zip
 :::
 
 :::{grid-item-card} {material-outlined}`download_for_offline;1.4em` Windows x64
-:link: https://github.com/crate-workbench/cratedb-toolkit/actions/runs/9826830191/artifacts/1674930132
+:link: https://github.com/crate/cratedb-toolkit/actions/runs/17050832642/artifacts/3792143556
 :link-alt: CFR for Windows x64
 :padding: 0
 :class-title: sd-fs-5
@@ -71,7 +71,7 @@ cratedb-cfr-windows-x64.zip
 :::
 
 :::{grid-item-card} {material-outlined}`download_for_offline;1.4em` macOS ARM64
-:link: https://github.com/crate-workbench/cratedb-toolkit/actions/runs/9826830191/artifacts/1674927962
+:link: https://github.com/crate/cratedb-toolkit/actions/runs/17050832642/artifacts/3792135976
 :link-alt: CFR for macOS ARM64
 :padding: 0
 :class-title: sd-fs-5
