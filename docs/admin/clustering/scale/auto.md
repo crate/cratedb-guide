@@ -17,7 +17,7 @@ One of the unique features of CrateDB is that it is a multi-model distributed SQ
 
 CrateDB's fully managed solution comes with a REST API which enables you to automate a lot of tasks. As CrateDB is world famous for its, highly scalable architecture, one of those tasks could be to scale a cluster out (horizontally) when needed, during a peak, for example, and back when possible to reduce costs.
 
-![CrateDB-Scaling-Process|690x389](https://global.discourse-cdn.com/flex020/uploads/crate/original/2X/a/a10f95850f05a064ce022b4ccca45131c1c481cd.png){w=690px align=center}
+![CrateDB-Scaling-Process|690x389](https://github.com/user-attachments/assets/f9ba40ff-4cee-45f5-8bfb-d4125c037ea0){w=690px align=center}
 
 This small blog shows how you can use the API to scale out and scale back a cluster when needed.
 

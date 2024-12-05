@@ -40,7 +40,7 @@ INSERT INTO test (ts) VALUES ('2022-11-18'), ('2022-11-19');
 ```
 
 The shards will initially look like this:
-![image|690x167](https://global.discourse-cdn.com/flex020/uploads/crate/original/1X/ac18a9cb507201d8e54771e320501f4aaac0eb16.png)
+![Image](https://github.com/user-attachments/assets/045f66fc-4134-4363-a37a-711a449c43d5)
 
 ## Before deploying extra nodes
 
@@ -128,7 +128,7 @@ INSERT INTO test (ts) VALUES
 
 We can see that data from before the event stays on the baseline nodes while data for the days of the event gets distributed over all nodes:
 
-![image|690x220](https://global.discourse-cdn.com/flex020/uploads/crate/original/1X/b1c1a1ac42ac3d0eb644529e57c4b9c49eae2e87.png)
+![Image](https://github.com/user-attachments/assets/b0f294a4-ff2b-4b84-8a34-aa782cb5a300)
 
 The same can be checked programmatically with this query:
 
@@ -164,7 +164,7 @@ Let’s confirm it:
 INSERT INTO test (ts) VALUES ('2022-12-19'), ('2022-12-20');
 ```
 
-![image|690x73](https://global.discourse-cdn.com/flex020/uploads/crate/original/1X/72b9f0bd28fb88402ea951f9f8a9a15c7c491ad2.png)
+![image|690x73]
 
 When we are ready to decommission the temporary nodes, we need to move the data collected during the days of the event.
 
