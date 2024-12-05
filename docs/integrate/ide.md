@@ -9,4 +9,5 @@ database IDE (Integrated Development Environment) applications.
 :maxdepth: 2
 
 datagrip/index
+dbeaver/index
 ```
