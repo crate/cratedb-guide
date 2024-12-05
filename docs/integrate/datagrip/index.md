@@ -1,6 +1,9 @@
 (datagrip)=
 # DataGrip
 
+:::{include} /_include/links.md
+:::
+
 ```{div}
 :style: "float: right; margin-left: 0.5em"
 [![](https://blog.jetbrains.com/wp-content/uploads/2019/01/datagrip_icon.svg){w=120px}](https://www.jetbrains.com/datagrip/)
@@ -32,7 +35,7 @@ using the "Custom JARs" option when adding a database driver.
 :::
 :::{grid-item}
 [crate-jdbc-standalone] is the right choice here.
-For example, download and use the [crate-jdbc-standalone-2.7.0.jar] JAR file,
+For example, download and use the [crate-jdbc-standalone-latest.jar] JAR file,
 and select the driver class `io.crate.client.jdbc.CrateDriver`.
 :::
 :::{grid-item}
@@ -97,7 +100,5 @@ any contributions and reports.
 [CrateDB Cloud]: https://cratedb.com/product/cloud
 [CrateDB JDBC Driver]: https://cratedb.com/docs/jdbc/
 [CrateDB Self-Managed]: https://cratedb.com/product/self-managed
-[crate-jdbc-standalone]: https://repo1.maven.org/maven2/io/crate/crate-jdbc-standalone/
-[crate-jdbc-standalone-2.7.0.jar]: https://repo1.maven.org/maven2/io/crate/crate-jdbc-standalone/2.7.0/crate-jdbc-standalone-2.7.0.jar
 [DataGrip]: https://www.jetbrains.com/datagrip/
 [Tool: DataGrip]: https://github.com/crate/crate/labels/tool%3A%20DataGrip
