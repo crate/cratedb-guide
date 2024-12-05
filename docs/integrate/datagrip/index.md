@@ -97,8 +97,6 @@ any contributions and reports.
 
 [Blog: Use CrateDB With DataGrip]: https://cratedb.com/blog/use-cratedb-with-datagrip-an-advanced-database-ide
 [CrateDB and DataGrip]: https://cratedb.com/integrations/cratedb-and-datagrip
-[CrateDB Cloud]: https://cratedb.com/product/cloud
 [CrateDB JDBC Driver]: https://cratedb.com/docs/jdbc/
-[CrateDB Self-Managed]: https://cratedb.com/product/self-managed
 [DataGrip]: https://www.jetbrains.com/datagrip/
 [Tool: DataGrip]: https://github.com/crate/crate/labels/tool%3A%20DataGrip

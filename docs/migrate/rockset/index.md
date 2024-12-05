@@ -328,7 +328,6 @@ and Python example programs.
 [clear commitment]: https://cratedb.com/blog/opensource-licensing-founder
 [Converged Index™]: https://rockset.com/blog/converged-indexing-the-secret-sauce-behind-rocksets-fast-queries/
 [CrateDB]: https://cratedb.com/database
-[CrateDB Cloud]: https://cratedb.com/docs/cloud/
 [CrateDB Editions]: https://cratedb.com/database/editions
 [CrateDB SQL]: project:#sql
 [DX]: https://en.wikipedia.org/wiki/User_experience#Developer_experience
