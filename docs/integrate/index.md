@@ -9,10 +9,10 @@ This documentation section lists applications, frameworks, and libraries,
 which can be used together with CrateDB, and outlines how to use them
 optimally.
 
-
 ```{toctree}
 :maxdepth: 2
 
+ide
 orm
 df
 etl/index
