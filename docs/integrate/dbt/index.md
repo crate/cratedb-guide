@@ -128,9 +128,9 @@ the name generation according to your needs.
 
 :::{grid-item}
 :columns: auto auto 8 8
-**Intro to Data Build Tool (dbt)**
+**Introduction to dbt**
 
-Learn how to get started using dbt (data-build-tool) by following along
+Learn how to get started using dbt by following along
 with an easy step-by-step tutorial.
 
 In this video, you will learn how to install dbt, initialize a new project
