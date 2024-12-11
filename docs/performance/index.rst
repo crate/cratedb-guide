@@ -15,3 +15,4 @@ performance tuning and sharding.
    Sharding <sharding>
    inserts/index
    selects
+   storage
