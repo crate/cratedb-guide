@@ -42,6 +42,11 @@ linkcheck_ignore = [
     r"https://azure.microsoft.com/.*",
 ]
 
+linkcheck_anchors_ignore_for_url += [
+    # Anchor 'XXX' not found
+    r"https://pypi.org/.*"
+]
+
 # Configure intersphinx.
 if "sphinx.ext.intersphinx" not in extensions:
     extensions += ["sphinx.ext.intersphinx"]
