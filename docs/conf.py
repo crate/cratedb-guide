@@ -38,6 +38,8 @@ linkcheck_ignore = [
     # -rate limited-, sleeping...
     r"https://medium.com/.*",
     r"http://api.open-notify.org/.*",
+    # Read timed out. (read timeout=15)
+    r"https://azure.microsoft.com/.*",
 ]
 
 # Configure intersphinx.
