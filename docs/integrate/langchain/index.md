@@ -49,9 +49,7 @@ build using LLMs:
 
 ## Install
 ```shell
-pip install \
-  'langchain-community @ git+https://github.com/crate-workbench/langchain.git@cratedb#subdirectory=libs/community' \
-  'sqlalchemy-cratedb>=0.40.0'
+pip install --upgrade langchain-cratedb
 ```
 
 
