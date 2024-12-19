@@ -90,7 +90,7 @@ Wetterdienst uses CrateDB for mass storage of weather data, allowing you to
 query it efficiently. It provides access to data at more than ten canonical
 sources of raw weather data from domestic weather agencies.
 
-[![Wetterdienst Documentation](https://img.shields.io/badge/Documentation-Data%20Export-darkgreen?logo=Markdown)](https://wetterdienst.readthedocs.io/en/latest/usage/python-api.html#export)
+[![Wetterdienst Documentation](https://img.shields.io/badge/Documentation-Data%20Export-darkgreen?logo=Markdown)](https://wetterdienst.readthedocs.io/en/latest/usage/python-api/#export)
 [![Wetterdienst Project](https://img.shields.io/badge/Repository-Wetterdienst-darkblue?logo=GitHub)](https://github.com/earthobservations/wetterdienst)
 :::
 
