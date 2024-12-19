@@ -116,6 +116,7 @@ under a different name, or there may be a simple workaround for your use cases.
 | POSITION(substring IN string)| `strpos(string , substring)`  |
 | POW(x, y)| `power(x,y)`  |
 | RAND()| `random()`  |
+| REGEXP_LIKE(string, pattern) | `string ~ pattern`  |
 | SEQUENCE(start, stop[, step])| `generate_series`  |
 | SIGN(x)| See [^sign] for CrateDB <5.8  |
 | SPLIT(string, delimiter)[index]| `split_part(string, delimiter, index)` |
