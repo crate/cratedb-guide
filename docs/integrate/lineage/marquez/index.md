@@ -119,7 +119,7 @@ Now press Ctrl+D to exit the CrateDB Shell.
 We are now going to configure Airflow to connect to CrateDB.
 
 Open a web browser and navigate to port 8080 on the machine where you are running Astro, for instance `http://localhost:8080/`.
-Login with username admin and password admin.
+Login with username `admin` and password `admin`.
 
 Under "Admin" select "Connections".
 Click the blue plus sign button to create a new connection and enter the following details:
