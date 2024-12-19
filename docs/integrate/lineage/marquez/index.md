@@ -88,28 +88,28 @@ crash
 CREATE TABLE public.Customers (
 	CustomerID TEXT PRIMARY KEY NOT NULL DEFAULT gen_random_text_uuid()
 	,CustomerName TEXT NOT NULL
-	,Country TEXT	
+	,Country TEXT
 	);
-	
+
 CREATE TABLE public.Invoices (
 	InvoiceID TEXT PRIMARY KEY NOT NULL DEFAULT gen_random_text_uuid()
 	,date TIMESTAMP DEFAULT now()
-	,CustomerID TEXT	
+	,CustomerID TEXT
 	);
-	
+
 CREATE TABLE public.Products (
-  ProductID TEXT PRIMARY KEY NOT NULL DEFAULT gen_random_text_uuid(),
-  Description TEXT,
-  applicable_tax_percentage REAL
-);
+	ProductID TEXT PRIMARY KEY NOT NULL DEFAULT gen_random_text_uuid()
+	,Description TEXT
+	,applicable_tax_percentage REAL
+	);
 
 CREATE TABLE public.Invoice_items (
-  InvoiceID TEXT,
-  ProductID TEXT,
-  quantity  SMALLINT,
-  unit_price REAL,
-  PRIMARY KEY (InvoiceID,ProductID)
-);
+	InvoiceID TEXT
+	,ProductID TEXT
+	,quantity SMALLINT
+	,unit_price REAL
+	,PRIMARY KEY (InvoiceID,ProductID)
+	);
 ```
 
 Now press Ctrl+D to exit the CrateDB Shell.
@@ -161,10 +161,10 @@ with DAG(
         conn_id="cratedb_default",
         sql="""
             INSERT INTO public.Customers (CustomerName,Country)
-                                SELECT CONCAT(mountain,' Corp.')
-                                        ,country
-                                FROM sys.summits
-                                LIMIT 100;
+			SELECT CONCAT(mountain,' Corp.')
+					,country
+			FROM sys.summits
+			LIMIT 100;
         """,
 		inlets=[{'namespace': 'example', 'name': 'sampledata'}],
 		outlets=[{'namespace': 'example', 'name': 'customers_table'}]
@@ -175,9 +175,9 @@ with DAG(
         conn_id="cratedb_default",
         sql="""
            INSERT INTO public.Invoices(date,CustomerID)
-                        SELECT ('2022-01-01'::TIMESTAMP)+concat(floor(random()*1000),' DAYS')::INTERVAL
-                                ,(SELECT CustomerID FROM public.Customers ORDER BY random()+a.b LIMIT 1)
-                        FROM GENERATE_SERIES(1,1000) a(b);
+			SELECT ('2022-01-01'::TIMESTAMP)+concat(floor(random()*1000),' DAYS')::INTERVAL
+					,(SELECT CustomerID FROM public.Customers ORDER BY random()+a.b LIMIT 1)
+			FROM GENERATE_SERIES(1,1000) a(b);
         """,
 		inlets=[{'namespace': 'example', 'name': 'customers_table'}],
 		outlets=[{'namespace': 'example', 'name': 'invoices_table'}]
@@ -188,9 +188,9 @@ with DAG(
         conn_id="cratedb_default",
         sql="""
            INSERT INTO public.Products(Description,applicable_tax_percentage)
-                        SELECT CONCAT('Product ',a.b)
-                                ,(floor(random()*10)+15)/100.0
-                        FROM GENERATE_SERIES(1,10) a(b);
+			SELECT CONCAT('Product ',a.b)
+					,(floor(random()*10)+15)/100.0
+			FROM GENERATE_SERIES(1,10) a(b);
         """,
 		inlets=[{'namespace': 'example', 'name': 'more_sample_data'}],
 		outlets=[{'namespace': 'example', 'name': 'products_table'}]			
@@ -201,11 +201,11 @@ with DAG(
         conn_id="cratedb_default",
         sql="""
            INSERT INTO public.Invoice_items (InvoiceID,ProductID,quantity,unit_price)
-                                SELECT InvoiceID,ProductID
-                                        ,1+ceiling(random()*4)
-                                        ,random()*1000
-                                FROM public.Invoices
-                                INNER JOIN public.Products ON random()>0.5;
+			SELECT InvoiceID,ProductID
+					,1+ceiling(random()*4)
+					,random()*1000
+			FROM public.Invoices
+			INNER JOIN public.Products ON random()>0.5;
         """,
 		inlets=[{'namespace': 'example', 'name': 'invoices_table'},{'namespace': 'example', 'name': 'products_table'}],
 		outlets=[{'namespace': 'example', 'name': 'invoice_items_table'}]			
