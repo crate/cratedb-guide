@@ -10,11 +10,11 @@
 
 Among other tools, OpenLineage integrates with [Airflow] to collect DAG lineage metadata so that inter-DAG dependencies are easily maintained and viewable via a lineage graph, while also keeping a catalog of historical runs of DAGs.
 
-### Data lineage with CrateDB
+## Data lineage with CrateDB
 
 Today I want to share an example of how we can run Airflow DAGs against a CrateDB database and view lineage data.
 
-## Setup
+### Setup
 
 We will need Docker Compose v2, to install it, make it available to all users in the system, check the installed version, or upgrade from v1, please refer to [the Docker documentation on this topic].
 
@@ -114,7 +114,7 @@ CREATE TABLE public.Invoice_items (
 
 Now press Ctrl+D to exit the CrateDB Shell.
 
-## Usage
+### Usage
 
 We are now going to configure Airflow to connect to CrateDB.
 
