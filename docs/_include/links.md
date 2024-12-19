@@ -7,6 +7,7 @@
 [cloud-datashader-github]: https://github.com/crate/cratedb-examples/blob/amo/cloud-datashader/topic/timeseries/explore/cloud-datashader.ipynb
 [CTE]: inv:crate-reference#sql_dql_with
 [CrateDB Cloud]: https://cratedb.com/product/cloud
+[CrateDB JDBC Driver]: https://cratedb.com/docs/jdbc/
 [CrateDB Self-Managed]: https://cratedb.com/product/self-managed
 [CrateDB's PostgreSQL interface]: inv:crate-reference#interface-postgresql
 [crate-jdbc-standalone]: https://repo1.maven.org/maven2/io/crate/crate-jdbc-standalone/
@@ -41,6 +42,7 @@
 [Multi-model Database]: https://cratedb.com/solutions/multi-model-database
 [nearest neighbor search]: https://en.wikipedia.org/wiki/Nearest_neighbor_search
 [Nested Data Structure]: https://cratedb.com/product/features/nested-data-structure
+[PostgreSQL JDBC Driver]: https://jdbc.postgresql.org/
 [query DSL based on JSON]: https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html
 [RANK]: inv:crate-reference#window-functions-rank
 [Relational Database]: https://cratedb.com/solutions/relational-database
