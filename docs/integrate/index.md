@@ -20,6 +20,7 @@ cdc/index
 metrics/index
 visualize/index
 bi/index
+lineage/index
 testing
 ```
 
