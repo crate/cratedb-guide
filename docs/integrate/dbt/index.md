@@ -1,14 +1,18 @@
 (dbt)=
-
 # dbt
 
+:::{include} /_include/links.md
+:::
+
+## About
 ```{div}
 :style: "float: right"
 [![](https://www.getdbt.com/ui/img/logos/dbt-logo.svg){w=180px}](https://www.getdbt.com/)
 ```
 
-[dbt] is an open source tool for transforming data in data warehouses using Python and
-SQL. It is an SQL-first transformation workflow platform that lets teams quickly and
+[dbt] is a tool for transforming data in data warehouses using Python and SQL.
+
+It is an SQL-first transformation workflow platform that lets teams quickly and
 collaboratively deploy analytics code following software engineering best practices
 like modularity, portability, CI/CD, and documentation.
 
@@ -56,69 +60,101 @@ scale.
 :::
 
 
-## Install
+### dbt's Features
+The data abstraction layer provided by [dbt-core] allows the decoupling of
+the models on which reports and dashboards rely from the source data. When
+business rules or source systems change, you can still maintain the same models
+as a stable interface.
+
+Some of the things that dbt can do include:
+
+* Import reference data from CSV files.
+* Track changes in source data with different strategies so that downstream
+  models do not need to be built every time from scratch.
+* Run tests on data, to confirm assumptions remain valid, and to validate
+  any changes made to the models' logic.
+
+### CrateDB's Benefits
+Due to its unique capabilities, CrateDB is an excellent warehouse choice for
+data transformation projects. It offers automatic indexing, fast aggregations,
+easy partitioning, and the ability to scale horizontally.
+
+
+## Setup
 Install the most recent version of the [dbt-cratedb2] Python package.
 ```shell
 pip install --upgrade 'dbt-cratedb2'
 ```
 
 
-## Connect
-**dbt Profile Configuration:** CrateDB targets should be set up using the
-following configuration in your `profiles.yml` file.
-```yaml
-company-name:
-  target: dev
-  outputs:
-    dev:
-      type: cratedb
-      host: [hostname]
-      user: [username]
-      password: [password]
-      port: [port]   # Default is 5432.
-      dbname: crate  # Fixed. Do not change.
-      schema: doc    # `doc` is the default schema.
-```
-dbt-cratedb2 is based on dbt-postgres, which uses [psycopg2] to connect to
-the database server.
+## Configure
 Because CrateDB is compatible with PostgreSQL, the same connectivity
 options apply like outlined on the [dbt Postgres Setup] documentation
 page.
 
-
-## Usage
-
-### Custom Schemas
-By default, dbt writes the models into the schema you configured in your
-profile, but in some dbt projects you may need to write data into different
-target schemas. You can adjust the target schema using [custom schemas with
-dbt].
-
-If your dbt project has a custom macro called `generate_schema_name`, dbt
-will use it instead of the default macro. This allows you to customize
-the name generation according to your needs.
-
-```jinja
-{% macro generate_schema_name(custom_schema_name, node) -%}
-  {%- set default_schema = target.schema -%}
-  {%- if custom_schema_name is none -%}
-    {{ default_schema }}
-  {%- else -%}
-    {{ custom_schema_name | trim }}
-  {%- endif -%}
-{%- endmacro %}
+The dbt connection profile settings for CrateDB stored in [`profiles.yml`]
+are identical with PostgreSQL.
+```yaml
+cratedb_analytics:
+  target: dev
+  outputs:
+    dev:
+      type: cratedb
+      host: [clustername].aks1.westeurope.azure.cratedb.net
+      port: 5432
+      user: [username]
+      pass: [password]
+      dbname: crate     # CrateDB's only catalog is `crate`.
+      schema: doc       # Define schema. `doc` is the default.
+      search_path: doc  # Use the same value like `schema` by default.
 ```
 
 
 ## Learn
 
+Learn how to use CrateDB with dbt by exploring concise examples.
+
 :::{rubric} Tutorials
 :::
-- [Using dbt with CrateDB]
 
-:::{rubric} Development
+::::{grid} 2
+:gutter: 5
+
+:::{grid-item-card}
+:link: dbt-usage
+:link-type: ref
+:link-alt: dbt usage guidelines
+:padding: 3
+:class-card: sd-text-center sd-pt-4
+:class-header: sd-fs-4
+{material-outlined}`integration_instructions;2.5em`
+Usage Guidelines
+^^^
+```{toctree}
+:maxdepth: 2
+:hidden:
+
+usage
+```
++++
+Usage guidelines, notes, and advanced configuration options.
 :::
-- [dbt CrateDB examples]
+
+:::{grid-item-card}
+:link: https://github.com/crate/cratedb-examples/tree/main/framework/dbt/
+:link-type: url
+:link-alt: dbt CrateDB Examples
+:padding: 3
+:class-card: sd-text-center sd-pt-4
+:class-header: sd-fs-4
+{material-outlined}`apps;2.5em`
+Example Projects
+^^^
++++
+Explore a few dbt example projects using CrateDB.
+:::
+
+::::
 
 
 :::{rubric} Webinars
@@ -150,12 +186,9 @@ and then publish your project to a GitHub repository.
 ::::
 
 
-
-[custom schemas with dbt]: https://docs.getdbt.com/docs/build/custom-schemas
 [dbt]: https://www.getdbt.com/
+[dbt-core]: https://github.com/dbt-labs/dbt-core
 [dbt-cratedb2]: https://pypi.org/project/dbt-cratedb2/
 [dbt Cloud]: https://www.getdbt.com/product/dbt-cloud/
 [dbt Postgres Setup]: https://docs.getdbt.com/docs/core/connect-data-platform/postgres-setup
-[Using dbt with CrateDB]: https://community.cratedb.com/t/using-dbt-with-cratedb/1566
-[dbt CrateDB examples]: https://github.com/crate/cratedb-examples/tree/main/framework/dbt/
-[psycopg2]: https://pypi.org/project/psycopg2/
+[`profiles.yml`]: https://docs.getdbt.com/docs/core/connect-data-platform/profiles.yml

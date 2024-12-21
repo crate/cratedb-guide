@@ -346,7 +346,7 @@ will open up a map view showing the current position of the ISS:
 .. _detailed guide: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises
 .. _ground point: https://en.wikipedia.org/wiki/Ground_track
 .. _input values: https://node-postgres.com/features/queries#Parameterized%20query
-.. _interactive REPL mode: https://www.oreilly.com/library/view/learning-node-2nd/9781491943113/ch04.html
+.. _interactive REPL mode: https://web.archive.org/web/20240910181004/https://www.oreilly.com/library/view/learning-node-2nd/9781491943113/ch04.html
 .. _International Space Station: https://www.nasa.gov/mission_pages/station/main/index.html
 .. _node-postgres: https://www.npmjs.com/package/pg
 .. _Node.js: https://nodejs.org/en/
