@@ -4,17 +4,20 @@
 :::{include} /_include/links.md
 :::
 
-[OpenLineage] is an open source industry standard framework for data lineage. It standardizes the definition of data lineage, the metadata that makes up lineage data, and the approach for collecting lineage data from external systems.
-
+[OpenLineage] is an open source industry standard framework for data lineage.
+It standardizes the definition of data lineage, the metadata that makes up
+lineage data, and the approach for collecting lineage data from external systems.
 [Marquez] is OpenLineage's lineage repository reference implementation.
 
-Among other tools, OpenLineage integrates with [Airflow] to collect DAG lineage metadata so that inter-DAG dependencies are easily maintained and viewable via a lineage graph, while also keeping a catalog of historical runs of DAGs.
+Among other tools, OpenLineage integrates with [Apache Airflow] to collect
+DAG lineage metadata so that inter-DAG dependencies are easily maintained
+and viewable via a lineage graph, while also keeping a catalog of historical
+runs of DAGs.
 
-## Data lineage with CrateDB
+This tutorial demonstrates how to run Airflow DAGs against a
+CrateDB database and view lineage data.
 
-Today I want to share an example of how we can run Airflow DAGs against a CrateDB database and view lineage data.
-
-### Setup
+## Setup
 
 We will need Docker Compose v2, to install it, make it available to all users in the system, check the installed version, or upgrade from v1, please refer to [the Docker documentation on this topic].
 
@@ -114,7 +117,7 @@ CREATE TABLE public.Invoice_items (
 
 Now press Ctrl+D to exit the CrateDB Shell.
 
-### Usage
+## Usage
 
 We are now going to configure Airflow to connect to CrateDB.
 
@@ -254,5 +257,5 @@ You can now see all lineage graphs and events for this setup.
 
 [Marquez]: https://github.com/MarquezProject/marquez
 [OpenLineage]: https://openlineage.io/
-[Airflow]: https://airflow.apache.org/
+[Apache Airflow]: https://airflow.apache.org/
 [the Docker documentation on this topic]: https://docs.docker.com/compose/install/linux/
