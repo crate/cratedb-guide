@@ -93,8 +93,8 @@ influx-write "demo,region=amazonas temperature=28.6,humidity=93.4,windspeed=2.9 
 
 First, create these command aliases, for better UX.
 :::{code} shell
-alias crash="docker run --rm -it --link=cratedb ghcr.io/crate-workbench/cratedb-toolkit:latest crash"
-alias ctk="docker run --rm -it --link=cratedb --link=influxdb ghcr.io/crate-workbench/cratedb-toolkit:latest ctk"
+alias crash="docker run --rm -it --link=cratedb ghcr.io/crate/cratedb-toolkit:latest crash"
+alias ctk="docker run --rm -it --link=cratedb --link=influxdb ghcr.io/crate/cratedb-toolkit:latest ctk"
 :::
 
 Now, import data from InfluxDB bucket/measurement into CrateDB schema/table.
@@ -116,8 +116,8 @@ similar, with a few small adjustments.
 
 First, helpful aliases again:
 :::{code} shell
-alias ctk="docker run --rm -it ghcr.io/crate-workbench/cratedb-toolkit:latest ctk"
-alias crash="docker run --rm -it ghcr.io/crate-workbench/cratedb-toolkit:latest crash"
+alias ctk="docker run --rm -it ghcr.io/crate/cratedb-toolkit:latest ctk"
+alias crash="docker run --rm -it ghcr.io/crate/cratedb-toolkit:latest crash"
 :::
 
 You will need your credentials for both CrateDB and InfluxDB. 
@@ -172,5 +172,5 @@ you when working with InfluxDB.
 [InfluxDB]: https://github.com/influxdata/influxdb
 [InfluxDB Cloud]: https://cloud2.influxdata.com/
 [influxio]: https://influxio.readthedocs.io/
-[report them]: https://github.com/crate-workbench/cratedb-toolkit/issues
+[report them]: https://github.com/crate/cratedb-toolkit/issues
 [What are series and bucket in InfluxDB]: https://stackoverflow.com/questions/58190272/what-are-series-and-bucket-in-influxdb/69951376#69951376
