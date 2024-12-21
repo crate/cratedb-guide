@@ -4,7 +4,7 @@
 Data lineage solutions tested with CrateDB.
 
 ```{toctree}
-:maxdepth: 2
+:maxdepth: 1
 
-marquez/index
+../marquez/index
 ```

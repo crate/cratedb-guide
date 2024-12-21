@@ -249,7 +249,7 @@ On the upper right corner, select `example` instead of `default`.
 
 You can now see all lineage graphs and events for this setup.
 
-![Image](../../../_assets/img/integrations/marquez/marquez-lineage.png){h=180px}
+![Image](/_assets/img/integrations/marquez/marquez-lineage.png){h=180px}
 
 
 [Marquez]: https://github.com/MarquezProject/marquez
