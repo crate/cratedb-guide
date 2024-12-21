@@ -144,7 +144,7 @@ azure-functions
 ```{toctree}
 :hidden:
 
-influxdb
+../influxdb/index
 ```
 
 
