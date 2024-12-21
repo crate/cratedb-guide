@@ -1,40 +1,18 @@
 (dbt-usage)=
-
 # Using dbt with CrateDB
 
-_Guidelines for transforming data using dbt and CrateDB._
+:::{include} /_include/links.md
+:::
 
-## Introduction
+_Setup instructions and guidelines for transforming data using dbt and CrateDB._
 
-### dbt's Features
-The data abstraction layer provided by [dbt][dbt-core] allows the decoupling of
-the models on which reports and dashboards rely from the source data. When
-business rules or source systems change, you can still maintain the same models
-as a stable interface.
-
-Some of the things that dbt can do include:
-
-* Import reference data from CSV files
-* Track changes in source data with different strategies so that downstream
-  models do not need to be built every time from scratch.
-* Run tests on data, to confirm assumptions remain valid, and to validate
-  any changes made to the models' logic.
-
-### CrateDB's Benefits
-Due to its unique capabilities, CrateDB is an excellent warehouse choice for
-data transformation projects. It offers automatic indexing, fast aggregations,
-easy partitioning, and the ability to scale horizontally.
-
+:::{div}
+For running the following steps, you will need connectivity to a CrateDB
+cluster, and a Python installation on your workstation. You can use
+[CrateDB Self-Managed] or [CrateDB Cloud].
+:::
 
 ## Setup
-
-For running the following steps, you will need connectivity to a CrateDB
-cluster, and a Python installation on your workstation. The starting point
-will be a fresh installation of `dbt-cratedb2`.
-
-```bash
-pip install --upgrade 'dbt-cratedb2'
-```
 
 To start a CrateDB instance for evaluation purposes, use Docker or Podman.
 ```shell
@@ -43,12 +21,18 @@ docker run --rm \
   --env=CRATE_HEAP_SIZE=2g crate:latest
 ```
 
-**dbt Profile Configuration:** CrateDB targets should be set up using the
-following configuration in your connection profile, e.g. within a
-[`profiles.yml`] file at `~/.dbt/profiles.yml`.
+Install the most recent version of the [dbt-cratedb2] Python package.
+```shell
+pip install --upgrade 'dbt-cratedb2'
+```
+:::{note}
+dbt-cratedb2 is based on dbt-postgres, which uses [psycopg2] to connect to
+the database server.
+:::
 
-Now, create a connection profile `profiles.yaml` file including your
-connection details, for example at `~/.dbt/profiles.yml`.
+## Configure
+A minimal set of **dbt profile configuration** options, for example within a
+[`profiles.yml`] file at `~/.dbt/profiles.yml`.
 ```bash
 cd ~
 mkdir -p .dbt
@@ -67,65 +51,22 @@ cratedb_analytics:
       search_path: doc
 EOF
 ```
-(please note the values for `database`, `schema`, and `search_path` in this example)
+Please note the values for `dbname`, `schema`, and `search_path` in this example.
 
-A dbt project has a [specific structure][dbt-project-structure], and contains a combination of SQL, Jinja, YAML, and Markdown files.
+## Project
+When working with dbt, you are working on behalf of a dbt project.
+A dbt project has a [specific structure][dbt-project-structure], and contains a
+combination of SQL, Jinja, YAML, and Markdown files.
 In your project folder, alongside the `models` folder that most projects have,
 a folder called `macros` can include macro override files.
 
-
-Those dbt features have been tested successfully:
-
-* models with [view, table, and ephemeral materializations](https://docs.getdbt.com/docs/build/materializations)
-* [dbt source freshness](https://docs.getdbt.com/docs/deploy/source-freshness)
-* [dbt test](https://docs.getdbt.com/docs/build/tests)
-* [dbt seed](https://docs.getdbt.com/docs/build/seeds)
-* [Incremental materializations](https://docs.getdbt.com/docs/build/incremental-models) (with `incremental_strategy='delete+insert'` and without involving [OBJECT](https://crate.io/docs/crate/reference/en/5.4/general/ddl/data-types.html#objects) columns)
-
-We hope you find this useful. CrateDB is continuously adding new features and we will endeavor to come back and update this article if there are any developments and some of these overrides require changes or become obsolete.
-
+At [cratedb-examples » framework/dbt], you can explore a few ready-to-run dbt
+projects that demonstrate usage with CrateDB.
 
 ## Appendix
 
 A few notes about advanced configuration options and general usage
 information.
-
-### CrateDB's Differences
-- CrateDB’s fixed catalog name is `crate`, the default schema name is `doc`.
-- CrateDB does not implement the notion of a database, however tables can be created in different [schemas](https://cratedb.com/docs/crate/reference/en/latest/general/ddl/create-table.html#ddl-create-table-schemas).
-- When asked for a database name, specifying a schema name (any), or the fixed catalog name `crate` may be applicable.
-- If a database-/schema-name is omitted while connecting, the PostgreSQL drivers may default to the “username”.
-- The predefined [superuser](https://cratedb.com/docs/crate/reference/en/latest/admin/user-management.html#administration-user-management) on an unconfigured CrateDB cluster is called `crate`, defined without a password.
-- For authenticating properly, please learn about the available [authentication](https://cratedb.com/docs/crate/reference/en/latest/admin/auth/index.html#admin-auth) options.
-
--- https://cratedb.com/docs/crate/clients-tools/en/latest/connect/#configure
-
-### Connection Options
-**dbt Profile Configuration:** CrateDB targets should be set up using the
-following configuration in your [`profiles.yml`] file.
-```yaml
-company-name:
-  target: dev
-  outputs:
-    dev:
-      type: cratedb
-      host: [clustername].aks1.westeurope.azure.cratedb.net
-      user: [username]
-      password: [password]
-      port: 5432
-      dbname: crate  # CrateDB's only catalog is `crate`.
-      schema: doc    # You can define any schema. `doc` is the default.
-      threads: [optional, 1 or more]
-      [keepalives_idle](#keepalives_idle): 0 # default 0, indicating the system default. See below
-      connect_timeout: 10 # default 10 seconds
-      [retries](#retries): 1  # default 1 retry on error/timeout when opening connections
-      [search_path](#search_path): [optional, override the default postgres search_path]
-      [role](#role): [optional, set the role dbt assumes when executing queries]
-      [sslmode](#sslmode): [optional, set the sslmode used to connect to the database]
-      [sslcert](#sslcert): [optional, set the sslcert to control the certifcate file location]
-      [sslkey](#sslkey): [optional, set the sslkey to control the location of the private key]
-      [sslrootcert](#sslrootcert): [optional, set the sslrootcert config value to a new file path in order to customize the file location that contain root certificates]
-```
 
 ### Search Path
 The `search_path` config controls the CrateDB "search path" that dbt configures
@@ -154,7 +95,78 @@ the name generation according to your needs.
 {%- endmacro %}
 ```
 
+### Full Connection Options
+CrateDB targets should be set up using the following **dbt profile configuration** in
+your [`profiles.yml`] file, which is identical to the [setup options of dbt-postgres].
+```yaml
+cratedb_analytics:
+  target: dev
+  outputs:
+    dev:
+      type: cratedb
+      host: [clustername].aks1.westeurope.azure.cratedb.net
+      user: [username]
+      password: [password]
+      port: 5432
+      dbname: crate  # CrateDB's only catalog is `crate`.
+      schema: doc    # You can define any schema. `doc` is the default.
+      threads: [optional, 1 or more]
+      [keepalives_idle]: 0 # default 0, indicating the system default.
+      connect_timeout: 10 # default 10 seconds
+      [retries]: 1  # default 1 retry on error/timeout when opening connections
+      [search_path]: # optional, override the default postgres `search_path`
+      [role]: # optional, set the role dbt assumes when executing queries
+      [sslmode]: # optional, set the `sslmode` used to connect to the database
+      [sslcert]: # optional, set the `sslcert` to control the certificate file location
+      [sslkey]: # optional, set the `sslkey` to control the location of the private key
+      [sslrootcert]: # optional, set the `sslrootcert` config value to a new file path
+                     # in order to customize the file location that contain root certificates
+```
 
+
+## Notes
+
+### CrateDB's Differences
+- CrateDB’s fixed catalog name is `crate`, the default schema name is `doc`.
+- CrateDB does not implement the notion of a database, however tables can be created in different [schemas](https://cratedb.com/docs/crate/reference/en/latest/general/ddl/create-table.html#ddl-create-table-schemas).
+- When asked for a database name, specifying a schema name (any), or the fixed catalog name `crate` may be applicable.
+- If a database/schema name is omitted while connecting, the PostgreSQL drivers may default to the “username”.
+- The predefined [superuser](https://cratedb.com/docs/crate/reference/en/latest/admin/user-management.html#administration-user-management) on an unconfigured CrateDB cluster is called `crate`, defined without a password.
+- For authenticating properly, please learn about the available [authentication](https://cratedb.com/docs/crate/reference/en/latest/admin/auth/index.html#admin-auth) options.
+
+### Feature Coverage
+Those dbt features have been tested successfully with CrateDB.
+
+* [Model materializations](https://docs.getdbt.com/docs/build/materializations):
+  table, view, incremental, ephemeral
+* [Incremental models](https://docs.getdbt.com/docs/build/incremental-models-overview)
+* [Source data freshness](https://docs.getdbt.com/docs/build/sources#source-data-freshness)
+* [CSV seeds](https://docs.getdbt.com/docs/build/seeds)
+* [Data tests](https://docs.getdbt.com/docs/build/tests)
+
+### Caveats
+- Model materializations using the "materialized view" strategy are
+  not supported yet.
+- Incremental materializations with CrateDB currently only support the
+  `delete+insert` strategy.
+- Incremental materializations do not support columns using the
+  {ref}`OBJECT <crate-reference:data-types-objects>` data type yet.
+
+
+:::{note}
+CrateDB is continuously adding new features and we will endeavor to come
+back and update this article if there are any updates or improvements.
+We are tracking interoperability issues per [Tool: dbt], and appreciate
+any contributions and reports.
+:::
+
+
+[cratedb-examples » framework/dbt]: https://github.com/crate/cratedb-examples/tree/main/framework/dbt/
+[custom schemas with dbt]: https://docs.getdbt.com/docs/build/custom-schemas
 [dbt]: https://www.getdbt.com/
-[dbt-core]: https://github.com/dbt-labs/dbt-core
+[dbt-cratedb2]: https://pypi.org/project/dbt-cratedb2/
 [dbt-project-structure]: https://docs.getdbt.com/guides/best-practices/how-we-structure/1-guide-overview
+[`profiles.yml`]: https://docs.getdbt.com/docs/core/connect-data-platform/profiles.yml
+[psycopg2]: https://pypi.org/project/psycopg2/
+[setup options of dbt-postgres]: https://docs.getdbt.com/docs/core/connect-data-platform/postgres-setup
+[Tool: dbt]: https://github.com/crate/crate/labels/tool%3A%20dbt

@@ -1,7 +1,10 @@
 (dbt)=
-
 # dbt
 
+:::{include} /_include/links.md
+:::
+
+## About
 ```{div}
 :style: "float: right"
 [![](https://www.getdbt.com/ui/img/logos/dbt-logo.svg){w=180px}](https://www.getdbt.com/)
@@ -57,13 +60,31 @@ scale.
 :::
 
 
+### dbt's Features
+The data abstraction layer provided by [dbt-core] allows the decoupling of
+the models on which reports and dashboards rely from the source data. When
+business rules or source systems change, you can still maintain the same models
+as a stable interface.
+
+Some of the things that dbt can do include:
+
+* Import reference data from CSV files.
+* Track changes in source data with different strategies so that downstream
+  models do not need to be built every time from scratch.
+* Run tests on data, to confirm assumptions remain valid, and to validate
+  any changes made to the models' logic.
+
+### CrateDB's Benefits
+Due to its unique capabilities, CrateDB is an excellent warehouse choice for
+data transformation projects. It offers automatic indexing, fast aggregations,
+easy partitioning, and the ability to scale horizontally.
+
+
 ## Setup
 Install the most recent version of the [dbt-cratedb2] Python package.
 ```shell
 pip install --upgrade 'dbt-cratedb2'
 ```
-dbt-cratedb2 is based on dbt-postgres, which uses [psycopg2] to connect to
-the database server.
 
 
 ## Configure
@@ -91,26 +112,49 @@ cratedb_analytics:
 
 ## Learn
 
+Learn how to use CrateDB with dbt by exploring concise examples.
+
 :::{rubric} Tutorials
 :::
 
-:::::{grid}
-::::{grid-item-card}
+::::{grid} 2
+:gutter: 5
+
+:::{grid-item-card}
 :link: dbt-usage
 :link-type: ref
-Advanced configuration options and other usage guidelines.
+:link-alt: dbt usage guidelines
+:padding: 3
+:class-card: sd-text-center sd-pt-4
+:class-header: sd-fs-4
+{material-outlined}`integration_instructions;2.5em`
+Usage Guidelines
+^^^
 ```{toctree}
 :maxdepth: 2
+:hidden:
 
 usage
 ```
-::::
-::::{grid-item-card}
++++
+Usage guidelines, notes, and advanced configuration options.
+:::
+
+:::{grid-item-card}
 :link: https://github.com/crate/cratedb-examples/tree/main/framework/dbt/
 :link-type: url
-A few dbt example projects using CrateDB.
+:link-alt: dbt CrateDB Examples
+:padding: 3
+:class-card: sd-text-center sd-pt-4
+:class-header: sd-fs-4
+{material-outlined}`apps;2.5em`
+Example Projects
+^^^
++++
+Explore a few dbt example projects using CrateDB.
+:::
+
 ::::
-:::::
 
 
 :::{rubric} Webinars
@@ -142,12 +186,9 @@ and then publish your project to a GitHub repository.
 ::::
 
 
-
-[custom schemas with dbt]: https://docs.getdbt.com/docs/build/custom-schemas
 [dbt]: https://www.getdbt.com/
+[dbt-core]: https://github.com/dbt-labs/dbt-core
 [dbt-cratedb2]: https://pypi.org/project/dbt-cratedb2/
 [dbt Cloud]: https://www.getdbt.com/product/dbt-cloud/
 [dbt Postgres Setup]: https://docs.getdbt.com/docs/core/connect-data-platform/postgres-setup
-[Using dbt with CrateDB]: https://community.cratedb.com/t/using-dbt-with-cratedb/1566
-[psycopg2]: https://pypi.org/project/psycopg2/
 [`profiles.yml`]: https://docs.getdbt.com/docs/core/connect-data-platform/profiles.yml
