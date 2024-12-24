@@ -214,7 +214,7 @@ solution.
 [LangChain: Chatbots]: https://python.langchain.com/docs/how_to/#chatbots
 [LangChain: Q&A with SQL]: https://python.langchain.com/docs/how_to/#qa-over-sql--csv
 [LangChain: Retrieval augmented generation]: https://python.langchain.com/docs/tutorials/sql_qa/
-[LangChain adapter for CrateDB]: https://github.com/crate-workbench/langchain
+[LangChain adapter for CrateDB]: https://pypi.org/project/langchain-cratedb/
 [LangChain Conceptual Documentation]: https://python.langchain.com/docs/introduction/
 [langchain-conversational-history-binder]: https://mybinder.org/v2/gh/crate/cratedb-examples/main?labpath=topic%2Fmachine-learning%2Fllm-langchain%2Fconversational_memory.ipynb
 [langchain-conversational-history-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/llm-langchain/conversational_memory.ipynb
