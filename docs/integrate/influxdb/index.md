@@ -3,27 +3,38 @@
 (import-influxdb)=
 # Import data from InfluxDB
 
-In this quick tutorial, you'll use the [CrateDB Toolkit InfluxDB I/O subsystem]
-to import data from [InfluxDB] into [CrateDB].
-
-:::{note}
-**Important:** The tutorial uses adapter software which is currently in beta testing.
-If you discover any issues, please [report them] back to us.
-:::
+In this quick tutorial, you will use the [CrateDB Toolkit InfluxDB I/O subsystem]
+to import data from [InfluxDB] into [CrateDB]. You can also import data directly
+from files in InfluxDB line protocol format.
 
 ## Synopsis
+
+### InfluxDB Server
 Transfer data from InfluxDB bucket/measurement into CrateDB schema/table.
-:::{code} shell
+```shell
 ctk load table \
   "influxdb2://example:token@influxdb.example.org:8086/testdrive/demo" \
   --cratedb-sqlalchemy-url="crate://user:password@cratedb.example.org:4200/testdrive/demo"
-:::
-
+```
 Query data in CrateDB.
-:::{code} shell
+```shell
 export CRATEPW=password
-crash --host=cratedb.example.org --username=user --command="SELECT * FROM testdrive.demo;"
-:::
+crash --host=cratedb.example.org --username=user --command='SELECT * FROM testdrive.demo;'
+```
+
+### InfluxDB Line Protocol
+Transfer data from InfluxDB line protocol file into CrateDB schema/table.
+```shell
+ctk load table \
+  "https://github.com/influxdata/influxdb2-sample-data/raw/master/air-sensor-data/air-sensor-data.lp" \
+  --cratedb-sqlalchemy-url="crate://user:password@cratedb.example.org:4200/testdrive/air-sensor-data"
+```
+Query data in CrateDB.
+```shell
+export CRATEPW=password
+crash --host=cratedb.example.org --username=user --command='SELECT * FROM testdrive."air-sensor-data";'
+```
+
 
 ## Data Model
 
@@ -36,9 +47,6 @@ data in schemas and tables.
 - A **tag** is similar to an indexed column in an SQL database.
 - A **field** is similar to an un-indexed column in an SQL database.
 - A **point** is similar to an SQL row.
-
--- [What are series and bucket in InfluxDB]
-
 
 ## Tutorial
 
@@ -93,8 +101,8 @@ influx-write "demo,region=amazonas temperature=28.6,humidity=93.4,windspeed=2.9 
 
 First, create these command aliases, for better UX.
 :::{code} shell
-alias crash="docker run --rm -it --link=cratedb ghcr.io/crate-workbench/cratedb-toolkit:latest crash"
-alias ctk="docker run --rm -it --link=cratedb --link=influxdb ghcr.io/crate-workbench/cratedb-toolkit:latest ctk"
+alias crash="docker run --rm -it --link=cratedb ghcr.io/crate/cratedb-toolkit:latest crash"
+alias ctk="docker run --rm -it --link=cratedb --link=influxdb ghcr.io/crate/cratedb-toolkit:latest ctk"
 :::
 
 Now, import data from InfluxDB bucket/measurement into CrateDB schema/table.
@@ -116,8 +124,8 @@ similar, with a few small adjustments.
 
 First, helpful aliases again:
 :::{code} shell
-alias ctk="docker run --rm -it ghcr.io/crate-workbench/cratedb-toolkit:latest ctk"
-alias crash="docker run --rm -it ghcr.io/crate-workbench/cratedb-toolkit:latest crash"
+alias ctk="docker run --rm -it ghcr.io/crate/cratedb-toolkit:latest ctk"
+alias crash="docker run --rm -it ghcr.io/crate/cratedb-toolkit:latest crash"
 :::
 
 You will need your credentials for both CrateDB and InfluxDB. 
@@ -164,6 +172,11 @@ The InfluxDB I/O subsystem is based on the [influxio] package. Please also
 check its documentation to learn about more of its capabilities, supporting
 you when working with InfluxDB.
 
+:::{note}
+**Important:** If you discover any issues with this adapter, please
+[report them] back to us.
+:::
+
 
 [cloud platform]: https://docs.influxdata.com/influxdb/cloud/admin
 [CrateDB]: https://github.com/crate/crate
@@ -172,5 +185,5 @@ you when working with InfluxDB.
 [InfluxDB]: https://github.com/influxdata/influxdb
 [InfluxDB Cloud]: https://cloud2.influxdata.com/
 [influxio]: https://influxio.readthedocs.io/
-[report them]: https://github.com/crate-workbench/cratedb-toolkit/issues
+[report them]: https://github.com/crate/cratedb-toolkit/issues
 [What are series and bucket in InfluxDB]: https://stackoverflow.com/questions/58190272/what-are-series-and-bucket-in-influxdb/69951376#69951376
