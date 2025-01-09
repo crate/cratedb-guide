@@ -64,7 +64,7 @@ Now, insert the data using the `COPY FROM` SQL statement.
 
 :::{code} sql
 COPY marketing_data
-FROM 'https://github.com/crate/cratedb-datasets/raw/main/cloud-tutorials/data_marketing.json.gz'
+FROM 'https://cdn.crate.io/downloads/datasets/cratedb-datasets/cloud-tutorials/data_marketing.json.gz'
 WITH (format = 'json', compression='gzip');
 :::
 
