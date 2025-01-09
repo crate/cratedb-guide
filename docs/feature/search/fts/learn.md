@@ -61,7 +61,7 @@ SQL statement.
 
 :::{code} sql
 COPY netflix_catalog
-FROM 'https://github.com/crate/cratedb-datasets/raw/main/cloud-tutorials/data_netflix.json.gz'
+FROM 'https://cdn.crate.io/downloads/datasets/cratedb-datasets/cloud-tutorials/data_netflix.json.gz'
 WITH (format = 'json', compression='gzip');
 :::
 
