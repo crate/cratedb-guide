@@ -358,7 +358,7 @@ CrateDB.
 
 
 .. _R: https://www.r-project.org/
-.. _RPostgreSQL: https://cran.r-project.org/web/packages/RPostgreSQL/index.html
+.. _RPostgreSQL: https://cran.r-project.org/web/packages/RPostgreSQL/
 .. _iris classification problem: https://en.wikipedia.org/wiki/Iris_flower_data_set
 .. _RStudio: https://rstudio.com/
 .. _caret: https://cran.r-project.org/web/packages/caret/index.html
