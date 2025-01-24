@@ -116,6 +116,36 @@ Through corresponding drivers and adapters, CrateDB is compatible with [ODBC],
 
 ## Learn
 
+:::{rubric} Videos
+:::
+::::{card} Today's data challenges and a high level overview of CrateDB
+:class-title: sd-fs-4
+:class-body: sd-text-center
+:class-footer: sd-fs-6
+
+:::{youtube} cByAOsaYddQ
+:::
++++
+_Webinar: Turbocharge your aggregations, search & AI models & get real-time insights._
+
+:::{div} text-smaller
+Discover CrateDB, the leading real-time analytics database. It provides the
+flexibility, speed, and scalability necessary to master today's data challenges.
+Watch this video to learn how CrateDB empowers you with real-time insights
+into your data to fuel advanced analytics, search, and AI models—enabling
+informed decisions that drive meaningful impact.
+:::
+::::
+
+::::{card} CrateDB Videos curated by Simon Prickett
+:class-footer: sd-fs-6
+
+Simon leads Developer Relations at CrateDB. Here, he is [sharing a playlist
+of videos] he has been part of that will show you what CrateDB is and how
+you can use it for a variety of projects.
+Make sure you also do not miss relevant [CrateDB customer stories].
+::::
+
 
 :::{rubric} Introduction
 :::
@@ -323,6 +353,7 @@ Different client libraries used by canonical guestbook demo web applications.
 [Academy]: https://learn.cratedb.com/
 [Blog]: https://cratedb.com/blog
 [Community]: https://community.cratedb.com/
+[CrateDB customer stories]: https://www.youtube.com/playlist?list=PLDZqzXOGoWUJrAF_lVx9U6BzAGG9xYz_v
 [Customers]: https://cratedb.com/customers
 [Examples]: https://github.com/crate/cratedb-examples
 [GitHub]: https://github.com/crate
@@ -332,4 +363,5 @@ Different client libraries used by canonical guestbook demo web applications.
 [JDBC]: https://en.wikipedia.org/wiki/Java_Database_Connectivity 
 [ODBC]: https://en.wikipedia.org/wiki/Open_Database_Connectivity
 [PostgreSQL wire protocol]: https://www.postgresql.org/docs/current/protocol.html
+[sharing a playlist of videos]: https://www.youtube.com/playlist?list=PL3cZtICBssphXl5rHgsgG9vTNAVTw_Veq
 [Support]: https://cratedb.com/support/
