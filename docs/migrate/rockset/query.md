@@ -74,6 +74,7 @@ under a different name, or there may be a simple workaround for your use cases.
 | ARRAY_DISTINCT(array)| `array_unique`  |
 | ARRAY_EXCEPT(array1, array2)| `array_unique(array_difference(array1, array2))` |
 | ARRAY_FLATTEN(array)| `array_unnest`  |
+| ARRAY_INTERSECT(array1, array2)| ` array(select DISTINCT a FROM UNNEST(array1) a WHERE a IN (SELECT UNNEST(array2)))`  |
 | ARRAY_JOIN(array, delimiter, nullReplacement)| [`array_to_string`]  |
 | ARRAY_MAP(function_name, array)| `(select array_agg(function_name(unnest)) from unnest(array))`  |
 | ARRAY_REMOVE(array, val)| `array_difference(array,[val])`  |
