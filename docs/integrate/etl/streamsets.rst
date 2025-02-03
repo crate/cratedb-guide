@@ -149,7 +149,7 @@ You can verify that the data is now in CrateDB:
     SELECT 1 row in set (0.050 sec)
 
 
-.. _A running and accessible StreamSets Data Collector: https://streamsets.com/products/dataops-platform-2/data-collector-engine/
+.. _A running and accessible StreamSets Data Collector: https://www.softwareag.com/en_corporate/platform/integration-apis/data-collector-engine.html
 .. _Maven Repository: https://repo1.maven.org/maven2/io/crate/crate-jdbc-standalone/
 .. _CrateDB JDBC driver: https://cratedb.com/docs/jdbc/
 .. _external libraries: https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Configuration/ExternalLibs.html

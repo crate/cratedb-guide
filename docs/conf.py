@@ -40,6 +40,11 @@ linkcheck_ignore = [
     r"http://api.open-notify.org/.*",
     # Read timed out. (read timeout=15)
     r"https://azure.microsoft.com/.*",
+    # 403 Client Error: Forbidden for url
+    r"https://www.mysql.com/.*",
+    r"https://dev.mysql.com/.*",
+    # HTTPSConnectionPool(host='www.softwareag.com', port=443): SSL: CERTIFICATE_VERIFY_FAILED
+    r"https://www.softwareag.com/.*",
 ]
 
 linkcheck_anchors_ignore_for_url += [
