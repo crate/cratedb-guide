@@ -477,8 +477,9 @@ performance.
 
 .. _consider-generated-columns:
 
-Consider generated columns
-==========================
+****************************
+ Consider generated columns
+****************************
 
 If you frequently find yourself extracting information from fields and then
 using this extracted data on filters or aggregations, it can be good to consider
