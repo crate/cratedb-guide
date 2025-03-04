@@ -249,7 +249,7 @@ can be rewritten as
 
 And
 
-.. code:: sql
+.. code:: text
 
    SELECT *
    FROM mytable
@@ -262,7 +262,7 @@ And
 
 can be rewritten as
 
-.. code:: sql
+.. code:: text
 
    SELECT *
    FROM mytable
