@@ -22,6 +22,7 @@ See `using common table expressions to speed up queries`_ for an example.
 
 .. _minimise-result-sets:
 
+
 *************************
  Avoid large result sets
 *************************
