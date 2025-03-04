@@ -300,8 +300,7 @@ can be rewritten as
 
 And
 
-.. code:: postgresql
-
+.. code:: text
    SELECT *
    FROM mytable
    WHERE
@@ -313,8 +312,7 @@ And
 
 can be rewritten as
 
-.. code:: postgresql
-
+.. code:: text
    SELECT *
    FROM mytable
    WHERE ($1 = 'ALL COUNTRIES')
