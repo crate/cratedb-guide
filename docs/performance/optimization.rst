@@ -422,7 +422,7 @@ clause, the less data CrateDB needs to read from disk.
    SELECT customerid, country
    FROM customers
 
-.. _generated-columns:
+.. _consider-generated-columns:
 
 ****************************
  Consider generated columns
