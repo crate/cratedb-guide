@@ -16,7 +16,7 @@ of how the fields we are filtering on relate to the indexes on the actual
 tables.
 
 Whenever there is an opportunity to filter data immediately next to the ``FROM``
-clause try to narrow down results as early as possible.
+clause, try to narrow down results as early as possible.
 
 See `using common table expressions to speed up queries`_ for an example.
 
