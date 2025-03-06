@@ -523,7 +523,7 @@ on these is ``MatchAllDocsQuery`` and ``GenericFunctionQuery``. These operations
 are full table scans, so you may want to review if that is expected in your
 query (you may actually intentionally be pulling all records from a table with a
 list of factory sites for instance) or if this is about a filter that is not
-being pushed down.
+being pushed down properly.
 
 .. _explain analyze: https://cratedb.com/docs/crate/reference/en/latest/sql/statements/explain.html
 
