@@ -156,7 +156,7 @@ like this:
    FROM (
       SELECT UNNEST(my_array_of_objects) obj
       FROM my_table
-      WHERE 1 = ANY(my_array_of_objects['field1'])
+      WHERE 1 = ANY (my_array_of_objects['field1'])
    ) AS subquery
    WHERE obj['field1'] = 1;
 
