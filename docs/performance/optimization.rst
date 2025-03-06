@@ -517,7 +517,7 @@ We can rewrite this as:
  Review execution plans
 ************************
 
-If a query is slow but still completes in a certain amount of time we can use
+If a query is slow but still completes in a certain amount of time, we can use
 `EXPLAIN ANALYZE`_ to get a detailed execution plan. The main thing to watch for
 on these is ``MatchAllDocsQuery`` and ``GenericFunctionQuery``. These operations
 are full table scans, so you may want to review if that is expected in your
