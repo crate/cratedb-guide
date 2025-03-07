@@ -213,9 +213,9 @@ A hangout place for members of the CrateDB community.
 ::::
 
 
-:::{rubric} Database Clients and Tools
+:::{rubric} Admin Tools
 :::
-Learn about the fundamental tools and utility programs that support working directly with CrateDB.
+Learn about the fundamental tools that support working directly with CrateDB.
 
 ::::{grid} 2 3 3 3
 :padding: 0
