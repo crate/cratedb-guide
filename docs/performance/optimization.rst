@@ -98,8 +98,8 @@ Indexing in CrateDB is optimized to support filtering and aggregations without
 requiring expensive defragmentation operations, but it is not optimized for
 sorting​.
 
-Maintaining a sorted index would slow down ingestion, that's why​ other analytical
-database systems like Cassandra and Redshift make similar trade-offs​.
+Maintaining a sorted index would slow down ingestion, that is why​ other
+analytical database systems like Cassandra and Redshift make similar trade-offs​.
 
 This means that when an ``ORDER BY`` is requested the whole dataset comes in
 memory in a node and data is sorted there and then, hence it is important to not
@@ -249,7 +249,7 @@ can be rewritten as
 
 And
 
-.. code:: text
+.. code:: postgresql
 
    SELECT *
    FROM mytable
@@ -262,7 +262,7 @@ And
 
 can be rewritten as
 
-.. code:: text
+.. code:: postgresql
 
    SELECT *
    FROM mytable
