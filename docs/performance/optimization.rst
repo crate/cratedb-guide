@@ -123,6 +123,49 @@ do:
    FROM filtered_device_data
    INNER JOIN factory_metadata ON filtered_device_data.factory_id = factory_metadata.factory_id;
 
+.. _only-sort-when-needed:
+
+****************************
+ Only sort data when needed
+****************************
+
+Indexing in CrateDB is optimized to support filtering and aggregations without
+requiring expensive defragmentation operations, but it is not optimized for
+sorting​.
+
+Maintaining a sorted index would slow down ingestion, that's why​ other analytical
+database systems like Cassandra and Redshift make similar trade-offs​.
+
+This means that when an ``ORDER BY`` is requested the whole dataset comes in
+memory in a node and data is sorted there and then, hence it is important to not
+request ``ORDER BY`` operations when not actually needed, there is, of course,
+no problem sorting a few thousand rows in the final stage of a ``SELECT`` but we
+need to avoid requesting sort operations over millions of rows.
+
+Consider leveraging filters and aggregations like ``max_by`` and ``min_by`` to
+get the desired results limiting the scope of ``ORDER BY`` operations or
+avoiding them altogether.
+
+So for instance instead of:
+
+.. code:: sql
+
+   SELECT reading_time,reading_value
+   FROM device_data
+   WHERE reading_time BETWEEN '2024-01-01' AND '2025-01-01'
+   ORDER BY reading_time DESC
+   LIMIT 10;
+
+use:
+
+.. code:: sql
+
+   SELECT reading_time,reading_value
+   FROM device_data
+   WHERE reading_time BETWEEN '2024-12-20' AND '2025-01-01'
+   ORDER BY reading_time DESC
+   LIMIT 10;
+
 .. _filter-with-array-expressions:
 
 Use filters with array expressions when filtering on the output of UNNEST
