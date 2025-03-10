@@ -51,7 +51,9 @@ clause to the relevant place.
 In some cases, we may not know how many rows we need in the intermediate working
 sets but we may know for instance that for sure there will be 10 records on the
 last day of data, doing such filtering earlier on can be super helpful for the
-optimizer and may protect us from accidentally going through years of data.
+optimizer and may protect the database from accidentally processing years of
+data, which tremendously increases the load on your cluster, wasting precious
+I/O capacity.
 
 So for instance instead of:
 
@@ -442,14 +444,15 @@ example.
  Be mindful of UDFs, leverage them in the right contexts, but only in the right contexts
 *****************************************************************************************
 
-UDFs run on a javascript virtual machine and on a single thread, so they can
-have an impact on performance.
-
-Also once we pass a value through an UDF the engine will have to work with the
-results in memory and will not be able to leverage indexes on the underlying
-fields anymore so the general considerations about delaying formatting as much
-as possible apply.
-
+When using user-defined functions (UDFs), two important details relevant for
+performance aspects need to be considered.
+1. Once values are processed by an UDF, the database engine will load results
+   into memory, and will not be able to leverage indexes on the underlying 
+   fields any longer. In this spirit, please apply the relevant general
+   considerations about delaying formatting as much as possible.
+2. UDFs run on a JavaScript virtual machine on a single thread, so they can have
+   an impact on performance, because relevant operations can not be parallelized.
+   
 However, some operations may be more straightforward to do in JavaScript than
 SQL.
 
@@ -459,11 +462,11 @@ SQL.
  Prefer positive filter expressions to negative filter expressions
 *******************************************************************
 
-Positive filter expressions can directly leverage indexing, sometimes the
-optimizer may be able to rewrite a negative expression to still use indexes but
-this may not always happen and the optimizer might not rewrite the query
-optimally. Explicitly using positive conditions removes ambiguity and ensures
-the most efficient path is chosen.
+Positive filter expressions can directly leverage indexing. With negative
+expressions, the optimizer may be able to still use indexes, but this may not
+always happen and the optimizer might not rewrite the query optimally. 
+Explicitly using positive conditions removes ambiguity and ensures the most
+efficient path is chosen.
 
 So instead of:
 
