@@ -446,12 +446,15 @@ example.
 
 When using user-defined functions (UDFs), two important details relevant for
 performance aspects need to be considered.
+
 1. Once values are processed by an UDF, the database engine will load results
    into memory, and will not be able to leverage indexes on the underlying 
    fields any longer. In this spirit, please apply the relevant general
    considerations about delaying formatting as much as possible.
+
 2. UDFs run on a JavaScript virtual machine on a single thread, so they can have
    an impact on performance, because relevant operations can not be parallelized.
+
    
 However, some operations may be more straightforward to do in JavaScript than
 SQL.
