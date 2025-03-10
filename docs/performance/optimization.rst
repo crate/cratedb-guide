@@ -98,8 +98,8 @@ Indexing in CrateDB is optimized to support filtering and aggregations without
 requiring expensive defragmentation operations, but it is not optimized for
 sorting​.
 
-Maintaining a sorted index would slow down ingestion​ and Redshift and other
-analytical database systems like Cassandra make similar trade-offs​.
+Maintaining a sorted index would slow down ingestion, that's why​ other analytical
+database systems like Cassandra and Redshift make similar trade-offs​.
 
 This means that when an ``ORDER BY`` is requested the whole dataset comes in
 memory in a node and data is sorted there and then, hence it is important to not
