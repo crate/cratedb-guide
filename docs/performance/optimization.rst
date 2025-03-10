@@ -556,8 +556,9 @@ Use the special null_or_empty function with OBJECTs and ARRAYs when relevant
 ============================================================================
 
 CrateDB has a special scalar function called null_or_empty_ , using this in
-filter conditions against OBJECTs and ARRAYs is much faster than using an ``IS
-NULL`` clause, if allowing empty objects and arrays is acceptable.
+filter conditions against OBJECTs and ARRAYs is much faster than using
+an ``IS NULL`` clause, if accepting empty objects and arrays is acceptable.
+
 
 So instead of:
 
