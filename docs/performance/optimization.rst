@@ -123,49 +123,6 @@ do:
    FROM filtered_device_data
    INNER JOIN factory_metadata ON filtered_device_data.factory_id = factory_metadata.factory_id;
 
-.. _only-sort-when-needed:
-
-****************************
- Only sort data when needed
-****************************
-
-Indexing in CrateDB is optimized to support filtering and aggregations without
-requiring expensive defragmentation operations, but it is not optimized for
-sorting​.
-
-Maintaining a sorted index would slow down ingestion, that is why​ other
-analytical database systems like Cassandra and Redshift make similar trade-offs​.
-
-This means that when an ``ORDER BY`` is requested the whole dataset comes in
-memory in a node and data is sorted there and then, hence it is important to not
-request ``ORDER BY`` operations when not actually needed, there is, of course,
-no problem sorting a few thousand rows in the final stage of a ``SELECT`` but we
-need to avoid requesting sort operations over millions of rows.
-
-Consider leveraging filters and aggregations like ``max_by`` and ``min_by`` to
-get the desired results limiting the scope of ``ORDER BY`` operations or
-avoiding them altogether.
-
-So for instance instead of:
-
-.. code:: sql
-
-   SELECT reading_time,reading_value
-   FROM device_data
-   WHERE reading_time BETWEEN '2024-01-01' AND '2025-01-01'
-   ORDER BY reading_time DESC
-   LIMIT 10;
-
-use:
-
-.. code:: sql
-
-   SELECT reading_time,reading_value
-   FROM device_data
-   WHERE reading_time BETWEEN '2024-12-20' AND '2025-01-01'
-   ORDER BY reading_time DESC
-   LIMIT 10;
-
 .. _filter-with-array-expressions:
 
 Use filters with array expressions when filtering on the output of UNNEST
@@ -199,7 +156,7 @@ like this:
    FROM (
       SELECT UNNEST(my_array_of_objects) obj
       FROM my_table
-      WHERE 1 = ANY (my_array_of_objects['field1'])
+      WHERE 1 = ANY(my_array_of_objects['field1'])
    ) AS subquery
    WHERE obj['field1'] = 1;
 
@@ -344,6 +301,7 @@ can be rewritten as
 And
 
 .. code:: postgresql
+
    SELECT *
    FROM mytable
    WHERE
@@ -356,6 +314,7 @@ And
 can be rewritten as
 
 .. code:: postgresql
+
    SELECT *
    FROM mytable
    WHERE ($1 = 'ALL COUNTRIES')
@@ -518,9 +477,8 @@ performance.
 
 .. _consider-generated-columns:
 
-****************************
- Consider generated columns
-****************************
+Consider generated columns
+==========================
 
 If you frequently find yourself extracting information from fields and then
 using this extracted data on filters or aggregations, it can be good to consider
@@ -599,9 +557,8 @@ Use the special null_or_empty function with OBJECTs and ARRAYs when relevant
 ============================================================================
 
 CrateDB has a special scalar function called null_or_empty_ , using this in
-filter conditions against OBJECTs and ARRAYs is much faster than using
-an ``IS NULL`` clause, if accepting empty objects and arrays is acceptable.
-
+filter conditions against OBJECTs and ARRAYs is much faster than using an ``IS
+NULL`` clause, if allowing empty objects and arrays is acceptable.
 
 So instead of:
 
