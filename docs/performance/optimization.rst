@@ -184,13 +184,17 @@ use `scalar functions`_ such as ``date_format`` or ``timezone``.
 Sometimes queries apply these transformations in an intermediate step and later
 do further operations like filtering on the transformed values.
 
-The CrateDB optimizer is actually very good at seeing through many of these
-situations and still using indexes on the original data. But there is always a
-risk that something particular in the query prevents this from happening and we
-end up applying the transformation on thousands or millions of records that
-later will be discarded. So whenever makes sense we want to only apply these
-transformations when we have already worked out the final result set to be sent
-back to the client.
+CrateDB's query optimizer attempts to determine the most efficient way to
+execute a given query by considering the possible query plans. Based on
+the query scenario/situation, it is always aiming to use existing indexes on
+the original data for maximum efficiency.
+
+However, there is always a chance that some particular clause in the query
+expression prevents the optimizer from selecting an optimal plan, ending up
+applying the transformation on thousands or millions of records that later
+would be discarded anyway. So, whenever it makes sense, we want to make
+sure these transformations are only applied after the database has already
+worked out the final result set to be sent back to the client.
 
 So instead of:
 
