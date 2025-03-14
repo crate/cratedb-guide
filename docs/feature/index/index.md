@@ -156,7 +156,7 @@ bit thin.
 
 
 [An Introduction to Elasticsearch]: https://dzone.com/articles/an-introduction-to-elasticsearch
-[Converged Index™: The Secret Sauce Behind Rockset's Fast Queries]: https://rockset.com/blog/converged-indexing-the-secret-sauce-behind-rocksets-fast-queries/
+[Converged Index™: The Secret Sauce Behind Rockset's Fast Queries]: https://web.archive.org/web/20241108051635/https://rockset.com/blog/converged-indexing-the-secret-sauce-behind-rocksets-fast-queries/
 [Distributed Systems Infrastructure (DSI)]: https://github.com/nyrkio/dsi
 [Elasticsearch for Dummies]: https://dzone.com/articles/elasticsearch-for-dummies
 [Elasticsearch: Documents and Indices]: https://www.elastic.co/guide/en/elasticsearch/reference/current/documents-indices.html
