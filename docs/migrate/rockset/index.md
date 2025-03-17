@@ -326,7 +326,7 @@ and Python example programs.
 [Apache/Confluent Kafka Streams]: https://kafka.apache.org/documentation/streams/
 [automatically indexes all your data]: project:#hybrid-index
 [clear commitment]: https://cratedb.com/blog/opensource-licensing-founder
-[Converged Index™]: https://rockset.com/blog/converged-indexing-the-secret-sauce-behind-rocksets-fast-queries/
+[Converged Index™]: https://web.archive.org/web/20241108051635/https://rockset.com/blog/converged-indexing-the-secret-sauce-behind-rocksets-fast-queries/
 [CrateDB]: https://cratedb.com/database
 [CrateDB Editions]: https://cratedb.com/database/editions
 [CrateDB SQL]: project:#sql
@@ -337,10 +337,10 @@ and Python example programs.
 [migration]: https://cratedb.com/migrations/rockset
 [MongoDB Atlas Change Streams]: https://www.mongodb.com/docs/manual/changeStreams/
 [open-source code base]: https://github.com/crate/crate
-[Rockset]: https://rockset.com/product/
-[Rockset's pricing examples]: https://docs.rockset.com/documentation/docs/billing#pricing-examples
+[Rockset]: https://web.archive.org/web/20241108051635/https://rockset.com/product/
+[Rockset's pricing examples]: https://web.archive.org/web/20241108051635/https://docs.rockset.com/documentation/docs/billing#pricing-examples
 [Rockset HTTP API Adapter for CrateDB]: https://cratedb-toolkit.readthedocs.io/adapter/rockset.html
-[Rockset HTTP API is sunsetting on September 30th, 2024]: https://docs.rockset.com/documentation/docs/faq
+[Rockset HTTP API is sunsetting on September 30th, 2024]: https://web.archive.org/web/20241108051635/https://docs.rockset.com/documentation/docs/faq
 [Software Development Kit]: https://cratedb-toolkit.readthedocs.io/
 [The CrateDB Documentation]: https://cratedb.com/docs/
 [truly open-source software]: https://cratedb.com/blog/cratedb-doubling-down-on-permissive-licensing-and-the-elasticsearch-lockdown
