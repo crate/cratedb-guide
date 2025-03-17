@@ -173,11 +173,13 @@ Maintaining a sorted index would slow down ingestion, that is why​ other
 analytical database systems like Cassandra and Redshift make similar
 trade-offs​.
 
-This means that when an ``ORDER BY`` is requested the whole dataset comes in
-memory in a node and data is sorted there and then, hence it is important to not
-request ``ORDER BY`` operations when not actually needed, there is, of course,
-no problem sorting a few thousand rows in the final stage of a ``SELECT`` but we
-need to avoid requesting sort operations over millions of rows.
+This means that when an ``ORDER BY`` operation is requested, the whole dataset
+needs to be loaded into the main memory on the relevant cluster node to be sorted.
+That is why it is important to not request ``ORDER BY`` operations when not actually
+needed, and most importantly, not on tables of large cardinalities without aggregating
+records beforehand. On the other hand, of course it is no problem to sort a few
+thousand rows in the final stage of a ``SELECT`` operation, but we need to avoid
+requesting sort operations over millions of rows.
 
 Consider leveraging filters and aggregations like ``max_by`` and ``min_by`` to
 limit the scope of ``ORDER BY`` operations, or
@@ -437,12 +439,14 @@ We can do something like
 Use staging tables for intermediate results if you are doing a lot of JOINs
 ===========================================================================
 
-If you have many CTEs or VIEWs and need to JOIN these in some cases it can be
-effective to store the intermediate results from these into dedicated tables and
-then use these tables, while there is a cost in writing to disk and reading data
-back we can benefit from indexing and from giving the optimizer more
-straightforward execution plans that it can optimize for parallel execution
-using multiple nodes in the cluster.
+If you have many CTEs or VIEWs with a need to JOIN them, it can be benefical
+to query them individually, store intermediate results into dedicated tables, and
+then use these tables for JOINing.
+
+While there is a cost in writing to disk and reading data back, the whole operation
+can benefit from indexing and from giving the optimizer more straightforward
+execution plans, to enable it optimizing for better parallel execution using
+multiple cluster nodes.
 
 .. _group-schema-and-function-optimization:
 
@@ -459,7 +463,7 @@ Consider generated columns
 ==========================
 
 If you frequently find yourself extracting information from fields and then
-using this extracted data on filters or aggregation it can be good to consider
+using this extracted data on filters or aggregations, it can be good to consider
 doing this operation on ingestion with a `generated column`_, this way the value
 we need for filtering and aggregations can be indexed.
 
