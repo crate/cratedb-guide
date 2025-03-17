@@ -1,19 +1,20 @@
 .. _performance:
 
-==================
-Performance Guides
-==================
+####################
+ Performance Guides
+####################
 
-Best practices and tips for common scenarios around the topics of
-performance tuning and sharding.
+Best practices and tips for common scenarios around the topics of performance
+tuning and sharding.
 
 .. rubric:: Table of contents
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    Sharding <sharding>
    inserts/index
    optimization
    selects
+   productizing
    storage
