@@ -4,11 +4,21 @@
  Query Optimization 101
 ########################
 
-.. _filtering-early:
+ 
+.. _group-early-filtering:
 
 **************************************
- Do all filtering as soon as possible
+Early Filtering and Data Reduction
 **************************************
+
+This section focuses on minimizing data processed early in queries to reduce 
+overhead.
+
+.. _filtering-early:
+
+=====================================
+Do all filtering as soon as possible
+=====================================
 
 Sometimes it may be tempting to define some VIEWs, some CTEs, do some JOINs, and
 only filter results at the end, but in this context the optimizer may lose track
@@ -20,11 +30,30 @@ clause, try to narrow down results as early as possible.
 
 See `using common table expressions to speed up queries`_ for an example.
 
+.. _select-star:
+
+=====================================
+ Avoid ``SELECT *``
+=====================================
+
+CrateDB is a columnar database. The fewer columns you specify in a ``SELECT``
+clause, the less data CrateDB needs to read from disk.
+
+.. code:: sql
+
+   -- Avoid selecting all columns
+   SELECT *
+   FROM customers
+
+   -- Instead select explicitly the subset of columns you need
+   SELECT customerid, country
+   FROM customers
+
 .. _minimise-result-sets:
 
-*************************
+=====================================
  Avoid large result sets
-*************************
+=====================================
 
 Be aware of the number of rows you are returning in a ``SELECT`` query.
 Analytical databases, such as CrateDB, excel at processing large data sets and
@@ -38,15 +67,15 @@ See also `Fetching large result sets from CrateDB`_ for examples.
 
 .. _propagate-limit:
 
-*****************************************
+=====================================
  Propagate LIMIT clauses when applicable
-*****************************************
+=====================================
 
 Similarly to the above, we may have for instance a ``LIMIT 10`` at the end of
 the query and to get there it may have been sufficient to only pull 10 records
-(or some other number of records) at an earlier stage from some given table, if
-that is the case duplicate or move (depending on specific query) the ``LIMIT``
-clause to the relevant place.
+(or some other number of records) at an earlier stage from some given table. If
+that is the case duplicate or move (depending on the specific query) the 
+``LIMIT`` clause to the relevant place.
 
 In some cases, we may not know how many rows we need in the intermediate working
 sets but we may know for instance that for sure there will be 10 records on the
@@ -90,11 +119,59 @@ do:
    FROM filtered_device_data
    INNER JOIN factory_metadata ON filtered_device_data.factory_id=factory_metadata.factory_id;
 
+.. _filter-with-array-expressions:
+
+=====================================
+ Use filters with array expressions when filtering on the output of UNNEST
+=====================================
+
+On denormalized data sets you may have records with an array of objects.
+
+You may want to unnest the array in a subquery or CTE and later filter on a
+property of the OBJECTs.
+
+.. code:: sql
+
+   SELECT *
+   FROM (
+      SELECT UNNEST(my_array_of_objects) obj
+      FROM my_table
+   )
+   WHERE obj['field1'] = 1;
+
+Just written like that this will result in every row in the table (not filtered
+with other conditions) being read and unnested to check if it meets the criteria
+on ``field1``, but CrateDB can do a lot better than this if we add an additional
+condition like this:
+
+.. code:: sql
+
+   SELECT *
+   FROM (
+      SELECT unnest(my_array_of_objects) obj
+      FROM my_table
+      WHERE 1 = ANY (my_array_of_objects['field1'])
+   ) AS subquery
+   WHERE obj['field1'] = 1;
+
+CrateDB leverages indexes to only unnest the relevant records from ``my_table``
+which can make a huge difference.
+
+
+.. _group-efficient-query-structure:
+
+**************************************
+Efficient Query Structure and Constructs
+**************************************
+
+This section focuses on optimizing SQL logic by prioritizing efficient syntax 
+and avoiding redundant operations.
+
 .. _only-sort-when-needed:
 
-****************************
+=====================================
  Only sort data when needed
-****************************
+=====================================
 
 Indexing in CrateDB is optimized to support filtering and aggregations without
 requiring expensive defragmentation operations, but it is not optimized for
@@ -133,49 +210,12 @@ use:
    ORDER BY reading_time DESC
    LIMIT 10;
 
-.. _filter-with-array-expressions:
-
-***************************************************************************
- Use filters with array expressions when filtering on the output of UNNEST
-***************************************************************************
-
-On denormalized data sets you may have records with an array of objects.
-
-You may want to unnest the array in a subquery or CTE and later filter on a
-property of the OBJECTs.
-
-.. code:: sql
-
-   SELECT *
-   FROM (
-      SELECT UNNEST(my_array_of_objects) obj
-      FROM my_table
-   )
-   WHERE obj['field1'] = 1;
-
-Just written like that this will result in every row in the table (not filtered
-with other conditions) being read and unnested to check if it meets the criteria
-on ``field1``, but CrateDB can do a lot better than this if we add an additional
-condition like this:
-
-.. code:: sql
-
-   SELECT *
-   FROM (
-      SELECT unnest(my_array_of_objects) obj
-      FROM my_table
-      WHERE 1 = ANY (my_array_of_objects['field1'])
-   ) AS subquery
-   WHERE obj['field1'] = 1;
-
-CrateDB leverages indexes to only unnest the relevant records from ``my_table``
-which can make a huge difference.
 
 .. _format-as-last-step:
 
-******************************
+=====================================
  Format output as a last step
-******************************
+=====================================
 
 In many cases, data may be stored in an efficient format but we want to
 transform it to make it more human-readable in the output of the query, we may
@@ -222,9 +262,9 @@ use:
 
 .. _replace-case:
 
-**********************************************************************
+=====================================
  Replace CASE in expressions used for filtering, JOINs, grouping, etc
-**********************************************************************
+=====================================
 
 It is not always obvious to the optimizer what we may be trying to do with a
 ``CASE`` expression (see for instance `Shortcut CASE evaluation Issue 16022`_).
@@ -281,9 +321,9 @@ case)
 
 .. _groups-instead-distinct:
 
-***********************************
+=====================================
  Use groupings instead of DISTINCT
-***********************************
+=====================================
 
 (Reference: `Issue 13818`_)
 
@@ -316,9 +356,9 @@ use
 
 .. _subqueries-instead-groups:
 
-********************************************************************
+=====================================
  Use subqueries instead of GROUP BY if the groups are already known
-********************************************************************
+=====================================
 
 Consider the following query:
 
@@ -343,11 +383,19 @@ instead:
      ) AS total
    FROM customers;
 
+.. _group-large-and-complex-queries:
+
+**************************************
+Handling Large and Complex Queries
+**************************************
+
+This section discusses strategies for breaking down complex operations on large datasets into manageable steps.
+
 .. _batch-operations:
 
-******************
+=====================================
  Batch operations
-******************
+=====================================
 
 If you need to perform lots of UPDATEs or expensive INSERTs from SELECT, instead
 of doing them all in one go, adopt a batch approach where the operations are
@@ -369,9 +417,9 @@ do
 
 .. _pagination-filters:
 
-****************************************
+=====================================
  Paginate on filters instead of results
-****************************************
+=====================================
 
 For instance instead of
 
@@ -398,9 +446,9 @@ We can do something like
 
 .. _staging-tables:
 
-*****************************************************************************
+=====================================
  Use staging tables for intermediate results if you are doing a lot of JOINs
-*****************************************************************************
+=====================================
 
 If you have many CTEs or VIEWs and need to JOIN these in some cases it can be
 effective to store the intermediate results from these into dedicated tables and
@@ -409,30 +457,21 @@ back we can benefit from indexing and from giving the optimizer more
 straightforward execution plans that it can optimize for parallel execution
 using multiple nodes in the cluster.
 
-.. _select-star:
 
-********************
- Avoid ``SELECT *``
-********************
+.. _group-schema-and-function-optimization:
 
-CrateDB is a columnar database. The fewer columns you specify in a ``SELECT``
-clause, the less data CrateDB needs to read from disk.
+**************************************
+Schema and Function Optimization
+**************************************
 
-.. code:: sql
+This section focuses on schema design and function usage to streamline performance.
 
-   -- Avoid selecting all columns
-   SELECT *
-   FROM customers
-
-   -- Instead select explicitly the subset of columns you need
-   SELECT customerid, country
-   FROM customers
 
 .. _consider-generated-columns:
 
-****************************
+=====================================
  Consider generated columns
-****************************
+=====================================
 
 If you frequently find yourself extracting information from fields and then
 using this extracted data on filters or aggregation it can be good to consider
@@ -442,11 +481,12 @@ we need for filtering and aggregations can be indexed.
 See `Using regex comparisons and other features for inspection of logs`_ for an
 example.
 
+
 .. _udf-right-context:
 
-*****************************************************************************************
+=====================================
  Be mindful of UDFs, leverage them in the right contexts, but only in the right contexts
-*****************************************************************************************
+=====================================
 
 When using user-defined functions (UDFs), two important details relevant for
 performance aspects need to be considered.
@@ -463,11 +503,20 @@ performance aspects need to be considered.
 However, some operations may be more straightforward to do in JavaScript than
 SQL.
 
+.. _group-filter-expression-optimizations:
+
+This section discusses expressions that improve filter efficiency and handling
+of specific data Structures.
+
+**************************************
+Filter and Expression Optimization
+**************************************
+
 .. _positive-filters:
 
-*******************************************************************
+=====================================
  Prefer positive filter expressions to negative filter expressions
-*******************************************************************
+=====================================
 
 Positive filter expressions can directly leverage indexing. With negative
 expressions, the optimizer may be able to still use indexes, but this may not
@@ -497,9 +546,9 @@ We can rewrite this as:
 
 .. _use-null-or-empty:
 
-******************************************************************************
+=====================================
  Use the special null_or_empty function with OBJECTs and ARRAYs when relevant
-******************************************************************************
+=====================================
 
 CrateDB has a special scalar function called null_or_empty_ , using this in
 filter conditions against OBJECTs and ARRAYs is much faster than using
@@ -521,11 +570,17 @@ We can rewrite this as:
    FROM mytable
    WHERE null_or_empty(array_column);
 
+.. _group-performance-analysis:
+
+**************************************
+Performance Analysis and Execution Plans
+**************************************
+
 .. _execution-plans:
 
-************************
+=====================================
  Review execution plans
-************************
+=====================================
 
 If a query is slow but still completes in a certain amount of time, we can use
 `EXPLAIN ANALYZE`_ to get a detailed execution plan. The main thing to watch for
@@ -534,6 +589,7 @@ are full table scans, so you may want to review if that is expected in your
 query (you may actually intentionally be pulling all records from a table with a
 list of factory sites for instance) or if this is about a filter that is not
 being pushed down properly.
+
 
 .. _explain analyze: https://cratedb.com/docs/crate/reference/en/latest/sql/statements/explain.html
 
