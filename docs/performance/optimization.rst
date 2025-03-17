@@ -134,9 +134,9 @@ storing arrays of objects.
 You may want to unnest the array in a subquery or CTE and later filter on a
 property of the OBJECTs.
 
-The next statement will result in every row in the table (not filtered with
-other conditions) being read and unnested, to check if it meets the criteria on
-``field1``.
+The next statement will result in every row in the table (not filtered
+with other conditions) being read and unnested, to check if it meets
+the criteria on ``field1``.
 
 .. code:: sql
 
