@@ -180,8 +180,8 @@ no problem sorting a few thousand rows in the final stage of a ``SELECT`` but we
 need to avoid requesting sort operations over millions of rows.
 
 Consider leveraging filters and aggregations like ``max_by`` and ``min_by`` to
-get the desired results limiting the scope of ``ORDER BY`` operations or
-avoiding them altogether.
+limit the scope of ``ORDER BY`` operations, or
+avoid them altogether when possible.
 
 So for instance instead of:
 
