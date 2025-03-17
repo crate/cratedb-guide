@@ -4,21 +4,19 @@
  Query Optimization 101
 ########################
 
- 
 .. _group-early-filtering:
 
-**************************************
-Early Filtering and Data Reduction
-**************************************
+************************************
+ Early Filtering and Data Reduction
+************************************
 
-This section focuses on minimizing data processed early in queries to reduce 
+This section focuses on minimizing data processed early in queries to reduce
 overhead.
 
 .. _filtering-early:
 
-=====================================
 Do all filtering as soon as possible
-=====================================
+====================================
 
 Sometimes it may be tempting to define some VIEWs, some CTEs, do some JOINs, and
 only filter results at the end, but in this context the optimizer may lose track
@@ -32,9 +30,8 @@ See `using common table expressions to speed up queries`_ for an example.
 
 .. _select-star:
 
-=====================================
- Avoid ``SELECT *``
-=====================================
+Avoid ``SELECT *``
+==================
 
 CrateDB is a columnar database. The fewer columns you specify in a ``SELECT``
 clause, the less data CrateDB needs to read from disk.
@@ -51,9 +48,8 @@ clause, the less data CrateDB needs to read from disk.
 
 .. _minimise-result-sets:
 
-=====================================
- Avoid large result sets
-=====================================
+Avoid large result sets
+=======================
 
 Be aware of the number of rows you are returning in a ``SELECT`` query.
 Analytical databases, such as CrateDB, excel at processing large data sets and
@@ -67,14 +63,13 @@ See also `Fetching large result sets from CrateDB`_ for examples.
 
 .. _propagate-limit:
 
-=====================================
- Propagate LIMIT clauses when applicable
-=====================================
+Propagate LIMIT clauses when applicable
+=======================================
 
 Similarly to the above, we may have for instance a ``LIMIT 10`` at the end of
 the query and to get there it may have been sufficient to only pull 10 records
 (or some other number of records) at an earlier stage from some given table. If
-that is the case duplicate or move (depending on the specific query) the 
+that is the case duplicate or move (depending on the specific query) the
 ``LIMIT`` clause to the relevant place.
 
 In some cases, we may not know how many rows we need in the intermediate working
@@ -121,9 +116,8 @@ do:
 
 .. _filter-with-array-expressions:
 
-=====================================
- Use filters with array expressions when filtering on the output of UNNEST
-=====================================
+Use filters with array expressions when filtering on the output of UNNEST
+=========================================================================
 
 On denormalized data sets you may have records with an array of objects.
 
@@ -157,28 +151,27 @@ condition like this:
 CrateDB leverages indexes to only unnest the relevant records from ``my_table``
 which can make a huge difference.
 
-
 .. _group-efficient-query-structure:
 
-**************************************
-Efficient Query Structure and Constructs
-**************************************
+******************************************
+ Efficient Query Structure and Constructs
+******************************************
 
-This section focuses on optimizing SQL logic by prioritizing efficient syntax 
+This section focuses on optimizing SQL logic by prioritizing efficient syntax
 and avoiding redundant operations.
 
 .. _only-sort-when-needed:
 
-=====================================
- Only sort data when needed
-=====================================
+Only sort data when needed
+==========================
 
 Indexing in CrateDB is optimized to support filtering and aggregations without
 requiring expensive defragmentation operations, but it is not optimized for
 sorting​.
 
 Maintaining a sorted index would slow down ingestion, that is why​ other
-analytical database systems like Cassandra and Redshift make similar trade-offs​.
+analytical database systems like Cassandra and Redshift make similar
+trade-offs​.
 
 This means that when an ``ORDER BY`` is requested the whole dataset comes in
 memory in a node and data is sorted there and then, hence it is important to not
@@ -210,12 +203,10 @@ use:
    ORDER BY reading_time DESC
    LIMIT 10;
 
-
 .. _format-as-last-step:
 
-=====================================
- Format output as a last step
-=====================================
+Format output as a last step
+============================
 
 In many cases, data may be stored in an efficient format but we want to
 transform it to make it more human-readable in the output of the query, we may
@@ -225,16 +216,16 @@ Sometimes queries apply these transformations in an intermediate step and later
 do further operations like filtering on the transformed values.
 
 CrateDB's query optimizer attempts to determine the most efficient way to
-execute a given query by considering the possible query plans. Based on
-the query scenario/situation, it is always aiming to use existing indexes on
-the original data for maximum efficiency.
+execute a given query by considering the possible query plans. Based on the
+query scenario/situation, it is always aiming to use existing indexes on the
+original data for maximum efficiency.
 
 However, there is always a chance that some particular clause in the query
 expression prevents the optimizer from selecting an optimal plan, ending up
-applying the transformation on thousands or millions of records that later
-would be discarded anyway. So, whenever it makes sense, we want to make
-sure these transformations are only applied after the database has already
-worked out the final result set to be sent back to the client.
+applying the transformation on thousands or millions of records that later would
+be discarded anyway. So, whenever it makes sense, we want to make sure these
+transformations are only applied after the database has already worked out the
+final result set to be sent back to the client.
 
 So instead of:
 
@@ -262,9 +253,8 @@ use:
 
 .. _replace-case:
 
-=====================================
- Replace CASE in expressions used for filtering, JOINs, grouping, etc
-=====================================
+Replace CASE in expressions used for filtering, JOINs, grouping, etc
+====================================================================
 
 It is not always obvious to the optimizer what we may be trying to do with a
 ``CASE`` expression (see for instance `Shortcut CASE evaluation Issue 16022`_).
@@ -321,9 +311,8 @@ case)
 
 .. _groups-instead-distinct:
 
-=====================================
- Use groupings instead of DISTINCT
-=====================================
+Use groupings instead of DISTINCT
+=================================
 
 (Reference: `Issue 13818`_)
 
@@ -356,9 +345,8 @@ use
 
 .. _subqueries-instead-groups:
 
-=====================================
- Use subqueries instead of GROUP BY if the groups are already known
-=====================================
+Use subqueries instead of GROUP BY if the groups are already known
+==================================================================
 
 Consider the following query:
 
@@ -385,17 +373,17 @@ instead:
 
 .. _group-large-and-complex-queries:
 
-**************************************
-Handling Large and Complex Queries
-**************************************
+************************************
+ Handling Large and Complex Queries
+************************************
 
-This section discusses strategies for breaking down complex operations on large datasets into manageable steps.
+This section discusses strategies for breaking down complex operations on large
+datasets into manageable steps.
 
 .. _batch-operations:
 
-=====================================
- Batch operations
-=====================================
+Batch operations
+================
 
 If you need to perform lots of UPDATEs or expensive INSERTs from SELECT, instead
 of doing them all in one go, adopt a batch approach where the operations are
@@ -417,9 +405,8 @@ do
 
 .. _pagination-filters:
 
-=====================================
- Paginate on filters instead of results
-=====================================
+Paginate on filters instead of results
+======================================
 
 For instance instead of
 
@@ -446,9 +433,8 @@ We can do something like
 
 .. _staging-tables:
 
-=====================================
- Use staging tables for intermediate results if you are doing a lot of JOINs
-=====================================
+Use staging tables for intermediate results if you are doing a lot of JOINs
+===========================================================================
 
 If you have many CTEs or VIEWs and need to JOIN these in some cases it can be
 effective to store the intermediate results from these into dedicated tables and
@@ -457,21 +443,19 @@ back we can benefit from indexing and from giving the optimizer more
 straightforward execution plans that it can optimize for parallel execution
 using multiple nodes in the cluster.
 
-
 .. _group-schema-and-function-optimization:
 
-**************************************
-Schema and Function Optimization
-**************************************
+**********************************
+ Schema and Function Optimization
+**********************************
 
-This section focuses on schema design and function usage to streamline performance.
-
+This section focuses on schema design and function usage to streamline
+performance.
 
 .. _consider-generated-columns:
 
-=====================================
- Consider generated columns
-=====================================
+Consider generated columns
+==========================
 
 If you frequently find yourself extracting information from fields and then
 using this extracted data on filters or aggregation it can be good to consider
@@ -481,25 +465,23 @@ we need for filtering and aggregations can be indexed.
 See `Using regex comparisons and other features for inspection of logs`_ for an
 example.
 
-
 .. _udf-right-context:
 
-=====================================
- Be mindful of UDFs, leverage them in the right contexts, but only in the right contexts
-=====================================
+Be mindful of UDFs, leverage them in the right contexts, but only in the right contexts
+=======================================================================================
 
 When using user-defined functions (UDFs), two important details relevant for
 performance aspects need to be considered.
 
-1. Once values are processed by an UDF, the database engine will load results
-   into memory, and will not be able to leverage indexes on the underlying 
+#. Once values are processed by an UDF, the database engine will load results
+   into memory, and will not be able to leverage indexes on the underlying
    fields any longer. In this spirit, please apply the relevant general
    considerations about delaying formatting as much as possible.
 
-2. UDFs run on a JavaScript virtual machine on a single thread, so they can have
-   an impact on performance, because relevant operations can not be parallelized.
+#. UDFs run on a JavaScript virtual machine on a single thread, so they can have
+   an impact on performance, because relevant operations can not be
+   parallelized.
 
-   
 However, some operations may be more straightforward to do in JavaScript than
 SQL.
 
@@ -508,19 +490,18 @@ SQL.
 This section discusses expressions that improve filter efficiency and handling
 of specific data Structures.
 
-**************************************
-Filter and Expression Optimization
-**************************************
+************************************
+ Filter and Expression Optimization
+************************************
 
 .. _positive-filters:
 
-=====================================
- Prefer positive filter expressions to negative filter expressions
-=====================================
+Prefer positive filter expressions to negative filter expressions
+=================================================================
 
 Positive filter expressions can directly leverage indexing. With negative
 expressions, the optimizer may be able to still use indexes, but this may not
-always happen and the optimizer might not rewrite the query optimally. 
+always happen and the optimizer might not rewrite the query optimally.
 Explicitly using positive conditions removes ambiguity and ensures the most
 efficient path is chosen.
 
@@ -546,13 +527,12 @@ We can rewrite this as:
 
 .. _use-null-or-empty:
 
-=====================================
- Use the special null_or_empty function with OBJECTs and ARRAYs when relevant
-=====================================
+Use the special null_or_empty function with OBJECTs and ARRAYs when relevant
+============================================================================
 
 CrateDB has a special scalar function called null_or_empty_ , using this in
-filter conditions against OBJECTs and ARRAYs is much faster than using
-an ``IS NULL`` clause, if accepting empty objects and arrays is acceptable.
+filter conditions against OBJECTs and ARRAYs is much faster than using an ``IS
+NULL`` clause, if accepting empty objects and arrays is acceptable.
 
 So instead of:
 
@@ -572,15 +552,14 @@ We can rewrite this as:
 
 .. _group-performance-analysis:
 
-**************************************
-Performance Analysis and Execution Plans
-**************************************
+******************************************
+ Performance Analysis and Execution Plans
+******************************************
 
 .. _execution-plans:
 
-=====================================
- Review execution plans
-=====================================
+Review execution plans
+======================
 
 If a query is slow but still completes in a certain amount of time, we can use
 `EXPLAIN ANALYZE`_ to get a detailed execution plan. The main thing to watch for
@@ -589,7 +568,6 @@ are full table scans, so you may want to review if that is expected in your
 query (you may actually intentionally be pulling all records from a table with a
 list of factory sites for instance) or if this is about a filter that is not
 being pushed down properly.
-
 
 .. _explain analyze: https://cratedb.com/docs/crate/reference/en/latest/sql/statements/explain.html
 
