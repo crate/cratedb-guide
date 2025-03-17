@@ -186,13 +186,12 @@ analytical database systems like Cassandra and Redshift make similar
 trade-offs​.
 
 This means that when an ``ORDER BY`` operation is requested, the whole dataset
-needs to be loaded into the main memory on the relevant cluster node to be
-sorted. For this reason, it is important to not request ``ORDER BY`` operations when
-not actually needed, and most importantly, not on tables of large cardinalities
-without aggregating records beforehand. On the other hand, of course it is no
-problem to sort a few thousand rows in the final stage of a ``SELECT``
-operation, but we need to avoid requesting sort operations over millions of
-rows.
+needs to be loaded into the main memory on the relevant cluster node to be sorted.
+That is why it is important to not request ``ORDER BY`` operations when not actually
+needed, and most importantly, not on tables of large cardinalities without aggregating
+records beforehand. On the other hand, of course it is no problem to sort a few
+thousand rows in the final stage of a ``SELECT`` operation, but we need to avoid
+requesting sort operations over millions of rows.
 
 Consider leveraging filters and aggregations like ``max_by`` and ``min_by`` to
 limit the scope of ``ORDER BY`` operations, or
@@ -457,14 +456,14 @@ We can do something like
 Use staging tables for intermediate results if you are doing a lot of JOINs
 ===========================================================================
 
-If you have many CTEs or VIEWs with a need to JOIN them, it can be benefical to
-query them individually, store intermediate results into dedicated tables, and
+If you have many CTEs or VIEWs with a need to JOIN them, it can be benefical
+to query them individually, store intermediate results into dedicated tables, and
 then use these tables for JOINing.
 
-While there is a cost in writing to disk and reading data back, the whole
-operation can benefit from indexing and from giving the optimizer more
-straightforward execution plans, to enable it optimizing for better parallel
-execution using multiple cluster nodes.
+While there is a cost in writing to disk and reading data back, the whole operation
+can benefit from indexing and from giving the optimizer more straightforward
+execution plans, to enable it optimizing for better parallel execution using
+multiple cluster nodes.
 
 .. _group-schema-and-function-optimization:
 
@@ -482,11 +481,8 @@ Consider generated columns
 
 If you frequently find yourself extracting information from fields and then
 using this extracted data on filters or aggregations, it can be good to consider
-doing this operation on ingestion with a `generated column`_ . In this way the value
-we need for filtering and aggregations can be indexed. This involves a trade-off
-between storage space and query performance, evaluate the frequency and
-execution times of these queries with the additional storage requirements of
-storing the generated value.
+doing this operation on ingestion with a `generated column`_, this way the value
+we need for filtering and aggregations can be indexed.
 
 See `Using regex comparisons and other features for inspection of logs`_ for an
 example.
