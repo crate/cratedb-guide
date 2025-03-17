@@ -28,7 +28,7 @@ we call a `CircuitBreakerException`, this is a fail-fast approach, we can see
 quickly that there is an issue and optimize the query to get the best
 performance, without impacting other workloads.
 
-Please take a look at `Query Optimization 101`_ for strategies to optimize your
+Please take a look at :ref:`Query Optimization 101 <performance-optimization>` for strategies to optimize your
 queries when you encounter this situation.
 
 .. _reading-lots-of-records:
@@ -62,7 +62,7 @@ CrateDB also has replicas of data and this results in additional shards in the
 cluster.
 
 Having too many or too few shards has performance implications, so it is very
-important to get familiar with the `Sharding Performance Guide`_
+important to get familiar with the :ref:`Sharding Performance Guide <sharding_guide>`
 
 But in particular, there is a soft limit of 1000 shards per node; so table
 schemas, partitioning strategy, and number of nodes need to be planned to stay
@@ -95,7 +95,7 @@ storage, write speed, and resource utilization.
 -  Going beyond this limit may impact performance.
 
 In cases with many fields and columns, it is advised to determine which columns
-need to be indexed.``
+need to be indexed.
 
 .. _section-joins:
 
@@ -112,9 +112,5 @@ See `Using common table expressions to speed up queries`_
 .. _changing the number of shards: https://cratedb.com/docs/crate/reference/en/latest/general/ddl/alter-table.html#alter-shard-number
 
 .. _fetching large result sets from cratedb: https://community.cratedb.com/t/fetching-large-result-sets-from-cratedb/1270
-
-.. _query optimization 101: https://crateio.atlassian.net/wiki/spaces/CE/pages/1279000620)
-
-.. _sharding performance guide: https://cratedb.com/docs/guide/performance/sharding.html
 
 .. _using common table expressions to speed up queries: https://community.cratedb.com/t/using-common-table-expressions-to-speed-up-queries/1719
