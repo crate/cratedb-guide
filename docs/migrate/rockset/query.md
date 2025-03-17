@@ -159,9 +159,9 @@ CREATE FUNCTION ST_ASTEXT(geography geo_shape)
 [^sign]: The `SIGN` function has been added in CrateDB 5.8 - in older versions use `IF(x<0,-1,IF(x=0,0,1))`.
 
 
-[example with cars data in Rockset's documentation]: https://docs.rockset.com/documentation/reference/select#unnest
+[example with cars data in Rockset's documentation]: https://web.archive.org/web/20241108051635/https://docs.rockset.com/documentation/reference/select#unnest
 [migration]: https://cratedb.com/migrations/rockset
 [OBJECT]: https://cratedb.com/docs/crate/reference/en/latest/general/ddl/data-types.html#objects
-[Rockset]: https://rockset.com/
+[Rockset]: https://web.archive.org/web/20241108051635/https://rockset.com/
 [UNNEST]: https://cratedb.com/docs/crate/reference/en/latest/general/builtins/table-functions.html#unnest-array-array
 [user-defined function (UDF)]: https://cratedb.com/docs/crate/reference/en/latest/general/user-defined-functions.html
