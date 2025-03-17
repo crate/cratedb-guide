@@ -224,8 +224,8 @@ Format output as a last step
 ============================
 
 In many cases, data may be stored in an efficient format, but we want to
-transform it to make it more human-readable in the output of the query. To
-accomodate such situations, we may use `scalar functions`_ such as
+transform it to make it more human-readable in the output of the query.
+To accomodate such situations, we may use `scalar functions`_ such as
 ``date_format`` or ``timezone``.
 
 Sometimes queries apply these transformations in an intermediate step and later
