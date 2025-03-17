@@ -89,7 +89,7 @@ CrateDB is a lot better at JOINs than many of our competitors and is getting
 better at every release, but JOINs in distributed databases are tricky to
 optimize, so in many cases queries involving JOINs may need a bit of tweaking.
 
-See `Using common table expressions to speed up queries - Tutorials`_
+See `Using common table expressions to speed up queries`_
 
 .. _changing the number of shards: https://cratedb.com/docs/crate/reference/en/latest/general/ddl/alter-table.html#alter-shard-number
 
