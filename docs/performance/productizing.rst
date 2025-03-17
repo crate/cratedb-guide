@@ -79,6 +79,24 @@ following considerations:
    do it for new shards only with the `ALTER TABLE ONLY` command
 -  see also `Changing the number of shards`_
 
+.. _amount-of-indexed-columns:
+
+*****************************
+ Amount of (indexed) columns
+*****************************
+
+CrateDB indexes everything by default, providing excellent query performance
+without requiring manual indexing. However, excessive indexing can impact
+storage, write speed, and resource utilization.
+
+-  All columns are automatically indexed when inserted.
+-  CrateDB optimizes indexing using Lucene-based columnar storage.
+-  A soft limit of 1,000 indexed columns (or JSON fields) per table exists.
+-  Going beyond this limit may impact performance.
+
+In cases with many fields and columns, it is advised to determine which columns
+need to be indexed.``
+
 .. _section-joins:
 
 *******
