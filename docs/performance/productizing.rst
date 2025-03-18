@@ -37,7 +37,7 @@ queries when you encounter this situation.
  Reading lots of records
 *************************
 
-When the http endpoint is used CrateDB will prepare the entire response in
+When the HTTP endpoint is used CrateDB will prepare the entire response in
 memory before sending it to the client.
 
 When the PostgreSQL protocol is used CrateDB attempts to stream the results but
