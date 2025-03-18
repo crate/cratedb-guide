@@ -103,8 +103,11 @@ do:
             device_data.reading_value
       FROM device_data
       WHERE
+           /*
+             We are sure one month of data is sufficient to find
+             10 results and it may help with partition pruning
+           */
             reading_time BETWEEN '2024-12-01' AND '2025-01-01'
-            /* we are sure one month of data is sufficient to find 10 results and it may help with partition pruning */
       LIMIT 10
    )
    SELECT
