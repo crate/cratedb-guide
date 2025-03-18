@@ -10,13 +10,13 @@
  Be mindful of memory capacity
 *******************************
 
-In CrateDB operations requiring a working set like groupings, aggregations, and
+In CrateDB, operations requiring a working set like groupings, aggregations, and
 sorting are performed fully in memory without spilling over to disk.
 
 Sometimes you may have a query that leads to a sub-optimal execution plan
 requiring lots of memory. If you are coming to CrateDB from other database
 systems, your experience may be that these queries will proceed to run taking
-longer than required and impacting other workloads in the meanwhile, sometimes
+longer than required and impacting other workloads in the meanwhile. Sometimes
 this effect may be obvious if a query takes a lot of resources and runs for a
 long time, other times it may go unnoticed if a query that could complete in say
 100 milliseconds takes one hundred times longer, 10 seconds, but the users put
@@ -56,13 +56,13 @@ In CrateDB data in tables and partitions is distributed in storage units that we
 call shards.
 
 If we do not specify how many shards we want for a table/partition CrateDB will
-derive a default from the number of CPUs.
+derive a default from the number of nodes.
 
 CrateDB also has replicas of data and this results in additional shards in the
 cluster.
 
 Having too many or too few shards has performance implications, so it is very
-important to get familiar with the :ref:`Sharding Performance Guide <sharding_guide>`
+important to get familiar with the :ref:`Sharding Performance Guide <sharding_guide>`.
 
 But in particular, there is a soft limit of 1000 shards per node; so table
 schemas, partitioning strategy, and number of nodes need to be planned to stay

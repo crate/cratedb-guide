@@ -115,7 +115,7 @@ do:
      filtered_device_data.device_name,
      filtered_device_data.reading_value
    FROM filtered_device_data
-   INNER JOIN factory_metadata ON filtered_device_data.factory_id=factory_metadata.factory_id;
+   INNER JOIN factory_metadata ON filtered_device_data.factory_id = factory_metadata.factory_id;
 
 .. _filter-with-array-expressions:
 
@@ -147,9 +147,9 @@ like this:
 
    SELECT *
    FROM (
-      SELECT unnest(my_array_of_objects) obj
+      SELECT UNNEST(my_array_of_objects) obj
       FROM my_table
-      WHERE 1 = ANY (my_array_of_objects['field1'])
+      WHERE 1 = ANY(my_array_of_objects['field1'])
    ) AS subquery
    WHERE obj['field1'] = 1;
 
@@ -194,7 +194,7 @@ So for instance instead of:
 
 .. code:: sql
 
-   SELECT reading_time,reading_value
+   SELECT reading_time, reading_value
    FROM device_data
    WHERE reading_time BETWEEN '2024-01-01' AND '2025-01-01'
    ORDER BY reading_time DESC
@@ -204,7 +204,7 @@ use:
 
 .. code:: sql
 
-   SELECT reading_time,reading_value
+   SELECT reading_time, reading_value
    FROM device_data
    WHERE reading_time BETWEEN '2024-12-20' AND '2025-01-01'
    ORDER BY reading_time DESC
@@ -241,7 +241,7 @@ So instead of:
 
    WITH mydata AS (
      SELECT
-           date_format(device_data.reading_time) AS formatted_reading_time,
+           DATE_FORMAT(device_data.reading_time) AS formatted_reading_time,
            device_data.reading_value
      FROM device_data
      )
@@ -254,7 +254,7 @@ use:
 .. code:: sql
 
    SELECT
-     date_format(device_data.reading_time) AS formatted_reading_time,
+     DATE_FORMAT(device_data.reading_time) AS formatted_reading_time,
      device_data.reading_value
    FROM device_data
    WHERE device_data.reading_time BETWEEN '2025-01-01' AND '2026-01-01'
@@ -401,14 +401,14 @@ So for instance instead of doing:
 
 .. code:: sql
 
-   UPDATE mytable SET field1=field1+1;
+   UPDATE mytable SET field1 = field1 + 1;
 
 do
 
 .. code:: shell
 
    for id in {1..100}; do
-           crash -c "UPDATE mytable SET field1=field1+1 WHERE customer_id=$id;"
+           crash -c "UPDATE mytable SET field1 = field1 + 1 WHERE customer_id = $id;"
    done
 
 .. _pagination-filters:
