@@ -40,11 +40,11 @@ clause, the less data CrateDB needs to read from disk.
 
    -- Avoid selecting all columns
    SELECT *
-   FROM customers
+   FROM customers;
 
-   -- Instead select explicitly the subset of columns you need
+   -- Instead, select explicitly the subset of columns you need
    SELECT customerid, country
-   FROM customers
+   FROM customers;
 
 .. _minimise-result-sets:
 
