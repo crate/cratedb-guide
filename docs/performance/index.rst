@@ -14,7 +14,7 @@ tuning and sharding.
 
    Sharding <sharding>
    inserts/index
-   optimization
    selects
+   optimization
    productizing
    storage
