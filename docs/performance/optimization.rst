@@ -88,7 +88,7 @@ So for instance instead of:
      device_data.device_name,
      device_data.reading_value
    FROM device_data
-   INNER JOIN factory_metadata ON device_data.factory_id=factory_metadata.factory_id
+   INNER JOIN factory_metadata ON device_data.factory_id = factory_metadata.factory_id
    WHERE reading_time BETWEEN '2024-01-01' AND '2025-01-01'
    LIMIT 10;
 
