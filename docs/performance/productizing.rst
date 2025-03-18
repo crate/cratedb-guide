@@ -44,7 +44,7 @@ When the PostgreSQL protocol is used CrateDB attempts to stream the results but
 in many cases it still needs to bring all rows to the query handler node first.
 
 So we should always limit how many rows we request at a time, see `Fetching
-large result sets from CrateDB`_
+large result sets from CrateDB`_.
 
 .. _number-of=shards:
 
