@@ -86,21 +86,24 @@ following considerations:
 
 .. _amount-of-indexed-columns:
 
-*****************************
- Amount of (indexed) columns
-*****************************
+*************************************
+ Number of indexed fields in OBJECTs
+*************************************
 
-CrateDB indexes everything by default, providing excellent query performance
-without requiring manual indexing. However, excessive indexing can impact
-storage, write speed, and resource utilization.
+``OBJECT`` columns are ``DYNAMIC`` by default and CrateDB indexes all their
+fields, providing excellent query performance without requiring manual indexing.
+However, excessive indexing can impact storage, write speed, and resource
+utilization.
 
--  All columns are automatically indexed when inserted.
+-  All fields in OBJECTs are automatically indexed when inserted.
 -  CrateDB optimizes indexing using Lucene-based columnar storage.
--  A soft limit of 1,000 indexed columns (or JSON fields) per table exists.
+-  A soft limit of 1,000 total indexed columns and OBJECT fields per table
+   exists.
 -  Going beyond this limit may impact performance.
 
-In cases with many fields and columns, it is advised to determine which columns
-need to be indexed.
+In cases with many fields and columns, it is advised to determine if some
+OBJECTs or nested parts of them need to be indexed, and use the `ignored column
+policy`_ where applicable.
 
 .. _section-joins:
 
@@ -117,5 +120,7 @@ See `Using common table expressions to speed up queries`_
 .. _changing the number of shards: https://cratedb.com/docs/crate/reference/en/latest/general/ddl/alter-table.html#alter-shard-number
 
 .. _fetching large result sets from cratedb: https://community.cratedb.com/t/fetching-large-result-sets-from-cratedb/1270
+
+.. _ignored column policy: https://cratedb.com/docs/crate/reference/en/latest/general/ddl/data-types.html#ignored
 
 .. _using common table expressions to speed up queries: https://community.cratedb.com/t/using-common-table-expressions-to-speed-up-queries/1719
