@@ -1,8 +1,12 @@
 .. _topics-to-watch-out-when-productizing-cratedb:
 
-###############################################
- Topics to watch out when productizing CrateDB
-###############################################
+#######################################
+ Key design considerations for scaling
+#######################################
+
+This article explores critical design considerations to successfully scale
+CrateDB in large production environments to ensure performance and reliability
+as workloads grow.
 
 .. _mindful-of-memory:
 
@@ -24,12 +28,12 @@ up with it without reporting to you.
 
 In CrateDB if a query would require more heap memory than the interested nodes
 have available the query will fail with a particular type of error message that
-we call a `CircuitBreakerException`, this is a fail-fast approach, we can see
+we call a ``CircuitBreakerException``, this is a fail-fast approach, we can see
 quickly that there is an issue and optimize the query to get the best
 performance, without impacting other workloads.
 
-Please take a look at :ref:`Query Optimization 101 <performance-optimization>` for strategies to optimize your
-queries when you encounter this situation.
+Please take a look at :ref:`Query Optimization 101 <performance-optimization>`
+for strategies to optimize your queries when you encounter this situation.
 
 .. _reading-lots-of-records:
 
@@ -62,7 +66,8 @@ CrateDB also has replicas of data and this results in additional shards in the
 cluster.
 
 Having too many or too few shards has performance implications, so it is very
-important to get familiar with the :ref:`Sharding Performance Guide <sharding_guide>`.
+important to get familiar with the :ref:`Sharding Performance Guide
+<sharding_guide>`.
 
 But in particular, there is a soft limit of 1000 shards per node; so table
 schemas, partitioning strategy, and number of nodes need to be planned to stay
@@ -76,7 +81,7 @@ following considerations:
 -  changing the partitioning strategy requires creating a new table and copying
    over the data
 -  the easiest way to change the number of shards on a partitioned table is to
-   do it for new shards only with the `ALTER TABLE ONLY` command
+   do it for new shards only with the ``ALTER TABLE ONLY`` command
 -  see also `Changing the number of shards`_
 
 .. _amount-of-indexed-columns:
