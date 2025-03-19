@@ -187,7 +187,7 @@ trade-offs​.
 
 This means that when an ``ORDER BY`` operation is requested, the whole dataset
 needs to be loaded into the main memory on the relevant cluster node to be
-sorted. That is why it is important to not request ``ORDER BY`` operations when
+sorted. For this reason, it is important to not request ``ORDER BY`` operations when
 not actually needed, and most importantly, not on tables of large cardinalities
 without aggregating records beforehand. On the other hand, of course it is no
 problem to sort a few thousand rows in the final stage of a ``SELECT``
@@ -239,7 +239,7 @@ original data for maximum efficiency.
 However, there is always a chance that some particular clause in the query
 expression prevents the optimizer from selecting an optimal plan, ending up
 applying the transformation on thousands or millions of records that later would
-be discarded anyway. So, whenever it makes sense, we want to make sure these
+be discarded anyway. So, whenever it makes sense, we want to ensure these
 transformations are only applied after the database has already worked out the
 final result set to be sent back to the client.
 
@@ -252,7 +252,7 @@ So instead of:
            DATE_FORMAT(device_data.reading_time) AS formatted_reading_time,
            device_data.reading_value
      FROM device_data
-     )
+)
    SELECT *
    FROM mydata
    WHERE formatted_reading_time LIKE '2025%';
@@ -277,7 +277,6 @@ It is not always obvious to the optimizer what we may be trying to do with a
 
 If you are using CASE expression for “formatting” see the previous point about
 formatting output as late as possible,
-
 but if you are using a CASE expression as part of a filter of other operation
 consider replacing it with an equivalent expression, for instance:
 
@@ -332,6 +331,8 @@ Use groupings instead of DISTINCT
 
 (Reference: `Issue 13818`_)
 
+Instead of
+
 .. code:: sql
 
    SELECT DISTINCT country FROM customers;
@@ -357,7 +358,7 @@ use
            SELECT a
            FROM t
            GROUP BY a
-           ) tmp;
+   ) tmp;
 
 .. _subqueries-instead-groups:
 
@@ -553,7 +554,7 @@ Use the special null_or_empty function with OBJECTs and ARRAYs when relevant
 
 CrateDB has a special scalar function called null_or_empty_ , using this in
 filter conditions against OBJECTs and ARRAYs is much faster than using an ``IS
-NULL`` clause, if accepting empty objects and arrays is acceptable.
+NULL`` clause, if allowing empty objects and arrays is acceptable.
 
 So instead of:
 
