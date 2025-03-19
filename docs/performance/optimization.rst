@@ -187,7 +187,7 @@ trade-offs​.
 
 This means that when an ``ORDER BY`` operation is requested, the whole dataset
 needs to be loaded into the main memory on the relevant cluster node to be
-sorted. That is why it is important to not request ``ORDER BY`` operations when
+sorted. For this reason, it is important to not request ``ORDER BY`` operations when
 not actually needed, and most importantly, not on tables of large cardinalities
 without aggregating records beforehand. On the other hand, of course it is no
 problem to sort a few thousand rows in the final stage of a ``SELECT``
@@ -252,7 +252,7 @@ So instead of:
            DATE_FORMAT(device_data.reading_time) AS formatted_reading_time,
            device_data.reading_value
      FROM device_data
-   )
+)
    SELECT *
    FROM mydata
    WHERE formatted_reading_time LIKE '2025%';
