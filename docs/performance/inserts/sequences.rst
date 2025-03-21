@@ -28,8 +28,10 @@ This option involves declaring a column as follows:
    BIGINT DEFAULT now() PRIMARY KEY
 
 **Pros:** Always increasing number - ideal if we need to timestamp records
-creation anyway **Cons:** gaps between the numbers, not suitable if we may have
-more than one record on the same millisecond
+creation anyway
+
+**Cons:** gaps between the numbers, not suitable if we may have more than one
+record on the same millisecond
 
 *************
  Using UUIDs
@@ -42,8 +44,9 @@ This option involves declaring a column as follows:
    TEXT DEFAULT gen_random_text_uuid() PRIMARY KEY
 
 **Pros:** Globally unique, no risk of conflicts if merging things from different
-tables/environments **Cons:** No order guarantee, not as human-friendly as
-numbers
+tables/environments
+
+**Cons:** No order guarantee, not as human-friendly as numbers
 
 ************************
  Use UUIDv7 identifiers
@@ -53,8 +56,10 @@ numbers
 time-ordered value. We can use these in CrateDB with an UDF_ with the code from
 https://github.com/nalgeon/uuidv7/pull/37 (update once merged)
 
-**Pros:** Same as gen_random_text_uuid above but almost sequential **Cons:** not
-as human-friendly as numbers and slight performance impact from UDF use
+**Pros:** Same as gen_random_text_uuid above but almost sequential
+
+**Cons:** not as human-friendly as numbers and slight performance impact from
+UDF use
 
 *********************************
  Use IDs from an external system
@@ -78,9 +83,11 @@ values even when many ingestion processes run in parallel.
 
 **Pros:** Can have any arbitrary type of sequences, (we may for instance want to
 increment values by 10 instead of 1 - prefix values with a year number - combine
-numbers and letters - etc) **Cons:** Need the logic for the optimistic update
-above implemented client-side, the sequences table becomes a bottleneck so not
-suitable for high-velocity ingestion scenarios
+numbers and letters - etc)
+
+**Cons:** Need the logic for the optimistic update above implemented
+client-side, the sequences table becomes a bottleneck so not suitable for
+high-velocity ingestion scenarios
 
 We will first create a table to keep the latest values for our sequences:
 
@@ -164,5 +171,7 @@ This code needs:
    pip install --upgrade records sqlalchemy-cratedb
 
 .. _extremely fast ingestion speeds: https://cratedb.com/blog/how-we-scaled-ingestion-to-one-million-rows-per-second
+
+.. _udf: https://cratedb.com/docs/crate/reference/en/latest/general/user-defined-functions.html
 
 .. _version 7 uuids: https://datatracker.ietf.org/doc/html/rfc9562#name-uuid-version-7
