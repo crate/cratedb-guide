@@ -85,7 +85,7 @@ values even when many ingestion processes run in parallel.
 increment values by 10 instead of 1 - prefix values with a year number - combine
 numbers and letters - etc)
 
-**Cons:** Need the logic for the optimistic update above implemented
+**Cons:** Need logic for the optimistic update implemented
 client-side, the sequences table becomes a bottleneck so not suitable for
 high-velocity ingestion scenarios
 
@@ -115,10 +115,10 @@ And we are going to do an example with a new table defined as follows:
    );
 
 The Python code below reads the last value used from the sequences table, and
-then attempts an optimistic UPDATE with a RETURNING clause, if a contending
+then attempts an `optimistic UPDATE`_ with a ``RETURNING`` clause, if a contending
 process already consumed the identity nothing will be returned so our process
 will retry until a value is returned, then it uses that value as the new ID for
-the record we are inserting into the mytable table.
+the record we are inserting into the ``mytable`` table.
 
 .. code:: python
 
@@ -175,3 +175,5 @@ This code needs:
 .. _udf: https://cratedb.com/docs/crate/reference/en/latest/general/user-defined-functions.html
 
 .. _version 7 uuids: https://datatracker.ietf.org/doc/html/rfc9562#name-uuid-version-7
+
+.. _optimistic update: https://cratedb.com/docs/crate/reference/en/latest/general/occ.html#optimistic-update
