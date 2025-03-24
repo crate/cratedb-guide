@@ -386,7 +386,7 @@ learn
 [Indexing and Storage in CrateDB]: https://cratedb.com/blog/indexing-and-storage-in-cratedb
 [Indexing Text for Both Effective Search and Accurate Analysis]: https://www.qualtrics.com/eng/indexing-text-for-both-effective-search-and-accurate-analysis/
 [MATCH predicate]: inv:crate-reference#predicates_match
-[Okapi BM25]: https://web.archive.org/web/20250316042308/https://trec.nist.gov/pubs/trec3/papers/city.ps.gz
+[Okapi BM25]: https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/okapi_trec3.pdf
 [search engine]: https://en.wikipedia.org/wiki/Search_engine
 [search engine indexing]: https://en.wikipedia.org/wiki/Index_(search_engine)
 [Similarity in Elasticsearch]: https://www.elastic.co/blog/found-similarity-in-elasticsearch
