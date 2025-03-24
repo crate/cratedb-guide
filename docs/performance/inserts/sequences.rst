@@ -54,7 +54,7 @@ tables/environments
 
 `Version 7 UUIDs`_ are a relatively new kind of UUIDs which feature a
 time-ordered value. We can use these in CrateDB with an UDF_ with the code from
-https://github.com/nalgeon/uuidv7/pull/37 (update once merged)
+`UUIDv7 in N languages`_.
 
 **Pros:** Same as gen_random_text_uuid above but almost sequential
 
@@ -85,9 +85,9 @@ values even when many ingestion processes run in parallel.
 increment values by 10 instead of 1 - prefix values with a year number - combine
 numbers and letters - etc)
 
-**Cons:** Need logic for the optimistic update implemented
-client-side, the sequences table becomes a bottleneck so not suitable for
-high-velocity ingestion scenarios
+**Cons:** Need logic for the optimistic update implemented client-side, the
+sequences table becomes a bottleneck so not suitable for high-velocity ingestion
+scenarios
 
 We will first create a table to keep the latest values for our sequences:
 
@@ -115,10 +115,10 @@ And we are going to do an example with a new table defined as follows:
    );
 
 The Python code below reads the last value used from the sequences table, and
-then attempts an `optimistic UPDATE`_ with a ``RETURNING`` clause, if a contending
-process already consumed the identity nothing will be returned so our process
-will retry until a value is returned, then it uses that value as the new ID for
-the record we are inserting into the ``mytable`` table.
+then attempts an `optimistic UPDATE`_ with a ``RETURNING`` clause, if a
+contending process already consumed the identity nothing will be returned so our
+process will retry until a value is returned, then it uses that value as the new
+ID for the record we are inserting into the ``mytable`` table.
 
 .. code:: python
 
@@ -172,8 +172,10 @@ This code needs:
 
 .. _extremely fast ingestion speeds: https://cratedb.com/blog/how-we-scaled-ingestion-to-one-million-rows-per-second
 
+.. _optimistic update: https://cratedb.com/docs/crate/reference/en/latest/general/occ.html#optimistic-update
+
 .. _udf: https://cratedb.com/docs/crate/reference/en/latest/general/user-defined-functions.html
 
-.. _version 7 uuids: https://datatracker.ietf.org/doc/html/rfc9562#name-uuid-version-7
+.. _uuidv7 in n languages: https://github.com/nalgeon/uuidv7/blob/main/src/uuidv7.cratedb
 
-.. _optimistic update: https://cratedb.com/docs/crate/reference/en/latest/general/occ.html#optimistic-update
+.. _version 7 uuids: https://datatracker.ietf.org/doc/html/rfc9562#name-uuid-version-7
