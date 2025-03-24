@@ -46,7 +46,8 @@ This option involves declaring a column as follows:
 **Pros:** Globally unique, no risk of conflicts if merging things from different
 tables/environments
 
-**Cons:** No order guarantee, not as human-friendly as numbers
+**Cons:** No order guarantee. Not as human-friendly as numbers. String format may
+not be applicable to cover all scenarios.
 
 ************************
  Use UUIDv7 identifiers
