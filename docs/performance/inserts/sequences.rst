@@ -129,12 +129,12 @@ ID for the record we are inserting into the ``mytable`` table.
 
    while True:
        select_query = """
-                           SELECT last_value,
-                                   _seq_no,
-                                   _primary_term
-                           FROM sequences
-                           WHERE name = :sequence_name;
-                           """
+       SELECT last_value,
+               _seq_no,
+               _primary_term
+       FROM sequences
+       WHERE name = :sequence_name;
+       """
        row = db.query(select_query, sequence_name=sequence_name).first()
        new_value = row.last_value + 1
 
