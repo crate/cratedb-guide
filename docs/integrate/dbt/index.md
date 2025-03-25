@@ -7,7 +7,7 @@
 ## About
 ```{div}
 :style: "float: right"
-[![](https://www.getdbt.com/ui/img/logos/dbt-logo.svg){w=180px}](https://www.getdbt.com/)
+[![](https://www.getdbt.com/_next/image?url=%2Fimg%2Flogos%2Fdbt-labs-logo.svg&w=384&q=75){w=180px}](https://www.getdbt.com/)
 ```
 
 [dbt] is a tool for transforming data in data warehouses using Python and SQL.
@@ -27,14 +27,14 @@ dbt projects run, for example with [Debezium](#debezium) or with [Airflow](#apac
 Afterwards, data analysts can run their dbt projects against this data to produce models
 (tables and views) that can be used with a number of [BI tools](#bi-tools).
 
-![](https://www.getdbt.com/ui/img/products/what-is-dbt-main-image.png){h=120px}
-![](https://www.getdbt.com/ui/img/products/what-is-dbt-deploy.svg){h=120px}
-![](https://www.getdbt.com/ui/img/products/what-is-dbt-eliminate-silos.svg){h=120px}
+![](https://www.getdbt.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fwl0ndo6t%2Fmain%2F6e98931b83c4b8bbe45751dced66bc80ea4ec9ac-1999x992.png%3Ffit%3Dmax%26auto%3Dformat&w=640&q=75){h=120px}
+![](https://www.getdbt.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fwl0ndo6t%2Fmain%2Fcd8cba01b3f756a3a7ed194e6e2d6a4072fac194-1220x1200.png%3Ffit%3Dmax%26auto%3Dformat&w=640&q=75){h=120px}
+![](https://www.getdbt.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fwl0ndo6t%2Fmain%2F58b87e47c2aed57fde9ccd49c927c3dff5b57d3c-1466x1130.png%3Ffit%3Dmax%26auto%3Dformat&w=640&q=75){h=120px}
 
 :::{dropdown} **Managed dbt**
 ```{div}
 :style: "float: right"
-[![](https://www.getdbt.com/ui/img/hero-dbt-cloud-features-2x5.png){w=180px}](https://www.getdbt.com/product/dbt-cloud/)
+[![](https://www.getdbt.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fwl0ndo6t%2Fmain%2Fc24fbc41bfc3ddb7fcc64932be56f0836fd355c8-1771x780.png%3Ffit%3Dmax%26auto%3Dformat&w=640&q=75){w=180px}](https://www.getdbt.com/product/dbt-cloud/)
 ```
 
 With [dbt Cloud], you can ditch time-consuming setup, and the struggles
