@@ -1,10 +1,14 @@
 from crate.theme.rtd.conf.cratedb_guide import *
 
-# Fallback guards, when parent theme does not introduce them.
+# Fallback guards, when parent theme does not introduce relevant variables.
 if "html_theme_options" not in globals():
     html_theme_options = {}
 if "intersphinx_mapping" not in globals():
     intersphinx_mapping = {}
+if "linkcheck_ignore" not in globals():
+    linkcheck_ignore = []
+if "linkcheck_anchors_ignore_for_url" not in globals():
+    linkcheck_anchors_ignore_for_url = []
 
 # Re-configure sitemap generation URLs.
 # This is a project without versioning.
@@ -18,7 +22,7 @@ html_context.update({
 })
 
 # Configure link checker.
-linkcheck_ignore = [
+linkcheck_ignore += [
     # Generic ignores.
     r"http://localhost:\d+/",
     # Forbidden by WordPress.
