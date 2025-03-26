@@ -145,7 +145,7 @@ Please read this section carefully.
 We recommend to use the package-based installation methods for :ref:`install-deb` and
 :ref:`install-rpm`, by subscribing to the corresponding package release channels.
 
-Alternatively, you can also do a `:ref:install-tarball`.
+Alternatively, you can also do an :ref:`install-tarball`.
 
 
 *****
