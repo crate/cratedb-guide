@@ -129,7 +129,8 @@ do:
 Use filters with array expressions when filtering on the output of UNNEST
 =========================================================================
 
-On denormalized data sets you may have records with an array of objects.
+On denormalized data sets, you may observe records including columns
+storing arrays of objects.
 
 You may want to unnest the array in a subquery or CTE and later filter on a
 property of the OBJECTs.
@@ -252,7 +253,7 @@ So instead of:
            DATE_FORMAT(device_data.reading_time) AS formatted_reading_time,
            device_data.reading_value
      FROM device_data
-)
+   )
    SELECT *
    FROM mydata
    WHERE formatted_reading_time LIKE '2025%';
@@ -478,7 +479,7 @@ Consider generated columns
 
 If you frequently find yourself extracting information from fields and then
 using this extracted data on filters or aggregations, it can be good to consider
-doing this operation on ingestion with a `generated column`_, this way the value
+doing this operation on ingestion with a `generated column`_ . In this way the value
 we need for filtering and aggregations can be indexed. This involves a trade-off
 between storage space and query performance, evaluate the frequency and
 execution times of these queries with the additional storage requirements of
@@ -501,7 +502,7 @@ performance aspects need to be considered.
    considerations about delaying formatting as much as possible.
 
 #. UDFs run on a JavaScript virtual machine on a single thread, so they can have
-   an impact on performance, because relevant operations can not be
+   an impact on performance as relevant operations can not be
    parallelized.
 
 However, some operations may be more straightforward to do in JavaScript than

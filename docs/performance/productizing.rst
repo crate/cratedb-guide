@@ -26,9 +26,9 @@ long time, other times it may go unnoticed if a query that could complete in say
 100 milliseconds takes one hundred times longer, 10 seconds, but the users put
 up with it without reporting to you.
 
-In CrateDB if a query would require more heap memory than the interested nodes
+If a query would require more heap memory than the interested nodes
 have available the query will fail with a particular type of error message that
-we call a ``CircuitBreakerException``, this is a fail-fast approach, we can see
+we call a ``CircuitBreakerException``. This is a fail-fast approach as we quickly see
 quickly that there is an issue and optimize the query to get the best
 performance, without impacting other workloads.
 
