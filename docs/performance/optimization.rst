@@ -252,7 +252,7 @@ So instead of:
            DATE_FORMAT(device_data.reading_time) AS formatted_reading_time,
            device_data.reading_value
      FROM device_data
-)
+   )
    SELECT *
    FROM mydata
    WHERE formatted_reading_time LIKE '2025%';
@@ -482,7 +482,7 @@ Consider generated columns
 
 If you frequently find yourself extracting information from fields and then
 using this extracted data on filters or aggregations, it can be good to consider
-doing this operation on ingestion with a `generated column`_, this way the value
+doing this operation on ingestion with a `generated column`_ . In this way the value
 we need for filtering and aggregations can be indexed. This involves a trade-off
 between storage space and query performance, evaluate the frequency and
 execution times of these queries with the additional storage requirements of
