@@ -37,10 +37,10 @@ then be used in analytics/visualization queries.
 Prerequisites
 -------------
 
-- :ref:`A running and accessible CrateDB cluster <install>`
-- `A running and accessible StreamSets Data Collector`_
-- StreamSet's `New York taxi dataset`_ downloaded to a location that can be
-  accessed by the Data Collector.
+- :ref:`A running and accessible CrateDB cluster <install>`.
+- A running and accessible `StreamSets Data Collector`_.
+- StreamSet's `New York taxi dataset`_, from the `StreamSets Basic Tutorial`_,
+  downloaded to a location that can be accessed by the Data Collector.
 - The `CrateDB JDBC driver`_ installed as an external library for the data
   collector.
 
@@ -149,9 +149,9 @@ You can verify that the data is now in CrateDB:
     SELECT 1 row in set (0.050 sec)
 
 
-.. _A running and accessible StreamSets Data Collector: https://www.softwareag.com/en_corporate/platform/integration-apis/data-collector-engine.html
 .. _Maven Repository: https://repo1.maven.org/maven2/io/crate/crate-jdbc-standalone/
 .. _CrateDB JDBC driver: https://cratedb.com/docs/jdbc/
-.. _external libraries: https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Configuration/ExternalLibs.html
-.. _New York taxi dataset: https://streamsets.com/documentation/datacollector/latest/help/datacollector/UserGuide/Tutorial/BeforeYouBegin.html?hl=nyc_taxi_data/
-.. _StreamSets Data Collector: https://www.softwareag.com/en_corporate/platform/integration-apis/data-collector-engine.html
+.. _external libraries: https://www.ibm.com/docs/en/streamsets/6.x?topic=configuration-install-external-libraries
+.. _New York taxi dataset: https://docs.streamsets.com/datacollector/sample_data/tutorial/nyc_taxi_data.csv
+.. _StreamSets Basic Tutorial: https://www.ibm.com/docs/en/streamsets/6.x?topic=tutorial-basic
+.. _StreamSets Data Collector: https://www.ibm.com/docs/en/streamsets/6.x
