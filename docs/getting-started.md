@@ -50,7 +50,7 @@ about it, please refer to its documentation at [](inv:crate-crash:*:label#index)
 ## How to Connect
 There is a dedicated page which enumerates all the connectivity options.
 
-- {ref}`connect``
+- {ref}`connect`
 
 
 :::{tip}
