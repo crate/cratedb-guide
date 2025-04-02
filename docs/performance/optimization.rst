@@ -5,7 +5,7 @@
 ########################
 
 This article covers some essential principles for optimizing queries in CrateDB
-avoiding the most common pitfalls. The patterns are relevant to both the
+while avoiding the most common pitfalls. The patterns are relevant to both the
 troubleshooting of slow queries and the proactive tuning of CrateDB deployments,
 and they show how small adjustments to filters, data transformations, and
 schemas can yield dramatic improvements in execution speed and resource
