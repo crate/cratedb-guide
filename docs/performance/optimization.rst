@@ -5,7 +5,7 @@
 ########################
 
 This article covers some essential principles for optimizing queries in CrateDB
-avoiding the most common pitfalls. The patterns are relevant to both the
+while avoiding the most common pitfalls. The patterns are relevant to both the
 troubleshooting of slow queries and the proactive tuning of CrateDB deployments,
 and they show how small adjustments to filters, data transformations, and
 schemas can yield dramatic improvements in execution speed and resource
@@ -80,11 +80,10 @@ that is the case duplicate or move (depending on the specific query) the
 ``LIMIT`` clause to the relevant place.
 
 In some cases, we may not know how many rows we need in the intermediate working
-sets but we may know for instance that for sure there will be 10 records on the
-last day of data, doing such filtering earlier on can be super helpful for the
-optimizer and may protect the database from accidentally processing years of
-data, which tremendously increases the load on your cluster, wasting precious
-I/O capacity.
+sets but we know that there will be 10 records on the last day. Doing filtering
+early will help the optimizer and can protect the database from accidentally 
+processing years of data. By not filtering early, the load on your cluster
+will increase tremendously.
 
 So for instance instead of:
 
@@ -403,9 +402,13 @@ datasets into manageable steps.
 Batch operations
 ================
 
-If you need to perform lots of UPDATEs or expensive INSERTs from SELECT, instead
-of doing them all in one go, adopt a batch approach where the operations are
-done on groups of records each time.
+If you need to perform lots of UPDATEs or expensive INSERTs from SELECT, consider
+exploring different settings for the  `overload protection`_ or `thread pool sizing`_ which can be
+used to fine tune the performance for these operations.
+
+Otherwise, if you only need to run it once and performance is not critical,
+consider using small batches instead, where the operations are done on groups of
+records each time.
 
 So for instance instead of doing:
 
@@ -413,7 +416,7 @@ So for instance instead of doing:
 
    UPDATE mytable SET field1 = field1 + 1;
 
-do
+consider a different approach such as:
 
 .. code:: shell
 
@@ -595,6 +598,10 @@ being pushed down properly.
 .. _explain analyze: https://cratedb.com/docs/crate/reference/en/latest/sql/statements/explain.html
 
 .. _fetching large result sets from cratedb: https://community.cratedb.com/t/fetching-large-result-sets-from-cratedb/1270
+
+.. _overload protection: https://cratedb.com/docs/crate/reference/en/latest/config/cluster.html#overload-protection
+
+.. _thread pool sizing: https://cratedb.com/docs/crate/reference/en/latest/config/cluster.html#thread-pools
 
 .. _generated column: https://cratedb.com/docs/crate/reference/en/latest/general/ddl/generated-columns.html
 
