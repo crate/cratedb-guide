@@ -15,4 +15,6 @@ performance tuning and sharding.
    Sharding <sharding>
    inserts/index
    selects
+   optimization
+   designing_for_scale
    storage
