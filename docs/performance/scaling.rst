@@ -1,8 +1,8 @@
-.. _topics-to-watch-out-when-productizing-cratedb:
+.. _performance-scaling:
 
-#######################################
- Key design considerations for scaling
-#######################################
+##################
+ Design for scale
+##################
 
 This article explores critical design considerations to successfully scale
 CrateDB in large production environments to ensure performance and reliability

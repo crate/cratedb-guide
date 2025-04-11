@@ -16,5 +16,5 @@ performance tuning and sharding.
    inserts/index
    selects
    optimization
-   designing_for_scale
+   scaling
    storage
