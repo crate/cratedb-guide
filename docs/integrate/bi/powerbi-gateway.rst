@@ -198,7 +198,7 @@ updated periodically.
 .. _Power BI service: https://powerbi.microsoft.com/en-us/
 .. _World Economic Outlook survey: https://www.imf.org/en/Publications/WEO
 .. _Power BI Desktop: https://powerbi.microsoft.com/en-us/desktop/
-.. _Microsoft Work/School account: https://support.microsoft.com/en-ca/help/4013943/sign-in-using-work-or-school-account
+.. _Microsoft Work/School account: https://support.microsoft.com/en-gb/account-billing/my-account-portal-for-work-or-school-accounts-eab41bfe-3b9e-441e-82be-1f6e568d65fd
 .. _Power BI Pro/Trial account: https://app.powerbi.com/signupredirect?pbi_source=web
 .. _On-Premises Data Gateway: https://docs.microsoft.com/en-us/power-bi/connect-data/service-gateway-onprem
 .. _install: https://docs.microsoft.com/en-us/data-integration/gateway/service-gateway-install

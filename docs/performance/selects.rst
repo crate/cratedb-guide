@@ -253,7 +253,7 @@ and the same PK values, will also have identical ``_id`` values.
 
 
 .. _advanced downsampling with the LTTB algorithm: https://community.cratedb.com/t/advanced-downsampling-with-the-lttb-algorithm/1287
-.. _down-sampling: https://grisha.org/blog/2015/03/28/on-time-series/#downsampling
+.. _down-sampling: https://web.archive.org/web/20240707050046/https://grisha.org/blog/2015/03/28/on-time-series/#downsampling
 .. _Largest Triangle Three Buckets: https://github.com/sveinn-steinarsson/flot-downsample
 .. _Lucene segment: https://stackoverflow.com/a/2705123
 .. _normal distribution: https://en.wikipedia.org/wiki/Normal_distribution
