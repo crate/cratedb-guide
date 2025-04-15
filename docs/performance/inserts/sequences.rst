@@ -47,7 +47,7 @@ This option involves declaring a column as follows:
 tables/environments
 
 :Cons: No order guarantee. Not as human-friendly as numbers. String format may
-not be applicable to cover all scenarios.
+not be applicable to cover all scenarios. Range queries are not possible.
 
 ************************
  Use UUIDv7 identifiers
@@ -57,7 +57,8 @@ not be applicable to cover all scenarios.
 time-ordered value. We can use these in CrateDB with an UDF_ with the code from
 `UUIDv7 in N languages`_.
 
-:Pros: Same as `gen_random_text_uuid` above but almost sequential
+:Pros: Same as `gen_random_text_uuid` above but almost sequential, which 
+enables range queries.
 
 :Cons: not as human-friendly as numbers and slight performance impact from
 UDF use
