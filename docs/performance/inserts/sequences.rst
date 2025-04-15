@@ -124,13 +124,6 @@ process will retry until a value is returned, then it uses that value as the new
 ID for the record we are inserting into the ``mytable`` table.
 
 .. code:: python
-   # /// script
-   # requires-python = ">=3.8"
-   # dependencies = [
-   #     "records",
-   #     "sqlalchemy-cratedb",
-   # ]
-   # ///
 
    import records
 
@@ -174,7 +167,11 @@ ID for the record we are inserting into the ``mytable`` table.
    db.query(insert_query, id=new_value, field1="abc")
    db.close()
 
+This code needs:
 
+.. code:: shell
+
+   pip install --upgrade records sqlalchemy-cratedb
 
 .. _extremely fast ingestion speeds: https://cratedb.com/blog/how-we-scaled-ingestion-to-one-million-rows-per-second
 
