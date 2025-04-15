@@ -31,8 +31,10 @@ This option involves declaring a column as follows:
 :Pros: Always increasing number - ideal if we need to timestamp records
 creation anyway
 
+
 :Cons: gaps between the numbers, not suitable if we may have more than one
 record on the same millisecond
+
 
 *************
  Using UUIDs
@@ -47,8 +49,10 @@ This option involves declaring a column as follows:
 :Pros: Globally unique, no risk of conflicts if merging things from different
 tables/environments
 
+
 :Cons: No order guarantee. Not as human-friendly as numbers. String format may
 not be applicable to cover all scenarios. Range queries are not possible.
+
 
 ************************
  Use UUIDv7 identifiers
@@ -61,8 +65,10 @@ time-ordered value. We can use these in CrateDB with an UDF_ with the code from
 :Pros: Same as `gen_random_text_uuid` above but almost sequential, which 
 enables range queries.
 
+
 :Cons: not as human-friendly as numbers and slight performance impact from
 UDF use
+
 
 *********************************
  Use IDs from an external system
@@ -88,9 +94,11 @@ values even when many ingestion processes run in parallel.
 increment values by 10 instead of 1 - prefix values with a year number - combine
 numbers and letters - etc)
 
+
 :Cons: Need logic for the optimistic update implemented client-side, the
 sequences table becomes a bottleneck so not suitable for high-velocity ingestion
 scenarios
+
 
 We will first create a table to keep the latest values for our sequences:
 
