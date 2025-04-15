@@ -27,10 +27,10 @@ This option involves declaring a column as follows:
 
    BIGINT DEFAULT now() PRIMARY KEY
 
-**Pros:** Always increasing number - ideal if we need to timestamp records
+:Pros: Always increasing number - ideal if we need to timestamp records
 creation anyway
 
-**Cons:** gaps between the numbers, not suitable if we may have more than one
+:Cons: gaps between the numbers, not suitable if we may have more than one
 record on the same millisecond
 
 *************
@@ -43,10 +43,10 @@ This option involves declaring a column as follows:
 
    TEXT DEFAULT gen_random_text_uuid() PRIMARY KEY
 
-**Pros:** Globally unique, no risk of conflicts if merging things from different
+:Pros: Globally unique, no risk of conflicts if merging things from different
 tables/environments
 
-**Cons:** No order guarantee. Not as human-friendly as numbers. String format may
+:Cons: No order guarantee. Not as human-friendly as numbers. String format may
 not be applicable to cover all scenarios.
 
 ************************
@@ -57,9 +57,9 @@ not be applicable to cover all scenarios.
 time-ordered value. We can use these in CrateDB with an UDF_ with the code from
 `UUIDv7 in N languages`_.
 
-**Pros:** Same as `gen_random_text_uuid` above but almost sequential
+:Pros: Same as `gen_random_text_uuid` above but almost sequential
 
-**Cons:** not as human-friendly as numbers and slight performance impact from
+:Cons: not as human-friendly as numbers and slight performance impact from
 UDF use
 
 *********************************
@@ -82,11 +82,11 @@ This approach involves a table to keep the latest values that have been consumed
 and client side code to keep it up-to-date in a way that guarantees unique
 values even when many ingestion processes run in parallel.
 
-**Pros:** Can have any arbitrary type of sequences, (we may for instance want to
+:Pros: Can have any arbitrary type of sequences, (we may for instance want to
 increment values by 10 instead of 1 - prefix values with a year number - combine
 numbers and letters - etc)
 
-**Cons:** Need logic for the optimistic update implemented client-side, the
+:Cons: Need logic for the optimistic update implemented client-side, the
 sequences table becomes a bottleneck so not suitable for high-velocity ingestion
 scenarios
 
