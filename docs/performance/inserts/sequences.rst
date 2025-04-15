@@ -132,6 +132,7 @@ process will retry until a value is returned, then it uses that value as the new
 ID for the record we are inserting into the ``mytable`` table.
 
 .. code:: python
+
    # /// script
    # requires-python = ">=3.8"
    # dependencies = [
