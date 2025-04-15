@@ -70,9 +70,9 @@ In cases where data is flowing to CrateDB from another system, we can declare
 the column on the CrateDB side without any defaults and just ingest the
 auto-incrementing values coming from the source database.
 
-See
-https://cratedb.com/blog/replicating-data-from-other-databases-to-cratedb-with-debezium-and-kafka
-for an example.
+See [Replicating data from other databases to CrateDB with Debezium and Kafka] for an example.
+
+[Replicating data from other databases to CrateDB with Debezium and Kafka]: https://cratedb.com/blog/replicating-data-from-other-databases-to-cratedb-with-debezium-and-kafka
 
 *********************
  Implement sequences
