@@ -66,9 +66,9 @@ UDF use
  Use IDs from an external system
 *********************************
 
-In cases where data is flowing to CrateDB from another system, we can declare
-the column on the CrateDB side without any defaults and just ingest the
-auto-incrementing values coming from the source database.
+In cases where data is imported into CrateDB from external systems that employ
+identifier governance, CrateDB does not need to generate any identifier values
+and primary key values can be inserted as-is from the source system.
 
 See [Replicating data from other databases to CrateDB with Debezium and Kafka] for an example.
 
