@@ -86,10 +86,10 @@ values even when many ingestion processes run in parallel.
 
 :Pros: Can have any arbitrary type of sequences, (we may for instance want to
     increment values by 10 instead of 1 - prefix values with a year number - 
-	combine numbers and letters - etc)
+    combine numbers and letters - etc)
 :Cons: Need logic for the optimistic update implemented client-side, the
     sequences table becomes a bottleneck so not suitable for high-velocity 
-	ingestion scenarios
+    ingestion scenarios
 
 
 We will first create a table to keep the latest values for our sequences:
