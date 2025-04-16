@@ -131,55 +131,66 @@ ID for the record we are inserting into the ``mytable`` table.
 
 .. code:: python
 
-   # /// script
-   # requires-python = ">=3.8"
-   # dependencies = [
-   #     "records",
-   #     "sqlalchemy-cratedb",
-   # ]
-   # ///
+	# /// script
+	# requires-python = ">=3.8"
+	# dependencies = [
+	#     "records",
+	#     "sqlalchemy-cratedb",
+	# ]
+	# ///
 
-   import records
+	import time
 
-   db = records.Database("crate://")
-   sequence_name = "mysequence"
+	import records
 
-   while True:
-       select_query = """
-       SELECT last_value,
-               _seq_no,
-               _primary_term
-       FROM sequences
-       WHERE name = :sequence_name;
-       """
-       row = db.query(select_query, sequence_name=sequence_name).first()
-       new_value = row.last_value + 1
+	db = records.Database("crate://")
+	sequence_name = "mysequence"
 
-       update_query = """
-                           UPDATE sequences
-                           SET last_value = :new_value
-                           WHERE name = :sequence_name
-                             AND _seq_no = :seq_no
-                             AND _primary_term = :primary_term
-                           RETURNING last_value;
-                   """
-       if (
-           str(
-               db.query(
-                   update_query,
-                   new_value=new_value,
-                   sequence_name=sequence_name,
-                   seq_no=row._seq_no,
-                   primary_term=row._primary_term,
-               ).all()
-           )
-           != "[]"
-       ):
-           break
+	max_retries = 5
+	base_delay = 0.1  # 100 milliseconds
 
-   insert_query = "INSERT INTO mytable (id, field1) VALUES (:id, :field1)"
-   db.query(insert_query, id=new_value, field1="abc")
-   db.close()
+	for attempt in range(max_retries):
+		select_query = """
+	   SELECT last_value,
+			   _seq_no,
+			   _primary_term
+	   FROM sequences
+	   WHERE name = :sequence_name;
+	   """
+		row = db.query(select_query, sequence_name=sequence_name).first()
+		new_value = row.last_value + 1
+
+		update_query = """
+						   UPDATE sequences
+						   SET last_value = :new_value
+						   WHERE name = :sequence_name
+							 AND _seq_no = :seq_no
+							 AND _primary_term = :primary_term
+						   RETURNING last_value;
+				   """
+		if (
+			str(
+				db.query(
+					update_query,
+					new_value=new_value,
+					sequence_name=sequence_name,
+					seq_no=row._seq_no,
+					primary_term=row._primary_term,
+				).all()
+			)
+			!= "[]"
+		):
+			break
+
+		delay = base_delay * (2**attempt)
+		print(f"Attempt {attempt + 1} failed. Retrying in {delay:.1f} seconds...")
+		time.sleep(delay)
+	else:
+		raise Exception(f"Failed after {max_retries} retries with exponential backoff")
+
+	insert_query = "INSERT INTO mytable (id, field1) VALUES (:id, :field1)"
+	db.query(insert_query, id=new_value, field1="abc")
+	db.close()
 
 .. _extremely fast ingestion speeds: https://cratedb.com/blog/how-we-scaled-ingestion-to-one-million-rows-per-second
 
