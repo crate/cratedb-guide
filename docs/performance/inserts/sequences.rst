@@ -7,13 +7,13 @@
 As you begin working with CrateDB, you might be puzzled why CrateDB does not
 have a built-in, auto-incrementing "serial" data type as PostgreSQL or MySQL.
 
-As a distributed database, designed to scale horizontally, CrateDB needs as
-many operations as possible to complete independently on each node without
-any coordination between nodes.
+As a distributed database, designed to scale horizontally, CrateDB needs as many
+operations as possible to complete independently on each node without any
+coordination between nodes.
 
-Maintaining a global auto-increment value requires that a node checks with 
-other nodes before allocating a new value. This bottleneck would be hindering
-our ability to achieve `extremely fast ingestion speeds`_.
+Maintaining a global auto-increment value requires that a node checks with other
+nodes before allocating a new value. This bottleneck would be hindering our
+ability to achieve `extremely fast ingestion speeds`_.
 
 That said, there are many alternatives available and we can also implement true
 consistent/synchronized sequences if we want to.
@@ -28,11 +28,13 @@ This option involves declaring a column as follows:
 
    BIGINT DEFAULT now() PRIMARY KEY
 
-:Pros: Always increasing number - ideal if we need to timestamp records
-    creation anyway
-:Cons: gaps between the numbers, not suitable if we may have more than one
-    record on the same millisecond
+:Pros:
+   Always increasing number - ideal if we need to timestamp records creation
+   anyway
 
+:Cons:
+   gaps between the numbers, not suitable if we may have more than one record on
+   the same millisecond
 
 *************
  Using UUIDs
@@ -44,11 +46,13 @@ This option involves declaring a column as follows:
 
    TEXT DEFAULT gen_random_text_uuid() PRIMARY KEY
 
-:Pros: Globally unique, no risk of conflicts if merging things from different
-    tables/environments
-:Cons: No order guarantee. Not as human-friendly as numbers. String format may
-    not be applicable to cover all scenarios. Range queries are not possible.
+:Pros:
+   Globally unique, no risk of conflicts if merging things from different
+   tables/environments
 
+:Cons:
+   No order guarantee. Not as human-friendly as numbers. String format may not
+   be applicable to cover all scenarios. Range queries are not possible.
 
 ************************
  Use UUIDv7 identifiers
@@ -58,11 +62,12 @@ This option involves declaring a column as follows:
 time-ordered value. We can use these in CrateDB with an UDF_ with the code from
 `UUIDv7 in N languages`_.
 
-:Pros: Same as `gen_random_text_uuid` above but almost sequential, which 
-    enables range queries.
-:Cons: not as human-friendly as numbers and slight performance impact from
-    UDF use
+:Pros:
+   Same as `gen_random_text_uuid` above but almost sequential, which enables
+   range queries.
 
+:Cons:
+   not as human-friendly as numbers and slight performance impact from UDF use
 
 *********************************
  Use IDs from an external system
@@ -72,9 +77,8 @@ In cases where data is imported into CrateDB from external systems that employ
 identifier governance, CrateDB does not need to generate any identifier values
 and primary key values can be inserted as-is from the source system.
 
-See [Replicating data from other databases to CrateDB with Debezium and Kafka] for an example.
-
-[Replicating data from other databases to CrateDB with Debezium and Kafka]: https://cratedb.com/blog/replicating-data-from-other-databases-to-cratedb-with-debezium-and-kafka
+See `Replicating data from other databases to CrateDB with Debezium and Kafka`_
+for an example.
 
 *********************
  Implement sequences
@@ -84,13 +88,15 @@ This approach involves a table to keep the latest values that have been consumed
 and client side code to keep it up-to-date in a way that guarantees unique
 values even when many ingestion processes run in parallel.
 
-:Pros: Can have any arbitrary type of sequences, (we may for instance want to
-    increment values by 10 instead of 1 - prefix values with a year number - 
-    combine numbers and letters - etc)
-:Cons: Need logic for the optimistic update implemented client-side, the
-    sequences table becomes a bottleneck so not suitable for high-velocity 
-    ingestion scenarios
+:Pros:
+   Can have any arbitrary type of sequences, (we may for instance want to
+   increment values by 10 instead of 1 - prefix values with a year number -
+   combine numbers and letters - etc)
 
+:Cons:
+   Need logic for the optimistic update implemented client-side, the sequences
+   table becomes a bottleneck so not suitable for high-velocity ingestion
+   scenarios
 
 We will first create a table to keep the latest values for our sequences:
 
@@ -175,11 +181,11 @@ ID for the record we are inserting into the ``mytable`` table.
    db.query(insert_query, id=new_value, field1="abc")
    db.close()
 
-
-
 .. _extremely fast ingestion speeds: https://cratedb.com/blog/how-we-scaled-ingestion-to-one-million-rows-per-second
 
 .. _optimistic update: https://cratedb.com/docs/crate/reference/en/latest/general/occ.html#optimistic-update
+
+.. _replicating data from other databases to cratedb with debezium and kafka: https://cratedb.com/blog/replicating-data-from-other-databases-to-cratedb-with-debezium-and-kafka
 
 .. _udf: https://cratedb.com/docs/crate/reference/en/latest/general/user-defined-functions.html
 
