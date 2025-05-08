@@ -17,8 +17,8 @@ Prerequisites
 -------------
 
 First, you will need a running cluster. You can use Metabase with both
-:ref:`CrateDB Cloud <cluster-deployment-stripe>` and
-:ref:`cloud:cloud-on-kubernetes`.
+CrateDB self-managed and its managed offering
+:ref:`CrateDB Cloud <cluster-deployment-stripe>`.
 
 To use Metabase, you must have an existing data set in your CrateDB cluster.
 Feel free to use the sample dataset available in the `Cloud Console`_ or

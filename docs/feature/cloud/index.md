@@ -68,7 +68,6 @@ needs.
 :::{rubric} CrateDB Cloud
 :::
 - {ref}`cloud:cluster-deployment-marketplace`
-- {ref}`cloud:cloud-on-kubernetes`
 - {ref}`Documentation <cloud:index>`
 - [Web Console]
 
