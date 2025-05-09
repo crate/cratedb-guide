@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   documentation:
-    name: Build docs on ubuntu-latest
+    name: Build docs
     runs-on: ubuntu-latest
 
     steps:
