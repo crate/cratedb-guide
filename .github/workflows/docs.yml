@@ -15,13 +15,8 @@ concurrency:
 
 jobs:
   documentation:
-
-    name: Build docs on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
+    name: Build docs on ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Acquire sources
