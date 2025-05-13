@@ -341,23 +341,10 @@ Different client libraries used by canonical guestbook demo web applications.
 ::::
 
 
-<br>
-
-----
-
-**Other Resources:**
-[Support] • [Blog] • [Customers] • [GitHub]
-
-
-[Blog]: https://cratedb.com/blog
 [CrateDB customer stories]: https://www.youtube.com/playlist?list=PLDZqzXOGoWUJrAF_lVx9U6BzAGG9xYz_v
-[Customers]: https://cratedb.com/customers
-[GitHub]: https://github.com/crate
-[Guide]: https://cratedb.com/docs/guide/
 [HTTP protocol]: https://en.wikipedia.org/wiki/HTTP
 [Integrations]: #integrate
 [JDBC]: https://en.wikipedia.org/wiki/Java_Database_Connectivity 
 [ODBC]: https://en.wikipedia.org/wiki/Open_Database_Connectivity
 [PostgreSQL wire protocol]: https://www.postgresql.org/docs/current/protocol.html
 [sharing a playlist of videos]: https://www.youtube.com/playlist?list=PL3cZtICBssphXl5rHgsgG9vTNAVTw_Veq
-[Support]: https://cratedb.com/support/
