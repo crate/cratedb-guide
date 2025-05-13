@@ -345,17 +345,13 @@ Different client libraries used by canonical guestbook demo web applications.
 
 ----
 
-**Resources:**
-[Academy] • [Blog] • [Community] • [Customers] • [Examples] • 
-[GitHub] • [Guide] • [Support]
+**Other Resources:**
+[Support] • [Blog] • [Customers] • [GitHub]
 
 
-[Academy]: https://learn.cratedb.com/
 [Blog]: https://cratedb.com/blog
-[Community]: https://community.cratedb.com/
 [CrateDB customer stories]: https://www.youtube.com/playlist?list=PLDZqzXOGoWUJrAF_lVx9U6BzAGG9xYz_v
 [Customers]: https://cratedb.com/customers
-[Examples]: https://github.com/crate/cratedb-examples
 [GitHub]: https://github.com/crate
 [Guide]: https://cratedb.com/docs/guide/
 [HTTP protocol]: https://en.wikipedia.org/wiki/HTTP
