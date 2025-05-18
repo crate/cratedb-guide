@@ -17,6 +17,7 @@ orm
 df
 etl/index
 cdc/index
+mcp/index
 metrics/index
 visualize/index
 bi/index
