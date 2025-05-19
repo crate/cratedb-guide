@@ -54,6 +54,16 @@ Examples using the CrateDB MCP Server.
 ::::
 
 
+:::{rubric} Example
+:::
+
+An example conversation to "talk to your data using your AI assistant of choice"
+may look like this in practice. It is using a dataset about weather data, where
+the user is interested in values which are beyond certain thresholds.
+
+![Example Claude conversation screenshot using CrateDB MCP](https://github.com/user-attachments/assets/db127717-329a-4d0e-901c-3e3dcaefefb9)
+
+
 :::{caution}
 
 **Experimental:** Please note that the CrateDB MCP Server is an experimental
