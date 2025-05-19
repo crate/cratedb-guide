@@ -47,7 +47,7 @@ testing purposes, called something like ``my_table_test``.
 Generating fake data
 --------------------
 
-IF you don't have data already, you can generate fake data. But do note that
+If you don't have data already, you can generate fake data. But do note that
 any differences between fake data and real data may produce significant
 performance differences.
 
