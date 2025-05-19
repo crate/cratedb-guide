@@ -16,9 +16,8 @@ Community servers <community>
 [MCP], the Model Context Protocol, is an open protocol that enables seamless
 integration between LLM applications and external data sources and tools.
 
-Others define MCP as "It's effectively just OpenAPI for LLMs" or "It's the
-USB-C port for AI", providing a uniform way to connect LLMs to resources they
-can use.
+MCP is sometimes described as "OpenAPI for LLMs" or as "USB-C port for AI",
+providing a uniform way to connect LLMs to resources they can use.
 
 :::{rubric} Details
 :::
