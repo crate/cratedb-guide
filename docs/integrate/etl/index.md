@@ -57,6 +57,11 @@ Tutorials and resources about configuring the managed variants, Astro and CrateD
 - [CrateDB Apache Hop Bulk Loader transform]
 
 
+## Apache Iceberg / RisingWave
+
+- [Stream processing from Iceberg tables to CrateDB using RisingWave]
+
+
 ## Apache Kafka
 :::{div}
 - {ref}`kafka-connect`
