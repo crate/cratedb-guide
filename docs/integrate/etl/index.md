@@ -59,7 +59,7 @@ Tutorials and resources about configuring the managed variants, Astro and CrateD
 
 ## Apache Iceberg / RisingWave
 
-- [Stream processing from Iceberg tables to CrateDB using RisingWave]
+- {ref}`iceberg-risingwave`
 
 
 ## Apache Kafka
