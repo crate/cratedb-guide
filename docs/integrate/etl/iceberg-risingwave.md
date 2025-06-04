@@ -1,9 +1,12 @@
 (iceberg-risingwave)=
+
 # Stream processing from Iceberg tables to CrateDB using RisingWave
 
-[RisingWave] is a stream processing platform that allows configuring data sources, views on that data, and destinations where results are materialized.
+[RisingWave] is a stream processing platform that allows configuring data
+sources, views on that data, and destinations where results are materialized.
 
-This guide aims to show you an example with data coming from an Iceberg table and aggregations materialized in real-time in CrateDB.
+This guide aims to show you an example with data coming from an Iceberg table
+and aggregations materialized in real-time in CrateDB.
 
 ## Environment setup
 
@@ -18,7 +21,9 @@ podman run -d --name minio -p 9000:9000 -p 9001:9001 \
   quay.io/minio/minio server /data --console-address ":9001"
 ```
 
-And let's create a bucket called `warehouse`, for this point a browser to http://localhost:9001 , login with `minioadmin` / `minioadmin` , and click on "Create bucket", enter "warehouse", and click again on "Create bucket".
+And let's create a bucket called `warehouse`, for this point a browser to
+http://localhost:9001 , login with `minioadmin` / `minioadmin` , and click on
+"Create bucket", enter "warehouse", and click again on "Create bucket".
 
 Then we will spin up an instance of RisingWave:
 
@@ -34,16 +39,20 @@ podman run -d --name cratedb --publish=4200:4200 --publish=5432:5432 --env CRATE
 
 We will need 3 consoles for this demonstration.
 
-On the first console we will use [PyIceberg] and [IPython] to create an Iceberg table, and later we will add data and see how aggregations materialize in CrateDB in real-time.
+On the first console we will use [PyIceberg] and [IPython] to create an Iceberg
+table, and later we will add data and see how aggregations materialize in
+CrateDB in real-time.
 
-On the second console we will do the RisingWave and CrateDB setups, and we will leave a Python script running for the streaming of changes.
+On the second console we will do the RisingWave and CrateDB setups, and we will
+leave a Python script running for the streaming of changes.
 
 And on the 3rd console we will review how data appears in CrateDB.
 
 ## Creating an Iceberg table
 
-Let's start on the first console.
-We use a Python script to create an Iceberg table on the bucket we created earlier on Minio, and as we want to keep things simple, we will use an ephemeral in-memory catalog.
+Let's start on the first console. We use a Python script to create an Iceberg
+table on the bucket we created earlier on Minio, and as we want to keep things
+simple, we will use an ephemeral in-memory catalog.
 
 ```bash
 pip install pyiceberg pyarrow s3fs
@@ -107,13 +116,15 @@ create_risingwave_compatible_metadata(table, "1")
 
 Let's now switch to the second console.
 
-To interact with both CrateDB and RisingWave we will use the `psql` command line utility, let's install it:
+To interact with both CrateDB and RisingWave we will use the `psql` command line
+utility, let's install it:
 
 ```bash
 sudo apt-get install -y postgresql-client
 ```
 
-Now let's connect first to CrateDB to create a table where we will keep the average reading for each sensor:
+Now let's connect first to CrateDB to create a table where we will keep the
+average reading for each sensor:
 
 ```bash
 psql -h localhost -U crate
@@ -137,7 +148,7 @@ psql -h localhost -p 4566 -d dev -U root
 ```sql
 CREATE SOURCE sensors_readings
 WITH (
-    connector = 'iceberg', 
+    connector = 'iceberg',
     database.name='db.db',
 	warehouse.path='s3://warehouse/',
     table.name='sensors_readings',
@@ -147,7 +158,7 @@ WITH (
 	s3.region = 'minio'
 );
 ```
-	
+
 And to materialize the averages:
 
 ```sql
@@ -246,8 +257,7 @@ table.append(data)
 create_risingwave_compatible_metadata(table, "2")
 ```
 
-Now let's go to the third console.
-Let connect to CrateDB:
+Now let's go to the third console. Let connect to CrateDB:
 
 ```bash
 psql -h localhost -U crate
@@ -280,8 +290,8 @@ table.append(data)
 create_risingwave_compatible_metadata(table, "3")
 ```
 
-If now we check again average_sensor_readings from the 3rd console we will see the average has already changed to 4.5
-
+If now we check again average_sensor_readings from the 3rd console we will see
+the average has already changed to 4.5
 
 [RisingWave]: https://github.com/risingwavelabs/risingwave
 [Podman]: https://github.com/containers/podman
