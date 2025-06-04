@@ -7,7 +7,7 @@ This guide aims to show you an example with data coming from an Iceberg table an
 
 ## Environment setup
 
-For this example we will spin up 3 containers using [Podman]
+For this example, we will spin up 3 containers using [Podman]
 
 Let's first start a [Minio] instance:
 
@@ -208,7 +208,7 @@ def cratedb_event_handler(event: pd.DataFrame):
             )
 
 
-def subscribe_average_exam_scores_change():
+def subscribe_average_sensor_readings_change():
     rw.on_change(
         subscribe_from="average_sensor_readings",
         handler=cratedb_event_handler,
@@ -216,7 +216,7 @@ def subscribe_average_exam_scores_change():
     )
 
 
-threading.Thread(target=subscribe_average_exam_scores_change).start()
+threading.Thread(target=subscribe_average_sensor_readings_change).start()
 ```
 
 ```bash
