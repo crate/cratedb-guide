@@ -182,6 +182,15 @@ mysql
 - [Automating recurrent CrateDB queries using Node-RED]
 
 
+## RisingWave
+
+:::{toctree}
+:maxdepth: 1
+
+../risingwave/index
+:::
+
+
 ## Singer / Meltano
 
 - [meltano-target-cratedb]
