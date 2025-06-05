@@ -71,6 +71,13 @@ CREATE TABLE public.average_sensor_readings (
   average_reading DOUBLE
 );
 ```
+:::{note}
+The standard approach with RisingWave would be to use its [CREATE SINK] operation
+to connect to an external target.
+However, because this does not work with CrateDB, a little Python event processor
+is needed to relay the data. An example implementation can be found in the tutorial
+referenced below.
+:::
 
 ## Learn
 
@@ -81,5 +88,6 @@ CREATE TABLE public.average_sensor_readings (
   See [Stream processing from Iceberg tables to CrateDB using RisingWave].
 
 
+[CREATE SINK]: https://docs.risingwave.com/sql/commands/sql-create-sink
 [RisingWave]: https://github.com/risingwavelabs/risingwave
 [RisingWave pricing]: https://www.risingwave.com/pricing/
