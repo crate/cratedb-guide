@@ -137,6 +137,15 @@ azure-functions
 :::
 
 
+## Estuary
+
+:::{toctree}
+:maxdepth: 1
+
+../estuary/index
+:::
+
+
 ## InfluxDB
 
 - {ref}`integrate-influxdb`
