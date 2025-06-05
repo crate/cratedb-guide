@@ -58,8 +58,15 @@ Tutorials and resources about configuring the managed variants, Astro and CrateD
 
 
 ## Apache Iceberg / RisingWave
-
+:::{div}
 - {ref}`iceberg-risingwave`
+:::
+
+```{toctree}
+:hidden:
+
+iceberg-risingwave
+```
 
 
 ## Apache Kafka
