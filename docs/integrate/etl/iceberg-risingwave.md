@@ -22,7 +22,7 @@ podman run -d --name minio -p 9000:9000 -p 9001:9001 \
 ```
 
 And let's create a bucket called `warehouse`, for this point a browser to
-http://localhost:9001 , login with `minioadmin` / `minioadmin` , and click on
+`http://localhost:9001` , login with `minioadmin` / `minioadmin` , and click on
 "Create bucket", enter "warehouse", and click again on "Create bucket".
 
 Then we will spin up an instance of RisingWave:
