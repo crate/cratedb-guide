@@ -87,7 +87,13 @@ referenced below.
   materialized in real-time in CrateDB, using RisingWave.
   See [Stream processing from Iceberg tables to CrateDB using RisingWave].
 
+:::{note}
+We are tracking interoperability issues per [Tool: RisingWave] and appreciate
+any contributions and reports.
+:::
+
 
 [CREATE SINK]: https://docs.risingwave.com/sql/commands/sql-create-sink
 [RisingWave]: https://github.com/risingwavelabs/risingwave
 [RisingWave pricing]: https://www.risingwave.com/pricing/
+[Tool: RisingWave]: https://github.com/crate/crate/labels/tool%3A%20RisingWave
