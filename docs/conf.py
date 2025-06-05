@@ -49,6 +49,8 @@ linkcheck_ignore += [
     r"https://dev.mysql.com/.*",
     # HTTPSConnectionPool(host='www.softwareag.com', port=443): SSL: CERTIFICATE_VERIFY_FAILED
     r"https://www.softwareag.com/.*",
+    # 403 Client Error: Forbidden for url
+    r"https://dzone.com/.*",
 ]
 
 linkcheck_anchors_ignore_for_url += [
