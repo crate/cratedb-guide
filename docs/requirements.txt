@@ -1,4 +1,4 @@
-crate-docs-theme>=0.38.4.dev1
+crate-docs-theme>=0.38.5
 
 # cache-buster-20240305
 # Remark: Used for PyPI download cache busting on GHA.
