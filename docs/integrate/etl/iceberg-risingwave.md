@@ -132,8 +132,8 @@ psql -h localhost -U crate
 
 ```sql
 CREATE TABLE public.average_sensor_readings (
-	sensor_id BIGINT PRIMARY KEY,
-	average_reading DOUBLE
+    sensor_id BIGINT PRIMARY KEY,
+    average_reading DOUBLE
 );
 ```
 
@@ -150,12 +150,12 @@ CREATE SOURCE sensors_readings
 WITH (
     connector = 'iceberg',
     database.name='db.db',
-	warehouse.path='s3://warehouse/',
+    warehouse.path='s3://warehouse/',
     table.name='sensors_readings',
-	s3.endpoint = 'http://host.containers.internal:9000',
+    s3.endpoint = 'http://host.containers.internal:9000',
     s3.access.key = 'minioadmin',
     s3.secret.key = 'minioadmin',
-	s3.region = 'minio'
+    s3.region = 'minio'
 );
 ```
 
