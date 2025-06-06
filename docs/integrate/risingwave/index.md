@@ -13,11 +13,6 @@ results are materialized.
 It provides both a Postgres-compatible SQL interface, like CrateDB,
 and a DataFrame-style Python interface.
 
-RisingWave can ingest millions of events per second, continuously join
-and analyze live streams with historical data, serve ad-hoc queries at
-low latency, and persist fresh, consistent results to Apache Iceberg™
-or any other downstream system.
-
 ![RisingWave overview](https://github.com/user-attachments/assets/5bd27415-300d-4b8a-aa47-196eed041ed7){h=200px}
 
 > Deliver fresh, low-latency insights from real-time streams,
@@ -74,7 +69,7 @@ CREATE TABLE public.average_sensor_readings (
 :::{note}
 The standard approach with RisingWave would be to use its [CREATE SINK] operation
 to connect to an external target.
-However, because this does not work with CrateDB, a little Python event processor
+However, because this does not currently support CrateDB, a little Python event processor
 is needed to relay the data. An example implementation can be found in the tutorial
 referenced below.
 :::
