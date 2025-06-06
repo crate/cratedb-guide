@@ -80,7 +80,7 @@ referenced below.
 :::
 - An example with data coming from an Apache Iceberg table and aggregations
   materialized in real-time in CrateDB, using RisingWave.
-  See [Stream processing from Iceberg tables to CrateDB using RisingWave].
+  See {ref}`iceberg-risingwave`.
 
 :::{note}
 We are tracking interoperability issues per [Tool: RisingWave] and appreciate
