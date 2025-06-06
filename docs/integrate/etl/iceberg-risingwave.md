@@ -21,9 +21,9 @@ podman run -d --name minio -p 9000:9000 -p 9001:9001 \
   quay.io/minio/minio server /data --console-address ":9001"
 ```
 
-And let's create a bucket called `warehouse`, for this point a browser to
-`http://localhost:9001` , login with `minioadmin` / `minioadmin` , and click on
-"Create bucket", enter "warehouse", and click again on "Create bucket".
+Now let's create a bucket called `warehouse`, for this point a browser to
+`http://localhost:9001`, log in with `minioadmin`/`minioadmin`, click 
+"Create bucket", name it `warehouse`, and click again on "Create bucket".
 
 Then we will spin up an instance of RisingWave:
 
@@ -31,26 +31,26 @@ Then we will spin up an instance of RisingWave:
 podman run -d --name risingwave -it -p 4566:4566 -p 5691:5691 docker.io/risingwavelabs/risingwave:v2.4.0 single_node
 ```
 
-And finally an instance of CrateDB:
+And finally, an instance of CrateDB:
 
 ```bash
 podman run -d --name cratedb --publish=4200:4200 --publish=5432:5432 --env CRATE_HEAP_SIZE=1g docker.io/crate/crate:5.10.7 -Cdiscovery.type=single-node
 ```
 
-We will need 3 consoles for this demonstration.
+We will need three terminals for this demonstration.
 
-On the first console we will use [PyIceberg] and [IPython] to create an Iceberg
+On the first terminal, we will use [PyIceberg] and [IPython] to create an Iceberg
 table, and later we will add data and see how aggregations materialize in
 CrateDB in real-time.
 
-On the second console we will do the RisingWave and CrateDB setups, and we will
+On the second terminal, we will do the RisingWave and CrateDB setups, and we will
 leave a Python script running for the streaming of changes.
 
-And on the 3rd console we will review how data appears in CrateDB.
+And on the third terminal, we will review how data appears in CrateDB.
 
 ## Creating an Iceberg table
 
-Let's start on the first console. We use a Python script to create an Iceberg
+Let's start on the first terminal. We use a Python script to create an Iceberg
 table on the bucket we created earlier on Minio, and as we want to keep things
 simple, we will use an ephemeral in-memory catalog.
 
@@ -60,7 +60,6 @@ ipython3
 ```
 
 ```python
-import re
 from datetime import datetime
 
 import pyarrow as pa
@@ -114,7 +113,7 @@ create_risingwave_compatible_metadata(table, "1")
 
 ## RisingWave and CrateDB setups
 
-Let's now switch to the second console.
+Let's now switch to the second terminal.
 
 To interact with both CrateDB and RisingWave we will use the `psql` command line
 utility, let's install it:
@@ -238,7 +237,7 @@ python cratedb_event_handler.py
 
 ## Adding some data and seeing results materialize in real-time
 
-Let's go back to the first console and run:
+Let's go back to the first terminal and run:
 
 ```python
 data = pa.Table.from_pydict(
@@ -257,7 +256,7 @@ table.append(data)
 create_risingwave_compatible_metadata(table, "2")
 ```
 
-Now let's go to the third console. Let connect to CrateDB:
+Now let's go to the third terminal. Let connect to CrateDB:
 
 ```bash
 psql -h localhost -U crate
@@ -271,7 +270,7 @@ SELECT * FROM public.average_sensor_readings;
 
 The average for sensor 1 is 2.3
 
-Let's go back to the first console and run:
+Let's go back to the first terminal and run:
 
 ```python
 data = pa.Table.from_pydict(
@@ -290,8 +289,8 @@ table.append(data)
 create_risingwave_compatible_metadata(table, "3")
 ```
 
-If now we check again average_sensor_readings from the 3rd console we will see
-the average has already changed to 4.5
+If we now check `average_sensor_readings` from the third terminal, we will see
+that the average has already changed to 4.5.
 
 [RisingWave]: https://github.com/risingwavelabs/risingwave
 [Podman]: https://github.com/containers/podman
