@@ -193,8 +193,12 @@ Now that we have loaded our data and can visualize it to get a better idea of
 what it contains, we can create a machine learning model to predict a species
 of iris given sepal length/width and petal length/width.
 
+.. vale proselint.Needless = NO
+
 For this, we will use `Linear Discriminant Analysis`_ (LDA), a dimensionality
 reduction technique often used in pattern classification, as is our goal here.
+
+.. vale proselint.Needless = YES
 
 First, we will split our dataset into a set that contains 80% of the elements,
 for training, and 20% of the elements, for use in validating our model:
