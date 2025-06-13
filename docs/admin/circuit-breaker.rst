@@ -3,8 +3,8 @@
 ===============
 Circuit Breaker
 ===============
-CrateDB's circuit breaker prevents queries and background processes from exhausting node memory and destabilizing the cluster.
-It works by estimating the memory an operation will require and aborting the operation before the JVM heap space is exhausted.
+CrateDB's circuit breakers prevent queries and background processes from exhausting node memory and destabilizing the cluster.
+This works by estimating the memory each operation will require and aborting the operation before the JVM heap space is exhausted.
 
 What is a Circuit Breaker
 ==========================
