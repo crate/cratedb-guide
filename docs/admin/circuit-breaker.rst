@@ -70,7 +70,7 @@ Exception Handling
 
 
     The query above will return all jobs that are currently being executed in the cluster. To check completed jobs and operations, query
-    the corresponding log tables ``sys.jobs_log`` and ``sys.operations_log``. Access to these tables are subject to `table permissions`_.
+    the corresponding system tables ``sys.jobs_log`` and ``sys.operations_log``. Access to these tables are subject to `table permissions`_.
 
   * **Scale the cluster** - if breakers trip frequently even after query tuning, evaluate scaling your cluster to get more resources.
 
