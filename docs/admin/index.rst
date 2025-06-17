@@ -14,6 +14,7 @@ CrateDB database administration practices.
     create-user
     going-into-production
     memory
+    circuit-breaker
     troubleshooting/index
 
 
