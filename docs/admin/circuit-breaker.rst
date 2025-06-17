@@ -23,11 +23,14 @@ A query executes as an ordered set of operations. Before running each stage, Cra
 If the projected total would exceed the breaker limit, the system aborts the query and returns a ``CircuitBreakingException``. 
 This pre-emptive trip prevents the JVM's garbage collector from reaching an unrecoverable out-of-memory state.
 
+It is important to understand CrateDB doesn’t aspire to do a fully accurate memory accounting, but instead opts for a best-effort approach,
+since a precise estimate is tricky to achieve.
+
 Types of Circuit Breakers
 =========================
-There are five different Circuit Breaker types which are described in detail in the `cluster settings`_ documentation page: ``query``,
-``request``, ``jobs_log``, ``operations_log``, ``total`` and ``accounting``, which was deprecated and will be removed soon. The last one, which is also 
-known as ``parent`` circuit breaker, accounts for all others, meaning that it controls the general use of memory, tripping an operation if a 
+There are six different Circuit Breaker types which are described in detail in the `cluster settings`_ documentation page: ``query``,
+``request``, ``jobs_log``, ``operations_log``, ``total`` and ``accounting``, which was deprecated and will be removed soon. The ``total`` Circuit Breaker, also 
+known as ``parent``, accounts for all others, meaning that it controls the general use of memory, tripping an operation if a 
 combination of the circuit breakers threatens the cluster. 
 
 Monitoring & Observability
@@ -43,8 +46,7 @@ Exception Handling
 ==================
 .. code-block:: console
   
-  CircuitBreakingException: [query] Data too large, data for [mergeOnHandler: 1] would be [9021423616/8.4gb], which is larger than the limit of [9019431321/8.3gb]
-
+  CircuitBreakingException[Allocating 2mb for 'query: mergeOnHandler' failed, breaker would use 976.4mb in total. Limit is 972.7mb. Either increase memory and limit, change the query or reduce concurrent query load]
 
 * **Understanding the error** 
 
