@@ -20,7 +20,7 @@ oversize aggregation or JOIN can allocate gigabytes in milliseconds. The breaker
 How Circuit Breakers Work in CrateDB
 ====================================
 A query executes as an ordered set of operations. Before running each stage, CrateDB estimates the extra memory that step will need.
-If the projected total would exceed the breaker limit, the system aborts the query and returns a ``CircuitBreakingException``.
+If the projected total exceeds the breaker limit, the system aborts the query and returns a ``CircuitBreakingException``.
 This pre-emptive trip prevents the JVM's garbage collector from reaching an unrecoverable out-of-memory state.
 
 It is important to understand CrateDB doesn’t aspire to do a fully accurate memory accounting, but instead opts for a best-effort approach,

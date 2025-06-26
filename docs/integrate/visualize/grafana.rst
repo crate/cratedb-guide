@@ -31,7 +31,7 @@ go to the Overview page of your deployed cluster.
 Once on the Overview page, click on the *import the demo data* link in the
 "Next steps" section of the Console. A window with 2 SQL statements will
 appear. The first of them creates a table that will host the data from NYC
-Taxi &  Limousine Commission which is used in this example. The second
+Taxi & Limousine Commission which is used in this example. The second
 statement imports the data into the table created in the first step. These
 statements must be executed in the shown order. First "1. Create the table"
 and then "2. Import the data".
@@ -117,7 +117,7 @@ Build your first Grafana dashboard
 
 Now that you've got the data imported to CrateDB Cloud and Grafana connected
 to it, it's time to visualize that data. In Grafana this is done using
-Dashboards. To create a new dashboard click on the *Create your first
+Dashboards. To create a new dashboard, click on the *Create your first
 dashboard* on the Grafana homepage. You will be greeted by a dashboard
 creation page.
 
@@ -126,12 +126,12 @@ creation page.
 
 In Grafana, dashboards are composed of individual blocks called panels, to
 which you can assign different visualization types and individual queries.
-First, click on *Add new panel*.
+First, click *Add new panel*.
 
 That will bring you to the panel creation page. Here you define the
 query for your panel, the type of visualization (like graphs, stats, tables,
 or bar charts), and the time range. Grafana offers a lot of options for data
-visualization, so this guide will showcase two simple use-cases. It is
+visualization, so this guide will showcase two simple use cases. It is
 recommended to look into the documentation on `Grafana panels`_.
 
 To create a panel, you start by defining the query. To do that click on the

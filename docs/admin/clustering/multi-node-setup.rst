@@ -94,7 +94,7 @@ instructions.
 
 2. It is common to configure the :ref:`metadata gateway <metadata-gateway>` so
    that the cluster waits for all data nodes to be online before starting the
-   recovery of the shards. In this case let's set
+   recovery of the shards. In this case, let's set
    `gateway.expected_data_nodes`_ to **3** and
    `gateway.recover_after_data_nodes`_ also to **3**. You can specify these
    settings in the `configuration`_ file of the unpacked directory.
@@ -316,7 +316,7 @@ network partition (also known as a `split-brain`_ scenario).
 
 CrateDB (versions 4.x and above) will automatically determine the ideal `quorum
 size`_, but if you are using CrateDB versions 3.x and below, you must manually set
-the quorum size using the `discovery.zen.minimum_master_nodes`_ setting and for
+the quorum size using the `discovery.zen.minimum_master_nodes`_ setting. For
 a three-node cluster, you must declare all nodes to be master-eligible.
 
 .. _metadata-gateway:
@@ -328,8 +328,8 @@ When running a multi-node cluster, you can configure the :ref:`metadata gateway 
 settings so that CrateDB delays recovery until a certain number of nodes is
 available.
 This is useful because if recovery is started when some nodes are down
-CrateDB will proceed on the basis the nodes that are down may not be coming
-back, and it will create new replicas and rebalance shards as necessary.
+CrateDB will proceed on the basis that the nodes that are down may not come
+back, creating new replicas and rebalance shards as necessary.
 This is an expensive operation that, depending on the context, may be better
 avoided if the nodes are only down for a short period of time.
 So, for instance, for a three-nodes cluster, you can decide to set
