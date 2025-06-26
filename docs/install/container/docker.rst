@@ -24,12 +24,6 @@ This document covers the essentials of running CrateDB on Docker.
 
     The official `CrateDB Docker image`_.
 
-.. rubric:: Table of contents
-
-.. contents::
-   :local:
-
-
 Quick start
 ===========
 

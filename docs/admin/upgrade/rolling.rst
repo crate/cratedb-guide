@@ -5,11 +5,6 @@
 Rolling Upgrade
 ===============
 
-.. rubric:: Table of contents
-
-.. contents::
-   :local:
-
 Introduction
 ============
 
@@ -286,4 +281,3 @@ again that have been disabled in the first step:
 
   cr> SET GLOBAL TRANSIENT "cluster.routing.allocation.enable" = 'all';
   SET OK, 1 row affected (... sec)
-

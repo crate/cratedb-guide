@@ -20,11 +20,6 @@ In some cases, it may be necessary to run a cluster across multiple data
 centers or availability zones (*zones*, for short). This guide shows you how
 to set up a multi-zone CrateDB cluster.
 
-.. rubric:: Table of contents
-
-.. contents::
-   :local:
-
 
 .. _multi-zone-requirements:
 

@@ -12,12 +12,6 @@ This tutorial will show you how to generate some :ref:`mock time series data
 
     :ref:`gen-ts`
 
-.. rubric:: Table of contents
-
-.. contents::
-   :local:
-
-
 Prerequisites
 =============
 

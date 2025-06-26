@@ -4,11 +4,6 @@
 Sharding and Partitioning
 #########################
 
-.. rubric:: Table of contents
-
-.. contents::
-   :local:
-
 
 Introduction
 ============

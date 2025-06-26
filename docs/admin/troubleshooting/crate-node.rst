@@ -14,14 +14,6 @@ Using this command, you can:
   the event that you lose too many nodes to be able to form a quorum.
 * Detach nodes from an old cluster so they can be moved to a new cluster.
 
-.. rubric:: Table of contents
-
-.. toctree::
-   :maxdepth: 1
-
-.. contents::
-   :local:
-
 
 .. _crate-node-repurpose:
 

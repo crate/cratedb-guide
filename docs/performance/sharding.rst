@@ -21,11 +21,6 @@ the type of hardware you're using.
    If you are looking for an intro to sharding, see :ref:`sharding
    <crate-reference:ddl-sharding>`.
 
-.. rubric:: Table of contents
-
-.. contents::
-   :local:
-
 Optimising for query performance
 ================================
 
