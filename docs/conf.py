@@ -51,6 +51,8 @@ linkcheck_ignore += [
     r"https://www.softwareag.com/.*",
     # 403 Client Error: Forbidden for url
     r"https://dzone.com/.*",
+    # 504 Client Error: Gateway Timeout for url
+    r"https://web.archive.org/.*",
 ]
 
 linkcheck_anchors_ignore_for_url += [
