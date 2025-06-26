@@ -6,11 +6,6 @@ Visualize data with Metabase
 This tutorial introduces `Metabase`_, an ultimate data analysis and visualization
 tool that unlocks the full potential of your data.
 
-.. rubric:: Table of contents
-
-.. contents::
-   :local:
-
 .. _metabase-prereqs:
 
 Prerequisites
@@ -31,7 +26,7 @@ Initial configuration
 
 Metabase offers both cloud version and local installation. Whichever you
 choose, the first step will be adding your CrateDB cluster as a new database.
-To do that, go to the ``Admin Settings`` -> ``Setup``, and choose 
+To do that, go to the ``Admin Settings`` -> ``Setup``, and choose
 the ``Add a database`` option.
 
 .. image:: /_assets/img/integrations/metabase/metabase-add-database.png
@@ -70,10 +65,10 @@ Now you are ready to visualize your data. Metabase works by asking questions.
 You ask a question, and Metabase answers it in a visual form. These questions
 can then be saved to form dashboards. To ask a question, go to ``Home`` and
 click on ``New`` -> ``Question`` in the upper right corner. Then select the
-database and a table from it. 
+database and a table from it.
 
 As an example, we ask about the Average tip amount,
-sorted by the passenger count. 
+sorted by the passenger count.
 
 .. image:: /_assets/img/integrations/metabase/metabase-question.png
    :alt: Asking a question

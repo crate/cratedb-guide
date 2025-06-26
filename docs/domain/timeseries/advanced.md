@@ -12,13 +12,6 @@ with CrateDB.
 {tags-primary}`Exploratory data analysis`
 {tags-primary}`Metadata integration`
 
-
-
-:::{contents}
-:local:
-:depth: 2
-:::
-
 :::{include} /_include/links.md
 :::
 
@@ -199,7 +192,7 @@ operations.
 
 This tutorial illustrates how to augment time series data with metadata, in
 order to enable more comprehensive analysis. It uses a time series dataset that
-captures various device readings, such as battery, CPU, and memory information. 
+captures various device readings, such as battery, CPU, and memory information.
 
 {{ '{}(#timeseries-objects)'.format(tutorial) }}
 :::

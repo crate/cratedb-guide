@@ -5,11 +5,6 @@
 Running CrateDB on Amazon EC2
 =============================
 
-.. rubric:: Table of contents
-
-.. contents::
-   :local:
-
 Introduction
 ============
 

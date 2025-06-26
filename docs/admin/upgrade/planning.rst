@@ -8,12 +8,6 @@
 General Upgrade Guidelines
 ==========================
 
-.. rubric:: Table of contents
-
-.. contents::
-   :local:
-
-
 Upgrade Planning
 ================
 Before kicking off an upgrade, there is a set of guidelines to ensure the best outcome. Below you may find the fundamental steps to prepare for an upgrade.
@@ -42,7 +36,7 @@ Perform a cluster-wide backup of your production CrateDB and ensure you have a r
 For the newly written records, you should consider using a mechanism to queue them (e.g. message queue), so these messages can be replayed if needed.
 
 .. WARNING::
-   
+
    Before starting the upgrade process, ensure no backup processes are triggered, so disable any scheduled backup.
 
 Define a rollback plan
@@ -50,7 +44,7 @@ Define a rollback plan
 
 The rollback plan may vary depending on the specific infrastructure and upgrade process in use. It is also essential to adapt this outline to your organization's specific needs and incorporate any additional steps or considerations that are relevant to your environment. A set of steps to serve as an example is listed below:
 
-* **Identify the issue:** Determine the specific problem that occurred during the upgrade. This could be related to data corruption, performance degradation, application errors, or any other issue that affects the normal functioning of CrateDB. Identify if there are any potential risks to the system's stability, security, or performance. 
+* **Identify the issue:** Determine the specific problem that occurred during the upgrade. This could be related to data corruption, performance degradation, application errors, or any other issue that affects the normal functioning of CrateDB. Identify if there are any potential risks to the system's stability, security, or performance.
 
 * **Communicate the situation:** Notify all relevant stakeholders, including individuals involved in the upgrade process. Clearly explain the problem and the decision to initiate a rollback.
 
@@ -67,6 +61,6 @@ Upgrade Execution
 
 Choose the upgrade strategy below that works best for your scenario.
 
-- :ref:`rolling_upgrade` 
+- :ref:`rolling_upgrade`
 
 - :ref:`full_restart_upgrade`

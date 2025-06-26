@@ -12,11 +12,6 @@ by testing insert performance on a single node.
 You should only increase the size of your cluster for testing once you have
 established the baseline performance on a single node.
 
-.. rubric:: Table of contents
-
-.. contents::
-   :local:
-
 Test data
 =========
 

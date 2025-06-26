@@ -9,11 +9,6 @@ CrateDB supports multiple ways to insert data.
 Some insert methods can be faster than others, depending on your setup.
 Choosing the best insert method is an easy way to improve insert performance.
 
-.. rubric:: Table of contents
-
-.. contents::
-   :local:
-
 
 .. _insert_statement_types:
 

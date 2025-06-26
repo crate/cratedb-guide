@@ -7,11 +7,6 @@ Going into production
 Running CrateDB in different environments requires different approaches. This
 document outlines the basics you need to consider when going into production.
 
-.. rubric:: Table of contents
-
-.. contents::
-   :local:
-
 
 .. _prod-bootstrapping:
 

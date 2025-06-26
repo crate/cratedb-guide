@@ -25,11 +25,6 @@ response before sending another insert.
    even better performance from bulk opperations.
 
 
-.. rubric:: Table of contents
-
-.. contents::
-   :local:
-
 Example
 =======
 

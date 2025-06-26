@@ -5,9 +5,9 @@
 Visualize data with Grafana
 ===========================
 
-`Grafana`_ is an open-source tool that helps you build real-time dashboards, 
-graphs, and all sorts of data visualizations. It is the perfect complement 
-to CrateDB, which is purpose-built for monitoring large volumes of machine 
+`Grafana`_ is an open-source tool that helps you build real-time dashboards,
+graphs, and all sorts of data visualizations. It is the perfect complement
+to CrateDB, which is purpose-built for monitoring large volumes of machine
 data in real-time.
 
 For the purposes of this guide, it is assumed that you
@@ -15,30 +15,25 @@ have a cluster up and running and can access the Console. If not, please refer
 to the :ref:`tutorial on how to deploy a cluster for the first time
 <cluster-deployment>`.
 
-.. rubric:: Table of contents
-
-.. contents::
-   :local:
-
 
 .. _grafana-load-dataset:
 
 Load a sample dataset
 =====================
 
-To visualize data with Grafana, a dataset is needed first. In this sample, 
+To visualize data with Grafana, a dataset is needed first. In this sample,
 demo data is added directly via the CrateDB Cloud Console. To import the data
-go to the Overview page of your deployed cluster. 
+go to the Overview page of your deployed cluster.
 
 .. image:: /_assets/img/integrations/cloud-cluster-overview.png
    :alt: Cloud Console Clusters overview
 
 Once on the Overview page, click on the *import the demo data* link in the
 "Next steps" section of the Console. A window with 2 SQL statements will
-appear. The first of them creates a table that will host the data from NYC 
+appear. The first of them creates a table that will host the data from NYC
 Taxi &  Limousine Commission which is used in this example. The second
 statement imports the data into the table created in the first step. These
-statements must be executed in the shown order. First "1. Create the table" 
+statements must be executed in the shown order. First "1. Create the table"
 and then "2. Import the data".
 
 .. image:: /_assets/img/integrations/grafana/grafana-import.png
@@ -78,8 +73,8 @@ Grafana Home page.
    :alt: Grafana Home page
 
 To visualize the data, you must add a data source. To do this, click on the
-cogwheel "Settings" icon in the left menu bar. This should take you to the 
-Data sources Configuration page. 
+cogwheel "Settings" icon in the left menu bar. This should take you to the
+Data sources Configuration page.
 
 .. image:: /_assets/img/integrations/grafana/grafana-settings.png
    :alt: Grafana Settings
@@ -99,9 +94,9 @@ screenshot below.
 
 The *host* and *user* credentials may appear differently to you. The host can
 be found on the Overview page of your cluster on CrateDB Cloud under the
-*Learn how to connect to the cluster* link. You will want to use the psql 
+*Learn how to connect to the cluster* link. You will want to use the psql
 link. Depending on the region where your cluster is deployed it might look
-something like: 
+something like:
 
 .. code-block:: console
 
@@ -120,10 +115,10 @@ on to creating some dashboards.
 Build your first Grafana dashboard
 ==================================
 
-Now that you've got the data imported to CrateDB Cloud and Grafana connected 
+Now that you've got the data imported to CrateDB Cloud and Grafana connected
 to it, it's time to visualize that data. In Grafana this is done using
 Dashboards. To create a new dashboard click on the *Create your first
-dashboard* on the Grafana homepage. You will be greeted by a dashboard 
+dashboard* on the Grafana homepage. You will be greeted by a dashboard
 creation page.
 
 .. image:: /_assets/img/integrations/grafana/grafana-new-dashboard.png
@@ -131,10 +126,10 @@ creation page.
 
 In Grafana, dashboards are composed of individual blocks called panels, to
 which you can assign different visualization types and individual queries.
-First, click on *Add new panel*. 
+First, click on *Add new panel*.
 
 That will bring you to the panel creation page. Here you define the
-query for your panel, the type of visualization (like graphs, stats, tables, 
+query for your panel, the type of visualization (like graphs, stats, tables,
 or bar charts), and the time range. Grafana offers a lot of options for data
 visualization, so this guide will showcase two simple use-cases. It is
 recommended to look into the documentation on `Grafana panels`_.
@@ -160,9 +155,9 @@ plot the number of rides per day in the first week of July 2019:
 .. NOTE::
 
    Something important to know about the "Time series" format mode in Grafana
-   is that your query needs to return a column called "time". Grafana will 
-   identify this as your time metric, so make sure the column has the proper 
-   datatype (any datatype representing an `epoch time`_). In this query, 
+   is that your query needs to return a column called "time". Grafana will
+   identify this as your time metric, so make sure the column has the proper
+   datatype (any datatype representing an `epoch time`_). In this query,
    we're labeling pickup_datetime as "time" for this reason.
 
 Once you input these SQL statements, there are a couple of adjustments you can
@@ -206,7 +201,7 @@ of the new panel:
 
 Under the graph itself, click on the *average_distance_per_ride*. This will
 show only the value we are interested in. Also, in the right menu under "Graph
-style" select "Bars" once again. After that, you should have a panel similar 
+style" select "Bars" once again. After that, you should have a panel similar
 to this:
 
 .. image:: /_assets/img/integrations/grafana/grafana-panel2.png
@@ -218,7 +213,7 @@ Dashboard overview, you will have a collection of two very useful graphs.
 .. image:: /_assets/img/integrations/grafana/grafana-dashboard-final.png
    :alt: Grafana completed dashboard
 
-Now you know how to get started with data visualization in Grafana. To find 
+Now you know how to get started with data visualization in Grafana. To find
 out more, refer to the `Grafana documentation`_.
 
 

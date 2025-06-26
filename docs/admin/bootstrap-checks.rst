@@ -23,11 +23,6 @@ run, but it is still a good idea to follow these instructions.
     Docker. Consult the additional documentation on Docker :ref:`resource
     constraints <resource_constraints>` for more information.
 
-.. rubric:: Table of contents
-
-.. contents::
-   :local:
-
 
 System settings
 ===============

@@ -48,11 +48,6 @@ using SQL.
 
     :ref:`Tutorials for generating mock time series data <gen-ts>`
 
-.. rubric:: Table of contents
-
-.. contents::
-   :local:
-
 
 .. _ni-prereq:
 

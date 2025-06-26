@@ -6,11 +6,6 @@
 Full Restart Upgrade
 ====================
 
-.. rubric:: Table of contents
-
-.. contents::
-   :local:
-
 Introduction
 ============
 
