@@ -291,14 +291,15 @@ CrateDB's default settings are optimized for performance.
 
 If some columns will never be used for aggregations or groupings, there will be no performance penalty.
 That might change in the future as your use case and data needs evolve,
-re-adding indexes or column store at later stages will need re-creating tables,
+re-adding indexes or column store at later stages will require re-creating tables,
 which might need some downtime, depending on the setup.
 
-When designing your data model, it is important to evaluate your current and future needs to minimize
-any future overhead.
+When designing your data model, it is important to evaluate your current and
+future needs to minimize any future overhead.
 
 ## Extra: Data normalization
 
-One of the most common ways to reduce storage size is to not write data more than once, by normalizing your tables.
+One of the most common ways to reduce storage size is to not write data more than
+once, by normalizing your tables.
 
 Read more about it in https://en.wikipedia.org/wiki/Database_normalization
