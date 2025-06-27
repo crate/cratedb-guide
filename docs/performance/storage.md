@@ -30,16 +30,6 @@ Will take:
 At first sight, it might look that CrateDB storage takes more than PostgreSQL,
 but we need to dive deeper to really understand what is going on.
 
-## Table of contents
-
-1. [How storage works](#how-storage-in-cratedb-works)
-2. [Reducing storage](#reducing-storage)
-3. [Disable indexing](#disable-indexing)
-4. [Disable columnar store](#disable-the-columnar-store)
-5. [Changing the compression algorithm](#changing-the-compression-algorithm)
-6. [All results](#all-results-and-what-to-do)
-7. [Data normalization](#extra-data-normalization)
-
 ## How storage in CrateDB works.
 
 CrateDB is a distributed database; nodes, shards, partitions and replicas are tightly integrated.
@@ -58,7 +48,7 @@ For CrateDB when a table is created, sharding and replication has to be taken in
 When a table is created with default values, it gets partitioned in `max(4, num_data_nodes * 2)` shards.
 For example, a typical 3-node cluster, it will create:
 
-`max(4, 3 * 2) = 6 shards` 
+`max(4, 3 * 2) = 6 shards`
 
 On top of that, the default replication is the `0-1` range, a maximum of one replica.
 A replica multiplies the number of shards, therefore creating `6 primary shards` and `6 replica shards`, making
@@ -301,7 +291,7 @@ CrateDB's default settings are optimized for performance.
 
 If some columns will never be used for aggregations or groupings, there will be no performance penalty.
 That might change in the future as your use case and data needs evolve,
-re-adding indexes or column store at later stages will need re-creating tables, 
+re-adding indexes or column store at later stages will need re-creating tables,
 which might need some downtime, depending on the setup.
 
 When designing your data model, it is important to evaluate your current and future needs to minimize
@@ -312,4 +302,3 @@ any future overhead.
 One of the most common ways to reduce storage size is to not write data more than once, by normalizing your tables.
 
 Read more about it in https://en.wikipedia.org/wiki/Database_normalization
-
