@@ -108,4 +108,4 @@ print("Answer was:", answer)
 [LlamaIndex: Using Workflows]: https://docs.llamaindex.ai/en/stable/understanding/workflows/
 [LlamaIndex and CrateDB: Code Examples]: https://github.com/crate/cratedb-examples/tree/main/topic/machine-learning/llama-index
 [LlamaIndex and CrateDB: Tutorial]: https://community.cratedb.com/t/how-to-connect-your-cratedb-data-to-llm-with-llamaindex-and-azure-openai/1612
-[llamaindex-nlquery-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/llama-index/main.py
+[llamaindex-nlquery-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/llama-index/demo_nlsql.py

@@ -268,12 +268,12 @@ mostly your first encounter with the data.
 [Decomposition of time series]: https://en.wikipedia.org/wiki/Decomposition_of_time_series
 [Exploratory data analysis (EDA)]: https://en.wikipedia.org/wiki/Exploratory_data_analysis
 [forecasting]: https://en.wikipedia.org/wiki/Forecasting
-[forecasting-merlion-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/mlops-mlflow/tracking_merlion.ipynb
-[forecasting-merlion-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/mlops-mlflow/tracking_merlion.ipynb
-[forecasting-pycaret-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/automl/automl_timeseries_forecasting_with_pycaret.ipynb
-[forecasting-pycaret-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/automl/automl_timeseries_forecasting_with_pycaret.ipynb
+[forecasting-merlion-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/mlflow/tracking_merlion.ipynb
+[forecasting-merlion-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/mlflow/tracking_merlion.ipynb
+[forecasting-pycaret-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/pycaret/automl_timeseries_forecasting_with_pycaret.ipynb
+[forecasting-pycaret-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/pycaret/automl_timeseries_forecasting_with_pycaret.ipynb
 [MLflow]: https://mlflow.org/
-[MLflow and CrateDB]: https://github.com/crate/cratedb-examples/tree/main/topic/machine-learning/mlops-mlflow
+[MLflow and CrateDB]: https://github.com/crate/cratedb-examples/tree/main/topic/machine-learning/mlflow
 [PyCaret]: https://www.pycaret.org
 [Time series]: https://en.wikipedia.org/wiki/Time_series
 [timeseries-decomposition-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/timeseries/time-series-decomposition.ipynb
