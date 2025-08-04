@@ -29,13 +29,13 @@
 [JOIN]: inv:crate-reference#sql_joins
 [JSON Database]: https://cratedb.com/solutions/json-database
 [kNN]: https://en.wikipedia.org/wiki/K-nearest_neighbor_algorithm
-[LangChain and CrateDB: Code Examples]: https://github.com/crate/cratedb-examples/tree/main/topic/machine-learning/llm-langchain
-[langchain-similarity-binder]: https://mybinder.org/v2/gh/crate/cratedb-examples/main?labpath=topic%2Fmachine-learning%2Fllm-langchain%2Fvector_search.ipynb
-[langchain-similarity-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/llm-langchain/vector_search.ipynb
-[langchain-similarity-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/llm-langchain/vector_search.ipynb
-[langchain-rag-sql-binder]: https://mybinder.org/v2/gh/crate/cratedb-examples/main?labpath=topic%2Fmachine-learning%2Fllm-langchain%2Fcratedb-vectorstore-rag-openai-sql.ipynb
-[langchain-rag-sql-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/llm-langchain/cratedb-vectorstore-rag-openai-sql.ipynb
-[langchain-rag-sql-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/llm-langchain/cratedb-vectorstore-rag-openai-sql.ipynb
+[LangChain and CrateDB: Code Examples]: https://github.com/crate/cratedb-examples/tree/main/topic/machine-learning/langchain
+[langchain-similarity-binder]: https://mybinder.org/v2/gh/crate/cratedb-examples/main?labpath=topic%2Fmachine-learning%2Flangchain%2Fvector_search.ipynb
+[langchain-similarity-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/langchain/vector_search.ipynb
+[langchain-similarity-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/langchain/vector_search.ipynb
+[langchain-rag-sql-binder]: https://mybinder.org/v2/gh/crate/cratedb-examples/main?labpath=topic%2Fmachine-learning%2Flangchain%2Fcratedb-vectorstore-rag-openai-sql.ipynb
+[langchain-rag-sql-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/langchain/cratedb-vectorstore-rag-openai-sql.ipynb
+[langchain-rag-sql-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/langchain/cratedb-vectorstore-rag-openai-sql.ipynb
 [MongoDB CDC Relay]: https://cratedb-toolkit.readthedocs.io/io/mongodb/cdc.html
 [MongoDB Change Streams]: https://www.mongodb.com/docs/manual/changeStreams/
 [MongoDB Table Loader]: https://cratedb-toolkit.readthedocs.io/io/mongodb/loader.html
