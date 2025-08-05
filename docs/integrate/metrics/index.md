@@ -1,23 +1,27 @@
+(metrics)=
 (integrate-metrics)=
-
-# System Metrics
+# Monitoring and Metrics with CrateDB
 
 CrateDB integrations with metrics collection agents, brokers, and stores.
-
 This documentation section lists applications and daemons which can
-be used together with CrateDB, and outlines how to use them optimally.
+be used together with CrateDB, and educates about how to use them optimally.
 
+Storing metrics data for the long term is a common need in systems monitoring
+scenarios. CrateDB offers corresponding integration adapters.
 
 ## Prometheus
 
-- [CrateDB as a long term metrics store for Prometheus](#metrics-store-prometheus)
-- [Webinar: Using Prometheus and Grafana with CrateDB Cloud]
+:::{toctree}
+:maxdepth: 1
+
+../prometheus/index
+:::
 
 
 ## Telegraf
 
-- [Use CrateDB With Telegraf, an Agent for Collecting & Reporting Metrics]
+:::{toctree}
+:maxdepth: 1
 
-
-[Use CrateDB With Telegraf, an Agent for Collecting & Reporting Metrics]: https://cratedb.com/blog/use-cratedb-with-telegraf-an-agent-for-collecting-reporting-metrics
-[Webinar: Using Prometheus and Grafana with CrateDB Cloud]: https://cratedb.com/resources/webinars/lp-wb-prometheus-grafana
+../telegraf/index
+:::
