@@ -151,9 +151,9 @@ Python
 
 configure
 Drivers <drivers>
-CLI <cli>
-DataFrame <df/index>
-ORM <orm>
+CLI programs <cli>
+Dataframe libraries <df/index>
+ORM libraries <orm>
 ```
 
 ```{toctree}
