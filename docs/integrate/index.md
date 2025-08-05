@@ -13,11 +13,12 @@ optimally.
 :maxdepth: 2
 
 ide
+Frameworks <framework>
 etl/index
 cdc/index
 mcp/index
 metrics/index
-visualize/index
+Data Visualization <visualize/index>
 bi/index
 lineage/index
 testing
