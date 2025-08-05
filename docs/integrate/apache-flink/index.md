@@ -1,7 +1,9 @@
 (apache-flink)=
 (flink)=
-
 # Apache Flink
+
+:::{include} /_include/links.md
+:::
 
 ```{div}
 :style: "float: right"
@@ -200,9 +202,7 @@ The webinar includes a live demo of Apache Flink with CrateDB as source or sink.
 [Community Day: Stream processing with Apache Flink and CrateDB]: https://cratedb.com/event/cratedb-community-day-2023
 [Confluent Streaming Data Pipelines]: https://www.confluent.io/streaming-data-pipelines/
 [CrateDB Community Day 2nd Edition: Summary and Highlights]: https://cratedb.com/blog/cratedb-community-day-2nd-edition-summary-and-highlights
-[Executable stack with Apache Kafka, Apache Flink, and CrateDB]: https://github.com/crate/cratedb-examples/tree/main/framework/flink/kafka-jdbcsink-java
 [Flink managed by Confluent]: https://www.datanami.com/2023/05/17/confluents-new-cloud-capabilities-address-data-streaming-hurdles/
 [Immerok Cloud]: https://web.archive.org/web/20230602085618/https://www.immerok.io/product
 [JdbcSink]: https://nightlies.apache.org/flink/flink-docs-release-1.20/docs/connectors/datastream/jdbc/
-[PostgreSQL JDBC Driver]: https://jdbc.postgresql.org/
 [Streaming data with Apache Kafka, Apache Flink and CrateDB]: https://github.com/crate/cratedb-examples/tree/main/framework/flink/kafka-jdbcsink-python
