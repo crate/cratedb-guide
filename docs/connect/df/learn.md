@@ -1,6 +1,6 @@
-(df)=
-(dataframes)=
-# Dataframe Libraries
+(dataframe-examples)=
+
+# DataFrame Examples
 
 How to use CrateDB together with popular open-source dataframe libraries.
 

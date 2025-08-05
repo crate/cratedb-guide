@@ -1,8 +1,8 @@
 .. _install:
 
-############
-Installation
-############
+#######
+Install
+#######
 
 This section of the documentation covers the installation of CrateDB on different
 kinds of operating systems and environments, both suitable for on-premises and
