@@ -305,6 +305,7 @@ use-cases.
 :hidden:
 
 install/index
+connect/index
 getting-started
 feature/index
 admin/index

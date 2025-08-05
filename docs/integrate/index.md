@@ -13,8 +13,6 @@ optimally.
 :maxdepth: 2
 
 ide
-orm
-df
 etl/index
 cdc/index
 mcp/index
