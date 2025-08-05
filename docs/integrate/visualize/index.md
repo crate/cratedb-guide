@@ -1,19 +1,20 @@
+(visualize)=
 (visualization)=
+# Visualize data in CrateDB
 
-# Data Visualization
-
-Guidelines about data analysis and visualization with CrateDB.
+Dashboard and other data visualization applications and toolkits for visualizing
+data stored inside CrateDB, mostly dashboarding.
 
 :::{include} /_include/links.md
 :::
 
+## Apache Superset
 
 :::{toctree}
 :maxdepth: 1
 
 ../apache-superset/index
 :::
-
 
 ## Cluvio
 
@@ -30,12 +31,13 @@ Guidelines about data analysis and visualization with CrateDB.
 - {ref}`integrations-grafana`
 
 
-(datashader)=
 ## hvPlot and Datashader
 
-:::{include} /_include/card/timeseries-datashader.md
-:::
+:::{toctree}
+:maxdepth: 1
 
+../pyviz/index
+:::
 
 ## Metabase
 
@@ -49,15 +51,13 @@ Guidelines about data analysis and visualization with CrateDB.
 - [From data storage to data analysis\: Tutorial on CrateDB and pandas]
 
 
-(plotly)=
 ## Plotly / Dash
 
-:::{include} /_include/card/timeseries-explore.md
+:::{toctree}
+:maxdepth: 1
+
+../plotly/index
 :::
-
-Alternatively, you are welcome to explore the canonical [Dash Examples].
-
-
 
 ## R
 
@@ -76,7 +76,6 @@ metabase
 ```
 
 
-[Dash Examples]: https://plotly.com/examples/
 [Data Analysis with Cluvio and CrateDB]: https://community.cratedb.com/t/data-analysis-with-cluvio-and-cratedb/1571
 [From data storage to data analysis\: Tutorial on CrateDB and pandas]: https://community.cratedb.com/t/from-data-storage-to-data-analysis-tutorial-on-cratedb-and-pandas/1440
 [Introduction to Time Series Visualization in CrateDB and Explo]: https://cratedb.com/blog/introduction-to-time-series-visualization-in-cratedb-and-explo
