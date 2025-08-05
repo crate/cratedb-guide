@@ -54,18 +54,12 @@ Kinesis Stream, and consume that from an adapter to a consolidation database.
 - See: [](#cdc-dynamodb)
 :::
 
-(debezium)=
 ## Debezium
-Debezium is an open source distributed platform for change data capture (CDC).
-It is built on top of Apache Kafka, a distributed streaming platform. It allows
-to capture changes on a source database system, mostly OLTP, and replicate them
-to another system, mostly to run OLAP workloads on the data.
 
-Debezium provides connectors for MySQL/MariaDB, MongoDB, PostgreSQL, Oracle,
-SQL Server, IBM DB2, Cassandra, Vitess, Spanner, JDBC, and Informix.
-:::{div}
-- Tutorial: [Replicating data to CrateDB with Debezium and Kafka]
-- Webinar: [How to replicate data from other databases to CrateDB with Debezium and Kafka]
+:::{toctree}
+:maxdepth: 1
+
+../debezium/index
 :::
 
 (cdc-dynamodb)=
@@ -107,5 +101,4 @@ lives.
 
 
 
-[How to replicate data from other databases to CrateDB with Debezium and Kafka]: https://cratedb.com/resources/webinars/lp-wb-debezium-kafka
 [StreamSets Data Collector]: https://www.softwareag.com/en_corporate/platform/integration-apis/data-collector-engine.html

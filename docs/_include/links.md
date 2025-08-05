@@ -19,6 +19,7 @@
 [DynamoDB CDC Relay]: https://cratedb-toolkit.readthedocs.io/io/dynamodb/cdc.html
 [DynamoDB CDC Relay with AWS Lambda]: https://cratedb-toolkit.readthedocs.io/io/dynamodb/cdc-lambda.html
 [DynamoDB Table Loader]: https://cratedb-toolkit.readthedocs.io/io/dynamodb/loader.html
+[Executable stack with Apache Kafka, Apache Flink, and CrateDB]: https://github.com/crate/cratedb-examples/tree/main/framework/flink/kafka-jdbcsink-java
 [Geospatial Data Model]: https://cratedb.com/data-model/geospatial
 [Geospatial Database]: https://cratedb.com/geospatial-spatial-database
 [HNSW]: https://en.wikipedia.org/wiki/Hierarchical_navigable_small_world
