@@ -18,8 +18,8 @@ data integration, and mission-critical applications.
 
 
 :::{dropdown} **Managed Kafka**
-A few companies are specializing in offering managed Kafka services. We can't list
-them all, see the [overview about more managed Kafka offerings].
+Several companies provide managed Kafka services (see the [overview of managed Kafka offerings]
+for a more complete list).
 
 - [Aiven for Apache Kafka]
 - [Amazon Managed Streaming for Apache Kafka (MSK)]
@@ -58,4 +58,4 @@ kafka-connect
 [Confluent Cloud]: https://www.confluent.io/confluent-cloud/
 [CrateDB and Apache Kafka]: https://cratedb.com/integrations/cratedb-and-kafka
 [DoubleCloud Managed Service for Apache Kafka]: https://double.cloud/services/managed-kafka/
-[Overview about more managed Kafka offerings]: https://keen.io/blog/managed-apache-kafka-vs-diy/
+[overview of managed Kafka offerings]: https://keen.io/blog/managed-apache-kafka-vs-diy/

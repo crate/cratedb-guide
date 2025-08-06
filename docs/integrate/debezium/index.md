@@ -13,9 +13,8 @@
 ```
 
 [Debezium] is an open source distributed platform for change data capture. After
-pointing it at your databases, you are able to subscribe to the event stream of
+pointing it at your databases, you can subscribe to the event stream of
 all database update operations.
-
 
 Debezium is an open source distributed platform for change data capture (CDC).
 It is built on top of Apache Kafka, a distributed streaming platform. It allows

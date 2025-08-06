@@ -19,7 +19,7 @@ data by translating drag-and-drop actions into data queries through an intuitive
 :::
 
 - [Connecting to CrateDB from Tableau with JDBC] and [Using CrateDB with Tableau]
-  will guide you through the process of setting it Tableau correctly with CrateDB.
+  will guide you through the process of setting up Tableau correctly with CrateDB.
 - The [CrateDB Tableau Connector] unlocks advanced SQL functionality and
   resolves compatibility issues beyond standard usage.
 
