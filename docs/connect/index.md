@@ -32,7 +32,7 @@ compatible with many standard database environments out of the box.
 
 While it is generally recommended to use the PostgreSQL interface (PG) for maximum
 compatibility in PostgreSQL environments, the HTTP interface supports CrateDB
-bulk operations and [CrateDB BLOBs], which are not supported by the PostgreSQL
+bulk operations and BLOBs, which are not supported by the PostgreSQL
 protocol.
 
 The HTTP protocol can also be used to connect from environments where
