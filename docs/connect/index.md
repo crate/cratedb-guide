@@ -1,12 +1,11 @@
 (connect)=
-
 # Connect
-
-This documentation section is about connecting your applications to CrateDB
-and CrateDB Cloud, using database drivers, compatibility adapters and dialects.
 
 :::{include} /_include/links.md
 :::
+
+This documentation section is about connecting your applications to CrateDB
+and CrateDB Cloud, using database drivers, compatibility adapters and dialects.
 
 :::::{grid}
 :padding: 0
@@ -33,7 +32,7 @@ compatible with many standard database environments out of the box.
 
 While it is generally recommended to use the PostgreSQL interface (PG) for maximum
 compatibility in PostgreSQL environments, the HTTP interface supports CrateDB
-bulk operations and CrateDB BLOBs, which are not supported by the PostgreSQL
+bulk operations and [CrateDB BLOBs], which are not supported by the PostgreSQL
 protocol.
 
 The HTTP protocol can also be used to connect from environments where
@@ -61,7 +60,7 @@ and how to configure and use them with CrateDB optimally.
 - [PostgreSQL interface]
 - [SQL query syntax]
 - [Bulk operations]
-- [BLOBs]
+- [BLOB support][CrateDB BLOBs]
 
 ```{rubric} Protocols and API Standards
 ```
@@ -170,7 +169,6 @@ ruby
 
 [ADBC]: https://arrow.apache.org/docs/format/ADBC.html
 [Authentication]: inv:crate-reference:*:label#admin_auth
-[BLOBs]: inv:crate-reference:*:label#blob_support
 [Bulk operations]: inv:crate-reference:*:label#http-bulk-ops
 [CrateDB Examples]: https://github.com/crate/cratedb-examples
 [CrateDB HTTP interface]: inv:crate-reference:*:label#interface-http
@@ -181,8 +179,6 @@ ruby
 [ODBC]: https://en.wikipedia.org/wiki/Open_Database_Connectivity
 [PostgreSQL interface]: inv:crate-reference:*:label#interface-postgresql
 [PostgreSQL wire protocol]: https://www.postgresql.org/docs/current/protocol.html
-[python-dbapi-by-example]: inv:crate-python:*:label#by-example
-[python-sqlalchemy-by-example]: inv:sqlalchemy-cratedb:*:label#by-example
 [schema]: inv:crate-reference:*:label#ddl-create-table-schemas
 [schemas]: inv:crate-reference:*:label#ddl-create-table-schemas
 [SQL]: https://en.wikipedia.org/wiki/Sql
