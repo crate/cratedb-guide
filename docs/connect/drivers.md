@@ -326,6 +326,21 @@ For connecting to CrateDB from Python, using SQLAlchemy.
 :::
 
 :::{sd-row}
+```{sd-item} Python
+```
+```{sd-item}
+[CrateDB Async Python driver](https://github.com/surister/cratedb-async)
+```
+```{sd-item}
+For connecting to CrateDB from Python, supporting Python’s `asyncio` by
+using the `httpx` HTTP client.
+```
+```{sd-item}
+[![](https://img.shields.io/github/v/tag/surister/cratedb-async?label=latest)](https://github.com/surister/cratedb-async)
+```
+:::
+
+:::{sd-row}
 ```{sd-item} Ruby
 ```
 ```{sd-item}

@@ -51,6 +51,25 @@ The package can be installed using ``pip install sqlalchemy-cratedb``.
     for record in result.all():
         print(record)
 
+.. _cratedb-async:
+
+cratedb-async
+-------------
+
+Asynchronous driver for CrateDB based on httpx.
+See the full documentation at https://github.com/surister/cratedb-async.
+The package can be installed using ``pip install cratedb-async``.
+
+.. code-block:: python
+
+    import asyncio
+    from cratedb_async.client import CrateClient
+
+    async def main():
+        crate = CrateClient("http://localhost:4200")
+        response = await crate.query("SELECT * FROM sys.summits")
+        print(response.as_table())
+
 .. _psycopg2:
 
 psycopg2
