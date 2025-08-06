@@ -23,7 +23,7 @@ telemetry/index
 analytics/index
 industrial/index
 timeseries/index
-ml/index
+Machine Learning <ml/index>
 ```
 
 

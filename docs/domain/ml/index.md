@@ -1,12 +1,15 @@
 (ml)=
+(ml-tools)=
 (machine-learning)=
-
-# Machine Learning
+# Machine Learning with CrateDB
 
 :::{include} /_include/links.md
 :::
 :::{include} /_include/styles.html
 :::
+
+Machine learning applications and frameworks
+which can be used together with CrateDB.
 
 Integrate CrateDB with machine learning frameworks and
 tools, for MLOps and vector database operations.
@@ -60,6 +63,27 @@ generation (RAG), and other applications.
 (mlflow)=
 ### MLflow
 
+:::{rubric} About
+:::
+```{div}
+:style: "float: right; margin-left: 1em"
+[![](https://github.com/crate/crate-clients-tools/assets/453543/d1d4f4ac-1b44-46b8-ba6f-4a82607c57d3){w=180px}](https://mlflow.org/)
+```
+
+[MLflow] is an open source platform to manage the whole ML lifecycle, including
+experimentation, reproducibility, deployment, and a central model registry.
+
+The [MLflow adapter for CrateDB], available through the [mlflow-cratedb] package,
+provides support to use CrateDB as a storage database for the [MLflow Tracking]
+subsystem, which is about recording and querying experiments, across code, data,
+config, and results.
+
+```{div}
+:style: "clear: both"
+```
+
+:::{rubric} Learn
+:::
 Tutorials and Notebooks about using [MLflow] together with CrateDB.
 
 ::::{info-card}
@@ -108,6 +132,28 @@ prediction using NumPy, Salesforce Merlion, and Matplotlib.
 
 (pycaret)=
 ### PyCaret
+
+:::{rubric} About
+:::
+```{div}
+:style: "float: right; margin-left: 1em"
+[![](https://github.com/crate/crate-clients-tools/assets/453543/b17a59e2-6801-4f53-892f-ff472491095f){w=180px}](https://pycaret.org/)
+```
+
+[PyCaret] is an open-source, low-code machine learning library for Python that
+automates machine learning workflows.
+
+It is a high-level interface and AutoML wrapper on top of your loved machine learning
+libraries like scikit-learn, xgboost, ray, lightgbm, and many more. PyCaret provides a
+universal interface to utilize these libraries without needing to know the details
+of the underlying model architectures and parameters.
+
+```{div}
+:style: "clear: both"
+```
+
+:::{rubric} Learn
+:::
 
 Tutorials and Notebooks about using [PyCaret] together with CrateDB.
 
@@ -183,6 +229,20 @@ r
 
 (scikit-learn)=
 ### scikit-learn
+
+:::{rubric} About
+:::
+```{div}
+:style: "float: right; margin-left: 1em"
+[![](https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/240px-Scikit_learn_logo_small.svg.png){w=180px}](https://scikit-learn.org/)
+
+[![](https://pandas.pydata.org/static/img/pandas.svg){w=180px}](https://pandas.pydata.org/)
+
+[![](https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg){w=180px}](https://jupyter.org/)
+```
+
+:::{rubric} Learn
+:::
 
 Use [scikit-learn] with CrateDB.
 
@@ -310,7 +370,10 @@ tensorflow
 [Machine Learning and CrateDB: Getting Started With Jupyter]: https://cratedb.com/blog/machine-learning-cratedb-jupyter
 [Machine Learning and CrateDB: Experiment Design & Linear Regression]: https://cratedb.com/blog/machine-learning-and-cratedb-part-three-experiment-design-and-linear-regression
 [MLflow]: https://mlflow.org/
+[MLflow adapter for CrateDB]: https://github.com/crate/mlflow-cratedb
 [MLflow and CrateDB]: https://github.com/crate/cratedb-examples/tree/main/topic/machine-learning/mlflow
+[mlflow-cratedb]: https://pypi.org/project/mlflow-cratedb/
+[MLflow Tracking]: https://mlflow.org/docs/latest/tracking.html
 [MLOps]: https://en.wikipedia.org/wiki/MLOps
 [pandas]: https://pandas.pydata.org/
 [PyCaret]: https://www.pycaret.org
