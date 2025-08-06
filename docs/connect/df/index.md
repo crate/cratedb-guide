@@ -1,40 +1,16 @@
 (df)=
 (dataframe)=
 (dataframes)=
+(dataframe-examples)=
 # CrateDB and DataFrame libraries
 
-Data frame libraries and frameworks which can
-be used together with CrateDB.
-
-
-:::::{grid} 1 2 2 2
-:margin: 4 4 0 0
-:padding: 0
-:gutter: 2
-
-::::{grid-item-card} {material-outlined}`lightbulb;2em` Tutorials
-:link: guide:dataframes
-:link-type: ref
-Learn how to use CrateDB together with popular open-source data frame
-libraries, on behalf of hands-on tutorials and code examples.
-+++
-{tag-info}`Dask` {tag-info}`pandas` {tag-info}`Polars`
-::::
-
-::::{grid-item-card} {material-outlined}`read_more;2em` SQLAlchemy
-CrateDB's SQLAlchemy dialect implementation provides fundamental infrastructure
-to integrations with Dask, pandas, and Polars.
-+++
-[ORM Guides](inv:guide#orm) •
-{ref}`ORM Catalog <orm>`
-::::
-
-:::::
-
+How to use CrateDB together with popular open-source dataframe libraries.
 
 (dask)=
 ## Dask
 
+:::{rubric} About
+:::
 [Dask] is a parallel computing library for analytics with task scheduling.
 It is built on top of the Python programming language, making it easy to scale
 the Python libraries that you know and love, like NumPy, pandas, and scikit-learn.
@@ -56,9 +32,19 @@ the Python libraries that you know and love, like NumPy, pandas, and scikit-lear
 :style: "clear: both"
 ```
 
+:::{rubric} Learn
+:::
+- [Guide to efficient data ingestion to CrateDB with pandas and Dask]
+- [Efficient batch/bulk INSERT operations with pandas, Dask, and SQLAlchemy]
+- [Import weather data using Dask]
+- [Dask code examples]
+
 
 (pandas)=
 ## pandas
+
+:::{rubric} About
+:::
 
 ```{div}
 :style: "float: right"
@@ -92,9 +78,20 @@ and operations for manipulating numerical tables and time series.
 :style: "clear: both"
 ```
 
+:::{rubric} Learn
+:::
+- [Guide to efficient data ingestion to CrateDB with pandas]
+- [Importing Parquet files into CrateDB using Apache Arrow and SQLAlchemy]
+- [pandas code examples]
+- [From data storage to data analysis\: Tutorial on CrateDB and pandas]
+
+
 
 (polars)=
 ## Polars
+
+:::{rubric} About
+:::
 
 ```{div}
 :style: "float: right; margin-left: 0.5em"
@@ -147,13 +144,9 @@ This allows you to easily integrate Polars into your existing data stack.
 :style: "clear: both"
 ```
 
-
-```{toctree}
-:maxdepth: 1
-:hidden:
-
-learn
-```
+:::{rubric} Learn
+:::
+- [Polars code examples]
 
 
 [Apache Arrow]: https://arrow.apache.org/
@@ -162,3 +155,13 @@ learn
 [Dask Futures]: https://docs.dask.org/en/latest/futures.html
 [pandas]: https://pandas.pydata.org/
 [Polars]: https://pola.rs/
+
+[Dask code examples]: https://github.com/crate/cratedb-examples/tree/main/by-dataframe/dask
+[Efficient batch/bulk INSERT operations with pandas, Dask, and SQLAlchemy]: https://cratedb.com/docs/python/en/latest/by-example/sqlalchemy/dataframe.html
+[From data storage to data analysis\: Tutorial on CrateDB and pandas]: https://community.cratedb.com/t/from-data-storage-to-data-analysis-tutorial-on-cratedb-and-pandas/1440
+[Guide to efficient data ingestion to CrateDB with pandas]: https://community.cratedb.com/t/guide-to-efficient-data-ingestion-to-cratedb-with-pandas/1541
+[Guide to efficient data ingestion to CrateDB with pandas and Dask]: https://community.cratedb.com/t/guide-to-efficient-data-ingestion-to-cratedb-with-pandas-and-dask/1482
+[Import weather data using Dask]: https://github.com/crate/cratedb-examples/blob/main/topic/timeseries/dask-weather-data-import.ipynb
+[Importing Parquet files into CrateDB using Apache Arrow and SQLAlchemy]: https://community.cratedb.com/t/importing-parquet-files-into-cratedb-using-apache-arrow-and-sqlalchemy/1161
+[pandas code examples]: https://github.com/crate/cratedb-examples/tree/main/by-dataframe/pandas
+[Polars code examples]: https://github.com/crate/cratedb-examples/tree/main/by-dataframe/polars
