@@ -63,4 +63,3 @@ learn
 [Grafana Cloud]: https://grafana.com/grafana/
 [Grafana Labs]: https://grafana.com/about/team/
 [Grafana OSS]: https://grafana.com/oss/grafana/
-[Using Grafana with CrateDB Cloud]: #integrations-grafana

@@ -129,9 +129,10 @@ JdbcSink.sink(
 
 :::{rubric} Development
 :::
+:::{div}
 - [Executable stack with Apache Kafka, Apache Flink, and CrateDB] (Java)
 - [Streaming data with Apache Kafka, Apache Flink and CrateDB] (Python)
-
+:::
 
 :::{rubric} Webinars
 :::
