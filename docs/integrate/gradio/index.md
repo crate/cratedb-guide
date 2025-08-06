@@ -24,3 +24,4 @@ _How to Build Machine Learning APIs Using Gradio._
 
 
 [Gradio]: https://www.gradio.app/
+[Hugging Face]: https://en.wikipedia.org/wiki/Hugging_Face

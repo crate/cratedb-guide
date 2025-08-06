@@ -152,7 +152,7 @@ Python
 configure
 Drivers <drivers>
 CLI programs <cli>
-Dataframe libraries <df/index>
+DataFrame libraries <df/index>
 ORM libraries <orm>
 ```
 

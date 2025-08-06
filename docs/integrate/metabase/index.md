@@ -6,7 +6,7 @@
 ```
 
 [Metabase] is the ultimate data analysis and visualization tool that unlocks the full
-potential of your data. Build for data and made for everyone, Metabase can be leveraged
+potential of your data. Built for data and made for everyone, Metabase can be leveraged
 with no SQL required.
 
 Fast analytics with the friendly UX and integrated tooling to let your company explore
