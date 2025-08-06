@@ -55,6 +55,7 @@ plotly/index
 Power BI <powerbi/index>
 prometheus/index
 pyviz/index
+queryzen/index
 rill/index
 risingwave/index
 sql-server/index
