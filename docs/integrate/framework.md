@@ -26,8 +26,9 @@ A few quick examples about how to use selected frameworks together with CrateDB.
 :::{toctree}
 :maxdepth: 1
 
-plotly/index
+django/index
 gradio/index
+plotly/index
 pyviz/index
 streamlit/index
 :::
