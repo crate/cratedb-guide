@@ -53,6 +53,8 @@ linkcheck_ignore += [
     r"https://dzone.com/.*",
     # 504 Client Error: Gateway Timeout for url
     r"https://web.archive.org/.*",
+    # 403 Client Error: Forbidden for url
+    r"https://www.tableau.com/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
