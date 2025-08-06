@@ -1,6 +1,8 @@
 (connect-drivers)=
-
 # Drivers and Client Libraries
+
+:::{include} /_include/links.md
+:::
 
 This section lists drivers and adapters for supported programming languages,
 frameworks, and environments.
