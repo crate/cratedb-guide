@@ -1,3 +1,4 @@
+[Admin UI]: inv:crate-admin-ui:*:label#index
 [Amazon DynamoDB Streams]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html
 [Amazon Kinesis Data Streams]: https://docs.aws.amazon.com/streams/latest/dev/introduction.html
 [AWS Database Migration Service (AWS DMS)]: https://aws.amazon.com/dms/
@@ -7,8 +8,9 @@
 [cloud-datashader-github]: https://github.com/crate/cratedb-examples/blob/amo/cloud-datashader/topic/timeseries/explore/cloud-datashader.ipynb
 [CTE]: inv:crate-reference#sql_dql_with
 [CrateDB BLOBs]: inv:crate-reference:*:label#blob_support
-[CrateDB Cloud]: https://cratedb.com/product/cloud
+[CrateDB Cloud]: inv:cloud:*:label#index
 [CrateDB JDBC Driver]: https://cratedb.com/docs/jdbc/
+[CrateDB Reference Manual]: inv:crate-reference:*:label#index
 [CrateDB Self-Managed]: https://cratedb.com/product/self-managed
 [CrateDB's PostgreSQL interface]: inv:crate-reference#interface-postgresql
 [crate-jdbc-standalone]: https://repo1.maven.org/maven2/io/crate/crate-jdbc-standalone/
