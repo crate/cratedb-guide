@@ -17,7 +17,7 @@ Frameworks <framework>
 etl/index
 cdc/index
 mcp/index
-Monitoring and Metrics <metrics/index>
+Metrics and Telemetry <telemetry/index>
 Data Visualization <visualize/index>
 bi/index
 lineage/index
