@@ -4,9 +4,6 @@
 :::{include} /_include/links.md
 :::
 
-This documentation section is about connecting your applications to CrateDB
-and CrateDB Cloud, using database drivers, compatibility adapters and dialects.
-
 :::::{grid}
 :padding: 0
 
@@ -20,33 +17,27 @@ and CrateDB Cloud, using database drivers, compatibility adapters and dialects.
 CrateDB connectivity options at a glance.
 
 You have a variety of options to connect to CrateDB, and to integrate it with
-off-the-shelf, 3rd-party, open-source, and proprietary applications.
+off-the-shelf, 3rd-party, open-source, and proprietary applications or frameworks.
 
 :::{rubric} Protocol Support
 :::
 CrateDB supports both the HTTP protocol and the PostgreSQL wire protocol,
 which ensures that many clients that work with PostgreSQL, will also work with
-CrateDB. Through corresponding drivers, CrateDB is compatible with ODBC,
+CrateDB.
+
+Through corresponding drivers, CrateDB is compatible with ODBC,
 JDBC, and other database API specifications. By supporting SQL, CrateDB is
 compatible with many standard database environments out of the box.
 
+The HTTP protocol can be used to connect from environments where
+PostgreSQL-based communication is not applicable.
+
+:::{rubric} Notes
+:::
 While it is generally recommended to use the PostgreSQL interface (PG) for maximum
 compatibility in PostgreSQL environments, the HTTP interface supports CrateDB
 bulk operations and BLOBs, which are not supported by the PostgreSQL
 protocol.
-
-The HTTP protocol can also be used to connect from environments where
-PostgreSQL-based communication is not applicable.
-
-:::{rubric} Details
-:::
-
-CrateDB provides popular connectivity options with database drivers,
-applications, and frameworks.
-
-To learn more, please refer to the documentation sections and hands-on
-tutorials about supported client drivers, libraries, and frameworks,
-and how to configure and use them with CrateDB optimally.
 ::::
 
 
@@ -74,75 +65,36 @@ and how to configure and use them with CrateDB optimally.
 :::::
 
 
-::::{grid} 2 2 2 4
+:::::{grid} 1 2 2 2
+:margin: 4 4 0 0
 :padding: 0
+:gutter: 2
 
-:::{grid-item-card}
-:columns: 12
-:link: connect-configure
-:link-type: ref
-:link-alt: Configure CrateDB connection string
-:padding: 3
-:class-card: sd-pt-1
-:class-footer: text-smaller
+::::{grid-item-card} {material-outlined}`lightbulb;2em` General information
+- {ref}`connect-configure`
 
-Configure database URI
+  To connect to CrateDB, your application or driver needs to be configured
+  with corresponding database URI and connection properties.
+
+- {ref}`connect-drivers`
+
+  All available CrateDB drivers and adapters for supported programming languages,
+  frameworks, and environments.
 +++
-In order to connect to CrateDB, your application or driver needs to be configured
-with corresponding connection properties. Please note that different applications
-and drivers may obtain connection properties in different formats.
-:::
-
-:::{grid-item-card}
-:columns: 12
-:link: connect-drivers
-:link-type: ref
-:link-alt: All drivers suitable for CrateDB
-:padding: 3
-:class-card: sd-pt-1
-:class-footer: text-smaller
-
-All drivers
-+++
-Drivers and adapters for supported programming languages,
-frameworks, and environments.
-:::
-
-:::{grid-item-card}
-:link: connect-java
-:link-type: ref
-:link-alt: Connect using Java
-:padding: 3
-:text-align: center
-:class-card: sd-pt-1
-
-Java
-:::
-
-:::{grid-item-card}
-:link: connect-javascript
-:link-type: ref
-:link-alt: Connect using JavaScript
-:padding: 3
-:text-align: center
-:class-card: sd-pt-1
-
-JavaScript
-:::
-
-:::{grid-item-card}
-:link: connect-python
-:link-type: ref
-:link-alt: Connect using Python
-:padding: 3
-:text-align: center
-:class-card: sd-pt-1
-
-Python
-:::
-
+Database connectivity information.
 ::::
 
+::::{grid-item-card} {material-outlined}`lightbulb;2em` How to connect
+- {ref}`connect-java`
+- {ref}`connect-javascript`
+- {ref}`connect-php`
+- {ref}`connect-python`
+- {ref}`connect-ruby`
++++
+Connection examples.
+::::
+
+:::::
 
 ```{toctree}
 :maxdepth: 1
