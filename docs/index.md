@@ -304,9 +304,9 @@ use-cases.
 ```{toctree}
 :hidden:
 
+start/index
 install/index
 connect/index
-getting-started
 Ingestion <ingest/index>
 feature/index
 admin/index
