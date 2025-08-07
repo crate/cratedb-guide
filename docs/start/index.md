@@ -110,6 +110,7 @@ and explore key features.
 first-steps
 connect
 query/index
+modelling/index
 Ingesting data <../ingest/index>
 application/index
 going-further
