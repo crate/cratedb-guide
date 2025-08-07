@@ -1,7 +1,7 @@
 (metrics)=
 (telemetry)=
 (integrate-metrics)=
-# Store telemetry data in CrateDB
+# Telemetry data
 
 CrateDB integrations with metrics collection agents, brokers, and stores.
 This documentation section lists applications and daemons which can
