@@ -55,6 +55,8 @@ linkcheck_ignore += [
     r"https://web.archive.org/.*",
     # 403 Client Error: Forbidden for url
     r"https://www.tableau.com/",
+    # Read timed out. (read timeout=15)
+    r"https://kubernetes.io/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
