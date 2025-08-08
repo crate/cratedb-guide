@@ -116,37 +116,6 @@ Through corresponding drivers and adapters, CrateDB is compatible with [ODBC],
 
 ## Learn
 
-:::{rubric} Videos
-:::
-::::{card} Today's data challenges and a high level overview of CrateDB
-:class-title: sd-fs-4
-:class-body: sd-text-center
-:class-footer: sd-fs-6
-
-:::{youtube} cByAOsaYddQ
-:::
-+++
-_Webinar: Turbocharge your aggregations, search & AI models & get real-time insights._
-
-:::{div} text-smaller
-Discover CrateDB, the leading real-time analytics database. It provides the
-flexibility, speed, and scalability necessary to master today's data challenges.
-Watch this video to learn how CrateDB empowers you with real-time insights
-into your data to fuel advanced analytics, search, and AI models—enabling
-informed decisions that drive meaningful impact.
-:::
-::::
-
-::::{card} CrateDB Videos curated by Simon Prickett
-:class-footer: sd-fs-6
-
-Simon leads Developer Relations at CrateDB. Here, he is [sharing a playlist
-of videos] he has been part of that will show you what CrateDB is and how
-you can use it for a variety of projects.
-Make sure you also do not miss relevant [CrateDB customer stories].
-::::
-
-
 :::{rubric} Introduction
 :::
 Learn about the fundamentals of CrateDB, guided and self-guided.
@@ -301,11 +270,11 @@ Learn about the variety of options to connect and integrate with 3rd-party appli
 Integration-focused tutorials to help you use CrateDB together with other tools and libraries.
 :::
 
-
 ::::
 
 
-## Examples
+:::{rubric} Examples
+:::
 
 Learn how to use CrateDB by digesting concise examples.
 
@@ -338,6 +307,37 @@ A collection of clear and concise examples how to work with CrateDB.
 Different client libraries used by canonical guestbook demo web applications. 
 :::
 
+::::
+
+
+:::{rubric} Videos
+:::
+::::{card} Today's data challenges and a high level overview of CrateDB
+:class-title: sd-fs-4
+:class-body: sd-text-center
+:class-footer: sd-fs-6
+
+:::{youtube} cByAOsaYddQ
+:::
++++
+_Webinar: Turbocharge your aggregations, search & AI models & get real-time insights._
+
+:::{div} text-smaller
+Discover CrateDB, the leading real-time analytics database. It provides the
+flexibility, speed, and scalability necessary to master today's data challenges.
+Watch this video to learn how CrateDB empowers you with real-time insights
+into your data to fuel advanced analytics, search, and AI models—enabling
+informed decisions that drive meaningful impact.
+:::
+::::
+
+::::{card} CrateDB Videos curated by Simon Prickett
+:class-footer: sd-fs-6
+
+Simon leads Developer Relations at CrateDB. Here, he is [sharing a playlist
+of videos] he has been part of that will show you what CrateDB is and how
+you can use it for a variety of projects.
+Make sure you also do not miss relevant [CrateDB customer stories].
 ::::
 
 
