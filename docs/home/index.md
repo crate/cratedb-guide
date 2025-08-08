@@ -10,7 +10,72 @@ orphan: true
 }
 </style>
 
-# CrateDB Documentation
+# Welcome to CrateDB
+
+CrateDB is a **distributed SQL database** designed for **real-time analytics
+and search** at scale. Whether you're working with time-series data, full-text
+search, or large volumes of structured and semi-structured data, CrateDB gives
+you the **power of SQL**, the **scalability of NoSQL**, and the **flexibility
+of a modern data platform**.
+
+## Why CrateDB
+
+CrateDB was built for speed, scale, and simplicity:
+
+* **Real-time performance:** Query millions of records per second with sub-second response times.
+* **AI/ML-ready:** Store and serve data for modern AI pipelines.
+* **Search + SQL**: Combine full-text search with rich SQL queries.
+* **Geospatial & time-series**: Native support for IoT, sensor data, and location-based use cases.
+* **Horizontal scalability**: Add nodes effortlessly to handle more data and users.
+* **Resilient and fault-tolerant**: Built-in replication and recovery.
+
+## What Can You Build?
+
+CrateDB is used across industries to power:
+
+* Real-time **dashboards and analytics**
+* Large-scale **IoT platforms**
+* Complex **geospatial applications**
+* Embedded **AI-driven insights**
+* Modern **industrial data backends**
+
+## Get Started
+
+We've put together some helpful guides for you to setup your CrateDB instance
+quickly and easily. Enjoy the reading!
+
+:::{card} {material-outlined}`rocket_launch;1.7em` CrateDB Cloud
+:link: cloud-docs-index
+:link-type: ref
+:link-alt: CrateDB Cloud
+:class-title: sd-fs-5
+
+Start with a fully managed CrateDB instance to accelerate and simplify working
+with analytical data. CrateDB Cloud enables seamless deployment, monitoring,
+backups, and scaling of CrateDB clusters on AWS, Azure or GCPs, eliminating
+the need for direct database management.
+
+With CrateDB Cloud, you can skip infrastructure setup and focus on delivering
+value for your business with a query console, SQL Scheduler, table policies
+and various connectors to import data.
++++
+```{button-link} https://cratedb.com/docs/cloud/tutorials/quick-start.html
+:color: primary
+:expand:
+**Start forever free cluster with 8 GB of storage**
+```
+:::
+
+:::{card} {material-outlined}`not_started;1.7em` Getting Started
+:link: getting-started
+:link-type: ref
+:link-alt: CrateDB Cloud
+:class-title: sd-fs-5
+
+Helpful guides about how to start working with your database cluster.
+:::
+
+## Details
 
 Welcome to the official CrateDB Documentation. Whether you are a developer,
 database administrator, or just starting your journey with CrateDB, our
@@ -39,33 +104,12 @@ unique features.
   with an extensive 3rd party ecosystem of AI/ML frameworks for advanced data
   analysis and data-driven decisions.
 
+:::{rubric} Resources
+:::
 
 ::::::{grid} 1
 :margin: 1
 :padding: 2
-
-:::{grid-item-card} {material-outlined}`rocket_launch;1.7em` CrateDB Cloud
-:link: cloud-docs-index
-:link-type: ref
-:link-alt: CrateDB Cloud
-:padding: 2
-:class-title: sd-fs-5
-
-Start with a fully managed CrateDB instance to accelerate and simplify working
-with analytical data. CrateDB Cloud enables seamless deployment, monitoring,
-backups, and scaling of CrateDB clusters on AWS, Azure or GCPs, eliminating
-the need for direct database management.
-
-With CrateDB Cloud, you can skip infrastructure setup and focus on delivering
-value for your business with a query console, SQL Scheduler, table policies
-and various connectors to import data.
-+++
-```{button-link} https://cratedb.com/docs/cloud/tutorials/quick-start.html
-:color: primary
-:expand:
-**Start forever free cluster with 8 GB of storage**
-```
-:::
 
 :::::{grid-item}
 :margin: 0
