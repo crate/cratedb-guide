@@ -1,5 +1,3 @@
-.markdownlint-disable MD053
-
 [Amazon DynamoDB Streams]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html
 [Amazon Kinesis Data Streams]: https://docs.aws.amazon.com/streams/latest/dev/introduction.html
 [AWS Database Migration Service (AWS DMS)]: https://aws.amazon.com/dms/
