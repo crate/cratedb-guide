@@ -41,11 +41,11 @@ CrateDB is used across industries to power:
 
 ## Get Started
 
-We've put together some helpful guides for you to setup your CrateDB instance
-quickly and easily. Enjoy the reading!
+We've put together some helpful guides to help you set up your CrateDB instance
+quickly and easily. Enjoy reading!
 
 :::{card} {material-outlined}`rocket_launch;1.7em` CrateDB Cloud
-:link: cloud-docs-index
+:link: cloud:index
 :link-type: ref
 :link-alt: CrateDB Cloud
 :class-title: sd-fs-5
@@ -62,20 +62,20 @@ and various connectors to import data.
 ```{button-link} https://cratedb.com/docs/cloud/tutorials/quick-start.html
 :color: primary
 :expand:
-**Start forever free cluster with 8 GB of storage**
+**Start a forever-free cluster with 8 GB of storage**
 ```
 :::
 
 :::{card} {material-outlined}`not_started;1.7em` Getting Started
 :link: getting-started
 :link-type: ref
-:link-alt: CrateDB Cloud
+:link-alt: Getting started with CrateDB
 :class-title: sd-fs-5
 
 Helpful guides about how to start working with your database cluster.
 :::
 
-## Details
+## Overview
 
 Welcome to the official CrateDB Documentation. Whether you are a developer,
 database administrator, or just starting your journey with CrateDB, our
