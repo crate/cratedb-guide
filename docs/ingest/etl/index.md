@@ -17,7 +17,7 @@ features.
 This documentation section lists ETL applications and
 frameworks which can be used together with CrateDB, and outlines how
 to use them optimally.
-Please also take a look at support for {ref}`cdc` solutions.
+Additionally, see support for {ref}`cdc` solutions.
 :::
 
 
@@ -34,7 +34,7 @@ Please also take a look at support for {ref}`cdc` solutions.
 ::::{grid-item-card} {material-outlined}`air;2em` Dataflow / Pipeline / Code-first
 - {ref}`apache-airflow`
 
-  Apache Airflow is an open source software platform to programmatically author,
+  Apache Airflow is an open-source software platform to programmatically author,
   schedule, and monitor workflows. Pipelines are defined in Python, allowing for
   dynamic pipeline generation and on-demand, code-driven pipeline invocation.
 
@@ -57,7 +57,7 @@ Please also take a look at support for {ref}`cdc` solutions.
 
 - {ref}`kestra`
 
-  Kestra is an open source workflow automation and orchestration toolkit with a rich
+  Kestra is an open-source workflow automation and orchestration toolkit with a rich
   plugin ecosystem. It enables users to automate and manage complex workflows in a
   streamlined and efficient manner, defining them both declaratively, or imperatively
   using any scripting language like Python, Bash, or JavaScript.
@@ -65,7 +65,7 @@ Please also take a look at support for {ref}`cdc` solutions.
 - {ref}`meltano`
 
   Meltano is a declarative code-first polyglot data integration engine adhering to
-  the Singer specification. Singer is a composable open source ETL framework and
+  the Singer specification. Singer is a composable open-source ETL framework and
   specification, including powerful data extraction and consolidation elements.
 
 +++
@@ -162,8 +162,8 @@ Load data from database systems.
 - {ref}`streamsets`
 
   The StreamSets Data Collector is a lightweight and powerful engine that allows you
-  to build streaming, batch and change-data-capture (CDC) pipelines that can ingest
-  and transform data from a variety of sources.
+  to build streaming, batch, and change-data-capture (CDC) pipelines that can ingest
+  and transform data from many sources.
 
 +++
 Load data from streaming platforms.

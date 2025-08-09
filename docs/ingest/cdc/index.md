@@ -13,7 +13,7 @@ features.
 This documentation section lists CDC applications,
 frameworks, and solutions, which can be used together with CrateDB,
 and outlines how to use them optimally.
-Please also take a look at support for {ref}`generic ETL <etl>` solutions.
+Additionally, see support for {ref}`generic ETL <etl>` solutions.
 :::
 
 
@@ -67,7 +67,7 @@ kinds of databases.
 ::::{grid-item-card} Debezium
 :link: debezium
 :link-type: ref
-Use, Debezium an open source distributed platform for change data capture for
+Use Debezium, an open source distributed platform for change data capture for
 loading data into CrateDB.
 It is used as a building block by a number of downstream third-party projects and products.
 ::::
@@ -92,9 +92,8 @@ Python interface. It is available for on-premises and as a managed service.
 ::::{grid-item-card} StreamSets
 :link: streamsets
 :link-type: ref
-Use the StreamSets Data Collector Engine to ingest and transform data from a variety
-of sources into CrateDB. It runs on-premises or in any cloud.
+Use the StreamSets Data Collector Engine to ingest and transform data from many
+sources into CrateDB. It runs on-premises or in any cloud.
 ::::
 
 :::::
-
