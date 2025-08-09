@@ -1,8 +1,10 @@
 (connect-configure)=
-
 # Configure
 
-In order to connect to CrateDB, your application or driver needs to be
+:::{include} /_include/links.md
+:::
+
+To connect to CrateDB properly, your application or driver needs to be
 configured with corresponding connection properties. Please note that different
 applications and drivers may obtain connection properties in different formats.
 
@@ -143,7 +145,10 @@ crate://crate@localhost:4200/?schema=doc
 ::::::
 
 
-```{tip}
+:::{rubric} Notes
+:::
+
+:::{div}
 - CrateDB's fixed catalog name is `crate`, the default schema name is `doc`.
 - CrateDB does not implement the notion of a database,
   however tables can be created in different [schemas].
@@ -155,4 +160,4 @@ crate://crate@localhost:4200/?schema=doc
   called `crate`, defined without a password.
 - For authenticating properly, please learn about the available
   [authentication] options.
-```
+:::
