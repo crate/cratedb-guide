@@ -1,5 +1,4 @@
 (risingwave)=
-
 # RisingWave
 
 ```{div}
@@ -76,15 +75,19 @@ referenced below.
 
 ## Learn
 
-:::{rubric} Tutorials
-:::
-- An example with data coming from an Apache Iceberg table and aggregations
-  materialized in real-time in CrateDB, using RisingWave.
-  See {ref}`iceberg-risingwave`.
+Follow the full example tutorial sourcing data from an Apache Iceberg table,
+and sinking it into CrateDB. See {ref}`risingwave-iceberg`.
 
 :::{note}
 We are tracking interoperability issues per [Tool: RisingWave] and appreciate
 any contributions and reports.
+:::
+
+:::{toctree}
+:maxdepth: 1
+:hidden:
+
+apache-iceberg
 :::
 
 

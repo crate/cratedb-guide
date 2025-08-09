@@ -1,4 +1,4 @@
-(iceberg-risingwave)=
+(risingwave-iceberg)=
 
 # Stream processing from Iceberg tables to CrateDB using RisingWave
 

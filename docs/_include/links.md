@@ -27,6 +27,7 @@
 [HNSW paper]: https://arxiv.org/pdf/1603.09320
 [HoloViews]: https://www.holoviews.org/
 [Indexing, Columnar Storage, and Aggregations]: https://cratedb.com/product/features/indexing-columnar-storage-aggregations
+[InfluxDB]: https://github.com/influxdata/influxdb
 [inverted index]: https://en.wikipedia.org/wiki/Inverted_index
 [JOIN]: inv:crate-reference#sql_joins
 [JSON Database]: https://cratedb.com/solutions/json-database
@@ -38,9 +39,12 @@
 [langchain-rag-sql-binder]: https://mybinder.org/v2/gh/crate/cratedb-examples/main?labpath=topic%2Fmachine-learning%2Flangchain%2Fcratedb-vectorstore-rag-openai-sql.ipynb
 [langchain-rag-sql-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/langchain/cratedb-vectorstore-rag-openai-sql.ipynb
 [langchain-rag-sql-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/langchain/cratedb-vectorstore-rag-openai-sql.ipynb
-[MongoDB CDC Relay]: https://cratedb-toolkit.readthedocs.io/io/mongodb/cdc.html
+[MongoDB]: https://www.mongodb.com/docs/manual/
+[MongoDB Atlas]: https://www.mongodb.com/docs/atlas/
+[MongoDB CDC Relay]: inv:ctk:*:label#mongodb-cdc-relay
 [MongoDB Change Streams]: https://www.mongodb.com/docs/manual/changeStreams/
-[MongoDB Table Loader]: https://cratedb-toolkit.readthedocs.io/io/mongodb/loader.html
+[MongoDB collections and databases]: https://www.mongodb.com/docs/php-library/current/databases-collections/
+[MongoDB Table Loader]: inv:ctk:*:label#mongodb-loader
 [Multi-model Database]: https://cratedb.com/solutions/multi-model-database
 [nearest neighbor search]: https://en.wikipedia.org/wiki/Nearest_neighbor_search
 [Nested Data Structure]: https://cratedb.com/product/features/nested-data-structure
