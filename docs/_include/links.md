@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD053 -->
+
 [Amazon DynamoDB Streams]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html
 [Amazon Kinesis Data Streams]: https://docs.aws.amazon.com/streams/latest/dev/introduction.html
 [Apache Airflow]: https://airflow.apache.org/
@@ -21,9 +23,9 @@
 [Datashader]: https://datashader.org/
 [Dynamic Database Schemas]: https://cratedb.com/product/features/dynamic-schemas
 [DynamoDB]: https://aws.amazon.com/dynamodb/
-[DynamoDB CDC Relay]: https://cratedb-toolkit.readthedocs.io/io/dynamodb/cdc.html
-[DynamoDB CDC Relay with AWS Lambda]: https://cratedb-toolkit.readthedocs.io/io/dynamodb/cdc-lambda.html
-[DynamoDB Table Loader]: https://cratedb-toolkit.readthedocs.io/io/dynamodb/loader.html
+[DynamoDB CDC Relay]: inv:ctk:*:label#dynamodb-cdc
+[DynamoDB CDC Relay with AWS Lambda]: inv:ctk:*:doc#io/dynamodb/cdc-lambda
+[DynamoDB Table Loader]: inv:ctk:*:label#dynamodb-loader
 [Executable stack with Apache Kafka, Apache Flink, and CrateDB]: https://github.com/crate/cratedb-examples/tree/main/framework/flink/kafka-jdbcsink-java
 [Geospatial Data Model]: https://cratedb.com/data-model/geospatial
 [Geospatial Database]: https://cratedb.com/geospatial-spatial-database

@@ -17,7 +17,7 @@ features.
 This documentation section lists ETL applications and
 frameworks which can be used together with CrateDB, and outlines how
 to use them optimally.
-Please also take a look at support for {ref}`cdc` solutions.
+Additionally, see support for {ref}`cdc` solutions.
 :::
 
 
@@ -162,8 +162,8 @@ Load data from database systems.
 - {ref}`streamsets`
 
   The StreamSets Data Collector is a lightweight and powerful engine that allows you
-  to build streaming, batch and change-data-capture (CDC) pipelines that can ingest
-  and transform data from a variety of sources.
+  to build streaming, batch, and change-data-capture (CDC) pipelines that can ingest
+  and transform data from many sources.
 
 +++
 Load data from streaming platforms.
