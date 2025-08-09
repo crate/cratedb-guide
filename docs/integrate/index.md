@@ -26,6 +26,7 @@ apache-superset/index
 aws-dms/index
 aws-dynamodb/index
 aws-kinesis/index
+aws-lambda/index
 azure-functions/index
 cluvio/index
 datagrip/index
@@ -44,6 +45,7 @@ meltano/index
 metabase/index
 mongodb/index
 mysql/index
+n8n/index
 node-red/index
 plotly/index
 powerbi/index

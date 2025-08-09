@@ -85,6 +85,11 @@ Data pipeline programming frameworks and platforms.
   as a fully managed solution. Estuary Flow is a real-time, reliable change data
   capture (CDC) solution.
 
+- {ref}`n8n`
+
+  n8n is a workflow automation tool that helps you to connect any app with an API with
+  any other, and manipulate its data with little or no code.
+
 - {ref}`node-red`
 
   Node-RED is an open-source programming tool for wiring together hardware devices,
@@ -166,6 +171,11 @@ Load data from streaming platforms.
 
 
 ::::{grid-item-card} {material-outlined}`add_to_queue;2em` Serverless Compute
+- {ref}`aws-lambda`
+
+  AWS Lambda is a serverless compute service that runs your code in response to
+  events and automatically manages the underlying compute resources for you. These
+  events may include changes in state or an update.
 
 - {ref}`azure-functions`
 
@@ -206,6 +216,7 @@ Load data from datasets and open table formats.
 - {ref}`aws-dynamodb`
 - {ref}`aws-kinesis`
 - {ref}`aws-dms`
+- {ref}`aws-lambda`
 - {ref}`azure-functions`
 - {ref}`dbt`
 - {ref}`estuary`
@@ -214,6 +225,7 @@ Load data from datasets and open table formats.
 - {ref}`meltano`
 - {ref}`mongodb`
 - {ref}`mysql`
+- {ref}`n8n`
 - {ref}`node-red`
 - {ref}`risingwave`
 - {ref}`sql-server`
