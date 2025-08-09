@@ -70,29 +70,35 @@ protocol.
 :padding: 0
 :gutter: 2
 
-::::{grid-item-card} {material-outlined}`lightbulb;2em` General information
+::::{grid-item-card} {material-outlined}`link;2em` How to connect
 - {ref}`connect-configure`
 
   To connect to CrateDB, your application or driver needs to be configured
   with corresponding database URI and connection properties.
 
-- {ref}`connect-drivers`
+- {ref}`CLI programs <connect-cli>`
 
-  All available CrateDB drivers and adapters for supported programming languages,
-  frameworks, and environments.
+  Use CLI programs to connect to CrateDB.
+
+- {ref}`Database IDEs <connect-ide>`
+
+  Use IDEs to connect to CrateDB.
 +++
-Database connectivity information.
+Database connectivity options and tools.
 ::::
 
-::::{grid-item-card} {material-outlined}`lightbulb;2em` How to connect
-:width: auto
+::::{grid-item-card} {material-outlined}`not_started;2em` How to use database drivers
 - {ref}`connect-java`
 - {ref}`connect-javascript`
 - {ref}`connect-php`
 - {ref}`connect-python`
 - {ref}`connect-ruby`
+- {ref}`connect-drivers`
+
+  All available CrateDB drivers and adapters for supported programming languages,
+  frameworks, and environments.
 +++
-Connection examples.
+Database driver connection examples.
 ::::
 
 :::::
