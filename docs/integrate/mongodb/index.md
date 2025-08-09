@@ -9,7 +9,7 @@
 
 :::{div}
 [MongoDB] is a document database designed for ease of application development and scaling.
-[MongoDB Atlas] is a multi-cloud database service by the same people that build MongoDB.
+[MongoDB Atlas] is a multi-cloud database service by the same people who build MongoDB.
 Atlas simplifies deploying and managing your databases while offering the versatility
 you need to build resilient and performant global applications on the cloud providers
 of your choice.

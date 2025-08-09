@@ -12,7 +12,7 @@ CrateDB provides integration capabilities with Apache Iceberg implementations,
 see {ref}`risingwave-iceberg`.
 
 :::{todo}
-🚧 _Please note this page is a work in progress._ 🚧
+🚧 This page is a work in progress. 🚧
 :::
 
 
