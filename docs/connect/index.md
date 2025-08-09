@@ -105,6 +105,7 @@ CLI programs <cli>
 ide
 Drivers <drivers>
 DataFrame libraries <df/index>
+mcp/index
 ORM libraries <orm>
 ```
 

@@ -40,7 +40,6 @@ grafana/index
 influxdb/index
 kestra/index
 marquez/index
-mcp/index
 meltano/index
 metabase/index
 mongodb/index
