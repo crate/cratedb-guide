@@ -50,6 +50,19 @@ on top.
   [](#machine-learning)
 
 
+(reference-architectures)=
+## Reference Architectures
+
+Reference architectures showing how CrateDB can be used in various use cases.
+
+:::{toctree}
+:maxdepth: 1
+
+Azure IoT <azure-iot>
+Machine Learning <distributed-ml>
+:::
+
+
 (abb)=
 ## ABB Insights
 

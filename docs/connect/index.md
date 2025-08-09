@@ -101,8 +101,9 @@ Connection examples.
 :hidden:
 
 configure
-Drivers <drivers>
 CLI programs <cli>
+ide
+Drivers <drivers>
 DataFrame libraries <df/index>
 ORM libraries <orm>
 ```

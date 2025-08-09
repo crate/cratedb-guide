@@ -1,13 +1,14 @@
 (ide)=
-
+(connect-ide)=
 # Database IDEs
 
 Mostly through its PostgreSQL interface, CrateDB supports working with popular
 database IDE (Integrated Development Environment) applications.
 
-```{toctree}
-:maxdepth: 2
+## DataGrip
 
-datagrip/index
-dbeaver/index
-```
+- {ref}`datagrip`
+
+## DBeaver
+
+- {ref}`dbeaver`

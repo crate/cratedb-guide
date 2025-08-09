@@ -10,25 +10,12 @@ analytics and intelligence software.
 
 ## PowerBI
 
-```{toctree}
-:maxdepth: 1
-
-../powerbi/index
-```
+- {ref}`powerbi`
 
 ## Rill
 
-```{toctree}
-:maxdepth: 1
-
-../rill/index
-```
-
+- {ref}`rill`
 
 ## Tableau
 
-```{toctree}
-:maxdepth: 1
-
-../tableau/index
-```
+- {ref}`tableau`
