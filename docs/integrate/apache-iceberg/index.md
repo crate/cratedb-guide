@@ -3,6 +3,9 @@
 
 :::{rubric} About
 :::
+
+[Apache Iceberg] is an open table format for analytic datasets.
+
 The [Iceberg table format] is designed to manage a large, slow-changing collection
 of files in a distributed file system or key-value store as a database table.
 
@@ -16,4 +19,5 @@ see {ref}`risingwave-iceberg`.
 :::
 
 
+[Apache Iceberg]: https://iceberg.apache.org/
 [Iceberg table format]: https://iceberg.apache.org/spec/

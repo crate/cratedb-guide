@@ -257,5 +257,4 @@ You can now see all lineage graphs and events for this setup.
 
 [Marquez]: https://github.com/MarquezProject/marquez
 [OpenLineage]: https://openlineage.io/
-[Apache Airflow]: https://airflow.apache.org/
 [the Docker documentation on this topic]: https://docs.docker.com/compose/install/linux/

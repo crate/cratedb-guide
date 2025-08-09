@@ -3,6 +3,9 @@
 (astronomer)=
 # Apache Airflow / Astronomer
 
+:::{include} /_include/links.md
+:::
+
 :::{rubric} About
 :::
 
@@ -12,6 +15,7 @@
 
 [![](https://logowik.com/content/uploads/images/astronomer2824.jpg){w=180px}](https://www.astronomer.io/)
 ```
+:::{div}
 [Apache Airflow] is an open source software platform to programmatically author,
 schedule, and monitor workflows, written in Python.
 [Astronomer] offers managed Airflow services on the cloud of your choice, in
@@ -24,6 +28,7 @@ dynamic pipeline generation and on-demand, code-driven pipeline invocation.
 Pipeline parametrization is using the powerful Jinja templating engine.
 To extend the system, you can define your own operators and extend libraries
 to fit the level of abstraction that suits your environment.
+:::
 ```{div}
 :style: "clear: both"
 ```
@@ -84,7 +89,6 @@ Tutorials and resources about configuring the managed variants, Astro and CrateD
 
 
 
-[Apache Airflow]: https://airflow.apache.org/
 [Automating export of CrateDB data to S3 using Apache Airflow]: https://community.cratedb.com/t/cratedb-and-apache-airflow-automating-data-export-to-s3/901
 [Automating stock data collection and storage with CrateDB and Apache Airflow]: https://community.cratedb.com/t/automating-stock-data-collection-and-storage-with-cratedb-and-apache-airflow/990
 [Automating the import of Parquet files with Apache Airflow]: https://community.cratedb.com/t/automating-the-import-of-parquet-files-with-apache-airflow/1247
