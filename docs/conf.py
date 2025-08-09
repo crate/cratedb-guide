@@ -57,6 +57,8 @@ linkcheck_ignore += [
     r"https://www.tableau.com/",
     # Read timed out. (read timeout=15)
     r"https://kubernetes.io/",
+    # Connection to renenyffenegger.ch timed out.
+    r"https://renenyffenegger.ch",
 ]
 
 linkcheck_anchors_ignore_for_url += [
