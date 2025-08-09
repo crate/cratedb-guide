@@ -14,8 +14,8 @@ service that helps move your database and analytics workloads between different
 kinds of databases quickly, securely, and with minimal downtime and zero data
 loss.
 
-AWS DMS supports migration between 20-plus database and analytics engines, either
-on-premises, or per EC2 instance databases. Supported data migration sources are:
+AWS DMS supports migration between 20+ database and analytics engines, either
+on-premises or on EC2-hosted databases. Supported data migration sources include:
 Amazon Aurora, Amazon DocumentDB, Amazon S3, IBM DB2, MariaDB, Azure SQL Database,
 Microsoft SQL Server, MongoDB, MySQL, Oracle, PostgreSQL, SAP ASE.
 :::
@@ -27,10 +27,9 @@ Microsoft SQL Server, MongoDB, MySQL, Oracle, PostgreSQL, SAP ASE.
 The [AWS DMS Integration with CrateDB] uses Amazon Kinesis Data Streams as
 a DMS target, combined with a CrateDB-specific downstream processor element.
 
-CrateDB provides two variants how to conduct data migrations using AWS DMS.
-Either use it standalone / on your own premises, or use it in a completely
-managed environment with services of AWS and CrateDB Cloud.
+CrateDB supports two ways to run AWS DMS migrations:
+Either standalone/on‑premises, or fully managed with AWS and CrateDB Cloud.
 
-AWS DMS supports both `full-load` and `cdc` operation modes, often used in
-combination with each other (`full-load-and-cdc`).
+AWS DMS supports both `full-load` and `cdc` operation modes, which are often
+combined (`full-load-and-cdc`).
 :::

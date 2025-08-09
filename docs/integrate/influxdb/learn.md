@@ -1,5 +1,3 @@
-(integrate-influxdb)=
-(integrate-influxdb-quickstart)=
 (import-influxdb)=
 # Import data from InfluxDB
 
@@ -47,6 +45,8 @@ data in schemas and tables.
 - A **tag** is similar to an indexed column in an SQL database.
 - A **field** is similar to an un-indexed column in an SQL database.
 - A **point** is similar to an SQL row.
+
+-- [via][What are series and bucket in InfluxDB]
 
 ## Tutorial
 
@@ -131,15 +131,17 @@ alias crash="docker run --rm -it ghcr.io/crate/cratedb-toolkit:latest crash"
 You will need your credentials for both CrateDB and InfluxDB. 
 These are, with examples:
 
-**CrateDB Cloud**
-* Host: ```purple-shaak-ti.eks1.eu-west-1.aws.cratedb.net```
-* Username: ```admin```
-* Password: ```dZ..qB```
+:::{rubric} CrateDB Cloud
+:::
+- Host: ```purple-shaak-ti.eks1.eu-west-1.aws.cratedb.net```
+- Username: ```admin```
+- Password: ```dZ..qB```
 
-**InfluxDB Cloud**
-  * Host: ```eu-central-1-1.aws.cloud2.influxdata.com```
-  * Organization ID: ```9fafc869a91a3406```
-  * All-Access API token: ```T2..==```
+:::{rubric} InfluxDB Cloud
+:::
+- Host: ```eu-central-1-1.aws.cloud2.influxdata.com```
+- Organization ID: ```9fafc869a91a3406```
+- All-Access API token: ```T2..==```
 
 For CrateDB, the credentials are displayed at time of cluster creation.
 For InfluxDB, they can be found in the [cloud platform] itself.
@@ -147,9 +149,10 @@ For InfluxDB, they can be found in the [cloud platform] itself.
 Now, same as before, import data from InfluxDB bucket/measurement into 
 CrateDB schema/table.
 :::{code} shell
+export CRATEPW='dZ..qB'
 ctk load table \
   "influxdb2://9f..06:T2..==@eu-central-1-1.aws.cloud2.influxdata.com/testdrive/demo?ssl=true" \
-  --cratedb-sqlalchemy-url="crate://admin:dZ..qB@purple-shaak-ti.eks1.eu-west-1.aws.cratedb.net:4200/testdrive/demo?ssl=true"
+  --cratedb-sqlalchemy-url="crate://admin:${CRATEPW}@purple-shaak-ti.eks1.eu-west-1.aws.cratedb.net:4200/testdrive/demo?ssl=true"
 :::
 
 ::: {note}
@@ -159,7 +162,8 @@ when working on Cloud-to-Cloud transfers.
 
 Verify that relevant data has been transferred to CrateDB.
 :::{code} shell
-crash --hosts 'https://admin:dZ..qB@purple-shaak-ti.eks1.eu-west-1.aws.cratedb.net:4200' --command 'SELECT * FROM testdrive.demo;'
+export CRATEPW='dZ..qB'
+crash --hosts 'https://admin:${CRATEPW}@purple-shaak-ti.eks1.eu-west-1.aws.cratedb.net:4200' --command 'SELECT * FROM testdrive.demo;'
 :::
 
 ## More information
@@ -168,9 +172,8 @@ There are more ways to apply the I/O subsystem of CrateDB Toolkit as
 pipeline elements in your daily data operations routines. Please visit the 
 [CrateDB Toolkit InfluxDB I/O subsystem] documentation, to learn more about what's possible.
 
-The InfluxDB I/O subsystem is based on the [influxio] package. Please also
-check its documentation to learn about more of its capabilities, supporting
-you when working with InfluxDB.
+The InfluxDB I/O subsystem is based on the [influxio] package. See its
+documentation for additional capabilities when working with InfluxDB.
 
 :::{note}
 **Important:** If you discover any issues with this adapter, please

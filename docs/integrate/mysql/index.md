@@ -10,11 +10,24 @@
 
 ```{div}
 :style: "float: right; margin-left: 1em"
-[![cluvio-logo-full_color-on_dark.svg ](https://github.com/crate/crate-clients-tools/assets/453543/cac142ef-412a-4a67-a63f-bf9d1ce92c84){w=180px}](https://www.cluvio.com/)
+
+[![mysql-logo](https://labs.mysql.com/common/logos/mysql-logo.svg?v2){w=180px}](https://www.mysql.com/)
+<br><br>
+[![mariadb-logo](https://mariadb.com/wp-content/themes/mariadb-2025/public/images/logo-dark.4482a1.svg){w=180px}](https://www.mariadb.com/)
 ```
 
-[MySQL] and [MariaDB] are well-known OLTP databases, available as standalone and
-managed variants.
+[MySQL] and [MariaDB] are well-known free and open-source relational database
+management systems (RDBMS), available as standalone and managed variants.
+
+MySQL is a component of the LAMP web application software stack (and others),
+which is an acronym for Linux, Apache, MySQL, Perl/PHP/Python.
+
+In 2010, when Oracle acquired Sun, Monty Widenius, MySQL's founder, forked the
+open-source MySQL project to create MariaDB.
+
+```{div}
+:style: "clear: both"
+```
 
 :::{rubric} Learn
 :::
