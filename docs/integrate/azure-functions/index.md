@@ -4,10 +4,10 @@
 :::{include} /_include/links.md
 :::
 
+_Execute event-driven serverless code with an end-to-end development experience._
+
 :::{rubric} About
 :::
-
-_Execute event-driven serverless code with an end-to-end development experience._ 
 
 [Azure Functions] is a serverless solution that allows you to build robust apps
 while using less code, and with less infrastructure and lower costs. Instead

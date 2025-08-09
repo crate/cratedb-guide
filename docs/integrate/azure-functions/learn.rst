@@ -1,8 +1,8 @@
 .. _azure-functions-learn:
 
-===========================================================
-Data Enrichment using IoT Hubs, Azure Functions and CrateDB
-===========================================================
+==========================================================
+Data Enrichment using IoT Hub, Azure Functions and CrateDB
+==========================================================
 
 This integration document details how to create an enrichment
 pipeline between data ingested into an Azure IoT Hub and CrateDB, using
@@ -231,7 +231,7 @@ account, selecting "Access keys", and copying one of the shown connection
 strings.
 
 The ``EventHubConnectionString`` can be copied from the
-"Event Hub-compatible endpoint" field under the IoT hub's "Built-in endpoints"
+"Event Hub-compatible endpoint" field under the IoT Hub's "Built-in endpoints"
 section. Ensure that the event hub connection string includes the
 ``EntityPath=EVENTHUBNAME`` at the end of it.
 
@@ -363,7 +363,7 @@ The following JSON document can be used as a test message:
 
   {"input": "{\"id\": \"Zero Gravitas\", \"type\": \"unmanned\", \"location\": {\"longitude\": -164.5984,\"latitude\": -24.9734},\"timestamp\": 1588240576000}"}
 
-To test the deployed Azure Function against an actual IoT hub, you can install
+To test the deployed Azure Function against an actual IoT Hub, you can install
 VSCode's `Azure IoT Hub extension`_. Its documentation describes how to create
 a new device and send a device-to-cloud (D2C) message for testing purposes.
 
