@@ -38,11 +38,7 @@ lineage data, and the approach for collecting lineage data from external systems
 ## Solutions
 Data lineage solutions tested with CrateDB.
 
-```{toctree}
-:maxdepth: 1
-
-../marquez/index
-```
+- {ref}`marquez`
 
 
 [Data lineage]: https://en.wikipedia.org/wiki/Data_lineage

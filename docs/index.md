@@ -301,21 +301,20 @@ use-cases.
 ::::
 
 
+
 ```{toctree}
 :hidden:
 
 install/index
 connect/index
 getting-started
-Ingestion <ingest/index>
 feature/index
+Ingestion <ingest/index>
+topic/index
+use/index
+integrate/index
 admin/index
 performance/index
-
-domain/index
-integrate/index
-migrate/index
-reference-architectures/index
 ```
 
 

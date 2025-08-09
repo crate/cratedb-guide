@@ -66,3 +66,13 @@ Supported industry-standard frameworks and paradigms.
 ::::
 
 :::::
+
+
+```{toctree}
+:maxdepth: 2
+:hidden:
+
+etl/index
+cdc/index
+telemetry/index
+```
