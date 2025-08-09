@@ -7,15 +7,15 @@
 :::
 
 :::{div}
-CrateDB provides a variety of options to connect and integrate with third-party
+CrateDB provides many options to connect and integrate with third-party
 ETL applications, mostly using [CrateDB's PostgreSQL interface].
-CrateDB also provides a few native adapter components that can be used
-to leverage its advanced features.
+CrateDB also provides native adapter components to leverage advanced
+features.
 
 This documentation section lists corresponding ETL applications and
 frameworks which can be used together with CrateDB, and outlines how
 to use them optimally.
-Please also have a look at support for [](#cdc) solutions.
+Please also take a look at support for {ref}`cdc` solutions.
 :::
 
 

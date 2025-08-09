@@ -34,7 +34,9 @@ as Singer taps and targets.
 - [meltano-tap-cratedb]
 - [meltano-target-cratedb]
 
-🚧 _Please note these adapters are a work in progress._ 🚧
+:::{todo}
+🚧 These adapters are a work in progress. 🚧
+:::
 
 
 [Examples about working with CrateDB and Meltano]: https://github.com/crate/cratedb-examples/tree/amo/meltano/framework/singer-meltano

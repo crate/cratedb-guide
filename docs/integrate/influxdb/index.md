@@ -1,4 +1,6 @@
 (influxdb)=
+(integrate-influxdb)=
+(integrate-influxdb-quickstart)=
 # InfluxDB
 
 :::{include} /_include/links.md
