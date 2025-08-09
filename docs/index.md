@@ -8,34 +8,9 @@
 
 Guides and tutorials about how to use CrateDB and CrateDB Cloud in practice.
 
-:::{card} Introduction
-:link: all-features
-:link-type: ref
-
-Start by reading about all features of CrateDB at a glance.
-:::
-
-CrateDB is a distributed and scalable SQL database for storing and analyzing
-massive amounts of data in near real-time, even with complex queries. It is
-PostgreSQL-compatible, and based on Lucene. 
-
 
 ::::{grid} 1 2 2 2
 :padding: 0
-
-
-:::{grid-item-card} Installation
-:link: install
-:link-type: ref
-:link-alt: Installing CrateDB
-:padding: 3
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-
-{material-outlined}`download_for_offline;1.3em`
-:::
 
 
 :::{grid-item-card} Getting Started
@@ -49,6 +24,20 @@ PostgreSQL-compatible, and based on Lucene.
 :class-title: sd-fs-5
 
 {material-outlined}`rocket_launch;1.3em`
+:::
+
+
+:::{grid-item-card} Installation
+:link: install
+:link-type: ref
+:link-alt: Installing CrateDB
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-5
+
+{material-outlined}`download_for_offline;1.3em`
 :::
 
 
@@ -83,14 +72,26 @@ PostgreSQL-compatible, and based on Lucene.
 ::::
 
 
-## Application Domains
+:::{card} Introduction
+:link: all-features
+:link-type: ref
 
-Learn how to apply CrateDB's features to optimally cover use-cases in different
-application and topic domains.
+CrateDB is a distributed and scalable SQL database for storing and analyzing
+massive amounts of data in near real-time, even with complex queries. It is
+based on Lucene, combines a unique set of features, and is PostgreSQL-compatible.
+
+![](https://cratedb.com/hs-fs/hubfs/nativesql.png?width=800&name=nativesql.png)
++++
+Read about all features of CrateDB at a glance.
+:::
+
+
+## Feature Highlights
+
+A few selected features.
 
 ::::{grid} 1 2 3 3
 :padding: 0
-
 
 :::{grid-item-card} Document Store
 :link: document
@@ -105,11 +106,10 @@ application and topic domains.
 {material-outlined}`article;1.3em`
 :::
 
-
-:::{grid-item-card} Full-Text Search
-:link: fts
+:::{grid-item-card} Search
+:link: search-overview
 :link-type: ref
-:link-alt: About CrateDB's full-text search capabilities
+:link-alt: About CrateDB's search capabilities
 :padding: 3
 :text-align: center
 :class-card: sd-pt-3
@@ -119,74 +119,28 @@ application and topic domains.
 {material-outlined}`manage_search;1.3em`
 :::
 
-
-:::{grid-item-card} Raw-Data Analytics
-:link: analytics
+:::{grid-item-card} Advanced Querying
+:link: advanced-querying
 :link-type: ref
-:link-alt: CrateDB in tracking and analytics scenarios
+:link-alt: About CrateDB's advanced querying capabilities
 :padding: 3
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
 :class-title: sd-fs-5
 
-{material-outlined}`analytics;1.3em`
+{material-outlined}`engineering;1.3em`
 :::
-
-
-:::{grid-item-card} Industrial Data
-:link: industrial
-:link-type: ref
-:link-alt: CrateDB in industrial / IIoT / Industry 4.0 scenarios
-:padding: 3
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-
-{material-outlined}`precision_manufacturing;1.3em`
-:::
-
-
-:::{grid-item-card} Time Series Data
-:link: timeseries
-:link-type: ref
-:link-alt: Managing Time Series Data with CrateDB
-:padding: 3
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-
-{material-outlined}`stacked_line_chart;1.3em`
-:::
-
-
-:::{grid-item-card} Machine Learning
-:link: machine-learning
-:link-type: ref
-:link-alt: Machine Learning with CrateDB
-:padding: 3
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-
-{material-outlined}`model_training;1.3em`
-:::
-
 
 ::::
 
 
-## Integrations
+## Data Ingestion
 
-Learn how to use CrateDB with 3rd-party software applications, libraries, and
-frameworks.
+Load data into CrateDB.
 
 ::::{grid} 1 2 3 3
 :padding: 0
-
 
 :::{grid-item-card} ETL
 :link: etl
@@ -201,11 +155,23 @@ frameworks.
 {material-outlined}`transform;1.3em`
 :::
 
-
-:::{grid-item-card} Metrics
-:link: metrics
+:::{grid-item-card} CDC
+:link: cdc
 :link-type: ref
-:link-alt: CrateDB with metrics collection agents, brokers, and stores
+:link-alt: Change Data Capture (CDC) into CrateDB
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-5
+
+{material-outlined}`double_arrow;1.3em`
+:::
+
+:::{grid-item-card} Telemetry
+:link: telemetry
+:link-type: ref
+:link-alt: Use CrateDB with metrics collection agents, brokers, and stores
 :padding: 3
 :text-align: center
 :class-card: sd-pt-3
@@ -215,19 +181,17 @@ frameworks.
 {material-outlined}`query_stats;1.3em`
 :::
 
+::::
 
-:::{grid-item-card} Data Visualization
-:link: visualization
-:link-type: ref
-:link-alt: Data visualization with CrateDB
-:padding: 3
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
 
-{material-outlined}`bar_chart;1.3em`
-:::
+## Topics
+
+Learn how to apply CrateDB's features to optimally cover use-cases across different
+application and topic domains, for example, by connecting CrateDB with third-party
+software applications, libraries, and frameworks.
+
+::::{grid} 1 2 3 3
+:padding: 0
 
 
 :::{grid-item-card} Business Intelligence
@@ -241,6 +205,19 @@ frameworks.
 :class-title: sd-fs-5
 
 {material-outlined}`analytics;1.3em`
+:::
+
+:::{grid-item-card} Data Visualization
+:link: visualization
+:link-type: ref
+:link-alt: Data visualization with CrateDB
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-5
+
+{material-outlined}`bar_chart;1.3em`
 :::
 
 
@@ -272,30 +249,55 @@ frameworks.
 :::
 
 
-::::
-
-
-## Reference Architectures
-
-Reference architectures illustrating how CrateDB can be used in a variety of
-use-cases.
-
-::::{grid} 1
-:padding: 0
-
-
-:::{grid-item-card} Reference Architectures
-:link: reference-architectures
+:::{grid-item-card} Time Series Data
+:link: timeseries
 :link-type: ref
-:link-alt: Reference Architectures with CrateDB
+:link-alt: Managing Time Series Data with CrateDB
 :padding: 3
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
 :class-title: sd-fs-5
 
-![](https://cratedb.com/hs-fs/hubfs/nativesql.png?width=480&name=nativesql.png)
+{material-outlined}`stacked_line_chart;1.3em`
+:::
 
+
+::::
+
+
+## Use Cases
+
+Selected application domains where others are using CrateDB successfully.
+
+::::{grid} 1 2 3 3
+:padding: 0
+
+
+:::{grid-item-card} Raw-Data Analytics
+:link: analytics
+:link-type: ref
+:link-alt: CrateDB in tracking and analytics scenarios
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-5
+
+{material-outlined}`analytics;1.3em`
+:::
+
+:::{grid-item-card} Industrial Data
+:link: industrial
+:link-type: ref
+:link-alt: CrateDB in industrial / IIoT / Industry 4.0 scenarios
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-5
+
+{material-outlined}`precision_manufacturing;1.3em`
 :::
 
 ::::
@@ -318,18 +320,15 @@ performance/index
 ```
 
 
-:::{tip}
-Please also visit the [Overview of CrateDB integration tutorials].
-:::
-
-:::{seealso}
+:::{note}
 CrateDB and its documentation are open source projects.
-Contributions to the pages in this section and subsections are much appreciated.
+Contributions to all pages are much appreciated.
 If you can spot a flaw, or would like to contribute additional content, you
 are most welcome.
 
-You will find corresponding links within the topmost right navigation element
-on each page, linking to the relevant page where this project is hosted on [GitHub].
+For navigating to the relevant page where this project is hosted on [GitHub],
+to submit change requests fluently, you will find corresponding links within
+the topmost right navigation element on each page.
 :::
 
 
