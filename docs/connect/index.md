@@ -85,6 +85,7 @@ Database connectivity information.
 ::::
 
 ::::{grid-item-card} {material-outlined}`lightbulb;2em` How to connect
+:width: auto
 - {ref}`connect-java`
 - {ref}`connect-javascript`
 - {ref}`connect-php`
@@ -105,6 +106,7 @@ CLI programs <cli>
 ide
 Drivers <drivers>
 DataFrame libraries <df/index>
+mcp/index
 ORM libraries <orm>
 ```
 

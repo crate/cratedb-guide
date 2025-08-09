@@ -19,9 +19,14 @@ Please also visit the [Overview of CrateDB integration tutorials].
 apache-airflow/index
 apache-flink/index
 apache-hop/index
+apache-iceberg/index
 apache-kafka/index
 apache-nifi/index
 apache-superset/index
+azure-functions/index
+aws-dms/index
+aws-dynamodb/index
+aws-kinesis/index
 cluvio/index
 datagrip/index
 dbeaver/index
@@ -35,9 +40,10 @@ grafana/index
 influxdb/index
 kestra/index
 marquez/index
-mcp/index
 meltano/index
 metabase/index
+mongodb/index
+mysql/index
 node-red/index
 plotly/index
 powerbi/index
@@ -47,6 +53,7 @@ rill/index
 risingwave/index
 sql-server/index
 streamlit/index
+streamsets/index
 tableau/index
 telegraf/index
 :::
