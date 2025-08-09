@@ -10,6 +10,7 @@ All data ingestion methods for CrateDB at a glance.
 :margin: 4 4 0 0
 :padding: 0
 :gutter: 2
+:class-container: ul-li-wide
 
 ::::{grid-item-card} {material-outlined}`file_upload;2em` Load data using CrateDB
 - {ref}`Import files <crate-reference:sql-copy-from>`

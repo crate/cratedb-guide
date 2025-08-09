@@ -3,6 +3,8 @@
 
 :::{include} /_include/links.md
 :::
+:::{include} /_include/styles.html
+:::
 
 :::::{grid}
 :padding: 0
@@ -71,6 +73,7 @@ protocol.
 :gutter: 2
 
 ::::{grid-item-card} {material-outlined}`lightbulb;2em` General information
+:class-body: ul-li-wide
 - {ref}`connect-configure`
 
   To connect to CrateDB, your application or driver needs to be configured
@@ -84,7 +87,7 @@ protocol.
 Database connectivity information.
 ::::
 
-::::{grid-item-card} {material-outlined}`lightbulb;2em` How to connect
+::::{grid-item-card} {material-outlined}`link;2em` How to connect
 :width: auto
 - {ref}`connect-java`
 - {ref}`connect-javascript`

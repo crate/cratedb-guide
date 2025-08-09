@@ -4,7 +4,7 @@
 # Telemetry data
 
 :::{div}
-CrateDB integrations with metrics collection agents, brokers, and stores.
+CrateDB integrates with metrics collection agents, brokers, and stores.
 This documentation section lists applications and daemons which can
 be used together with CrateDB, and educates about how to use them optimally.
 
