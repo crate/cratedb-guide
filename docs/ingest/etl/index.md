@@ -1,7 +1,7 @@
 (etl)=
 (io)=
 (import-export)=
-# Load and Export
+# Load and Export (ETL)
 
 :::{include} /_include/links.md
 :::
@@ -19,27 +19,15 @@ Please also have a look at support for [](#cdc) solutions.
 
 ## Apache Airflow / Astronomer
 
-:::{toctree}
-:maxdepth: 1
-
-../apache-airflow/index
-:::
+- {ref}`apache-airflow`
 
 ## Apache Flink
 
-:::{toctree}
-:maxdepth: 1
-
-../apache-flink/index
-:::
+- {ref}`apache-flink`
 
 ## Apache Hop
 
-:::{toctree}
-:maxdepth: 1
-
-../apache-hop/index
-:::
+- {ref}`apache-hop`
 
 ## Apache Iceberg / RisingWave
 :::{div}
@@ -54,19 +42,11 @@ iceberg-risingwave
 
 ## Apache Kafka
 
-:::{toctree}
-:maxdepth: 1
-
-../apache-kafka/index
-:::
+- {ref}`apache-kafka`
 
 ## Apache NiFi
 
-:::{toctree}
-:maxdepth: 1
-
-../apache-nifi/index
-:::
+- {ref}`apache-nifi`
 
 ## AWS DMS
 
@@ -116,12 +96,7 @@ azure-functions
 
 ## dbt
 
-:::{toctree}
-:maxdepth: 1
-
-../dbt/index
-:::
-
+- {ref}`dbt`
 
 ## DynamoDB
 :::{div}
@@ -132,38 +107,19 @@ azure-functions
 
 ## Estuary
 
-:::{toctree}
-:maxdepth: 1
-
-../estuary/index
-:::
-
+- {ref}`estuary`
 
 ## InfluxDB
 
 - {ref}`integrate-influxdb`
 
-```{toctree}
-:hidden:
-
-../influxdb/index
-```
-
 ## Kestra
 
-:::{toctree}
-:maxdepth: 1
-
-../kestra/index
-:::
+- {ref}`kestra`
 
 ## Meltano
 
-:::{toctree}
-:maxdepth: 1
-
-../meltano/index
-:::
+- {ref}`meltano`
 
 ## MongoDB
 :::{div}
@@ -190,27 +146,15 @@ mysql
 
 ## Node-RED
 
-:::{toctree}
-:maxdepth: 1
-
-../node-red/index
-:::
+- {ref}`node-red`
 
 ## RisingWave
 
-:::{toctree}
-:maxdepth: 1
-
-../risingwave/index
-:::
+- {ref}`risingwave`
 
 ## SQL Server Integration Services
 
-:::{toctree}
-:maxdepth: 1
-
-../sql-server/index
-:::
+- {ref}`sql-server`
 
 ## StreamSets
 

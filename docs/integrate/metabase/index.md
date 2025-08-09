@@ -1,3 +1,4 @@
+(metabase)=
 # Metabase
 
 ```{div}

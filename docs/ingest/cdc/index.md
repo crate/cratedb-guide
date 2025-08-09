@@ -8,7 +8,7 @@
 You have a variety of options to connect and integrate with 3rd-party
 CDC applications, mostly using [CrateDB's PostgreSQL interface].
 
-CrateDB also provides a few native adapter components, that can be used
+CrateDB also provides a few native adapter components that can be used
 to leverage its advanced features. 
 
 This documentation section lists corresponding CDC applications and
@@ -56,11 +56,7 @@ Kinesis Stream, and consume that from an adapter to a consolidation database.
 
 ## Debezium
 
-:::{toctree}
-:maxdepth: 1
-
-../debezium/index
-:::
+- {ref}`debezium`
 
 (cdc-dynamodb)=
 ## DynamoDB
@@ -98,7 +94,6 @@ and more. Data Collector Engine runs on-premises or any cloud, wherever your dat
 lives.
 
 - {ref}`streamsets`
-
 
 
 [StreamSets Data Collector]: https://www.softwareag.com/en_corporate/platform/integration-apis/data-collector-engine.html

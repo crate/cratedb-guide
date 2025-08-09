@@ -22,13 +22,8 @@ A few quick examples about how to use selected frameworks together with CrateDB.
 
 :::::
 
-
-:::{toctree}
-:maxdepth: 1
-
-django/index
-gradio/index
-plotly/index
-pyviz/index
-streamlit/index
-:::
+- {ref}`django`
+- {ref}`gradio`
+- {ref}`plotly`
+- {ref}`pyviz`
+- {ref}`streamlit`
