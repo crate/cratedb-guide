@@ -1,3 +1,4 @@
+(influxdb-learn)=
 (import-influxdb)=
 # Import data from InfluxDB
 
@@ -46,7 +47,7 @@ data in schemas and tables.
 - A **field** is similar to an un-indexed column in an SQL database.
 - A **point** is similar to an SQL row.
 
--- [via][What are series and bucket in InfluxDB]
+> via: [What are series and bucket in InfluxDB]
 
 ## Tutorial
 
