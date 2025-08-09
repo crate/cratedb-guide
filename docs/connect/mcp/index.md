@@ -8,9 +8,7 @@ cratedb-mcp
 Community servers <community>
 ```
 
-## About
-
-:::{rubric} Introduction
+:::{rubric} About
 :::
 
 [MCP], the Model Context Protocol, is an open protocol that enables seamless
@@ -19,21 +17,13 @@ integration between LLM applications and external data sources and tools.
 MCP is sometimes described as "OpenAPI for LLMs" or as "USB-C port for AI",
 providing a uniform way to connect LLMs to resources they can use.
 
-:::{rubric} Details
-:::
-
 The main entities of MCP are [prompts], [resources], and [tools].
 MCP clients call MCP servers, either by invoking them as a subprocess and
 communicating via Standard Input/Output (stdio), Server-Sent Events (sse),
 or HTTP Streams (streamable-http), see [transports].
 
-:::{rubric} Discuss
+:::{rubric} Usage
 :::
-
-To get in touch with us to discuss CrateDB and MCP, head over to GitHub at
-[Model Context Protocol (MCP) @ CrateDB] or the [Community Forum].
-
-## Usage
 
 You can use MCP with [CrateDB] and [CrateDB Cloud], either by selecting the
 **CrateDB MCP Server** suitable for Text-to-SQL and documentation retrieval,
@@ -66,9 +56,17 @@ GitHub Copilot, Mistral AI, OpenAI Agents SDK, VS Code, Windsurf,
 and others.
 
 
+:::{rubric} Discuss
+:::
+
+To get in touch with us to discuss CrateDB and MCP, please head over to
+the CrateDB community forum at [Introducing the CrateDB MCP Server].
+
+
 [Community Forum]: https://community.cratedb.com/
 [CrateDB]: https://cratedb.com/database
 [CrateDB Cloud]: https://cratedb.com/docs/cloud/
+[Introducing the CrateDB MCP Server]: https://community.cratedb.com/t/introducing-the-cratedb-mcp-server/2043
 [MCP]: https://modelcontextprotocol.io/
 [MCP clients]: https://modelcontextprotocol.io/clients
 [Model Context Protocol (MCP) @ CrateDB]: https://github.com/crate/crate-clients-tools/discussions/234
