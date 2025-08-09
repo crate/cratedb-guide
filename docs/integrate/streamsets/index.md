@@ -20,4 +20,5 @@ It runs on‑premises or in any cloud.
 learn
 :::
 
+
 [StreamSets Data Collector]: https://www.softwareag.com/en_corporate/platform/integration-apis/data-collector-engine.html
