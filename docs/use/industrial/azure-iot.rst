@@ -1,6 +1,8 @@
-====================
-CrateDB on Azure IoT
-====================
+.. _azure-iot:
+
+======================
+Azure IoT with CrateDB
+======================
 
 
 Architecture

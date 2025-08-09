@@ -12,17 +12,8 @@ scenarios. CrateDB offers corresponding integration adapters.
 
 ## Prometheus
 
-:::{toctree}
-:maxdepth: 1
-
-../prometheus/index
-:::
-
+- {ref}`prometheus`
 
 ## Telegraf
 
-:::{toctree}
-:maxdepth: 1
-
-../telegraf/index
-:::
+- {ref}`telegraf`

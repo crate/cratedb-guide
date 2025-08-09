@@ -8,14 +8,10 @@ visualizing data stored inside CrateDB, mostly dashboarding.
 :::{include} /_include/links.md
 :::
 
-:::{toctree}
-:maxdepth: 1
-
-../apache-superset/index
-../cluvio/index
-../explo/index
-../grafana/index
-../pyviz/index
-../metabase/index
-../plotly/index
-:::
+- {ref}`cluvio`
+- {ref}`explo`
+- {ref}`grafana`
+- {ref}`metabase`
+- {ref}`plotly`
+- {ref}`pyviz`
+- {ref}`superset`
