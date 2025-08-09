@@ -307,6 +307,7 @@ use-cases.
 install/index
 connect/index
 getting-started
+Ingestion <ingest/index>
 feature/index
 admin/index
 performance/index
