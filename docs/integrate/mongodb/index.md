@@ -39,7 +39,7 @@ and [MongoDB Change Streams], to relay CDC events from MongoDB into CrateDB (`cd
 *   - [MongoDB CDC Relay]
     - ✅
     - ✅
-    - CLI `ctk load table` for streaming changes of collections into CrateDB (`full-load`).
+    - CLI `ctk load table` for streaming changes of collections into CrateDB (`cdc`).
 *   - {ref}`MongoDB CDC integration <cloud:integrations-mongo-cdc>`
     - ❌
     - ✅

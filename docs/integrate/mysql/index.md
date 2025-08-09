@@ -11,7 +11,7 @@
 ```{div}
 :style: "float: right; margin-left: 1em"
 
-[![mysql-logo](https://labs.mysql.com/common/logos/mysql-logo.svg?v2){w=180px}](https://www.mysql.com/)
+[![mysql-logo](https://www.mysql.com/common/logos/powered-by-mysql-167x86.png){w=180px}](https://www.mysql.com/)
 <br><br>
 [![mariadb-logo](https://mariadb.com/wp-content/themes/mariadb-2025/public/images/logo-dark.4482a1.svg){w=180px}](https://www.mariadb.com/)
 ```
