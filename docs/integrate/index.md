@@ -23,10 +23,10 @@ apache-iceberg/index
 apache-kafka/index
 apache-nifi/index
 apache-superset/index
-azure-functions/index
 aws-dms/index
 aws-dynamodb/index
 aws-kinesis/index
+azure-functions/index
 cluvio/index
 datagrip/index
 dbeaver/index

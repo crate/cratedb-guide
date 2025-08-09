@@ -1,7 +1,10 @@
 [Amazon DynamoDB Streams]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html
 [Amazon Kinesis Data Streams]: https://docs.aws.amazon.com/streams/latest/dev/introduction.html
+[Apache Airflow]: https://airflow.apache.org/
+[Astronomer]: https://www.astronomer.io/
 [AWS Database Migration Service (AWS DMS)]: https://aws.amazon.com/dms/
 [AWS DMS Integration with CrateDB]: https://cratedb-toolkit.readthedocs.io/io/dms/
+[AWS Lambda]: https://aws.amazon.com/lambda/
 [BM25]: https://en.wikipedia.org/wiki/Okapi_BM25
 [cloud-datashader-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/amo/cloud-datashader/topic/timeseries/explore/cloud-datashader.ipynb
 [cloud-datashader-github]: https://github.com/crate/cratedb-examples/blob/amo/cloud-datashader/topic/timeseries/explore/cloud-datashader.ipynb
@@ -17,6 +20,7 @@
 [dask-weather-data-github]: https://github.com/crate/cratedb-examples/blob/main/topic/timeseries/dask-weather-data-import.ipynb
 [Datashader]: https://datashader.org/
 [Dynamic Database Schemas]: https://cratedb.com/product/features/dynamic-schemas
+[DynamoDB]: https://aws.amazon.com/dynamodb/
 [DynamoDB CDC Relay]: https://cratedb-toolkit.readthedocs.io/io/dynamodb/cdc.html
 [DynamoDB CDC Relay with AWS Lambda]: https://cratedb-toolkit.readthedocs.io/io/dynamodb/cdc-lambda.html
 [DynamoDB Table Loader]: https://cratedb-toolkit.readthedocs.io/io/dynamodb/loader.html
