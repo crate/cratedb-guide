@@ -1,3 +1,5 @@
+(mcp)=
+(connect-mcp)=
 # Model Context Protocol (MCP)
 
 ```{toctree}
@@ -17,7 +19,7 @@ integration between LLM applications and external data sources and tools.
 MCP is sometimes described as "OpenAPI for LLMs" or as "USB-C port for AI",
 providing a uniform way to connect LLMs to resources they can use.
 
-The main entities of MCP are [prompts], [resources], and [tools].
+The main entities of MCP are [Prompts], [Resources], and [Tools].
 MCP clients call MCP servers, either by invoking them as a subprocess and
 communicating via Standard Input/Output (stdio), Server-Sent Events (sse),
 or HTTP Streams (streamable-http), see [transports].
@@ -63,7 +65,6 @@ To get in touch with us to discuss CrateDB and MCP, please head over to
 the CrateDB community forum at [Introducing the CrateDB MCP Server].
 
 
-[Community Forum]: https://community.cratedb.com/
 [CrateDB]: https://cratedb.com/database
 [CrateDB Cloud]: https://cratedb.com/docs/cloud/
 [Introducing the CrateDB MCP Server]: https://community.cratedb.com/t/introducing-the-cratedb-mcp-server/2043
