@@ -1,12 +1,10 @@
 (kestra)=
 # Kestra
 
-```{div}
-:style: "float: right"
-[![Kestra logo](https://kestra.io/logo.svg){h=60px}][Kestra]
+```{div} .float-right
+[![Kestra logo](https://kestra.io/logo.svg){height=60px loading=lazy}][Kestra]
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 :::{rubric} About
@@ -27,9 +25,9 @@ Plugins are at the core of Kestra's extensibility. Many plugins are available fr
 the Kestra core team, and creating your own is easy. With plugins, you can add new
 functionality to Kestra.
 
-![](https://kestra.io/landing/features/declarative1.svg){h=120px}
-![](https://kestra.io/landing/features/flowable.svg){h=120px}
-![](https://kestra.io/landing/features/monitor.svg){h=120px}
+![](https://kestra.io/landing/features/declarative1.svg){height=120px loading=lazy}
+![](https://kestra.io/landing/features/flowable.svg){height=120px loading=lazy}
+![](https://kestra.io/landing/features/monitor.svg){height=120px loading=lazy}
 :::
 
 

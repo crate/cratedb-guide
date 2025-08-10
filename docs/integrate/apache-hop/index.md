@@ -1,12 +1,10 @@
 (apache-hop)=
 # Apache Hop
 
-```{div}
-:style: "float: right"
-[![Apache Hop logo](https://hop.apache.org/img/hop-logo.svg){h=60px}][Apache Hop]
+```{div} .float-right
+[![Apache Hop logo](https://hop.apache.org/img/hop-logo.svg){height=60px loading=lazy}][Apache Hop]
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 :::{rubric} About
@@ -28,9 +26,9 @@ orchestration.
 - **Lifecycle Management** enables developers and administrators to switch between
   projects, environments and purposes without leaving your train of thought.
 
-![](https://github.com/crate/crate-clients-tools/assets/453543/da6baf11-8430-4a0f-b2df-55717ce02802){h=120px}
-![](https://github.com/crate/crate-clients-tools/assets/453543/60cfc82a-db0a-49f1-8e26-a37b774b3614){h=120px}
-![](https://github.com/crate/crate-clients-tools/assets/453543/2bd59577-b664-45ae-a71e-36a130d36739){h=120px}
+![Apache Hop pipeline editor screenshot](https://github.com/crate/crate-clients-tools/assets/453543/da6baf11-8430-4a0f-b2df-55717ce02802){h=120px}
+![Apache Hop workflow view screenshot](https://github.com/crate/crate-clients-tools/assets/453543/60cfc82a-db0a-49f1-8e26-a37b774b3614){h=120px}
+![Apache Hop execution monitor screenshot](https://github.com/crate/crate-clients-tools/assets/453543/2bd59577-b664-45ae-a71e-36a130d36739){h=120px}
 
 :::
 

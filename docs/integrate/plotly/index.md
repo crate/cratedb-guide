@@ -3,12 +3,10 @@
 :::{include} /_include/links.md
 :::
 
-```{div}
-:style: "float: right"
-[![Plotly logo](https://github.com/crate/crate-clients-tools/assets/453543/8b679c0b-2740-4dcc-88f0-1106aee7fa95){h=60px}][Plotly]
+```{div} .float-right
+[![Plotly logo](https://github.com/crate/crate-clients-tools/assets/453543/8b679c0b-2740-4dcc-88f0-1106aee7fa95){height=60px loading=lazy}][Plotly]
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 (plotly)=
@@ -24,8 +22,8 @@ JavaScript, ggplot2, F#, MATLAB®, and Dash.
 
 Based on Plotly, [Dash] is a low-code framework for rapidly building data apps in Python.
 
-![](https://github.com/crate/crate-clients-tools/assets/453543/380114a8-7984-4966-929b-6e6d52ddd48a){h=200px}
-![](https://github.com/crate/crate-clients-tools/assets/453543/f6a99ae7-b730-4587-bd23-499e1be02c92){h=200px}
+![plotly-1](https://github.com/crate/crate-clients-tools/assets/453543/380114a8-7984-4966-929b-6e6d52ddd48a){h=200px}
+![plotly-2](https://github.com/crate/crate-clients-tools/assets/453543/f6a99ae7-b730-4587-bd23-499e1be02c92){h=200px}
 :::
 
 (dash)=
@@ -41,8 +39,8 @@ Dash is a trusted Python framework for building ML & data science web apps. Many
 specialized open-source Dash libraries exist that are tailored for building
 domain-specific Dash components and applications.
 
-![](https://github.com/crate/crate-clients-tools/assets/453543/cc538982-e351-437b-97ec-f1fc6ca34948){h=200px}
-![](https://github.com/crate/crate-clients-tools/assets/453543/24908861-f0ad-43f3-b229-b2bfcc61596d){h=200px}
+![dash-1](https://github.com/crate/crate-clients-tools/assets/453543/cc538982-e351-437b-97ec-f1fc6ca34948){h=200px}
+![dash-2](https://github.com/crate/crate-clients-tools/assets/453543/24908861-f0ad-43f3-b229-b2bfcc61596d){h=200px}
 :::
 
 :::{dropdown} **Dash Enterprise**
@@ -62,8 +60,8 @@ cut it in today’s AI and ML driven world. Production-grade, low-code Python da
 are needed to visualize the sophisticated data analytics and data pipelines that run
 modern businesses.
 
-![](https://github.com/crate/crate-clients-tools/assets/453543/161a9b73-25eb-4ec4-aa3e-5fa73757b440){h=200px}
-![](https://github.com/crate/crate-clients-tools/assets/453543/d199b9c9-8be0-4ff7-a7b5-835dc122cc6d){h=200px}
+![dash-enterprise-1](https://github.com/crate/crate-clients-tools/assets/453543/161a9b73-25eb-4ec4-aa3e-5fa73757b440){h=200px}
+![dash-enterprise-2](https://github.com/crate/crate-clients-tools/assets/453543/d199b9c9-8be0-4ff7-a7b5-835dc122cc6d){h=200px}
 :::
 
 

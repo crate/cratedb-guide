@@ -4,15 +4,13 @@
 :::{include} /_include/links.md
 :::
 
-```{div}
-:style: "float: right; text-align: right"
-[![LlamaIndex logo](https://www.llamaindex.ai/llamaindex.svg){h=60px}][LlamaIndex]
+```{div} .float-right .text-right
+[![LlamaIndex logo](https://www.llamaindex.ai/llamaindex.svg){height=60px loading=lazy}][LlamaIndex]
 <br>
-<a href="https://github.com/crate/cratedb-examples/actions/workflows/ml-llamaindex.yml" target="_blank">
-    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/ml-llamaindex.yml?branch=main&label=LlamaIndex" loading="lazy"></a>
+<a href="https://github.com/crate/cratedb-examples/actions/workflows/ml-llamaindex.yml" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/ml-llamaindex.yml?branch=main&label=LlamaIndex" loading="lazy" alt="CI status: LlamaIndex"></a>
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 [LlamaIndex] is a data framework for Large Language Models (LLMs). It comes with
@@ -93,8 +91,7 @@ print("Answer was:", answer)
 **Demo: Using LlamaIndex with OpenAI and CrateDB**
 
 - Connect your CrateDB data to an LLM using OpenAI or Azure OpenAI.
-- Text-to-SQL / Talk to your data:
-  Query the database in human language, i.e. query CrateDB in plain English.
+- Text-to-SQL / Talk to your data: Query the database in human language; query CrateDB in plain English.
 
 {hyper-tutorial}`[LlamaIndex and CrateDB: Tutorial]`
 [![README](https://img.shields.io/badge/Open-README-darkblue?logo=GitHub)][LlamaIndex and CrateDB: Code Examples]

@@ -1,12 +1,10 @@
 (grafana)=
 # Grafana
 
-```{div}
-:style: "float: right"
-[![](https://cratedb.com/hs-fs/hubfs/Imported_Blog_Media/grafana-logo-1-520x126.png?width=1040&height=252&name=grafana-logo-1-520x126.png){h=60px}][Grafana OSS]
+```{div} .float-right
+[![Grafana logo](https://cratedb.com/hs-fs/hubfs/Imported_Blog_Media/grafana-logo-1-520x126.png?width=1040&height=252&name=grafana-logo-1-520x126.png){height=60px loading=lazy}][Grafana OSS]
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 :::{rubric} About
@@ -46,9 +44,9 @@ Connecting to a CrateDB cluster uses the Grafana PostgreSQL data source adapter.
 :::
 
 :::{grid-item}
-![image](https://github.com/crate/cratedb-guide/raw/a9c8c03384/docs/_assets/img/integrations/grafana/grafana-connection.png){h=200px}
+![Grafana PostgreSQL data source configuration](https://github.com/crate/cratedb-guide/raw/a9c8c03384/docs/_assets/img/integrations/grafana/grafana-connection.png){h=200px}
 
-![image](https://github.com/crate/cratedb-guide/raw/a9c8c03384/docs/_assets/img/integrations/grafana/grafana-panel1.png){h=200px}
+![Grafana example panel showing data from CrateDB](https://github.com/crate/cratedb-guide/raw/a9c8c03384/docs/_assets/img/integrations/grafana/grafana-panel1.png){h=200px}
 :::
 
 ::::
@@ -62,7 +60,7 @@ learn
 
 
 ```{seealso}
-**Product:** [CrateDB and Grafana]
+[CrateDB and Grafana]
 ```
 
 

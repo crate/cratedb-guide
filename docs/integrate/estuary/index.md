@@ -2,12 +2,10 @@
 
 # Estuary
 
-```{div}
-:style: "float: right"
-[![Estuary logo](https://estuary.dev/static/estuary-430cce9313e0df82d11e40d8285f38b4.png){h=60px}][Estuary]
+```{div} .float-right
+[![Estuary logo](https://estuary.dev/static/estuary-430cce9313e0df82d11e40d8285f38b4.png){height=60px loading=lazy}][Estuary]
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 :::{rubric} About

@@ -1,12 +1,10 @@
 (debezium)=
 # Debezium
 
-```{div}
-:style: "float: right"
-[![](https://debezium.io/assets/images/color_black_debezium_type_600px.svg){h=60px}][Debezium]
+```{div} .float-right
+[![Debezium logo](https://debezium.io/assets/images/color_black_debezium_type_600px.svg){height=60px loading=lazy}][Debezium]
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 :::{rubric} About
@@ -16,9 +14,9 @@
 After pointing it at your databases, you can subscribe to the event stream of
 all database update operations.
 
-It is built on top of Apache Kafka, a distributed streaming platform. It allows
-to capture changes on a source database system, mostly OLTP, and replicate them
-to another system, for example to run OLAP workloads on the data.
+It is built on top of Apache Kafka, a distributed streaming platform.
+It allows capturing changes on a source database system (typically OLTP) and
+replicating them to another system, for example to run OLAP workloads on the data.
 
 Debezium provides connectors for MySQL/MariaDB, MongoDB, PostgreSQL, Oracle,
 SQL Server, IBM DB2, Cassandra, Vitess, Spanner, JDBC, and Informix.

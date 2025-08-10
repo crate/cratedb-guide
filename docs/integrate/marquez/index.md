@@ -4,12 +4,10 @@
 :::{include} /_include/links.md
 :::
 
-```{div}
-:style: "float: right"
-[![Marquez logo](https://marquezproject.ai/img/marquez-social-card.jpg){h=60px}][Marquez]
+```{div} .float-right
+[![Marquez logo](https://marquezproject.ai/img/marquez-social-card.jpg){height=60px loading=lazy}][Marquez]
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 :::{rubric} About
@@ -50,4 +48,3 @@ learn
 
 [Marquez]: https://marquezproject.ai/
 [OpenLineage]: https://openlineage.io/
-[the Docker documentation on this topic]: https://docs.docker.com/compose/install/linux/

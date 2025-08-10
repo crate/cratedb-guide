@@ -1,12 +1,10 @@
 (explo)=
 # Explo
 
-```{div}
-:style: "float: right"
-[![](https://uploads-ssl.webflow.com/62f681c18d50329187681754/62f681c18d5032d0bd681785_logo.svg){h=60px}][Explo]
+```{div} .float-right
+[![Explo logo](https://uploads-ssl.webflow.com/62f681c18d50329187681754/62f681c18d5032d0bd681785_logo.svg){height=60px loading=lazy}][Explo]
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 :::{rubric} About
@@ -21,8 +19,8 @@ builder", and "Email", to activate and share data with their customers.
 your customers with a complete self-service data toolkit, which can also be used to
 run white-labeled data portals.
 
-![](https://cratedb.com/hs-fs/hubfs/Screenshot%202023-07-21%20at%2013.17.45.png?width=2948&height=2312&name=Screenshot%202023-07-21%20at%2013.17.45.png){h=200px}
-![](https://cratedb.com/hs-fs/hubfs/Screenshot%202023-07-21%20at%2013.24.01.png?width=2932&height=1716&name=Screenshot%202023-07-21%20at%2013.24.01.png){h=200px}
+![Explo Explore dashboard](https://cratedb.com/hs-fs/hubfs/Screenshot%202023-07-21%20at%2013.17.45.png?width=2948&height=2312&name=Screenshot%202023-07-21%20at%2013.17.45.png){h=200px}
+![Explo Explore query view](https://cratedb.com/hs-fs/hubfs/Screenshot%202023-07-21%20at%2013.24.01.png?width=2932&height=1716&name=Screenshot%202023-07-21%20at%2013.24.01.png){h=200px}
 :::
 
 :::{rubric} Learn

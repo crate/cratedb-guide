@@ -1,7 +1,7 @@
 .. _powerbi-service:
 
 =======================================
-Real-Time Reports with Power BI Service
+Real-time reports with Power BI Service
 =======================================
 
 This integration document details how to create online data-driven reports
@@ -58,7 +58,7 @@ Create the report
 
 Before you can publish your report, you need to have created it first.
 You can do this using the data from CrateDB. Please follow the
-:ref:`CrateDB and PowerBI Desktop <powerbi-desktop>` integration
+:ref:`CrateDB and Power BI Desktop <powerbi-desktop>` integration
 guide to do this.
 
 After running through that guide, we should have the following report:
@@ -70,7 +70,7 @@ After running through that guide, we should have the following report:
 Publish the report
 ------------------
 
-With your report created on Power BI desktop, you can now publish it to the
+With your report created on Power BI Desktop, you can now publish it to the
 online Power BI service. First, click the *Publish* button in the ribbon. Next,
 choose a destination to publish to:
 
@@ -87,14 +87,14 @@ Power BI service:
    :align: center
 
 The report can now be shared via its URL. However, this is just a static
-snapshot of the data. Data may change over time as it is grows, is enriched
+snapshot of the data. Data may change over time as it grows, is enriched
 or gets discarded, and your reports should reflect this changing data.
 
 Power BI allows you to `refresh the datasets`_ your reports use. This
 refreshing can be triggered manually or on a set schedule. It
 does this by using the `On-Premises Data Gateway`_. The Gateway acts as a
 bridge between the online report and your CrateDB data source, allowing the
-Power BI service to retrieve up to date datasets from CrateDB.
+Power BI service to retrieve up-to-date datasets from CrateDB.
 
 
 Configure the gateway
@@ -112,7 +112,7 @@ connections*, you should see your cluster has the 'Online' status:
    :align: center
 
 Click *Add data sources to use the gateway*. In the data source settings,
-name your datasource, select the **ODBC** type, and enter the connection
+name your data source, select the **ODBC** type, and enter the connection
 ODBC connection string. The connection string will be whatever you named
 the DSN when connecting Power BI Desktop to CrateDB. In this case, it was
 ``CrateDB``, so the ODBC connection string will be ``dsn=CrateDB``.
@@ -131,7 +131,7 @@ was successful:
 Once successful, go to the *Users* tab and select the users you would like to
 be able to access this data source to publish reports.
 
-Now, navigate back to the Power BI Service and click on the extra options
+Now, navigate back to the Power BI service and click on the extra options
 for your ``population report`` data set, and click *Schedule refresh*.
 
 .. figure:: /_assets/img/integrations/powerbi/powerbi-schedule-refresh.png

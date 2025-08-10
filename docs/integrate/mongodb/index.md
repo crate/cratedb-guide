@@ -4,15 +4,13 @@
 :::{include} /_include/links.md
 :::
 
-```{div}
-:style: "float: right;"
-[![MongoDB logo](https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg){h=60px}][MongoDB]
+```{div} .float-right .text-right
+[![MongoDB logo](https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg){height=60px loading=lazy}][MongoDB]
 <br>
 <a href="https://github.com/crate/cratedb-toolkit/actions/workflows/mongodb.yml">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-toolkit/mongodb.yml?branch=main&label=CTK%2BMongoDB" loading="lazy"></a>
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 :::::{grid}

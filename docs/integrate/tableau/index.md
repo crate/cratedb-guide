@@ -1,13 +1,12 @@
 (tableau)=
 # Tableau
 
-```{div}
-:style: "float: right"
-[![Tableau logo](https://upload.wikimedia.org/wikipedia/en/thumb/0/06/Tableau_logo.svg/500px-Tableau_logo.svg.png?20200509180027){h=60px}][Tableau]
+```{div} .float-right
+[![Tableau logo](https://upload.wikimedia.org/wikipedia/en/thumb/0/06/Tableau_logo.svg/500px-Tableau_logo.svg.png?20200509180027){height=60px loading=lazy}][Tableau]
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
+
 
 :::{rubric} About
 :::
@@ -15,7 +14,7 @@
 [Tableau] is a visual business intelligence and analytics software platform. It expresses
 data by translating drag-and-drop actions into data queries through an intuitive interface.
 
-![](https://cratedb.com/hs-fs/hubfs/08-index.png?width=1536&name=08-index.png){h=200px}
+![Tableau dashboard example](https://cratedb.com/hs-fs/hubfs/08-index.png?width=1536&name=08-index.png){h=200px}
 
 
 :::{rubric} Learn
@@ -63,10 +62,7 @@ We are tracking interoperability issues per [Tool: Tableau] and
 [CrateDB and Tableau]
 ```
 
-[Connecting to CrateDB from Tableau with JDBC]: https://cratedb.com/blog/connecting-to-cratedb-from-tableau-with-jdbc
 [Connector: Issues]: https://github.com/crate/cratedb-tableau-connector/issues
 [CrateDB and Tableau]: https://cratedb.com/integrations/cratedb-and-tableau
-[CrateDB Tableau Connector]: https://github.com/crate/cratedb-tableau-connector
 [Tableau]: https://www.tableau.com/
 [Tool: Tableau]: https://github.com/crate/crate/labels/tool%3A%20Tableau
-[Using CrateDB with Tableau]: https://community.cratedb.com/t/using-cratedb-with-tableau/1192

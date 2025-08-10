@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD034 -->
 <!-- markdownlint-disable MD053 -->
 
 [Amazon DynamoDB Streams]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html

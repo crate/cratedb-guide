@@ -1,14 +1,11 @@
 (sql-server)=
 # SQL Server
 
-```{div}
-:style: "float: right; margin-left: 1em"
-[![Microsoft logo](https://github.com/crate/crate-clients-tools/assets/453543/a93a0fdb-1a1e-451e-abcb-8f705e2b03f4){h=60px}](https://www.microsoft.com/)
-&nbsp;&nbsp;
-[![MSSQL logo](https://github.com/crate/crate-clients-tools/assets/453543/6317965a-0b69-4d8e-bc77-e12dfc8ed338){h=60px}](https://learn.microsoft.com/en-us/sql/)
+```{div} .float-right
+[![Microsoft logo](https://github.com/crate/crate-clients-tools/assets/453543/a93a0fdb-1a1e-451e-abcb-8f705e2b03f4){height=60px loading=lazy}](https://www.microsoft.com/)
+[![MSSQL logo](https://github.com/crate/crate-clients-tools/assets/453543/6317965a-0b69-4d8e-bc77-e12dfc8ed338){height=60px loading=lazy}][Microsoft SQL documentation]
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 :::{rubric} About
@@ -48,6 +45,7 @@ A demo project which uses SSIS and ODBC to read and write data from CrateDB.
 ::::
 
 
+[Microsoft SQL documentation]: https://learn.microsoft.com/en-us/sql/
 [SQL Server Integration Services]: https://learn.microsoft.com/en-us/sql/integration-services/sql-server-integration-services
 [SSIS]: https://en.wikipedia.org/wiki/SQL_Server_Integration_Services
 [ssis-tasks]: https://learn.microsoft.com/en-us/sql/integration-services/control-flow/integration-services-tasks

@@ -5,12 +5,10 @@
 :::{include} /_include/links.md
 :::
 
-```{div}
-:style: "float: right;"
-[![AWS DMS logo](https://icon.icepanel.io/AWS/svg/Database/Database-Migration-Service.svg){h=60px}][AWS Database Migration Service (AWS DMS)]
+```{div} .float-right
+[![AWS DMS logo](https://icon.icepanel.io/AWS/svg/Database/Database-Migration-Service.svg){height=60px loading=lazy}][AWS Database Migration Service (AWS DMS)]
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 :::{rubric} About

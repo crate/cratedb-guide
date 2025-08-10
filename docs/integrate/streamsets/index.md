@@ -1,13 +1,12 @@
 (streamsets)=
 # StreamSets
 
-```{div}
-:style: "float: right"
-[![StreamSets logo](https://agile.co.uk/wp-content/uploads/2022/01/streamsets-logo.png){h=60px}][StreamSets Data Collector]
+```{div} .float-right
+[![StreamSets logo](https://agile.co.uk/wp-content/uploads/2022/01/streamsets-logo.png){height=60px loading=lazy}][StreamSets Data Collector]
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
+
 
 :::{rubric} About
 :::

@@ -5,15 +5,13 @@
 :::{include} /_include/links.md
 :::
 
-```{div}
-:style: "float: right; text-align: right"
-[![Apache Flink logo](https://flink.apache.org/flink-header-logo.svg){h=60px}][Apache Flink]
+```{div} .float-right .text-right
+[![Apache Flink logo](https://flink.apache.org/flink-header-logo.svg){height=60px loading=lazy}][Apache Flink]
 <br>
-<a href="https://github.com/crate/cratedb-examples/actions/workflows/framework-flink-kafka-java.yml" target="_blank">
-    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/framework-flink-kafka-java.yml?branch=main&label=Apache%20Kafka,%20Apache%20Flink" loading="lazy"></a>
+<a href="https://github.com/crate/cratedb-examples/actions/workflows/framework-flink-kafka-java.yml" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/framework-flink-kafka-java.yml?branch=main&label=Apache%20Kafka,%20Apache%20Flink" loading="lazy" alt="CI status: Apache Kafka, Apache Flink"></a>
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 [Apache Flink] is a programming framework and distributed processing engine
@@ -33,7 +31,7 @@ Systems Award].
 ![](https://flink.apache.org/img/flink-home-graphic.png){h=200px}
 
 :::{dropdown} **Managed Flink**
-A few companies are specializing in offering managed                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Flink services.
+A few companies are specializing in offering managed Flink services.
 
 - [Aiven] offers their managed [Aiven for Apache Flink] solution.
 - [Immerok Cloud]'s offering is being converged into [Flink managed by Confluent],

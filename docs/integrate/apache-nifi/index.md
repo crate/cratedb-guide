@@ -1,12 +1,10 @@
 (apache-nifi)=
 # Apache NiFi
 
-```{div}
-:style: "float: right"
-[![Apache NiFi logo](https://nifi.apache.org/images/apache-nifi-drop-logo.svg){h=60px}][Apache NiFi]
+```{div} .float-right
+[![Apache NiFi logo](https://nifi.apache.org/images/apache-nifi-drop-logo.svg){height=60px loading=lazy}][Apache NiFi]
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 :::{rubric} About
@@ -20,18 +18,18 @@ worldwide across every industry.
 :::{dropdown} **Details**
 
 - **Data provenance tracking**: Complete lineage of information from beginning to end.
-- **Extensive configuration**: Loss-tolerant and guaranteed delivery, Low latency and
+- **Extensive configuration**: Loss-tolerant and guaranteed delivery, low latency and
   high throughput, Dynamic prioritization, Runtime modification of flow configuration,
   Back pressure control.
 - **Browser-based user interface**: Seamless experience for design, control, feedback,
   and monitoring
 - **Secure communication**: HTTPS with configurable authentication strategies,
-  Multi-tenant authorization and policy management, Standard protocols for encrypted
+  multi-tenant authorization and policy management, standard protocols for encrypted
   communication including TLS and SSH.
 
-![](https://github.com/crate/crate-clients-tools/assets/453543/ba6973dd-2eec-4f1f-a436-96aac7eb9892){h=120px}
-![](https://github.com/crate/crate-clients-tools/assets/453543/7fd4d2e7-98bc-44ee-b441-e1835016ab4d){h=120px}
-![](https://github.com/crate/crate-clients-tools/assets/453543/ccfa4ac7-0d60-432f-b952-2b50789cd325){h=120px}
+![NiFi flow canvas screenshot 1](https://github.com/crate/crate-clients-tools/assets/453543/ba6973dd-2eec-4f1f-a436-96aac7eb9892){height=120px loading=lazy}
+![NiFi flow canvas screenshot 2](https://github.com/crate/crate-clients-tools/assets/453543/7fd4d2e7-98bc-44ee-b441-e1835016ab4d){height=120px loading=lazy}
+![NiFi processors screenshot](https://github.com/crate/crate-clients-tools/assets/453543/ccfa4ac7-0d60-432f-b952-2b50789cd325){height=120px loading=lazy}
 
 :::
 
