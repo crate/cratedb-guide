@@ -4,6 +4,23 @@
 :::{include} /_include/links.md
 :::
 
+```{div}
+:style: "float: right;"
+[![MongoDB logo](https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg){h=60px}][MongoDB]
+<br>
+<a href="https://github.com/crate/cratedb-toolkit/actions/workflows/mongodb.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-toolkit/mongodb.yml?branch=main&label=CTK%2BMongoDB" loading="lazy"></a>
+```
+```{div}
+:style: "clear: both"
+```
+
+:::::{grid}
+:padding: 0
+
+::::{grid-item}
+:columns: auto 9 9 9
+
 :::{rubric} About
 :::
 
@@ -15,41 +32,75 @@ you need to build resilient and performant global applications on the cloud prov
 of your choice.
 :::
 
-:::{rubric} Learn
+::::
+
+::::{grid-item}
+:columns: auto 3 3 3
+
+:::{rubric} Related
+:::
+- [MongoDB collections and databases]
+- [MongoDB Change Streams]
+
+::::
+
+:::::
+
+
+:::{rubric} Managed
+:::
+MongoDB CDC is available as a managed service on CrateDB Cloud.
+
+::::{grid}
+
+:::{grid-item-card} MongoDB CDC integration
+:link: cloud:integrations-mongo-cdc
+:link-type: ref
+Managed data loading from MongoDB and MongoDB Atlas into CrateDB Cloud
+(`full-load` and `cdc`), including advanced data migration, translation
+and compensation strategies.
 :::
 
-:::{div}
-Explore support for loading [MongoDB collections and databases] into CrateDB (`full-load`),
-and [MongoDB Change Streams], to relay CDC events from MongoDB into CrateDB (`cdc`).
+::::
+
+:::{rubric} Standalone
+:::
+Data from MongoDB can also be loaded by other means.
+
+::::{grid}
+
+:::{grid-item-card} Tutorial: Import data from MongoDB
+:link: mongodb-learn
+:link-type: ref
+How to load data from MongoDB Server and MongoDB Atlas into CrateDB.
 :::
 
-:::{list-table}
-:header-rows: 1
-:widths: auto
-
-*   - Feature
-    - CrateDB
-    - CrateDB Cloud
-    - Description 
-*   - [MongoDB Table Loader]
-    - ✅
-    - ✅
-    - CLI `ctk load table` for loading collections into CrateDB (`full-load`).
-      Tutorial: {ref}`import-mongodb`
-*   - [MongoDB CDC Relay]
-    - ✅
-    - ✅
-    - CLI `ctk load table` for streaming changes of collections into CrateDB (`cdc`).
-*   - {ref}`MongoDB CDC integration <cloud:integrations-mongo-cdc>`
-    - ❌
-    - ✅
-    - Managed data loading from MongoDB and MongoDB Atlas into CrateDB Cloud
-      (`full-load` and `cdc`), including advanced data translation and compensation
-      strategies.
+:::{grid-item-card} MongoDB Table Loader
+:link: ctk:mongodb-loader
+:link-type: ref
+Standalone CLI `ctk load table` for loading MongoDB collections into CrateDB
+(`full-load`), optionally using transformations.
 :::
+
+:::{grid-item-card} MongoDB CDC Relay
+:link: ctk:mongodb-cdc-relay
+:link-type: ref
+Standalone CLI `ctk load table` for streaming changes of MongoDB collections
+into CrateDB (`cdc`), optionally using transformations.
+:::
+
+::::
+
 
 :::{toctree}
 :maxdepth: 1
 :hidden:
 learn
 :::
+
+
+:::{seealso}
+**Blog:** [Announcing MongoDB CDC Integration (Public Preview) in CrateDB Cloud]
+:::
+
+[Announcing MongoDB CDC Integration (Public Preview) in CrateDB Cloud]: https://cratedb.com/blog/announcing-mongodb-cdc-integration-public-preview-in-cratedb-cloud

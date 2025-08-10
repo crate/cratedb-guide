@@ -6,21 +6,25 @@
 :::{include} /_include/links.md
 :::
 
+```{div}
+:style: "float: right"
+[![Apache Airflow logo](https://19927462.fs1.hubspotusercontent-na1.net/hub/19927462/hubfs/Partner%20Logos/392x140/Apache-Airflow-Logo-392x140.png?width=784&height=280&name=Apache-Airflow-Logo-392x140.png){h=60px}][Apache Airflow]
+```
+```{div}
+:style: "clear: both"
+```
+
 :::{rubric} About
 :::
 
-```{div}
-:style: "float: right"
-[![Apache Airflow logo](https://19927462.fs1.hubspotusercontent-na1.net/hub/19927462/hubfs/Partner%20Logos/392x140/Apache-Airflow-Logo-392x140.png?width=784&height=280&name=Apache-Airflow-Logo-392x140.png){w=180px}](https://airflow.apache.org/)
-
-[![Astronomer logo](https://logowik.com/content/uploads/images/astronomer2824.jpg){w=180px}](https://www.astronomer.io/)
-```
 :::{div}
 [Apache Airflow] is an open source software platform to programmatically author,
 schedule, and monitor workflows, written in Python.
 [Astronomer] offers managed Airflow services on the cloud of your choice, in
 order to run Airflow with less overhead.
+:::
 
+:::{dropdown} **Details**
 Airflow has a modular architecture and uses a message queue to orchestrate an
 arbitrary number of workers. Pipelines are defined in Python, allowing for
 dynamic pipeline generation and on-demand, code-driven pipeline invocation.
@@ -29,20 +33,12 @@ Pipeline parametrization is using the powerful Jinja templating engine.
 To extend the system, you can define your own operators and extend libraries
 to fit the level of abstraction that suits your environment.
 :::
-```{div}
-:style: "clear: both"
-```
-
-```{seealso}
-[CrateDB and Apache Airflow]
-```
-
 
 :::{dropdown} **Managed Airflow**
 
 ```{div}
 :style: "float: right"
-[![](https://logowik.com/content/uploads/images/astronomer2824.jpg){w=180px}](https://www.astronomer.io/)
+[![Astronomer logo](https://logowik.com/content/uploads/images/astronomer2824.jpg){w=180px}](https://www.astronomer.io/)
 ```
 
 [Astro][Astronomer] is the best managed service in the market for teams on any step of their data
@@ -65,38 +61,69 @@ journey. Spend time where it counts.
 :::
 
 
-:::{rubric} Learn
+:::{rubric} Learn: Starter Tutorials
 :::
 
-A set of starter tutorials.
+::::{grid}
 
-- [Automating the import of Parquet files with Apache Airflow]
-- [Updating stock market data automatically with CrateDB and Apache Airflow]
-- [Automating stock data collection and storage with CrateDB and Apache Airflow]
+:::{grid-item-card} Tutorial: Import Parquet files
+:link: https://community.cratedb.com/t/automating-the-import-of-parquet-files-with-apache-airflow/1247
+:link-type: url
+Define an Airflow DAG to import a Parquet file from S3 into CrateDB.
+:::
 
-A set of elaborated tutorials, including blueprint implementations.
+:::{grid-item-card} Tutorial: Load stock market data
+:link: https://community.cratedb.com/t/updating-stock-market-data-automatically-with-cratedb-and-apache-airflow/1304
+:link-type: url
+Define an Airflow DAG to download, process, and store stock market data
+into CrateDB.
+:::
 
-- [Automating export of CrateDB data to S3 using Apache Airflow]
-- [Implementing a data retention policy in CrateDB using Apache Airflow]
-- [CrateDB and Apache Airflow: Building a data ingestion pipeline]
-- [Building a hot and cold storage data retention policy in CrateDB with Apache Airflow]
-
-Tutorials and resources about configuring the managed variants, Astro and CrateDB Cloud.
-
-- [ETL with Astro and CrateDB Cloud in 30min - fully up in the cloud]
-- [ETL pipeline using Apache Airflow with CrateDB (Source)]
-- [Run an ETL pipeline with CrateDB and data quality checks]
+::::
 
 
+:::{rubric} Learn: Advanced Tutorials
+:::
 
-[Automating export of CrateDB data to S3 using Apache Airflow]: https://community.cratedb.com/t/cratedb-and-apache-airflow-automating-data-export-to-s3/901
-[Automating stock data collection and storage with CrateDB and Apache Airflow]: https://community.cratedb.com/t/automating-stock-data-collection-and-storage-with-cratedb-and-apache-airflow/990
-[Automating the import of Parquet files with Apache Airflow]: https://community.cratedb.com/t/automating-the-import-of-parquet-files-with-apache-airflow/1247
-[Building a hot and cold storage data retention policy in CrateDB with Apache Airflow]: https://community.cratedb.com/t/cratedb-and-apache-airflow-building-a-hot-cold-storage-data-retention-policy/934
+::::{grid}
+
+:::{grid-item-card} Tutorial: Export to S3
+:link: https://community.cratedb.com/t/cratedb-and-apache-airflow-automating-data-export-to-s3/901
+:link-type: url
+Recurrently export data from CrateDB to S3.
+:::
+
+:::{grid-item-card} Tutorial: Implement a data retention policy
+:link: https://community.cratedb.com/t/implementing-a-data-retention-policy-in-cratedb-using-apache-airflow/913
+:link-type: url
+An effective retention policy for time-series data, relating to the practice of
+storing and managing data for a designated period of time.
+:::
+
+:::{grid-item-card} Tutorial: Implement a hot and cold storage data retention policy
+:link: https://community.cratedb.com/t/cratedb-and-apache-airflow-building-a-hot-cold-storage-data-retention-policy/934
+:link-type: url
+A hot/cold storage strategy is often motivated by a tradeoff between performance
+and cost-effectiveness.
+:::
+
+::::
+
+
+
+```{seealso}
+**Repository:** https://github.com/crate/cratedb-airflow-tutorial
+<br>
+**Product:** [CrateDB and Apache Airflow]
+<br>
+**Web:**
+[ETL with Astro and CrateDB Cloud in 30min - fully up in the cloud] |
+[ETL pipeline using Apache Airflow with CrateDB (Source)] |
+[Run an ETL pipeline with CrateDB and data quality checks]
+```
+
+
 [CrateDB and Apache Airflow]: https://cratedb.com/integrations/cratedb-and-apache-airflow
-[CrateDB and Apache Airflow: Building a data ingestion pipeline]: https://community.cratedb.com/t/cratedb-and-apache-airflow-building-a-data-ingestion-pipeline/926 
 [ETL pipeline using Apache Airflow with CrateDB (Source)]: https://github.com/astronomer/astro-cratedb-blogpost
 [ETL with Astro and CrateDB Cloud in 30min - fully up in the cloud]: https://www.astronomer.io/blog/run-etlelt-with-airflow-and-cratedb/
-[Implementing a data retention policy in CrateDB using Apache Airflow]: https://community.cratedb.com/t/implementing-a-data-retention-policy-in-cratedb-using-apache-airflow/913 
 [Run an ETL pipeline with CrateDB and data quality checks]: https://registry.astronomer.io/dags/etl_pipeline/
-[Updating stock market data automatically with CrateDB and Apache Airflow]: https://community.cratedb.com/t/updating-stock-market-data-automatically-with-cratedb-and-apache-airflow/1304

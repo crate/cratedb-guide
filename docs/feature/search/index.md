@@ -1,9 +1,6 @@
 (search-overview)=
 # Search
 
-:::{include} /_include/styles.html
-:::
-
 Based on Apache Lucene, CrateDB offers native BM25 term search and vector
 search, all using SQL. By combining it, also using SQL, you can implement
 powerful single-query hybrid search.

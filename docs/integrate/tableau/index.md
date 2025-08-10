@@ -1,13 +1,16 @@
 (tableau)=
 # Tableau
 
+```{div}
+:style: "float: right"
+[![Tableau logo](https://upload.wikimedia.org/wikipedia/en/thumb/0/06/Tableau_logo.svg/500px-Tableau_logo.svg.png?20200509180027){h=60px}][Tableau]
+```
+```{div}
+:style: "clear: both"
+```
+
 :::{rubric} About
 :::
-
-```{div}
-:style: "float: right; margin-left: 0.5em"
-[![](https://upload.wikimedia.org/wikipedia/en/thumb/0/06/Tableau_logo.svg/500px-Tableau_logo.svg.png?20200509180027){w=180px}](https://www.tableau.com/)
-```
 
 [Tableau] is a visual business intelligence and analytics software platform. It expresses
 data by translating drag-and-drop actions into data queries through an intuitive interface.
@@ -18,19 +21,52 @@ data by translating drag-and-drop actions into data queries through an intuitive
 :::{rubric} Learn
 :::
 
-- [Connecting to CrateDB from Tableau with JDBC] and [Using CrateDB with Tableau]
-  will guide you through the process of setting up Tableau correctly with CrateDB.
-- The [CrateDB Tableau Connector] unlocks advanced SQL functionality and
-  resolves compatibility issues beyond standard usage.
+::::{grid} 2
+:gutter: 2
+
+:::{grid-item-card} Blog: Connecting to CrateDB from Tableau with JDBC
+:link: https://cratedb.com/blog/connecting-to-cratedb-from-tableau-with-jdbc
+:link-type: url
+In this tutorial, you will:
+- In CrateDB, create a table and provision the Iris dataset.
+- Set up the PostgreSQL JDBC driver for Tableau.
+- Connect to CrateDB from Tableau using PostgreSQL JDBC.
+- Make a simple visualization from your CrateDB table in Tableau.
+:::
+
+:::{grid-item-card} Article: Using CrateDB with Tableau
+:link: https://community.cratedb.com/t/using-cratedb-with-tableau/1192
+:link-type: url
+How to install the latest PostgreSQL JDBC driver (e.g.
+`postgresql-42.7.1.jar` or newer) for using Tableau.
+:::
+
+:::{grid-item-card} Repository: CrateDB Tableau Connector
+:link: https://github.com/crate/cratedb-tableau-connector
+:link-type: url
+:columns: 12
+The native Tableau connector for CrateDB unlocks advanced SQL functionality
+and resolves compatibility issues beyond standard usage.
+:::
+
+::::
+
+:::{rubric} Notes
+:::
+:::{note}
+We are tracking interoperability issues per [Tool: Tableau] and
+[Connector: Issues], and appreciate any contributions or reports.
+:::
 
 
 ```{seealso}
 [CrateDB and Tableau]
 ```
 
-
 [Connecting to CrateDB from Tableau with JDBC]: https://cratedb.com/blog/connecting-to-cratedb-from-tableau-with-jdbc
+[Connector: Issues]: https://github.com/crate/cratedb-tableau-connector/issues
 [CrateDB and Tableau]: https://cratedb.com/integrations/cratedb-and-tableau
 [CrateDB Tableau Connector]: https://github.com/crate/cratedb-tableau-connector
 [Tableau]: https://www.tableau.com/
+[Tool: Tableau]: https://github.com/crate/crate/labels/tool%3A%20Tableau
 [Using CrateDB with Tableau]: https://community.cratedb.com/t/using-cratedb-with-tableau/1192

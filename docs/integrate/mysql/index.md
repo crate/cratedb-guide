@@ -2,39 +2,65 @@
 (mariadb)=
 # MySQL and MariaDB
 
+```{div}
+:style: "float: right;"
+[![mysql-logo](https://www.mysql.com/common/logos/powered-by-mysql-167x86.png){h=60px}](https://www.mysql.com/)
+[![mariadb-logo](https://mariadb.com/wp-content/themes/mariadb-2025/public/images/logo-dark.4482a1.svg){h=60px}](https://www.mariadb.com/)
+```
+```{div}
+:style: "clear: both"
+```
+
 :::{include} /_include/links.md
 :::
 
 :::{rubric} About
 :::
 
-```{div}
-:style: "float: right; margin-left: 1em"
-
-[![mysql-logo](https://www.mysql.com/common/logos/powered-by-mysql-167x86.png){w=180px}](https://www.mysql.com/)
-<br><br>
-[![mariadb-logo](https://mariadb.com/wp-content/themes/mariadb-2025/public/images/logo-dark.4482a1.svg){w=180px}](https://www.mariadb.com/)
-```
-
 [MySQL] and [MariaDB] are well-known free and open-source relational database
 management systems (RDBMS), available as standalone and managed variants.
 
+:::{dropdown} **Details**
 MySQL is a component of the LAMP web application software stack (and others),
 which is an acronym for Linux, Apache, MySQL, Perl/PHP/Python.
 
-In 2010, when Oracle acquired Sun, Monty Widenius, MySQL's founder, forked the
+When Oracle acquired Sun in 2010, Monty Widenius, MySQL's founder, forked the
 open-source MySQL project to create MariaDB.
+:::
 
-```{div}
-:style: "clear: both"
+:::{rubric} Synopsis
+:::
+
+```shell
+uvx 'cratedb-toolkit[io-ingestr]' load table \
+  "mysql://<username>:<password>@host:port/dbname?table=demo" \
+  --cluster-url="crate://crate:crate@localhost:4200/testdrive/mysql_demo"
 ```
 
 :::{rubric} Learn
 :::
 
+::::{grid}
+
+:::{grid-item-card} Ingestr Table Loader
+:link: https://cratedb-toolkit.readthedocs.io/io/ingestr/#mysql-to-cratedb
+:link-type: url
+Load MySQL table into CrateDB.
+:::
+
+:::{grid-item-card} Export/Import using CSV
+:link: mysql-import-csv
+:link-type: ref
+Manually export CSV from MySQL, and import into CrateDB.
+:::
+
+::::
+
+
 :::{toctree}
 :maxdepth: 1
-learn
+:hidden:
+import-csv
 :::
 
 

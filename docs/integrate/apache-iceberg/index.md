@@ -1,22 +1,35 @@
 (apache-iceberg)=
 # Apache Iceberg
 
+```{div}
+:style: "float: right"
+[![Apache Iceberg logo](https://iceberg.apache.org/assets/images/Iceberg-logo.svg){h=60px}][Apache Iceberg]
+```
+```{div}
+:style: "clear: both"
+```
+
 :::{rubric} About
 :::
 
 [Apache Iceberg] is an open table format for analytic datasets.
-
 The [Iceberg table format] is designed to manage a large, slow-changing collection
 of files in a distributed file system or key-value store as a database table.
 
 :::{rubric} Learn
 :::
-CrateDB provides integration capabilities with Apache Iceberg implementations,
-see {ref}`risingwave-iceberg`.
 
-:::{todo}
-🚧 This page is a work in progress. 🚧
+::::{grid} 2
+:gutter: 2
+
+:::{grid-item-card} Tutorial: Use RisingWave to load Iceberg tables
+:link: risingwave-iceberg
+:link-type: ref
+The tutorial explains how to conduct stream processing from Apache
+Iceberg tables to CrateDB using RisingWave.
 :::
+
+::::
 
 
 [Apache Iceberg]: https://iceberg.apache.org/

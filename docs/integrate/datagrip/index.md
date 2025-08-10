@@ -6,9 +6,9 @@
 
 ```{div}
 :style: "float: right; margin-left: 0.5em"
-[![](https://blog.jetbrains.com/wp-content/uploads/2019/01/datagrip_icon.svg){w=120px}](https://www.jetbrains.com/datagrip/)
+[![DataGrip logo](https://blog.jetbrains.com/wp-content/uploads/2019/01/datagrip_icon.svg){w=120px}][DataGrip]
 ```
-
+:::{div}
 [DataGrip] is a cross-platform database IDE that is tailored to suit the
 specific needs of professional SQL developers.
 
@@ -16,7 +16,7 @@ It is available as a standalone application and is also included into
 other JetBrains products like IntelliJ IDEA and PyCharm.
 
 Connecting DataGrip to CrateDB uses the [CrateDB JDBC Driver].
-
+:::
 ```{div}
 :style: "clear: both"
 ```
@@ -81,11 +81,18 @@ After refreshing, you can browse the data tree, and use the Query Console.
 
 :::{rubric} Tutorials
 :::
-- [Blog: Use CrateDB With DataGrip]
 
-:::{rubric} Product
+::::{grid}
+
+:::{grid-item-card} Blog: Use CrateDB With DataGrip
+:link: https://cratedb.com/blog/use-cratedb-with-datagrip-an-advanced-database-ide
+:link-type: url
+DataGrip is a cross-platform database IDE (Integrated Development Environment) that is
+tailored to suit the specific needs of professional SQL developers.
+With the help of the CrateDB JDBC Standalone Driver, you can use DataGrip with CrateDB.
 :::
-- [CrateDB and DataGrip]
+
+::::
 
 :::{rubric} Notes
 :::
@@ -94,8 +101,11 @@ We are tracking interoperability issues per [Tool: DataGrip], and appreciate
 any contributions and reports.
 :::
 
+:::{seealso}
+[CrateDB and DataGrip]
+:::
 
-[Blog: Use CrateDB With DataGrip]: https://cratedb.com/blog/use-cratedb-with-datagrip-an-advanced-database-ide
+
 [CrateDB and DataGrip]: https://cratedb.com/integrations/cratedb-and-datagrip
 [DataGrip]: https://www.jetbrains.com/datagrip/
 [Tool: DataGrip]: https://github.com/crate/crate/labels/tool%3A%20DataGrip

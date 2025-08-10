@@ -1,16 +1,21 @@
 (prometheus)=
 # Prometheus
 
-:::{rubric} About
-:::
-
 ```{div}
-:style: "float: right; margin-left: 0.3em"
-[![](https://github.com/crate/crate-clients-tools/assets/453543/8ddb109f-b45f-46b0-8103-30ba491f7142){w=180px}](https://prometheus.io/)
+:style: "float: right"
+[![Prometheus logo](https://github.com/crate/crate-clients-tools/assets/453543/8ddb109f-b45f-46b0-8103-30ba491f7142){h=60px}][Prometheus]
 ```
+```{div}
+:style: "clear: both"
+```
+
+## About
 
 [Prometheus] is an open-source systems monitoring and alerting toolkit
 for collecting metrics data from applications and infrastructures.
+[CrateDB] can be used as a long-term storage for Prometheus metrics.
+
+::::{dropdown} **Details**
 
 Prometheus collects and stores its metrics as time series data, i.e.
 metrics information is stored with the timestamp at which it was recorded,
@@ -28,41 +33,91 @@ Prometheus's main features are:
 - targets are discovered via service discovery or static configuration
 - multiple modes of graphing and dashboarding support
 
+![](https://github.com/crate/crate-clients-tools/assets/453543/26b47686-889a-4137-a87f-d6a6b38d56d2){h=200px}
+
+::::
+
+
+## Learn
 
 :::{rubric} Remote Endpoints and Storage
 :::
+
 The [Prometheus remote endpoints and storage] subsystem, based on its
 [remote write] and [remote read] features, allows to transparently
 send and receive metric samples. It is primarily intended for long term
 storage.
 
-This is where CrateDB comes into place. Using the [CrateDB Prometheus
-Adapter], one can easily store the collected metrics data in CrateDB and
-take advantage of its high ingestion and query speed and friendly UI to
+This is where CrateDB comes into place: The [CrateDB Prometheus
+Adapter] stores collected metrics data into CrateDB and
+takes advantage of its high ingestion and query speed to
 massively scale-out Prometheus.
 
-![](https://github.com/crate/crate-clients-tools/assets/453543/26b47686-889a-4137-a87f-d6a6b38d56d2){h=200px}
-
-```{div}
-:style: "clear: both"
-```
-
-:::{rubric} Learn
+:::{rubric} Tutorials
 :::
 
-- [CrateDB as a long term metrics store for Prometheus](#metrics-store-prometheus)
-- [Webinar: Using Prometheus and Grafana with CrateDB Cloud]
+::::{grid}
+
+:::{grid-item-card} Blog: Getting started
+:link: https://cratedb.com/blog/getting-started-prometheus-cratedb-long-term-storage
+:link-type: url
+Getting started with Prometheus and CrateDB for long-term storage.
+:::
+
+:::{grid-item-card} Tutorial: Storing long-term metrics with Prometheus in CrateDB
+:link: https://community.cratedb.com/t/storing-long-term-metrics-with-prometheus-in-cratedb/1012
+:link-type: url
+Set up CrateDB as a long term metrics store for Prometheus using Docker Compose.
+:::
+
+::::
+
+:::{rubric} Webinars
+:::
+
+::::{info-card}
+
+:::{grid-item}
+:columns: 8
+
+{material-outlined}`manage_history;2em` &nbsp; **CrateDB as Prometheus Long Term Storage**
+
+Learn how to start Prometheus, CrateDB, and the CrateDB Prometheus Adapter with
+Docker Compose, and how to configure Prometheus to use CrateDB as remote storage.
+
+This webinar accompanies the "Storing long-term metrics with Prometheus in CrateDB"
+tutorial.
+
+[Prometheus with CrateDB: Long Term Metrics Storage]
+:::
+
+:::{grid-item}
+:columns: 4
+
+<iframe width="240" src="https://www.youtube-nocookie.com/embed/EfIlRXVyfZM?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+:::
+
+::::
+
+
+:::{rubric} Repositories
+:::
+
+[CrateDB] •
+[Prometheus] •
+[CrateDB Prometheus Adapter]
+
 
 ```{seealso}
-- [CrateDB and Prometheus]
-- [CrateDB Prometheus Adapter]
+[CrateDB and Prometheus]
 ```
 
 
+[CrateDB]: https://github.com/crate/crate
 [CrateDB and Prometheus]: https://cratedb.com/integrations/cratedb-and-prometheus
 [CrateDB Prometheus Adapter]: https://github.com/crate/cratedb-prometheus-adapter
-[Prometheus remote endpoints and storage]: https://prometheus.io/docs/operating/integrations/#remote-endpoints-and-storage
 [Prometheus]: https://prometheus.io/
+[Prometheus remote endpoints and storage]: https://prometheus.io/docs/operating/integrations/#remote-endpoints-and-storage
+[Prometheus with CrateDB: Long Term Metrics Storage]: https://youtu.be/EfIlRXVyfZM?feature=shared
 [remote read]: https://prometheus.io/docs/prometheus/latest/configuration/configuration/#remote_read
 [remote write]: https://prometheus.io/docs/prometheus/latest/configuration/configuration/#remote_write
-[Webinar: Using Prometheus and Grafana with CrateDB Cloud]: https://cratedb.com/resources/webinars/lp-wb-prometheus-grafana

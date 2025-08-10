@@ -1,13 +1,16 @@
 (node-red)=
 # Node-RED
 
-:::{rubric} About
-:::
-
 ```{div}
 :style: "float: right; margin-left: 1em"
-[![](https://upload.wikimedia.org/wikipedia/commons/2/2b/Node-red-icon.png){w=180px}](https://nodered.org/)
+[![Node-RED logo](https://upload.wikimedia.org/wikipedia/commons/2/2b/Node-red-icon.png){h=60px}](https://nodered.org/)
 ```
+```{div}
+:style: "clear: both"
+```
+
+:::{rubric} About
+:::
 
 [Node-RED] is a programming tool for wiring together hardware devices, APIs
 and online services within a low-code programming environment for event-driven
@@ -21,7 +24,7 @@ deployed to its runtime in a single-click.
 :::{dropdown} **Managed Node-RED**
 ```{div}
 :style: "float: right; margin: 0.5em"
-[![](https://github.com/crate/crate-clients-tools/assets/453543/200d1a92-1e38-453a-89bf-d8b727451fab){w=180px}](https://flowfuse.com/)
+[![FlowFuse logo](https://github.com/crate/crate-clients-tools/assets/453543/200d1a92-1e38-453a-89bf-d8b727451fab){w=180px}][FlowFuse]
 ```
 
 With [FlowFuse], and [FlowFuse Cloud], essentially unmanaged and managed DevOps
@@ -54,8 +57,21 @@ collaborative, and secure manner.
 :::{rubric} Learn
 :::
 
-- [Ingesting MQTT messages into CrateDB using Node-RED]
-- [Automating recurrent CrateDB queries using Node-RED]
+::::{grid}
+
+:::{grid-item-card} Tutorial: Ingest MQTT
+:link: https://community.cratedb.com/t/ingesting-mqtt-messages-into-cratedb-using-node-red/803
+:link-type: url
+Ingesting MQTT messages into CrateDB using Node-RED.
+:::
+
+:::{grid-item-card} Tutorial: Recurrent queries
+:link: https://community.cratedb.com/t/automating-recurrent-cratedb-queries/788
+:link-type: url
+Automating recurrent CrateDB queries using Node-RED
+:::
+
+::::
 
 
 ```{seealso}
@@ -63,10 +79,8 @@ collaborative, and secure manner.
 ```
 
 
-[Automating recurrent CrateDB queries using Node-RED]: https://community.cratedb.com/t/automating-recurrent-cratedb-queries/788
 [CrateDB and Node-RED]: https://cratedb.com/integrations/cratedb-and-node-red
 [FlowFuse]: https://flowfuse.com/
 [FlowFuse Cloud]: https://app.flowforge.com/
-[Ingesting MQTT messages into CrateDB using Node-RED]: https://community.cratedb.com/t/ingesting-mqtt-messages-into-cratedb-using-node-red/803
 [Introduction to FlowFuse]: https://flowfuse.com/webinars/2023/introduction-to-flowforge/
 [Node-RED]: https://nodered.org/

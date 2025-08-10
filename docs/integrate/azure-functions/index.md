@@ -4,16 +4,20 @@
 :::{include} /_include/links.md
 :::
 
-_Execute event-driven serverless code with an end-to-end development experience._
+```{div}
+:style: "float: right;"
+[![Azure Functions logo](https://www.vectorlogo.zone/logos/azurefunctions/azurefunctions-ar21.svg){h=60px}][Azure Functions]
+```
+```{div}
+:style: "clear: both"
+```
 
 :::{rubric} About
 :::
 
-[Azure Functions] is a serverless solution that allows you to build robust apps
-while using less code, and with less infrastructure and lower costs. Instead
-of worrying about deploying and maintaining servers, you can use the cloud
-infrastructure to provide all the up-to-date resources needed to keep your
-applications running.
+[Azure Functions] is an event-driven serverless code execution solution that
+allows you to build robust apps while using less code, and with less
+infrastructure and lower costs.
 
 An Azure Function is a short-lived, serverless computation that is triggered
 by external events. The trigger produces an input payload, which is delivered
@@ -24,12 +28,22 @@ services, or storage services. See also [What is Azure Functions?].
 :::{rubric} Learn
 :::
 
+::::{grid} 2
+
+:::{grid-item-card} Data Enrichment using IoT Hub, Azure Functions and CrateDB
+:link: azure-functions-learn
+:link-type: ref
 A common pattern is to use an Azure Function to enrich and ingest data
-to a CrateDB instance by connecting that Azure Function to an IoT Hub's new
-messages trigger.
+to a CrateDB instance by connecting that Azure Function to an IoT Hub's
+new messages trigger.
+:::
+
+::::
+
 
 :::{toctree}
 :maxdepth: 1
+:hidden:
 learn
 :::
 

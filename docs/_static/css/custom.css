@@ -1,9 +1,9 @@
-<!--
+/*
 Custom styles for efficient tile layouts using card elements.
 
 TODO: Upstream to crate-docs-theme.
--->
-<style>
+*/
+
 /* General */
 /*
 .sd-card-body {
@@ -51,4 +51,7 @@ TODO: Upstream to crate-docs-theme.
   margin-bottom: 1rem;
 }
 
-</style>
+/* When a logo wants to be displayed next to the title */
+#main-content h1 {
+    display: inline-block;
+}

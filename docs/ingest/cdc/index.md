@@ -19,9 +19,9 @@ Additionally, see support for {ref}`generic ETL <etl>` solutions.
 
 ## Connectors
 
-Native and specialized connectors for CrateDB, both managed and unmanaged.
+Native and specialized integration connectors for CrateDB, both managed and unmanaged.
 
-:::::{grid} 1
+:::::{grid} 3
 :gutter: 2
 
 ::::{grid-item-card} Amazon DynamoDB
@@ -51,9 +51,10 @@ or multi-cloud.
 
 ## Platforms
 
-Support for data integration frameworks and platforms, both managed and unmanaged.
+CrateDB supports popular third-party data integration frameworks and platforms,
+both managed and unmanaged.
 
-:::::{grid} 1
+:::::{grid} 2
 :gutter: 2
 
 ::::{grid-item-card} AWS DMS

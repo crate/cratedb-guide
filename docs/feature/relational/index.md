@@ -5,8 +5,6 @@
 
 :::{include} /_include/links.md
 :::
-:::{include} /_include/styles.html
-:::
 
 :::::{grid}
 :padding: 0

@@ -6,8 +6,6 @@
 
 :::{include} /_include/links.md
 :::
-:::{include} /_include/styles.html
-:::
 
 **Vector search on machine learning embeddings: CrateDB is all you need.**
 

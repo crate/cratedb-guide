@@ -1,6 +1,14 @@
 (n8n)=
 # n8n
 
+```{div}
+:style: "float: right; text-align: right"
+[![n8n logo](https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/N8n-logo-new.svg/330px-N8n-logo-new.svg.png){h=60px}][n8n]
+```
+```{div}
+:style: "clear: both"
+```
+
 :::{rubric} About
 :::
 
@@ -11,10 +19,20 @@ any other, and manipulate its data with little or no code.
 :::{rubric} Learn
 :::
 
-- [CrateDB and n8n integration]
-- [n8n CrateDB integration]
+::::{grid} 2
+
+:::{grid-item-card} n8n CrateDB integration
+:link: https://n8n.io/integrations/cratedb/
+:link-type: url
+Create workflows with CrateDB integrations.
+:::
+
+::::
 
 
-[CrateDB and n8n integration]: https://cratedb.com/integrations/cratedb-and-n8n
+```{seealso}
+[CrateDB and n8n]
+```
+
+[CrateDB and n8n]: https://cratedb.com/integrations/cratedb-and-n8n
 [n8n]: https://docs.n8n.io/
-[n8n CrateDB integration]: https://n8n.io/integrations/cratedb/

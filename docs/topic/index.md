@@ -76,7 +76,3 @@ or TensorFlow.
 {ref}`Generated Columns <generated-columns>` •
 {ref}`User-Defined Functions <udf>`
 :::
-
-
-```{include} /_include/styles.html
-```

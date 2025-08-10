@@ -1,17 +1,22 @@
 (telegraf)=
 # Telegraf
 
+```{div}
+:style: "float: right"
+[![Telegraf logo](https://github.com/crate/crate-clients-tools/assets/453543/3f0b4525-5344-42fe-bae6-1b0970fa0540){h=60px}][Telegraf]
+```
+```{div}
+:style: "clear: both"
+```
+
 :::{rubric} About
 :::
-
-```{div}
-:style: "float: right; margin-left: 0.3em"
-[![](https://github.com/crate/crate-clients-tools/assets/453543/3f0b4525-5344-42fe-bae6-1b0970fa0540){w=180px}](https://www.influxdata.com/time-series-platform/telegraf/)
-```
 
 [Telegraf] is a leading open source server agent to help you collect metrics
 from your stacks, sensors, and systems. More than 200 adapters to connect
 to other systems leaves nothing to be desired.
+
+::::{dropdown} **Details**
 
 Telegraf is a server-based agent for collecting and sending all metrics and
 events from databases, systems, and IoT sensors. Telegraf is written in Go
@@ -33,22 +38,27 @@ a very minimal memory footprint.
 
 ![](https://www.influxdata.com/wp-content/uploads/Main-Diagram_06.01.2022v1.png){h=200px}
 
-```{div}
-:style: "clear: both"
-```
+::::
+
 
 :::{rubric} Learn
 :::
 
-- [Use CrateDB With Telegraf, an Agent for Collecting & Reporting Metrics]
+::::{grid} 2
+
+:::{grid-item-card} Blog: CrateDB with Telegraf
+:link: https://cratedb.com/blog/use-cratedb-with-telegraf-an-agent-for-collecting-reporting-metrics
+:link-type: url
+Use CrateDB With Telegraf, an Agent for Collecting & Reporting Metrics.
+:::
+
+
+::::
 
 
 ```{seealso}
 [CrateDB and Telegraf]
 ```
 
-
-
 [CrateDB and Telegraf]: https://cratedb.com/integrations/cratedb-and-telegraf
 [Telegraf]: https://www.influxdata.com/time-series-platform/telegraf/
-[Use CrateDB With Telegraf, an Agent for Collecting & Reporting Metrics]: https://cratedb.com/blog/use-cratedb-with-telegraf-an-agent-for-collecting-reporting-metrics

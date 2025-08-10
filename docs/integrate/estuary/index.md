@@ -3,15 +3,22 @@
 # Estuary
 
 ```{div}
-:style: "float: right; margin-left: 0.5em"
-[![](https://estuary.dev/static/estuary-430cce9313e0df82d11e40d8285f38b4.png){w=180px}](https://estuary.dev/)
+:style: "float: right"
+[![Estuary logo](https://estuary.dev/static/estuary-430cce9313e0df82d11e40d8285f38b4.png){h=60px}][Estuary]
 ```
+```{div}
+:style: "clear: both"
+```
+
+:::{rubric} About
+:::
 
 [Estuary] provides real-time data integration and modern ETL and ELT data pipelines.
 Build scalable, fault-tolerant streaming data pipelines that seamlessly connect
 to virtually any data source for data warehouses, real-time analytics, operations,
 machine learning, and AI.
 
+:::{dropdown} **Details**
 Estuary Flow is a real-time, reliable change data capture
 (CDC) solution. It combines agentless CDC, zero-code pipelines,
 and enterprise-grade governance to simplify data integration,
@@ -32,6 +39,7 @@ vendors, bearing a few excellent features:
 > Build low-latency ETL and ELT pipelines using connectors for any database
 > or data warehouse, leveraging Change Data Capture (CDC) to power your
 > analytics, operations, and AI.
+:::
 
 :::{dropdown} **Managed Estuary**
 Estuary offers its solution as a [managed product][Estuary managed], available
@@ -40,30 +48,12 @@ organizational needs and security requirements: Public Deployment,
 Private Deployment, and BYOC options.
 :::
 
-```{div}
-:style: "clear: both"
-```
 
-## Learn
+:::{rubric} Start
+:::
 
 ::::{grid} 2
 :gutter: 2
-
-:::{grid-item-card}
-:link: https://estuary.dev/blog/the-complete-introduction-to-change-data-capture-cdc/
-:link-type: url
-:link-alt: "Change Data Capture (CDC): The Complete Guide"
-:padding: 3
-:class-card: sd-text-center sd-pt-4
-:class-header: sd-fs-6
-:class-footer: text-smaller
-CDC: The Complete Guide
-^^^
-{material-outlined}`integration_instructions;4.5em`
-+++
-Understand what Change Data Capture (CDC) is, how it works, and when to use it.
-Compare top CDC tools like Estuary, Debezium, Fivetran & more.
-:::
 
 :::{grid-item-card}
 :link: https://estuary.dev/destination/cratedb/
@@ -83,10 +73,28 @@ Continuously ingest and deliver both streaming and batch change data from
 
 ::::
 
-## Details
+
+:::{rubric} Learn
+:::
 
 ::::{grid} 2
 :gutter: 2
+
+:::{grid-item-card}
+:link: https://estuary.dev/blog/the-complete-introduction-to-change-data-capture-cdc/
+:link-type: url
+:link-alt: "Change Data Capture (CDC): The Complete Guide"
+:padding: 3
+:class-card: sd-text-center sd-pt-4
+:class-header: sd-fs-6
+:class-footer: text-smaller
+CDC: The Complete Guide
+^^^
+{material-outlined}`integration_instructions;4.5em`
++++
+Understand what Change Data Capture (CDC) is, how it works, and when to use it.
+Compare top CDC tools like Estuary, Debezium, Fivetran & more.
+:::
 
 :::{grid-item-card}
 :link: https://github.com/crate/cratedb-estuary
