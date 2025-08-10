@@ -4,12 +4,10 @@
 :::{include} /_include/links.md
 :::
 
-```{div}
-:style: "float: right;"
-[![AWS Lambda logo](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Amazon_Lambda_architecture_logo.svg/281px-Amazon_Lambda_architecture_logo.svg.png){h=60px}][AWS Lambda]
+```{div} .float-right
+[![AWS Lambda logo](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Amazon_Lambda_architecture_logo.svg/281px-Amazon_Lambda_architecture_logo.svg.png){height=60px loading=lazy}][AWS Lambda]
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 :::{rubric} About
@@ -25,7 +23,7 @@ Events can include state changes and updates.
 :::
 
 It is common practice to forward DynamoDB table change stream events to a
-Kinesis Stream, and consume that from an adapter to write into an analytical
+Kinesis stream, and to consume that from an adapter to write into an analytical
 or long-term storage consolidation database like CrateDB.
 
 ::::{grid}

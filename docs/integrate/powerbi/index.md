@@ -1,12 +1,10 @@
 (powerbi)=
 # Microsoft Power BI
 
-```{div}
-:style: "float: right"
-[![PowerBI logo](https://upload.wikimedia.org/wikipedia/en/thumb/2/20/Power_BI_logo.svg/192px-Power_BI_logo.svg.png?20200923233425){h=60px}][Power BI Desktop]
+```{div} .float-right
+[![PowerBI logo](https://upload.wikimedia.org/wikipedia/en/thumb/2/20/Power_BI_logo.svg/192px-Power_BI_logo.svg.png?20200923233425){height=60px loading=lazy}][Power BI Desktop]
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 :::{rubric} About
@@ -25,9 +23,9 @@ you through the process of configuring that correctly.
 possible to publish your dashboards, in order to share them with others.
 [](project:#powerbi-service) has a corresponding tutorial.
 
-![](https://cratedb.com/docs/crate/howtos/en/latest/_images/powerbi-table-navigator.png){h=160px}
-![](https://cratedb.com/docs/crate/howtos/en/latest/_images/powerbi-pie-chart.png){h=160px}
-![](https://cratedb.com/docs/crate/howtos/en/latest/_images/powerbi-publish-success.png){h=160px}
+![Power BI: table navigator](https://cratedb.com/docs/crate/howtos/en/latest/_images/powerbi-table-navigator.png){h=160px}
+![Power BI: pie chart example](https://cratedb.com/docs/crate/howtos/en/latest/_images/powerbi-pie-chart.png){h=160px}
+![Power BI: publish success dialog](https://cratedb.com/docs/crate/howtos/en/latest/_images/powerbi-publish-success.png){h=160px}
 :::
 
 :::{rubric} Learn

@@ -1,13 +1,12 @@
 (rill)=
 # Rill
 
-```{div}
-:style: "float: right;"
-[![Rill logo](https://github.com/rilldata/rill/raw/main/docs/static/img/rill-logo-light.svg){h=60px}][Rill]
+```{div} .float-right
+[![Rill logo](https://github.com/rilldata/rill/raw/main/docs/static/img/rill-logo-light.svg){height=60px loading=lazy}][Rill]
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
+
 
 :::{rubric} About
 :::
@@ -45,8 +44,8 @@ BI tools, also breaking down information and knowledge barriers.
 - **Dashboards as code** – each step from data to dashboard has versioning, Git
   sharing, and easy project rehydration
 
-![](https://cdn.prod.website-files.com/659ddac460dbacbdc813b204/65b83308971b2f12202ae0fa_b2a470f529fc0f7d9b66de4d75742674.gif){h=200px}
-![](https://cdn.prod.website-files.com/659ddac460dbacbdc813b204/65b835371c75806184829601_BI-as-code%20(1)-p-3200.webp){h=200px}
+![Rill Dashboard](https://cdn.prod.website-files.com/659ddac460dbacbdc813b204/65b83308971b2f12202ae0fa_b2a470f529fc0f7d9b66de4d75742674.gif){h=200px}
+![Rill BI-as-code dashboard](https://cdn.prod.website-files.com/659ddac460dbacbdc813b204/65b835371c75806184829601_BI-as-code%20(1)-p-3200.webp){h=200px}
 
 ::::
 

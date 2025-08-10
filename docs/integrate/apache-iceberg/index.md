@@ -1,12 +1,10 @@
 (apache-iceberg)=
 # Apache Iceberg
 
-```{div}
-:style: "float: right"
-[![Apache Iceberg logo](https://iceberg.apache.org/assets/images/Iceberg-logo.svg){h=60px}][Apache Iceberg]
+```{div} .float-right
+[![Apache Iceberg logo](https://iceberg.apache.org/assets/images/Iceberg-logo.svg){height=60px loading=lazy}][Apache Iceberg]
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 :::{rubric} About

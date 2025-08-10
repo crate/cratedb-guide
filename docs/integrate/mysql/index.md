@@ -2,13 +2,11 @@
 (mariadb)=
 # MySQL and MariaDB
 
-```{div}
-:style: "float: right;"
-[![mysql-logo](https://www.mysql.com/common/logos/powered-by-mysql-167x86.png){h=60px}](https://www.mysql.com/)
-[![mariadb-logo](https://mariadb.com/wp-content/themes/mariadb-2025/public/images/logo-dark.4482a1.svg){h=60px}](https://www.mariadb.com/)
+```{div} .float-right
+[![mysql-logo](https://www.mysql.com/common/logos/powered-by-mysql-167x86.png){height=60px loading=lazy}](https://www.mysql.com/)
+[![mariadb-logo](https://mariadb.com/wp-content/themes/mariadb-2025/public/images/logo-dark.4482a1.svg){height=60px loading=lazy}](https://www.mariadb.com/)
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 :::{include} /_include/links.md

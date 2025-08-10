@@ -6,12 +6,10 @@
 :::{include} /_include/links.md
 :::
 
-```{div}
-:style: "float: right"
-[![Apache Airflow logo](https://19927462.fs1.hubspotusercontent-na1.net/hub/19927462/hubfs/Partner%20Logos/392x140/Apache-Airflow-Logo-392x140.png?width=784&height=280&name=Apache-Airflow-Logo-392x140.png){h=60px}][Apache Airflow]
+```{div} .float-right
+[![Apache Airflow logo](https://19927462.fs1.hubspotusercontent-na1.net/hub/19927462/hubfs/Partner%20Logos/392x140/Apache-Airflow-Logo-392x140.png?width=784&height=280&name=Apache-Airflow-Logo-392x140.png){height=60px loading=lazy}][Apache Airflow]
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 :::{rubric} About
@@ -20,8 +18,8 @@
 :::{div}
 [Apache Airflow] is an open source software platform to programmatically author,
 schedule, and monitor workflows, written in Python.
-[Astronomer] offers managed Airflow services on the cloud of your choice, in
-order to run Airflow with less overhead.
+[Astronomer] offers managed Airflow services on the cloud of your choice, to
+run Airflow with less overhead.
 :::
 
 :::{dropdown} **Details**
@@ -29,7 +27,7 @@ Airflow has a modular architecture and uses a message queue to orchestrate an
 arbitrary number of workers. Pipelines are defined in Python, allowing for
 dynamic pipeline generation and on-demand, code-driven pipeline invocation.
 
-Pipeline parametrization is using the powerful Jinja templating engine.
+Pipeline parameterization is using the powerful Jinja templating engine.
 To extend the system, you can define your own operators and extend libraries
 to fit the level of abstraction that suits your environment.
 :::
@@ -55,16 +53,16 @@ journey. Spend time where it counts.
   behind the project. Get world-class support, fast-tracked bug fixes, and same-day
   access to new Airflow versions.
 
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
+
 :::
 
 
 :::{rubric} Learn: Starter Tutorials
 :::
 
-::::{grid}
+::::{grid} 2
 
 :::{grid-item-card} Tutorial: Import Parquet files
 :link: https://community.cratedb.com/t/automating-the-import-of-parquet-files-with-apache-airflow/1247
@@ -85,7 +83,7 @@ into CrateDB.
 :::{rubric} Learn: Advanced Tutorials
 :::
 
-::::{grid}
+::::{grid} 3
 
 :::{grid-item-card} Tutorial: Export to S3
 :link: https://community.cratedb.com/t/cratedb-and-apache-airflow-automating-data-export-to-s3/901
@@ -112,7 +110,7 @@ and cost-effectiveness.
 
 
 ```{seealso}
-**Repository:** https://github.com/crate/cratedb-airflow-tutorial
+**Repository:** <https://github.com/crate/cratedb-airflow-tutorial>
 <br>
 **Product:** [CrateDB and Apache Airflow]
 <br>

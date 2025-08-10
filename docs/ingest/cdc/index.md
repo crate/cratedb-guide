@@ -5,15 +5,13 @@
 :::
 
 :::{div}
-Options to connect and integrate CrateDB with third-party
-CDC applications, mostly using [CrateDB's PostgreSQL interface].
-CrateDB also provides native adapter components to leverage advanced
-features.
+Options to integrate CrateDB with third‑party CDC applications, typically via
+[CrateDB's PostgreSQL interface]. CrateDB also provides native adapter components
+to leverage advanced features.
 
-This documentation section lists CDC applications,
-frameworks, and solutions, which can be used together with CrateDB,
-and outlines how to use them optimally.
-Additionally, see support for {ref}`generic ETL <etl>` solutions.
+This section lists ETL applications and frameworks that work with CrateDB, and
+outlines how to use them effectively. Additionally, see support for
+{ref}`generic ETL <etl>` solutions.
 :::
 
 

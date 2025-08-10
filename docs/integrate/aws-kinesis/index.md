@@ -4,12 +4,10 @@
 :::{include} /_include/links.md
 :::
 
-```{div}
-:style: "float: right;"
-[![Kinesis logo](https://icon.icepanel.io/AWS/svg/Analytics/Kinesis-Data-Streams.svg){h=60px}][Amazon Kinesis Data Streams]
+```{div} .float-right
+[![Kinesis logo](https://icon.icepanel.io/AWS/svg/Analytics/Kinesis-Data-Streams.svg){height=60px loading=lazy}][Amazon Kinesis Data Streams]
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 :::::{grid}

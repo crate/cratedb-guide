@@ -4,12 +4,10 @@
 :::{include} /_include/links.md
 :::
 
-```{div}
-:style: "float: right;"
-[![Azure Functions logo](https://www.vectorlogo.zone/logos/azurefunctions/azurefunctions-ar21.svg){h=60px}][Azure Functions]
+```{div} .float-right
+[![Azure Functions logo](https://www.vectorlogo.zone/logos/azurefunctions/azurefunctions-ar21.svg){height=60px loading=lazy}][Azure Functions]
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 :::{rubric} About
@@ -33,9 +31,9 @@ services, or storage services. See also [What is Azure Functions?].
 :::{grid-item-card} Data Enrichment using IoT Hub, Azure Functions and CrateDB
 :link: azure-functions-learn
 :link-type: ref
-A common pattern is to use an Azure Function to enrich and ingest data
-to a CrateDB instance by connecting that Azure Function to an IoT Hub's
-new messages trigger.
+A common pattern uses an Azure Function to enrich and ingest data
+into a CrateDB instance by connecting the function to an IoT Hub
+new‑messages trigger.
 :::
 
 ::::

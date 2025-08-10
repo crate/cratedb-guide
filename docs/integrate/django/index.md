@@ -1,15 +1,13 @@
 (django)=
 # Django
 
-```{div}
-:style: "float: right; text-align: right"
-[![Django logo](https://static.djangoproject.com/img/logos/django-logo-positive.svg){h=60px}][Django]
+```{div} .float-right
+[![Django logo](https://static.djangoproject.com/img/logos/django-logo-positive.svg){height=60px loading=lazy}][Django]
 <br>
-<a href="https://github.com/surister/cratedb-django/actions/workflows/tests.yml" target="_blank">
-    <img src="https://img.shields.io/github/actions/workflow/status/surister/cratedb-django/tests.yml?branch=master&label=Django" loading="lazy"></a>
+<a href="https://github.com/surister/cratedb-django/actions/workflows/tests.yml" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/github/actions/workflow/status/surister/cratedb-django/tests.yml?branch=master&label=Django" loading="lazy" alt="CI status: CrateDB Django connector"></a>
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 :::{rubric} About

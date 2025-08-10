@@ -1,18 +1,17 @@
 (streamlit)=
 # Streamlit
 
-```{div}
-:style: "float: right; margin-left: 0.5em"
-[![Streamlit logo](https://github.com/crate/crate-clients-tools/assets/453543/0fffb2d4-1d17-49c9-96e3-fd6ae42a39c4){h=60px}][Streamlit]
+```{div} .float-right
+[![Streamlit logo](https://github.com/crate/crate-clients-tools/assets/453543/0fffb2d4-1d17-49c9-96e3-fd6ae42a39c4){height=60px loading=lazy}][Streamlit]
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
+
 
 :::{rubric} About
 :::
 
-[Streamlit] is an open source application programming framework for quickly sketching
+[Streamlit] is an open-source application programming framework for quickly sketching
 out Python data applications. It provides fast, interactive prototyping, and live editing.
 
 :::{dropdown} **Details**
@@ -57,7 +56,7 @@ and AI/ML engineers to deliver dynamic data apps – in only a few lines of code
 :::{grid-item}
 :columns: 4
 
-<iframe width="240" src="https://www.youtube-nocookie.com/embed/UI4f4iiVT6c?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="240" loading="lazy" src="https://www.youtube-nocookie.com/embed/UI4f4iiVT6c?si=J0w5yG56Ld4fIXfm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 :::
 
 ::::

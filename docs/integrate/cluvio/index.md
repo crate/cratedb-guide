@@ -1,12 +1,10 @@
 (cluvio)=
 # Cluvio
 
-```{div}
-:style: "float: right;"
-[![Cluvio logo](https://www.cluvio.com/images/logos/cluvio/cluvio-logo-full_color-on_light-3744dd33.svg){h=60px}][Cluvio]
+```{div} .float-right
+[![Cluvio logo](https://www.cluvio.com/images/logos/cluvio/cluvio-logo-full_color-on_light-3744dd33.svg){height=60px loading=lazy}][Cluvio]
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 :::{rubric} About
@@ -23,8 +21,8 @@ specific timerange or filter dashboards by any individual attribute of your data
 Use SQL and R to analyze your data and create beautiful, interactive dashboards for
 your entire company in few minutes.
 
-![custom-filters.png](https://github.com/crate/crate-clients-tools/assets/453543/49ca6a35-239e-4915-951c-db6649fd35a4){h=200px}
-![report-creator.png](https://github.com/crate/crate-clients-tools/assets/453543/844a5ffd-0b92-4c77-8cdd-0b5cc5b392b1){h=200px}
+![Cluvio dashboard with custom filters](https://github.com/crate/crate-clients-tools/assets/453543/49ca6a35-239e-4915-951c-db6649fd35a4){h=200px loading=lazy}
+![Cluvio report creator screen](https://github.com/crate/crate-clients-tools/assets/453543/844a5ffd-0b92-4c77-8cdd-0b5cc5b392b1){h=200px loading=lazy}
 ::::
 
 :::{rubric} Learn
@@ -43,7 +41,7 @@ with CrateDB Cloud as the underlying database.
 
 
 ```{seealso}
-**Product:** [CrateDB and Cluvio]
+[CrateDB and Cluvio]
 ```
 
 

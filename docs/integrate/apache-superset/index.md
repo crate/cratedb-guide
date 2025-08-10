@@ -4,15 +4,13 @@
 
 # Apache Superset / Preset
 
-```{div}
-:style: "float: right; text-align: right"
-[![Apache Superset logo](https://cratedb.com/hs-fs/hubfs/Apache-Superset-Logo-392x140@2x.png?width=604&height=216&name=Apache-Superset-Logo-392x140@2x.png){h=60px}][Apache Superset]
+```{div} .float-right .text-right
+[![Apache Superset logo](https://cratedb.com/hs-fs/hubfs/Apache-Superset-Logo-392x140@2x.png?width=604&height=216&name=Apache-Superset-Logo-392x140@2x.png){height=60px loading=lazy}][Apache Superset]
 <br>
-<a href="https://github.com/crate/cratedb-examples/actions/workflows/application-apache-superset.yml" target="_blank">
-    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/application-apache-superset.yml?branch=main&label=Apache Superset" loading="lazy"></a>
+<a href="https://github.com/crate/cratedb-examples/actions/workflows/application-apache-superset.yml" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/application-apache-superset.yml?branch=main&label=Apache Superset" loading="lazy" alt="CI status: Apache Superset"></a>
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 [Apache Superset] is an open-source modern data exploration and visualization
@@ -20,13 +18,13 @@ platform, written in Python.
 [Preset] offers a managed, elevated, and enterprise-grade SaaS for open-source
 Apache Superset.
 
-![](https://superset.apache.org/img/hero-screenshot.jpg){h=200px}
-![](https://github.com/crate/crate-clients-tools/assets/453543/0f8f7bd8-2e30-4aca-bcf3-61fbc81da855){h=200px}
+![Apache Superset dashboard hero screenshot](https://superset.apache.org/img/hero-screenshot.jpg){h=200px}
+![CrateDB + Superset example dashboard](https://github.com/crate/crate-clients-tools/assets/453543/0f8f7bd8-2e30-4aca-bcf3-61fbc81da855){h=200px}
 
 :::{dropdown} **Managed Superset**
 ```{div}
 :style: "float: right"
-[![](https://github.com/crate/crate-clients-tools/assets/453543/9d07da87-8aff-4569-bf2a-0a16bf89f4bc){h=60px}](https://preset.io/)
+[![Preset Cloud](https://github.com/crate/crate-clients-tools/assets/453543/9d07da87-8aff-4569-bf2a-0a16bf89f4bc){height=60px loading=lazy}][Preset Cloud]
 ```
 
 [Preset Cloud] is a fully-managed, open-source BI for the modern data stack,
@@ -41,9 +39,9 @@ based on Apache Superset.
 - **Control user roles and access:** Easily assign roles and fine-tune data access
   using RBAC and row-level security (RLS).
 
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
+
 :::
 
 
@@ -78,16 +76,16 @@ crate://<username>:<password>@<clustername>.cratedb.net:4200/?ssl=true
 
 ::::{grid}
 
-:::{grid-item-card} Blog: Open Source Data Warehousing and Visualization
+:::{grid-item-card} Blog: Open‑source data warehousing and visualization
 :link: https://cratedb.com/blog/use-cratedb-and-apache-superset-for-open-source-data-warehousing-and-visualization
 :link-type: url
-Use CrateDB and Apache Superset for Open Source Data Warehousing and Visualization.
+Use CrateDB and Apache Superset for open-source data warehousing and visualization.
 :::
 
-:::{grid-item-card} Blog: Time Series Visualization
+:::{grid-item-card} Blog: Time‑series visualization
 :link: https://preset.io/blog/timeseries-cratedb-superset/
 :link-type: url
-Introduction to time series Visualization in CrateDB and Apache Superset.
+Introduction to time‑series visualization in CrateDB and Apache Superset.
 :::
 
 ::::
@@ -168,5 +166,4 @@ from the time-series dataset.
 [Preset Cloud]: https://preset.io/product/
 [Set up Apache Superset with CrateDB]: https://community.cratedb.com/t/set-up-apache-superset-with-cratedb/1716
 [Set up an Apache Superset development sandbox with CrateDB]: https://community.cratedb.com/t/set-up-an-apache-superset-development-sandbox-with-cratedb/1163
-[Use CrateDB and Apache Superset for Open Source Data Warehousing and Visualization (Blog)]: https://cratedb.com/blog/use-cratedb-and-apache-superset-for-open-source-data-warehousing-and-visualization
 [Verify Apache Superset with CrateDB]: https://github.com/crate/cratedb-examples/tree/main/application/apache-superset

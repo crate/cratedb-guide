@@ -1,13 +1,12 @@
 (risingwave)=
 # RisingWave
 
-```{div}
-:style: "float: right;"
-[![](https://www.risingwave.com/_next/static/media/risingwave-logo-black-text.11ccd229.svg){h=60px}](https://www.risingwave.com/)
+```{div} .float-right
+[![RisingWave logo](https://www.risingwave.com/_next/static/media/risingwave-logo-black-text.11ccd229.svg){height=60px loading=lazy}](https://www.risingwave.com/)
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
+
 
 :::{rubric} About
 :::
@@ -37,7 +36,7 @@ applications.
 :::
 
 :RisingWave:
-  Load an Apache Iceberg table, and serve it as materialized view.
+  Load an Apache Iceberg table, and serve it as a materialized view.
   ```sql
   CREATE SOURCE sensors_readings
   WITH (
@@ -60,8 +59,8 @@ applications.
   GROUP BY sensor_id;
   ```
 :CrateDB:
-  Converge it into a CrateDB table for long-term persistence and efficient querying,
-  even on large amounts of data.
+  Ingest it into a CrateDB table for long-term persistence and efficient querying,
+  even at large scale.
   ```sql
   CREATE TABLE public.average_sensor_readings (
     sensor_id BIGINT PRIMARY KEY,

@@ -5,8 +5,8 @@
 :::{include} /_include/links.md
 :::
 
-```{div}
-:style: "float: right; font-size: 4em; margin-left: 0.3em"
+```{div} .float-right
+:style: "font-size: 4em; margin-left: 0.3em"
 🦜️🔗
 ```
 
@@ -42,8 +42,7 @@ build using LLMs:
   - [LangChain: Chatbots]
   - [LangChain: Q&A with SQL]
 
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 

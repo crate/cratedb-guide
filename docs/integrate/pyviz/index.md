@@ -4,13 +4,11 @@
 :::{include} /_include/links.md
 :::
 
-```{div}
-:style: "float: right"
-[![hvPlot logo](https://hvplot.holoviz.org/_static/logo_horizontal.svg){h=60px}][hvPlot]
-[![Datashader logo](https://datashader.org/_static/logo_horizontal.svg){h=60px}][Datashader]
+```{div} .float-right
+[![hvPlot logo](https://hvplot.holoviz.org/_static/logo_horizontal.svg){height=60px loading=lazy}][hvPlot]
+[![Datashader logo](https://datashader.org/_static/logo_horizontal.svg){height=60px loading=lazy}][Datashader]
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 The PyViz.org website is an open platform for helping users decide on the best
@@ -40,16 +38,16 @@ of the display.
 [hvPlot] sources its power in the [HoloViz] ecosystem. With [HoloViews], you get the
 ability to easily layout and overlay plots, with [Panel], you can get more interactive
 control of your plots with widgets, with [DataShader], you can
-visualize and interactively explore very large data, and with [GeoViews], you can
+visualize and interactively explore large-scale datasets, and with [GeoViews], you can
 create geographic plots.
 ::::
 
 ::::{grid-item}
 :columns: auto 4 4 4
 
-[![][ds1]][ds1]
+[![Datashader map aggregation example][ds1]][ds1]
 
-[![][ds2]][ds2]
+[![Datashader scatter/heat example][ds2]][ds2]
 
 [ds1]: https://github.com/crate/crate-clients-tools/assets/453543/7f38dff6-04bc-429e-9d31-6beeb9289c4b
 [ds2]: https://github.com/crate/crate-clients-tools/assets/453543/23561a87-fb4f-4154-9891-1b3068e40579

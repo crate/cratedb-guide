@@ -4,24 +4,22 @@
 :::{include} /_include/links.md
 :::
 
-```{div}
-:style: "float: right; text-align: right"
-[![dbt logo](https://www.getdbt.com/_next/image?url=%2Fimg%2Flogos%2Fdbt-labs-logo.svg&w=384&q=75){h=60px}][dbt]
+```{div} .float-right .text-right
+[![dbt logo](https://www.getdbt.com/_next/image?url=%2Fimg%2Flogos%2Fdbt-labs-logo.svg&w=384&q=75){height=60px loading=lazy}][dbt]
 <br>
-<a href="https://github.com/crate/cratedb-examples/actions/workflows/framework-dbt.yml" target="_blank">
-    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/framework-dbt.yml?branch=main&label=dbt" loading="lazy"></a>
+<a href="https://github.com/crate/cratedb-examples/actions/workflows/framework-dbt.yml" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/framework-dbt.yml?branch=main&label=dbt" loading="lazy" alt="CI status: dbt"></a>
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 ## About
 
 [dbt] is a tool for transforming data in data warehouses using Python and SQL.
 
-It is an SQL-first transformation workflow platform that lets teams quickly and
+It is an SQL‑first transformation workflow platform that lets teams quickly and
 collaboratively deploy analytics code following software engineering best practices
-like modularity, portability, CI/CD, and documentation.
+such as modularity, portability, CI/CD, and documentation.
 
 ::::{dropdown} **Details**
 
@@ -66,7 +64,7 @@ easy partitioning, and the ability to scale horizontally.
 :::{dropdown} **Managed dbt**
 ```{div}
 :style: "float: right"
-[![](https://www.getdbt.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fwl0ndo6t%2Fmain%2Fc24fbc41bfc3ddb7fcc64932be56f0836fd355c8-1771x780.png%3Ffit%3Dmax%26auto%3Dformat&w=640&q=75){w=180px}](https://www.getdbt.com/product/dbt-cloud/)
+[![dbt Cloud logo](https://www.getdbt.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fwl0ndo6t%2Fmain%2Fc24fbc41bfc3ddb7fcc64932be56f0836fd355c8-1771x780.png%3Ffit%3Dmax%26auto%3Dformat&w=640&q=75){w=180px}](https://www.getdbt.com/product/dbt-cloud/)
 ```
 
 With [dbt Cloud], you can ditch time-consuming setup, and the struggles
@@ -86,8 +84,7 @@ scale.
   use dbt Cloud. They’ve used its convenient and collaboration-friendly interface to
   eliminate the bottlenecks that keep growth limited.
 
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 :::
 

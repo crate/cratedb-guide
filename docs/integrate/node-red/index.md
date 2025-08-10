@@ -1,12 +1,10 @@
 (node-red)=
 # Node-RED
 
-```{div}
-:style: "float: right; margin-left: 1em"
-[![Node-RED logo](https://upload.wikimedia.org/wikipedia/commons/2/2b/Node-red-icon.png){h=60px}](https://nodered.org/)
+```{div} .float-right
+[![Node-RED logo](https://upload.wikimedia.org/wikipedia/commons/2/2b/Node-red-icon.png){height=60px loading=lazy}](https://nodered.org/)
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 :::{rubric} About
@@ -48,8 +46,7 @@ collaborative, and secure manner.
   You have the freedom to choose the deployment method that works best for your
   organization.
 
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 :::
 
@@ -57,7 +54,7 @@ collaborative, and secure manner.
 :::{rubric} Learn
 :::
 
-::::{grid}
+::::{grid} 2
 
 :::{grid-item-card} Tutorial: Ingest MQTT
 :link: https://community.cratedb.com/t/ingesting-mqtt-messages-into-cratedb-using-node-red/803
@@ -68,7 +65,7 @@ Ingesting MQTT messages into CrateDB using Node-RED.
 :::{grid-item-card} Tutorial: Recurrent queries
 :link: https://community.cratedb.com/t/automating-recurrent-cratedb-queries/788
 :link-type: url
-Automating recurrent CrateDB queries using Node-RED
+Automating recurrent CrateDB queries using Node-RED.
 :::
 
 ::::

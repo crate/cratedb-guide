@@ -1,15 +1,13 @@
 (apache-kafka)=
 # Apache Kafka
 
-```{div}
-:style: "float: right; text-align: right"
-[![Apache Kafka logo](https://kafka.apache.org/logos/kafka_logo--simple.png){h=60px}][Apache Kafka]
+```{div} .float-right .text-right
+[![Apache Kafka logo](https://kafka.apache.org/logos/kafka_logo--simple.png){height=60px loading=lazy}][Apache Kafka]
 <br>
-<a href="https://github.com/crate/cratedb-examples/actions/workflows/framework-flink-kafka-java.yml" target="_blank">
-    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/framework-flink-kafka-java.yml?branch=main&label=Apache%20Kafka,%20Apache%20Flink" loading="lazy"></a>
+<a href="https://github.com/crate/cratedb-examples/actions/workflows/framework-flink-kafka-java.yml" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/framework-flink-kafka-java.yml?branch=main&label=Apache%20Kafka,%20Apache%20Flink" loading="lazy" alt="CI status: Apache Kafka, Apache Flink"></a>
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 :::{include} /_include/links.md

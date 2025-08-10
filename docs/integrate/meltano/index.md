@@ -1,14 +1,12 @@
 (meltano)=
 # Meltano
 
-```{div}
-:style: "float: right"
+```{div} .float-right
 [![Singer logo](https://www.singer.io/img/singer_logo_full_black.svg){w=180px}][Singer]
-&nbsp;&nbsp;
+
 [![Meltano logo](https://github.com/crate/crate-clients-tools/assets/453543/0c01e995-d7c2-4a4d-8e90-c6697fe2a85d){w=180px}][Meltano]
 ```
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 
 :::{rubric} About
@@ -49,7 +47,7 @@ A Singer target / Meltano loader for CrateDB.
 
 
 :::{todo}
-🚧 These adapters are a work in progress, contributions and interests are welcome. 🚧
+🚧 These adapters are a work in progress, contributions and interest are welcome. 🚧
 :::
 
 
