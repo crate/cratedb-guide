@@ -1,9 +1,6 @@
 (ingest)=
 # CrateDB data ingestion
 
-:::{include} /_include/styles.html
-:::
-
 All data ingestion methods for CrateDB at a glance.
 
 :::::{grid} 1 2 2 2

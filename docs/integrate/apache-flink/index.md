@@ -6,14 +6,22 @@
 :::
 
 ```{div}
-:style: "float: right"
-[![](https://flink.apache.org/flink-header-logo.svg){w=180px}](https://flink.apache.org/)
+:style: "float: right; text-align: right"
+[![Apache Flink logo](https://flink.apache.org/flink-header-logo.svg){h=60px}][Apache Flink]
+<br>
+<a href="https://github.com/crate/cratedb-examples/actions/workflows/framework-flink-kafka-java.yml" target="_blank">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/framework-flink-kafka-java.yml?branch=main&label=Apache%20Kafka,%20Apache%20Flink" loading="lazy"></a>
+```
+```{div}
+:style: "clear: both"
 ```
 
 [Apache Flink] is a programming framework and distributed processing engine
 for stateful computations over unbounded and bounded data streams, written
 in Java. It is a battle-hardened stream processor widely used for demanding
 real-time applications.
+
+:::{dropdown} **Details**
 
 Flink has been designed to run in all common cluster environments, perform
 computations at in-memory speed and at any scale. It received the [2023 SIGMOD
@@ -25,16 +33,12 @@ Systems Award].
 ![](https://flink.apache.org/img/flink-home-graphic.png){h=200px}
 
 :::{dropdown} **Managed Flink**
-A few companies are specializing in offering managed Flink services.
+A few companies are specializing in offering managed                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Flink services.
 
 - [Aiven] offers their managed [Aiven for Apache Flink] solution.
 - [Immerok Cloud]'s offering is being converged into [Flink managed by Confluent],
   see [Confluent Streaming Data Pipelines].
 :::
-
-```{div}
-:style: "clear: both"
-```
 
 
 ## Connect
@@ -125,14 +129,37 @@ JdbcSink.sink(
 
 :::{rubric} Tutorials
 :::
-- [Build a data ingestion pipeline using Kafka, Flink, and CrateDB]
 
-:::{rubric} Development
+::::{grid}
+:gutter: 2
+
+:::{grid-item-card} Tutorial: Build a data ingestion pipeline
+:link: https://dev.to/crate/build-a-data-ingestion-pipeline-using-kafka-flink-and-cratedb-1h5o
+:link-type: url
+:columns: 12
+The tutorial explains how to build a data ingestion pipeline using three
+open-source tools: Apache Kafka, Flink, and CrateDB.
++++
+Example: Kafka receives telemetry messages from IoT sensors and devices. Flink
+consumes the data stream and stores it into CrateDB. All tools are distributed
+systems that provide elastic scaling, fault tolerance, high-throughput, and
+low-latency performance via parallel processing.
 :::
-:::{div}
-- [Executable stack with Apache Kafka, Apache Flink, and CrateDB] (Java)
-- [Streaming data with Apache Kafka, Apache Flink and CrateDB] (Python)
+
+:::{grid-item-card} Source: Executable Stack (Java)
+:link: https://github.com/crate/cratedb-examples/tree/main/framework/flink/kafka-jdbcsink-java
+:link-type: url
+An executable stack with Apache Kafka, Apache Flink, and CrateDB. Uses Java.
 :::
+
+:::{grid-item-card} Source: Executable Stack (Python)
+:link: https://github.com/crate/cratedb-examples/tree/main/framework/flink/kafka-jdbcsink-python
+:link-type: url
+An executable stack with Apache Kafka, Apache Flink, and CrateDB. Uses Python.
+:::
+
+::::
+
 
 :::{rubric} Webinars
 :::

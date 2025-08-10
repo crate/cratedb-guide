@@ -5,8 +5,6 @@
 
 :::{include} /_include/links.md
 :::
-:::{include} /_include/styles.html
-:::
 
 :::{div}
 Options to connect and integrate CrateDB with third-party

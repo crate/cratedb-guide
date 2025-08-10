@@ -1,14 +1,14 @@
 .. _powerbi-desktop:
 
-=========================================
-Reports with CrateDB and Power BI Desktop
-=========================================
+=============================
+Reports with Power BI Desktop
+=============================
 
 This integration document details how to create data-driven reports and
 dashboards using CrateDB and Power BI Desktop.
 
-Abstract
-========
+Introduction
+------------
 
 `Power BI Desktop`_ is a powerful `business intelligence`_ tool that provides
 a set of data analytics and visualizations. Using Power BI Desktop, users can
@@ -23,12 +23,8 @@ This can be done by installing the `PostgreSQL ODBC driver`_, creating a
 source.
 
 
-Implementation
-==============
-
-
-Set Up
-------
+Setup
+-----
 
 For this implementation, we will be visualizing the data from the `World
 Economic Outlook survey`_. In particular, we will use population figures,
@@ -51,8 +47,8 @@ Within the zip archive is an MSI installer. Execute it and follow the
 instructions.
 
 
-CrateDB
--------
+Provision CrateDB
+-----------------
 
 First, you need to create a table to hold the World Economic Outlook survey
 data:
@@ -94,8 +90,8 @@ To insert the data into CrateDB::
 
 .. _powerbi-desktop-dsn:
 
-Creating a DSN for CrateDB
---------------------------
+Create a DSN for CrateDB
+------------------------
 
 First, verify that you have installed the PostgreSQL ODBC driver by searching
 for and opening the ODBC Data Sources application for your architecture:
@@ -147,8 +143,8 @@ You can click *Test* to verify that the DSN is configured correctly. Once this
 is done, click *Save* to save the DSN.
 
 
-Connecting Power BI to CrateDB
-------------------------------
+Connect Power BI to CrateDB
+---------------------------
 
 Once you have created the DSN, open up Power BI and click *Get Data* from the
 menu ribbon. Select *ODBC* from the list of available data sources:
@@ -171,8 +167,8 @@ From here you can transform the data as you wish, or click *Load* to load
 the dataset.
 
 
-Data Visualization
-------------------
+Visualize Data
+--------------
 
 Once the dataset has been added, you can visualize some of it. For example,
 you can visualize the distribution of population by region.

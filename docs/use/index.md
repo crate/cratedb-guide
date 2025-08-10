@@ -76,7 +76,3 @@ industrial/index
 telemetry/index
 migrate/index
 ```
-
-
-```{include} /_include/styles.html
-```

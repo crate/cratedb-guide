@@ -1,21 +1,26 @@
 (apache-kafka)=
 # Apache Kafka
 
+```{div}
+:style: "float: right; text-align: right"
+[![Apache Kafka logo](https://kafka.apache.org/logos/kafka_logo--simple.png){h=60px}][Apache Kafka]
+<br>
+<a href="https://github.com/crate/cratedb-examples/actions/workflows/framework-flink-kafka-java.yml" target="_blank">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/framework-flink-kafka-java.yml?branch=main&label=Apache%20Kafka,%20Apache%20Flink" loading="lazy"></a>
+```
+```{div}
+:style: "clear: both"
+```
+
 :::{include} /_include/links.md
 :::
 
 :::{rubric} About
 :::
 
-```{div}
-:style: "float: right; margin-left: 2em"
-[![](https://kafka.apache.org/logos/kafka_logo--simple.png){w=180px}](https://kafka.apache.org/)
-```
-
 [Apache Kafka] is an open-source distributed event streaming platform used by
 thousands of companies for high-performance data pipelines, streaming analytics,
 data integration, and mission-critical applications. 
-
 
 :::{dropdown} **Managed Kafka**
 Several companies provide managed Kafka services (see the [overview of managed Kafka offerings]
@@ -33,15 +38,31 @@ for a more complete list).
 :::{rubric} Learn
 :::
 
-:::{div}
-- {ref}`kafka-connect`
-- [Replicating data to CrateDB with Debezium and Kafka]
-- [Executable stack with Apache Kafka, Apache Flink, and CrateDB]
+::::{grid}
+
+:::{grid-item-card} Tutorial: Build a data ingestion pipeline
+:link: kafka-connect
+:link-type: ref
+The tutorial explains how to build a data ingestion pipeline using Apache
+Kafka, CrateDB, and the Confluent Kafka Connect JDBC connector.
 :::
+
+:::{grid-item-card} Tutorial: Connect Debezium, Kafka, and CrateDB
+:link: https://community.cratedb.com/t/replicating-data-to-cratedb-with-debezium-and-kafka/1388
+:link-type: url
+Replicating data to CrateDB with Debezium and Kafka.
+:::
+
+:::{grid-item-card} Source: Executable Stack (Java)
+:link: https://github.com/crate/cratedb-examples/tree/main/framework/flink/kafka-jdbcsink-java
+:link-type: url
+An executable stack with Apache Kafka, Apache Flink, and CrateDB. Uses Java.
+:::
+
+::::
 
 ```{toctree}
 :hidden:
-
 kafka-connect
 ```
 

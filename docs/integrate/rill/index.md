@@ -1,13 +1,16 @@
 (rill)=
 # Rill
 
+```{div}
+:style: "float: right;"
+[![Rill logo](https://github.com/rilldata/rill/raw/main/docs/static/img/rill-logo-light.svg){h=60px}][Rill]
+```
+```{div}
+:style: "clear: both"
+```
+
 :::{rubric} About
 :::
-
-```{div}
-:style: "float: right; margin-left: 0.5em"
-[![](https://github.com/rilldata/rill/raw/main/docs/static/img/rill-logo-light.svg){w=180px}](https://www.rilldata.com/)
-```
 
 [Rill] is an open-source operational BI framework for effortlessly transforming
 data sets into powerful, opinionated dashboards using SQL.
@@ -15,6 +18,8 @@ data sets into powerful, opinionated dashboards using SQL.
 Unlike most BI tools, Rill comes with its own embedded in-memory database. Data
 and compute are co-located, and queries return in milliseconds. So you can pivot,
 slice, and drill-down into your data instantly.
+
+::::{dropdown} **Details**
 
 Rill takes a modern approach to Business Intelligence (BI), which is starting to
 leverage software engineering principles by implementing the concept of BI as
@@ -43,13 +48,20 @@ BI tools, also breaking down information and knowledge barriers.
 ![](https://cdn.prod.website-files.com/659ddac460dbacbdc813b204/65b83308971b2f12202ae0fa_b2a470f529fc0f7d9b66de4d75742674.gif){h=200px}
 ![](https://cdn.prod.website-files.com/659ddac460dbacbdc813b204/65b835371c75806184829601_BI-as-code%20(1)-p-3200.webp){h=200px}
 
+::::
 
 :::{rubric} Learn
 :::
 
-- [Introducing Rill and BI as Code with CrateDB Cloud]
+::::{grid} 2
 
-[Introducing Rill and BI as Code with CrateDB Cloud]: https://community.cratedb.com/t/introducing-rill-and-bi-as-code-with-cratedb-cloud/1718
+:::{grid-item-card} Rill and CrateDB
+:link: https://community.cratedb.com/t/introducing-rill-and-bi-as-code-with-cratedb-cloud/1718
+:link-type: url
+Introducing Rill and BI as Code with CrateDB Cloud.
+:::
+
+::::
 
 
 [Rill]: https://www.rilldata.com/

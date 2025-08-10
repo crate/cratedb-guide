@@ -1,18 +1,23 @@
 (kestra)=
 # Kestra
 
+```{div}
+:style: "float: right"
+[![Kestra logo](https://kestra.io/logo.svg){h=60px}][Kestra]
+```
+```{div}
+:style: "clear: both"
+```
+
 :::{rubric} About
 :::
-
-```{div}
-:style: "float: right; margin-left: 2em"
-[![](https://kestra.io/logo.svg){w=180px}](https://kestra.io/)
-```
 
 [Kestra] is an open source workflow automation and orchestration toolkit with a rich
 plugin ecosystem. It enables users to automate and manage complex workflows in a
 streamlined and efficient manner, defining them both declaratively, or imperatively
 using any scripting language like Python, Bash, or JavaScript.
+
+:::{dropdown} **Details**
 
 Kestra comes with a user-friendly web-based interface including a live-updating DAG
 view, allowing users to create, modify, and manage scheduled and event-driven flows
@@ -25,11 +30,22 @@ functionality to Kestra.
 ![](https://kestra.io/landing/features/declarative1.svg){h=120px}
 ![](https://kestra.io/landing/features/flowable.svg){h=120px}
 ![](https://kestra.io/landing/features/monitor.svg){h=120px}
+:::
+
 
 :::{rubric} Learn
 :::
 
-- [Setting up data pipelines with CrateDB and Kestra]
+::::{grid} 2
+
+:::{grid-item-card} Tutorial: Data pipeline to CrateDB
+:link: https://community.cratedb.com/t/setting-up-data-pipelines-with-cratedb-and-kestra-io/1400
+:link-type: url
+In this tutorial, we will show you how CrateDB integrates with Kestra using the
+PostgreSQL plugin to create an efficient and scalable data pipeline.
+:::
+
+::::
 
 
 ```{seealso}
@@ -37,7 +53,5 @@ functionality to Kestra.
 ```
 
 
-
 [CrateDB and Kestra]: https://cratedb.com/integrations/cratedb-and-kestra
 [Kestra]: https://kestra.io/
-[Setting up data pipelines with CrateDB and Kestra]: https://community.cratedb.com/t/setting-up-data-pipelines-with-cratedb-and-kestra-io/1400

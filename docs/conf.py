@@ -1,6 +1,8 @@
 from crate.theme.rtd.conf.cratedb_guide import *
 
 # Fallback guards, when parent theme does not introduce relevant variables.
+if "html_css_files" not in globals():
+    html_css_files = []
 if "html_theme_options" not in globals():
     html_theme_options = {}
 if "intersphinx_mapping" not in globals():
@@ -94,3 +96,8 @@ myst_substitutions.update({
     "tutorial": "[![Navigate to Tutorial](https://img.shields.io/badge/Navigate%20to-Tutorial-darkcyan?logo=Markdown)]",
     "readmore": "[![Read More](https://img.shields.io/badge/Read-More-darkyellow?logo=Markdown)]",
 })
+
+
+html_css_files += [
+    'css/custom.css',
+]

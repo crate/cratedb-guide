@@ -1,15 +1,14 @@
 .. _powerbi-service:
 
-===========================================
-Real Time Reports with CrateDB and Power BI
-===========================================
+=======================================
+Real-Time Reports with Power BI Service
+=======================================
 
 This integration document details how to create online data-driven reports
-and dashboards using CrateDB and Power BI.
+and dashboards using CrateDB and the Power BI service.
 
-
-Abstract
-========
+Introduction
+------------
 
 The `Power BI service`_ is a powerful online data analysis and visualization
 tool. When paired with CrateDB, users can construct reports backed by large
@@ -22,12 +21,8 @@ source on Power BI to refresh itself, using the gateway, on regular intervals
 and on demand.
 
 
-Implementation
-==============
-
-
-Set Up
-------
+Setup
+-----
 
 This implementation will demonstrate real-time reports with CrateDB and Power
 BI by visualizing the data from the `World Economic Outlook survey`_.
@@ -58,8 +53,8 @@ should see something like the following status:
 Ensure that the **Power BI** status for the gateway is **Ready**.
 
 
-Creating a Report With CrateDB and Power BI Desktop
----------------------------------------------------
+Create the report
+-----------------
 
 Before you can publish your report, you need to have created it first.
 You can do this using the data from CrateDB. Please follow the
@@ -72,8 +67,8 @@ After running through that guide, we should have the following report:
    :align: center
 
 
-Publishing the Report
----------------------
+Publish the report
+------------------
 
 With your report created on Power BI desktop, you can now publish it to the
 online Power BI service. First, click the *Publish* button in the ribbon. Next,
@@ -102,8 +97,8 @@ bridge between the online report and your CrateDB data source, allowing the
 Power BI service to retrieve up to date datasets from CrateDB.
 
 
-Configuring The Gateway
------------------------
+Configure the gateway
+---------------------
 
 Within the Power BI service's settings, select *Manage Gateways*:
 
@@ -151,8 +146,8 @@ the dataset to use the data gateway you set up previously and click apply:
 The report is now configured to use the gateway.
 
 
-Modifying the Data
-------------------
+Modify the data
+---------------
 
 To demonstrate this refresh capability, you can modify the data in our CrateDB
 source. For example, your business could no longer be interested in data
@@ -165,8 +160,8 @@ about Europe. You can delete this from your table via:
     DELETE OK, 270990 rows affected  (2.125 sec)
 
 
-Refreshing the Report
----------------------
+Refresh the report
+------------------
 
 Now that the dataset powering our report has changed, you can refresh it. As
 before, click on the extra settings for the ``population report`` dataset, and

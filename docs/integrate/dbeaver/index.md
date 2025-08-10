@@ -6,7 +6,7 @@
 
 ```{div}
 :style: "float: right; margin-left: 0.5em"
-[![](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/DBeaver_logo.svg/512px-DBeaver_logo.svg.png){w=120px}](https://dbeaver.io/)
+[![](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/DBeaver_logo.svg/512px-DBeaver_logo.svg.png){w=120px}][DBeaver]
 ```
 
 [DBeaver] is a multipurpose cross-platform database tool for developers,
@@ -57,11 +57,17 @@ its tables. Navigate to the Data tab to browse your table data.
 
 :::{rubric} Tutorials
 :::
-- [Blog: Use CrateDB With DBeaver]
 
-:::{rubric} Product
+::::{grid}
+
+:::{grid-item-card} Blog: Use CrateDB With DBeaver
+:link: https://cratedb.com/blog/cratedb-dbeaver
+:link-type: url
+DBeaver is a multipurpose database tool for developers and database administrators.
+With the help of the CrateDB JDBC Standalone Driver, you can use DBeaver with CrateDB.
 :::
-- [CrateDB and DBeaver]
+
+::::
 
 :::{rubric} Notes
 :::
@@ -80,8 +86,11 @@ We are tracking interoperability issues per [Tool: DBeaver], and appreciate
 any contributions and reports.
 :::
 
+:::{seealso}
+[CrateDB and DBeaver]
+:::
 
-[Blog: Use CrateDB With DBeaver]: https://cratedb.com/blog/cratedb-dbeaver
+
 [CrateDB and DBeaver]: https://cratedb.com/integrations/cratedb-and-dbeaver
 [DBeaver]: https://dbeaver.io/
 [Tool: DBeaver]: https://github.com/crate/crate/labels/tool%3A%20DBeaver

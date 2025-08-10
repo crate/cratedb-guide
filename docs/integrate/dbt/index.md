@@ -4,17 +4,26 @@
 :::{include} /_include/links.md
 :::
 
-## About
 ```{div}
-:style: "float: right"
-[![](https://www.getdbt.com/_next/image?url=%2Fimg%2Flogos%2Fdbt-labs-logo.svg&w=384&q=75){w=180px}](https://www.getdbt.com/)
+:style: "float: right; text-align: right"
+[![dbt logo](https://www.getdbt.com/_next/image?url=%2Fimg%2Flogos%2Fdbt-labs-logo.svg&w=384&q=75){h=60px}][dbt]
+<br>
+<a href="https://github.com/crate/cratedb-examples/actions/workflows/framework-dbt.yml" target="_blank">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/framework-dbt.yml?branch=main&label=dbt" loading="lazy"></a>
 ```
+```{div}
+:style: "clear: both"
+```
+
+## About
 
 [dbt] is a tool for transforming data in data warehouses using Python and SQL.
 
 It is an SQL-first transformation workflow platform that lets teams quickly and
 collaboratively deploy analytics code following software engineering best practices
 like modularity, portability, CI/CD, and documentation.
+
+::::{dropdown} **Details**
 
 > dbt enables data analysts and engineers to transform their data using the same
 > practices that software engineers use to build applications.
@@ -30,6 +39,29 @@ Afterwards, data analysts can run their dbt projects against this data to produc
 ![](https://www.getdbt.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fwl0ndo6t%2Fmain%2F6e98931b83c4b8bbe45751dced66bc80ea4ec9ac-1999x992.png%3Ffit%3Dmax%26auto%3Dformat&w=640&q=75){h=120px}
 ![](https://www.getdbt.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fwl0ndo6t%2Fmain%2Fcd8cba01b3f756a3a7ed194e6e2d6a4072fac194-1220x1200.png%3Ffit%3Dmax%26auto%3Dformat&w=640&q=75){h=120px}
 ![](https://www.getdbt.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fwl0ndo6t%2Fmain%2F58b87e47c2aed57fde9ccd49c927c3dff5b57d3c-1466x1130.png%3Ffit%3Dmax%26auto%3Dformat&w=640&q=75){h=120px}
+
+:::{rubric} dbt's Features
+:::
+The data abstraction layer provided by [dbt-core] allows the decoupling of
+the models on which reports and dashboards rely from the source data. When
+business rules or source systems change, you can still maintain the same models
+as a stable interface.
+
+Some of the things that dbt can do include:
+
+* Import reference data from CSV files.
+* Track changes in source data with different strategies so that downstream
+  models do not need to be built every time from scratch.
+* Run tests on data, to confirm assumptions remain valid, and to validate
+  any changes made to the models' logic.
+
+:::{rubric} CrateDB's Benefits
+:::
+Due to its unique capabilities, CrateDB is an excellent warehouse choice for
+data transformation projects. It offers automatic indexing, fast aggregations,
+easy partitioning, and the ability to scale horizontally.
+
+::::
 
 :::{dropdown} **Managed dbt**
 ```{div}
@@ -60,32 +92,11 @@ scale.
 :::
 
 
-### dbt's Features
-The data abstraction layer provided by [dbt-core] allows the decoupling of
-the models on which reports and dashboards rely from the source data. When
-business rules or source systems change, you can still maintain the same models
-as a stable interface.
-
-Some of the things that dbt can do include:
-
-* Import reference data from CSV files.
-* Track changes in source data with different strategies so that downstream
-  models do not need to be built every time from scratch.
-* Run tests on data, to confirm assumptions remain valid, and to validate
-  any changes made to the models' logic.
-
-### CrateDB's Benefits
-Due to its unique capabilities, CrateDB is an excellent warehouse choice for
-data transformation projects. It offers automatic indexing, fast aggregations,
-easy partitioning, and the ability to scale horizontally.
-
-
 ## Setup
 Install the most recent version of the [dbt-cratedb2] Python package.
 ```shell
 pip install --upgrade 'dbt-cratedb2'
 ```
-
 
 ## Configure
 Because CrateDB is compatible with PostgreSQL, the same connectivity
@@ -112,7 +123,7 @@ cratedb_analytics:
 
 ## Learn
 
-Learn how to use CrateDB with dbt by exploring concise examples.
+Learn how to use CrateDB with dbt by exploring a few examples.
 
 :::{rubric} Tutorials
 :::

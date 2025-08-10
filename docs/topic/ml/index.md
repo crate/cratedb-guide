@@ -5,8 +5,6 @@
 
 :::{include} /_include/links.md
 :::
-:::{include} /_include/styles.html
-:::
 
 Machine learning applications and frameworks
 which can be used together with CrateDB.

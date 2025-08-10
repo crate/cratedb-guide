@@ -1,6 +1,14 @@
 (streamsets)=
 # StreamSets
 
+```{div}
+:style: "float: right"
+[![StreamSets logo](https://agile.co.uk/wp-content/uploads/2022/01/streamsets-logo.png){h=60px}][StreamSets Data Collector]
+```
+```{div}
+:style: "clear: both"
+```
+
 :::{rubric} About
 :::
 
@@ -15,8 +23,20 @@ It runs on-premises or in any cloud.
 :::{rubric} Learn
 :::
 
+::::{grid} 2
+
+:::{grid-item-card} Use StreamSet with CrateDB
+:link: streamsets-learn
+:link-type: ref
+Learn how to create data streaming pipelines
+using CrateDB and the StreamSets Data Collector.
+:::
+
+::::
+
 :::{toctree}
 :maxdepth: 1
+:hidden:
 learn
 :::
 

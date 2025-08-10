@@ -1,17 +1,22 @@
 (apache-hop)=
 # Apache Hop
 
+```{div}
+:style: "float: right"
+[![Apache Hop logo](https://hop.apache.org/img/hop-logo.svg){h=60px}][Apache Hop]
+```
+```{div}
+:style: "clear: both"
+```
+
 :::{rubric} About
 :::
-
-```{div}
-:style: "float: right; margin-left: 0.3em"
-[![](https://hop.apache.org/img/hop-logo.svg){w=180px}](https://hop.apache.org/)
-```
 
 [Apache Hop] aims to be a modern, open source data integration platform that is
 easy to use, fast, and flexible. It facilitates all aspects of data and metadata
 orchestration.
+
+:::{dropdown} **Details**
 
 - **Visual development** enables developers to be more productive than they can
   be through code.
@@ -27,18 +32,34 @@ orchestration.
 ![](https://github.com/crate/crate-clients-tools/assets/453543/60cfc82a-db0a-49f1-8e26-a37b774b3614){h=120px}
 ![](https://github.com/crate/crate-clients-tools/assets/453543/2bd59577-b664-45ae-a71e-36a130d36739){h=120px}
 
+:::
 
 :::{rubric} Learn
 :::
  
+::::{grid}
+:gutter: 2
 
-- [Using Apache Hop with CrateDB]
-- [CrateDB dialect for Apache Hop]
-- [CrateDB Apache Hop Bulk Loader transform]
+:::{grid-item-card} Tutorial: Use Apache Hop with CrateDB
+:link: https://community.cratedb.com/t/using-apache-hop-with-cratedb/1754
+:link-type: url
+:columns: 12
+The tutorial explains how to deploy Apache Hop using Docker and connect it to CrateDB.
+:::
 
+:::{grid-item-card} Dialect
+:link: https://hop.apache.org/manual/latest/database/databases/cratedb.html
+:link-type: url
+CrateDB dialect for Apache Hop.
+:::
+
+:::{grid-item-card} Performance
+:link: https://hop.apache.org/manual/latest/pipeline/transforms/cratedb-bulkloader.html
+:link-type: url
+CrateDB Apache Hop Bulk Loader transform.
+:::
+
+::::
 
 
 [Apache Hop]: https://hop.apache.org/
-[CrateDB Apache Hop Bulk Loader transform]: https://hop.apache.org/manual/latest/pipeline/transforms/cratedb-bulkloader.html
-[CrateDB dialect for Apache Hop]: https://hop.apache.org/manual/latest/database/databases/cratedb.html
-[Using Apache Hop with CrateDB]: https://community.cratedb.com/t/using-apache-hop-with-cratedb/1754

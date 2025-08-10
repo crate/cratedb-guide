@@ -3,9 +3,6 @@
 (all-features)=
 # All Features
 
-:::{include} /_include/styles.html
-:::
-
 All features of CrateDB at a glance.
 
 :::::{grid} 1 3 3 3

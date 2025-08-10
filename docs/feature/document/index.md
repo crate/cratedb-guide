@@ -429,6 +429,3 @@ and about OBJECT indexing.
 
 learn
 ```
-
-```{include} /_include/styles.html
-```

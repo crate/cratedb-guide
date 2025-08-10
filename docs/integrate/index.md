@@ -23,9 +23,9 @@ apache-iceberg/index
 apache-kafka/index
 apache-nifi/index
 apache-superset/index
-aws-dms/index
 aws-dynamodb/index
 aws-kinesis/index
+aws-dms/index
 aws-lambda/index
 azure-functions/index
 cluvio/index
@@ -40,6 +40,8 @@ gradio/index
 grafana/index
 influxdb/index
 kestra/index
+langchain/index
+llamaindex/index
 marquez/index
 meltano/index
 metabase/index
@@ -48,7 +50,7 @@ mysql/index
 n8n/index
 node-red/index
 plotly/index
-powerbi/index
+Power BI <powerbi/index>
 prometheus/index
 pyviz/index
 rill/index

@@ -2,10 +2,11 @@
 
 .. _integrate-mysql:
 .. _migrating-mysql:
+.. _mysql-import-csv:
 
-======================
-Import data from MySQL
-======================
+================================
+Import data from MySQL using CSV
+================================
 
 Various ways exist to migrate your existing data from MySQL_ to CrateDB_.
 However, these methods may differ in performance. A fast and reliable way to

@@ -5,15 +5,18 @@
 # Apache Superset / Preset
 
 ```{div}
-:style: "float: right"
-[![](https://cratedb.com/hs-fs/hubfs/Apache-Superset-Logo-392x140@2x.png?width=604&height=216&name=Apache-Superset-Logo-392x140@2x.png){w=180px}](https://superset.apache.org/)
-
-[![](https://github.com/crate/crate-clients-tools/assets/453543/9d07da87-8aff-4569-bf2a-0a16bf89f4bc){w=180px}](https://preset.io/)
+:style: "float: right; text-align: right"
+[![Apache Superset logo](https://cratedb.com/hs-fs/hubfs/Apache-Superset-Logo-392x140@2x.png?width=604&height=216&name=Apache-Superset-Logo-392x140@2x.png){h=60px}][Apache Superset]
+<br>
+<a href="https://github.com/crate/cratedb-examples/actions/workflows/application-apache-superset.yml" target="_blank">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/application-apache-superset.yml?branch=main&label=Apache Superset" loading="lazy"></a>
+```
+```{div}
+:style: "clear: both"
 ```
 
 [Apache Superset] is an open-source modern data exploration and visualization
 platform, written in Python.
-
 [Preset] offers a managed, elevated, and enterprise-grade SaaS for open-source
 Apache Superset.
 
@@ -23,7 +26,7 @@ Apache Superset.
 :::{dropdown} **Managed Superset**
 ```{div}
 :style: "float: right"
-[![](https://github.com/crate/crate-clients-tools/assets/453543/9d07da87-8aff-4569-bf2a-0a16bf89f4bc){w=180px}](https://preset.io/)
+[![](https://github.com/crate/crate-clients-tools/assets/453543/9d07da87-8aff-4569-bf2a-0a16bf89f4bc){h=60px}](https://preset.io/)
 ```
 
 [Preset Cloud] is a fully-managed, open-source BI for the modern data stack,
@@ -72,15 +75,22 @@ crate://<username>:<password>@<clustername>.cratedb.net:4200/?ssl=true
 
 :::{rubric} Tutorials
 :::
-- [Introduction to time series visualization in CrateDB and Apache Superset (Blog)]
-- [Use CrateDB and Apache Superset for Open Source Data Warehousing and Visualization (Blog)]
-- [Introduction to time series Visualization in CrateDB and Apache Superset (Preset.io)]
 
-:::{rubric} Development
+::::{grid}
+
+:::{grid-item-card} Blog: Open Source Data Warehousing and Visualization
+:link: https://cratedb.com/blog/use-cratedb-and-apache-superset-for-open-source-data-warehousing-and-visualization
+:link-type: url
+Use CrateDB and Apache Superset for Open Source Data Warehousing and Visualization.
 :::
-- [Set up Apache Superset with CrateDB]
-- [Set up an Apache Superset development sandbox with CrateDB]
-- [Verify Apache Superset with CrateDB]
+
+:::{grid-item-card} Blog: Time Series Visualization
+:link: https://preset.io/blog/timeseries-cratedb-superset/
+:link-type: url
+Introduction to time series Visualization in CrateDB and Apache Superset.
+:::
+
+::::
 
 
 :::{rubric} Webinars
@@ -135,21 +145,25 @@ from the time-series dataset.
 ::::
 
 
+:::{rubric} Development
+:::
+- [Set up Apache Superset with CrateDB]
+- [Set up an Apache Superset development sandbox with CrateDB]
+- [Verify Apache Superset with CrateDB]
+
+
 
 ```{seealso}
-[CrateDB and Superset]
+[CrateDB and Apache Superset]
 ```
 
 
 [Apache Superset]: https://superset.apache.org/
-[CrateDB and Superset]: https://cratedb.com/integrations/cratedb-and-apache-superset
+[CrateDB and Apache Superset]: https://cratedb.com/integrations/cratedb-and-apache-superset
 [CrateDB Cloud]: https://cratedb.com/product/cloud
 [CrateDB connector package]: https://superset.apache.org/docs/configuration/databases#cratedb
 [CrateDB Self-Managed]: https://cratedb.com/product/self-managed
 [how to install database drivers in Docker Images]: https://superset.apache.org/docs/configuration/databases#installing-drivers-in-docker-images
-[Introduction to time series visualization in CrateDB and Apache Superset (Blog)]: https://community.cratedb.com/t/introduction-to-time-series-visualization-in-cratedb-and-superset/1041
-[Introduction to time series visualization in CrateDB and Apache Superset (Webinar)]: https://cratedb.com/resources/webinars/lp-wb-introduction-to-time-series-visualization-in-cratedb-apache-superset
-[Introduction to time series Visualization in CrateDB and Apache Superset (Preset.io)]: https://preset.io/blog/timeseries-cratedb-superset/
 [Preset]: https://preset.io/
 [Preset Cloud]: https://preset.io/product/
 [Set up Apache Superset with CrateDB]: https://community.cratedb.com/t/set-up-apache-superset-with-cratedb/1716
