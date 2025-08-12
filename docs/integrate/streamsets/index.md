@@ -10,7 +10,7 @@ data from various sources.
 
 Use it to run pipelines from sources such as Kafka, Oracle, Salesforce, JDBC, and Hive
 to destinations including Snowflake, Databricks, Amazon S3, and Azure Data Lake Storage (ADLS).
-It runs on‑premises or in any cloud.
+It runs on-premises or in any cloud.
 
 :::{rubric} Learn
 :::
