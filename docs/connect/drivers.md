@@ -359,6 +359,6 @@ Ruby on Rails ActiveRecord adapter for CrateDB.
 
 
 ```{tip}
-Please visit the [](#build-status) page for an overview about the integration
+Please visit the :ref:`build-status` page for an overview about the integration
 status of the client drivers listed above, and more.
 ```
