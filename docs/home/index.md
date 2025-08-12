@@ -66,8 +66,8 @@ documentation provides the information and knowledge needed to build
 real-time analytics and hybrid search applications that leverage CrateDB's
 unique features.
 
-* In a unified data platform approach, CrateDB includes analyzing relational, JSON,
-  time-series, geospatial, full-text, and vector data within a single system,
+* In a unified data platform, CrateDB lets you analyze relational, JSON,
+  time-series, geospatial, full-text, and vector data in a single system,
   eliminating the need for multiple databases.
 * The fully distributed SQL query engine, built on top of Apache Lucene,
   and inheriting technologies from Elasticsearch/OpenSearch, provides performant
@@ -79,7 +79,7 @@ unique features.
 * The flexible data schema dynamically adapts based on the data you ingest,
   offering seamless integration and instant readiness for analysis.
 * Columnar storage enables fast search query and aggregation performance.
-* PostgreSQL wire protocol compatibility and a HTTP interface provide versatile
+* PostgreSQL wire protocol compatibility and an HTTP interface provide versatile
   integration capabilities.
 * AI-ready: The vector store subsystem integrates well
   with an extensive 3rd party ecosystem of AI/ML frameworks for advanced data
@@ -88,7 +88,7 @@ unique features.
 
 ## Get Started
 
-We've put together some helpful guides to help you set up your CrateDB instance
+We've put together guides to help you set up your CrateDB instance
 quickly and easily. Enjoy reading!
 
 :::{card} {material-outlined}`rocket_launch;1.7em` CrateDB Cloud
@@ -99,7 +99,7 @@ quickly and easily. Enjoy reading!
 
 Start with a fully managed CrateDB instance to accelerate and simplify working
 with analytical data. CrateDB Cloud enables seamless deployment, monitoring,
-backups, and scaling of CrateDB clusters on AWS, Azure or GCPs, eliminating
+backups, and scaling of CrateDB clusters on AWS, Azure, or GCP, eliminating
 the need for direct database management.
 
 With CrateDB Cloud, you can skip infrastructure setup and focus on delivering
@@ -347,7 +347,7 @@ Learn how to use CrateDB by digesting concise examples.
 ::::{grid} 2 3 3 3
 :padding: 0
 
-:::{grid-item-card} CrateDB Examples 
+:::{grid-item-card} CrateDB Examples
 :link: https://github.com/crate/cratedb-examples
 :link-alt: CrateDB Examples
 :padding: 3
@@ -360,7 +360,7 @@ Learn how to use CrateDB by digesting concise examples.
 A collection of clear and concise examples how to work with CrateDB.
 :::
 
-:::{grid-item-card} Sample Apps 
+:::{grid-item-card} Sample Apps
 :link: https://github.com/crate/crate-sample-apps/
 :link-alt: CrateDB Sample Apps
 :padding: 3
@@ -409,7 +409,6 @@ Make sure you also do not miss relevant [CrateDB customer stories].
 
 [CrateDB customer stories]: https://www.youtube.com/playlist?list=PLDZqzXOGoWUJrAF_lVx9U6BzAGG9xYz_v
 [HTTP protocol]: https://en.wikipedia.org/wiki/HTTP
-[Integrations]: #integrate
 [JDBC]: https://en.wikipedia.org/wiki/Java_Database_Connectivity 
 [ODBC]: https://en.wikipedia.org/wiki/Open_Database_Connectivity
 [PostgreSQL wire protocol]: https://www.postgresql.org/docs/current/protocol.html
