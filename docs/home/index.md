@@ -46,9 +46,9 @@ CrateDB was built for speed, scale, and simplicity:
 :::
 CrateDB is used across industries to power:
 
-* Real-time **analytics applications**
-* Elegant **hybrid search applications**
-* Large-scale **IoT platforms**
+* Real-time **dashboards and analytics**
+* Hybrid **search and retrieval experiences**
+* Large-scale **IoT telemetry and analytics**
 * Complex **geospatial applications**
 * Embedded **AI-driven insights**
 * Modern **industrial data backends**
@@ -78,11 +78,11 @@ unique features.
   indexing strategy.
 * The flexible data schema dynamically adapts based on the data you ingest,
   offering seamless integration and instant readiness for analysis.
-* Columnar storage enables fast search query and aggregation performance.
+* Columnar storage enables fast query and aggregation performance.
 * PostgreSQL wire protocol compatibility and an HTTP interface provide versatile
   integration capabilities.
 * AI-ready: The vector store subsystem integrates well
-  with an extensive 3rd party ecosystem of AI/ML frameworks for advanced data
+  with an extensive third-party ecosystem of AI/ML frameworks for advanced data
   analysis and data-driven decisions.
 
 
@@ -133,8 +133,8 @@ Learn about the fundamentals of CrateDB, guided and self-guided.
 :padding: 0
 
 :::{grid-item-card}
-:link: https://cratedb.com/docs/guide/getting-started.html
-:link-alt: Getting started with CrateDB
+:link: getting-started
+:link-type: ref
 :padding: 3
 :class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold sd-text-capitalize
 :class-body: sd-text-center sd-fs-5
@@ -147,7 +147,8 @@ Learn how to interact with the database for the first time.
 :::
 
 :::{grid-item-card}
-:link: https://cratedb.com/docs/guide/
+:link: index
+:link-type: ref
 :link-alt: The CrateDB Guide
 :padding: 3
 :class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold sd-text-capitalize
@@ -199,7 +200,8 @@ Learn about the fundamental tools that support working directly with CrateDB.
 :padding: 0
 
 :::{grid-item-card} Admin UI
-:link: https://cratedb.com/docs/crate/admin-ui/
+:link: crate-admin-ui:index
+:link-type: ref
 :link-alt: The CrateDB Admin UI
 :padding: 3
 :class-card: sd-pt-3
@@ -212,7 +214,8 @@ Learn about CrateDB's included web administration interface.
 :::
 
 :::{grid-item-card} Crash CLI
-:link: https://cratedb.com/docs/crate/crash/
+:link: crate-crash:index
+:link-type: ref
 :link-alt: The Crash CLI
 :padding: 3
 :class-card: sd-pt-3
@@ -288,7 +291,7 @@ compatible with [ODBC], [JDBC], and other database API specifications.
 :::
 
 Learn about database client libraries, drivers, adapters, connectors,
-and integrations with 3rd-party applications and frameworks.
+and integrations with third-party applications and frameworks.
 
 ::::{grid} 2 3 3 3
 :padding: 0
@@ -319,7 +322,7 @@ Discover integrations and solutions from the open-source community and CrateDB p
 :class-footer: text-smaller
 {material-outlined}`integration_instructions;3.5em`
 +++
-Learn about the variety of options to connect and integrate with 3rd-party applications.
+Learn about the variety of options to connect and integrate with third-party applications.
 :::
 
 
