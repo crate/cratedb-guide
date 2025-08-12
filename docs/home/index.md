@@ -3,13 +3,6 @@ orphan: true
 ---
 
 
-<style>
-/* Cards with links */
-.sd-hide-link-text {
-  height: 0;
-}
-</style>
-
 # Welcome to CrateDB
 
 CrateDB is a **distributed SQL database** designed for **real-time analytics
@@ -50,8 +43,8 @@ CrateDB is used across industries to power:
 * Hybrid **search and retrieval experiences**
 * Large-scale **IoT telemetry and analytics**
 * Complex **geospatial applications**
-* Embedded **AI-driven insights**
-* Modern **industrial data backends**
+* **AI-powered features** embedded in your apps
+* **Industrial IoT** data backends
 ::::
 
 :::::
@@ -360,7 +353,7 @@ Learn how to use CrateDB by digesting concise examples.
 :class-footer: text-smaller
 {material-outlined}`play_circle;3.5em`
 +++
-A collection of clear and concise examples how to work with CrateDB.
+A collection of clear, concise examples of how to work with CrateDB.
 :::
 
 :::{grid-item-card} Sample Apps
@@ -373,7 +366,7 @@ A collection of clear and concise examples how to work with CrateDB.
 :class-footer: text-smaller
 {material-outlined}`apps;3.5em`
 +++
-Different client libraries used by canonical guestbook demo web applications. 
+Canonical guestbook demo applications implemented with different client libraries.
 :::
 
 ::::
