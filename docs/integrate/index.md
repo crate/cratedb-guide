@@ -44,6 +44,7 @@ marquez/index
 meltano/index
 metabase/index
 mongodb/index
+mqtt/index
 mysql/index
 n8n/index
 nifi/index
