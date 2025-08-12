@@ -308,7 +308,6 @@ use-cases.
 install/index
 connect/index
 getting-started
-Ingestion <ingest/index>
 feature/index
 Ingestion <ingest/index>
 topic/index
