@@ -3,7 +3,7 @@ orphan: true
 ---
 
 
-# Welcome to CrateDB
+# Welcome to CrateDB!
 
 CrateDB is a **distributed SQL database** designed for **real-time analytics
 and search** at scale. Whether you are working with time-series data, full-text
