@@ -13,7 +13,7 @@ orphan: true
 # Welcome to CrateDB
 
 CrateDB is a **distributed SQL database** designed for **real-time analytics
-and search** at scale. Whether you're working with time-series data, full-text
+and search** at scale. Whether you are working with time-series data, full-text
 search, or large volumes of structured and semi-structured data, CrateDB gives
 you the **power of SQL**, the **scalability of NoSQL**, and the **flexibility
 of a modern data platform**.
@@ -46,7 +46,8 @@ CrateDB was built for speed, scale, and simplicity:
 :::
 CrateDB is used across industries to power:
 
-* Real-time **dashboards and analytics**
+* Real-time **analytics applications**
+* Elegant **hybrid search applications**
 * Large-scale **IoT platforms**
 * Complex **geospatial applications**
 * Embedded **AI-driven insights**
