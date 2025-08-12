@@ -56,6 +56,35 @@ CrateDB is used across industries to power:
 :::::
 
 
+:::{rubric} Benefits and Features
+:::
+
+Whether you are a developer,
+database administrator, or just starting your journey with CrateDB, our
+documentation provides the information and knowledge needed to build
+real-time analytics and hybrid search applications that leverage CrateDB's
+unique features.
+
+* In a unified data platform approach, CrateDB includes analyzing relational, JSON,
+  time-series, geospatial, full-text, and vector data within a single system,
+  eliminating the need for multiple databases.
+* The fully distributed SQL query engine, built on top of Apache Lucene,
+  and inheriting technologies from Elasticsearch/OpenSearch, provides performant
+  aggregations and advanced SQL features like JOINs and CTEs on large datasets
+  of semi-structured data.
+* Real-time indexing automatically indexes all columns, including nested
+  structures, as data is ingested, eliminating the need to worry about
+  indexing strategy.
+* The flexible data schema dynamically adapts based on the data you ingest,
+  offering seamless integration and instant readiness for analysis.
+* Columnar storage enables fast search query and aggregation performance.
+* PostgreSQL wire protocol compatibility and a HTTP interface provide versatile
+  integration capabilities.
+* AI-ready: The vector store subsystem integrates well
+  with an extensive 3rd party ecosystem of AI/ML frameworks for advanced data
+  analysis and data-driven decisions.
+
+
 ## Get Started
 
 We've put together some helpful guides to help you set up your CrateDB instance
@@ -91,88 +120,6 @@ and various connectors to import data.
 
 Helpful guides about how to start working with your database cluster.
 :::
-
-## Overview
-
-Welcome to the official CrateDB Documentation. Whether you are a developer,
-database administrator, or just starting your journey with CrateDB, our
-documentation provides the information and knowledge needed to build
-real-time analytics and hybrid search applications that leverage CrateDB's
-unique features.
-
-:::{rubric} Benefits
-:::
-* In a unified data platform approach, CrateDB includes analyzing relational, JSON,
-  time-series, geospatial, full-text, and vector data within a single system,
-  eliminating the need for multiple databases.
-* The fully distributed SQL query engine, built on top of Apache Lucene,
-  and inheriting technologies from Elasticsearch/OpenSearch, provides performant
-  aggregations and advanced SQL features like JOINs and CTEs on large datasets
-  of semi-structured data.
-* Real-time indexing automatically indexes all columns, including nested
-  structures, as data is ingested, eliminating the need to worry about
-  indexing strategy.
-* The flexible data schema dynamically adapts based on the data you ingest,
-  offering seamless integration and instant readiness for analysis.
-* Columnar storage enables fast search query and aggregation performance.
-* PostgreSQL wire protocol compatibility and a HTTP interface provide versatile
-  integration capabilities.
-* AI-ready: The vector store subsystem integrates well
-  with an extensive 3rd party ecosystem of AI/ML frameworks for advanced data
-  analysis and data-driven decisions.
-
-:::{rubric} Resources
-:::
-
-::::::{grid} 1
-:margin: 1
-:padding: 2
-
-:::::{grid-item}
-:margin: 0
-:padding: 2
-
-::::{grid} 2
-:margin: 0
-:padding: 0
-
-:::{grid-item-card} {material-outlined}`lightbulb;1.7em` Database Features
-:link: https://cratedb.com/docs/guide/feature/
-:link-alt: Database Features
-:class-title: sd-fs-5
-
-Explore all functional, operational and advanced features of CrateDB at a glance.
-:::
-
-:::{grid-item-card} {material-outlined}`auto_stories;1.7em` Database Manual
-:link: https://cratedb.com/docs/reference/
-:link-alt: Database Manual
-:class-title: sd-fs-5
-
-Learn core CrateDB concepts, including data modeling, querying data,
-aggregations, sharding, and more.
-:::
-
-::::
-:::::
-
-:::{grid-item-card} {material-outlined}`link;1.7em` Client Libraries
-:link: https://cratedb.com/docs/crate/clients-tools/en/latest/connect/
-:link-alt: CrateDB: Client Drivers and Libraries
-:padding: 2
-:class-title: sd-fs-5
-
-Learn how to connect your applications using database drivers, libraries,
-adapters, and connectors.
-
-CrateDB supports both the [HTTP protocol] and the [PostgreSQL wire protocol],
-ensuring compatibility with many PostgreSQL clients.
-
-Through corresponding drivers and adapters, CrateDB is compatible with [ODBC],
-[JDBC], and other database API specifications.
-:::
-
-::::::
 
 
 ## Learn
@@ -277,6 +224,63 @@ A command-line interface (CLI) tool for working with CrateDB.
 :::
 
 ::::
+
+
+:::{rubric} Resources
+:::
+
+::::::{grid} 1
+:margin: 1
+:padding: 2
+
+:::::{grid-item}
+:margin: 0
+:padding: 2
+
+::::{grid} 2
+:margin: 0
+:padding: 0
+
+:::{grid-item-card} {material-outlined}`lightbulb;1.7em` Database Features
+:link: features
+:link-type: ref
+:link-alt: Database Features
+:class-title: sd-fs-5
+
+Explore all functional, operational and advanced features of CrateDB at a glance.
+:::
+
+:::{grid-item-card} {material-outlined}`auto_stories;1.7em` Database Manual
+:link: crate-reference:index
+:link-type: ref
+:link-alt: Database Manual
+:class-title: sd-fs-5
+
+Learn core CrateDB concepts, including data modeling, querying data,
+aggregations, sharding, and more.
+:::
+
+::::
+:::::
+
+:::{grid-item-card} {material-outlined}`link;1.7em` Connectivity Options
+:link: connect
+:link-type: ref
+:link-alt: CrateDB: Client Drivers and Libraries
+:padding: 2
+:class-title: sd-fs-5
+
+Learn how to connect your applications using database drivers, libraries,
+adapters, and connectors.
+
+CrateDB supports both the [HTTP protocol] and the [PostgreSQL wire protocol],
+ensuring compatibility with many PostgreSQL clients.
+
+Through corresponding drivers, adapters, and client libraries, CrateDB is
+compatible with [ODBC], [JDBC], and other database API specifications.
+:::
+
+::::::
 
 
 :::{rubric} Drivers and Integrations
