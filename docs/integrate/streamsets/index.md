@@ -25,7 +25,7 @@ It runs on-premises or in any cloud.
 ::::{grid} 2
 
 :::{grid-item-card} Use StreamSet with CrateDB
-:link: streamsets-learn
+:link: streamsets-tutorial
 :link-type: ref
 Learn how to create data streaming pipelines
 using CrateDB and the StreamSets Data Collector.
@@ -36,7 +36,7 @@ using CrateDB and the StreamSets Data Collector.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-learn
+Tutorial <tutorial>
 :::
 
 [StreamSets Data Collector]: https://www.softwareag.com/en_corporate/platform/integration-apis/data-collector-engine.html

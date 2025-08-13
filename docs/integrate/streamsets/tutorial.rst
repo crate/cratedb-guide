@@ -1,4 +1,4 @@
-.. _streamsets-learn:
+.. _streamsets-tutorial:
 
 ================================================================
 Data Stream Pipelines with CrateDB and StreamSets Data Collector

@@ -1,5 +1,4 @@
-.. _integrations-grafana:
-.. _visualize-data-with-grafana:
+.. _grafana-tutorial:
 
 ===========================
 Visualize data with Grafana

@@ -1,4 +1,4 @@
-.. _integrations-metabase:
+.. _metabase-tutorial:
 
 Visualize data with Metabase
 ============================

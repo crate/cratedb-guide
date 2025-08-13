@@ -29,7 +29,7 @@ services, or storage services. See also [What is Azure Functions?].
 ::::{grid} 2
 
 :::{grid-item-card} Data Enrichment using IoT Hub, Azure Functions and CrateDB
-:link: azure-functions-learn
+:link: azure-functions-tutorial
 :link-type: ref
 A common pattern uses an Azure Function to enrich and ingest data
 into a CrateDB instance by connecting the function to an IoT Hub
@@ -42,7 +42,7 @@ new‑messages trigger.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-learn
+Tutorial <tutorial>
 :::
 
 

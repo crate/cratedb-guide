@@ -1,4 +1,4 @@
-(marquez-learn)=
+(marquez-tutorial)=
 # Use Marquez with CrateDB
 
 This tutorial demonstrates how to run Airflow DAGs against a
