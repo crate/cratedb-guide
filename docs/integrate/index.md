@@ -36,8 +36,8 @@ hop/index
 iceberg/index
 influxdb/index
 kafka/index
-kinesis/index
 kestra/index
+kinesis/index
 langchain/index
 llamaindex/index
 marquez/index
