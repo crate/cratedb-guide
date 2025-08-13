@@ -32,7 +32,7 @@ Get Grafana fully managed with [Grafana Cloud].
 ::::{grid} 2
 
 :::{grid-item-card} Visualize data with Grafana
-:link: visualize-data-with-grafana
+:link: grafana-tutorial
 :link-type: ref
 Grafana complements CrateDB in monitoring and visualizing large volumes of
 machine data in real-time.
@@ -55,7 +55,7 @@ Connecting to a CrateDB cluster uses the Grafana PostgreSQL data source adapter.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-learn
+Tutorial <tutorial>
 :::
 
 

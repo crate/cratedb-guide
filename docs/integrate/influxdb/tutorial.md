@@ -1,5 +1,4 @@
-(influxdb-learn)=
-(import-influxdb)=
+(influxdb-tutorial)=
 # Import data from InfluxDB
 
 In this quick tutorial, you will use the [CrateDB Toolkit InfluxDB I/O subsystem]

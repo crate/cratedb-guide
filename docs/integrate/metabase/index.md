@@ -47,7 +47,7 @@ with none of the work or hidden costs that come with self-hosting.
 ::::{grid}
 
 :::{grid-item-card} Tutorial: Visualize data
-:link: integrations-metabase
+:link: metabase-tutorial
 :link-type: ref
 Visualize data with CrateDB and Metabase.
 :::
@@ -69,7 +69,7 @@ A fully working demo of Metabase connected to CrateDB.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-learn
+Tutorial <tutorial>
 :::
 
 ```{seealso}

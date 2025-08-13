@@ -374,7 +374,7 @@ and how they can be customized to specific needs, using plugins for CrateDB.
 
 options
 analyzer
-learn
+Tutorial <tutorial>
 :::
 
 
