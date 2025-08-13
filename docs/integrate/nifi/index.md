@@ -1,5 +1,5 @@
 (apache-nifi)=
-# Apache NiFi
+# NiFi
 
 ```{div} .float-right
 [![Apache NiFi logo](https://nifi.apache.org/images/apache-nifi-drop-logo.svg){height=60px loading=lazy}][Apache NiFi]

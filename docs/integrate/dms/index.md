@@ -1,6 +1,6 @@
 (aws-dms)=
 (cdc-dms)=
-# AWS Database Migration Service
+# DMS (AWS Database Migration Service)
 
 :::{include} /_include/links.md
 :::

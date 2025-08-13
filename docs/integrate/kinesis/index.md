@@ -1,5 +1,5 @@
 (aws-kinesis)=
-# Amazon Kinesis
+# Kinesis
 
 :::{include} /_include/links.md
 :::

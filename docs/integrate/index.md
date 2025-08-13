@@ -16,16 +16,7 @@ Please also visit the [Overview of CrateDB integration tutorials].
 :::{toctree}
 :maxdepth: 1
 
-apache-airflow/index
-apache-flink/index
-apache-hop/index
-apache-iceberg/index
-apache-kafka/index
-apache-nifi/index
-apache-superset/index
-aws-dynamodb/index
-aws-kinesis/index
-aws-dms/index
+airflow/index
 aws-lambda/index
 azure-functions/index
 cluvio/index
@@ -34,11 +25,18 @@ dbeaver/index
 dbt/index
 debezium/index
 django/index
+dms/index
+dynamodb/index
 estuary/index
 explo/index
+flink/index
 gradio/index
 grafana/index
+hop/index
+iceberg/index
 influxdb/index
+kafka/index
+kinesis/index
 kestra/index
 langchain/index
 llamaindex/index
@@ -48,6 +46,7 @@ metabase/index
 mongodb/index
 mysql/index
 n8n/index
+nifi/index
 node-red/index
 plotly/index
 Power BI <powerbi/index>
@@ -58,6 +57,7 @@ risingwave/index
 sql-server/index
 streamlit/index
 streamsets/index
+superset/index
 tableau/index
 telegraf/index
 :::

@@ -2,7 +2,7 @@
 (preset)=
 (superset)=
 
-# Apache Superset / Preset
+# Superset / Preset
 
 ```{div} .float-right .text-right
 [![Apache Superset logo](https://cratedb.com/hs-fs/hubfs/Apache-Superset-Logo-392x140@2x.png?width=604&height=216&name=Apache-Superset-Logo-392x140@2x.png){height=60px loading=lazy}][Apache Superset]

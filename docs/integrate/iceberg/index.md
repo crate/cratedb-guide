@@ -1,5 +1,5 @@
 (apache-iceberg)=
-# Apache Iceberg
+# Iceberg
 
 ```{div} .float-right
 [![Apache Iceberg logo](https://iceberg.apache.org/assets/images/Iceberg-logo.svg){height=60px loading=lazy}][Apache Iceberg]

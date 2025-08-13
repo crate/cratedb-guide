@@ -1,7 +1,7 @@
 (airflow)=
 (apache-airflow)=
 (astronomer)=
-# Apache Airflow / Astronomer
+# Airflow / Astronomer
 
 :::{include} /_include/links.md
 :::

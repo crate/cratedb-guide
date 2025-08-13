@@ -1,5 +1,5 @@
 (apache-hop)=
-# Apache Hop
+# Hop
 
 ```{div} .float-right
 [![Apache Hop logo](https://hop.apache.org/img/hop-logo.svg){height=60px loading=lazy}][Apache Hop]
