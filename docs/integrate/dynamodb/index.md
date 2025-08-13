@@ -1,6 +1,6 @@
 (aws-dynamodb)=
 (cdc-dynamodb)=
-# Amazon DynamoDB
+# DynamoDB
 
 :::{include} /_include/links.md
 :::

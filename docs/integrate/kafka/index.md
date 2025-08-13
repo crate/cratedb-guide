@@ -1,5 +1,5 @@
 (apache-kafka)=
-# Apache Kafka
+# Kafka
 
 ```{div} .float-right .text-right
 [![Apache Kafka logo](https://kafka.apache.org/logos/kafka_logo--simple.png){height=60px loading=lazy}][Apache Kafka]

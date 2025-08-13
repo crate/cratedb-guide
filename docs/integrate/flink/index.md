@@ -1,6 +1,6 @@
 (apache-flink)=
 (flink)=
-# Apache Flink
+# Flink
 
 :::{include} /_include/links.md
 :::
