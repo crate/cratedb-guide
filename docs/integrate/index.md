@@ -17,6 +17,7 @@ Please also visit the [Overview of CrateDB integration tutorials].
 :maxdepth: 1
 
 airflow/index
+amqp/index
 aws-lambda/index
 azure-functions/index
 cluvio/index

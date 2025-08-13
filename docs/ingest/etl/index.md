@@ -132,6 +132,14 @@ Load data from database systems.
 
 
 ::::{grid-item-card} {material-outlined}`fast_forward;2em` Streams
+
+- {ref}`amqp`
+
+  The AMQP protocol is an open standard application layer protocol for
+  message-oriented middleware. The defining features of AMQP are message
+  orientation, queuing, routing (including point-to-point and
+  publish-and-subscribe), reliability, and security.
+
 - {ref}`kafka`
 
   Apache Kafka is an open-source distributed event streaming platform
