@@ -44,6 +44,7 @@ llamaindex/index
 marquez/index
 meltano/index
 metabase/index
+mindsdb/index
 mongodb/index
 mqtt/index
 mysql/index
