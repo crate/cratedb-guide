@@ -63,6 +63,8 @@ linkcheck_ignore += [
     r"https://renenyffenegger.ch",
     # Failed to establish a new connection: [Errno 111] Connection refused
     r"https://www.amqp.org/",
+    # "We are currently migrating Datatracker and Mail Archive to a new cloud provider."
+    r"https://datatracker.ietf.org",
 ]
 
 linkcheck_anchors_ignore_for_url += [
