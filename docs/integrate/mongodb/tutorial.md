@@ -1,4 +1,5 @@
 (mongodb-tutorial)=
+(migrating-mongodb)=
 # Import data from MongoDB
 
 In this quick tutorial, you'll use the [CrateDB Toolkit MongoDB I/O subsystem]
