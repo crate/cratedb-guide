@@ -12,7 +12,7 @@ Transfer data from InfluxDB bucket/measurement into CrateDB schema/table.
 ```shell
 ctk load table \
   "influxdb2://example:token@influxdb.example.org:8086/testdrive/demo" \
-  --cratedb-sqlalchemy-url="crate://user:password@cratedb.example.org:4200/testdrive/demo"
+  --cluster-url="crate://user:password@cratedb.example.org:4200/testdrive/demo"
 ```
 Query data in CrateDB.
 ```shell
@@ -25,7 +25,7 @@ Transfer data from InfluxDB line protocol file into CrateDB schema/table.
 ```shell
 ctk load table \
   "https://github.com/influxdata/influxdb2-sample-data/raw/master/air-sensor-data/air-sensor-data.lp" \
-  --cratedb-sqlalchemy-url="crate://user:password@cratedb.example.org:4200/testdrive/air-sensor-data"
+  --cluster-url="crate://user:password@cratedb.example.org:4200/testdrive/air-sensor-data"
 ```
 Query data in CrateDB.
 ```shell
@@ -100,7 +100,7 @@ doskey influx-write=influx write --bucket=testdrive --org=example --token=token 
 
 ## Usage
 
-Write a few samples worth of data to InfluxDB.
+Write a few sample records to InfluxDB.
 ```shell
 influx-write "demo,region=amazonas temperature=27.4,humidity=92.3,windspeed=4.5 1588363200"
 influx-write "demo,region=amazonas temperature=28.2,humidity=88.7,windspeed=4.7 1588549600"

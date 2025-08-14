@@ -4,25 +4,26 @@ The procedure for importing data from [InfluxDB Cloud] into [CrateDB Cloud] is
 similar, with a few small adjustments.
 
 First, helpful aliases again:
-:::{code} shell
+```shell
 alias ctk="docker run --rm -it ghcr.io/crate/cratedb-toolkit:latest ctk"
 alias crash="docker run --rm -it ghcr.io/crate/cratedb-toolkit:latest crash"
-:::
+```
 
-You will need your credentials for both CrateDB and InfluxDB. 
-These are, with examples:
+You will need your credentials for both CrateDB and InfluxDB.
+Use placeholders and/or environment variables (recommended) to avoid leaking
+secrets in shell history.
 
 :::{rubric} CrateDB Cloud
 :::
-- Host: `purple-shaak-ti.eks1.eu-west-1.aws.cratedb.net`
-- Username: `admin`
-- Password: `dZ..qB`
+- Host: `<CRATEDB_HOST>` (e.g., `cluster-id.eks1.eu-west-1.aws.cratedb.net`)
+- Username: `<CRATEDB_USER>` (e.g., `admin`)
+- Password: `<CRATEDB_PASSWORD>`
 
 :::{rubric} InfluxDB Cloud
 :::
-- Host: `eu-central-1-1.aws.cloud2.influxdata.com`
-- Organization ID: `9fafc869a91a3406`
-- All-Access API token: `T2..==`
+- Host: `<INFLUXDB_HOST>` (e.g., `eu-central-1-1.aws.cloud2.influxdata.com`)
+- Organization ID: `<INFLUXDB_ORG_ID>`
+- All-Access API token: `<INFLUXDB_TOKEN>`
 
 For CrateDB, the credentials are displayed at time of cluster creation.
 For InfluxDB, they can be found in the [cloud platform] itself.
@@ -32,8 +33,8 @@ CrateDB schema/table.
 ```shell
 export CRATEPW='dZ..qB'
 ctk load table \
-  "influxdb2://9f..06:T2..==@eu-central-1-1.aws.cloud2.influxdata.com/testdrive/demo?ssl=true" \
-  --cratedb-sqlalchemy-url="crate://admin:${CRATEPW}@purple-shaak-ti.eks1.eu-west-1.aws.cratedb.net:4200/testdrive/demo?ssl=true"
+  "influxdb2://${INFLUX_ORG}:${INFLUX_TOKEN}@${INFLUX_HOST}/testdrive/demo?ssl=true" \
+  --cluster-url="crate://${CRATEDB_USER}:${CRATEDB_PASSWORD}@${CRATEDB_HOST}:4200/testdrive/demo?ssl=true"
 ```
 
 :::{note}
@@ -44,7 +45,7 @@ when working on Cloud-to-Cloud transfers.
 Verify that relevant data has been transferred to CrateDB.
 ```shell
 export CRATEPW='dZ..qB'
-crash --hosts 'https://admin:${CRATEPW}@purple-shaak-ti.eks1.eu-west-1.aws.cratedb.net:4200' --command 'SELECT * FROM testdrive.demo;'
+crash --hosts "https://${CRATEDB_USER}:${CRATEDB_PASSWORD}@${CRATEDB_HOST}:4200" --command 'SELECT * FROM testdrive.demo;'
 ```
 
 

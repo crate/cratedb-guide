@@ -4,10 +4,10 @@ InfluxDB stores time series data in buckets and measurements. CrateDB stores
 data in schemas and tables.
 
 - A **bucket** is a named location with a retention policy where time series data is stored.
-- A **series** is a logical grouping of data defined by shared measurement, tag, and field.
+- A **series** is a logical grouping of data defined by a shared measurement and tag set (fields do not define series).
 - A **measurement** is similar to an SQL database table.
 - A **tag** is similar to an indexed column in an SQL database.
-- A **field** is similar to an un-indexed column in an SQL database.
+- A **field** is similar to a non-indexed column in an SQL database.
 - A **point** is similar to an SQL row.
 
 > via: [What are series and bucket in InfluxDB]
