@@ -57,16 +57,16 @@ To make the settings persistent, add them to your PowerShell profile (`$PROFILE`
 ```powershell
 function crash { docker run --rm -it --network=cratedb-demo ghcr.io/crate/cratedb-toolkit crash @args }
 function lorry { docker run --rm -i --network=cratedb-demo ghcr.io/daq-tools/lorrystream lorry @args }
-function mosquitto_pub { docker run --rm -i --network=cratedb-demo eclipse-mosquitto mosquitto_pub @args }
-function mosquitto_sub { docker run --rm -i --network=cratedb-demo eclipse-mosquitto mosquitto_sub @args }
+function mosquitto_pub { docker run --rm -i --network=cratedb-demo docker.io/eclipse-mosquitto mosquitto_pub @args }
+function mosquitto_sub { docker run --rm -i --network=cratedb-demo docker.io/eclipse-mosquitto mosquitto_sub @args }
 ```
 :::
 :::{tab-item} Windows Command
 ```shell
 doskey crash=docker run --rm -it --network=cratedb-demo ghcr.io/crate/cratedb-toolkit crash $*
 doskey lorry=docker run --rm -i --network=cratedb-demo ghcr.io/daq-tools/lorrystream lorry $*
-doskey mosquitto_pub=docker run --rm -i --network=cratedb-demo eclipse-mosquitto mosquitto_pub $*
-doskey mosquitto_sub=docker run --rm -i --network=cratedb-demo eclipse-mosquitto mosquitto_sub $*
+doskey mosquitto_pub=docker run --rm -i --network=cratedb-demo docker.io/eclipse-mosquitto mosquitto_pub $*
+doskey mosquitto_sub=docker run --rm -i --network=cratedb-demo docker.io/eclipse-mosquitto mosquitto_sub $*
 ```
 :::
 
