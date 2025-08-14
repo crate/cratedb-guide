@@ -94,6 +94,8 @@ into CrateDB (`cdc`), optionally using transformations.
 :maxdepth: 1
 :hidden:
 Tutorial <tutorial>
+cloud
+model
 :::
 
 
@@ -101,4 +103,12 @@ Tutorial <tutorial>
 **Blog:** [Announcing MongoDB CDC Integration (Public Preview) in CrateDB Cloud]
 :::
 
+:::{note}
+The MongoDB I/O subsystem is based on the [migr8] migration utility package. Please also
+check its documentation to learn about more of its capabilities, supporting
+you when working with MongoDB.
+:::
+
+
 [Announcing MongoDB CDC Integration (Public Preview) in CrateDB Cloud]: https://cratedb.com/blog/announcing-mongodb-cdc-integration-public-preview-in-cratedb-cloud
+[migr8]: https://cratedb-toolkit.readthedocs.io/io/mongodb/migr8.html
