@@ -62,4 +62,15 @@ Load InfluxDB collections into CrateDB.
 :maxdepth: 1
 :hidden:
 Tutorial <tutorial>
+cloud
+model
 :::
+
+
+:::{note}
+The InfluxDB I/O subsystem is based on the [influxio] package. See its
+documentation for additional capabilities when working with InfluxDB.
+:::
+
+
+[influxio]: https://influxio.readthedocs.io/
