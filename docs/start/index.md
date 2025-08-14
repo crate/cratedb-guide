@@ -7,6 +7,7 @@
 
 create
 connect
+../modelling/index
 schema
 Ingesting data <../ingest/index>
 query
