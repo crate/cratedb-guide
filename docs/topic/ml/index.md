@@ -347,6 +347,16 @@ solution.
 :::
 
 
+(ml-mindsdb)=
+### MindsDB
+
+:::{toctree}
+:maxdepth: 1
+
+../../integrate/mindsdb/index
+:::
+
+
 
 ```{toctree}
 :hidden:
