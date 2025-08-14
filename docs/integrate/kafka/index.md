@@ -1,4 +1,4 @@
-(apache-kafka)=
+(kafka)=
 # Kafka
 
 ```{div} .float-right .text-right

@@ -1,4 +1,4 @@
-(apache-iceberg)=
+(iceberg)=
 # Iceberg
 
 ```{div} .float-right

@@ -23,7 +23,7 @@ Native and specialized integration connectors for CrateDB, both managed and unma
 :gutter: 2
 
 ::::{grid-item-card} Amazon DynamoDB
-:link: aws-dynamodb
+:link: dynamodb
 :link-type: ref
 Load data from DynamoDB, a fully managed NoSQL database service provided by
 Amazon Web Services (AWS), which is designed for high-performance, scalable
@@ -31,7 +31,7 @@ applications and offers key-value and document data structures.
 ::::
 
 ::::{grid-item-card} Amazon Kinesis
-:link: aws-kinesis
+:link: kinesis
 :link-type: ref
 Load data from Amazon Kinesis Data Streams, a serverless streaming data service
 that simplifies the capture, processing, and storage of data streams at any scale.
@@ -56,7 +56,7 @@ both managed and unmanaged.
 :gutter: 2
 
 ::::{grid-item-card} AWS DMS
-:link: aws-dms
+:link: dms
 :link-type: ref
 Use AWS Database Migration Service (AWS DMS), a managed migration and replication
 service that helps move your database and analytics workloads between different

@@ -1,4 +1,3 @@
-(apache-flink)=
 (flink)=
 # Flink
 

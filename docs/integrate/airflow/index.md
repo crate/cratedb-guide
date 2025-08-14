@@ -1,5 +1,4 @@
 (airflow)=
-(apache-airflow)=
 (astronomer)=
 # Airflow / Astronomer
 

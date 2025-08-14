@@ -1,4 +1,4 @@
-(aws-kinesis)=
+(kinesis)=
 # Kinesis
 
 :::{include} /_include/links.md
@@ -36,7 +36,7 @@ records.
 
 :::{rubric} Related
 :::
-- {ref}`aws-dynamodb`
+- {ref}`dynamodb`
 - [Amazon DynamoDB Streams]
 ::::
 

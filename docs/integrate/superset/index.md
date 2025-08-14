@@ -1,7 +1,5 @@
-(apache-superset)=
-(preset)=
 (superset)=
-
+(preset)=
 # Superset / Preset
 
 ```{div} .float-right .text-right
