@@ -1,5 +1,4 @@
-(aws-dynamodb)=
-(cdc-dynamodb)=
+(dynamodb)=
 # DynamoDB
 
 :::{include} /_include/links.md
@@ -38,7 +37,7 @@ servers or infrastructure.
 :::{rubric} Related
 :::
 - [Amazon DynamoDB Streams]
-- {ref}`aws-kinesis`
+- {ref}`kinesis`
 - [Amazon Kinesis Data Streams]
 ::::
 

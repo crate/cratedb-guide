@@ -30,7 +30,7 @@ With dbt, anyone on your data team can safely contribute to production-grade dat
 pipelines.
 
 The idea is that data engineers make source data available to an environment where
-dbt projects run, for example with [Debezium](#debezium) or with [Airflow](#apache-airflow).
+dbt projects run, for example with {ref}`debezium` or with {ref}`airflow`.
 Afterwards, data analysts can run their dbt projects against this data to produce models
 (tables and views) that can be used with a number of [BI tools](#bi-tools).
 

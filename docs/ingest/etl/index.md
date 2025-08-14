@@ -27,28 +27,22 @@ outlines how to use them effectively. Additionally, see support for {ref}`cdc` s
 
 
 ::::{grid-item-card} {material-outlined}`air;2em` Dataflow / Pipeline / Code-first
-- {ref}`apache-airflow`
+- {ref}`airflow`
 
   Apache Airflow is an open-source software platform to programmatically author,
   schedule, and monitor workflows. Pipelines are defined in Python, allowing for
   dynamic pipeline generation and on-demand, code-driven pipeline invocation.
-
-- {ref}`apache-flink`
-
-  Apache Flink is a programming framework and distributed processing engine for
-  stateful computations over unbounded and bounded data streams, written in Java.
-
-- {ref}`apache-nifi`
-
-  Apache NiFi is a dataflow system based on the concepts of flow-based programming.
-  It supports powerful and scalable directed graphs of data routing, transformation,
-  and system mediation logic.
 
 - {ref}`dbt`
 
   dbt is an SQL-first platform for transforming data in data warehouses using
   Python and SQL. The data abstraction layer provided by dbt-core allows the
   decoupling of the models on which reports and dashboards rely from the source data.
+
+- {ref}`flink`
+
+  Apache Flink is a programming framework and distributed processing engine for
+  stateful computations over unbounded and bounded data streams, written in Java.
 
 - {ref}`kestra`
 
@@ -63,22 +57,28 @@ outlines how to use them effectively. Additionally, see support for {ref}`cdc` s
   the Singer specification. Singer is a composable open-source ETL framework and
   specification, including powerful data extraction and consolidation elements.
 
+- {ref}`nifi`
+
+  Apache NiFi is a dataflow system based on the concepts of flow-based programming.
+  It supports powerful and scalable directed graphs of data routing, transformation,
+  and system mediation logic.
+
 +++
 Use data pipeline programming frameworks and platforms.
 ::::
 
 
 ::::{grid-item-card} {material-outlined}`all_inclusive;2em` Low-code / No-code / Visual
-- {ref}`apache-hop`
-
-  Apache Hop aims to be the future of data integration. Visual development enables
-  developers to be more productive than they can be through code.
-
 - {ref}`estuary`
 
   Estuary provides real-time data integration and modern ETL and ELT data pipelines
   as a fully managed solution. Estuary Flow is a real-time, reliable change data
   capture (CDC) solution.
+
+- {ref}`hop`
+
+  Apache Hop aims to be the future of data integration. Visual development enables
+  developers to be more productive than they can be through code.
 
 - {ref}`n8n`
 
@@ -97,13 +97,13 @@ Use visual data flow and integration frameworks and platforms.
 
 
 ::::{grid-item-card} {material-outlined}`storage;2em` Databases
-- {ref}`aws-dms`
+- {ref}`dms`
 
   AWS DMS is a managed migration and replication service that helps move your
   database and analytics workloads between different kinds of databases quickly,
   securely, and with minimal downtime and zero data loss.
 
-- {ref}`aws-dynamodb`
+- {ref}`dynamodb`
 
   DynamoDB is a fully managed NoSQL database service provided by Amazon Web Services (AWS).
 
@@ -132,13 +132,13 @@ Load data from database systems.
 
 
 ::::{grid-item-card} {material-outlined}`fast_forward;2em` Streams
-- {ref}`apache-kafka`
+- {ref}`kafka`
 
   Apache Kafka is an open-source distributed event streaming platform
   for high-performance data pipelines, streaming analytics, data integration,
   and mission-critical applications.
 
-- {ref}`aws-kinesis`
+- {ref}`kinesis`
 
   Amazon Kinesis Data Streams is a serverless streaming data service that simplifies
   the capture, processing, and storage of data streams at any scale, such as
@@ -186,7 +186,7 @@ Use serverless compute units for custom import tasks.
 
 ::::{grid-item-card} {material-outlined}`dataset;2em` Datasets
 
-- {ref}`apache-iceberg`
+- {ref}`iceberg`
 
   Apache Iceberg is an open table format for analytic datasets.
 
@@ -202,25 +202,25 @@ Load data from datasets and open table formats.
 :::
 
 :::{div}
-- {ref}`apache-airflow`
-- {ref}`apache-flink`
-- {ref}`apache-hop`
-- {ref}`apache-iceberg`
-- {ref}`apache-kafka`
-- {ref}`apache-nifi`
-- {ref}`aws-dynamodb`
-- {ref}`aws-kinesis`
-- {ref}`aws-dms`
+- {ref}`airflow`
 - {ref}`aws-lambda`
 - {ref}`azure-functions`
 - {ref}`dbt`
+- {ref}`dms`
+- {ref}`dynamodb`
 - {ref}`estuary`
+- {ref}`flink`
+- {ref}`hop`
+- {ref}`iceberg`
 - {ref}`influxdb`
+- {ref}`kafka`
 - {ref}`kestra`
+- {ref}`kinesis`
 - {ref}`meltano`
 - {ref}`mongodb`
 - {ref}`mysql`
 - {ref}`n8n`
+- {ref}`nifi`
 - {ref}`node-red`
 - {ref}`risingwave`
 - {ref}`sql-server`

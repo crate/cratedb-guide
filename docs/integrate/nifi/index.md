@@ -1,4 +1,4 @@
-(apache-nifi)=
+(nifi)=
 # NiFi
 
 ```{div} .float-right

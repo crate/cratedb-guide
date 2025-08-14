@@ -1,4 +1,4 @@
-(apache-hop)=
+(hop)=
 # Hop
 
 ```{div} .float-right
