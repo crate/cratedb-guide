@@ -121,6 +121,10 @@ Use visual data flow and integration frameworks and platforms.
   MySQL and MariaDB are well-known free and open-source relational database management
   systems (RDBMS), available as standalone and managed variants.
 
+- {ref}`postgresql`
+
+  PostgreSQL is the world's most advanced open source relational database.
+
 - {ref}`sql-server`
 
   Microsoft SQL Server Integration Services (SSIS) is a component of the Microsoft SQL
@@ -237,6 +241,7 @@ Load data from datasets and open table formats.
 - {ref}`n8n`
 - {ref}`nifi`
 - {ref}`node-red`
+- {ref}`postgresql`
 - {ref}`risingwave`
 - {ref}`sql-server`
 - {ref}`streamsets`
