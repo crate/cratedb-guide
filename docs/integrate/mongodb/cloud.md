@@ -4,45 +4,44 @@ The procedure for importing data from [MongoDB Atlas] into [CrateDB Cloud] is
 similar, with a few small adjustments.
 
 First, helpful aliases again:
-:::{code} shell
-alias ctk="docker run --rm -it ghcr.io/crate/cratedb-toolkit ctk"
+```shell
 alias crash="docker run --rm -it ghcr.io/crate-workbench/cratedb-toolkit crash"
-:::
+alias ctk="docker run --rm -i ghcr.io/crate/cratedb-toolkit ctk"
+```
 
 You will need your credentials for both CrateDB and MongoDB. 
 These are, with examples:
 
 **CrateDB Cloud**
-* Host: ```gray-wicket.aks1.westeurope.azure.cratedb.net```
-* Username: ```admin```
-* Password: ```-9..nn```
+* Host: `<CRATEDB_CLOUD_HOST>`
+* Username: `<CRATEDB_USER>`
+* Password: `<CRATEDB_PASSWORD>`
 
 **MongoDB Atlas**
-  * Host: ```cluster0.nttj7.mongodb.net```
-  * User: ```admin```
-  * Password: ```a1..d1```
+  * Host: `<MONGODB_ATLAS_HOST>`
+  * User: `<MONGODB_USER>`
+  * Password: `<MONGODB_PASSWORD>`
 
 For CrateDB, the credentials are displayed at time of cluster creation.
 For MongoDB, they can be found in the [cloud platform] itself.
 
 Now, same as before, import data from MongoDB database/collection into 
 CrateDB schema/table.
-:::{code} shell
+```shell
 ctk load table \
   "mongodb+srv://admin:a..1@cluster0.nttj7.mongodb.net/testdrive/demo" \
   --cluster-url='crate://admin:-..n@gray-wicket.aks1.westeurope.azure.cratedb.net:4200/testdrive/demo?ssl=true'
-:::
+```
 
-::: {note}
-Note the **necessary** `ssl=true` query parameter at the end of both database connection URLs
-when working on Cloud-to-Cloud transfers.
+:::{note}
+CrateDB Cloud requires `ssl=true` in the cluster URL. For MongoDB Atlas SRV URIs
+(`mongodb+srv://`), TLS is implied and no extra parameter is needed.
 :::
 
 Verify that relevant data has been transferred to CrateDB.
-:::{code} shell
+```shell
 crash --hosts 'https://admin:-..n@gray-wicket.aks1.westeurope.azure.cratedb.net:4200' --command 'SELECT * FROM testdrive.demo;'
-:::
-
+```
 
 
 [cloud platform]: https://cloud.mongodb.com
