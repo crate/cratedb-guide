@@ -17,7 +17,7 @@ faster and more securely.
 
 :::{rubric} Synopsis
 :::
-Connect to the CrateDB database in MindsDB.
+Connect to CrateDB from MindsDB.
 ```postgresql
 CREATE DATABASE
     cratedb_datasource
@@ -33,7 +33,7 @@ WITH
 ```
 Use the established connection to query a database table.
 ```sql
-SELECT * FROM cratedb_datasource.demo;
+SELECT * FROM cratedb_datasource.demo LIMIT 10;
 ```
 
 :::{rubric} Learn
