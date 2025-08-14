@@ -61,6 +61,8 @@ linkcheck_ignore += [
     r"https://kubernetes.io/",
     # Connection to renenyffenegger.ch timed out.
     r"https://renenyffenegger.ch",
+    # Failed to establish a new connection: [Errno 111] Connection refused
+    r"https://www.amqp.org/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
