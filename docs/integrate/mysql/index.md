@@ -31,8 +31,8 @@ open-source MySQL project to create MariaDB.
 
 ```shell
 uvx 'cratedb-toolkit[io-ingestr]' load table \
-  "mysql://<username>:<password>@host:port/dbname?table=demo" \
-  --cluster-url="crate://crate:crate@localhost:4200/testdrive/mysql_demo"
+  "mysql://root:secret@localhost:3306/?table=dbname.tablename" \
+  --cluster-url="crate://crate:crate@localhost:4200/doc/mysql_demo"
 ```
 
 :::{rubric} Learn
@@ -40,16 +40,16 @@ uvx 'cratedb-toolkit[io-ingestr]' load table \
 
 ::::{grid}
 
-:::{grid-item-card} Ingestr Table Loader
-:link: https://cratedb-toolkit.readthedocs.io/io/ingestr/#mysql-to-cratedb
-:link-type: url
-Load MySQL table into CrateDB.
+:::{grid-item-card} Tutorial: Use CrateDB Toolkit
+:link: mysql-tutorial
+:link-type: ref
+Load data from MySQL into CrateDB using CrateDB Toolkit.
 :::
 
-:::{grid-item-card} Export/Import using CSV
+:::{grid-item-card} Tutorial: Use SQL and CSV
 :link: mysql-import-csv
 :link-type: ref
-Manually export CSV from MySQL, and import into CrateDB.
+Manually export CSV from MySQL, and import into CrateDB, all using SQL.
 :::
 
 ::::
@@ -58,7 +58,8 @@ Manually export CSV from MySQL, and import into CrateDB.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-import-csv
+Tutorial <tutorial>
+Use CSV <import-csv>
 :::
 
 
