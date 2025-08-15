@@ -67,26 +67,26 @@ doskey mongosh=docker run --rm -it --network=cratedb-demo docker.io/mongo mongos
 
 Insert a record into a MongoDB collection; you can repeat this step as needed.
 ```shell
-mongosh --host mongodb --eval 'db.testdrive.insert({"temperature": 42.84, "humidity": 83.1})'
+mongosh --host mongodb --db test --eval 'db.demo.insert({"temperature": 42.84, "humidity": 83.1})'
 ```
 
 Invoke the data transfer pipeline.
 ```shell
 ctk load table \
-  "mongodb://mongodb/test/testdrive" \
-  --cluster-url="crate://cratedb/doc/testdrive"
+  "mongodb://mongodb/test/demo" \
+  --cluster-url="crate://cratedb/doc/mongodb_demo"
 ```
 
 Inspect data stored in CrateDB.
 ```shell
-crash --hosts cratedb -c "SELECT * FROM doc.testdrive"
+crash --hosts cratedb -c "SELECT * FROM doc.mongodb_demo"
 ```
 
 
 :::{tip}
 To bulk import example data into the same database and collection used above:
 ```shell
-mongoimport --db testdrive --collection demo --file demodata.json --jsonArray
+mongoimport --db test --collection demo --file demodata.json --jsonArray
 ```
 Note: `mongoimport` is part of the [MongoDB Database tools].
 :::
