@@ -1,6 +1,7 @@
+(influxdb-data-model)=
 # Data Model
 
-InfluxDB stores time series data in buckets and measurements. CrateDB stores
+InfluxDB stores time-series data in buckets and measurements; CrateDB stores
 data in schemas and tables.
 
 - A **bucket** is a named location with a retention policy where time series data is stored.
@@ -10,7 +11,7 @@ data in schemas and tables.
 - A **field** is similar to a non-indexed column in an SQL database.
 - A **point** is similar to an SQL row.
 
-> via: [What are series and bucket in InfluxDB]
+> Source: [What are series and bucket in InfluxDB]
 
 
 [What are series and bucket in InfluxDB]: https://stackoverflow.com/questions/58190272/what-are-series-and-bucket-in-influxdb/69951376#69951376
