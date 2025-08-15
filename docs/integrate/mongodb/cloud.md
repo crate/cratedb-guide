@@ -1,15 +1,16 @@
 # Cloud to Cloud
 
 The procedure for importing data from [MongoDB Atlas] into [CrateDB Cloud] is
-similar, with a few small adjustments.
+similar like the {ref}`standalone variant <mongodb-tutorial>`, with a few small
+adjustments.
 
-First, helpful aliases again:
+First, helpful aliases:
 ```shell
 alias crash="docker run --rm -it ghcr.io/crate-workbench/cratedb-toolkit crash"
 alias ctk="docker run --rm -i ghcr.io/crate/cratedb-toolkit ctk"
 ```
 
-You will need your credentials for both CrateDB and MongoDB. 
+You will need credentials for both CrateDB and MongoDB.
 These are, with examples:
 
 **CrateDB Cloud**

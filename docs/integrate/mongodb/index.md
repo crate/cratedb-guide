@@ -104,7 +104,7 @@ model
 :::
 
 :::{note}
-The MongoDB I/O subsystem is based on the [migr8] migration utility package. Consult its
+The MongoDB I/O component is based on the [migr8] migration utility package. Consult its
 documentation for advanced capabilities when working with MongoDB.
 :::
 
