@@ -1,15 +1,16 @@
 # Cloud to Cloud
 
 The procedure for importing data from [InfluxDB Cloud] into [CrateDB Cloud] is
-similar, with a few small adjustments.
+similar like the {ref}`standalone variant <influxdb-tutorial>`, with a few small
+adjustments.
 
-First, helpful aliases again:
+First, helpful aliases:
 ```shell
 alias ctk="docker run --rm -it ghcr.io/crate/cratedb-toolkit:latest ctk"
 alias crash="docker run --rm -it ghcr.io/crate/cratedb-toolkit:latest crash"
 ```
 
-You will need your credentials for both CrateDB and InfluxDB.
+You will need credentials for both CrateDB and InfluxDB.
 Use placeholders and/or environment variables (recommended) to avoid leaking
 secrets in shell history.
 

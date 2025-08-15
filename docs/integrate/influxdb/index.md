@@ -30,7 +30,7 @@ fast query response times to build user interfaces, monitoring, and automation s
 ```shell
 ctk load table \
   "influxdb2://example:token@influxdb.example.org:8086/testdrive/demo" \
-  --cratedb-sqlalchemy-url="crate://user:password@cratedb.example.org:4200/testdrive/demo"
+  --cluster-url="crate://user:password@cratedb.example.org:4200/testdrive/demo"
 ```
 
 That's the blueprint for the InfluxDB URI:
