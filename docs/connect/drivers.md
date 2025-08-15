@@ -175,7 +175,8 @@ designed with fibers and concurrency in mind.
 [aiopg](https://github.com/aio-libs/aiopg)
 ```
 ```{sd-item}
-For connecting to CrateDB from Python, supporting Python's `asyncio` (PEP-3156/tulip) framework.
+For connecting to CrateDB from Python, supporting Python's async implementations
+using the PEP-3156/tulip framework.
 ```
 ```{sd-item}
 [![](https://img.shields.io/github/v/tag/aio-libs/aiopg?label=latest)](https://github.com/aio-libs/aiopg)
@@ -190,7 +191,7 @@ For connecting to CrateDB from Python, supporting Python's `asyncio` (PEP-3156/t
 [asyncpg](https://github.com/MagicStack/asyncpg)
 ```
 ```{sd-item}
-For connecting to CrateDB from Python, supporting Python's `asyncio`.
+For connecting to CrateDB from Python, supporting Python's async implementations.
 ```
 ```{sd-item}
 [![](https://img.shields.io/github/v/tag/MagicStack/asyncpg?label=latest)](https://github.com/MagicStack/asyncpg)
@@ -205,7 +206,7 @@ For connecting to CrateDB from Python, supporting Python's `asyncio`.
 [psycopg3](https://www.psycopg.org/psycopg3/docs/)
 ```
 ```{sd-item}
-For connecting to CrateDB from Python, supporting Python's `asyncio`.
+For connecting to CrateDB from Python, supporting Python's async implementations.
 ```
 ```{sd-item}
 [![](https://img.shields.io/github/v/tag/psycopg/psycopg?label=latest)](https://github.com/psycopg/psycopg)
@@ -332,8 +333,8 @@ For connecting to CrateDB from Python, using SQLAlchemy.
 [CrateDB Async Python driver](https://github.com/surister/cratedb-async)
 ```
 ```{sd-item}
-For connecting to CrateDB from Python, supporting Python’s `asyncio` by
-using the `httpx` HTTP client.
+For connecting to CrateDB from Python, supporting Python's async implementations
+by using the `httpx` HTTP client.
 ```
 ```{sd-item}
 [![](https://img.shields.io/github/v/tag/surister/cratedb-async?label=latest)](https://github.com/surister/cratedb-async)
