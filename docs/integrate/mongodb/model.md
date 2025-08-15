@@ -1,7 +1,7 @@
 # MongoDB's data model
 
 MongoDB stores data in collections and documents. CrateDB stores
-data in schemas and tables.
+data in tables and rows.
 
 - A **database** in MongoDB is a physical container for collections, roughly
   corresponding to a schema in CrateDB, which groups tables together.
