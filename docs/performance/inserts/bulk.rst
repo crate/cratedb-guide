@@ -46,7 +46,7 @@ The rest of this document goes into more detail.
 
     :ref:`Best practices: Migrating from MySQL <migrating-mysql>`
 
-    :ref:`Best practices: Migrating from MongoDB <migrating-mongodb>`
+    :ref:`Best practices: Migrating from MongoDB <mongodb>`
 
 
 .. _bulk-configure-tables:
