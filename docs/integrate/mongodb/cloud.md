@@ -1,7 +1,7 @@
 # Cloud to Cloud
 
 The procedure for importing data from [MongoDB Atlas] into [CrateDB Cloud] is
-similar like the {ref}`standalone variant <mongodb-tutorial>`, with a few small
+similar to the {ref}`standalone variant <mongodb-tutorial>`, with a few small
 adjustments.
 
 First, helpful aliases:
@@ -19,9 +19,9 @@ These are, with examples:
 * Password: `<CRATEDB_PASSWORD>`
 
 **MongoDB Atlas**
-  * Host: `<MONGODB_ATLAS_HOST>`
-  * User: `<MONGODB_USER>`
-  * Password: `<MONGODB_PASSWORD>`
+* Host: `<MONGODB_ATLAS_HOST>`
+* User: `<MONGODB_USER>`
+* Password: `<MONGODB_PASSWORD>`
 
 For CrateDB, the credentials are displayed at time of cluster creation.
 For MongoDB, they can be found in the [cloud platform] itself.
