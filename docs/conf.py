@@ -65,6 +65,8 @@ linkcheck_ignore += [
     r"https://www.amqp.org/",
     # "We are currently migrating Datatracker and Mail Archive to a new cloud provider."
     r"https://datatracker.ietf.org",
+    # 403 Client Error: Forbidden
+    r"https://www.sqlalchemy.org/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
