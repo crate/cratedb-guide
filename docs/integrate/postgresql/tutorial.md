@@ -20,7 +20,7 @@ docker network create cratedb-demo
 Start CrateDB.
 ```shell
 docker run --rm --name=cratedb --network=cratedb-demo \
-  --publish=4200:4200 --publish=5432:5432 --env=CRATE_HEAP_SIZE=2g \
+  --publish=4200:4200 --publish=5432:5432 \
   docker.io/crate -Cdiscovery.type=single-node
 ```
 
@@ -33,6 +33,10 @@ docker run --rm --name=postgresql --network=cratedb-demo \
 :::{note}
 Because CrateDB is configured to listen on port `5432` with its PostgreSQL
 interface, let's use a different port for PostgreSQL itself.
+:::
+:::{note}
+Using `POSTGRES_HOST_AUTH_METHOD=trust` disables password checks.
+Use it for local demos only.
 :::
 
 Prepare shortcuts for the CrateDB shell, CrateDB Toolkit, and the PostgreSQL client
