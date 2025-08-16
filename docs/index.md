@@ -307,9 +307,9 @@ Selected application domains where others are using CrateDB successfully.
 ```{toctree}
 :hidden:
 
+start/index
 install/index
 connect/index
-getting-started
 feature/index
 Ingestion <ingest/index>
 topic/index
