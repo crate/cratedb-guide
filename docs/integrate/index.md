@@ -52,6 +52,7 @@ n8n/index
 nifi/index
 node-red/index
 plotly/index
+postgresql/index
 Power BI <powerbi/index>
 prometheus/index
 pyviz/index
