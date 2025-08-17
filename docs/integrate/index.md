@@ -51,6 +51,7 @@ mysql/index
 n8n/index
 nifi/index
 node-red/index
+oracle/index
 plotly/index
 postgresql/index
 Power BI <powerbi/index>
