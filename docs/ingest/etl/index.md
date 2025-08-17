@@ -121,6 +121,11 @@ Use visual data flow and integration frameworks and platforms.
   MySQL and MariaDB are well-known free and open-source relational database management
   systems (RDBMS), available as standalone and managed variants.
 
+- {ref}`oracle`
+
+  Oracle Database (Oracle DBMS, or simply as Oracle) is a proprietary multi-model
+  database management system produced and marketed by Oracle Corporation.
+
 - {ref}`postgresql`
 
   PostgreSQL is the world's most advanced open source relational database.
@@ -241,6 +246,7 @@ Load data from datasets and open table formats.
 - {ref}`n8n`
 - {ref}`nifi`
 - {ref}`node-red`
+- {ref}`oracle`
 - {ref}`postgresql`
 - {ref}`risingwave`
 - {ref}`sql-server`
