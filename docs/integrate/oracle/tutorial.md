@@ -40,24 +40,24 @@ programs.
 :::{tab-item} Linux and macOS
 To make the settings persistent, add them to your shell profile (`~/.profile`).
 ```shell
-alias crash="docker run --rm -it --network=cratedb-demo ghcr.io/crate/cratedb-toolkit crash"
+alias crash="docker run --rm -it --network=cratedb-demo ghcr.io/crate/cratedb-toolkit-ingest crash"
 alias ctk-ingest="docker run --rm -i --network=cratedb-demo ghcr.io/crate/cratedb-toolkit-ingest ctk"
-alias sqlplus="docker run --rm -it --network=cratedb-demo --volume=$(PWD):/demo --env=ORACLE_PASSWORD=secret --entrypoint= docker.io/gvenzl/oracle-free:23-slim sqlplus"
+alias sqlplus="docker run --rm -it --network=cratedb-demo --volume=$(PWD):/demo --env=ORACLE_PASSWORD=secret --entrypoint=sqlplus docker.io/gvenzl/oracle-free:23-slim"
 ```
 :::
 :::{tab-item} Windows PowerShell
 To make the settings persistent, add them to your PowerShell profile (`$PROFILE`).
 ```powershell
-function crash { docker run --rm -it --network=cratedb-demo ghcr.io/crate/cratedb-toolkit crash @args }
+function crash { docker run --rm -it --network=cratedb-demo ghcr.io/crate/cratedb-toolkit-ingest crash @args }
 function ctk-ingest { docker run --rm -i --network=cratedb-demo ghcr.io/crate/cratedb-toolkit-ingest ctk @args }
-function sqlplus { docker run --rm -it --network=cratedb-demo --volume=${PWD}:/demo --env=ORACLE_PASSWORD=secret --entrypoint= docker.io/gvenzl/oracle-free:23-slim sqlplus @args }
+function sqlplus { docker run --rm -it --network=cratedb-demo --volume=${PWD}:/demo --env=ORACLE_PASSWORD=secret --entrypoint=sqlplus docker.io/gvenzl/oracle-free:23-slim @args }
 ```
 :::
 :::{tab-item} Windows Command
 ```shell
-doskey crash=docker run --rm -it --network=cratedb-demo ghcr.io/crate/cratedb-toolkit crash $*
+doskey crash=docker run --rm -it --network=cratedb-demo ghcr.io/crate/cratedb-toolkit-ingest crash $*
 doskey ctk-ingest=docker run --rm -i --network=cratedb-demo ghcr.io/crate/cratedb-toolkit-ingest ctk $*
-doskey sqlplus=docker run --rm -it --network=cratedb-demo --volume=%cd%:/demo --env=ORACLE_PASSWORD=secret --entrypoint= docker.io/gvenzl/oracle-free:23-slim sqlplus $*
+doskey sqlplus=docker run --rm -it --network=cratedb-demo --volume=%cd%:/demo --env=ORACLE_PASSWORD=secret --entrypoint=sqlplus docker.io/gvenzl/oracle-free:23-slim $*
 ```
 :::
 
@@ -68,7 +68,7 @@ doskey sqlplus=docker run --rm -it --network=cratedb-demo --volume=%cd%:/demo --
 Write a few sample records to Oracle.
 ```shell
 cat >init.sql <<SQL
-CREATE TABLE IF NOT EXISTS demo (id LONG, temperature FLOAT, humidity FLOAT);
+CREATE TABLE IF NOT EXISTS demo (id NUMBER, temperature FLOAT, humidity FLOAT);
 INSERT INTO demo (id, temperature, humidity) VALUES (1, 42.84, 83.1);
 INSERT INTO demo (id, temperature, humidity) VALUES (2, 84.84, 56.99);
 SELECT * FROM demo;
@@ -76,13 +76,13 @@ exit;
 SQL
 ```
 ```shell
-sqlplus sys/secret@oracle as sysdba @/demo/init.sql
+sqlplus sys/secret@oracle/freepdb1 as sysdba @/demo/init.sql
 ```
 
 Invoke the data transfer pipeline.
 ```shell
 ctk-ingest load table \
-  "oracle://sys:secret@oracle:1521/?table=sys.demo&mode=SYSDBA" \
+  "oracle://sys:secret@oracle:1521/?service_name=freepdb1&table=sys.demo&mode=sysdba" \
   --cluster-url="crate://crate:crate@cratedb:4200/doc/oracle_demo"
 ```
 
