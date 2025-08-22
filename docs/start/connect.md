@@ -8,7 +8,7 @@ Once CrateDB is {ref}`installed and running <install>`, you can start to interac
 with the database for the first time.
 
 
-{#use-admin-ui}
+(use-admin-ui)=
 ## Admin UI
 :::{div}
 CrateDB ships with a browser-based administration interface called
@@ -29,11 +29,11 @@ When using CrateDB Cloud, the URL will look like
 
 :::{note}
 If you are running CrateDB on a remote machine, you will have to create
-a dedicated user account for accessing the Admin UI. See [](#create-user).
+a dedicated user account for accessing the Admin UI. See {ref}`create-user`.
 :::
 
 
-{#use-crash}
+(use-crash)=
 ## CrateDB Shell
 
 The CrateDB Shell, called `crash`, is an interactive command-line interface
@@ -43,8 +43,8 @@ about it, please refer to its documentation at {ref}`crate-crash:index`.
 ![image](https://cratedb.com/docs/crate/crash/en/latest/_images/query.png){width=320px}
 
 
-{#use-dive-in}
-{#use-start-building}
+(use-dive-in)=
+(use-start-building)=
 ## Adapters and drivers
 :::{div}
 - To learn how to connect to CrateDB using software drivers, see {ref}`connect`.
