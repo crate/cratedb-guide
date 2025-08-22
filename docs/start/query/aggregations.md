@@ -14,7 +14,7 @@ Whether you’re monitoring sensor networks, analyzing customer behavior, or pow
 | Columnar storage              | Reads only relevant columns for faster aggregations                     |
 | Real-time ingestion           | Query freshly ingested data without delay                               |
 | Aggregations on any data type | Structured, JSON, full-text, geospatial, or vector                      |
-| Smart indexing                | Automatic indexing of fields and user-defined indexes boost performance |
+| Smart indexing                | Built-in indexing plus user-defined indexes can boost performance       |
 
 
 
