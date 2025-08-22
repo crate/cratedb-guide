@@ -37,6 +37,7 @@ linkcheck_ignore += [
     r"https://www.baeldung.com/.*",
     # 404 Client Error: Not Found
     r"https://github.com/crate-workbench/cratedb-toolkit/actions/runs/.*",
+    r"https://github.com/crate/cratedb-toolkit/actions/runs/.*",
     # 403 Client Error: Forbidden for url
     r"https://www.datacamp.com/.*",
     # Read timed out. (read timeout=15)
