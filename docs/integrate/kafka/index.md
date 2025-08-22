@@ -12,7 +12,7 @@ description: >-
 <a href="https://github.com/crate/cratedb-examples/actions/workflows/framework-flink-kafka-java.yml" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/framework-flink-kafka-java.yml?branch=main&label=Apache%20Kafka,%20Apache%20Flink" loading="lazy" alt="CI status: Apache Kafka, Apache Flink"></a>
 <a href="https://github.com/crate/cratedb-examples/actions/workflows/application-ingestr.yml" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/application-ingestr.yml?branch=main&label=Ingestr%2BKafka" loading="lazy" alt="CI status: Apache Kafka, Apache Flink"></a>
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/application-ingestr.yml?branch=main&label=Ingestr%2BKafka" loading="lazy" alt="CI status: Ingestr + Kafka"></a>
 ```
 ```{div} .clearfix
 ```
@@ -39,7 +39,7 @@ Apache Kafka is a widely used open-source distributed event-store and streaming 
 ## Common Ingestion Options
 
 :::{important}
-The Apache Kafka PostgreSQL connector is 99% compatible with CrateDB. CrateDB does not support transactions, but this only becomes notable when either ingestion to CrateDB is failing or there is some other connection issue.&#x20;
+The Apache Kafka PostgreSQL connector is largely compatible with CrateDB. Note that CrateDB does not support transactions; this generally matters only during failures or connection issues that require retries or rollbacks.
 :::
 
 ### Kafka Connect → CrateDB (recommended for most)
