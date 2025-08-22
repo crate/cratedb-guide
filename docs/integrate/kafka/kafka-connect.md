@@ -1,5 +1,5 @@
 (kafka-connect)=
-# Data Ingestion Pipeline with Kafka and CrateDB
+# Using Confluent Kafka Connect
 
 This guide describes a dockerized procedure for integrating CrateDB with Kafka
 Connect. By following these steps, you will set up a pipeline to ingest data 
