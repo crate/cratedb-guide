@@ -7,10 +7,10 @@
 
 first-steps
 connect
-going-further
 query/index
-applications
 Ingesting data <../ingest/index>
+applications
+going-further
 ```
 
 

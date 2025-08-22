@@ -20,7 +20,7 @@ Whether you’re monitoring sensor networks, analyzing customer behavior, or pow
 
 ## Common Aggregation Patterns
 
-### **Count & Grouping**
+### Count & Grouping
 
 ```sql
 SELECT city, COUNT(*) AS trip_count
@@ -30,7 +30,7 @@ ORDER BY trip_count DESC
 LIMIT 10;
 ```
 
-### **Time-Based Aggregation**
+### Time-Based Aggregation
 
 ```sql
 SELECT DATE_TRUNC('day', timestamp) AS day, AVG(temperature) AS avg_temp
@@ -39,7 +39,7 @@ GROUP BY day
 ORDER BY day ASC;
 ```
 
-### **Statistical Summaries**
+### Statistical Summaries
 
 ```sql
 SELECT
@@ -51,7 +51,7 @@ FROM logs
 WHERE timestamp >= now() - INTERVAL '1 day';
 ```
 
-**Nested / Object Field Aggregation**
+### Nested / Object Field Aggregation
 
 ```sql
 SELECT payload['device']['os'], COUNT(*) AS count
@@ -63,7 +63,7 @@ GROUP BY payload['device']['os'];
 
 ## Real-World Examples
 
-### **Industrial IoT**
+### Industrial IoT
 
 Monitor and aggregate sensor readings from thousands of devices in real time.
 
@@ -74,7 +74,7 @@ WHERE timestamp >= now() - INTERVAL '1 hour'
 GROUP BY device_id;
 ```
 
-### **E-Commerce Analytics**
+### E-Commerce Analytics
 
 Aggregate customer orders across dimensions like product, region, or time.
 
@@ -87,7 +87,7 @@ ORDER BY units_sold DESC
 LIMIT 20;
 ```
 
-### **Fleet Monitoring**
+### Fleet Monitoring
 
 Aggregate location and status data of vehicles in motion.
 

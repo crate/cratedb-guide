@@ -14,9 +14,6 @@ This section gives you some guidelines on how to get started quickly with CrateD
 
 The fastest and easiest way to get started with CrateDB is by
 [creating a free CrateDB Cloud cluster][CrateDB Cloud Console].
-If you want to deploy CrateDB yourself, select the
-{ref}`on-premises <install>` or the {ref}`cloud-provider <install-cloud>`
-option. 
 
 ## 2. Take a starter tutorial
 

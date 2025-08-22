@@ -8,6 +8,7 @@ of the documentation portal.
 
 ::::{sd-table}
 :widths: 4 8
+:row-class: top-border
 
 :::{sd-row}
 ```{sd-item} **Topic**
