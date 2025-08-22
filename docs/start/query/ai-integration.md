@@ -7,13 +7,13 @@ Whether you're training models, running batch or real-time inference, or integra
 * High-ingestion performance for time-series or sensor data
 * Real-time queries across structured and semi-structured data
 * SQL-powered transformations and filtering
-* Native support for embeddings via **FLOAT\_VECTOR**
+* Native support for embeddings via **FLOAT\_VECTOR** data type
 
-{% hint style="info" %}
+:::{note}
 For more details on how CrateDB handles similarity search and embeddings, see the [Vector Search](project:#vector-search) use case.
-{% endhint %}
+:::
 
-## 1. **Why CrateDB for ML Use Cases?**
+## 1. Why CrateDB for ML Use Cases?
 
 | Feature                    | Benefit                                                                |
 | -------------------------- | ---------------------------------------------------------------------- |
@@ -24,9 +24,9 @@ For more details on how CrateDB handles similarity search and embeddings, see th
 | ML integration             | Use CrateDB as a feature store or inference backend                    |
 | Python & LangChain support | Easily connect to training and inference pipelines                     |
 
-## 2. **Common Machine Learning Patterns**
+## 2. Common Machine Learning Patterns
 
-### **Feature Engineering**
+### Feature Engineering
 
 Use SQL to build features dynamically from raw data.
 
@@ -39,7 +39,7 @@ FROM sessions
 GROUP BY user_id;
 ```
 
-### **Training Dataset Extraction**
+### Training Dataset Extraction
 
 Efficiently extract and filter relevant training data.
 
@@ -51,7 +51,7 @@ WHERE temperature > 80
   AND ts BETWEEN NOW() - INTERVAL '7 days' AND NOW();
 ```
 
-### **Store Embeddings**
+### Store Embeddings
 
 Save vector representations for documents or entities.
 
@@ -63,11 +63,11 @@ CREATE TABLE article_embeddings (
 );
 ```
 
-{% hint style="info" %}
+:::{note}
 CrateDB supports high-dimensional vectors with `FLOAT_VECTOR`. To query these vectors for similarity-based inference, see [Vector Search](project:#vector-search).
-{% endhint %}
+:::
 
-### **Use CrateDB as a Feature Store**
+### Use CrateDB as a Feature Store
 
 Centralize your features and use them in production models.
 
@@ -77,7 +77,7 @@ FROM user_features
 WHERE last_active > NOW() - INTERVAL '1 day';
 ```
 
-## 3. **When to Use CrateDB in ML Pipelines**
+## 3. When to Use CrateDB in ML Pipelines
 
 | Use Case            | CrateDB Role                                          |
 | ------------------- | ----------------------------------------------------- |
@@ -87,9 +87,9 @@ WHERE last_active > NOW() - INTERVAL '1 day';
 | Monitoring          | Track model performance, drift, or input quality      |
 | Data Collection     | Capture telemetry, events, logs, and raw user data    |
 
-## 4. **Architecture Examples**
+## 4. Architecture Examples
 
-### **Model Training Pipeline**
+### Model Training Pipeline
 
 ```text
 [ Ingestion (sensors, APIs) ]
@@ -103,7 +103,7 @@ WHERE last_active > NOW() - INTERVAL '1 day';
 [ Model Registry / Serving ]
 ```
 
-### **Real-Time Inference with Hybrid** Queries
+### Real-Time Inference with Hybrid Queries
 
 ```text
 [ CrateDB ]
@@ -116,7 +116,7 @@ WHERE last_active > NOW() - INTERVAL '1 day';
 [ Application Response ]
 ```
 
-## 5. **Performance Tips for ML Scenarios**
+## 5. Performance Tips for ML Scenarios
 
 | Tip                                | Benefit                                                     |
 | ---------------------------------- | ----------------------------------------------------------- |
@@ -126,7 +126,7 @@ WHERE last_active > NOW() - INTERVAL '1 day';
 | Use hybrid filters + vector search | Improves performance and precision                          |
 | Train offline, infer online        | CrateDB is ideal for live inference from pre-trained models |
 
-## 6. **Ecosystem & Integration**
+## 6. Ecosystem & Integration
 
 | Tool                 | Integration                                    |
 | -------------------- | ---------------------------------------------- |
@@ -136,7 +136,7 @@ WHERE last_active > NOW() - INTERVAL '1 day';
 | OpenAI, Cohere, etc. | Store and search their embeddings via SQL      |
 | Kafka                | Connect for real-time ingestion and prediction |
 
-## 7. **Related Features**
+## 7. Related Features
 
 | Feature             | Description                                 |
 | ------------------- | ------------------------------------------- |

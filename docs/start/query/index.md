@@ -7,7 +7,6 @@
 
 aggregations
 ad-hoc-queries
-search
 ai-integration
 ```
 

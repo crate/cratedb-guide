@@ -110,9 +110,9 @@ AND order_date >= '2025-07-01';
 ## 5. Performance Tips for Ad-hoc Queries
 
 | Tip                  | Description                                        |
-| -------------------- | -------------------------------------------------- |
+| -------------------- |----------------------------------------------------|
 | Use targeted filters | Narrow your search with `WHERE` clauses            |
-| Leverage indexes     | Fields are indexed by default—use them!            |
+| Leverage indexes     | Fields are indexed by default                      |
 | Avoid SELECT \*      | Select only the fields you need                    |
 | Profile queries      | Use `EXPLAIN` and `ANALYZE` to inspect performance |
 | Use time filters     | Especially on time-series or partitioned tables    |
@@ -130,7 +130,7 @@ CrateDB offers several interfaces for ad-hoc queries:
 Example via REST:
 
 ```bash
-curl -XPOST https://your.cratedb.cloud/_sql \
+curl -XPOST https://your.cratedb.cloud:4200/_sql \
   -H "Content-Type: application/json" \
   -d '{"stmt": "SELECT * FROM logs WHERE log_level = ? LIMIT 10", "args": ["error"]}'
 ```
