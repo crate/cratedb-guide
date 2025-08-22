@@ -47,12 +47,12 @@ docker compose up -d
 
 ## Provisioning CrateDB and Kafka
 
-* CrateDB Admin UI: http://localhost:4200
+* CrateDB Admin UI: `http://localhost:4200`
 * Kafka broker (inside-compose hostname): kafka:9092
 
 ### Create a demo table in CrateDB
 
-The easiest way to do this is through the CrateDB cloud UI at http://localhost:4200 and execute this using the console:
+The easiest way to do this is through the CrateDB cloud UI at `http://localhost:4200` and execute this using the console:
 
 ```sql
 CREATE TABLE IF NOT EXISTS sensor_readings (

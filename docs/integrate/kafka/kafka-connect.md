@@ -233,7 +233,7 @@ data transfer:
 Launch all the services defined in the `docker-compose.yml` file:
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 ## Verify the Running Containers
@@ -241,7 +241,7 @@ docker-compose up -d
 Ensure that all services are up and running by listing the active containers:
 
 ```bash
-docker-compose ps
+docker compose ps
 ```
 
 You should see the following containers:
