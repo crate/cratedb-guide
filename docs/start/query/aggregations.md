@@ -163,6 +163,7 @@ CrateDB supports a rich set of **SQL92-compliant** and extended functions for ag
 
 To learn about the full set of functions, please visit the reference
 documentation at {ref}`crate-reference:aggregation-functions`.
+See also {ref}`crate-reference:window-functions`.
 
 ## Visualization & BI Tools
 
@@ -172,6 +173,8 @@ CrateDB integrates seamlessly with:
 :Apache Superset: Explore multidimensional data visually
 :Tableau, Power BI, Metabase: Connect via PostgreSQL wire protocol
 
+These tools submit SQL queries to CrateDB, which returns pre-aggregate
+or real-time data efficiently.
 To learn about the full set of integrations, please visit the
 documentation at {ref}`bi` and {ref}`visualization`.
 

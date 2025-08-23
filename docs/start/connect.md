@@ -14,7 +14,7 @@ with the database for the first time.
 CrateDB ships with a browser-based administration interface called
 [Admin UI].
 :::
-It is enabled on each CrateDB node, you can use it to inspect and
+The Admin UI is enabled on each CrateDB node. You can use it to inspect and
 interact with the whole CrateDB cluster in various ways.
 
 If CrateDB is running on your workstation, access the Admin UI using
@@ -22,8 +22,7 @@ If CrateDB is running on your workstation, access the Admin UI using
 hostname CrateDB is running on.
 
 When using CrateDB Cloud, open the Admin UI from the Cloud Console
-and use the Admin UI link shown there (host:port 4200).
-The URL typically looks like
+using the link shown there (port 4200). The URL typically looks like
 `https://<cluster-name>.<region>.<provider>.cratedb.net:4200/`, e.g.
 `https://testdrive.aks1.westeurope.azure.cratedb.net:4200/`.
 
@@ -46,8 +45,7 @@ about it, please refer to its documentation at {ref}`crate-crash:index`.
 ![crash default screen after executing a query](https://cratedb.com/docs/crate/crash/en/latest/_images/query.png){width=320px}
 
 
-(use-dive-in)=
-(use-start-building)=
+(use-drivers)=
 ## Adapters and drivers
 :::{div}
 - To learn how to connect to CrateDB using software drivers, see {ref}`connect`.
