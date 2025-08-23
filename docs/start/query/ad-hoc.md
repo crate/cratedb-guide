@@ -229,16 +229,6 @@ curl -sSf -u USERNAME:PASSWORD -X POST https://your.cratedb.cloud:4200/_sql \
   -d '{"stmt": "SELECT * FROM logs WHERE log_level = ? LIMIT 10", "args": ["error"]}'
 ```
 
-## Performance Considerations
-
-| Tip                  | Description                                        |
-| -------------------- |----------------------------------------------------|
-| Use targeted filters | Narrow your search with `WHERE` clauses            |
-| Leverage indexes     | Fields are indexed by default                      |
-| Avoid SELECT \*      | Select only the fields you need                    |
-| Profile queries      | Use `EXPLAIN` and `ANALYZE` to inspect performance |
-| Use time filters     | Especially on time-series or partitioned tables    |
-
 
 ## Related features
 

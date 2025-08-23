@@ -50,6 +50,7 @@ aggregations
 ad-hoc
 ../../feature/search/index
 ai-integration
+Performance <performance>
 ```
 
 :::{seealso}
