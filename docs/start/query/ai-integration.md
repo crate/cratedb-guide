@@ -68,7 +68,7 @@ Whether you're training models, running batch or real-time inference, or integra
 **Feature:** Store and query [word embeddings] using [HNSW] nearest neighbor
 search through SQL. CrateDB supports high-dimensional vectors with `FLOAT_VECTOR`.
 To query these vectors for similarity-based inference, see
-[Vector Search](project:#vector-search) and the quick synopsis below.
+{ref}`Vector Search <vector-search>` and the quick synopsis below.
 
 ::::{grid} 2
 :padding: 0
@@ -158,7 +158,7 @@ Provision LLM using self-hosted model.
 :columns: 8
 ```python
 llm = Ollama(
-    base_url=os.getenv("OLLAMA_BASE_URL", "https://{podname}-11434.proxy.runpod.net/"),
+    base_url=os.getenv("OLLAMA_BASE_URL", "http://localhost:11434"),
     model="gemma3:1b",
     temperature=0.0,
     request_timeout=120.0,
@@ -174,7 +174,7 @@ Connect to CrateDB.
 :::{grid-item}
 :columns: 8
 ```python
-database = sa.create_engine(os.getenv("CRATEDB_SQLALCHEMY_URL", "crate://"))
+database = sa.create_engine(os.getenv("CRATEDB_SQLALCHEMY_URL", "crate://localhost:4200"))
 database.connect()
 ```
 :::
@@ -310,7 +310,7 @@ frameworks and libraries, see CrateDB's support for MLflow and PyCaret at
 
 ## Related features
 
-Learn more how to combine ML features with other major features of CrateDB. 
+Learn more about how to combine ML features with other major features of CrateDB.
 
 | Feature             | Description                                 | Documentation                          |
 | ------------------- | ------------------------------------------- |----------------------------------------|

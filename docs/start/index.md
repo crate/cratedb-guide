@@ -2,7 +2,10 @@
 (getting-started)=
 # Getting Started
 
-:::{rubric} Warm up
+Get up and running with CrateDB: install, connect, run your first queries,
+and explore key features.
+
+:::{rubric} Warm-up
 :::
 
 :::::{grid} 2 2 2 4
@@ -69,10 +72,10 @@
 :padding: 0
 :class-container: installation-grid
 
-::::{grid-item-card} Application Examples
+::::{grid-item-card} Sample Applications
 :link: example-applications
 :link-type: ref
-:link-alt: Application Examples
+:link-alt: Sample Applications
 :padding: 3
 :text-align: center
 :class-card: sd-pt-3

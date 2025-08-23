@@ -16,7 +16,7 @@ CrateDB is designed to deliver **high-performance aggregations** on massive volu
 
 Whether you’re monitoring sensor networks, analyzing customer behavior, or powering dashboards, CrateDB’s distributed engine, columnar storage, and native support for structured and semi-structured data make aggregations blazingly fast, even across billions of rows.
 
-:::{rubric} Benefits using CrateDB for aggregations
+:::{rubric} Benefits of using CrateDB for aggregations
 :::
 
 | Feature                       | Benefit                                                                 |
@@ -107,7 +107,7 @@ GROUP BY payload['device']['os'];
 ```
 
 ### Statistics
-Example using percentile.
+Example using PERCENTILE for tail latency.
 ```sql
 SELECT PERCENTILE(response_time, 0.95) AS p95
 FROM api_logs
