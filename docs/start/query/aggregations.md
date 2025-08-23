@@ -216,18 +216,6 @@ or real-time data efficiently.
 To learn about the full set of integrations, please visit the
 documentation at {ref}`bi` and {ref}`visualization`.
 
-## Performance Considerations
-
-| Optimization                   | Description                                                                             | Documentation                                                                                       |
-|--------------------------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| Use proper indexes             | Important for frequently grouped or filtered fields                                     |                                                                                                     |
-| Avoid SELECT \*                | Only query required columns                                                             |                                                                                                     |
-| Pre-aggregate                  | Use views for common queries                                                            | {ref}`crate-reference:ddl-views`                                                                    |
-| Use `DATE_BIN` or `DATE_TRUNC` | Bucket time for time-series data                                                        | [Optimizing storage for historic time-series data] <br> [Resampling time-series data with DATE_BIN] |
-| Sizing & sharding              | Choose partitioning and shard size wisely. (e.g., daily partitions for time-based data) | {ref}`sharding-partitioning` <br> {ref}`sharding-performance`                                       |
-
 
 [Hands-on: Aggregating and Grouping Data]: https://cratedb.com/academy/fundamentals/working-with-data-in-cratedb/hands-on-aggregating-and-grouping-data
-[Optimizing storage for historic time-series data]: https://community.cratedb.com/t/optimizing-storage-for-historic-time-series-data/762
 [Real-Time Analytics Primer]: https://cratedb.com/real-time-analytics/definition
-[Resampling time-series data with DATE_BIN]: https://community.cratedb.com/t/resampling-time-series-data-with-date-bin/1009
