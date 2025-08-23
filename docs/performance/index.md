@@ -1,4 +1,5 @@
 (performance)=
+(performance-guides)=
 # Performance Guides
 
 :::{div} sd-text-muted
@@ -15,13 +16,12 @@ Best practices and tips for sharding, scaling, and performance tuning.
 :maxdepth: 1
 
 Sharding <sharding>
-scaling
-storage
+Scaling <scaling>
+Storage <storage>
 ```
 +++
-About under- and over-allocation of shards vs. finding the right balance,
-optimizing for ingestion performance, memory capacity planning, and
-about limits and recommendations related to storage details.
+Guidance on balancing shard allocation, optimizing ingestion performance,
+planning memory capacity, and limits/recommendations related to storage.
 ::::
 
 ::::{grid-item-card} {material-outlined}`speed;2em` Performance Handbook
@@ -33,10 +33,9 @@ selects
 optimization
 ```
 +++
-Optimally design your SQL query statements for maximum performance and
-less resource consumption.
-When milliseconds matter, or otherwise a query using too many resources
-would set your cluster on fire.
+Design SQL statements for maximum performance and lower resource usage.
+Applicable when latency matters, or when a resource‑heavy query could
+overload your cluster.
 ::::
 
 :::::

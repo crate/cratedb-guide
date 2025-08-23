@@ -3,10 +3,10 @@
 # Administration
 
 :::{div} sd-text-muted
-CrateDB database cluster administration best practices.
+Best practices for administering CrateDB database clusters.
 :::
 
-:::::{grid} 1 3 3 3
+:::::{grid} 1 2 3 3
 :margin: 4 4 0 0
 :padding: 0
 :gutter: 2
