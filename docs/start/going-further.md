@@ -78,8 +78,9 @@ Dive deeper into clustering concepts, reference architectures, installation, dep
 :::
 
 :::{sd-row}
-```{sd-item} Sample applications
+```{sd-item}
 :class: sd-font-weight-bolder
+{ref}`Sample applications <example-applications>`
 ```
 ```{sd-item}
 Explore ready-to-run sample projects that demonstrate how to build real-world solutions using CrateDB.

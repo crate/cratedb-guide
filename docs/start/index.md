@@ -106,7 +106,7 @@ first-steps
 connect
 query/index
 Ingesting data <../ingest/index>
-applications
+application/index
 going-further
 ```
 
