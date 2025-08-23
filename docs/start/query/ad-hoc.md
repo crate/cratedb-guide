@@ -102,7 +102,9 @@ LIMIT 50;
 ### Explore Nested JSON
 
 ```sql
-SELECT payload['device']['os'], COUNT(*) AS count
+SELECT
+  payload['device']['os'],
+  COUNT(*) AS count
 FROM events
 GROUP BY payload['device']['os'];
 ```
@@ -112,7 +114,10 @@ GROUP BY payload['device']['os'];
 ```sql
 SELECT id, latitude, longitude
 FROM vehicles
-WHERE within(geo_point(latitude, longitude), geo_polygon([...]));
+WHERE within(
+  location,
+  'POLYGON ((-73.97 40.78, -73.95 40.78, -73.95 40.76, -73.97 40.76, -73.97 40.78))'
+);
 ```
 
 ### Time-bound Query
@@ -129,7 +134,7 @@ WHERE timestamp > now() - INTERVAL '15 minutes';
 SELECT o.order_id, c.name, o.total
 FROM orders o
 JOIN customers c ON o.customer_id = c.id
-WHERE o.order_date >= CURRENT_DATE - 7;
+WHERE o.order_date >= CURRENT_DATE - INTERVAL '7 days';
 ```
 
 ## Real-World Examples
