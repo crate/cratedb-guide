@@ -135,7 +135,7 @@ Aggregate customer orders across dimensions like product, region, or time.
 ```sql
 SELECT product_id, SUM(quantity) AS units_sold
 FROM orders
-WHERE order_date >= CURRENT_DATE - 30
+WHERE order_date >= CURRENT_DATE - INTERVAL '30 days'
 GROUP BY product_id
 ORDER BY units_sold DESC
 LIMIT 20;
