@@ -111,10 +111,9 @@ ORDER BY 1 DESC;
 :::::
 
 
-(aggregation)=
-(aggregations)=
 ## Aggregations
 Fast aggregations, even with complex queries.
+- {ref}`aggregations`
 - [Analyzing Device Readings with Metadata Integration]
 
 ## Bulk Operations
