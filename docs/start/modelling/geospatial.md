@@ -26,7 +26,7 @@ CREATE TABLE country (
    shape geo_shape INDEX USING "geohash" WITH (precision='100m'),
    capital text,
    capital_location geo_point
-) 
+);
 ```
 
 * Use `GEO_SHAPE` to define the border.
@@ -34,15 +34,14 @@ CREATE TABLE country (
 
 ## Insert rows
 
-We can populate the table with Austria:
+We can populate the table with the coordinate shape of Vienna/Austria:
 
-```sql
+```psql
 INSERT INTO country (name, country_code, shape, capital, capital_location)
 VALUES (
   'Austria',
   'at',
-  
-  ##{type='Polygon', coordinates=[
+  {type='Polygon', coordinates=[
         [[16.979667, 48.123497], [16.903754, 47.714866],
         [16.340584, 47.712902], [16.534268, 47.496171],
         [16.202298, 46.852386], [16.011664, 46.683611],
