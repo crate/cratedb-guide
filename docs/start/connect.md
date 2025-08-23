@@ -5,7 +5,7 @@
 :::
 
 :::{div} sd-text-muted
-Start to interact with the database for the first time.
+Start interacting with the database for the first time.
 :::
 
 

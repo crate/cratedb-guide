@@ -21,21 +21,21 @@ Whether you are monitoring sensor networks, analyzing customer behavior, or powe
 :::{rubric} Use CrateDB when you need to
 :::
 
-* Aggregate over **high-ingestion** datasets (millions of records per hour)
-* Analyze **real-time** metrics across structured, JSON, or time-series fields
-* Build **dynamic dashboards** and run **interactive ad-hoc analytics**
-* Combine aggregations with **full-text**, **geospatial**, or **vector** filters
+- Aggregate over **high-ingestion** datasets (millions of records per hour)
+- Analyze **real-time** metrics across structured, JSON, or time-series fields
+- Build **dynamic dashboards** and run **interactive ad-hoc analytics**
+- Combine aggregations with **full-text**, **geospatial**, or **vector** filters
 
 :::{rubric} Benefits of using CrateDB for aggregations
 :::
 
-| Feature                       | Benefit                                                                 |
-| ----------------------------- | ----------------------------------------------------------------------- |
-| Distributed SQL engine        | Parallel execution across nodes ensures linear scalability              |
-| Columnar storage              | Reads only relevant columns for faster aggregations                     |
-| Real-time ingestion           | Query freshly ingested data without delay                               |
-| Aggregations on any data type | Structured, JSON, full-text, geospatial, or vector                      |
-| Smart indexing                | Built-in indexing plus user-defined indexes can boost performance       |
+| Feature                       | Benefit                                                                  |
+| ----------------------------- |--------------------------------------------------------------------------|
+| Distributed SQL engine        | Parallel execution across nodes ensures linear scalability               |
+| Columnar storage              | Reads only relevant columns for faster aggregations                      |
+| Real-time ingestion           | Query freshly ingested data without delay                                |
+| Aggregations on any data type | Structured, JSON, full-text, geospatial, or vector                       |
+| Smart indexing                | Built-in indexing and configuration options that can boost performance   |
 
 ::::
 
@@ -70,10 +70,10 @@ Whether you are monitoring sensor networks, analyzing customer behavior, or powe
 
 CrateDB supports a rich set of **SQL92-compliant** and extended functions for aggregation, including:
 
-* `COUNT()`, `SUM()`, `AVG()`, `MIN()`, `MAX()`
-* `STDDEV()`, `PERCENTILE()`, `VARIANCE()`, `TOPK()`
-* `HYPERLOGLOG_DISTINCT()`
-* Windowed and conditional aggregations via `OVER(...)` and `FILTER (WHERE ...)` clauses
+- `COUNT()`, `SUM()`, `AVG()`, `MIN()`, `MAX()`
+- `STDDEV()`, `PERCENTILE()`, `VARIANCE()`, `TOPK()`
+- `HYPERLOGLOG_DISTINCT()`
+- Windowed and conditional aggregations via `OVER(...)` and `FILTER (WHERE ...)` clauses
 
 To learn about the full set of functions, please visit the reference
 documentation at {ref}`crate-reference:aggregation-functions`.
@@ -211,7 +211,7 @@ CrateDB integrates seamlessly with:
 :Apache Superset: Explore multidimensional data visually
 :Tableau, Power BI, Metabase: Connect via PostgreSQL wire protocol
 
-These tools submit SQL queries to CrateDB, which returns pre-aggregate
+These tools submit SQL queries to CrateDB, which returns pre-aggregated
 or real-time data efficiently.
 To learn about the full set of integrations, please visit the
 documentation at {ref}`bi` and {ref}`visualization`.

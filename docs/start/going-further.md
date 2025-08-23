@@ -93,7 +93,8 @@ Explore ready-to-run sample projects that demonstrate how to build real-world so
 {ref}`Database management <administration>`
 ```
 ```{sd-item}
-Learn to manage your cluster with ease: configuration, sizing, performance tuning, cost optimization, monitoring and alerting, automation and REST API.
+Learn to manage your cluster with ease: configuration, sizing, performance tuning,
+and cost optimization. Explore monitoring, alerting, and automation.
 ```
 :::
 
