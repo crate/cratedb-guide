@@ -4,7 +4,7 @@ CrateDB combines the flexibility of NoSQL document stores with the power of SQL.
 
 CrateDB’s support for dynamic objects, nested structures, and dot-notation querying brings the best of both relational and document-based data modeling—without leaving the SQL world.
 
-## 1. Object (JSON) Columns
+## Object (JSON) Columns
 
 CrateDB allows you to define **object columns** that can store JSON-style data structures.
 
@@ -32,7 +32,7 @@ This allows inserting flexible, nested JSON data into `payload`:
 }
 ```
 
-## 2. Column Policy: Strict vs Dynamic
+## Column Policy: Strict vs Dynamic
 
 You can control how CrateDB handles unexpected fields in an object column:
 
@@ -54,9 +54,9 @@ CREATE TABLE sensor_data (
 );
 ```
 
-## 3. Querying JSON Fields
+## Querying JSON Fields
 
-Use **dot notation** to access nested fields:
+Use **bracket notation** to access nested fields:
 
 ```sql
 SELECT payload['user']['name'], payload['device']['os']
@@ -76,7 +76,7 @@ WHERE payload['device']['os'] = 'Android';
 Dot-notation works for both explicitly and dynamically added fields.
 :::
 
-## 4. Querying DYNAMIC OBJECTs
+## Querying DYNAMIC OBJECTs
 
 To support querying DYNAMIC OBJECTs using SQL, where keys may not exist within an OBJECT, CrateDB provides the [error\_on\_unknown\_object\_key](https://cratedb.com/docs/crate/reference/en/latest/config/session.html#conf-session-error-on-unknown-object-key) session setting. It controls the behaviour when querying unknown object keys to dynamic objects.
 
@@ -100,7 +100,7 @@ cr> SELECT item['unknown'] FROM testdrive;
 SELECT 0 rows in set (0.051 sec)
 ```
 
-## 5. Arrays of Objects
+## Arrays of OBJECTs
 
 Store arrays of objects for multi-valued nested data:
 
@@ -132,7 +132,7 @@ FROM products
 WHERE specs['name'] = 'battery' AND specs['value'] = 'AA';
 ```
 
-## 6. Combining Structured & Semi-Structured Data
+## Combining Structured & Semi-Structured Data
 
 CrateDB supports **hybrid schemas**, mixing standard columns with JSON fields:
 
@@ -152,7 +152,7 @@ This allows you to:
 * Flexibly store structured or unstructured metadata
 * Add new fields on the fly without migrations
 
-## 7. Indexing Behavior
+## Indexing Behavior
 
 CrateDB **automatically indexes** object fields if:
 
@@ -181,7 +181,7 @@ data['some_field'] INDEX OFF
 Too many dynamic fields can lead to schema explosion. Use `STRICT` or `IGNORED` if needed.
 :::
 
-## 8. Aggregating JSON Fields
+## Aggregating JSON Fields
 
 CrateDB allows full SQL-style aggregations on nested fields:
 
@@ -193,7 +193,7 @@ WHERE payload['location'] = 'room1';
 
 CrateDB also supports **`GROUP BY`**, **`HAVING`**, and **window functions** on object fields.
 
-## 9. Use Cases for JSON Modeling
+## Use Cases for JSON Modeling
 
 | Use Case           | Description                                  |
 | ------------------ | -------------------------------------------- |
@@ -203,7 +203,7 @@ CrateDB also supports **`GROUP BY`**, **`HAVING`**, and **window functions** on 
 | User Profiles      | Custom settings, device info, preferences    |
 | Telemetry / Events | Event streams with evolving structure        |
 
-## 10. Best Practices
+## Best Practices
 
 | Area             | Recommendation                                                       |
 | ---------------- | -------------------------------------------------------------------- |
@@ -213,14 +213,14 @@ CrateDB also supports **`GROUP BY`**, **`HAVING`**, and **window functions** on 
 | Column Mixing    | Combine structured columns with JSON for hybrid models               |
 | Observability    | Monitor number of dynamic columns using `information_schema.columns` |
 
-## 11. Further Learning & Resources
+## Further Learning & Resources
 
 * CrateDB Docs – Object Columns
 * Working with JSON in CrateDB
 * CrateDB Academy – Modeling with JSON
 * Understanding Column Policies
 
-## 12. Summary
+## Summary
 
 CrateDB makes it easy to model **semi-structured JSON data** with full SQL support. Whether you're building a telemetry pipeline, an event store, or a product catalog, CrateDB offers the flexibility of a document store—while preserving the structure, indexing, and power of a relational engine.
 
