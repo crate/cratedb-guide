@@ -2,8 +2,10 @@
 (getting-started)=
 # Getting Started
 
-Get up and running with CrateDB: install, connect, run your first queries,
+:::{div} sd-text-muted
+Get up and running with CrateDB: Install, connect, run your first queries,
 and explore key features.
+:::
 
 :::{rubric} Warm-up
 :::

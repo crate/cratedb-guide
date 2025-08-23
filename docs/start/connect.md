@@ -4,8 +4,9 @@
 :::{include} /_include/links.md
 :::
 
-Once CrateDB is {ref}`installed and running <install>`, you can start to interact
-with the database for the first time.
+:::{div} sd-text-muted
+Start to interact with the database for the first time.
+:::
 
 
 (use-admin-ui)=
