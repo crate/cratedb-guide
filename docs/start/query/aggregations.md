@@ -2,13 +2,22 @@
 (aggregations)=
 # Aggregations
 
+:::::{grid}
+:padding: 0
+
+::::{grid-item}
+:class: rubric-slimmer
+:columns: auto 9 9 9
+
+:::{rubric} Introduction
+:::
+
 CrateDB is designed to deliver **high-performance aggregations** on massive volumes of data—**in real time** and using familiar SQL syntax.
 
 Whether you’re monitoring sensor networks, analyzing customer behavior, or powering dashboards, CrateDB’s distributed engine, columnar storage, and native support for structured and semi-structured data make aggregations blazingly fast, even across billions of rows.
 
-
-
-## Why Use CrateDB for Aggregations?
+:::{rubric} Benefits using CrateDB for aggregations
+:::
 
 | Feature                       | Benefit                                                                 |
 | ----------------------------- | ----------------------------------------------------------------------- |
@@ -18,7 +27,43 @@ Whether you’re monitoring sensor networks, analyzing customer behavior, or pow
 | Aggregations on any data type | Structured, JSON, full-text, geospatial, or vector                      |
 | Smart indexing                | Built-in indexing plus user-defined indexes can boost performance       |
 
+:::{rubric} Use CrateDB when you need to
+:::
 
+* Aggregate over **high-ingestion** datasets (millions of records per hour)
+* Analyze **real-time** metrics across structured, JSON, or time-series fields
+* Build **dynamic dashboards** and run **interactive ad-hoc analytics**
+* Combine aggregations with **full-text**, **geospatial**, or **vector** filters
+
+::::
+
+::::{grid-item}
+:class: rubric-slim
+:columns: auto 3 3 3
+
+:::{rubric} Reference documentation
+:::
+- {ref}`crate-reference:aggregation`
+
+:::{rubric} Integrations
+:::
+- {ref}`grafana`
+- {ref}`metabase`
+- {ref}`powerbi`
+- {ref}`superset`
+- {ref}`tableau`
+
+:::{rubric} See also
+:::
+- {ref}`analytics`
+- [Hands-on: Aggregating and Grouping Data]
+- [Real-Time Analytics Primer]
+::::
+
+:::::
+
+:::{rubric} Use cases
+:::
 
 ## Common Aggregation Patterns
 
@@ -61,6 +106,13 @@ FROM events
 GROUP BY payload['device']['os'];
 ```
 
+### Statistics
+Example using percentile.
+```sql
+SELECT PERCENTILE(response_time, 0.95) AS p95
+FROM api_logs
+WHERE endpoint = '/checkout';
+```
 
 
 ## Real-World Examples
@@ -100,66 +152,41 @@ WHERE updated_at >= now() - INTERVAL '10 minutes'
 GROUP BY status;
 ```
 
-
-
-## Performance Considerations
-
-| Optimization       | Description                                                                            |
-| ------------------ | -------------------------------------------------------------------------------------- |
-| Use proper indexes | On frequently grouped or filtered fields                                               |
-| Avoid SELECT \*    | Only query required columns                                                            |
-| Pre-aggregate      | Use views for common queries                                                           |
-| Use `DATE_TRUNC`   | To bucket time for time-series data                                                    |
-| Sizing & sharding  | Choose partitioning and shard size wisely (e.g., daily partitions for time-based data) |
-
-
-
-## Aggregation Functions Supported
+## Supported Aggregation Functions
 
 CrateDB supports a rich set of **SQL92-compliant** and extended functions for aggregation, including:
 
 * `COUNT()`, `SUM()`, `AVG()`, `MIN()`, `MAX()`
-* `STDDEV_POP()`, `VAR_POP()`, `PERCENTILE()`
-* `APPROX_COUNT_DISTINCT()`
-* **Conditional Aggregates**: `FILTER (WHERE ...)` syntax
-* **Windowed Aggregations**: via `OVER(...)` clauses
+* `STDDEV()`, `PERCENTILE()`, `VARIANCE()`, `TOPK()`
+* `HYPERLOGLOG_DISTINCT()`
+* Windowed and conditional aggregations via `OVER(...)` and `FILTER (WHERE ...)` clauses
 
-Example using percentile:
-
-```sql
-SELECT PERCENTILE(response_time, 0.95) AS p95
-FROM api_logs
-WHERE endpoint = '/checkout';
-```
-
-
+To learn about the full set of functions, please visit the reference
+documentation at {ref}`crate-reference:aggregation-functions`.
 
 ## Visualization & BI Tools
 
 CrateDB integrates seamlessly with:
 
-* **Grafana** → Build real-time dashboards with time-series aggregations
-* **Apache Superset** → Explore multidimensional data visually
-* **Tableau, Power BI, Metabase** → Connect via PostgreSQL wire protocol
+:Grafana: Build real-time dashboards with time-series aggregations
+:Apache Superset: Explore multidimensional data visually
+:Tableau, Power BI, Metabase: Connect via PostgreSQL wire protocol
 
-These tools push SQL queries to CrateDB, which returns pre-aggregated or real-time data efficiently.
+To learn about the full set of integrations, please visit the
+documentation at {ref}`bi` and {ref}`visualization`.
+
+## Performance Considerations
+
+| Optimization                   | Description                                                                             | Documentation                                                                                       |
+|--------------------------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| Use proper indexes             | Important for frequently grouped or filtered fields                                     |                                                                                                     |
+| Avoid SELECT \*                | Only query required columns                                                             |                                                                                                     |
+| Pre-aggregate                  | Use views for common queries                                                            | {ref}`crate-reference:ddl-views`                                                                    |
+| Use `DATE_BIN` or `DATE_TRUNC` | Bucket time for time-series data                                                        | [Optimizing storage for historic time-series data] <br> [Resampling time-series data with DATE_BIN] |
+| Sizing & sharding              | Choose partitioning and shard size wisely. (e.g., daily partitions for time-based data) | {ref}`sharding-partitioning` <br> {ref}`sharding-performance`                                       |
 
 
-
-## When to Use Aggregations in CrateDB
-
-Use CrateDB when you need to:
-
-* Aggregate over **high-ingestion** datasets (millions of records per hour)
-* Analyze **real-time** metrics across structured, JSON, or time-series fields
-* Build **dynamic dashboards** and run **interactive ad-hoc analytics**
-* Combine aggregations with **full-text**, **geospatial**, or **vector** filters
-
-
-
-## Learn More
-
-* CrateDB Docs – Aggregate Functions
-* Tutorial – Real-time analytics with CrateDB
-* Blog – Powering dashboards with aggregations
-* CrateDB Academy – Aggregations 101
+[Hands-on: Aggregating and Grouping Data]: https://cratedb.com/academy/fundamentals/working-with-data-in-cratedb/hands-on-aggregating-and-grouping-data
+[Optimizing storage for historic time-series data]: https://community.cratedb.com/t/optimizing-storage-for-historic-time-series-data/762
+[Real-Time Analytics Primer]: https://cratedb.com/real-time-analytics/definition
+[Resampling time-series data with DATE_BIN]: https://community.cratedb.com/t/resampling-time-series-data-with-date-bin/1009

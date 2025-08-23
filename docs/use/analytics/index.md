@@ -1,5 +1,5 @@
 (analytics)=
-# Raw-Data Analytics
+# Real-time raw-data analytics
 
 **CrateDB provides real-time analytics on raw data stored for the long term**
 
