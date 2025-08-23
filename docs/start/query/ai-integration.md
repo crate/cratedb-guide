@@ -1,3 +1,4 @@
+(ai-integration)=
 # AI integration
 
 :::::{grid}
