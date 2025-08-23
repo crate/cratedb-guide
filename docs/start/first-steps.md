@@ -7,7 +7,7 @@ description: >-
 # First steps with CrateDB
 
 :::{div} sd-text-muted
-This section gives you some guidelines on how to get started quickly with CrateDB.
+How to get started with CrateDB quickly.
 :::
 
 ## 1. Create your first cluster

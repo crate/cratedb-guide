@@ -2,6 +2,10 @@
 (query-capabilities)=
 # Query capabilities
 
+:::{div} sd-text-muted
+SQL is all you need.
+:::
+
 SQL is the most widely used language for querying data and is the natural
 choice for people in many roles working with data in databases.
 
