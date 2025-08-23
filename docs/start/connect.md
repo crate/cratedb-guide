@@ -15,17 +15,20 @@ CrateDB ships with a browser-based administration interface called
 [Admin UI].
 :::
 It is enabled on each CrateDB node, you can use it to inspect and
-interact with the whole CrateDB cluster in a number of ways.
+interact with the whole CrateDB cluster in various ways.
 
 If CrateDB is running on your workstation, access the Admin UI using
 `http://localhost:4200/`. Otherwise, replace `localhost` with the
 hostname CrateDB is running on.
 
-When using CrateDB Cloud, the URL will look like
+When using CrateDB Cloud, open the Admin UI from the Cloud Console
+and use the Admin UI link shown there (host:port 4200).
+The URL typically looks like
+`https://<cluster-name>.<region>.<provider>.cratedb.net:4200/`, e.g.
 `https://testdrive.aks1.westeurope.azure.cratedb.net:4200/`.
 
-![image](https://cratedb.com/docs/crate/admin-ui/en/latest/_images/console-query.png){width=320px}
-![image](/_assets/img/getting-started/first-use/admin-ui.png){width=320px}
+![Admin UI SQL console showing a sample SELECT statement](https://cratedb.com/docs/crate/admin-ui/en/latest/_images/console-query.png){width=320px}
+![Admin UI navigation and overview panel](/_assets/img/getting-started/first-use/admin-ui.png){width=320px}
 
 :::{note}
 If you are running CrateDB on a remote machine, you will have to create
@@ -40,7 +43,7 @@ The CrateDB Shell, called `crash`, is an interactive command-line interface
 (CLI) program for working with CrateDB on your favorite terminal. To learn more
 about it, please refer to its documentation at {ref}`crate-crash:index`.
 
-![image](https://cratedb.com/docs/crate/crash/en/latest/_images/query.png){width=320px}
+![crash default screen after executing a query](https://cratedb.com/docs/crate/crash/en/latest/_images/query.png){width=320px}
 
 
 (use-dive-in)=

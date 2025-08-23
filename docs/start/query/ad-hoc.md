@@ -200,13 +200,12 @@ curl -XPOST https://your.cratedb.cloud:4200/_sql \
 
 Learn more how to use ad-hoc queries optimally.
 
-| Feature              | Description                                    | Documentation                                                |
-| -------------------- | ---------------------------------------------- |--------------------------------------------------------------|
-| Dynamic schemas      | No need to predefine every field               | {ref}`object` <br> {ref}`crate-reference:data-types-objects` |
-| Object columns       | Flexible modeling of JSON data                 | -- "" --                                                     |
-| Intelligent indexing | Works out of the box for ad-hoc querying       | {ref}`crate-reference:fulltext-indices`                      |
-| Time-series support  | Perfect for time-bound diagnostics             | {ref}`timeseries`                                            |
-| Full-text & filter   | Combine keyword search with structured queries | {ref}`fts`                                                   |
+| Feature                               | Description                                                                          | Documentation                                                |
+|---------------------------------------|--------------------------------------------------------------------------------------|--------------------------------------------------------------|
+| Dynamic schemas & <br> object columns | Flexible modeling of semi-structured JSON data <br> No need to predefine every field | {ref}`object` <br> {ref}`crate-reference:data-types-objects` |
+| Intelligent indexing                  | Works out of the box for ad-hoc querying                                             | {ref}`crate-reference:fulltext-indices`                      |
+| Time-series support                   | Perfect for time-bound diagnostics                                                   | {ref}`timeseries`                                            |
+| Full-text & filter                    | Combine keyword search with structured queries                                       | {ref}`fts`                                                   |
 
 
 [Academy: Time Series Query Optimization]: https://cratedb.com/academy/time-series/time-series-data-manipulation-and-visualization/time-series-query-optimization

@@ -43,13 +43,13 @@ search and AI integration on large datasets at scale.
 {ref}`Drivers <connect>`
 ```
 ```{sd-item}
-Connect CrateDB to your applications using official drivers. Also explore CrateDB CLIs.
+Connect CrateDB to your applications using official drivers. Also explore CrateDB CLI tools.
 ```
 :::
 
 :::{sd-row}
 ```{sd-item}
-:class: sd-font-weight-bolder sd-text-foreground
+:class: sd-font-weight-bolder
 {ref}`Integrations <integrate>`
 ```
 ```{sd-item}
@@ -100,7 +100,7 @@ Learn to manage your cluster with ease: configuration, sizing, performance tunin
 :::{sd-row}
 ```{sd-item}
 :class: sd-font-weight-bolder
-[Support and learning](https://learn.cratedb.com/)
+[Support and learning ↗](https://learn.cratedb.com/)
 ```
 ```{sd-item}
 Get access to more resources to continue learning.

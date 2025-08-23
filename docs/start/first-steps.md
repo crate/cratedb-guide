@@ -17,8 +17,8 @@ The fastest and easiest way to get started with CrateDB is by
 
 ## 2. Take a starter tutorial
 
-Go through the interactive tutorials that best match your interests,
-or run them interactively from the CrateDB Cloud UI.
+Choose the interactive tutorials that match your interests,
+or run them directly in the CrateDB Cloud Console.
 
 * **Working with JSON payloads?** • Analyze **marketing data**. • {{ '{}(#objects-basics)'.format(tutorial) }}
 
@@ -42,12 +42,13 @@ or run them interactively from the CrateDB Cloud UI.
 * **Analyze Device Readings with Metadata Integration** • {{ '{}(#timeseries-objects)'.format(tutorial) }}
   
   In this tutorial, capture device metrics such as battery level, CPU usage,
-  and memory, then enrich your time-series data with metadata (JSON, text)
-  to enable more comprehensive analysis.
+  and memory usage, then enrich your time‑series data with JSON and text
+  metadata to enable more comprehensive analysis.
 
 **Congratulations!**\
-You’re now onboarded and ready to explore further. Check out the other sections in the menu to dive deeper into CrateDB’s capabilities.
-
+You’re now onboarded and ready to explore further. Check out the other sections
+in the menu to dive deeper into CrateDB’s capabilities.
+If you need assistance, also [check out our support plans].
 
 
 [check out our support plans]: https://cratedb.com/support/support-plans

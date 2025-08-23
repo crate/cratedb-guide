@@ -5,7 +5,7 @@
 SQL is the most widely used language for querying data and is the natural
 choice for people in many roles working with data in databases.
 
-CrateDB extends industry-standard SQL with functionalities to support its
+CrateDB extends industry-standard SQL with features to support its
 data types, data I/O procedures, and cluster management.
 
 
