@@ -1,6 +1,6 @@
-==================
-Insert Performance
-==================
+============
+Fast Inserts
+============
 
 A ``INSERT INTO`` statement is processed as follows:
 
