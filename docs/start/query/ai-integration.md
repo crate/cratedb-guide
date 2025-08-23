@@ -15,14 +15,14 @@ CrateDB is not just a real-time analytics database, it's a powerful platform to 
 
 Whether you're training models, running batch or real-time inference, or integrating with AI pipelines, CrateDB offers:
 
-* High ingestion performance for time-series or sensor data.
-* SQL-powered transformations and filtering.
-* Unified queries across structured and semi-structured data: \
+- High ingestion performance for time-series or sensor data.
+- SQL-powered transformations and filtering.
+- Unified queries across structured and semi-structured data: \
   Full-text, vector, and JSON.
-* Native support for embeddings via **FLOAT\_VECTOR** data type, \
+- Native support for embeddings via **FLOAT\_VECTOR** data type, \
   for conducting similarity searches in vector spaces (HNSW).
 
-:::{rubric} Benefits using CrateDB in ML Pipelines
+:::{rubric} Benefits of using CrateDB in ML pipelines
 :::
 
 | Use Case            | CrateDB Role                                          |
@@ -53,9 +53,9 @@ Whether you're training models, running batch or real-time inference, or integra
 
 :::{rubric} See also
 :::
-* [Blog: Vector support and KNN search]
-* [Tutorial: Text-to-SQL]
-* [Examples: ML]
+- [Blog: Vector support and KNN search]
+- [Tutorial: Text-to-SQL]
+- [Examples: ML]
 
 ::::
 
@@ -143,7 +143,7 @@ Provision LLM using OpenAI model.
 :columns: 8
 ```python
 llm = OpenAI(
-    model="gpt-4.1",
+    model=os.getenv("OPENAI_MODEL", "gpt-4.1"),
     temperature=0.0,
     api_key=os.getenv("OPENAI_API_KEY"),
 )
@@ -174,7 +174,7 @@ Connect to CrateDB.
 :::{grid-item}
 :columns: 8
 ```python
-database = sa.create_engine(os.getenv("CRATEDB_SQLALCHEMY_URL", "crate://localhost:4200"))
+database = sa.create_engine(os.getenv("CRATEDB_SQLALCHEMY_URL", "crate://crate@localhost:4200"))
 database.connect()
 ```
 :::
@@ -186,8 +186,8 @@ Invoke Text-to-SQL query.
 :::{grid-item}
 :columns: 8
 ```python
-sql_database = SQLDatabase(database)
-nlsql = NLSQLTableQueryEngine(sql_database, llm)
+sql_database = SQLDatabase(engine=database)
+nlsql = NLSQLTableQueryEngine(sql_database=sql_database, llm=llm)
 answer = nlsql.query("What is the average value for sensor 1?")
 ```
 :::
@@ -265,7 +265,7 @@ see also {ref}`mlflow` and {ref}`pycaret` for AutoML purposes.
 ```text
 [ Sensors, APIs ] (ingest)
      ↓
-[ CrateDB ] (real-time data lake)
+[ CrateDB ] (real-time analytics store)
      ↓
 [ Python ML* ] (model training)
      ↓

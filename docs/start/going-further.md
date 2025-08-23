@@ -73,7 +73,7 @@ its concepts and details.
 :class: sd-font-weight-bolder
 ```
 ```{sd-item}
-Dive deeper into clustering concepts, reference architectures, installation, deployment, migration and upgrading.
+Dive deeper into clustering concepts, reference architectures, installation, deployment, migration, and upgrades.
 ```
 :::
 

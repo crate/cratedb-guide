@@ -27,7 +27,7 @@ CrateDB is built to support highly dynamic, ad-hoc querying, even on large-scale
 :::{grid-item-card} Search
 :link: search-overview
 :link-type: ref
-Based on Apache Lucene, CrateDB offers native BM25 term search and vector search, all using SQL. By combining it, also using SQL, you can implement powerful single-query hybrid search.
+Based on Apache Lucene, CrateDB offers native BM25 term search and vector search, all using SQL. Combine both—still using SQL—to implement powerful single‑query hybrid search.
 :::
 
 :::{grid-item-card} AI integration

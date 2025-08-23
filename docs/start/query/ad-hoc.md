@@ -22,12 +22,12 @@ CrateDB is your go-to database for **fast, flexible, and reliable ad-hoc queryin
 
 Ad-hoc queries are **spontaneous, often one-off SQL queries** used for:
 
-* Troubleshooting
-* Exploratory analysis
-* Debugging systems
-* Investigating anomalies
-* Supporting customer questions
-* Generating quick reports
+- Troubleshooting
+- Exploratory analysis
+- Debugging systems
+- Investigating anomalies
+- Supporting customer questions
+- Generating quick reports
 
 They are unpredictable by nature—and CrateDB is designed to handle exactly that.
 
@@ -48,11 +48,11 @@ They are unpredictable by nature—and CrateDB is designed to handle exactly tha
 
 :::{rubric} When to Use CrateDB for Ad-hoc Queries
 :::
-* Explore **new patterns** in operational or business data
-* Run **troubleshooting queries** across complex systems
-* **Query fresh data instantly**, without waiting for batch jobs
-* Combine structured + JSON + full-text + spatial + vector data
-* Avoid maintaining rigid ETL pipelines or OLAP cubes
+- Explore **new patterns** in operational or business data
+- Run **troubleshooting queries** across complex systems
+- **Query fresh data instantly**, without waiting for batch jobs
+- Combine structured + JSON + full-text + spatial + vector data
+- Avoid maintaining rigid ETL pipelines or OLAP cubes
 
 
 ::::
@@ -171,16 +171,16 @@ AND order_date >= '2025-07-01';
 
 CrateDB offers several interfaces for ad-hoc queries:
 
-* **Admin UI Console** – Web-based SQL editor with result viewer
-* **PostgreSQL Clients** – psql, DBeaver, DataGrip, etc.
-* **REST API / HTTP Client** – Send ad-hoc queries over HTTP
-* **CrateDB Python Client** – Ideal for notebooks and automation
-* **Grafana / Superset** – Query builder UI and live dashboards
+- **{ref}`Admin UI Console <crate-admin-ui:index>`** – Web-based SQL editor with result viewer
+- **PostgreSQL Clients** – psql, DBeaver, DataGrip, etc.
+- **REST API / HTTP Client** – Send ad-hoc queries over HTTP
+- **{ref}`CrateDB Python Client <crate-python:index>`** – Ideal for notebooks and automation
+- **Grafana / Superset** – Query builder UI and live dashboards
 
 Example via REST:
 
 ```bash
-curl -XPOST https://your.cratedb.cloud:4200/_sql \
+curl -sSf -u USERNAME:PASSWORD -X POST https://your.cratedb.cloud:4200/_sql \
   -H "Content-Type: application/json" \
   -d '{"stmt": "SELECT * FROM logs WHERE log_level = ? LIMIT 10", "args": ["error"]}'
 ```
