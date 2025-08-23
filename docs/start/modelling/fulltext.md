@@ -2,7 +2,7 @@
 
 CrateDB features **native full‑text search** powered by **Apache Lucene** and Okapi BM25 ranking, fully accessible via SQL. You can blend this seamlessly with other data types—JSON, time‑series, geospatial, vectors and more—all in a single SQL query platform.
 
-## 1. Data Types & Indexing Strategy
+## Data Types & Indexing Strategy
 
 * By default, all text columns are indexed as `plain` (raw, unanalyzed)—efficient for equality search but not suitable for full‑text queries
 * To enable full‑text search, you must define a **FULLTEXT index** with an optional language **analyzer**, e.g.:
@@ -21,7 +21,7 @@ CREATE TABLE documents (
 INDEX ft_all USING FULLTEXT(title, body) WITH (analyzer = 'english');
 ```
 
-## 2. Index Design & Custom Analyzers
+## Index Design & Custom Analyzers
 
 | Component         | Purpose                                                                      |
 | ----------------- | ---------------------------------------------------------------------------- |
@@ -48,7 +48,7 @@ CREATE ANALYZER german_snowball
   WITH (language = 'german');
 ```
 
-## 3. Querying: MATCH Predicate & Scoring
+## Querying: MATCH Predicate & Scoring
 
 CrateDB uses the SQL `MATCH` predicate to run full‑text queries against full‑text indices. It optionally returns a relevance score `_score`, ranked via BM25.
 
@@ -100,7 +100,7 @@ WHERE MATCH((ft_en, ft_de), 'jupm OR verwrlost') USING best_fields WITH (fuzzine
 ORDER BY _score DESC;
 ```
 
-## 4. Use Cases & Integration
+## Use Cases & Integration
 
 CrateDB is ideal for searching **semi-structured large text data**—product catalogs, article archives, user-generated content, descriptions and logs.
 
@@ -119,13 +119,13 @@ WHERE
 
 This blend lets you query by text relevance, numeric filters, and spatial constraints, all in one.
 
-## 5. Architectural Strengths
+## Architectural Strengths
 
 * **Built on Lucene inverted index + BM25**, offering relevance ranking comparable to search engines.
 * **Scale horizontally across clusters**, while maintaining fast indexing and search even on high volume datasets.
 * **Integrated SQL interface**: eliminates need for separate search services like Elasticsearch or Solr.
 
-## 6. Best Practices Checklist
+## Best Practices Checklist
 
 | Topic               | Recommendation                                                                     |
 | ------------------- | ---------------------------------------------------------------------------------- |
@@ -138,13 +138,13 @@ This blend lets you query by text relevance, numeric filters, and spatial constr
 | Multi-model Queries | Combine full-text search with geo, JSON, numerical filters.                        |
 | Analyze Limitations | Understand phrase\_prefix caveats at scale; tune analyzer/tokenizer appropriately. |
 
-## 7. Further Learning & Resources
+## Further Learning & Resources
 
 * **CrateDB Full‑Text Search Guide**: details index creation, analyzers, MATCH usage.
 * **FTS Options & Advanced Features**: fuzziness, synonyms, multi-language idioms.
 * **Hands‑On Academy Course**: explore FTS on real datasets (e.g. Chicago neighborhoods).
 * **CrateDB Community Insights**: real‑world advice and experiences from users.
 
-## **8. Summary**
+## **Summary**
 
 CrateDB combines powerful Lucene‑based full‑text search capabilities with SQL, making it easy to model and query textual data at scale. It supports fuzzy matching, multi-language analysis, composite indexing, and integrates fully with other data types for rich, multi-model queries. Whether you're building document search, catalog lookup, or content analytics—CrateDB offers a flexible and scalable foundation.\
