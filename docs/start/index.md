@@ -18,6 +18,7 @@ and explore key features.
 :link: first-steps
 :link-type: ref
 :link-alt: First steps with CrateDB
+:columns: 6 3 3 3
 :padding: 3
 :text-align: center
 :class-card: sd-pt-3
@@ -31,6 +32,7 @@ and explore key features.
 :link: connect
 :link-type: ref
 :link-alt: Connect to CrateDB
+:columns: 6 3 3 3
 :padding: 3
 :text-align: center
 :class-card: sd-pt-3
@@ -44,6 +46,7 @@ and explore key features.
 :link: query-capabilities
 :link-type: ref
 :link-alt: Query Capabilities
+:columns: 6 3 3 3
 :padding: 3
 :text-align: center
 :class-card: sd-pt-3
@@ -57,6 +60,7 @@ and explore key features.
 :link: ingest
 :link-type: ref
 :link-alt: Ingesting Data
+:columns: 6 3 3 3
 :padding: 3
 :text-align: center
 :class-card: sd-pt-3
@@ -78,6 +82,7 @@ and explore key features.
 :link: example-applications
 :link-type: ref
 :link-alt: Sample Applications
+:columns: 6 3 3 3
 :padding: 3
 :text-align: center
 :class-card: sd-pt-3
@@ -91,6 +96,7 @@ and explore key features.
 :link: start-going-further
 :link-type: ref
 :link-alt: Going Further
+:columns: 6 3 3 3
 :padding: 3
 :text-align: center
 :class-card: sd-pt-3
