@@ -1,42 +1,35 @@
 # Relational data
 
-CrateDB is a **distributed SQL database** that offers full **relational data modeling** with the flexibility of dynamic schemas and the scalability of NoSQL systems. It supports **primary and foreign keys**, **joins**, **aggregations**, and **subqueries**, just like traditional RDBMS systems—while also enabling hybrid use cases with time-series, geospatial, full-text, vector, and semi-structured data.
+CrateDB is a **distributed SQL database** that offers rich **relational data modeling** with the flexibility of dynamic schemas and the scalability of NoSQL systems. It supports **primary keys,** **joins**, **aggregations**, and **subqueries**, just like traditional RDBMS systems—while also enabling hybrid use cases with time-series, geospatial, full-text, vector search, and semi-structured data.
 
-Use CrateDB when you need to scale relational workloads horizontally while keeping the simplicity of **ANSI SQL**.
+Use CrateDB when you need to scale relational workloads horizontally while keeping the simplicity of **SQL**.
 
-## 1. Table Definitions
+## Table Definitions
 
 CrateDB supports strongly typed relational schemas using familiar SQL syntax:
 
 ```sql
 CREATE TABLE customers (
-  id         UUID PRIMARY KEY,
+  id         TEXT DEFAULT gen_random_text_uuid() PRIMARY KEY,
   name       TEXT,
   email      TEXT,
-  created_at TIMESTAMP
-);
-
-CREATE TABLE orders (
-  order_id     UUID PRIMARY KEY,
-  customer_id  UUID,
-  total_amount DOUBLE,
-  created_at   TIMESTAMP
+  created_at TIMESTAMP DEFAULT now()
 );
 ```
 
 **Key Features:**
 
 * Supports scalar types (`TEXT`, `INTEGER`, `DOUBLE`, `BOOLEAN`, `TIMESTAMP`, etc.)
-* `UUID` recommended for primary keys in distributed environments
+* `gen_random_text_uuid()`, `now()` or `current_timestamp()` recommended for primary keys in distributed environments
 * Default **replication**, **sharding**, and **partitioning** options are built-in for scale
 
 :::{note}
 CrateDB supports `column_policy = 'dynamic'` if you want to mix relational and semi-structured models (like JSON) in the same table.
 :::
 
-## 2. Joins & Relationships
+## Joins & Relationships
 
-CrateDB supports **inner joins**, **left/right joins**, **cross joins**, and even **self joins**.
+CrateDB supports **inner joins**, **left/right joins**, **cross joins**, **outer joins**, and even **self joins**.
 
 **Example: Join Customers and Orders**
 
@@ -49,7 +42,7 @@ WHERE o.created_at >= CURRENT_DATE - INTERVAL '30 days';
 
 Joins are executed efficiently across shards in a **distributed query planner** that parallelizes execution.
 
-## 3. Normalization vs. Embedding
+## Normalization vs. Embedding
 
 CrateDB supports both **normalized** (relational) and **denormalized** (embedded JSON) approaches.
 
@@ -60,24 +53,25 @@ Example: Embedded products inside an `orders` table:
 
 ```sql
 CREATE TABLE orders (
-  order_id UUID PRIMARY KEY,
-  customer_id UUID,
-  items ARRAY(OBJECT (
-    name TEXT,
-    quantity INTEGER,
-    price DOUBLE
-  )),
+  order_id TEXT DEFAULT gen_random_text_uuid() PRIMARY KEY,
+  items ARRAY(
+    OBJECT(DYNAMIC) AS (
+      name TEXT,
+      quantity INTEGER,
+      price DOUBLE
+    )
+  ),
   created_at TIMESTAMP
 );
 ```
 
 :::{note}
-CrateDB lets you **query nested fields** directly using dot notation: `items['name']`, `items['price']`, etc.
+CrateDB lets you **query nested fields** directly using bracket notation: `items['name']`, `items['price']`, etc.
 :::
 
-## 4. Aggregations & Grouping
+## Aggregations & Grouping
 
-Use familiar SQL aggregation functions (`SUM`, `AVG`, `COUNT`, `MIN`, `MAX`) with `GROUP BY`, `HAVING`, `WINDOW FUNCTIONS`, and even `FILTER`.
+Use familiar SQL aggregation functions (`SUM`, `AVG`, `COUNT`, `MIN`, `MAX`) with `GROUP BY`, `HAVING`, `WINDOW FUNCTIONS` ... etc.
 
 ```sql
 SELECT customer_id, COUNT(*) AS num_orders, SUM(total_amount) AS revenue
@@ -90,28 +84,28 @@ HAVING revenue > 1000;
 CrateDB's **columnar storage** optimizes performance for aggregations—even on large datasets.
 :::
 
-## 5. Constraints & Indexing
+## Constraints & Indexing
 
 CrateDB supports:
 
 * **Primary Keys** – enforced for uniqueness and data distribution
-* **Unique Constraints** – optional, enforced locally
-* **Check Constraints** – for value validation
-* **Indexes** – automatic for primary keys and full-text fields; manual for others
+* **Check -** enforces custom value validation
+* **Indexes** – automatic index for all columns
+* **Full-text indexes -** manually defined, supports many tokenizers, analyzers and filters
+
+In CrateDB every column is indexed by default, depending on the datatype a different index is used, indexing is controlled and maintained by the database, there is no need to `vacuum` or `re-index` like in other systems. Indexing can be manually turned off.
 
 ```sql
 CREATE TABLE products (
-  id UUID PRIMARY KEY,
+  id TEXT PRIMARY KEY,
   name TEXT,
-  price DOUBLE CHECK (price >= 0)
+  price DOUBLE CHECK (price >= 0),
+  tag TEXT INDEX OFF,
+  description TEXT INDEX using fulltext
 );
 ```
 
-:::{note}
-Foreign key constraints are not strictly enforced at write time but can be modeled at the application or query layer.
-:::
-
-## 6. Views & Subqueries
+## Views & Subqueries
 
 CrateDB supports **views**, **CTEs**, and **nested subqueries**.
 
@@ -120,7 +114,7 @@ CrateDB supports **views**, **CTEs**, and **nested subqueries**.
 ```sql
 CREATE VIEW recent_orders AS
 SELECT * FROM orders
-WHERE created_at >= CURRENT_DATE - INTERVAL '7 days';
+WHERE created_at >= CURRENT_DATE::TIMESTAMP - INTERVAL '7 days';
 ```
 
 **Example: Correlated Subquery**
@@ -131,7 +125,25 @@ SELECT name,
 FROM customers c;
 ```
 
-## 7. Use Cases for Relational Modeling
+**Example: Common table expression**
+
+```sql
+WITH order_counts AS (
+    SELECT 
+        o.customer_id,
+        COUNT(*) AS order_count
+    FROM orders o
+    GROUP BY o.customer_id
+)
+SELECT 
+    c.name,
+    COALESCE(oc.order_count, 0) AS order_count
+FROM customers c
+LEFT JOIN order_counts oc
+    ON c.id = oc.customer_id;
+```
+
+## Use Cases for Relational Modeling
 
 | Use Case             | Description                                      |
 | -------------------- | ------------------------------------------------ |
@@ -141,7 +153,7 @@ FROM customers c;
 | User Profiles        | Users, preferences, activity logs                |
 | Multi-tenant Systems | Use schemas or partitioning for tenant isolation |
 
-## 8. Scalability & Distribution
+## Scalability & Distribution
 
 CrateDB automatically shards tables across nodes, distributing both **data and query processing**.
 
@@ -153,7 +165,7 @@ CrateDB automatically shards tables across nodes, distributing both **data and q
 Use `CLUSTERED BY` and `PARTITIONED BY` in `CREATE TABLE` to control distribution patterns.
 :::
 
-## 9. Best Practices
+## Best Practices
 
 | Area          | Recommendation                                               |
 | ------------- | ------------------------------------------------------------ |
@@ -164,15 +176,15 @@ Use `CLUSTERED BY` and `PARTITIONED BY` in `CREATE TABLE` to control distributio
 | Aggregations  | Favor columnar tables for analytical workloads               |
 | Co-location   | Consider denormalization for write-heavy workloads           |
 
-## 10. Further Learning & Resources
+## Further Learning & Resources
 
 * CrateDB Docs – Data Modeling
 * CrateDB Academy – Relational Modeling
 * Working with Joins in CrateDB
 * Schema Design Guide
 
-## 11. Summary
+## Summary
 
-CrateDB offers a familiar, powerful **relational model with full SQL** and built-in support for scale, performance, and hybrid data. You can model clean, normalized data structures and join them across millions of records—without sacrificing the flexibility to embed, index, and evolve schema dynamically.
+CrateDB offers a familiar, powerful **relational model with full SQL** and built-in support for scale, performance, and hybrid data. You can model clean, normalized data structures and join them across millions of records, without sacrificing the flexibility to embed, index, and evolve schema dynamically.
 
 CrateDB is the modern SQL engine for building relational, real-time, and hybrid apps in a distributed world.
