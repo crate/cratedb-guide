@@ -1,8 +1,8 @@
 .. _performance-select:
 
-==================
-Select Performance
-==================
+============
+Fast Selects
+============
 
 Aggregations and ``GROUP BY``
 =============================

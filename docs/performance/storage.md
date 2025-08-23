@@ -41,7 +41,7 @@ Read more at https://cratedb.com/blog/reducing-storage-costs-in-cratedb-v5.10
 This guide has been updated to reflect the v5.10 improvements.
 :::
 
-## How storage in CrateDB works.
+## How storage in CrateDB works
 
 CrateDB is a distributed database; nodes, shards, partitions and replicas are tightly integrated.
 
