@@ -7,6 +7,7 @@
 
 aggregations
 ad-hoc
+../../feature/search/index
 ai-integration
 ```
 
