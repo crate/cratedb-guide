@@ -45,8 +45,10 @@ or run them directly in the CrateDB Cloud Console.
   and memory usage, then enrich your time‑series data with JSON and text
   metadata to enable more comprehensive analysis.
 
-**Congratulations!**\
-You’re now onboarded and ready to explore further. Check out the other sections
+
+:::{rubric} Congratulations!
+:::
+You are now onboarded and ready to explore further. Check out the other sections
 in the menu to dive deeper into CrateDB’s capabilities.
 If you need assistance, also [check out our support plans].
 

@@ -97,7 +97,7 @@ Quick Filters
 :::
 :::{grid-item}
 ```sql
-SELECT *
+SELECT timestamp, message, host
 FROM logs
 WHERE service = 'auth' AND log_level = 'error'
 ORDER BY timestamp DESC
@@ -137,7 +137,7 @@ Time-bound Query
 :::
 :::{grid-item}
 ```sql
-SELECT *
+SELECT timestamp, device_id, value
 FROM sensor_data
 WHERE timestamp > now() - INTERVAL '15 minutes';
 ```
@@ -226,7 +226,7 @@ Example via HTTP:
 ```bash
 curl -sSf -u USERNAME:PASSWORD -X POST https://your.cratedb.cloud:4200/_sql \
   -H "Content-Type: application/json" \
-  -d '{"stmt": "SELECT * FROM logs WHERE log_level = ? LIMIT 10", "args": ["error"]}'
+  -d '{"stmt": "SELECT timestamp, message, host FROM logs WHERE log_level = ? LIMIT 10", "args": ["error"]}'
 ```
 
 
