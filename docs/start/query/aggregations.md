@@ -1,3 +1,5 @@
+(aggregation)=
+(aggregations)=
 # Aggregations
 
 CrateDB is designed to deliver **high-performance aggregations** on massive volumes of data—**in real time** and using familiar SQL syntax.
