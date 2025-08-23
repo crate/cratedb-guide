@@ -1,4 +1,4 @@
-(sample-applications)=
+(example-applications)=
 # Sample Applications
 
 ::::{grid}
