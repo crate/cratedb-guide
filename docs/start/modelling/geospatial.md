@@ -1,35 +1,74 @@
 # Geospatial data
 
-CrateDB supports **real-time geospatial analytics at scale**, enabling you to store, query, and analyze location-based data using standard SQL over two dedicated types: **GEO\_POINT** and **GEO\_SHAPE**. You can seamlessly combine spatial data with full-text, vector, JSON, or time-series in the same SQL queries.
+CrateDB supports **real-time geospatial analytics at scale**, enabling you to store, query, and analyze 2D location-based data using standard SQL over two dedicated types: **GEO\_POINT** and **GEO\_SHAPE**. You can seamlessly combine spatial data with full-text, vector, JSON, or time-series in the same SQL queries.
 
-## 1. Geospatial Data Types
+## Geospatial Data Types
 
 ### **GEO\_POINT**
 
 * Stores a single location via latitude/longitude.
-* Insert using either a coordinate array `[lon, lat]` or WKT string `'POINT (lon lat)'`.
-* Must be declared explicitly; dynamic schema inference will not detect geo\_point type.
+* Insert using either a coordinate array `[lon, lat]` or Well-Known Text (WKT) string `'POINT (lon lat)'`.
+* Must be declared explicitly; dynamic schema inference will not detect `geo_point` type.
 
 ### **GEO\_SHAPE**
 
-* Supports complex geometries (Point, LineString, Polygon, MultiPolygon, GeometryCollection) via GeoJSON or WKT.
-* Indexed using geohash, quadtree, or BKD-tree, with configurable precision (e.g. `50m`) and error threshold
+* Supports complex geometries (Point, MultiPoint, LineString, MultiLineString, Polygon, MultiPolygon, GeometryCollection) via GeoJSON or WKT.
+* Indexed using geohash, quadtree, or BKD-tree, with configurable precision (e.g. `50m`) and error threshold. The indexes are described in the [reference manual](https://cratedb.com/docs/crate/reference/en/latest/general/ddl/data-types.html#type-geo-shape-index).
 
-## 2. Table Schema Example
+## Table Schema Example
 
-<pre class="language-sql"><code class="lang-sql"><strong>CREATE TABLE parcel_zones (
-</strong>    zone_id INTEGER PRIMARY KEY,
-<strong>    name VARCHAR,
-</strong>    area GEO_SHAPE,
-    centroid GEO_POINT
-)
-WITH (column_policy = 'dynamic');
-</code></pre>
+Let's define a table with country boarders and capital:
 
-* Use `GEO_SHAPE` to define zones or service areas.
-* `GEO_POINT` allows for simple referencing (e.g. store approximate center of zone).
+```sql
+CREATE TABLE country (
+   name text,
+   country_code text primary key,
+   shape geo_shape INDEX USING "geohash" WITH (precision='100m'),
+   capital text,
+   capital_location geo_point
+) 
+```
 
-## 3. Core Geospatial Functions
+* Use `GEO_SHAPE` to define the border.
+* `GEO_POINT` to define the location of the capital.
+
+## Insert rows
+
+We can populate the table with Austria:
+
+```sql
+INSERT INTO country (name, country_code, shape, capital, capital_location)
+VALUES (
+  'Austria',
+  'at',
+  
+  ##{type='Polygon', coordinates=[
+        [[16.979667, 48.123497], [16.903754, 47.714866],
+        [16.340584, 47.712902], [16.534268, 47.496171],
+        [16.202298, 46.852386], [16.011664, 46.683611],
+        [15.137092, 46.658703], [14.632472, 46.431817],
+        [13.806475, 46.509306], [12.376485, 46.767559],
+        [12.153088, 47.115393], [11.164828, 46.941579],
+        [11.048556, 46.751359], [10.442701, 46.893546],
+        [9.932448, 46.920728], [9.47997, 47.10281],
+        [9.632932, 47.347601], [9.594226, 47.525058],
+        [9.896068, 47.580197], [10.402084, 47.302488],
+        [10.544504, 47.566399], [11.426414, 47.523766],
+        [12.141357, 47.703083], [12.62076, 47.672388],
+        [12.932627, 47.467646], [13.025851, 47.637584],
+        [12.884103, 48.289146], [13.243357, 48.416115],
+        [13.595946, 48.877172], [14.338898, 48.555305],
+        [14.901447, 48.964402], [15.253416, 49.039074],
+        [16.029647, 48.733899], [16.499283, 48.785808],
+        [16.960288, 48.596982], [16.879983, 48.470013],
+        [16.979667, 48.123497]]
+  ]},
+  'Vienna',
+  [16.372778, 48.209206]
+);
+```
+
+## Core Geospatial Functions
 
 CrateDB provides key scalar functions for spatial operations:
 
@@ -40,62 +79,41 @@ CrateDB provides key scalar functions for spatial operations:
 * **`geohash(geo_point)`** – compute a 12‑character geohash for the point
 * **`area(geo_shape)`** – returns approximate area in square degrees; uses geodetic awareness
 
+Furthermore, it is possible to use the **match** predicate with geospatial data in queries.
+
 Note: More precise relational operations on shapes may bypass indexes and can be slower.
 
-## 4. Spatial Queries & Indexing
+## An example query
 
-CrateDB supports Lucene-based spatial indexing (Prefix Tree and BKD-tree structures) for efficient geospatial search. Use the `MATCH` predicate to leverage indices when filtering spatial data by bounding boxes, circles, polygons, etc.
-
-**Example: Find nearby assets**
+It is possible to find the distance to the capital of each country in the table:
 
 ```sql
-SELECT asset_id, DISTANCE(center_point, asset_location) AS dist
-FROM assets
-WHERE center_point = 'POINT(-1.234 51.050)'::GEO_POINT
-ORDER BY dist
-LIMIT 10;
+SELECT distance(capital_location, [9.74, 47.41])/1000
+FROM country;
 ```
 
-**Example: Count incidents within service area**
-
-```sql
-SELECT area_id, count(*) AS incident_count
-FROM incidents
-WHERE within(incidents.location, service_areas.area)
-GROUP BY area_id;
-```
-
-**Example: Which zones intersect a flight path**
-
-```sql
-SELECT zone_id, name
-FROM flight_paths f
-JOIN service_zones z
-ON intersects(f.path_geom, z.area);
-```
-
-## 5. Real-World Examples: Chicago Use Cases
+## Real-World Examples: Chicago Use Cases
 
 * **311 calls**: Each record includes `location` as `GEO_POINT`. Queries use `within()` to find calls near a polygon around O’Hare airport.
 * **Community areas**: Polygon boundaries stored in `GEO_SHAPE`. Queries for intersections with arbitrary lines or polygons using `intersects()` return overlapping zones.
 * **Taxi rides**: Pickup/drop off locations stored as geo points. Use `distance()` filter to compute trip distances and aggregate.
 
-## 6. Architectural Strengths & Suitability
+## Architectural Strengths & Suitability
 
 * Designed for **real-time geospatial tracking and analytics** (e.g. fleet tracking, mapping, location-layered apps).
 * **Unified SQL platform**: spatial data can be combined with full-text search, JSON, vectors, time-series — in the same table or query.
 * **High ingest and query throughput**, suitable for large-scale location-based workloads
 
-## 7. Best Practices Checklist
+## Best Practices Checklist
 
 <table><thead><tr><th>Topic</th><th width="254">Recommendation</th></tr></thead><tbody><tr><td>Data types</td><td>Declare <code>GEO_POINT</code>/<code>GEO_SHAPE</code> explicitly</td></tr><tr><td>Geometric formats</td><td>Use WKT or GeoJSON for insertions</td></tr><tr><td>Index tuning</td><td>Choose geohash/quadtree/BKD tree &#x26; adjust precision</td></tr><tr><td>Queries</td><td>Prefer <code>MATCH</code> for indexed filtering; use functions for precise checks</td></tr><tr><td>Joins &#x26; spatial filters</td><td>Use within/intersects to correlate spatial entities</td></tr><tr><td>Scale &#x26; performance</td><td>Index shapes, use distance/wwithin filters early</td></tr><tr><td>Mixed-model integration</td><td>Combine spatial with JSON, full-text, vector, time-series</td></tr></tbody></table>
 
-## 8. Further Learning & Resources
+## Further Learning & Resources
 
 * Official **Geospatial Search Guide** in CrateDB docs, detailing geospatial types, indexing, and MATCH predicate usage.
 * CrateDB Academy **Hands-on: Geospatial Data** modules, with sample datasets (Chicago 311 calls, taxi rides, community zones) and example queries.
 * CrateDB Blog: **Geospatial Queries with CrateDB** – outlines capabilities, limitations, and practical use cases (available since version 0.40
 
-## 9. Summary
+## Summary
 
 CrateDB provides robust support for geospatial modeling through clearly defined data types (`GEO_POINT`, `GEO_SHAPE`), powerful scalar functions (`distance`, `within`, `intersects`, `area`), and Lucene‑based indexing for fast queries. It excels in high‑volume, real‑time spatial analytics and integrates smoothly with multi-model use cases. Whether storing vehicle positions, mapping regions, or enabling spatial joins—CrateDB’s geospatial layer makes it easy, scalable, and extensible.
