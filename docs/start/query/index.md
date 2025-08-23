@@ -6,7 +6,7 @@
 :maxdepth: 1
 
 aggregations
-ad-hoc-queries
+ad-hoc
 ai-integration
 ```
 
