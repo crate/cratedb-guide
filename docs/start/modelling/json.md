@@ -1,3 +1,4 @@
+(model-json)=
 # JSON data
 
 CrateDB combines the flexibility of NoSQL document stores with the power of SQL. It enables you to store, query, and index **semi-structured JSON data** using **standard SQL**, making it an excellent choice for applications that handle diverse or evolving schemas.

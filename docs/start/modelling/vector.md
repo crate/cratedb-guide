@@ -1,3 +1,4 @@
+(model-vector)=
 # Vector data
 
 CrateDB natively supports **vector embeddings** for efficient **similarity search** using **approximate nearest neighbor (ANN)** algorithms. This makes it a powerful engine for building AI-powered applications involving semantic search, recommendations, anomaly detection, and multimodal analytics—all in the simplicity of SQL.

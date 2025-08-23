@@ -1,3 +1,4 @@
+(model-timeseries)=
 # Time series data
 
 CrateDB employs a relational representation for time‑series, enabling you to work with timestamped data using standard SQL, while also seamlessly combining with document and context data.

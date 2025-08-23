@@ -1,3 +1,4 @@
+(model-fulltext)=
 # Full-text data
 
 CrateDB features **native full‑text search** powered by **Apache Lucene** and Okapi BM25 ranking, fully accessible via SQL. You can blend this seamlessly with other data types—JSON, time‑series, geospatial, vectors and more—all in a single SQL query platform.
