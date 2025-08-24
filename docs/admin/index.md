@@ -23,7 +23,7 @@ circuit-breaker
 troubleshooting/index
 ```
 +++
-Production and troubleshooting guidelines, and system resource considerations.
+Production and troubleshooting guidelines and system resource considerations.
 ::::
 
 ::::{grid-item-card} {material-outlined}`speed;2em` Cluster
@@ -35,8 +35,7 @@ sharding-partitioning
 ../performance/index
 ```
 +++
-Best practices and tips around the topics of
-clustering, sharding, partitioning, and performance tuning.
+Best practices and tips for clustering, sharding, partitioning, and performance tuning.
 ::::
 
 ::::{grid-item-card} {material-outlined}`system_update_alt;2em` Software Upgrades
@@ -46,8 +45,7 @@ clustering, sharding, partitioning, and performance tuning.
 upgrade/index
 ```
 +++
-Guidelines about upgrading CrateDB clusters in production,
-from planning to execution.
+Guidelines for upgrading CrateDB clusters in production—from planning to execution.
 ::::
 
 :::::
