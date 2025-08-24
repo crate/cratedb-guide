@@ -21,7 +21,7 @@ docker run --name=cratedb --rm -it --network=cratedb-demo \
   --env=CRATE_HEAP_SIZE=2g docker.io/crate -Cdiscovery.type=single-node
 ```
 
-Prepare shortcut for the CrateDB shell.
+Prepare shortcut for the CrateDB shell and the Telegraf command.
 
 ::::{tab-set}
 
@@ -29,17 +29,20 @@ Prepare shortcut for the CrateDB shell.
 To make the settings persistent, add them to your shell profile (`~/.profile`).
 ```shell
 alias crash="docker run --rm -it --network=cratedb-demo ghcr.io/crate/cratedb-toolkit crash"
+alias telegraf="docker run --rm --network=cratedb-demo docker.io/telegraf"
 ```
 :::
 :::{tab-item} Windows PowerShell
 To make the settings persistent, add them to your PowerShell profile (`$PROFILE`).
 ```powershell
 function crash { docker run --rm -it --network=cratedb-demo ghcr.io/crate/cratedb-toolkit crash @args }
+function telegraf { docker run --rm --network=cratedb-demo docker.io/telegraf @args }
 ```
 :::
 :::{tab-item} Windows Command
 ```shell
 doskey crash=docker run --rm -it --network=cratedb-demo ghcr.io/crate/cratedb-toolkit crash $*
+doskey telegraf=docker run --rm --network=cratedb-demo docker.io/telegraf $*
 ```
 :::
 
@@ -55,7 +58,7 @@ to limit input plugins so that Telegraf only collects readings about CPU usage
 on the local computer. To send the collected data to CrateDB, use
 `--output-filter cratedb`.
 ```shell
-docker run --rm docker.io/telegraf \
+telegraf \
   --input-filter cpu \
   --output-filter cratedb \
   config > telegraf.conf
