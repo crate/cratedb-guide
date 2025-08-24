@@ -289,21 +289,6 @@ and integrations with third-party applications and frameworks.
 ::::{grid} 2 3 3 3
 :padding: 0
 
-:::{grid-item-card} Ecosystem Catalog
-:link: catalog
-:link-type: ref
-:link-alt: Ecosystem Catalog
-:padding: 3
-:class-card: sd-pt-3
-:class-title: sd-fs-5
-:class-body: sd-text-center
-:class-footer: text-smaller
-{material-outlined}`category;3.5em`
-+++
-Discover integrations and solutions from the open-source community and CrateDB partners.
-:::
-
-
 :::{grid-item-card} Integration Tutorials I
 :link: integrate
 :link-type: ref
@@ -317,7 +302,6 @@ Discover integrations and solutions from the open-source community and CrateDB p
 +++
 Learn about the variety of options to connect and integrate with third-party applications.
 :::
-
 
 :::{grid-item-card} Integration Tutorials II
 :link: https://community.cratedb.com/t/overview-of-cratedb-integration-tutorials/1015

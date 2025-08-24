@@ -302,7 +302,6 @@ CrateDB offers a wide range of integration capabilities, is compatible
 with the PostgreSQL wire protocol, and offers adapter components to
 integrate with applications and frameworks.
 
-- [Ecosystem Catalog]
 - [Integration Tutorials I]
 - [Integration Tutorials II]
 - [Software Development Kit]
@@ -331,7 +330,6 @@ and Python example programs.
 [CrateDB Editions]: https://cratedb.com/database/editions
 [CrateDB SQL]: project:#sql
 [DX]: https://en.wikipedia.org/wiki/User_experience#Developer_experience
-[Ecosystem Catalog]: https://cratedb.com/docs/crate/clients-tools/
 [Integration Tutorials I]: inv:#integrate
 [Integration Tutorials II]: https://community.cratedb.com/t/overview-of-cratedb-integration-tutorials/1015
 [migration]: https://cratedb.com/migrations/rockset
