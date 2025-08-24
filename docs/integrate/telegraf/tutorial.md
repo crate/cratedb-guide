@@ -1,9 +1,8 @@
 (telegraf-tutorial)=
 # Load data into CrateDB using Telegraf
 
-The tutorial will walk you through starting the [Telegraf] agent/broker
-and CrateDB, and configuring Telegraf to submit system metrics measurement
-values to CrateDB.
+This tutorial walks you through starting the [Telegraf] agent and CrateDB,
+then configuring Telegraf to submit system metrics to CrateDB.
 
 ## Prerequisites
 
@@ -65,17 +64,48 @@ docker run --rm docker.io/telegraf \
 The database connection URL is a `pgx/v4` connection string. Configure
 `table_create = true` to automatically let Telegraf create the metrics table
 if it doesn't exist.
+::::{tab-set}
+:::{tab-item} Linux and macOS
 ```shell
 sed -i 's!postgres://user:password@localhost/schema?sslmode=disable!postgres://crate@cratedb/doc?sslmode=disable!g' telegraf.conf
 sed -i 's!# table_create = false!table_create = true!' telegraf.conf
 ```
+:::
+:::{tab-item} Windows PowerShell
+```powershell
+(Get-Content telegraf.conf) -replace 'postgres://user:password@localhost/schema\?sslmode=disable','postgres://crate@cratedb/doc?sslmode=disable' |
+  ForEach-Object { $_ -replace '# table_create = false','table_create = true' } |
+  Set-Content telegraf.conf
+```
+:::
+::::
+
 
 Start Telegraf.
+::::{tab-set}
+:::{tab-item} Linux and macOS
 ```shell
 docker run --name=telegraf --rm -it --network=cratedb-demo \
-  --volume $(pwd)/telegraf.conf:/etc/telegraf/telegraf.conf \
+  --volume "$(pwd)"/telegraf.conf:/etc/telegraf/telegraf.conf \
   docker.io/telegraf
 ```
+:::
+:::{tab-item} Windows PowerShell
+```powershell
+docker run --name=telegraf --rm -it --network=cratedb-demo `
+  --volume "${PWD}\telegraf.conf:/etc/telegraf/telegraf.conf" `
+  docker.io/telegraf
+```
+:::
+:::{tab-item} Windows Command
+```shell
+docker run --name=telegraf --rm -it --network=cratedb-demo ^
+  --volume "%cd%\telegraf.conf:/etc/telegraf/telegraf.conf" ^
+  docker.io/telegraf
+```
+:::
+::::
+
 
 After 10 seconds, which is the default output flush interval of Telegraf, the first
 metrics will appear in the `metrics` table in CrateDB. To adjust the value, navigate
@@ -83,7 +113,7 @@ to `flush_interval = "10s"` in `telegraf.conf`.
 
 Inspect data stored in CrateDB.
 ```shell
-crash --hosts cratedb -c "SELECT * FROM doc.metrics;"
+crash --hosts cratedb -c "SELECT * FROM doc.metrics LIMIT 5;"
 ```
 
 
