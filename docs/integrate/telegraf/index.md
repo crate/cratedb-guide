@@ -22,6 +22,9 @@ a very minimal memory footprint.
 :::{rubric} Overview
 :::
 
+::::{grid}
+
+:::{grid-item}
 - **IoT sensors**: Collect critical stateful data (pressure levels, temperature
   levels, etc.) with popular protocols like MQTT, ModBus, OPC-UA, and Kafka.
 
@@ -31,15 +34,41 @@ a very minimal memory footprint.
 
 - **System telemetry**: Metrics from system telemetry like iptables, Netstat,
   NGINX, and HAProxy help provide a full stack view of your apps.
+:::
 
-![Telegraf architecture overview](https://www.influxdata.com/wp-content/uploads/Main-Diagram_06.01.2022v1.png){height=200px loading=lazy}
+:::{grid-item}
+![Telegraf architecture overview](https://www.influxdata.com/wp-content/uploads/Main-Diagram_06.01.2022v1.png){loading=lazy}
+:::
+
+::::
 
 
 :::{rubric} Learn
 :::
 
-- [Use CrateDB With Telegraf, an Agent for Collecting & Reporting Metrics]
+::::{grid}
 
+:::{grid-item-card} Tutorial: Use Telegraf with CrateDB
+:link: telegraf-tutorial
+:link-type: ref
+How to configure Telegraf to submit metrics to CrateDB.
+:::
+
+:::{grid-item-card} Blog: Use CrateDB With Telegraf, an Agent for Collecting & Reporting Metrics
+:link: https://cratedb.com/blog/use-cratedb-with-telegraf-an-agent-for-collecting-reporting-metrics
+:link-type: url
+Learn how to set up Telegraf, have Telegraf send metrics data to CrateDB,
+and visualize the collected data with Grafana.
+:::
+
+::::
+
+
+:::{toctree}
+:maxdepth: 1
+:hidden:
+Tutorial <tutorial>
+:::
 
 ```{seealso}
 [CrateDB and Telegraf]
