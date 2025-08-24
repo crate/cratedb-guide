@@ -33,9 +33,9 @@ selects
 optimization
 ```
 +++
-Design SQL statements for maximum performance and lower resource usage.
-Applicable when latency matters, or when a resource‑heavy query could
-overload your cluster.
+Design SQL statements for maximum performance and reduced resource usage.
+Use when latency matters or when a resource‑heavy query could overload
+your cluster.
 ::::
 
 :::::
