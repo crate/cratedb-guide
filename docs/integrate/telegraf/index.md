@@ -43,6 +43,32 @@ a very minimal memory footprint.
 ::::
 
 
+:::{rubric} Synopsis
+:::
+
+Telegraf output plugin configuration snippet for CrateDB.
+```toml
+# Configuration for CrateDB to send metrics to.
+[[outputs.cratedb]]
+
+  # A github.com/jackc/pgx/v4 connection string.
+  # See https://pkg.go.dev/github.com/jackc/pgx/v4#ParseConfig
+  url = "postgres://crate@localhost/doc?sslmode=disable"
+
+  # Timeout for all CrateDB queries.
+  timeout = "5s"
+
+  # Name of the table to store metrics in.
+  table = "metrics"
+
+  # If true, and the metrics table does not exist, create it automatically.
+  table_create = true
+
+  # The character(s) to replace any '.' in an object key with
+  key_separator = "_"
+```
+
+
 :::{rubric} Learn
 :::
 
