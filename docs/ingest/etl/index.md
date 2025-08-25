@@ -48,6 +48,11 @@ outlines how to use them effectively. Additionally, see support for {ref}`cdc` s
   Apache Flink is a programming framework and distributed processing engine for
   stateful computations over unbounded and bounded data streams, written in Java.
 
+- {ref}`ingestr`
+
+  ingestr is a command-line application that allows copying data from any
+  source into any destination database.
+
 - {ref}`kestra`
 
   Kestra is an open-source workflow automation and orchestration toolkit with a rich

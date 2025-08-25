@@ -37,6 +37,7 @@ grafana/index
 hop/index
 iceberg/index
 influxdb/index
+ingestr/index
 kafka/index
 kestra/index
 kinesis/index
