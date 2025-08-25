@@ -26,6 +26,7 @@ dbeaver/index
 dbt/index
 debezium/index
 django/index
+dlt/index
 dms/index
 dynamodb/index
 estuary/index
