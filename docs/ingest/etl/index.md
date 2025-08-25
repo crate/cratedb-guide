@@ -38,6 +38,10 @@ outlines how to use them effectively. Additionally, see support for {ref}`cdc` s
   dbt is an SQL-first platform for transforming data in data warehouses using
   Python and SQL. The data abstraction layer provided by dbt-core allows the
   decoupling of the models on which reports and dashboards rely from the source data.
+- {ref}`dlt`
+
+  dlt is a popular production-ready Python library for moving data:
+  Think ELT as Python code.
 
 - {ref}`flink`
 
