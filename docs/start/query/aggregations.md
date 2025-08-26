@@ -68,7 +68,7 @@ Whether you are monitoring sensor networks, analyzing customer behavior, or powe
 
 ## Supported Aggregation Functions
 
-CrateDB supports a rich set of **SQL92-compliant** and extended functions for aggregation, including:
+CrateDB supports a rich set of **SQL-92-compliant** and extended functions for aggregation, including:
 
 - `COUNT()`, `SUM()`, `AVG()`, `MIN()`, `MAX()`
 - `STDDEV()`, `PERCENTILE()`, `VARIANCE()`, `TOPK()`
