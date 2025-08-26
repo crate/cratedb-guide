@@ -8,9 +8,9 @@
 ```{div} .clearfix
 ```
 
-[ingestr] is a command-line application that allows copying data from any
-source into any destination database. It supports CrateDB on the source
-and the destination side. ingestr uses {ref}`dlt`.
+[ingestr] is a command-line application for copying data from any source
+to any destination database. It supports CrateDB on both the source and
+destination sides. ingestr builds on {ref}`dlt`.
 
 ::::{grid}
 
@@ -53,7 +53,7 @@ ingestr ingest \
 ```
 
 :::{note}
-Please note there a subtle differences in the CrateDB source vs. target URL.
+Please note there are subtle differences between the CrateDB source and target URLs.
 While `--source-uri=crate://...` addresses CrateDB's SQLAlchemy dialect,
 `--dest-uri=cratedb://...` is effectively a PostgreSQL connection URL
 with a protocol schema designating CrateDB. The source adapter uses
@@ -64,33 +64,40 @@ PostgreSQL interface.
 
 ## Coverage
 
-ingestr supports migration from 20-plus databases, data platforms, analytics
+ingestr supports migration from 20-plus databases, data platforms, and analytics
 engines, including all [databases supported by SQLAlchemy].
 
-:::{rubric} Databases
+:::{rubric} Traditional Databases
 :::
-Actian Data Platform, Vector, Actian X, Ingres, Amazon Athena, Amazon Redshift,
-Amazon S3, Apache Drill, Apache Druid, Apache Hive and Presto, Apache Solr, 
-Clickhouse, CockroachDB, CrateDB, Databend, Databricks, Denodo, DuckDB, EXASOL DB,
-Elasticsearch, Firebird, Firebolt, Google BigQuery, Google Sheets, Greenplum, 
-HyperSQL (hsqldb), IBM DB2 and Informix, IBM Netezza Performance Server, Impala, InfluxDB, 
-Kinetica, Microsoft Access, Microsoft SQL Server, MonetDB, MongoDB, MySQL and MariaDB, 
-OpenGauss, OpenSearch, Oracle, PostgreSQL, Rockset, SAP ASE, SAP HANA,
-SAP Sybase SQL Anywhere, Snowflake, SQLite, Teradata Vantage, TiDB, YDB, YugabyteDB.
+CockroachDB, CrateDB, Firebird, HyperSQL (hsqldb), IBM DB2 and Informix, 
+Microsoft Access, Microsoft SQL Server, MonetDB, MySQL and MariaDB, 
+OpenGauss, Oracle, PostgreSQL, SAP ASE, SAP HANA, SAP Sybase SQL Anywhere, 
+SQLite, TiDB, YDB, YugabyteDB
 
-:::{rubric} Brokers
+:::{rubric} Cloud Data Warehouses & Analytics
+:::
+Amazon Athena, Amazon Redshift, Databend, Databricks, Denodo, DuckDB, 
+EXASOL DB, Firebolt, Google BigQuery, Greenplum, IBM Netezza Performance Server, 
+Impala, Kinetica, Rockset, Snowflake, Teradata Vantage
+
+:::{rubric} Specialized Data Stores
+:::
+Apache Drill, Apache Druid, Apache Hive and Presto, Clickhouse, Elasticsearch, 
+InfluxDB, MongoDB, OpenSearch
+
+:::{rubric} Message Brokers
 :::
 Amazon Kinesis, Apache Kafka (Amazon MSK, Confluent Kafka, Redpanda, RobustMQ)
 
-:::{rubric} File formats
+:::{rubric} File Formats
 :::
 CSV, JSONL/NDJSON, Parquet
 
-:::{rubric} Object stores
+:::{rubric} Object Stores
 :::
 Amazon S3, Google Cloud Storage
 
-:::{rubric} Services
+:::{rubric} SaaS Platforms & Services
 :::
 Airtable, Asana, GitHub, Google Ads, Google Analytics, Google Sheets, HubSpot,
 Notion, Personio, Salesforce, Slack, Stripe, Zendesk, etc.
@@ -125,4 +132,3 @@ load data from Kafka to CrateDB.
 
 [databases supported by SQLAlchemy]: https://docs.sqlalchemy.org/en/20/dialects/
 [ingestr]: https://bruin-data.github.io/ingestr/
-[sources supported by ingestr]: https://bruin-data.github.io/ingestr/supported-sources/

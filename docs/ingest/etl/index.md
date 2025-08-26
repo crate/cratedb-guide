@@ -239,6 +239,7 @@ Load data from datasets and open table formats.
 - {ref}`aws-lambda`
 - {ref}`azure-functions`
 - {ref}`dbt`
+- {ref}`dlt`
 - {ref}`dms`
 - {ref}`dynamodb`
 - {ref}`estuary`
@@ -246,6 +247,7 @@ Load data from datasets and open table formats.
 - {ref}`hop`
 - {ref}`iceberg`
 - {ref}`influxdb`
+- {ref}`ingestr`
 - {ref}`kafka`
 - {ref}`kestra`
 - {ref}`kinesis`

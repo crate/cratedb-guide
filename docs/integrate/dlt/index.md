@@ -10,7 +10,7 @@
 ```{div} .clearfix
 ```
 
-[dlt] (data load tool)--think ELT as Python code--is the most popular
+[dlt] (data load tool)—think ELT as Python code—is a popular,
 production-ready Python library for moving data. It loads data from
 various and often messy data sources into well-structured, live datasets.
 dlt is used by {ref}`ingestr`.
@@ -21,7 +21,7 @@ dlt is used by {ref}`ingestr`.
 - **Just code**: no need to use any backends or containers.
 
 - **Platform agnostic**: Does not replace your data platform, deployments, or security
-  models. Simply import dlt in your favorite AI code editor, or add it to your Jupyter
+  models. Simply import dlt in your favorite code editor, or add it to your Jupyter
   Notebook.
 
 - **Versatile**: You can load data from any source that produces Python data structures,
@@ -32,6 +32,12 @@ dlt is used by {ref}`ingestr`.
 
 
 ## Synopsis
+
+Prerequisites:
+Install dlt and the CrateDB destination adapter:
+```shell
+pip install dlt dlt-cratedb
+```
 
 Load data from cloud storage or files into CrateDB.
 ```python
