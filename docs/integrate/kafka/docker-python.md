@@ -52,7 +52,7 @@ docker compose up -d
 
 ### Create a demo table in CrateDB
 
-The easiest way to do this is through the CrateDB cloud UI at `http://localhost:4200` and execute this using the console:
+The easiest way to do this is through the CrateDB Admin UI at `http://localhost:4200` and execute this using the console:
 
 ```sql
 CREATE TABLE IF NOT EXISTS sensor_readings (
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS sensor_readings (
 );
 ```
 
-But this can also be done using curl:
+But this can also be done using `curl`:
 
 ```bash
 curl -sS -H 'Content-Type: application/json' \
@@ -75,7 +75,8 @@ curl -sS -H 'Content-Type: application/json' \
 
 ### Create a Kafka topic and send a couple of messages
 
-This can be done in several ways, but we can use **docker-exec** in this way:
+Creating a Kafka topic can be done in several ways, we are selecting to use
+`docker exec` in this way:
 
 ```bash
 docker exec -it kafka kafka-topics.sh --create \
