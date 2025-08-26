@@ -232,7 +232,7 @@ curl -sSf -u USERNAME:PASSWORD -X POST https://your.cratedb.cloud:4200/_sql \
 
 ## Related features
 
-Learn more how to use ad-hoc queries optimally.
+Learn more about how to use ad-hoc queries effectively.
 
 | Feature                               | Description                                                                          | Documentation                                                |
 |---------------------------------------|--------------------------------------------------------------------------------------|--------------------------------------------------------------|
