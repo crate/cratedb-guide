@@ -34,7 +34,7 @@ Apache Kafka is a widely used open-source distributed event-store and streaming 
 * **Buffering & decoupling** – Kafka absorbs bursty writes and isolates producers from database load. This is particularly useful when it comes to heavy-load ingestion scenarios.
 * **Scalability end-to-end** – Partitioned topics and a sharded cluster let you scale producers, brokers, consumers, and CrateDB independently.
 * **Near-real-time analytics** – New events are available in CrateDB seconds (or even milliseconds) after production, exposed via SQL to standard BI tools.
-* **Operational resilience** – Use Kafka as a durable buffer between CrateDB and data producers. Idempotent upserts (exactly-once semantics) reduce data-loss and duplication risks.
+* **Operational resilience** – Use Kafka as a durable buffer between producers and CrateDB. Idempotent upserts reduce duplication risks and improve recovery from retries.
 
 ## Common Ingestion Options
 
@@ -80,7 +80,7 @@ The processed results are then written into CrateDB, where they’re immediately
 How you run Kafka and CrateDB depends a lot on your environment and preferences. The most common approaches are:
 
 * **Containerised on-premise** – Run both Kafka and CrateDB on Docker or Kubernetes in your own data centre or private cloud. This gives you the most control, but also means you manage scaling, upgrading, and monitoring.
-* **Managed Kafka services** – Use a provider such as Confluent Cloud or AWS MSK to offload the operational heavy lifting of Kafka. You can still connect these managed clusters directly to a CrateDB deployment that you operate. CrateDB is also available on the major cloud providers as well.
+* **Managed Kafka services** – Use a provider such as Confluent Cloud or AWS MSK to offload Kafka operations. Some services (e.g., Azure Event Hubs) provide Kafka‑compatible endpoints rather than Kafka itself. Any of these can connect to a CrateDB deployment you operate or to CrateDB Cloud.
 * **Managed CrateDB** – Crate\.io offers CrateDB Cloud, which can pair with either self-managed Kafka or managed Kafka services. This option reduces database operations to a minimum.
 * **Hybrid setups** – A common pattern is managed Kafka + self-managed CrateDB, or vice versa, depending on where you want to keep operational control.
 
