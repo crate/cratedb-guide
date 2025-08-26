@@ -68,10 +68,16 @@ The database connection URL is a `pgx/v4` connection string. Configure
 `table_create = true` to automatically let Telegraf create the metrics table
 if it doesn't exist.
 ::::{tab-set}
-:::{tab-item} Linux and macOS
+:::{tab-item} Linux
 ```shell
 sed -i 's!postgres://user:password@localhost/schema?sslmode=disable!postgres://crate@cratedb/doc?sslmode=disable!g' telegraf.conf
 sed -i 's!# table_create = false!table_create = true!' telegraf.conf
+```
+:::
+:::{tab-item} macOS and BSD
+```shell
+sed -i '' 's!postgres://user:password@localhost/schema?sslmode=disable!postgres://crate@cratedb/doc?sslmode=disable!g' telegraf.conf
+sed -i '' 's!# table_create = false!table_create = true!' telegraf.conf
 ```
 :::
 :::{tab-item} Windows PowerShell
