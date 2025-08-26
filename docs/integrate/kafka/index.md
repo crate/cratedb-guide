@@ -58,7 +58,7 @@ This option gives you full control: you can transform data on the fly, filter ou
 
 For more advanced pipelines, you can process events while they’re still in Kafka before they ever reach CrateDB. Frameworks like Flink, Kafka Streams, or Spark let you enrich records, join multiple streams together, run aggregations, or apply windowing functions in real time.
 
-The processed results are then written into CrateDB, where they’re immediately available for SQL queries and dashboards. This approach is powerful when raw events need to be cleaned, combined, or summarised before storage, though it adds more moving parts compared to a simple connector.
+The processed results are then written into CrateDB, where they’re immediately available for SQL queries and dashboards. This approach is powerful when raw events need to be cleaned, combined, or summarised before storing them, though it adds moving parts compared to a simple connector.
 
 ## Typical use cases
 
@@ -79,7 +79,7 @@ The processed results are then written into CrateDB, where they’re immediately
 
 How you run Kafka and CrateDB depends a lot on your environment and preferences. The most common approaches are:
 
-* **Containerised on-premise** – Run both Kafka and CrateDB on Docker or Kubernetes in your own data centre or private cloud. This gives you the most control, but also means you manage scaling, upgrades, and monitoring.
+* **Containerised on-premise** – Run both Kafka and CrateDB on Docker or Kubernetes in your own data centre or private cloud. This gives you the most control, but also means you manage scaling, upgrading, and monitoring.
 * **Managed Kafka services** – Use a provider such as Confluent Cloud or AWS MSK to offload the operational heavy lifting of Kafka. You can still connect these managed clusters directly to a CrateDB deployment that you operate. CrateDB is also available on the major cloud providers as well.
 * **Managed CrateDB** – Crate\.io offers CrateDB Cloud, which can pair with either self-managed Kafka or managed Kafka services. This option reduces database operations to a minimum.
 * **Hybrid setups** – A common pattern is managed Kafka + self-managed CrateDB, or vice versa, depending on where you want to keep operational control.
