@@ -10,12 +10,12 @@ data integration, and mission-critical applications.
 
 :::{dropdown} **Managed Kafka**
 Several companies provide managed Kafka services (see the [overview of managed Kafka offerings]
-for a more complete list).
+for examples; note that offerings and features change frequently).
 
 - [Aiven for Apache Kafka]
 - [Amazon Managed Streaming for Apache Kafka (MSK)]
 - [Apache Kafka on Azure]
-- [Azure Event Hubs for Apache Kafka]
+- [Azure Event Hubs for Apache Kafka] (Kafka protocol–compatible service, not Apache Kafka)
 - [Confluent Cloud]
 - [DoubleCloud Managed Service for Apache Kafka]
 :::
