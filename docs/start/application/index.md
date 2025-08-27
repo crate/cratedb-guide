@@ -1,5 +1,5 @@
 (example-applications)=
-# Sample Applications
+# Sample Applications.
 
 
 :::{rubric} Starter
