@@ -114,9 +114,8 @@ and explore key features.
 :hidden:
 
 first-steps
-connect
-query/index
 modelling/index
+query/index
 Ingesting data <../ingest/index>
 application/index
 going-further
