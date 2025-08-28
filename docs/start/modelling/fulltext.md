@@ -1,12 +1,21 @@
 (model-fulltext)=
 # Full-text data
 
-CrateDB features **native full‑text search** powered by **Apache Lucene** and Okapi BM25 ranking, fully accessible via SQL. You can blend this seamlessly with other data types—JSON, time‑series, geospatial, vectors and more—all in a single SQL query platform.
+CrateDB offers **native full-text search** powered by **Apache Lucene** and Okapi
+BM25 ranking, accessible via SQL for easy modeling and querying of large-scale
+textual data. It supports fuzzy matching, multi-language analysis, and composite
+indexing, while fully integrating with data types such as JSON, time-series,
+geospatial, vectors, and more for comprehensive multi-model queries. Whether you
+need document search, catalog lookup, or content analytics, CrateDB is an ideal
+solution.
 
-## Data Types & Indexing Strategy
+## Data Types & Indexing
 
-* By default, all text columns are indexed as `plain` (raw, unanalyzed)—efficient for equality search but not suitable for full‑text queries
-* To enable full‑text search, you must define a **FULLTEXT index** with an optional language **analyzer**, e.g.:
+By default, all text columns are indexed as `plain` (raw, unanalyzed)—efficient
+for equality search but not suitable for full-text queries.
+
+To use full-text search, add a FULLTEXT index with an optional analyzer to the
+text columns you want to search:
 
 ```sql
 CREATE TABLE documents (
@@ -16,22 +25,33 @@ CREATE TABLE documents (
 );
 ```
 
-* You may also define **composite full-text indices**, indexing multiple columns at once:
+You can also index multiple columns with **composite full-text indices**:
 
 ```sql
 INDEX ft_all USING FULLTEXT(title, body) WITH (analyzer = 'english');
 ```
 
-## Index Design & Custom Analyzers
+For detailed options, check out the [Reference Manual](https://cratedb.com/docs/crate/reference/en/latest/general/ddl/fulltext-indices.html).
 
-| Component         | Purpose                                                                      |
-| ----------------- | ---------------------------------------------------------------------------- |
-| **Analyzer**      | Tokenizer + token filters + char filters; splits text into searchable terms. |
-| **Tokenizer**     | Splits on whitespace/characters.                                             |
-| **Token Filters** | e.g. lowercase, stemming, stop‑word removal.                                 |
-| **Char Filters**  | Pre-processing (e.g. stripping HTML).                                        |
+## Analyzers
 
-CrateDB offers **built-in analyzers** for many languages (e.g. English, German, French). You can also **create custom analyzers**:
+An analyzer splits text into searchable terms and consists of the following components:
+
+* **Tokenizer -** splits on whitespace/characters
+* **Token Filters -** e.g. lowercase, stemming, stop‑word removal
+* **Char Filters -** pre-processing (e.g. stripping HTML).
+
+CrateDB offers about 50 [**built-in analyzers**](https://cratedb.com/docs/crate/reference/en/latest/general/ddl/analyzers.html#built-in-analyzers) supporting more than 30 [languages](https://cratedb.com/docs/crate/reference/en/latest/general/ddl/analyzers.html#language).&#x20;
+
+You can **extend** a built-in analyzer:
+
+```sql
+CREATE ANALYZER german_snowball
+  EXTENDS snowball
+  WITH (language = 'german');
+```
+
+or create your own **custom** analyzer :
 
 ```sql
 CREATE ANALYZER myanalyzer (
@@ -41,17 +61,14 @@ CREATE ANALYZER myanalyzer (
 );
 ```
 
-Or **extend** a built-in analyzer:
+Learn more about the [builtin analyzers](https://cratedb.com/docs/crate/reference/en/latest/general/ddl/analyzers.html#built-in-analyzers) and how to [define your own](https://cratedb.com/docs/crate/reference/en/latest/general/ddl/fulltext-indices.html#creating-a-custom-analyzer) with custom [tokenizers](https://cratedb.com/docs/crate/reference/en/latest/general/ddl/analyzers.html#built-in-tokenizers) and [token filters.](https://cratedb.com/docs/crate/reference/en/latest/general/ddl/analyzers.html#built-in-token-filters)
 
-```sql
-CREATE ANALYZER german_snowball
-  EXTENDS snowball
-  WITH (language = 'german');
-```
 
 ## Querying: MATCH Predicate & Scoring
 
-CrateDB uses the SQL `MATCH` predicate to run full‑text queries against full‑text indices. It optionally returns a relevance score `_score`, ranked via BM25.
+CrateDB uses the SQL `MATCH` predicate to run full‑text queries against
+full‑text indices. It optionally returns a relevance score `_score`, ranked via
+BM25.
 
 **Basic usage:**
 
@@ -78,24 +95,25 @@ MATCH((ft_title boost 2.0, ft_body), 'keyword')
 **Example: Fuzzy Search**
 
 ```sql
-SELECT firstname, lastname, _score
-FROM person
-WHERE MATCH(lastname_ft, 'bronw') USING best_fields WITH (fuzziness = 2)
+SELECT title, _score
+FROM documents
+WHERE MATCH(ft_body, 'Jamse') USING best_fields WITH (fuzziness = 2)
 ORDER BY _score DESC;
 ```
 
-This matches similar names like ‘brown’ or ‘browne’.
+This matches similar words like ‘James’.
 
 **Example: Multi‑language Composite Search**
 
 ```sql
 CREATE TABLE documents (
-  name        STRING PRIMARY KEY,
-  description TEXT,
-  INDEX ft_en USING FULLTEXT(description) WITH (analyzer = 'english'),
-  INDEX ft_de USING FULLTEXT(description) WITH (analyzer = 'german')
+  title       TEXT,
+  body        TEXT,
+  INDEX ft_en USING FULLTEXT(body) WITH (analyzer = 'english'),
+  INDEX ft_de USING FULLTEXT(body) WITH (analyzer = 'german')
 );
-SELECT name, _score
+
+SELECT title, _score
 FROM documents
 WHERE MATCH((ft_en, ft_de), 'jupm OR verwrlost') USING best_fields WITH (fuzziness = 1)
 ORDER BY _score DESC;
@@ -103,49 +121,37 @@ ORDER BY _score DESC;
 
 ## Use Cases & Integration
 
-CrateDB is ideal for searching **semi-structured large text data**—product catalogs, article archives, user-generated content, descriptions and logs.
+CrateDB is ideal for searching **semi-structured large text data**—product
+catalogs, article archives, user-generated content, descriptions and logs.
 
-Because full-text indices are updated in real-time, search results reflect newly ingested data almost instantly. This tight integration avoids the complexity of maintaining separate search infrastructure.
+Because full-text indices are updated in real-time, search results reflect newly
+ingested data almost instantly. This tight integration avoids the complexity of
+maintaining separate search infrastructure.
 
 You can **combine full-text search with other data domains**, for example:
 
 ```sql
 SELECT *
 FROM listings
-WHERE 
+WHERE
   MATCH(ft_desc, 'garden deck') AND
   price < 500000 AND
   within(location, :polygon);
 ```
 
-This blend lets you query by text relevance, numeric filters, and spatial constraints, all in one.
-
-## Architectural Strengths
-
-* **Built on Lucene inverted index + BM25**, offering relevance ranking comparable to search engines.
-* **Scale horizontally across clusters**, while maintaining fast indexing and search even on high volume datasets.
-* **Integrated SQL interface**: eliminates need for separate search services like Elasticsearch or Solr.
-
-## Best Practices Checklist
-
-| Topic               | Recommendation                                                                     |
-| ------------------- | ---------------------------------------------------------------------------------- |
-| Schema & Indexing   | Define full-text indices at table creation; plain indices are insufficient.        |
-| Language Support    | Pick built-in analyzer matching your content language.                             |
-| Composite Search    | Use multi-column indices to search across title/body/fields.                       |
-| Query Tuning        | Configure fuzziness, operator, boost, and slop options.                            |
-| Scoring & Ranking   | Use `_score` and ordering to sort by relevance.                                    |
-| Real-time Updates   | Full-text indices update automatically on INSERT/UPDATE.                           |
-| Multi-model Queries | Combine full-text search with geo, JSON, numerical filters.                        |
-| Analyze Limitations | Understand phrase\_prefix caveats at scale; tune analyzer/tokenizer appropriately. |
+This blend lets you query by text relevance, numeric filters, and spatial
+constraints, all in one.
 
 ## Further Learning & Resources
 
-* **CrateDB Full‑Text Search Guide**: details index creation, analyzers, MATCH usage.
-* **FTS Options & Advanced Features**: fuzziness, synonyms, multi-language idioms.
-* **Hands‑On Academy Course**: explore FTS on real datasets (e.g. Chicago neighborhoods).
-* **CrateDB Community Insights**: real‑world advice and experiences from users.
+* [**Full-text Search**](../../feature/search/fts/index.md): In-depth walkthrough of full-text search capabilities.
+* Reference Manual:
+  * [Full-text indices]: Defining indices, extending builtin analyzers, custom analyzers.
+  * [Full-text analyzers]: Builtin analyzers, tokenizers, token and char filters.
+  * [SQL MATCH predicate]: Details about MATCH predicate arguments and options.
+* [**Hands‑On Academy Course**](https://learn.cratedb.com/cratedb-fundamentals?lesson=fulltext-search): explore FTS on real datasets (e.g. Chicago neighborhoods).
 
-## **Summary**
-
-CrateDB combines powerful Lucene‑based full‑text search capabilities with SQL, making it easy to model and query textual data at scale. It supports fuzzy matching, multi-language analysis, composite indexing, and integrates fully with other data types for rich, multi-model queries. Whether you're building document search, catalog lookup, or content analytics—CrateDB offers a flexible and scalable foundation.\
+[Full-text search]: project:#fulltext-search
+[Full-text indices]: inv:crate-reference:*:label#fulltext-indices
+[Full-text analyzers]: inv:crate-reference:*:label#sql-analyzer
+[SQL MATCH predicate]: inv:crate-reference:*:label#sql_dql_fulltext_search
