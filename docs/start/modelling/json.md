@@ -1,13 +1,19 @@
 (model-json)=
 # JSON data
 
-CrateDB combines the flexibility of NoSQL document stores with the power of SQL. It enables you to store, query, and index **semi-structured JSON data** using **standard SQL**, making it an excellent choice for applications that handle diverse or evolving schemas.
+CrateDB combines the flexibility of NoSQL document stores with the power of SQL.
+It enables you to store, query, and index **semi-structured JSON data** using
+**standard SQL**, making it an excellent choice for applications that handle
+diverse or evolving schemas.
 
-CrateDB’s support for dynamic objects, nested structures, and dot-notation querying brings the best of both relational and document-based data modeling—without leaving the SQL world.
+CrateDB’s support for dynamic objects, nested structures, and dot-notation
+querying brings the best of both relational and document-based data
+modeling—without leaving the SQL world.
 
 ## Object (JSON) Columns
 
-CrateDB allows you to define **object columns** that can store JSON-style data structures.
+CrateDB allows you to define **object columns** that can store JSON-style data
+structures.
 
 ```sql
 CREATE TABLE events (
@@ -79,9 +85,15 @@ Dot-notation works for both explicitly and dynamically added fields.
 
 ## Querying DYNAMIC OBJECTs
 
-To support querying DYNAMIC OBJECTs using SQL, where keys may not exist within an OBJECT, CrateDB provides the [error\_on\_unknown\_object\_key](https://cratedb.com/docs/crate/reference/en/latest/config/session.html#conf-session-error-on-unknown-object-key) session setting. It controls the behaviour when querying unknown object keys to dynamic objects.
+To support querying DYNAMIC OBJECTs using SQL, where keys may not exist within
+an OBJECT, CrateDB provides the
+[error_on_unknown_object_key](inv:crate-reference:*:label#conf-session-error_on_unknown_object_key)
+session setting. It controls the behaviour when querying unknown object keys to
+dynamic objects.
 
-By default, CrateDB will raise an error if any of the queried object keys are unknown. When adjusting this setting to `false`, it will return `NULL` as the value of the corresponding key.
+By default, CrateDB will raise an error if any of the queried object keys are
+unknown. When adjusting this setting to `false`, it will return `NULL` as the
+value of the corresponding key.
 
 ```sql
 cr> CREATE TABLE testdrive (item OBJECT(DYNAMIC));
@@ -179,7 +191,8 @@ data['some_field'] INDEX OFF
 ```
 
 ```{note}
-Too many dynamic fields can lead to schema explosion. Use `STRICT` or `IGNORED` if needed.
+Too many dynamic fields can lead to schema explosion. Use `STRICT` or `IGNORED`
+if needed.
 ```
 
 ## Aggregating JSON Fields
@@ -192,11 +205,14 @@ FROM sensor_readings
 WHERE payload['location'] = 'room1';
 ```
 
-CrateDB also supports **`GROUP BY`**, **`HAVING`**, and **window functions** on object fields.
+CrateDB also supports **`GROUP BY`**, **`HAVING`**, and **window functions** on
+object fields.
 
 ## Further Learning & Resources
 
 * Reference Manual:
-  * [Objects](inv:crate-reference:*:label#data-types-objects) and [Object Column policy](inv:crate-reference:*:label#type-object-column-policy)
-  * [Inserting objects as JSON](inv:crate-reference:*:label#data-types-object-json)
+  * [Objects](inv:crate-reference:*:label#data-types-objects) and [Object Column
+    policy](inv:crate-reference:*:label#type-object-column-policy)
+  * [Inserting objects as
+    JSON](inv:crate-reference:*:label#data-types-object-json)
   * [json type](inv:crate-reference:*:label#column_policy)
