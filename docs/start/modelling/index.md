@@ -103,28 +103,18 @@ fulltext
 vector
 ```
 
-:::{rubric} Implementation notes
-:::
-
-Because CrateDB is a distributed analytical database (OLAP) designed to store
-large volumes of data, users need to consider certain details compared to
-traditional RDBMS.
-
 
 :::{card} Primary key strategies
 :link: model-primary-key
 :link-type: ref
 CrateDB is built for horizontal scalability and high ingestion throughput.
-+++
-To achieve this, operations must complete independently on each node—without
-central coordination. This design choice means CrateDB does not support
-traditional auto-incrementing primary key types like `SERIAL` in PostgreSQL
-or MySQL by default.
+To achieve this, auto-incrementing primary keys are not supported, and other
+solutions are required instead.
 :::
 
 ```{toctree}
 :maxdepth: 1
 :hidden:
 
-primary-key
+Primary key strategies <primary-key>
 ```
