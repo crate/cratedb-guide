@@ -1,13 +1,14 @@
 (model-timeseries)=
 # Time series data
 
-CrateDB employs a relational representation for time‑series, enabling you to work with timestamped data using standard SQL, while also seamlessly combining with document and context data.
-
 ## Why CrateDB for Time Series?
+
+CrateDB employs a relational representation for time‑series, enabling you to work with timestamped data using standard SQL, while also seamlessly combining with document and context data.
 
 * While maintaining a high ingest rate, its **columnar storage** and **automatic indexing** let you access and analyze the data immediately with **fast aggregations** and **near-real-time queries**.
 * Handles **high cardin­ality** and **a variety of data types**, including nested JSON, geospatial and vector data—all queryable via the same SQL statements.
-* **PostgreSQL wire‑protocol compatible**, so it integrates easily with existing tools and drivers.
+
+***
 
 ## Data Model Template
 
@@ -39,7 +40,9 @@ Key points:
 
 * `month`  is the partitioning key, optimizing data storage and retrieval.
 * Every column is stored in the column store by default for fast aggregations.
-* Using **OBJECT columns** in the `devices_readings` table provides a structured and efficient way to organize complex nested data in CrateDB, enhancing both data integrity and flexibility.
+* Using **OBJECT columns** provides a structured and efficient way to organize complex nested data in CrateDB, enhancing both data integrity and flexibility.
+
+***
 
 ## Ingesting and Querying
 
@@ -100,10 +103,23 @@ ORDER BY
   expected_time;
 ```
 
-## Down-sampling & Interpolation
+### Typical time-series functions
+
+* **Time extraction:** date\_trunc, extract, date\_part, now(), current\_timestamp
+* **Time bucketing:** date\_bin, interval, age
+* **Window functions:** avg(...) OVER (...), stddev(...) OVER (...), lag, lead, first\_value, last\_value, row\_number,  rank, WINDOW ... AS (...)
+* **Null handling:** coalesce, nullif
+* **Statistical aggregates:** percentile, correlation, stddev, variance, min, max, sum
+* **Advanced filtering & logic:** greatest, least, case when ... then ... end
+
+***
+
+## Downsampling & Interpolation
 
 To reduce volume while preserving trends, use `DATE_BIN`.\
 Missing data can be handled using `LAG()`/`LEAD()` or other interpolation logic within SQL.
+
+***
 
 ## Schema Evolution & Contextual Data
 
@@ -117,44 +133,26 @@ You can also store:
 
 All types are supported within the same table or joined together.
 
+***
+
 ## Storage Optimization
 
 * **Partitioning and sharding**: data can be partitioned by time (e.g. daily/monthly) and sharded across a cluster.
 * Supports long‑term retention with performant historic storage.
 * Columnar layout reduces storage footprint and accelerates aggregation queries.
 
+***
+
 ## Advanced Use Cases
 
 * **Exploratory data analysis** (EDA), decomposition, and forecasting via CrateDB’s SQL or by exporting to Pandas/Plotly.
 * **Machine learning workflows**: time‑series features and anomaly detection pipelines can be built using CrateDB + external tools
 
-## Sample Workflow (Chicago Weather Dataset)
+***
 
-In [this lesson of the CrateDB Academy](https://cratedb.com/academy/fundamentals/data-modelling-with-cratedb/hands-on-time-series-data) introducing Time Series data, we provide a sample data set that captures hourly temperature, humidity, pressure, wind at three Chicago stations (150,000+ records).
+## Further Learning & Resources
 
-Typical operations:
-
-* Table creation and ingestion
-* Average per station
-* Using `MAX_BY()` to find highest temperature timestamps
-* Down-sampling using `DATE_BIN` into 4‑week buckets
-
-This workflow illustrates how CrateDB scales and simplifies time series modeling.
-
-## Best Practices Checklist
-
-| Topic                         | Recommendation                                                                     |
-| ----------------------------- | ---------------------------------------------------------------------------------- |
-| Schema design and evolution   | Dynamic columns add fields as needed; diverse data types ensure proper typing      |
-| Ingestion                     | Use bulk import (COPY) and JSON ingestion                                          |
-| Aggregations                  | Use DATE\_BIN, window functions, GROUP BY                                          |
-| Interpolation / gap analysis  | Employ LAG(), LEAD(), generate\_series, joins                                      |
-| Mixed data types              | Combine time series, JSON, geo, full‑text in one dataset                           |
-| Partitioning & shard strategy | Partition by time, shard across nodes for scale                                    |
-| Down-sampling                 | Use DATE\_BIN for aggregating resolution or implement your own strategy using UDFs |
-| Integration with analytics/ML | Export to pandas/Plotly to train your ML models                                    |
-
-## Further Learning
-
+* **Documentation:** [Advanced Time Series Analysis](project:#timeseries-analysis), [Time Series Long Term Storage](project:#timeseries-longterm)
 * **Video:** [Time Series Data Modeling](https://cratedb.com/resources/videos/time-series-data-modeling) – covers relational & time series, document, geospatial, vector, and full-text in one tutorial.
 * **CrateDB Academy:** [Advanced Time Series Modeling course](https://cratedb.com/academy/time-series/getting-started/introduction-to-time-series-data).
+* **Tutorial:** [Downsampling with LTTB algorithm](https://community.cratedb.com/t/advanced-downsampling-with-the-lttb-algorithm/1287)
