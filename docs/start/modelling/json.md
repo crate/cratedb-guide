@@ -73,9 +73,9 @@ FROM events
 WHERE payload['device']['os'] = 'Android';
 ```
 
-:::{note}
+```{note}
 Dot-notation works for both explicitly and dynamically added fields.
-:::
+```
 
 ## Querying DYNAMIC OBJECTs
 
@@ -178,9 +178,9 @@ To exclude fields from indexing, set:
 data['some_field'] INDEX OFF
 ```
 
-:::{note}
+```{note}
 Too many dynamic fields can lead to schema explosion. Use `STRICT` or `IGNORED` if needed.
-:::
+```
 
 ## Aggregating JSON Fields
 
@@ -194,35 +194,9 @@ WHERE payload['location'] = 'room1';
 
 CrateDB also supports **`GROUP BY`**, **`HAVING`**, and **window functions** on object fields.
 
-## Use Cases for JSON Modeling
-
-| Use Case           | Description                                  |
-| ------------------ | -------------------------------------------- |
-| Logs & Traces      | Unstructured payloads with flexible metadata |
-| Sensor & IoT Data  | Variable field schemas, nested measurements  |
-| Product Catalogs   | Specs, tags, reviews in varying formats      |
-| User Profiles      | Custom settings, device info, preferences    |
-| Telemetry / Events | Event streams with evolving structure        |
-
-## Best Practices
-
-| Area             | Recommendation                                                       |
-| ---------------- | -------------------------------------------------------------------- |
-| Schema Evolution | Use `DYNAMIC` for flexibility, `STRICT` for control                  |
-| Index Management | Avoid over-indexing rarely used fields                               |
-| Nested Depth     | Prefer flat structures or shallow nesting for performance            |
-| Column Mixing    | Combine structured columns with JSON for hybrid models               |
-| Observability    | Monitor number of dynamic columns using `information_schema.columns` |
-
 ## Further Learning & Resources
 
-* CrateDB Docs – Object Columns
-* Working with JSON in CrateDB
-* CrateDB Academy – Modeling with JSON
-* Understanding Column Policies
-
-## Summary
-
-CrateDB makes it easy to model **semi-structured JSON data** with full SQL support. Whether you're building a telemetry pipeline, an event store, or a product catalog, CrateDB offers the flexibility of a document store—while preserving the structure, indexing, and power of a relational engine.
-
-You don’t need to choose between JSON and SQL—**CrateDB gives you both.**
+* Reference Manual:
+  * [Objects](inv:crate-reference:*:label#data-types-objects) and [Object Column policy](inv:crate-reference:*:label#type-object-column-policy)
+  * [Inserting objects as JSON](inv:crate-reference:*:label#data-types-object-json)
+  * [json type](inv:crate-reference:*:label#column_policy)
