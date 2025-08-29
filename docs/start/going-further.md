@@ -18,8 +18,9 @@ of the documentation portal.
 :::
 
 :::{sd-row}
-```{sd-item} Data modelling
+```{sd-item}
 :class: sd-font-weight-bolder
+{ref}`Data modelling <data-modelling>`
 ```
 ```{sd-item}
 Learn the different types of structured, semi-structured, and unstructured data.
