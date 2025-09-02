@@ -42,7 +42,7 @@ CREATE TABLE parks (
 );
 ```
 
-## Inserting Geospatial Data <a href="#inserting-spatial-data" id="inserting-spatial-data"></a>
+## Inserting Geospatial Data
 
 You can insert geospatial values using either **GeoJSON** or **WKT** formats.
 
@@ -65,7 +65,7 @@ CrateDB provides key scalar functions for spatial operations like, distance(), w
 
 Furthermore, it is possible to use the **match** predicate with geospatial data in queries.
 
-See the section about searching geospatial data (!!! add link) for details on this.
+See the section about {ref}`searching geospatial data <geo-search>` for details on this.
 
 ## Further Learning & Resources
 
