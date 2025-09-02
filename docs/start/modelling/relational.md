@@ -130,13 +130,13 @@ FROM customers c;
 
 ```sql
 WITH order_counts AS (
-    SELECT 
+    SELECT
         o.customer_id,
         COUNT(*) AS order_count
     FROM orders o
     GROUP BY o.customer_id
 )
-SELECT 
+SELECT
     c.name,
     COALESCE(oc.order_count, 0) AS order_count
 FROM customers c
@@ -144,48 +144,13 @@ LEFT JOIN order_counts oc
     ON c.id = oc.customer_id;
 ```
 
-## Use Cases for Relational Modeling
-
-| Use Case             | Description                                      |
-| -------------------- | ------------------------------------------------ |
-| Customer & Orders    | Classic normalized setup with joins and filters  |
-| Inventory Management | Products, stock levels, locations                |
-| Financial Systems    | Transactions, balances, audit logs               |
-| User Profiles        | Users, preferences, activity logs                |
-| Multi-tenant Systems | Use schemas or partitioning for tenant isolation |
-
-## Scalability & Distribution
-
-CrateDB automatically shards tables across nodes, distributing both **data and query processing**.
-
-* Tables can be **sharded and replicated** for fault tolerance
-* Use **partitioning** for time-series or tenant-based scaling
-* SQL queries are transparently **parallelized across the cluster**
-
-:::{note}
-Use `CLUSTERED BY` and `PARTITIONED BY` in `CREATE TABLE` to control distribution patterns.
-:::
-
-## Best Practices
-
-| Area          | Recommendation                                               |
-| ------------- | ------------------------------------------------------------ |
-| Keys & IDs    | Use UUIDs or consistent IDs for primary keys                 |
-| Sharding      | Let CrateDB auto-shard unless you have advanced requirements |
-| Join Strategy | Minimize joins over large, high-cardinality columns          |
-| Nested Fields | Use `column_policy = 'dynamic'` if schema needs flexibility  |
-| Aggregations  | Favor columnar tables for analytical workloads               |
-| Co-location   | Consider denormalization for write-heavy workloads           |
-
 ## Further Learning & Resources
 
-* CrateDB Docs – Data Modeling
-* CrateDB Academy – Relational Modeling
-* Working with Joins in CrateDB
-* Schema Design Guide
-
-## Summary
-
-CrateDB offers a familiar, powerful **relational model with full SQL** and built-in support for scale, performance, and hybrid data. You can model clean, normalized data structures and join them across millions of records, without sacrificing the flexibility to embed, index, and evolve schema dynamically.
-
-CrateDB is the modern SQL engine for building relational, real-time, and hybrid apps in a distributed world.
+* Reference Manual:
+  * How to [query with joins](inv:crate-reference:*:label#sql_joins)
+  * [SQL join statements](inv:crate-reference:*:label#sql-select-joined-relation)
+  * [Join types and their implementation](inv:crate-reference:*:label#concept-joins)
+* Blog posts:
+  * [How to fine-tune the query optimizer](https://cratedb.com/blog/join-performance-to-the-rescue)
+  * [Adding support for joins on virtual tables and multi-row subselects](https://cratedb.com/blog/joins-multi-row-subselects)
+  * How we made Joins twenty three thousand times faster - part [#1](https://cratedb.com/blog/joins-faster-part-one), [#2](https://cratedb.com/blog/lab-notes-how-we-made-joins-23-thousand-times-faster-part-two), [#3](https://cratedb.com/blog/lab-notes-how-we-made-joins-23-thousand-times-faster-part-three), [Video](https://cratedb.com/resources/videos/distributed-join-algorithms)
