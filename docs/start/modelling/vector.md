@@ -97,6 +97,6 @@ Vector dimensionality must be consistent for each column.
 
 ## Further Learning & Resources
 
-* [Vector Search](project:#vector-search): More details about searching with vectors
+* {ref}`Vector Search <vector-search>`: More details about searching with vectors
 * Blog: [Using CrateDB for Hybrid Search (Vector + Full-Text)](https://cratedb.com/blog/hybrid-search-explained)
 * CrateDB Academy: [Vector similarity search](https://learn.cratedb.com/cratedb-fundamentals?lesson=vector-similarity-search)

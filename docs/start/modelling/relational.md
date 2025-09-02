@@ -147,9 +147,9 @@ LEFT JOIN order_counts oc
 ## Further Learning & Resources
 
 * Reference Manual:
-  * How to [query with joins](inv:crate-reference:*:label#sql_joins)
-  * [SQL join statements](inv:crate-reference:*:label#sql-select-joined-relation)
-  * [Join types and their implementation](inv:crate-reference:*:label#concept-joins)
+  * How to {ref}`query with joins <crate-reference:sql_joins>`
+  * {ref}`SQL join statements <crate-reference:sql-select-joined-relation>`
+  * {ref}`Join types and their implementation <crate-reference:concept-joins>`
 * Blog posts:
   * [How to fine-tune the query optimizer](https://cratedb.com/blog/join-performance-to-the-rescue)
   * [Adding support for joins on virtual tables and multi-row subselects](https://cratedb.com/blog/joins-multi-row-subselects)

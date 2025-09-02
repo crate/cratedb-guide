@@ -8,8 +8,6 @@ CrateDB employs a relational representation for time‑series, enabling you to w
 * While maintaining a high ingest rate, its **columnar storage** and **automatic indexing** let you access and analyze the data immediately with **fast aggregations** and **near-real-time queries**.
 * Handles **high cardin­ality** and **a variety of data types**, including nested JSON, geospatial and vector data—all queryable via the same SQL statements.
 
-***
-
 ## Data Model Template
 
 A typical time‑series schema looks like this:
@@ -41,8 +39,6 @@ Key points:
 * `month`  is the partitioning key, optimizing data storage and retrieval.
 * Every column is stored in the column store by default for fast aggregations.
 * Using **OBJECT columns** provides a structured and efficient way to organize complex nested data in CrateDB, enhancing both data integrity and flexibility.
-
-***
 
 ## Ingesting and Querying
 
@@ -112,14 +108,10 @@ ORDER BY
 * **Statistical aggregates:** percentile, correlation, stddev, variance, min, max, sum
 * **Advanced filtering & logic:** greatest, least, case when ... then ... end
 
-***
-
 ## Downsampling & Interpolation
 
 To reduce volume while preserving trends, use `DATE_BIN`.\
 Missing data can be handled using `LAG()`/`LEAD()` or other interpolation logic within SQL.
-
-***
 
 ## Schema Evolution & Contextual Data
 
@@ -133,26 +125,20 @@ You can also store:
 
 All types are supported within the same table or joined together.
 
-***
-
 ## Storage Optimization
 
 * **Partitioning and sharding**: data can be partitioned by time (e.g. daily/monthly) and sharded across a cluster.
 * Supports long‑term retention with performant historic storage.
 * Columnar layout reduces storage footprint and accelerates aggregation queries.
 
-***
-
 ## Advanced Use Cases
 
 * **Exploratory data analysis** (EDA), decomposition, and forecasting via CrateDB’s SQL or by exporting to Pandas/Plotly.
 * **Machine learning workflows**: time‑series features and anomaly detection pipelines can be built using CrateDB + external tools
 
-***
-
 ## Further Learning & Resources
 
-* **Documentation:** [Advanced Time Series Analysis](project:#timeseries-analysis), [Time Series Long Term Storage](project:#timeseries-longterm)
+* **Documentation:** {ref}`Advanced Time Series Analysis <timeseries-analysis>`, {ref}`Time Series Long Term Storage <timeseries-longterm>`
 * **Video:** [Time Series Data Modeling](https://cratedb.com/resources/videos/time-series-data-modeling) – covers relational & time series, document, geospatial, vector, and full-text in one tutorial.
 * **CrateDB Academy:** [Advanced Time Series Modeling course](https://cratedb.com/academy/time-series/getting-started/introduction-to-time-series-data).
 * **Tutorial:** [Downsampling with LTTB algorithm](https://community.cratedb.com/t/advanced-downsampling-with-the-lttb-algorithm/1287)

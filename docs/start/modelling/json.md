@@ -211,8 +211,7 @@ object fields.
 ## Further Learning & Resources
 
 * Reference Manual:
-  * [Objects](inv:crate-reference:*:label#data-types-objects) and [Object Column
-    policy](inv:crate-reference:*:label#type-object-column-policy)
-  * [Inserting objects as
-    JSON](inv:crate-reference:*:label#data-types-object-json)
-  * [json type](inv:crate-reference:*:label#column_policy)
+  * {ref}`Objects <crate-reference:data-types-objects>`
+  * {ref}`Object Column policy <crate-reference:type-object-column-policy>`
+  * {ref}`Inserting objects as JSON <crate-reference:data-types-object-json>`
+  * {ref}`json type <crate-reference:column_policy>`
