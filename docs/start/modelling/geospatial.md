@@ -1,13 +1,20 @@
 (model-geospatial)=
 # Geospatial data
 
-CrateDB supports **real-time geospatial analytics at scale**, enabling you to store, query, and analyze 2D location-based data using standard SQL over two dedicated types: **GEO\_POINT** and **GEO\_SHAPE**. You can seamlessly combine spatial data with full-text, vector, JSON, or time-series in the same SQL queries.
+CrateDB supports **real-time geospatial analytics at scale**, enabling you to
+store, query, and analyze 2D location-based data using standard SQL over two
+dedicated types: **GEO\_POINT** and **GEO\_SHAPE**. You can seamlessly combine
+spatial data with full-text, vector, JSON, or time-series in the same SQL
+queries.
 
 The strength of CrateDB's support for geospatial data includes:
 
-* Designed for **real-time geospatial tracking and analytics** (e.g., fleet tracking, mapping, location-layered apps)
-* **Unified SQL platform**: spatial data can be combined with full-text search, JSON, vectors, time-series — in the same table or query
-* **High ingest and query throughput**, suitable for large-scale location-based workloads
+* Designed for **real-time geospatial tracking and analytics** (e.g., fleet
+  tracking, mapping, location-layered apps)
+* **Unified SQL platform**: spatial data can be combined with full-text search,
+  JSON, vectors, time-series — in the same table or query
+* **High ingest and query throughput**, suitable for large-scale location-based
+  workloads
 
 ## Geospatial Data Types
 
@@ -18,8 +25,10 @@ CrateDB has two geospatial data types:
 * Stores a single location via latitude/longitude.
 * Insert using
   * coordinate array `[lon, lat]`&#x20;
-  * [Well-Known Text](https://libgeos.org/specifications/wkt/) (WKT) string `'POINT (lon lat)'`.
-* Must be declared explicitly; dynamic schema inference will not detect `geo_point` type.
+  * [Well-Known Text](https://libgeos.org/specifications/wkt/) (WKT) string
+    `'POINT (lon lat)'`.
+* Must be declared explicitly; dynamic schema inference will not detect
+  `geo_point` type.
 
 ### **geo_shape**
 
@@ -29,7 +38,11 @@ CrateDB has two geospatial data types:
   * `LineString`, `MultiLineString`
   * `Polygon`, `MultiPolygon`
   * `GeometryCollection`
-* Indexed using geohash, quadtree, or BKD-tree, with configurable precision (e.g. `50m`) and error threshold. The indexes are described in the [reference manual](https://cratedb.com/docs/crate/reference/en/latest/general/ddl/data-types.html#type-geo-shape-index). You can choose and configure the indexing method when defining your table schema.
+* Indexed using geohash, quadtree, or BKD-tree, with configurable precision
+  (e.g. `50m`) and error threshold. The indexes are described in the [reference
+  manual](https://cratedb.com/docs/crate/reference/en/latest/general/ddl/data-types.html#type-geo-shape-index).
+  You can choose and configure the indexing method when defining your table
+  schema.
 
 ## Defining a Geospatial Column
 
@@ -61,16 +74,25 @@ SELECT name FROM parks
 WHERE within('POINT(10 10)'::geo_shape, area);
 ```
 
-CrateDB provides key scalar functions for spatial operations such as distance(), within(), intersects(), area(), geohash() and latitude()/longitude().
+CrateDB provides key scalar functions for spatial operations such as distance(),
+within(), intersects(), area(), geohash() and latitude()/longitude().
 
-Furthermore, it is possible to use the **match** predicate with geospatial data in queries.
+Furthermore, it is possible to use the **match** predicate with geospatial data
+in queries.
 
-See the section about {ref}`searching geospatial data <geo-search>` for details on this.
+See the section about {ref}`searching geospatial data <geo-search>` for details
+on this.
 
 ## Further Learning & Resources
 
 * Reference manual:
   * {ref}`Geo Search <crate-reference:sql_dql_geo_search>`
-  * {ref}`Geo functions <crate-reference:scalar-geo>`: distance, within, intersects, latitude, longitude, geohash, area
-* CrateDB Academy [**Hands-on: Geospatial Data**](https://cratedb.com/academy/fundamentals/data-modelling-with-cratedb/hands-on-geospatial-data) modules, with sample datasets (Chicago 311 calls, taxi rides, community zones) and example queries.
-* CrateDB Blog: [**Geospatial Queries with CrateDB**](https://cratedb.com/blog/geospatial-queries-with-crate-data) – outlines capabilities, limitations, and practical use cases.
+  * {ref}`Geo functions <crate-reference:scalar-geo>`: distance, within,
+    intersects, latitude, longitude, geohash, area
+* CrateDB Academy [**Hands-on: Geospatial
+  Data**](https://cratedb.com/academy/fundamentals/data-modelling-with-cratedb/hands-on-geospatial-data)
+  modules, with sample datasets (Chicago 311 calls, taxi rides, community zones)
+  and example queries.
+* CrateDB Blog: [**Geospatial Queries with
+  CrateDB**](https://cratedb.com/blog/geospatial-queries-with-crate-data) –
+  outlines capabilities, limitations, and practical use cases.

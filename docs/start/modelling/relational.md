@@ -37,7 +37,7 @@ built-in for scale
 ## Normalization vs. Embedding
 
 CrateDB supports both **normalized** (relational) and **denormalized** (embedded
-JSON) approaches with {ref}`column_policy = 'dynamic' <crate-reference:column-policy>`.
+JSON) approaches with {ref}`column_policy = 'dynamic' <crate-reference:column_policy>`.
 
 * For strict referential integrity and modularity: use normalized tables with
   joins.
@@ -62,8 +62,10 @@ CREATE TABLE orders (
 );
 ```
 
-:::{note} CrateDB lets you **query nested fields** directly using bracket
-notation: `items['name']`, `items['price']`, etc. :::
+:::{note}
+CrateDB lets you **query nested fields** directly using bracket
+notation: `items['name']`, `items['price']`, etc.
+:::
 
 ## Joins & Relationships
 
@@ -94,8 +96,10 @@ GROUP BY customer_id
 HAVING SUM(total_amount) > 1000;
 ```
 
-:::{note} CrateDB's **columnar storage** optimizes performance for
-aggregations — even on large datasets. :::
+:::{note}
+CrateDB's **columnar storage** optimizes performance for
+aggregations — even on large datasets.
+:::
 
 ## Constraints & Indexing
 
