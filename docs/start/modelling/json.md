@@ -10,14 +10,14 @@ CrateDB’s support for dynamic objects, nested structures, and dot-notation
 querying brings the best of both relational and document-based data
 modeling—without leaving the SQL world.
 
-## Object (JSON) Columns
+## A Simple Table with JSON
 
 CrateDB allows you to define **object columns** that can store JSON-style data
 structures.
 
 ```sql
 CREATE TABLE events (
-  id UUID PRIMARY KEY,
+  id TEXT PRIMARY KEY,
   timestamp TIMESTAMP,
   payload OBJECT(DYNAMIC)
 );
@@ -39,7 +39,7 @@ This allows inserting flexible, nested JSON data into `payload`:
 }
 ```
 
-## Column Policy: Strict vs Dynamic
+## Column Policy — Strict vs Dynamic
 
 You can control how CrateDB handles unexpected fields in an object column:
 
@@ -49,120 +49,92 @@ You can control how CrateDB handles unexpected fields in an object column:
 | `STRICT`      | Only explicitly defined fields are allowed                  |
 | `IGNORED`     | Extra fields are stored but not indexed or queryable        |
 
-Example with explicitly defined fields:
+Let’s evolve our table to restrict the structure of `payload`:
 
 ```sql
-CREATE TABLE sensor_data (
-  id UUID PRIMARY KEY,
-  attributes OBJECT(STRICT) AS (
+CREATE TABLE events2 (
+  id TEXT PRIMARY KEY,
+  timestamp TIMESTAMP,
+  payload OBJECT(STRICT) AS (
     temperature DOUBLE,
     humidity DOUBLE
   )
 );
 ```
 
+You can no longer use fields other than temperature and humidity in the payload
+object.
+
 ## Querying JSON Fields
 
 Use **bracket notation** to access nested fields:
 
 ```sql
-SELECT payload['user']['name'], payload['device']['os']
-FROM events
-WHERE payload['action'] = 'login';
+SELECT payload['temperature'], payload['humidity']
+FROM events2
+WHERE payload['temperature'] >= 20.0;
 ```
 
 CrateDB also supports **filtering, sorting, and aggregations** on nested values:
 
 ```sql
-SELECT COUNT(*)
-FROM events
-WHERE payload['device']['os'] = 'Android';
+-- count events with high humidity
+SELECT COUNT(*) AS high_humidity_events
+FROM events2
+WHERE payload['humidity'] > 70
 ```
 
 ```{note}
 Dot-notation works for both explicitly and dynamically added fields.
 ```
 
-## Querying DYNAMIC OBJECTs
+## Querying DYNAMIC OBJECTs Safely
 
-To support querying DYNAMIC OBJECTs using SQL, where keys may not exist within
-an OBJECT, CrateDB provides the
+When working with dynamic objects, some keys may not exist. CrateDB provides the
 [error_on_unknown_object_key](inv:crate-reference:*:label#conf-session-error_on_unknown_object_key)
-session setting. It controls the behaviour when querying unknown object keys to
-dynamic objects.
+session setting to control behavior in such cases.
 
 By default, CrateDB will raise an error if any of the queried object keys are
 unknown. When adjusting this setting to `false`, it will return `NULL` as the
 value of the corresponding key.
 
 ```sql
-cr> CREATE TABLE testdrive (item OBJECT(DYNAMIC));
+cr> CREATE TABLE events (payload OBJECT(DYNAMIC));
 CREATE OK, 1 row affected  (0.563 sec)
 
-cr> SELECT item['unknown'] FROM testdrive;
-ColumnUnknownException[Column item['unknown'] unknown]
+cr> SELECT payload['unknown'] FROM events;
+ColumnUnknownException[Column payload['unknown'] unknown]
 
 cr> SET error_on_unknown_object_key = false;
 SET OK, 0 rows affected  (0.001 sec)
 
-cr> SELECT item['unknown'] FROM testdrive;
-+-----------------+
-| item['unknown'] |
-+-----------------+
-+-----------------+
+cr> SELECT payload['unknown'] FROM events;
++-------------------+
+| payload['unknown']|
++-------------------+
++-------------------+
 SELECT 0 rows in set (0.051 sec)
 ```
 
-## Arrays of OBJECTs
+## Aggregating JSON Fields
 
-Store arrays of objects for multi-valued nested data:
-
-```sql
-CREATE TABLE products (
-  id UUID PRIMARY KEY,
-  name TEXT,
-  tags ARRAY(TEXT),
-  specs ARRAY(OBJECT AS (
-    name TEXT,
-    value TEXT
-  ))
-);
-```
-
-Query nested arrays with filters:
+CrateDB allows full SQL-style aggregations on nested fields:
 
 ```sql
-SELECT *
-FROM products
-WHERE 'outdoor' = ANY(tags);
-```
-
-You can also filter by object array fields:
-
-```sql
-SELECT *
-FROM products
-WHERE specs['name'] = 'battery' AND specs['value'] = 'AA';
+SELECT AVG(payload['temperature']) AS avg_temp
+FROM events3
+WHERE payload['humidity'] > 20.0';
 ```
 
 ## Combining Structured & Semi-Structured Data
 
-CrateDB supports **hybrid schemas**, mixing standard columns with JSON fields:
-
-```sql
-CREATE TABLE logs (
-  id UUID PRIMARY KEY,
-  service TEXT,
-  log_level TEXT,
-  metadata OBJECT(DYNAMIC),
-  created_at TIMESTAMP
-);
-```
+As you can see in the events table, CrateDB supports **hybrid schemas**, mixing
+standard columns with JSON fields.
 
 This allows you to:
 
-* Query by fixed attributes (`log_level`)
-* Flexibly store structured or unstructured metadata
+* Query by fixed attributes (`temerature`)
+* Flexibly store structured or unstructured metadata in `payload`
 * Add new fields on the fly without migrations
 
 ## Indexing Behavior
@@ -172,37 +144,25 @@ CrateDB **automatically indexes** object fields if:
 * Column policy is `DYNAMIC`
 * Field type can be inferred at insert time
 
-You can also explicitly define and index object fields:
+You can also explicitly define and index object fields. Let’s extend the payload
+with a message field with full-text index, and also disable index for `humidity`:
 
 ```sql
-CREATE TABLE metrics (
-  id UUID PRIMARY KEY,
-  data OBJECT(DYNAMIC) AS (
-    cpu DOUBLE INDEX USING FULLTEXT,
-    memory DOUBLE
+CREATE TABLE events3 (
+  id TEXT PRIMARY KEY,
+  timestamp TIMESTAMP,
+  tags ARRAY(TEXT),
+  payload OBJECT(DYNAMIC) AS (
+    temperature DOUBLE,
+    humidity DOUBLE INDEX OFF,
+    message TEXT INDEX USING FULLTEXT
   )
 );
-```
-
-To exclude fields from indexing, set:
-
-```sql
-data['some_field'] INDEX OFF
 ```
 
 ```{note}
 Too many dynamic fields can lead to schema explosion. Use `STRICT` or `IGNORED`
 if needed.
-```
-
-## Aggregating JSON Fields
-
-CrateDB allows full SQL-style aggregations on nested fields:
-
-```sql
-SELECT AVG(payload['temperature']) AS avg_temp
-FROM sensor_readings
-WHERE payload['location'] = 'room1';
 ```
 
 CrateDB also supports **`GROUP BY`**, **`HAVING`**, and **window functions** on
@@ -213,5 +173,5 @@ object fields.
 * Reference Manual:
   * {ref}`Objects <crate-reference:data-types-objects>`
   * {ref}`Object Column policy <crate-reference:type-object-column-policy>`
+  * {ref}`json data type <crate-reference:data-type-json>`
   * {ref}`Inserting objects as JSON <crate-reference:data-types-object-json>`
-  * {ref}`json type <crate-reference:column_policy>`
