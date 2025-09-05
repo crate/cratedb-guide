@@ -52,7 +52,7 @@ INSERT INTO parks (name, area)
 VALUES ('My Park', 'POLYGON ((5 5, 30 5, 30 30, 5 30, 5 5))');
 ```
 
-## Querying with spacial operations
+## Querying with spatial operations
 
 It is e.g. possible to check if a point is within a park in the table:
 
@@ -61,7 +61,7 @@ SELECT name FROM parks
 WHERE within('POINT(10 10)'::geo_shape, area);
 ```
 
-CrateDB provides key scalar functions for spatial operations like, distance(), within(), intersects(), area(),  geohash() and lattitude()/longitude().
+CrateDB provides key scalar functions for spatial operations such as distance(), within(), intersects(), area(), geohash() and latitude()/longitude().
 
 Furthermore, it is possible to use the **match** predicate with geospatial data in queries.
 
