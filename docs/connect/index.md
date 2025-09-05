@@ -109,6 +109,7 @@ Database driver connection examples.
 :hidden:
 
 configure
+connect
 CLI programs <cli>
 ide
 Drivers <drivers>
@@ -137,7 +138,7 @@ ruby
 [CrateDB PostgreSQL interface]: inv:crate-reference:*:label#interface-postgresql
 [HTTP interface]: inv:crate-reference:*:label#interface-http
 [HTTP protocol]: https://en.wikipedia.org/wiki/HTTP
-[JDBC]: https://en.wikipedia.org/wiki/Java_Database_Connectivity 
+[JDBC]: https://en.wikipedia.org/wiki/Java_Database_Connectivity
 [ODBC]: https://en.wikipedia.org/wiki/Open_Database_Connectivity
 [PostgreSQL interface]: inv:crate-reference:*:label#interface-postgresql
 [PostgreSQL wire protocol]: https://www.postgresql.org/docs/current/protocol.html

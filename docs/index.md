@@ -9,7 +9,7 @@
 Guides and tutorials about how to use CrateDB and CrateDB Cloud in practice.
 
 
-::::{grid} 1 2 2 2
+::::{grid} 4
 :padding: 0
 
 
@@ -17,7 +17,7 @@ Guides and tutorials about how to use CrateDB and CrateDB Cloud in practice.
 :link: getting-started
 :link-type: ref
 :link-alt: Getting started with CrateDB
-:padding: 3
+:padding: 1
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
@@ -31,7 +31,7 @@ Guides and tutorials about how to use CrateDB and CrateDB Cloud in practice.
 :link: install
 :link-type: ref
 :link-alt: Installing CrateDB
-:padding: 3
+:padding: 1
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
@@ -45,7 +45,7 @@ Guides and tutorials about how to use CrateDB and CrateDB Cloud in practice.
 :link: administration
 :link-type: ref
 :link-alt: CrateDB Administration
-:padding: 3
+:padding: 1
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
@@ -59,7 +59,7 @@ Guides and tutorials about how to use CrateDB and CrateDB Cloud in practice.
 :link: performance
 :link-type: ref
 :link-alt: CrateDB Performance Guides
-:padding: 3
+:padding: 1
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
