@@ -21,7 +21,8 @@ text columns you want to search:
 CREATE TABLE documents (
   title       TEXT,
   body        TEXT,
-  INDEX ft_body USING FULLTEXT(body) WITH (analyzer = 'english')
+  INDEX ft_title USING FULLTEXT(title) WITH (analyzer = 'english'),
+  INDEX ft_body  USING FULLTEXT(body)  WITH (analyzer = 'english')
 );
 ```
 
@@ -82,10 +83,10 @@ ORDER BY _score DESC;
 
 ```sql
 SELECT title, _score FROM documents
-WHERE MATCH((ft_body, title 2.0), 'search term');
+WHERE MATCH((ft_body, ft_title 2.0), 'search term');
 ORDER BY _score DESC;
 ```
-Here `title` is weighted twice as much as `ft_body`.
+Here `ft_title` is weighted twice as much as `ft_body`.
 
 **You can configure match options like:**
 
