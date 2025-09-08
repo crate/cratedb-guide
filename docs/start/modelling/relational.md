@@ -2,7 +2,7 @@
 # Relational data
 
 CrateDB is a **distributed SQL database** that offers rich **relational data
-modeling** with the flexibility of dynamic schemas and the scalability of NoSQL
+modelling** with the flexibility of dynamic schemas and the scalability of NoSQL
 systems. It supports **primary keys,** **joins**, **aggregations**, and
 **subqueries**, just like traditional RDBMS systems—while also enabling hybrid
 use cases with time-series, geospatial, full-text, vector search, and

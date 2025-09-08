@@ -24,13 +24,13 @@ CrateDB has two geospatial data types:
 
 * Stores a single location via latitude/longitude.
 * Insert using
-  * coordinate array `[lon, lat]`&#x20;
+  * coordinate array `[lon, lat]`
   * [Well-Known Text](https://libgeos.org/specifications/wkt/) (WKT) string
     `'POINT (lon lat)'`.
 * Must be declared explicitly; dynamic schema inference will not detect
   `geo_point` type.
 
-### **geo_shape**
+### geo_shape
 
 * Represents more complex 2D shapes defined via GeoJSON or WKT formats.
 * Supported geometry types:
@@ -51,7 +51,7 @@ Here’s an example of how to define a `GEO_SHAPE` column with a specific index:
 ```sql
 CREATE TABLE parks (
   name TEXT,
-  area GEO_SHAPE INDEX USING quadtree
+  area GEO_SHAPE INDEX USING quadtree WITH (precision = '50m')
 );
 ```
 
@@ -67,7 +67,7 @@ VALUES ('My Park', 'POLYGON ((5 5, 30 5, 30 30, 5 30, 5 5))');
 
 ## Querying with spatial operations
 
-It is e.g. possible to check if a point is within a park in the table:
+For example, check whether a point lies within a park:
 
 ```sql
 SELECT name FROM parks
@@ -80,8 +80,7 @@ within(), intersects(), area(), geohash() and latitude()/longitude().
 Furthermore, it is possible to use the **match** predicate with geospatial data
 in queries.
 
-See the section about {ref}`searching geospatial data <geo-search>` for details
-on this.
+See {ref}`Geo Search <crate-reference:sql_dql_geo_search>` for details.
 
 ## Further Learning & Resources
 

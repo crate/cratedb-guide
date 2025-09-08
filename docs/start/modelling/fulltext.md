@@ -2,7 +2,7 @@
 # Full-text data
 
 CrateDB offers **native full-text search** powered by **Apache Lucene** and Okapi
-BM25 ranking, accessible via SQL for easy modeling and querying of large-scale
+BM25 ranking, accessible via SQL for easy modelling and querying of large-scale
 textual data. It supports fuzzy matching, multi-language analysis, and composite
 indexing, while fully integrating with data types such as JSON, time-series,
 geospatial, vectors, and more for comprehensive multi-model queries. Whether you
@@ -42,7 +42,7 @@ An analyzer splits text into searchable terms and consists of the following comp
 * **Token Filters -** e.g. lowercase, stemming, stop‑word removal
 * **Char Filters -** pre-processing (e.g. stripping HTML).
 
-CrateDB offers about 50 [**built-in analyzers**](https://cratedb.com/docs/crate/reference/en/latest/general/ddl/analyzers.html#built-in-analyzers) supporting more than 30 [languages](https://cratedb.com/docs/crate/reference/en/latest/general/ddl/analyzers.html#language).&#x20;
+CrateDB offers about 50 [**built-in analyzers**](https://cratedb.com/docs/crate/reference/en/latest/general/ddl/analyzers.html#built-in-analyzers) supporting more than 30 [languages](https://cratedb.com/docs/crate/reference/en/latest/general/ddl/analyzers.html#language).
 
 You can **extend** a built-in analyzer:
 
@@ -52,7 +52,7 @@ CREATE ANALYZER german_snowball
   WITH (language = 'german');
 ```
 
-or create your own **custom** analyzer :
+or create your own **custom** analyzer:
 
 ```sql
 CREATE ANALYZER myanalyzer (
@@ -62,7 +62,7 @@ CREATE ANALYZER myanalyzer (
 );
 ```
 
-Learn more about the [builtin analyzers](https://cratedb.com/docs/crate/reference/en/latest/general/ddl/analyzers.html#built-in-analyzers) and how to [define your own](https://cratedb.com/docs/crate/reference/en/latest/general/ddl/fulltext-indices.html#creating-a-custom-analyzer) with custom [tokenizers](https://cratedb.com/docs/crate/reference/en/latest/general/ddl/analyzers.html#built-in-tokenizers) and [token filters.](https://cratedb.com/docs/crate/reference/en/latest/general/ddl/analyzers.html#built-in-token-filters)
+Learn more about the [built-in analyzers](https://cratedb.com/docs/crate/reference/en/latest/general/ddl/analyzers.html#built-in-analyzers) and how to [define your own](https://cratedb.com/docs/crate/reference/en/latest/general/ddl/fulltext-indices.html#creating-a-custom-analyzer) with custom [tokenizers](https://cratedb.com/docs/crate/reference/en/latest/general/ddl/analyzers.html#built-in-tokenizers) and [token filters.](https://cratedb.com/docs/crate/reference/en/latest/general/ddl/analyzers.html#built-in-token-filters)
 
 
 ## Querying: MATCH Predicate & Scoring
@@ -147,14 +147,14 @@ constraints, all in one.
 
 ## Further Learning & Resources
 
-* [**Full-text Search**](../../feature/search/fts/index.md): In-depth walkthrough of full-text search capabilities.
+* [**Full-text Search**](../../feature/search/fts/index.md): In-depth
+  walkthrough of full-text search capabilities.
 * Reference Manual:
-  * [Full-text indices]: Defining indices, extending builtin analyzers, custom analyzers.
-  * [Full-text analyzers]: Builtin analyzers, tokenizers, token and char filters.
-  * [SQL MATCH predicate]: Details about MATCH predicate arguments and options.
-* [**Hands‑On Academy Course**](https://learn.cratedb.com/cratedb-fundamentals?lesson=fulltext-search): explore FTS on real datasets (e.g. Chicago neighborhoods).
-
-[Full-text search]: project:#fulltext-search
-[Full-text indices]: inv:crate-reference:*:label#fulltext-indices
-[Full-text analyzers]: inv:crate-reference:*:label#sql-analyzer
-[SQL MATCH predicate]: inv:crate-reference:*:label#sql_dql_fulltext_search
+  * {ref}`Full-text indices <crate-reference:fulltext-indices>`: Defining
+    indices, extending builtin analyzers, custom analyzers.
+  * sql-analyzer>`: Builtin analyzers, tokenizers, token and char filters.
+  * {ref}`SQL MATCH predicate <crate-reference:sql_dql_fulltext_search>`:
+    Details about MATCH predicate arguments and options.
+* [**Hands‑On Academy
+  Course**](https://learn.cratedb.com/cratedb-fundamentals?lesson=fulltext-search):
+  explore FTS on real datasets (e.g. Chicago neighborhoods).
