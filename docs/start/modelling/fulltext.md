@@ -73,8 +73,7 @@ BM25.
 **Basic usage:**
 
 ```sql
-SELECT title, _score
-FROM documents
+SELECT title, _score FROM documents
 WHERE MATCH(ft_body, 'search term')
 ORDER BY _score DESC;
 ```
@@ -82,8 +81,11 @@ ORDER BY _score DESC;
 **Searching multiple indices with weighted ranking:**
 
 ```sql
-MATCH((ft_title boost 2.0, ft_body), 'keyword')
+SELECT title, _score FROM documents
+WHERE MATCH((ft_body, title 2.0), 'search term');
+ORDER BY _score DESC;
 ```
+Here `title` is weighted twice as much as `ft_body`.
 
 **You can configure match options like:**
 
