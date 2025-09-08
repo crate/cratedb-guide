@@ -44,22 +44,26 @@ Key points:
 
 * `month`  is the partitioning key, optimizing data storage and retrieval.
 * Every column is stored in the column store by default for fast aggregations.
-* Using **OBJECT columns** provides a structured and efficient way to organize complex nested data in CrateDB, enhancing both data integrity and flexibility.
+* Using **OBJECT columns** provides a structured and efficient way to organize
+  complex nested data in CrateDB, enhancing both data integrity and flexibility.
 
 ## Ingesting and Querying
 
 ### **Data Ingestion**
 
-* Use SQL `INSERT` or bulk import techniques like `COPY FROM` with JSON or CSV files.
+* Use SQL `INSERT` or bulk import techniques like `COPY FROM` with JSON or CSV
+  files.
 * Schema inference can often happen automatically during import.
 
 ### **Aggregation and Transformations**
 
 CrateDB offers built‑in SQL functions tailor‑made for time‑series analyses:
 
-* **`DATE_BIN(interval, timestamp, origin)`** for bucketed aggregations (down‑sampling).
+* **`DATE_BIN(interval, timestamp, origin)`** for bucketed aggregations
+  (down‑sampling).
 * **Window functions** like `LAG()` and `LEAD()` to detect trends or gaps.
-* **`MAX_BY()`** returns the value from one column matching the min/max value of another column in a group.
+* **`MAX_BY()`** returns the value from one column matching the min/max value of
+  another column in a group.
 
 **Example**: compute hourly average battery levels and join with metadata:
 
