@@ -37,7 +37,9 @@ sequences if you want to.
 
 This option involves declaring a column using `DEFAULT now()`.
 ```psql
-BIGINT DEFAULT now() PRIMARY KEY
+CREATE TABLE example (
+  id BIGINT DEFAULT now() PRIMARY KEY
+);
 ```
 
 :Pros:
@@ -52,7 +54,9 @@ BIGINT DEFAULT now() PRIMARY KEY
 
 This option involves declaring a column using `DEFAULT gen_random_text_uuid()`.
 ```psql
-TEXT DEFAULT gen_random_text_uuid() PRIMARY KEY
+CREATE TABLE example2 (
+  id TEXT DEFAULT gen_random_text_uuid() PRIMARY KEY
+);
 ```
 
 :Pros:
@@ -69,11 +73,8 @@ TEXT DEFAULT gen_random_text_uuid() PRIMARY KEY
 [UUIDv7] is a new format that preserves **temporal ordering**, making UUIDs
 better suited for inserts and range queries in distributed databases.
 
-We can use these in CrateDB with an UDF with the code from [UUIDv7 in N languages].
-
 You can use [UUIDv7 for CrateDB] via a {ref}`User-Defined Function (UDF) <udf>`
-in JavaScript, or in your preferred programming language by using one of the
-available UUIDv7 libraries.
+in JavaScript, or use a [UUIDv7 library] in your application layer.
 
 :Pros:
   - Globally unique and **almost sequential**
@@ -118,8 +119,8 @@ values even when many ingestion processes run in parallel.
 Create a table to keep the latest values for the sequences.
 ```psql
 CREATE TABLE sequences (
-       name TEXT PRIMARY KEY,
-       last_value BIGINT
+  name TEXT PRIMARY KEY,
+  last_value BIGINT
 ) CLUSTERED INTO 1 SHARDS;
 ```
 
@@ -134,8 +135,8 @@ VALUES ('mysequence',0);
 Start an example with a newly defined table.
 ```psql
 CREATE TABLE mytable (
-       id BIGINT PRIMARY KEY,
-       field1 TEXT
+  id BIGINT PRIMARY KEY,
+  field1 TEXT
 );
 ```
 
@@ -145,9 +146,9 @@ Use optimistic concurrency control to generate unique, incrementing values
 even in parallel ingestion scenarios.
 
 The Python code below reads the last value used from the sequences table, and
-then attempts an [optimistic UPDATE] with a `RETURNING` clause, if a
+then attempts an [optimistic UPDATE] with a `RETURNING` clause. If a
 contending process already consumed the identity nothing will be returned so our
-process will retry until a value is returned, then it uses that value as the new
+process will retry until a value is returned. Then it uses that value as the new
 ID for the record we are inserting into the `mytable` table.
 
 ```python
@@ -162,7 +163,6 @@ ID for the record we are inserting into the `mytable` table.
 # ///
 
 import time
-
 import records
 
 db = records.Database("crate://")
@@ -173,9 +173,7 @@ base_delay = 0.1  # 100 milliseconds
 
 for attempt in range(max_retries):
     select_query = """
-        SELECT last_value,
-               _seq_no,
-               _primary_term
+        SELECT last_value, _seq_no, _primary_term
         FROM sequences
         WHERE name = :sequence_name;
     """
@@ -232,3 +230,4 @@ db.close()
 [udf]: https://cratedb.com/docs/crate/reference/en/latest/general/user-defined-functions.html
 [UUIDv7]: https://datatracker.ietf.org/doc/html/rfc9562#name-uuid-version-7
 [UUIDv7 for CrateDB]: https://github.com/nalgeon/uuidv7/blob/main/src/uuidv7.cratedb
+[UUIDv7 library]: https://github.com/nalgeon/uuidv7
