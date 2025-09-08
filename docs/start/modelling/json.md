@@ -8,7 +8,7 @@ diverse or evolving schemas.
 
 CrateDB’s support for dynamic objects, nested structures, and dot-notation
 querying brings the best of both relational and document-based data
-modeling—without leaving the SQL world.
+modelling — without leaving the SQL world.
 
 ## A Simple Table with JSON
 
@@ -123,7 +123,7 @@ CrateDB allows full SQL-style aggregations on nested fields:
 ```sql
 SELECT AVG(payload['temperature']) AS avg_temp
 FROM events3
-WHERE payload['humidity'] > 20.0';
+WHERE payload['humidity'] > 20.0;
 ```
 
 ## Combining Structured & Semi-Structured Data
@@ -133,7 +133,7 @@ standard columns with JSON fields.
 
 This allows you to:
 
-* Query by fixed attributes (`temerature`)
+* Query by fixed attributes (`temperature`)
 * Flexibly store structured or unstructured metadata in `payload`
 * Add new fields on the fly without migrations
 

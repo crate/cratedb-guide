@@ -20,7 +20,7 @@ The strength of CrateDB's support for geospatial data includes:
 
 CrateDB has two geospatial data types:
 
-### geo_point
+### GEO_POINT
 
 * Stores a single location via latitude/longitude.
 * Insert using
@@ -30,7 +30,7 @@ CrateDB has two geospatial data types:
 * Must be declared explicitly; dynamic schema inference will not detect
   `geo_point` type.
 
-### geo_shape
+### GEO_SHAPE
 
 * Represents more complex 2D shapes defined via GeoJSON or WKT formats.
 * Supported geometry types:

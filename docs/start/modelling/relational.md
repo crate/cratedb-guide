@@ -122,7 +122,7 @@ CREATE TABLE products (
   name TEXT,
   price DOUBLE CHECK (price >= 0),
   tag TEXT INDEX OFF,
-  description TEXT INDEX using fulltext
+  description TEXT INDEX USING FULLTEXT
 );
 ```
 
