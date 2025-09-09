@@ -130,8 +130,8 @@ handled using `LAG()`/`LEAD()` or other interpolation logic within SQL.
 With `column_policy = 'dynamic'`, ingest JSON payloads containing extra
 attributes—new columns are auto‑created and indexed. Perfect for capturing
 evolving sensor metadata. For column-level control, use `OBJECT(DYNAMIC)` to
-auto-create (and, by default, index) subcolumns, or `OBJECT(IGNORED)`to accept
-unknown keys without creating or indexing subcolumns.   &#x20;
+auto-create (and, by default, index) subcolumns, or `OBJECT(IGNORED)` to accept
+unknown keys without creating or indexing subcolumns.
 
 You can also store:
 
@@ -160,10 +160,10 @@ All types are supported within the same table or joined together.
 * **Documentation:** {ref}`Advanced Time Series Analysis <timeseries-analysis>`,
   {ref}`Time Series Long Term Storage <timeseries-longterm>`
 * **Video:** [Time Series Data
-  Modeling](https://cratedb.com/resources/videos/time-series-data-modeling) –
+  Modelling](https://cratedb.com/resources/videos/time-series-data-modeling) –
   covers relational & time series, document, geospatial, vector, and full-text
   in one tutorial.
-* **CrateDB Academy:** [Advanced Time Series Modeling
+* **CrateDB Academy:** [Advanced Time Series Modelling
   course](https://cratedb.com/academy/time-series/getting-started/introduction-to-time-series-data).
 * **Tutorial:** [Downsampling with LTTB
   algorithm](https://community.cratedb.com/t/advanced-downsampling-with-the-lttb-algorithm/1287)
