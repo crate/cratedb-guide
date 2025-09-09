@@ -297,7 +297,7 @@ throughput of your cluster with different setups and under different loads.
 
 .. _addBatch: https://docs.oracle.com/javase/7/docs/api/java/sql/Statement.html#addBatch(java.lang.String)
 .. _benchmarking: https://cratedb.com/blog/insert-boost-on-replicas
-.. _cr8: https://github.com/mfussenegger/cr8/
+.. _cr8: https://codeberg.org/mfussenegger/cr8/
 .. _executeBatch: https://docs.oracle.com/javase/7/docs/api/java/sql/Statement.html#executeBatch()
 .. _the JDBC client: https://cratedb.com/docs/jdbc/
 .. _translog.durability: https://cratedb.com/docs/crate/reference/en/latest/sql/reference/create_table.html#translog-durability
