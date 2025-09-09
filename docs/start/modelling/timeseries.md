@@ -148,13 +148,6 @@ All types are supported within the same table or joined together.
 * Supports long‑term retention with performant historic storage.
 * Columnar layout reduces storage footprint and accelerates aggregation queries.
 
-## Advanced Use Cases
-
-* **Exploratory data analysis** (EDA), decomposition, and forecasting via
-  CrateDB’s SQL or by exporting to Pandas/Plotly.
-* **Machine learning workflows**: time‑series features and anomaly detection
-  pipelines can be built using CrateDB + external tools
-
 ## Further Learning & Resources
 
 * **Documentation:** {ref}`Advanced Time Series Analysis <timeseries-analysis>`,
