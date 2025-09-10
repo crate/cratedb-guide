@@ -114,14 +114,14 @@ CrateDB supports:
 In CrateDB every column is indexed by default, depending on the datatype a
 different index is used, indexing is controlled and maintained by the database,
 there is no need to `vacuum` or `re-index` like in other systems. Indexing can
-be manually turned off.
+be manually turned off with `INDEX OFF`.
 
 ```sql
 CREATE TABLE products (
   id TEXT PRIMARY KEY,
   name TEXT,
   price DOUBLE CHECK (price >= 0),
-  tag TEXT INDEX OFF,
+  tag TEXT INDEX OFF, -- <------- INDEX WILL NOT BE CREATED
   description TEXT INDEX USING FULLTEXT
 );
 ```
