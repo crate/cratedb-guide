@@ -134,7 +134,7 @@ This allows you to:
 
 * Query by fixed attributes (`temperature`)
 * Flexibly store structured or unstructured metadata in `payload`
-* Add new fields on the fly without migrations
+* Add new fields on the fly without altering a table, skipping migrations
 
 ## Indexing Behavior
 
