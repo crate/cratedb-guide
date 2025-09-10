@@ -133,4 +133,4 @@ understand the performance profile of your setup.
    Setting the bulk records size to `1` approximates the performance of single
    inserts.
 
-.. _cr8: https://github.com/mfussenegger/cr8/
+.. _cr8: https://codeberg.org/mfussenegger/cr8/
