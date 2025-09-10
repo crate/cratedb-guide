@@ -147,7 +147,7 @@ You can also explicitly define and index object fields. Let’s extend the paylo
 with a message field with full-text index, and also disable index for `humidity`:
 
 ```sql
-CREATE TABLE events (
+CREATE TABLE events3 (
   id TEXT PRIMARY KEY,
   timestamp TIMESTAMP,
   tags ARRAY(TEXT),
@@ -160,12 +160,13 @@ CREATE TABLE events (
 ```
 
 ```{note}
-When using dynamic objects too many columns could be created, the default per table is 1000, more could impact performance.
+When using dynamic objects too many columns could be created, the default per
+table is 1000, more could impact performance.
  Use `STRICT` or `IGNORED`if needed.
 ```
 
-Object fields are treated as any other column, therefore **`GROUP BY`**, **`HAVING`**, and **window functions** 
-are supported.
+Object fields are treated as any other column, therefore **`GROUP BY`**,
+**`HAVING`**, and **window functions** are supported.
 
 ## Further Learning & Resources
 
