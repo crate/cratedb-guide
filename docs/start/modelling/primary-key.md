@@ -24,7 +24,7 @@ CrateDB is designed for horizontal scalability and [high ingestion throughput].
 To achieve this, operations must complete independently on each node—without
 central coordination. This design choice means CrateDB does **not** support
 traditional auto-incrementing primary key types like `SERIAL` in PostgreSQL
-or MySQL by default.
+or MySQL.
 
 :::{rubric} Solutions
 :::
