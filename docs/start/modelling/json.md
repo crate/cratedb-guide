@@ -160,8 +160,8 @@ CREATE TABLE events (
 ```
 
 ```{note}
-Too many dynamic fields can lead to schema explosion. Use `STRICT` or `IGNORED`
-if needed.
+When using dynamic objects too many columns could be created, the default per table is 1000, more could impact performance.
+ Use `STRICT` or `IGNORED`if needed.
 ```
 
 CrateDB also supports **`GROUP BY`**, **`HAVING`**, and **window functions** on
