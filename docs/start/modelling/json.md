@@ -164,8 +164,8 @@ When using dynamic objects too many columns could be created, the default per ta
  Use `STRICT` or `IGNORED`if needed.
 ```
 
-CrateDB also supports **`GROUP BY`**, **`HAVING`**, and **window functions** on
-object fields.
+Object fields are treated as any other column, therefore **`GROUP BY`**, **`HAVING`**, and **window functions** 
+are supported.
 
 ## Further Learning & Resources
 
