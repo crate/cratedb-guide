@@ -121,7 +121,7 @@ CrateDB allows full SQL-style aggregations on nested fields:
 
 ```sql
 SELECT AVG(payload['temperature']) AS avg_temp
-FROM events3
+FROM events
 WHERE payload['humidity'] > 20.0;
 ```
 
@@ -147,7 +147,7 @@ You can also explicitly define and index object fields. Let’s extend the paylo
 with a message field with full-text index, and also disable index for `humidity`:
 
 ```sql
-CREATE TABLE events3 (
+CREATE TABLE events (
   id TEXT PRIMARY KEY,
   timestamp TIMESTAMP,
   tags ARRAY(TEXT),
