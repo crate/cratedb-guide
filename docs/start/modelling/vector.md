@@ -64,7 +64,7 @@ ORDER BY _score DESC;
 ```
 
 This ranks results by **vector similarity** to the vector supplied by searching
-max 2 nearest neighbours.
+top 2 nearest neighbours.
 
 ## Further Learning & Resources
 
