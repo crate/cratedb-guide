@@ -112,7 +112,6 @@ cr> SELECT payload['unknown'] FROM events;
 +-------------------+
 | payload['unknown']|
 +-------------------+
-+-------------------+
 SELECT 0 rows in set (0.051 sec)
 ```
 
