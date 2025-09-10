@@ -6,7 +6,7 @@ It enables you to store, query, and index **semi-structured JSON data** using
 **standard SQL**, making it an excellent choice for applications that handle
 diverse or evolving schemas.
 
-CrateDB’s support for dynamic objects, nested structures, and dot-notation
+CrateDB’s support for dynamic objects, nested structures, and bracket notation
 querying brings the best of both relational and document-based data
 modelling — without leaving the SQL world.
 
@@ -85,7 +85,7 @@ WHERE payload['humidity'] > 70
 ```
 
 ```{note}
-Dot-notation works for both explicitly and dynamically added fields.
+Bracket notation works for both explicitly and dynamically added fields.
 ```
 
 ## Querying DYNAMIC OBJECTs Safely
