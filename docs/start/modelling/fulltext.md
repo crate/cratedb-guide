@@ -152,9 +152,9 @@ constraints, all in one.
 * Reference Manual:
   * {ref}`Full-text indices <crate-reference:fulltext-indices>`: Defining
     indices, extending builtin analyzers, custom analyzers.
-  * sql-analyzer>`: Builtin analyzers, tokenizers, token and char filters.
+  * {ref}`Full-text analyzers <crate-reference:sql-analyzer>`: Builtin
+    analyzers, tokenizers, token and char filters.
   * {ref}`SQL MATCH predicate <crate-reference:sql_dql_fulltext_search>`:
     Details about MATCH predicate arguments and options.
-* [**Hands‑On Academy
-  Course**](https://learn.cratedb.com/cratedb-fundamentals?lesson=fulltext-search):
+* [**Hands‑On Academy Course**](https://learn.cratedb.com/cratedb-fundamentals?lesson=fulltext-search):
   explore FTS on real datasets (e.g. Chicago neighborhoods).
