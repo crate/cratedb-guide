@@ -74,8 +74,8 @@ SELECT name FROM parks
 WHERE within('POINT(10 10)'::geo_shape, area);
 ```
 
-CrateDB provides key scalar functions for spatial operations such as distance(),
-within(), intersects(), area(), geohash() and latitude()/longitude().
+CrateDB provides key scalar functions for spatial operations such as `distance(...)`,
+`within(...)`, `intersects(...)`, `area(...)`, `geohash(...)`, `latitude(...)` and `longitude(...)`.
 
 Furthermore, it is possible to use the **match** predicate with geospatial data
 in queries.
