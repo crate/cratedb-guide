@@ -22,17 +22,17 @@ A typical time‑series schema looks like this:
 CREATE TABLE devices_readings (
    ts TIMESTAMP WITH TIME ZONE,
    device_id TEXT,
-   battery OBJECT(DYNAMIC) AS (
+   battery OBJECT AS (
       level BIGINT,
       status TEXT,
       temperature DOUBLE PRECISION
    ),
-   cpu OBJECT(DYNAMIC) AS (
+   cpu OBJECT AS (
       avg_1min DOUBLE PRECISION,
       avg_5min DOUBLE PRECISION,
       avg_15min DOUBLE PRECISION
    ),
-   memory OBJECT(DYNAMIC) AS (
+   memory OBJECT AS (
       free BIGINT,
       used BIGINT
    ),
@@ -62,7 +62,7 @@ CrateDB offers built‑in SQL functions tailor‑made for time‑series analyses
 * **`DATE_BIN(interval, timestamp, origin)`** for bucketed aggregations
   (down‑sampling).
 * **Window functions** like `LAG()` and `LEAD()` to detect trends or gaps.
-* **`MAX_BY()`** returns the value from one column matching the min/max value of
+* **`MAX_BY(returnField, SearchField)` / `MIN_BY(returnField, SearchField)` ** returns the value from one column matching the min/max value of
   another column in a group.
 
 **Example**: compute hourly average battery levels and join with metadata:
@@ -111,14 +111,14 @@ ORDER BY
 
 ### Typical time-series functions
 
-* **Time extraction:** date_trunc, extract, date_part, now(), current_timestamp
-* **Time bucketing:** date_bin, interval, age
-* **Window functions:** avg(...) OVER (...), stddev(...) OVER (...), lag, lead,
-  first_value, last_value, row_number,  rank, WINDOW ... AS (...)
+* **Time extraction:** `date_trunc(...)`, `extract(...)`, `date_part(...)`, `now()`, `current_timestamp`
+* **Time bucketing:** `date_bin()`, `interval`, `age()`
+* **Window functions:** `avg(...)`, `over(...)`, `lag(...)`, `lead(...)`,
+  `first_value(...)`, `last_value(...)`, `row_number()`, `rank()` , `WINDOW ... AS (...)`
 * **Null handling:** coalesce, nullif
-* **Statistical aggregates:** percentile, correlation, stddev, variance, min,
-  max, sum
-* **Advanced filtering & logic:** greatest, least, case when ... then ... end
+* **Statistical aggregates:** `percentile(...)`, `stddev(...)`, `variance()`, `min()`,
+  `max(...)`, `sum(...)`, `topk(...)`
+* **Advanced filtering & logic:** `greatest(...)`, `least(...)`, `case when ... then ... end`
 
 ## Downsampling & Interpolation
 
