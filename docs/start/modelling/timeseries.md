@@ -38,6 +38,14 @@ CREATE TABLE devices_readings (
    ),
    month TIMESTAMP GENERATED ALWAYS AS date_trunc('month', ts)
 ) PARTITIONED BY (month);
+
+CREATE TABLE devices_info (
+   "device_id" TEXT,
+   "api_version" TEXT,
+   "manufacturer" TEXT,
+   "model" TEXT,
+   "os_name" TEXT
+);
 ```
 
 Key points:
