@@ -58,7 +58,7 @@ CREATE TABLE orders (
       price DOUBLE
     )
   ),
-  created_at TIMESTAMP
+  created_at TIMESTAMP DEFAULT now()
 );
 ```
 
