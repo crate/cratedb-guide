@@ -19,7 +19,7 @@ structures.
 CREATE TABLE events (
   id TEXT PRIMARY KEY,
   timestamp TIMESTAMP,
-  payload OBJECT(DYNAMIC)
+  payload OBJECT
 );
 ```
 
@@ -43,11 +43,11 @@ This allows inserting flexible, nested JSON data into `payload`:
 
 You can control how CrateDB handles unexpected fields in an object column:
 
-| Column Policy | Behavior                                                    |
-| ------------- | ----------------------------------------------------------- |
-| `DYNAMIC`     | New fields are automatically added to the schema at runtime |
-| `STRICT`      | Only explicitly defined fields are allowed                  |
-| `IGNORED`     | Extra fields are stored but not indexed or queryable        |
+| Column Policy | Behavior                                                              |
+| ------------- |-----------------------------------------------------------------------|
+| `DYNAMIC`     | (Default) New fields are automatically added to the schema at runtime |
+| `STRICT`      | Only explicitly defined fields are allowed                            |
+| `IGNORED`     | Extra fields are stored but not indexed or queryable                  |
 
 Let’s evolve our table to restrict the structure of `payload`:
 
