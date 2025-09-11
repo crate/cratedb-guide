@@ -50,11 +50,11 @@ CREATE TABLE example (
   - Can result in gaps
   - Collisions possible if multiple records are created in the same millisecond
 
-## Using UUIDv4 identifiers
+## Using elasticflake identifiers
 
 This option involves declaring a column using `DEFAULT gen_random_text_uuid()`.
 ```psql
-CREATE TABLE example2 (
+CREATE TABLE example (
   id TEXT DEFAULT gen_random_text_uuid() PRIMARY KEY
 );
 ```
@@ -218,7 +218,7 @@ db.close()
 | Strategy            | Ordered  | Unique | Scalable | Human-friendly | Range queries | Notes                |
 |---------------------|----------| ------ | -------- |----------------|---------------| -------------------- |
 | Timestamp           | ✅       | ⚠️     | ✅        | ✅              | ✅             | Potential collisions |
-| UUIDv4              | ❌       | ✅      | ✅        | ❌              | ❌             | Default UUIDs        |
+| Elasticflake        | ❌       | ✅      | ✅        | ❌              | ❌             | Default UUIDs        |
 | UUIDv7              | ✅       | ✅      | ✅        | ❌              | ✅             | Requires UDF         |
 | External system IDs | ✅/❌    | ✅      | ✅        | ✅              | ✅             | Depends on source    |
 | Sequence table      | ✅       | ✅      | ⚠️       | ✅              | ✅             | Manual retry logic   |
