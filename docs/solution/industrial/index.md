@@ -147,9 +147,9 @@ ensure real-time production quality control.
 CrateDB helps Rauch to identify and predict production issues and gives access
 to production data for many years, with no need for additional infrastructure.
 
-Rauch is filling 33 cans per second and how that adds up to 400 data records
-per second which are being processed, stored, and analyzed. In total, they are
-within the range of one to ten billion records persisted in CrateDB.
+Rauch fills 33 cans per second, which adds up to 400 data records per second
+that are processed, stored, and analyzed. In total, they are within the range
+of one to ten billion records persisted in CrateDB.
 
 - [Rauch: High-Speed Production Lines]
 

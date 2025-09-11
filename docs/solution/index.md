@@ -1,4 +1,5 @@
 (use-cases)=
+(solutions)=
 # Solutions and use cases
 
 CrateDB is being developed in an open-source spirit, and closely together
@@ -12,7 +13,7 @@ build real-time data management and analytics solutions and platforms.
 :gutter: 2
 
 
-:::{grid-item-card} {material-outlined}`search;2em` Fulltext and semantic search
+:::{grid-item-card} {material-outlined}`search;2em` Full-text and semantic search
 :link: search-overview
 :link-type: ref
 :link-alt: About CrateDB's search features
