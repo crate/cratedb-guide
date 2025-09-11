@@ -69,8 +69,8 @@ linkcheck_ignore += [
     # 403 Client Error: Forbidden
     r"https://www.sqlalchemy.org/",
     # 429 Client Error: Too Many Requests
-    r"https://www.terraform.io/",
-    r"https://developer.hashicorp.com/",
+    r"https://www.terraform.io",
+    r"https://developer.hashicorp.com",
 ]
 
 linkcheck_anchors_ignore_for_url += [
