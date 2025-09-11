@@ -1,19 +1,10 @@
 (use-cases)=
 # Solutions and use cases
 
-Learn how others are using CrateDB to build data management solutions and platforms.
-
-{tags-primary}`Raw-Data Analytics`
-{tags-primary}`Industrial Data`
-{tags-primary}`Long-Term Metrics Store`
-:::
-
-:::{rubric} Traditional Use Cases
-:::
-
 CrateDB is being developed in an open-source spirit, and closely together
 with its users and customers. Learn about application scenarios where CrateDB
-derives many foundational features from.
+derives many foundational features from, and how others are using CrateDB to
+build real-time data management and analytics solutions and platforms.
 
 ::::{grid} 1 2 2 2
 :margin: 4 4 0 0
@@ -21,7 +12,7 @@ derives many foundational features from.
 :gutter: 2
 
 
-:::{grid-item-card} {material-outlined}`search;2em` Search
+:::{grid-item-card} {material-outlined}`search;2em` Fulltext and semantic search
 :link: search-overview
 :link-type: ref
 :link-alt: About CrateDB's search features
@@ -34,7 +25,7 @@ Full-text search, Geo search, Vector search, Hybrid search.
 :::
 
 
-:::{grid-item-card} {material-outlined}`analytics;2em` Raw-Data Analytics
+:::{grid-item-card} {material-outlined}`analytics;2em` Real-time analytics on raw data
 :link: analytics
 :link-type: ref
 :link-alt: About CrateDB's analytics features
@@ -49,7 +40,7 @@ downsampling is not an option.
 :::
 
 
-:::{grid-item-card} {material-outlined}`precision_manufacturing;2em` Industrial Data
+:::{grid-item-card} {material-outlined}`precision_manufacturing;2em` Industrial data
 :link: industrial
 :link-type: ref
 :link-alt: Use CrateDB in industrial data platforms
@@ -62,7 +53,7 @@ About the unique challenges and complexities of industrial big data.
 :::
 
 
-:::{grid-item-card} {material-outlined}`manage_history;2em` Long-Term Metrics Store
+:::{grid-item-card} {material-outlined}`manage_history;2em` Metrics and telemetry data store
 :link: metrics-store
 :link-type: ref
 :link-alt: Using CrateDB as a long-term metrics store
