@@ -116,5 +116,5 @@ solutions are required instead.
 :maxdepth: 1
 :hidden:
 
-Primary key strategies <primary-key>
+Primary key strategies <model-primary-key>
 ```
