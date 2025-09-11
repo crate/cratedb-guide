@@ -2,7 +2,7 @@
 (iiot)=
 (industrial)=
 (industry-40)=
-# Industrial Data
+# Industrial data
 
 Today's industrial and logistics data acquisition and processing systems
 are complex and distributed, with a very high degree of automation.
