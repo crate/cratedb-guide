@@ -72,23 +72,10 @@ Guides and tutorials about how to use CrateDB and CrateDB Cloud in practice.
 ::::
 
 
-:::{card} Introduction
-:link: all-features
-:link-type: ref
+## Features
 
-CrateDB is a distributed and scalable SQL database for storing and analyzing
-massive amounts of data in near real-time, even with complex queries. It is
-based on Lucene, combines a unique set of features, and is PostgreSQL-compatible.
-
-![](https://cratedb.com/hs-fs/hubfs/nativesql.png?width=800&name=nativesql.png)
-+++
-Read about all features of CrateDB at a glance.
+:::{rubric} Highlights
 :::
-
-
-## Feature Highlights
-
-A few selected features.
 
 ::::{grid} 1 2 3 3
 :padding: 0
@@ -134,8 +121,21 @@ A few selected features.
 
 ::::
 
+:::{card} All features
+:link: all-features
+:link-type: ref
 
-## Data Ingestion
+CrateDB is a distributed and scalable SQL database for storing and analyzing
+massive amounts of data in near real-time, even with complex queries. It is
+based on Lucene, combines a unique set of features, and is PostgreSQL-compatible.
+
+![](https://cratedb.com/hs-fs/hubfs/nativesql.png?width=800&name=nativesql.png)
++++
+Read about all features of CrateDB at a glance.
+:::
+
+
+## Data ingestion
 
 Load data into CrateDB.
 
@@ -179,6 +179,29 @@ Load data into CrateDB.
 :class-title: sd-fs-5
 
 {material-outlined}`query_stats;1.3em`
+:::
+
+::::
+
+
+## Solutions
+
+Learn how others are using CrateDB successfully.
+
+::::{grid} 1 2 3 3
+:padding: 0
+
+:::{grid-item-card} Solutions and use cases
+:link: solutions
+:link-type: ref
+:link-alt: Solutions built with CrateDB
+:padding: 1
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-5
+
+{material-outlined}`lightbulb;1.3em`
 :::
 
 ::::
@@ -262,43 +285,6 @@ software applications, libraries, and frameworks.
 {material-outlined}`stacked_line_chart;1.3em`
 :::
 
-
-::::
-
-
-## Use Cases
-
-Selected application domains where others are using CrateDB successfully.
-
-::::{grid} 1 2 3 3
-:padding: 0
-
-
-:::{grid-item-card} Raw-Data Analytics
-:link: analytics
-:link-type: ref
-:link-alt: CrateDB in tracking and analytics scenarios
-:padding: 3
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-
-{material-outlined}`analytics;1.3em`
-:::
-
-:::{grid-item-card} Industrial Data
-:link: industrial
-:link-type: ref
-:link-alt: CrateDB in industrial / IIoT / Industry 4.0 scenarios
-:padding: 3
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-
-{material-outlined}`precision_manufacturing;1.3em`
-:::
 
 ::::
 

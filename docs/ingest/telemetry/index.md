@@ -16,9 +16,9 @@
 
 CrateDB works well for storing massive amounts of telemetry data, such as metrics and logs.
 
-It is a spiritual successor, or alternative to, rrdtool, Graphite, InfluxDB, Prometheus,
-Mimir, or Thanos, but with the benefits of long term storage capabilities, standard
-database interfaces, SQL query language, and horizontal scalability as you go.
+CrateDB can serve as an alternative to tools like rrdtool, Graphite, InfluxDB,
+Prometheus, Mimir, or Thanos, while adding long‑term storage, standard database
+interfaces, SQL, and horizontal scalability.
 
 CrateDB integrates with metrics collection agents, brokers, and stores.
 This documentation section lists applications and daemons which can
@@ -53,14 +53,14 @@ scenarios. CrateDB offers corresponding integration adapters.
 :gutter: 2
 
 ::::{grid-item-card} Prometheus
-:link: fulltext-search
+:link: prometheus
 :link-type: ref
 Prometheus is an open-source systems monitoring and alerting toolkit
 for collecting metrics data from applications and infrastructures.
 ::::
 
 ::::{grid-item-card} Telegraf
-:link: geo-search
+:link: telegraf
 :link-type: ref
 Telegraf is a leading open source server agent to help you collect metrics
 from your stacks, sensors, and systems.
