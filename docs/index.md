@@ -313,7 +313,7 @@ connect/index
 feature/index
 Ingestion <ingest/index>
 topic/index
-use/index
+solution/index
 integrate/index
 admin/index
 performance/index

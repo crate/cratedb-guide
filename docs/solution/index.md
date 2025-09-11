@@ -1,5 +1,5 @@
 (use-cases)=
-# Use Cases
+# Solutions and use cases
 
 Learn how others are using CrateDB to build data management solutions and platforms.
 
@@ -19,6 +19,19 @@ derives many foundational features from.
 :margin: 4 4 0 0
 :padding: 0
 :gutter: 2
+
+
+:::{grid-item-card} {material-outlined}`search;2em` Search
+:link: search-overview
+:link-type: ref
+:link-alt: About CrateDB's search features
+
+CrateDB enables you to build powerful search experiences for websites,
+applications, and enterprise data.
++++
+**What's inside:**
+Full-text search, Geo search, Vector search, Hybrid search.
+:::
 
 
 :::{grid-item-card} {material-outlined}`analytics;2em` Raw-Data Analytics
