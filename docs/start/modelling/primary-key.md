@@ -54,7 +54,7 @@ CREATE TABLE example (
 
 This option involves declaring a column using `DEFAULT gen_random_text_uuid()`.
 ```psql
-CREATE TABLE example (
+CREATE TABLE example2 (
   id TEXT DEFAULT gen_random_text_uuid() PRIMARY KEY
 );
 ```
