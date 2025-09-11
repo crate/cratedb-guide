@@ -86,6 +86,5 @@ always have them ready for historical analysis.
 
 analytics/index
 industrial/index
-telemetry/index
 migrate/index
 ```
