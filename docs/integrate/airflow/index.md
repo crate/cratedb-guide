@@ -64,8 +64,8 @@ journey. Spend time where it counts.
 ::::{grid} 2
 
 :::{grid-item-card} Tutorial: Import Parquet files
-:link: https://community.cratedb.com/t/automating-the-import-of-parquet-files-with-apache-airflow/1247
-:link-type: url
+:link: airflow-import-parquet
+:link-type: ref
 Define an Airflow DAG to import a Parquet file from S3 into CrateDB.
 :::
 
@@ -118,6 +118,13 @@ and cost-effectiveness.
 [ETL pipeline using Apache Airflow with CrateDB (Source)] |
 [Run an ETL pipeline with CrateDB and data quality checks]
 ```
+
+
+:::{toctree}
+:maxdepth: 1
+:hidden:
+Import Parquet files <import-parquet>
+:::
 
 
 [CrateDB and Apache Airflow]: https://cratedb.com/integrations/cratedb-and-apache-airflow
