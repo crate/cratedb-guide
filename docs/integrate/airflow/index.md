@@ -85,8 +85,8 @@ into CrateDB.
 ::::{grid} 3
 
 :::{grid-item-card} Tutorial: Export to S3
-:link: https://community.cratedb.com/t/cratedb-and-apache-airflow-automating-data-export-to-s3/901
-:link-type: url
+:link: airflow-export-s3
+:link-type: ref
 Recurrently export data from CrateDB to S3.
 :::
 
@@ -125,6 +125,7 @@ and cost-effectiveness.
 :hidden:
 Import Parquet files <import-parquet>
 Import stock market data <import-stock-market-data>
+Export to S3 <export-s3>
 :::
 
 
