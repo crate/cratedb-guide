@@ -70,8 +70,8 @@ Define an Airflow DAG to import a Parquet file from S3 into CrateDB.
 :::
 
 :::{grid-item-card} Tutorial: Load stock market data
-:link: https://community.cratedb.com/t/updating-stock-market-data-automatically-with-cratedb-and-apache-airflow/1304
-:link-type: url
+:link: airflow-import-stock-market-data
+:link-type: ref
 Define an Airflow DAG to download, process, and store stock market data
 into CrateDB.
 :::
@@ -124,6 +124,7 @@ and cost-effectiveness.
 :maxdepth: 1
 :hidden:
 Import Parquet files <import-parquet>
+Import stock market data <import-stock-market-data>
 :::
 
 
