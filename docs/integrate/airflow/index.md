@@ -91,8 +91,8 @@ Recurrently export data from CrateDB to S3.
 :::
 
 :::{grid-item-card} Tutorial: Implement a data retention policy
-:link: https://community.cratedb.com/t/implementing-a-data-retention-policy-in-cratedb-using-apache-airflow/913
-:link-type: url
+:link: airflow-data-retention-policy
+:link-type: ref
 An effective retention policy for time-series data, relating to the practice of
 storing and managing data for a designated period of time.
 :::
@@ -126,6 +126,7 @@ and cost-effectiveness.
 Import Parquet files <import-parquet>
 Import stock market data <import-stock-market-data>
 Export to S3 <export-s3>
+Data retention policy <data-retention-policy>
 :::
 
 
