@@ -98,8 +98,8 @@ storing and managing data for a designated period of time.
 :::
 
 :::{grid-item-card} Tutorial: Implement a hot and cold storage data retention policy
-:link: https://community.cratedb.com/t/cratedb-and-apache-airflow-building-a-hot-cold-storage-data-retention-policy/934
-:link-type: url
+:link: airflow-data-retention-hot-cold
+:link-type: ref
 A hot/cold storage strategy is often motivated by a tradeoff between performance
 and cost-effectiveness.
 :::
@@ -127,6 +127,7 @@ Import Parquet files <import-parquet>
 Import stock market data <import-stock-market-data>
 Export to S3 <export-s3>
 Data retention policy <data-retention-policy>
+Hot/cold data retention <data-retention-hot-cold>
 :::
 
 
