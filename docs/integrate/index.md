@@ -18,6 +18,7 @@ Please also visit the [Overview of CrateDB integration tutorials].
 
 airflow/index
 amqp/index
+arrow/index
 aws-lambda/index
 azure-functions/index
 cluvio/index

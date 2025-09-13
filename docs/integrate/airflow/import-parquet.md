@@ -6,7 +6,7 @@ Using Airflow to import the NYC Taxi and Limousine dataset in Parquet format.
 
 Currently, Parquet imports using COPY FROM are not supported by CrateDB, it only supports CSV and JSON files instead. Because of that, we implemented a different approach from simply changing the previous implementation from CSV to Parquet.
 
-First and foremost, keep in mind the strategy presented here for importing Parquet files into CrateDB, we have already covered this topic in a previous tutorial using a different approach from the one introduced in this tutorial, so feel free to have a look [here](https://community.cratedb.com/t/import-parquet-files-into-cratedb-using-apache-arrow-and-sqlalchemy/1161) and explore with the different possibilities out there.
+First and foremost, keep in mind the strategy presented here for importing Parquet files into CrateDB, we have already covered this topic in a previous tutorial using a different approach from the one introduced in this tutorial, so feel free to have a look at the tutorial about {ref}`arrow-import-parquet` and explore with the different possibilities out there.
 
 ## Prerequisites
 
