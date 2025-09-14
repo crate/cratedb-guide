@@ -71,7 +71,7 @@ natural language without writing any SQL.
 To achieve that, you will need a CrateDB instance running, an OpenAI API key,
 and some Python knowledge.
 
-[![Navigate to Tutorial](https://img.shields.io/badge/Navigate%20to-Tutorial-darkblue?logo=Markdown)][How to set up LangChain with CrateDB]
+- {ref}`langchain-tutorial`
 :::
 :::{grid-item}
 :columns: 3
@@ -203,6 +203,12 @@ solution.
 
 ::::
 
+
+:::{toctree}
+:maxdepth: 1
+:hidden:
+Tutorial <tutorial>
+:::
 
 
 [End-to-End RAG with CrateDB and LangChain]: https://speakerdeck.com/cratedb/how-to-use-private-data-in-generative-ai-end-to-end-solution-for-rag-with-cratedb-and-langchain
