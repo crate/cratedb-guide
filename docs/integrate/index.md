@@ -62,6 +62,7 @@ pyviz/index
 queryzen/index
 rill/index
 risingwave/index
+spark/index
 sql-server/index
 streamlit/index
 streamsets/index
