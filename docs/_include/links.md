@@ -35,6 +35,7 @@
 [HNSW]: https://en.wikipedia.org/wiki/Hierarchical_navigable_small_world
 [HNSW paper]: https://arxiv.org/pdf/1603.09320
 [HoloViews]: https://www.holoviews.org/
+[HoloViz]: https://holoviz.org/
 [Indexing, Columnar Storage, and Aggregations]: https://cratedb.com/product/features/indexing-columnar-storage-aggregations
 [InfluxDB]: https://github.com/influxdata/influxdb
 [inverted index]: https://en.wikipedia.org/wiki/Inverted_index
