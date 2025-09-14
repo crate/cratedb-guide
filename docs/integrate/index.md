@@ -55,6 +55,7 @@ nifi/index
 node-red/index
 oracle/index
 plotly/index
+polars/index
 postgresql/index
 Power BI <powerbi/index>
 prometheus/index
