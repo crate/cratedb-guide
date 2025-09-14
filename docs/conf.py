@@ -77,6 +77,8 @@ linkcheck_ignore += [
     r"https://openai.com/index/gpt-4/.*",
     # 403 Client Error: Forbidden for url
     r"https://www.npmjs.com/",
+    # Out of service.
+    r"https://s3.amazonaws.com/nyc-tlc/.*",
     # 2025-09-29: Phased out CrateDB 3.3 docs
     r"https://cratedb.com/docs/crate/reference/en/3.3/",
     # 403 Client Error: Forbidden for url
