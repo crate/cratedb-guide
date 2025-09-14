@@ -21,6 +21,7 @@ amqp/index
 aws-lambda/index
 azure-functions/index
 cluvio/index
+databricks/index
 datagrip/index
 dbeaver/index
 dbt/index
@@ -62,6 +63,7 @@ pyviz/index
 queryzen/index
 rill/index
 risingwave/index
+spark/index
 sql-server/index
 streamlit/index
 streamsets/index
