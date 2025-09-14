@@ -39,8 +39,9 @@ and operations for manipulating numerical tables and time series.
 :::
 - {ref}`pandas-tutorial-start`
 - {ref}`pandas-tutorial-jupyter`
-- [Importing Parquet files into CrateDB using Apache Arrow and SQLAlchemy]
-- [Guide to efficient data ingestion to CrateDB with pandas]
+- {ref}`arrow-import-parquet`
+- {ref}`pandas-efficient-ingest`
+- [Efficient batch/bulk INSERT operations with pandas, Dask, and SQLAlchemy]
 - [pandas code examples]
 
 
@@ -49,11 +50,10 @@ and operations for manipulating numerical tables and time series.
 :hidden:
 Starter tutorial <tutorial-start>
 Jupyter tutorial <tutorial-jupyter>
+Efficient ingest <efficient-ingest>
 :::
 
 
 [Efficient batch/bulk INSERT operations with pandas, Dask, and SQLAlchemy]: https://cratedb.com/docs/python/en/latest/by-example/sqlalchemy/dataframe.html
-[Guide to efficient data ingestion to CrateDB with pandas]: https://community.cratedb.com/t/guide-to-efficient-data-ingestion-to-cratedb-with-pandas/1541
-[Importing Parquet files into CrateDB using Apache Arrow and SQLAlchemy]: https://community.cratedb.com/t/importing-parquet-files-into-cratedb-using-apache-arrow-and-sqlalchemy/1161
 [pandas]: https://pandas.pydata.org/
 [pandas code examples]: https://github.com/crate/cratedb-examples/tree/main/by-dataframe/pandas
