@@ -56,6 +56,7 @@ n8n/index
 nifi/index
 node-red/index
 oracle/index
+pandas/index
 plotly/index
 polars/index
 postgresql/index
