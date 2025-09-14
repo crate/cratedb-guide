@@ -71,6 +71,8 @@ linkcheck_ignore += [
     # 429 Client Error: Too Many Requests
     r"https://www.terraform.io",
     r"https://developer.hashicorp.com",
+    # 403 Client Error: Forbidden for url
+    r"https://www.computerhope.com/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
