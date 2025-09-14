@@ -64,8 +64,8 @@ Getting started with Prometheus and CrateDB for long-term storage.
 :::
 
 :::{grid-item-card} Storing long-term metrics with Prometheus in CrateDB
-:link: https://community.cratedb.com/t/storing-long-term-metrics-with-prometheus-in-cratedb/1012
-:link-type: url
+:link: prometheus-tutorial
+:link-type: ref
 Set up CrateDB as a long-term metrics store for Prometheus using Docker Compose.
 :::
 
@@ -110,6 +110,13 @@ usage guide.
 ```{seealso}
 [CrateDB and Prometheus]
 ```
+
+
+:::{toctree}
+:maxdepth: 1
+:hidden:
+Tutorial <tutorial>
+:::
 
 
 [CrateDB]: https://github.com/crate/crate
