@@ -9,7 +9,7 @@ Apache Parquet is a free and open-source column-oriented data storage format. It
 
 ## Prerequisites
 
-The libraries needed are **crate**, **sqlalchemy** and **pyarrow**, so you should install them. To do so, you can use the following `pip install` command. To check the latest version supported by CrateDB, have a look at the [CrateDB documentation - SQLAlchemy](https://crate.io/docs/python/en/latest/sqlalchemy.html#using-the-sqlalchemy-dialect).
+The libraries needed are **crate**, **sqlalchemy** and **pyarrow**, so you should install them. To do so, you can use the following `pip install` command. To check the latest version supported by CrateDB, have a look at the {ref}`sqlalchemy-cratedb:index`.
 
 ```shell
 pip install pyarrow sqlalchemy-cratedb

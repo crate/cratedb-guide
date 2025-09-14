@@ -11,7 +11,7 @@ In a CrateDB cluster, nodes can have different hardware specifications. Hence, a
 
 ## CrateDB setup
 
-To create a multi-node setup, we make use of [Docker Compose](https://crate.io/docs/crate/howtos/en/latest/deployment/containers/docker.html#docker-compose) to spin up three nodes – two hot nodes, and one cold node. For the scope of this article, we will not actually use different hardware specifications for disks, but each disk is represented as a separate Docker volume.
+To create a multi-node setup, we make use of {ref}`docker-compose` to spin up three nodes – two hot nodes, and one cold node. For the scope of this article, we will not actually use different hardware specifications for disks, but each disk is represented as a separate Docker volume.
 
 The designation of a node type is done by passing the `-Cnode.attr.storage` parameter to each node with the value hot or cold. The resulting `docker-compose.yml` file with two hot nodes and one cold node is as follows:
 
@@ -121,7 +121,7 @@ CREATE TABLE IF NOT EXISTS doc.retention_policies (
 CLUSTERED INTO 1 SHARDS;
 ```
 
-The schema is an extension of what was introduced in the first article on the [Data Retention Delete DAG](https://community.cratedb.com/t/cratedb-and-apache-airflow-implementation-of-data-retention-policy/913). The `strategy` column allows switching between the previously introduced dropping of partitions (`delete`) and the now added reallocation (`reallocate`). For our `raw_metrics` table, we add a policy of transitioning from hot to cold nodes after 60 days:
+The schema is an extension of what was introduced in the first article on the {ref}`Data Retention Delete DAG <airflow-data-retention-policy>`. The `strategy` column allows switching between the previously introduced dropping of partitions (`delete`) and the now added reallocation (`reallocate`). For our `raw_metrics` table, we add a policy of transitioning from hot to cold nodes after 60 days:
 
 ```sql
 INSERT INTO doc.retention_policies VALUES ('doc', 'raw_metrics', 'ts_day', 60, 'storage', 'cold', NULL, 'reallocate');
@@ -131,7 +131,7 @@ To remember which partitions have already been reallocated, we can make use of t
 
 ## Airflow setup
 
-We assume that a basic Astronomer/Airflow setup is already in place, as described in our [first post](https://community.cratedb.com/t/cratedb-and-apache-airflow-part-one/901) of this series. The general idea behind the hot/cold DAG implementation is similar to the one introduced in the [initial data retention post](https://community.cratedb.com/t/cratedb-and-apache-airflow-implementation-of-data-retention-policy/913). Let’s quickly go through the three steps of the algorithm:
+We assume that a basic Astronomer/Airflow setup is already in place, as described in our {ref}`first post <airflow-export-s3>`. Let’s quickly go through the three steps of the algorithm:
 
 1. `get_policies`: A query on `doc.retention_policies` and `information_schema.table_partitions` identifies partitions affected by a retention policy.
 2. `map_policy`: A helper method transforming the output of `get_policies` into a Python `dict` data structure for easier handling.
@@ -140,7 +140,7 @@ The CrateDB cluster will then automatically initiate the relocation of the affec
 
 The full implementation is available as [data_retention_reallocate_dag.py](https://github.com/crate/crate-airflow-tutorial/blob/main/dags/data_retention_reallocate_dag.py) on GitHub.
 
-To validate our implementation, we trigger the DAG once manually via the Airflow UI at [http://localhost:8081](http://localhost:8081/). Once executed, log messages of the `reallocate_partitions` task confirm the reallocation was triggered for the partition with the sample data set up earlier:
+To validate our implementation, we trigger the DAG once manually via the Airflow UI at `http://localhost:8081/`. Once executed, log messages of the `reallocate_partitions` task confirm the reallocation was triggered for the partition with the sample data set up earlier:
 
 ```text
 [2021-12-08, 12:39:44 UTC] {data_cleanup_dag.py:47} INFO - Reallocating partition ts_day = 1625702400000 for table doc.raw_metrics to storage = cold
@@ -155,7 +155,7 @@ Revisiting the “Shards” section in the CrateDB Admin UI confirms that all sh
 
 ## Combined hot/cold and deletion strategy
 
-The presented hot/cold storage strategy also integrates seamlessly with the previously introduced [Data Retention Delete DAG](https://community.cratedb.com/t/cratedb-and-apache-airflow-implementation-of-data-retention-policy/913). Both strategies can be combined:
+The presented hot/cold storage strategy also integrates seamlessly with the previously introduced {ref}`Data Retention Delete DAG <airflow-data-retention-policy>`. Both strategies can be combined:
 
 1. Transition to cold nodes: Reallocates partitions from (expensive) hot nodes to (cheaper) cold nodes
 2. Deletion from cold nodes: After another retention period on cold nodes, permanently delete partitions

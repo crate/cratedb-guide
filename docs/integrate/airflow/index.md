@@ -57,11 +57,20 @@ journey. Spend time where it counts.
 
 :::
 
+(airflow-tutorials)=
 
 :::{rubric} Learn: Starter Tutorials
 :::
 
 ::::{grid} 2
+
+:::{grid-item-card} Getting started with Apache Airflow
+:columns: 12
+:link: airflow-getting-started
+:link-type: ref
+Define an Airflow DAG to download, process, and store stock market data
+into CrateDB.
+:::
 
 :::{grid-item-card} Tutorial: Import Parquet files
 :link: airflow-import-parquet
@@ -123,6 +132,7 @@ and cost-effectiveness.
 :::{toctree}
 :maxdepth: 1
 :hidden:
+Getting started <getting-started>
 Import Parquet files <import-parquet>
 Import stock market data <import-stock-market-data>
 Export to S3 <export-s3>
