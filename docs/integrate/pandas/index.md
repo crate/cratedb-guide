@@ -38,6 +38,7 @@ and operations for manipulating numerical tables and time series.
 :::{rubric} Learn
 :::
 - {ref}`pandas-tutorial-start`
+- {ref}`pandas-tutorial-jupyter`
 - [Importing Parquet files into CrateDB using Apache Arrow and SQLAlchemy]
 - [Guide to efficient data ingestion to CrateDB with pandas]
 - [pandas code examples]
