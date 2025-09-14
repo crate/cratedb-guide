@@ -1,5 +1,5 @@
 (integrate)=
-
+(integrations)=
 # Integrations
 
 You have a variety of options to connect and integrate 3rd-party
