@@ -53,6 +53,7 @@ Load data from streaming platforms.
 - {ref}`kestra`
 - {ref}`meltano`
 - {ref}`nifi`
+- {ref}`prefect`
 +++
 Use data pipeline programming frameworks and platforms.
 ::::
