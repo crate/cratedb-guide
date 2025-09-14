@@ -90,7 +90,7 @@ There are now three things you have to adjust before running Airflow:
 
 ### Start Airflow
 Now you are done with the last adjustments, head back to your terminal and run this command to start Airflow: `astro dev start`
-You can now access Airflow in your browser at *localhost:8081*
+You can now access Airflow in your browser at `http://localhost:8081`.
 
 ## Write the DAG
 
@@ -271,7 +271,7 @@ financial_data_import()
 ```
 ## Execute DAG in Airflow UI
 
-Now that your DAG code is ready, you can interact with it from the Airflow UI. Navigate to *http://localhost:8081* and enter the default credentials (user = admin, password = admin) to access the Airflow UI. You should now see the DAG you just created under the DAGs tab.
+Now that your DAG code is ready, you can interact with it from the Airflow UI. Navigate to `http://localhost:8081` and enter the default credentials (user = admin, password = admin) to access the Airflow UI. You should now see the DAG you just created under the DAGs tab.
 ![Airflow UI](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/d2af26bcf371807a0600c7f8a40ef03e1a908154.png)
 Next to the DAG's name, you find a toggle button to pause/unpause the DAG's execution. And if you click on the DAG's name, you get redirected to a page with different views for your DAG. For example, clicking on **Graph** will show you the tasks you have recreated; you can check out your code on the **Code** tab, and the **Grid** gives you information about your last runs and access to the logs.
 

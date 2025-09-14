@@ -71,7 +71,8 @@ CREATE TABLE IF NOT EXISTS "nyc_taxi"."trips" (
 )
 PARTITIONED BY ("pickup_year");
 ```
-To better understand how Airflow works and its applications, you can check other tutorials related to that topic [here](https://community.cratedb.com/t/overview-of-cratedb-integration-tutorials/1015). Also, if you are starting with CrateDB and haven’t set up any CrateDB instances before, have a look at our [documentation](https://crate.io/docs/crate/tutorials/en/latest/) and if you have any questions, otherwise, feel free to write a question in our [community](https://community.cratedb.com/).
+To better understand how Airflow works and its applications, you can check other
+tutorials related to that topic {ref}`here <airflow-tutorials>`.
 
 Ok! So, once the tools are already set up with the corresponding tables created, we should be good to go.
 
@@ -90,7 +91,7 @@ The Airflow DAG used in this tutorial contains 6 tasks which are described below
    * `curl -o "<LOCAL-PARQUET-FILE-PATH>" "<REMOTE-PARQUET-FILE>"`
    * `parquet-tools csv <LOCAL-PARQUET-FILE-PATH> > <CSV-FILE-PATH>`
    Both tasks are executed within one Bash Operator.
-* **copy_csv_to_s3:** Once the newly transformed file is available, it gets uploaded to an S3 Bucket to then, be used in the [COPY FROM](https://crate.io/docs/crate/reference/en/5.1/sql/statements/copy-from.html) SQL.
+* **copy_csv_to_s3:** Once the newly transformed file is available, it gets uploaded to an S3 Bucket to then, be used in the {ref}`crate-reference:sql-copy-from` SQL statement.
 * **copy_csv_staging:** copy the CSV file stored in S3 to the staging table described previously.
 * **copy_stating_to_trips:** finally, copy the data from the staging table to the trips table, casting the columns that are not in the right type yet.
 * **delete_staging:** after it is all processed, clean up the staging table by deleting all rows, and preparing for the next file.
@@ -107,4 +108,9 @@ You may find the full code for the DAG described above available in our [GitHub 
 
 ## Wrap up
 
-The workflow represented in this tutorial is a simple way to import Parquet files to CrateDB by transforming them into a .csv file. As previously mentioned, there are other approaches out there, we encourage you to try them out. If you want to continue to explore CrateDB use cases with Airflow, have a look [here](https://community.cratedb.com/t/overview-of-cratedb-integration-tutorials/1015).
+The workflow represented in this tutorial is a simple way to import Parquet files
+to CrateDB by transforming them into a CSV file. As previously mentioned, there
+are other approaches out there, we encourage you to try them out.
+
+If you want to continue to explore how CrateDB can be used with Airflow, you can
+check other tutorials related to that topic {ref}`here <airflow-tutorials>`.

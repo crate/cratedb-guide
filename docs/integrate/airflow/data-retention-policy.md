@@ -45,7 +45,7 @@ INSERT INTO retention_policies (table_schema, table_name, partition_column, rete
 To automate the process of deleting expired data we use [Apache Airflow](https://airflow.apache.org/). Our workflow implementation does the following: _once a day, fetch policies from the database, and delete all data for which the retention period expired._
 
 ### Retrieving Retention Policies
-The first step consists of a task that queries partitions affected by retention policies. We do this by joining `retention_policies` and `information_schema.table_partitions` tables and selecting values with expired retention periods. In CrateDB, `information_schema.table_partitions` [[documentation](https://crate.io/docs/crate/reference/en/5.1/general/information-schema.html#table-partitions)] contains information about all partitioned tables including the name of the table, schema, partition column, and the values of the partition. 
+The first step consists of a task that queries partitions affected by retention policies. We do this by joining `retention_policies` and `information_schema.table_partitions` tables and selecting values with expired retention periods. In CrateDB, `information_schema.table_partitions` [{ref}`documentation <crate-reference:is_table_partitions>`] contains information about all partitioned tables including the name of the table, schema, partition column, and the values of the partition.
 The resulting query is constructed as:
 ```sql
 SELECT QUOTE_IDENT(p.table_schema) || '.' || QUOTE_IDENT(p.table_name),
@@ -145,7 +145,7 @@ data_retention_delete()
 
 On the `SQLExecuteQueryOperator`, a certain set of attributes are passed via `partial` instead of `expand`. These are static values that are the same for each `DELETE` statement, like the connection and task ID.
 
-The full DAG implementation of the data retention policy can be found in our [GitHub repository](https://github.com/crate/crate-airflow-tutorial/blob/main/dags/data_retention_delete_dag.py). To run the workflow, we rely on Astronomer infrastructure with the same setup as shown in the [first part of the CrateDB and Apache Airflow tutorial](https://community.cratedb.com/t/cratedb-and-apache-airflow-automating-data-export-to-s3/901).
+The full DAG implementation of the data retention policy can be found in our [GitHub repository](https://github.com/crate/crate-airflow-tutorial/blob/main/dags/data_retention_delete_dag.py). To run the workflow, we rely on Astronomer infrastructure with the same setup as shown in the {ref}`getting started <airflow-getting-started>` section.
 
 ## Summary
 This tutorial gives a guide on how to delete data with expired retention policies. The first part shows how to design policies in CrateDB and then, how to use Apache Airflow to automate data deletion. The DAG implementation is fairly simple: the first task performs the extraction of relevant policies, while the second task makes sure that affected partitions are deleted. In the following tutorial, we will focus on another real-world example that can be automated with Apache Airflow and CrateDB.
