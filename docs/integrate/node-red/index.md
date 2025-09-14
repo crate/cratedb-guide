@@ -63,8 +63,8 @@ Ingesting MQTT messages into CrateDB using Node-RED.
 :::
 
 :::{grid-item-card} Tutorial: Recurrent queries
-:link: https://community.cratedb.com/t/automating-recurrent-cratedb-queries/788
-:link-type: url
+:link: node-red-recurrent-queries
+:link-type: ref
 Automating recurrent CrateDB queries using Node-RED.
 :::
 
