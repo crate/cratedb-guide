@@ -21,7 +21,7 @@ So, let’s get started.
 
 If you’re new to CrateDB and want to get started quickly and easily, a great option is to try the **Free Tier** in CrateDB Cloud. With the **Free Tier**, you have a limited Cluster that is free forever; no payment method is required. Now, if you are ready to experience the full power of CrateDB Cloud, take advantage of the 200$ in free credits to try the cluster of your dreams.
 
-To start with CrateDB Cloud, [navigate to the CrateDB website](https://crate.io/download?hsCtaTracking=caa20047-f2b6-4e8c-b7f9-63fbf818b17f%7Cf1ad6eaa-39ac-49cd-8115-ed7d5dac4d63) and follow the steps to create your CrateDB Cloud account. Once you log in to the CrateDB Cloud UI, select **Deploy Cluster** to create your free cluster, and you are ready to go!
+To start with CrateDB Cloud, [navigate to the CrateDB website](https://cratedb.com/download?hsCtaTracking=caa20047-f2b6-4e8c-b7f9-63fbf818b17f%7Cf1ad6eaa-39ac-49cd-8115-ed7d5dac4d63) and follow the steps to create your CrateDB Cloud account. Once you log in to the CrateDB Cloud UI, select **Deploy Cluster** to create your free cluster, and you are ready to go!
 
 ![cratedb-cloud-free-tier](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/26fc603ca998d39631f93f1eb7c5dbd30f437e56.gif)
 
@@ -81,7 +81,7 @@ When I read [yfinance](https://pypi.org/project/yfinance/)’s documentation (ve
 
 I want to download data from all S&P-500 companies, so having a list with all their symbols would be perfect.
 
-I then found [this tutorial by Edoardo Romani](https://towardsdatascience.com/how-to-automate-financial-data-collection-with-python-using-tiingo-api-and-google-cloud-platform-b11d8c9afaa1), which shows how to get the symbols from the [List of S&P-500 companies' Wikipedia page](https://en.wikipedia.org/wiki/List_of_S%26P_500_companies) and store them in a list.
+I then found [this tutorial by Edoardo Romani](https://medium.com/data-science/how-to-automate-financial-data-collection-with-python-using-tiingo-api-and-google-cloud-platform-b11d8c9afaa1), which shows how to get the symbols from the [List of S&P-500 companies' Wikipedia page](https://en.wikipedia.org/wiki/List_of_S%26P_500_companies) and store them in a list.
 
 So, in my Notebook, I import [BeautifulSoup 4.10.0](https://beautiful-soup-4.readthedocs.io/en/latest/) and [requests 2.26.0](https://pypi.org/project/requests/) to pull out HTML files from Wikipedia and create the following function:
 
