@@ -87,7 +87,9 @@ linkcheck_ignore += [
 
 linkcheck_anchors_ignore_for_url += [
     # Anchor 'XXX' not found
-    r"https://pypi.org/.*"
+    r"https://pypi.org/.*",
+    # https://kafka.apache.org/documentation/#topicconfigs - Anchor 'topicconfigs' not found
+    r"https://kafka.apache.org/.*",
 ]
 
 # Configure intersphinx.

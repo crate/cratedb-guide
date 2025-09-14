@@ -27,9 +27,9 @@ SQL Server, IBM DB2, Cassandra, Vitess, Spanner, JDBC, and Informix.
 ::::{grid}
 
 :::{grid-item-card} Replicate data from MSSQL
-:link: https://community.cratedb.com/t/replicating-data-to-cratedb-with-debezium-and-kafka/1388
-:link-type: url
-Replicating data from MSSQL to CrateDB with Debezium and Kafka.
+:link: debezium-tutorial
+:link-type: ref
+Replicate data from MSSQL to CrateDB with Debezium and Kafka.
 :::
 
 :::{grid-item-card} Webinar: Replicate data from other databases
@@ -40,6 +40,12 @@ How to replicate data from other databases to CrateDB with Debezium and Kafka.
 
 ::::
 
+
+:::{toctree}
+:maxdepth: 1
+:hidden:
+Tutorial <tutorial>
+:::
 
 
 [Debezium]: https://debezium.io/
