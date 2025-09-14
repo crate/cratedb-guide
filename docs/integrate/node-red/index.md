@@ -57,8 +57,8 @@ collaborative, and secure manner.
 ::::{grid} 2
 
 :::{grid-item-card} Tutorial: Ingest MQTT
-:link: https://community.cratedb.com/t/ingesting-mqtt-messages-into-cratedb-using-node-red/803
-:link-type: url
+:link: node-red-tutorial
+:link-type: ref
 Ingesting MQTT messages into CrateDB using Node-RED.
 :::
 
@@ -74,6 +74,12 @@ Automating recurrent CrateDB queries using Node-RED.
 ```{seealso}
 [CrateDB and Node-RED]
 ```
+
+:::{toctree}
+:maxdepth: 1
+:hidden:
+Tutorial <mqtt-tutorial>
+:::
 
 
 [CrateDB and Node-RED]: https://cratedb.com/integrations/cratedb-and-node-red
