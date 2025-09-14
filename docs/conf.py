@@ -77,6 +77,8 @@ linkcheck_ignore += [
     r"https://openai.com/index/gpt-4/.*",
     # 403 Client Error: Forbidden for url
     r"https://www.npmjs.com/",
+    # Out of service.
+    r"https://s3.amazonaws.com/nyc-tlc/.*",
 ]
 
 linkcheck_anchors_ignore_for_url += [
