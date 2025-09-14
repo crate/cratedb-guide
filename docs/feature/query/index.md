@@ -228,6 +228,13 @@ It is also not in the same shape as the other pages in this section.
 :::
 
 
+:::{toctree}
+:maxdepth: 1
+:hidden:
+Recurrent queries <recurrent>
+:::
+
+
 [Analyze Device Readings with Metadata Integration]: project:#timeseries-with-metadata
 [bulk operations interface]: inv:crate-reference#http-bulk-ops
 [bulk operations for INSERTs]: project:#inserts-bulk-operations
