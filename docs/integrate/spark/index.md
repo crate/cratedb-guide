@@ -46,6 +46,12 @@ Using Apache Spark with CrateDB is a powerful combination for processing and
 analyzing large datasets.
 :::
 
+:::{grid-item-card} Examples: Ready-to-run programs
+:link: https://github.com/crate/cratedb-examples/tree/main/by-dataframe/spark
+:link-type: url
+Demonstrate how to load a Spark data frame into CrateDB.
+:::
+
 ::::
 
 
