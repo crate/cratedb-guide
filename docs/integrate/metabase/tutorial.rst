@@ -17,16 +17,19 @@ CrateDB self-managed and its managed offering
 
 To use Metabase, you must have an existing data set in your CrateDB cluster.
 Feel free to use the sample dataset available in the `Cloud Console`_ or
-import your own data similarly to how it's done `in this how-to`_ .
+import your own data similarly to how it's done `in this how-to`_.
 
 .. _integration-metabase-config:
 
 Initial configuration
 ---------------------
 
-Metabase offers both a cloud version and a local installation. Whichever you
-choose, the first step will be to add your CrateDB cluster as a new database.
-To do that, go to ``Admin Settings`` -> ``Setup`` and choose
+Metabase offers both a cloud version and a local installation. E.g.
+```shell
+podman run -d -p 3000:3000 --name metabase docker.io/metabase/metabase:v0.47.13
+```
+Whichever you choose, the first step will be to add your CrateDB cluster as a
+new database. To do that, go to ``Admin Settings`` -> ``Setup`` and choose
 the ``Add a database`` option.
 
 .. image:: /_assets/img/integrations/metabase/metabase-add-database.png
