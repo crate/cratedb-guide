@@ -4,7 +4,9 @@
 :::{include} /_include/links.md
 :::
 
-_Setup instructions and guidelines for transforming data using dbt and CrateDB._
+:::{div} sd-text-muted
+Setup instructions and guidelines for transforming data using dbt and CrateDB.
+:::
 
 :::{div}
 For running the following steps, you will need connectivity to a CrateDB
