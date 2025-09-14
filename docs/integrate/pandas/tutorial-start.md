@@ -19,11 +19,15 @@ To follow along with this tutorial, you will need:
 
 ## Setting up CrateDB
 
-Before we can start using CrateDB, we need to set it up. You can either download and install CrateDB locally via [Docker](https://crate.io/docs/crate/tutorials/en/latest/basic/index.html#docker) or [tarball](https://crate.io/docs/crate/tutorials/en/latest/basic/index.html#try-cratedb-without-installing) or use a [CrateDB Cloud](https://crate.io/download?hsCtaTracking=caa20047-f2b6-4e8c-b7f9-63fbf818b17f%7Cf1ad6eaa-39ac-49cd-8115-ed7d5dac4d63) instance with an option of the free cluster.
+Before we can start using CrateDB, we need to set it up. You can either download and
+install CrateDB locally via {ref}`Docker <cratedb-docker>` or
+{ref}`tarball <install-tarball>` or use a
+[CrateDB Cloud](https://cratedb.com/download?hsCtaTracking=caa20047-f2b6-4e8c-b7f9-63fbf818b17f%7Cf1ad6eaa-39ac-49cd-8115-ed7d5dac4d63)
+instance with an option of the free cluster.
 
 Once you have a running instance of CrateDB, create a new table to store the customer data dataset. Here is an SQL command to create a table:
 
-``` sql
+```sql
 CREATE TABLE IF NOT EXISTS "doc"."customer_data" (
    "customerid" INTEGER,
    "gender" TEXT,
