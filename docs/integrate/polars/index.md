@@ -11,9 +11,9 @@
 :::{rubric} About
 :::
 
-[Polars] is a blazingly fast DataFrames library with language bindings for
-Rust, Python, Node.js, R, and SQL. Polars is powered by a multithreaded,
-vectorized query engine, it is open source, and written in Rust.
+[Polars] is a high‑performance DataFrames library with interfaces for
+Rust, Python, Node.js, and R, plus a SQL context. It is powered by a
+multithreaded, vectorized query engine and written in Rust.
 
 - **Fast:** Written from scratch in Rust and with performance in mind,
   designed close to the machine, and without external dependencies.
@@ -29,7 +29,7 @@ vectorized query engine, it is open source, and written in Rust.
 - **Out of Core:** The streaming API allows you to process your results without
   requiring all your data to be in memory at the same time.
 
-- **Parallel:** Polars' multi-threaded query engine utilises the power of your
+- **Parallel:** Polars' multi-threaded query engine utilizes the power of your
   machine by dividing the workload among the available CPU cores without any
   additional configuration.
 
@@ -46,18 +46,18 @@ vectorized query engine, it is open source, and written in Rust.
 
 Polars supports reading and writing to many common data formats.
 This allows you to easily integrate Polars into your existing data stack.
- 
-- Text: CSV & JSON
-- Binary: Parquet, Delta Lake, AVRO & Excel
-- IPC: Feather, Arrow
-- Databases: MySQL, Postgres, SQL Server, Sqlite, Redshift & Oracle
-- Cloud Storage: S3, Azure Blob & Azure File
 
+- Text: CSV, JSON
+- Binary: Parquet, Delta Lake, Avro, Excel
+- IPC: Feather, Arrow IPC
+- Databases: MySQL, PostgreSQL, SQLite, Redshift, SQL Server, (others via ConnectorX)
+- Cloud storage: Amazon S3, Azure Blob/ADLS (via fsspec‑compatible backends)
 
 :::{rubric} Learn
 :::
 - [Polars code examples]
 
 
+[Apache Arrow]: https://arrow.apache.org/
 [Polars]: https://pola.rs/
 [Polars code examples]: https://github.com/crate/cratedb-examples/tree/main/by-dataframe/polars
