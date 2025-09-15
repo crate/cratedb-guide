@@ -1,5 +1,5 @@
 (rill-tutorial)=
-# Introducing Rill and BI as code with CrateDB Cloud
+# Introducing Rill and BI as Code with CrateDB Cloud
 
 In the world of data analytics, Rill represents a revolutionary approach to Business Intelligence (BI), championing the concept of BI as code. This methodology allows for the versioning, tracking, and collaboration on BI projects using code, which can be more efficient and scalable than traditional BI tools. By leveraging Rill in conjunction with CrateDB Cloud, you can harness the power of distributed SQL database technology for real-time analytics at scale.
 
@@ -16,7 +16,7 @@ To begin setting up your CrateDB Cloud free-tier cluster, follow these steps:
 
 After initiating the cluster deployment, you will be directed to a screen where you can copy your username and password. Please ensure you save these credentials securely. The cluster setup usually completes in less than 5 minutes.
 
-![Cluster setup|600x440](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/f/f8860d7873923990307a3f43112fae66898787c9.png){w=800px}
+![Cluster setup|600x440](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/f/f8860d7873923990307a3f43112fae66898787c9.png){width=800px}
 
 **Connecting to Your Cluster:**
 
@@ -59,11 +59,11 @@ rill start my-cratedb-rill-project
 
 This action should open a browser window at `http://localhost:9009/welcome`, allowing you to begin adding data.
 
-![Rill setup|600x400](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/3/3596a5edc5560ede38f8683d1092fb3fbbcb0435.jpeg){w=800px}
+![Rill setup|600x400](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/3/3596a5edc5560ede38f8683d1092fb3fbbcb0435.jpeg){width=800px}
 
 When adding data, select PostgreSQL as your data source.
 
-![Select PostgreSQL|380x400](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/a/aff8ddc9f63840a330e8bf735de3cfd1179ef354.png){h=480px}
+![Select PostgreSQL|380x400](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/a/aff8ddc9f63840a330e8bf735de3cfd1179ef354.png){height=480px}
 
 Enter the following details:
 
@@ -82,7 +82,7 @@ summits_table
 postgres://admin:Yl3dnY666YlPyVkHKdIYjtqk@rilldata.aks1.westeurope.azure.cratedb.net:5432
 ```
 
-![image|690x323](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/0/050718f5eb81abfc06db1f040984a53bfd95e296.png){w=800px}
+![image|690x323](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/0/050718f5eb81abfc06db1f040984a53bfd95e296.png){width=800px}
 
 
 Congratulations! You're now ready to explore Rill with your CrateDB Cloud cluster.
