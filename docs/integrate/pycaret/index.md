@@ -3,7 +3,7 @@
 
 ```{div}
 :style: "float: right; margin-left: 1em"
-[![](https://github.com/crate/crate-clients-tools/assets/453543/b17a59e2-6801-4f53-892f-ff472491095f){w=180px}](https://pycaret.org/)
+[![PyCaret logo](https://github.com/crate/crate-clients-tools/assets/453543/b17a59e2-6801-4f53-892f-ff472491095f){w=180px}](https://pycaret.org/)
 ```
 ```{div}
 :style: "clear: both"
@@ -16,17 +16,16 @@
 automates machine learning workflows.
 
 It is a high-level interface and AutoML wrapper on top of your loved machine learning
-libraries like scikit-learn, xgboost, ray, lightgbm, and many more. PyCaret provides a
+libraries like scikit-learn, XGBoost, Ray, LightGBM, and many more. PyCaret provides a
 universal interface to utilize these libraries without needing to know the details
 of the underlying model architectures and parameters.
 
 :::{rubric} Concept
 :::
 
-The general concept of PyCaret - and for the matter of fact for AutoML in general -
-is rather simple: One takes the raw data, splits it into a training and a test set
-and then trains a number of different models on the training set. The models are
-then evaluated on the test set and the best performing model is selected.
+The general concept of PyCaret—and, in fact, of AutoML in general—is straightforward:
+take raw data, split it into training and test sets, train multiple models on the
+training set, evaluate on the test set, and select the best‑performing model.
 
 :::{rubric} Hyperparameter tuning
 :::
@@ -36,9 +35,8 @@ Again, this process is highly empirical. The parameters are changed, the model i
 retrained and evaluated again. This process is repeated until the best performing
 parameters are found.
 
-Modern algorithms for executing all these experiments are - amongst others -
-GridSearch, RandomSearch and BayesianSearch. For a quick introduction into
-these methods, see [Introduction to hyperparameter tuning].
+Common approaches include Grid Search, Random Search, and Bayesian Optimization.
+For a quick introduction to these methods, see [Introduction to hyperparameter tuning].
 
 :::{rubric} Benefits
 :::
@@ -46,7 +44,7 @@ these methods, see [Introduction to hyperparameter tuning].
 In the past, all these trial-and-error experiments had to be done manually,
 which is a tedious and time-consuming task. PyCaret automates this process
 and provides a simple interface to execute all these experiments in a
-straight-forward way. The notebooks referenced below demonstrate how this works.
+straightforward way. The notebooks referenced below demonstrate how this works.
 
 :::{rubric} Learn
 :::
@@ -68,9 +66,7 @@ classification models.
 :::{grid-item}
 :columns: 3
 {tags-primary}`Fundamentals` \
-{tags-secondary}`Time Series` \
-{tags-secondary}`Anomaly Detection` \
-{tags-secondary}`Prediction / Forecasting`
+{tags-secondary}`Classification`
 :::
 ::::
 
@@ -89,15 +85,13 @@ How to train time series forecasting models using PyCaret and CrateDB.
 :columns: 3
 {tags-primary}`Fundamentals` \
 {tags-secondary}`Time Series` \
-{tags-secondary}`Training` \
-{tags-secondary}`Classification` \
-{tags-secondary}`Forecasting`
+{tags-secondary}`Prediction / Forecasting`
 :::
 ::::
 
 
 [AutoML with PyCaret and CrateDB]: https://github.com/crate/cratedb-examples/tree/main/topic/machine-learning/pycaret
-[automl-classify-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/pycaret/automl_classification_with_pycaret.py
+[automl-classify-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/pycaret/automl_classification_with_pycaret.ipynb
 [automl-classify-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/pycaret/automl_classification_with_pycaret.ipynb
 [automl-forecasting-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/pycaret/automl_timeseries_forecasting_with_pycaret.ipynb
 [automl-forecasting-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/pycaret/automl_timeseries_forecasting_with_pycaret.ipynb
