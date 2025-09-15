@@ -8,28 +8,44 @@ the query, the engine uses the most efficient store.
 This is one of the many features that makes CrateDB very fast when reading
 and aggregating data, but it has an impact on storage size.
 
-We are going to
-use [Yellow taxi trip - January 2024](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
-which has 2_964_624 rows.
+We are going to use [Yellow taxi trip - January 2024](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) which has 2_964_624 rows.
 
-| VendorID | tpep_pickup_datetime | tpep_dropoff_datetime | passenger_count | trip_distance | RatecodeID | store_and_fwd_flag | PULocationID | DOLocationID | payment_type | fare_amount | extra | mta_tax | tip_amount | tolls_amount | improvement_surcharge | total_amount | congestion_surcharge | Airport_fee |
-|----------|----------------------|-----------------------|-----------------|---------------|------------|--------------------|--------------|--------------|--------------|-------------|-------|---------|------------|--------------|-----------------------|--------------|----------------------|-------------|
-| 2        | 1704073016000        | 1704074392000         | 4               | 6.88          | 1          | "N"                | 170          | 231          | 1            | 32.4        | 1     | 0.5     | 7.48       | 0            | 1                     | 44.88        | 2.5                  | 0           |
-| 1        | 1704071008000        | 1704072649000         | 0               | 4.1           | 1          | "N"                | 148          | 233          | 2            | 22.6        | 3.5   | 0.5     | 0          | 0            | 1                     | 27.6         | 2.5                  | 0           |
-| 1        | 1704071126000        | 1704071510000         | 2               | 1             | 1          | "N"                | 140          | 141          | 1            | 7.9         | 3.5   | 0.5     | 2.55       | 0            | 1                     | 15.45        | 2.5                  | 0           |
-| 2        | 1704072696000        | 1704073070000         | 1               | 1.03          | 1          | "N"                | 262          | 75           | 1            | 8.6         | 1     | 0.5     | 2.72       | 0            | 1                     | 16.32        | 2.5                  | 0           |
-| 2        | 1704074134000        | 1704074399000         | 1               | 1.08          | 1          | "N"                | 249          | 68           | 1            | 7.2         | 1     | 0.5     | 2.44       | 0            | 1                     | 14.64        | 2.5                  | 0           |
+This is the schema:
 
-The taxi dataset takes:
+```sql
+CREATE TABLE IF NOT EXISTS "doc"."taxi" (
+   "VendorID" BIGINT,
+   "tpep_pickup_datetime" TIMESTAMP WITHOUT TIME ZONE,
+   "tpep_dropoff_datetime" TIMESTAMP WITHOUT TIME ZONE,
+   "passenger_count" BIGINT,
+   "trip_distance" REAL,
+   "RatecodeID" BIGINT,
+   "store_and_fwd_flag" TEXT,
+   "PULocationID" BIGINT,
+   "DOLocationID" BIGINT,
+   "payment_type" BIGINT,
+   "fare_amount" REAL,
+   "extra" REAL,
+   "mta_tax" REAL,
+   "tip_amount" REAL,
+   "tolls_amount" REAL,
+   "improvement_surcharge" REAL,
+   "total_amount" REAL,
+   "congestion_surcharge" REAL,
+   "Airport_fee" REAL
+)
+```
 
-- ~48MiB in Parquet (very optimized for storage)
-- ~342MiB in CSV
-- ~1.2GiB in JSON
-- ~510MiB in PostgreSQL 16.1 (Debian 16.1-1.pgdg120+1)
-- ~775MiB in CrateDB 5.9.3 (3 nodes, default settings)
-- ~431MiB in CrateDB 5.10.9 (3 nodes, default settings)
+It takes:
 
-We will dive deeper to really understand what is going on.
+- ~`48MiB` in Parquet
+- ~`342MiB` in CSV
+- ~`1.2GiB` in JSON
+- ~`510MiB` in PostgreSQL 16.1 (Debian 16.1-1.pgdg120+1)
+- ~`775MiB` in CrateDB 5.9.3 (3 nodes, default settings)
+
+At first sight, it might look that in CrateDB data takes more space than in PostgreSQL,
+but we need to dive deeper to really understand what is going on, the reality is the opposite.
 
 :::{note}
 In version 5.10 storage usage was improved, some users report up to 70% of storage reduction,
@@ -156,10 +172,10 @@ CREATE TABLE taxi_noindex
 )
 ```
 
-The index can only be disabled when the table is created, if the table already exists,
-it will have to be re-created.
+The index can only be disabled when the table is created, if the table already exists and it cannot
+be deleted, it will have to be re-created.
 
-One of the ways of re-creating a table is by `renaming`, for example:
+One of the ways of re-creating a table is by renaming it, for example:
 
 1. Rename table `taxi` (with INDEX) to `taxi_deleteme` with:
 
