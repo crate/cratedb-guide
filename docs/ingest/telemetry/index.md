@@ -2,7 +2,7 @@
 (metrics-store)=
 (telemetry)=
 (integrate-metrics)=
-# Metrics and telemetry data
+# Metrics, telemetry, and logging data
 
 :::::{grid}
 :padding: 0
