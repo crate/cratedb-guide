@@ -65,6 +65,7 @@ pyviz/index
 queryzen/index
 rill/index
 risingwave/index
+scikit-learn/index
 sql-server/index
 streamlit/index
 streamsets/index
