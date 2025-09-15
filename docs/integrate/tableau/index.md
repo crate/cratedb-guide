@@ -34,8 +34,8 @@ In this tutorial, you will:
 :::
 
 :::{grid-item-card} Article: Using CrateDB with Tableau
-:link: https://community.cratedb.com/t/using-cratedb-with-tableau/1192
-:link-type: url
+:link: tableau-tutorial
+:link-type: ref
 How to install the latest PostgreSQL JDBC driver (e.g.
 `postgresql-42.7.1.jar` or newer) for using Tableau.
 :::
@@ -61,6 +61,13 @@ We are tracking interoperability issues per [Tool: Tableau] and
 ```{seealso}
 [CrateDB and Tableau]
 ```
+
+:::{toctree}
+:maxdepth: 1
+:hidden:
+Tutorial <tutorial>
+:::
+
 
 [Connector: Issues]: https://github.com/crate/cratedb-tableau-connector/issues
 [CrateDB and Tableau]: https://cratedb.com/integrations/cratedb-and-tableau
