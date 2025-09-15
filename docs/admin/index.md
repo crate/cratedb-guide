@@ -21,6 +21,7 @@ going-into-production
 monitoring/index
 memory
 circuit-breaker
+Monitoring <monitoring/prometheus-grafana>
 troubleshooting/index
 ```
 +++
