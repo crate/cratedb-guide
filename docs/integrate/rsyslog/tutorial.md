@@ -28,22 +28,23 @@ Next, we need a table to store the logs, let's connect to `http://localhost:4200
 
 ```sql
 CREATE TABLE doc.systemevents (
-	message TEXT
-	,INDEX message_ft USING FULLTEXT(message)
-	,facility INTEGER
-	,fromhost TEXT
-	,priority INTEGER
-	,DeviceReportedTime TIMESTAMP
-	,ReceivedAt TIMESTAMP
-	,InfoUnitID INTEGER
-	,SysLogTag TEXT	
-	);
+  message TEXT,
+  INDEX message_ft USING FULLTEXT(message) WITH (analyzer = 'english'),
+  facility INTEGER,
+  fromhost TEXT,
+  priority INTEGER,
+  DeviceReportedTime TIMESTAMP,
+  ReceivedAt TIMESTAMP,
+  InfoUnitID INTEGER,
+  SysLogTag TEXT
+);
 ```
 Tip: if you are on a headless system you can also run queries with {ref}`command-line tools <connect-cli>`.
 
 Then we need an account for the logging system:
 
 ```sql
+-- Use a strong secret; e.g. from a secret manager or env var.
 CREATE USER rsyslog WITH (PASSWORD='pwd123');
 ```
 
@@ -70,6 +71,7 @@ Let's now configure it to use the account we created earlier:
 ```bash
 echo 'module(load="ompgsql")' | sudo tee /etc/rsyslog.d/pgsql.conf
 echo '*.* action(type="ompgsql" conninfo="postgresql://rsyslog:pwd123@localhost/doc")' | sudo tee -a /etc/rsyslog.d/pgsql.conf
+sudo chmod 640 /etc/rsyslog.d/pgsql.conf
 sudo systemctl restart rsyslog
 ```
 
