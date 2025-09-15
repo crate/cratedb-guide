@@ -74,6 +74,7 @@ superset/index
 tableau/index
 telegraf/index
 tensorflow/index
+trino/index
 :::
 
 
