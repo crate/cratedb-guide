@@ -12,7 +12,7 @@
 :::{rubric} About
 :::
 
-[MLflow] is an open source platform to manage the whole ML lifecycle, including
+[MLflow] is an open-source platform to manage the whole ML lifecycle, including
 experimentation, reproducibility, deployment, and a central model registry.
 
 The [MLflow adapter for CrateDB], available through the [mlflow-cratedb] package

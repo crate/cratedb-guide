@@ -59,6 +59,7 @@ generation (RAG), and other applications.
 
 
 ### MLflow
+Use MLflow with CrateDB for experiment tracking and model registry.
 :::{seealso}
 Please navigate to the dedicated page about {ref}`mlflow`.
 :::
