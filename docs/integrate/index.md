@@ -66,6 +66,7 @@ queryzen/index
 r/index
 rill/index
 risingwave/index
+rsyslog/index
 scikit-learn/index
 sql-server/index
 streamlit/index
