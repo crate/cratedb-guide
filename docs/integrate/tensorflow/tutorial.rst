@@ -1,11 +1,17 @@
 .. _ml-tensorflow:
 .. _cratedb-distributed-ml:
+.. _tensorflow-tutorial:
 
 ======================
 TensorFlow and CrateDB
 ======================
 
-*Distributed Deep-Learning with CrateDB and TensorFlow.*
+.. div:: sd-text-muted
+
+    Distributed deep-learning with CrateDB and TensorFlow.
+
+Introduction
+============
 
 Using deep learning algorithms for Machine Learning use cases has become more
 and more common in the world of data science. A common library used for solving
@@ -19,12 +25,8 @@ library. Preparing the data can be done with `sklearn`_. This guide will
 demonstrate the process.
 
 
-Implementation
-==============
-
-
-Set Up
-------
+Setup
+=====
 
 For this distributed machine learning implementation, you will be using a
 `Kaggle`_ data set called `pump_sensor_data`_.
@@ -65,7 +67,7 @@ to the client so you can connect to your AWS S3 Bucket. To not have these
 credentials in the code, use an AWS config file at ``~/.aws/config`` so it
 contains:
 
-.. code-block:: python
+.. code-block:: ini
 
     [default]
     aws_access_key_id=<key>
@@ -86,8 +88,8 @@ CrateDB: in this case, renaming a column that was missing a name and filling in
 all the missing values with -1.
 
 
-CrateDB
--------
+Provision CrateDB
+-----------------
 
 In this first step, you need to make sure that you create the table that holds
 the pump sensor dataset as well as the table that will be storing the
@@ -179,8 +181,10 @@ To verify that the data has been successfully imported, you can query it:
     +----------+
     SELECT OK, 1 row in set (0.024sec)
 
+Usage
+=====
 
-Training A Model
+Training a model
 ----------------
 
 First, you can load the data into our Python context with ``psycopg2`` and
@@ -400,7 +404,7 @@ output is for the next 720 minutes (12 hours). The results also vary depending
 on how many epochs one uses and the size of the timesteps.
 
 
-Saving A Model To S3
+Saving a model to S3
 --------------------
 
 The next step is to save the model to a AWS S3 Bucket, so the model can be
@@ -442,7 +446,7 @@ The model and scaler will now be present in the S3 bucket, available for use fro
 other applications.
 
 
-Predicting With Pre-Trained Model
+Predicting with pre-trained model
 ---------------------------------
 
 Now you can switch to another application. The following code should be put
@@ -511,7 +515,7 @@ Here you can see the first few predicted values. Everything ≥ 0.5 would mean
 that the machine is in a NORMAL state, while < 0.5 would mean it is BROKEN.
 
 
-Saving The Predicted Values
+Saving the predicted values
 ---------------------------
 
 As the final step, you can insert the predictions from the previous step into

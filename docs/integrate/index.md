@@ -69,6 +69,7 @@ streamsets/index
 superset/index
 tableau/index
 telegraf/index
+tensorflow/index
 :::
 
 
