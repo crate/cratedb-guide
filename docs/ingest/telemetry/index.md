@@ -59,6 +59,12 @@ Prometheus is an open-source systems monitoring and alerting toolkit
 for collecting metrics data from applications and infrastructures.
 ::::
 
+::::{grid-item-card} Rsyslog
+:link: rsyslog
+:link-type: ref
+Rsyslog is a rocket-fast system for log processing.
+::::
+
 ::::{grid-item-card} Telegraf
 :link: telegraf
 :link-type: ref
