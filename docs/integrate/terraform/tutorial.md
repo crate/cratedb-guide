@@ -3,30 +3,49 @@
 
 ## Introduction
 
-CrateDB already has a wide variety of deployment options, ranging from
-{ref}`docker-compose` to {ref}`cloud setups <install-cloud>` on AWS and Azure.
+CrateDB offers multiple deployment options, from {ref}`docker-compose` to
+{ref}`cloud setups <install-cloud>` on AWS and Azure.
 
-To make cloud setups more manageable and predictable, we today add another
-option using [Terraform], an infrastructure-as-code tool.
-Terraform eliminates the need to create resources manually via the cloud console.
-Instead, it is based on a configuration language describing resources based
-on a given parametrization.
+To make cloud setups more manageable and predictable, this guide presents
+another option using [Terraform], an infrastructure-as-code tool.
+Terraform eliminates manual console steps to create resources.
+Instead, Terraform uses a configuration language that describes resources
+with parameters.
+
+## Prerequisites
+
+- Terraform CLI >= 1.5
+- An AWS account with credentials configured (AWS SSO/profile or env vars)
+  and a default region or the provider block shown below
+- Existing VPC and subnet IDs in the chosen region (and their AZ mapping)
+- An EC2 key pair name to use for SSH
+- jq installed (used to pretty‑print JSON output)
 
 ## Example
 
-The example below shows a 3 node cluster across several availability zones on AWS.
-Currently, AWS and Azure are supported as target platforms.
-The setup for Azure is very similar, please see the [README].
+This example deploys a 3‑node cluster across multiple Availability Zones on AWS.
+The module currently supports AWS and Azure.
+For Azure, see the [README].
 
 ## Configuration
 
-First, we create a new Terraform configuration file named `main.tf`.
-That file references the [crate/crate-terraform](https://github.com/crate/crate-terraform) repository with the underlying logic of the deployment. Several variables need to be specified regarding the target environment.
-
+First, create a Terraform configuration file named `main.tf`.
+Reference the [cratedb-terraform] module, which contains the deployment logic.
+Then, specify variables for the target environment.
 
 ```hcl
-module "cratedb-cluster" {
-  source = "git@github.com:crate/crate-terraform.git//aws"
+terraform {
+  required_version = ">= 1.5.0"
+}
+variable "region" {
+  type    = string
+  default = "eu-central-1"
+}
+provider "aws" {
+  region = var.region
+}
+module "cratedb_cluster" {
+  source = "https://github.com/crate/cratedb-terraform.git//aws"
 
   # Global configuration items for naming/tagging resources
   config = {
@@ -38,53 +57,54 @@ module "cratedb-cluster" {
 
   # CrateDB-specific configuration
   crate = {
-    # Java Heap size in GB available to CrateDB
+    # Java heap size in GB available to CrateDB
     heap_size_gb = 2
 
     cluster_name = "crate-cluster"
 
-    # The number of nodes the cluster will consist of
+    # Number of nodes in the cluster
     cluster_size = 3
 
-    # Enables a self-signed SSL certificate
+    # Enable a self-signed TLS certificate
     ssl_enable = true
   }
 
-  # The AWS region
-  region = "eu-central-1"
+  # AWS region
+  region = var.region
 
-  # The VPC to deploy to
+  # Target VPC
   vpc_id = "vpc-1234567"
 
-  # Applicable subnets of the VPC
+  # Subnets in the VPC
   subnet_ids = ["subnet-123456", "subnet-123457"]
 
-  # The corresponding availability zones of above subnets
+  # Availability Zones for the subnets above
+  # Note: AZ suffixes are account-specific; ensure these match your subnets' AZs.
   availability_zones = ["eu-central-1b", "eu-central-1a"]
 
-  # The SSH key pair for EC2 instances
-  ssh_keypair = "cratedb-cluster"
+  # SSH key pair name for EC2 instances
+  ssh_keypair = "cratedb_cluster"
 
   # Enable SSH access to EC2 instances
+  # Tip: restrict SSH to your IP/CIDRs if supported by the module.
   ssh_access = true
 }
 
-# Connection information on the newly created cluster
+# Connection information for the newly created cluster
 output "cratedb" {
-  value     = module.cratedb-cluster
+  value     = module.cratedb_cluster
   sensitive = true
 }
 ```
 
 ## Execution
 
-Once all variables are adjusted, we initialize Terraform by installing needed plugins:
-
+Once you adjust all variables, initialize Terraform by installing the needed plugins.
 ```bash
 $ terraform init   
 Initializing modules...
-Downloading git@github.com:crate/crate-terraform.git for cratedb-cluster...
-- cratedb-cluster in .terraform/modules/cratedb-cluster/aws
+Downloading git::https://github.com/crate/cratedb-terraform.git for cratedb_cluster...
+- cratedb_cluster in .terraform/modules/cratedb_cluster/aws
 
 Initializing the backend...
 
@@ -112,7 +132,8 @@ Terraform has been successfully initialized!
 [...]
 ```
 
-Before deploying anything to the cloud, we can optionally print the planned resource creation that Terraform derived from the configuration (the output below is shortened):
+Before deploying, optionally print the planned resource creation derived from the
+configuration (shortened output below):
 ```bash
 $ terraform plan   
 
@@ -122,7 +143,7 @@ Terraform used the selected providers to generate the following execution plan. 
 
 Terraform will perform the following actions:
 
-  # module.cratedb-cluster.aws_instance.cratedb_node[0] will be created
+  # module.cratedb_cluster.aws_instance.cratedb_node[0] will be created
   + resource "aws_instance" "cratedb_node" {
       + ami                                  = "ami-0afc0414aefc9eaa7"
       + arn                                  = (known after apply)
@@ -140,7 +161,7 @@ Terraform will perform the following actions:
       + instance_type                        = "t3.xlarge"
       + ipv6_address_count                   = (known after apply)
       + ipv6_addresses                       = (known after apply)
-      + key_name                             = "cratedb-cluster"
+      + key_name                             = "cratedb_cluster"
       + monitoring                           = (known after apply)
       + outpost_arn                          = (known after apply)
       + password_data                        = (known after apply)
@@ -226,7 +247,7 @@ Terraform will perform the following actions:
         }
     }
 
-  # module.cratedb-cluster.aws_instance.cratedb_node[1] will be created
+  # module.cratedb_cluster.aws_instance.cratedb_node[1] will be created
   + resource "aws_instance" "cratedb_node" {
         [...]
     }
@@ -254,20 +275,33 @@ Outputs:
 cratedb = <sensitive>
 ```
 
-## Connecting to CrateDB
-The `cratedb` output element contains information on the newly created cluster, such as URL and credentials. Since it contains the admin password, the output is marked as sensitive and not immediately shown by Terraform. It can be made visible via the `terraform output` command:
+## Connect to CrateDB
+
+The `cratedb` output element contains the connection details (URL and
+credentials). Because it’s marked sensitive, human‑readable output is
+redacted. Use the `terraform output` command to display it, adding
+`-json` to print the full value and pipe it to `jq` (ensure `jq` is
+installed).
 ```bash
-$ terraform output cratedb
+$ terraform output -json cratedb | jq
+```
+```json
 {
-  "cratedb_application_url" = "https://example-project-test-lb-572e07fbd6b72b88.elb.eu-central-1.amazonaws.com:4200"
-  "cratedb_password" = "IgqVcBV28wNX8Js1"
-  "cratedb_username" = "admin"
+  "cratedb_application_url": "https://example-project-test-lb-572e07fbd6b72b88.elb.eu-central-1.amazonaws.com:4200",
+  "cratedb_password": "IgqVcBV28wNX8Js1",
+  "cratedb_username": "admin"
 }
 ```
 
 ## Teardown
 
-If you no longer need the deployed cluster, a simple `terraform destroy` from the same directory will suffice.
+:::{caution}
+This tutorial creates billable AWS resources. Destroy the stack when finished
+to avoid ongoing costs.
+:::
+
+If you no longer need the deployed cluster, a simple `terraform destroy` from
+the same directory will suffice.
 
 ```bash
 $ terraform destroy
@@ -276,7 +310,7 @@ Terraform used the selected providers to generate the following execution plan. 
 
 Terraform will perform the following actions:
 
-  # module.cratedb-cluster.aws_instance.cratedb_node[0] will be destroyed
+  # module.cratedb_cluster.aws_instance.cratedb_node[0] will be destroyed
   - resource "aws_instance" "cratedb_node" {
        [...]
         } -> null
@@ -291,16 +325,28 @@ Changes to Outputs:
 Destroy complete! Resources: 22 destroyed.
 ```
 
-For optimal security, a self-signed SSL certificate was automatically generated and deployed. After adding an exception in your browser to accept the certificate, the HTTP Basic Auth dialog of CrateDB’s Admin UI will show. Authenticate with the credentials retrieved from above.
+Terraform generates and deploys a self‑signed TLS certificate. After adding a
+browser exception, CrateDB’s Admin UI prompts for HTTP Basic Auth. Authenticate
+with the credentials shown above.
 
-If the credentials are rejected, or no authentication prompt appears, please wait for a couple of minutes and try again. Provisioning the virtual machines might not be complete yet and can take several minutes.
+If authentication fails or no prompt appears:
+- Wait a few minutes; provisioning can take time.
+- Verify the load balancer is healthy and targets are in service.
+- Confirm the security group allows inbound HTTPS from your IP.
+- Ensure DNS/URL matches the ALB listener port (4200).
 
 ## Final Remarks
 
-Please note that (as of now) the provided Terraform configuration is meant for development or testing purposes and doesn’t fulfill all requirements of a production-ready setup (i.e. regarding high availability, encryption, or backups). For production-ready setups, please consider [CrateDB Cloud](https://crate.io/products/cratedb-cloud/).
+This Terraform configuration targets development or testing and is not
+production‑ready (e.g., it does not configure high availability, disk encryption,
+automated backups, or managed TLS certificates).
+For production, consider using [CrateDB Cloud].
 
-If you have any feedback or requests to extend the configuration, please feel free to [open an issue on GitHub](https://github.com/crate/crate-terraform/issues) or let us know in this thread!
+To request enhancements or share feedback, [open an issue on GitHub].
 
 
+[CrateDB Cloud]: https://crate.io/products/cratedb-cloud/
+[cratedb-terraform]: https://github.com/crate/cratedb-terraform
+[open an issue on GitHub]: https://github.com/crate/cratedb-terraform/issues
 [README]: https://github.com/crate/cratedb-terraform/blob/main/azure/README.md
-[Terraform]: https://www.terraform.io/
+[Terraform]: https://developer.hashicorp.com/terraform
