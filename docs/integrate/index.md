@@ -47,6 +47,7 @@ marquez/index
 meltano/index
 metabase/index
 mindsdb/index
+mlflow/index
 mongodb/index
 mqtt/index
 mysql/index
