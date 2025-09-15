@@ -1,67 +1,87 @@
 (prometheus-tutorial)=
 # Storing long-term metrics with Prometheus in CrateDB
 
-In this tutorial, I show how to
+This tutorial shows how to:
 
 * Set up Docker Compose to run CrateDB, Prometheus, and the CrateDB Prometheus Adapter
 * Run the applications with Docker Compose
 
-*Note: this blog post uses CrateDB 4.7.0, Prometheus 2.33.3 and CrateDB Prometheus Adapter 0.4.0*
+:::{note}
+These examples use CrateDB 4.7.0, Prometheus 2.33.3, and the CrateDB Prometheus Adapter 0.5.8.
+:::
 
 ## Motivation
 
-[Prometheus](https://prometheus.io/docs/introduction/overview/) is a monitoring software for collecting metrics data from applications and infrastructures. Its focus lies on collecting big amounts of concise event data from the monitored system, roughly timestamp points with key-value pairs.
+[Prometheus] is a monitoring system that collects metrics from applications and
+infrastructure. It focuses on ingesting large volumes of concise time‑series
+events—timestamped points with key‑value labels.
 
-Such data is very useful to track the state and trajectory of a system, so storing this data for the long term is a common need for Prometheus users.
+This data helps you track a system’s state and trajectory. Many Prometheus users
+want to retain it long term.
 
-This is where [CrateDB](https://cratedb.com/database) comes into place. With the [CrateDB Prometheus Adapter](https://github.com/crate/cratedb-prometheus-adapter), one can easily store the collected metrics data in CrateDB and take advantage of its high ingestion and query speed and friendly UI to massively scale-out Prometheus.
+[CrateDB] helps here. With the [CrateDB Prometheus Adapter], you can store metrics
+in CrateDB and use its fast ingestion and query performance to scale Prometheus.
 
 ## Set up Docker Compose
 
-Both CrateDB, Prometheus, and the CrateDB Prometheus Adapter applications can be run as [Docker containers](https://www.docker.com/resources/what-container). To then centralize the container management I use [Docker Compose](https://docs.docker.com/compose/), this way I can build and run all the containers with a single command and set up the connections between them in a YAML file.
+Run CrateDB, Prometheus, and the CrateDB Prometheus Adapter as [Docker containers].
+Use [Docker Compose] to centralize container management so you can build and run
+all containers with one command and define their connections in a YAML file.
 
-Before anything else, I follow the [Docker Installation Tutorial](https://docs.docker.com/get-docker/) to get Docker in my local machine.
+Install Docker by following the [Docker installation guide].
 
-Then, I create a directory in my local machine to host the necessary configuration files.
-I’ll have a total of three of them, all following the YAML format. They can be easily created using any [text editor](https://www.computerhope.com/jargon/e/editor.htm), like TextEdit on a Mac, and then saved with the `.yml` format.
+Create a directory on your machine to host the configuration files.
+Create three YAML files with your preferred editor and save them with the `.yml` extension.
 
 ### Create `docker-compose.yml`
 
-The first YAML file I create is `docker-compose.yml`, which wraps up the configurations for the three containers.
-
-I specify CrateDB, Prometheus, and Adapter as services. Then, I add `config.yml` and `prometheus.yml` files as volumes to the Adapter and Prometheus containers, respectively. These files will be created in the following steps.
+Create `docker-compose.yml` to configure the three containers.
+Define services for CrateDB, Prometheus, and the adapter. Mount `config.yml`
+and `prometheus.yml` into the adapter and Prometheus containers, respectively.
+You will create these files in the following steps.
 ```yaml
 services:
   cratedb:
-    image: "crate"
+    image: "crate:4.7.0"
     ports:
       - "4200:4200"
       - "5432:5432"
+    volumes:
+      - cratedb-data:/data
+    restart: unless-stopped
   prometheus:
-    image: "prom/prometheus"
+    image: "prom/prometheus:v2.33.3"
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
       - "9090:9090"
+    restart: unless-stopped
   cratedb-prometheus-adapter:
-    image: "ghcr.io/crate/cratedb-prometheus-adapter"
+    image: "ghcr.io/crate/cratedb-prometheus-adapter:0.5.8"
     volumes:
       - ./config.yml:/etc/cratedb-prometheus-adapter/config.yml
     ports:
       - "9268:9268"
+    depends_on:
+      - cratedb
+      - prometheus
+    restart: unless-stopped
+volumes:
+  cratedb-data:
 ```
 
 ### Create `prometheus.yml`
 
-Next, following the[ Prometheus Documentation](https://prometheus.io/docs/prometheus/latest/getting_started/), I create a `prometheus.yml` file, which holds the scraping configuration for whichever service Prometheus collects metrics from.
+Next, create `prometheus.yml` following the [Prometheus documentation].
+This file defines the services that Prometheus scrapes.
 
-To keep it simple, I follow the example in the Prometheus documentation and set it to monitor itself.
+To keep it simple, monitor Prometheus itself.
 
-One last bit of configuration necessary to forward requests from Prometheus to the CrateDB Adapter is to set `remote_write` and `remote_read` to the Adapter URL, as stated in [CrateDB Prometheus Adapter Setup](https://github.com/crate/cratedb-prometheus-adapter).
+To forward samples to CrateDB, set `remote_write` and `remote_read` to the adapter URL (see the [CrateDB Prometheus Adapter setup](https://github.com/crate/cratedb-prometheus-adapter)).
 
-As I’m running the Adapter on Docker instead of locally, the host in its URL will not be `localhost`, but rather however I called the Adapter service previously in my `docker-compose.yml` file, in this case, `cratedb-prometheus-adapter`.
+Because the adapter runs in Docker, use the adapter service name from `docker-compose.yml` (`cratedb-prometheus-adapter`) instead of `localhost` in the URLs.
 
-The resulting prometheus.yml looks then like this:
+Use the following `prometheus.yml`:
 ```yaml
 global:
   scrape_interval:     15s # By default, scrape targets every 15 seconds.
@@ -81,7 +101,7 @@ scrape_configs:
     scrape_interval: 5s
 
     static_configs:
-      - targets: ['localhost:9090']
+      - targets: ['prometheus:9090']
 
 remote_write:
   - url: http://cratedb-prometheus-adapter:9268/write
@@ -90,9 +110,10 @@ remote_read:
 ```
 ### Create `config.yml`
 
-Finally, following the [CrateDB Prometheus Adapter setup instructions](https://github.com/crate/cratedb-prometheus-adapter), I create the `config.yml` file, which defines the CrateDB endpoints the Adapter writes to.
+Finally, create `config.yml` following the [CrateDB Prometheus Adapter].
+This file defines the CrateDB endpoints that the adapter writes to.
 
-As I did previously in the `prometheus.yml` file, the host is set to `cratedb`, which is how I declared the CrateDB service on the `docker-compose.yml` file, instead of the default `localhost`. The remaining variables are set with their default values.
+Set the host to `cratedb` (the service name in `docker-compose.yml`) instead of `localhost`. Keep the remaining variables at their defaults.
 ```yaml
 cratedb_endpoints:
 - host: "cratedb"           # Host to connect to (default: "localhost")
@@ -105,18 +126,18 @@ cratedb_endpoints:
   enable_tls: false         # Whether to connect using TLS (default: false).
   allow_insecure_tls: false # Whether to allow insecure / invalid TLS certificates (default: false).
 ```
-I make sure both `docker-compose.yml`, `config.yml`, and `prometheus.yml` are in the same directory in my local machine.
+Place `docker-compose.yml`, `config.yml`, and `prometheus.yml` in the same directory on your machine.
 
 ## Start the services
 
-Finally, I navigate to my CrateDB-Prometheus directory in my terminal and start Docker Compose with the `docker-compose up` command
+Finally, navigate to your CrateDB–Prometheus directory and start Docker Compose:
 ```shell
-$ cd /Users/Path/To/Directory/CrateDB-Prometheus
-$ docker-compose up
+cd /Users/Path/To/Directory/CrateDB-Prometheus
+docker-compose up
 ```
 
-With Docker Compose up and running, I follow the [CrateDB Prometheus Adapter setup instructions](https://github.com/crate/cratedb-prometheus-adapter), navigate to the [CrateDB Admin UI](https://www.google.com/search?client=safari&rls=en&q=cratedb+admin+ui&ie=UTF-8&oe=UTF-8) at [http://localhost:4200](http://localhost:4200/) and create a `metrics` table in CrateDB, which will store the metrics gathered by Prometheus.
-
+After Docker Compose starts, open the CrateDB Admin UI at `http://localhost:4200`
+and create a `metrics` table to store metrics gathered by Prometheus.
 ```sql
 CREATE TABLE "metrics" (
     "timestamp" TIMESTAMP,
@@ -128,24 +149,34 @@ CREATE TABLE "metrics" (
     PRIMARY KEY ("timestamp", "labels_hash", "day__generated")
   ) PARTITIONED BY ("day__generated")
 ```
-Then I navigate to [http://localhost:9090](http://localhost:9090/), where I find the Prometheus UI. There, I head to **Status** and then **Targets**
 
-![im1|690x206](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/91223397b30bce2f7188617436ea12ceed83d83c.png)
+Navigate to `http://localhost:9090` to open the Prometheus UI. Go to **Status** → **Targets**.
 
-And confirm that Prometheus is successfully monitoring itself.
+![Prometheus Targets page showing the self-scrape target as UP](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/91223397b30bce2f7188617436ea12ceed83d83c.png)
 
-![im2|690x173](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/57ccb5374b0ab524466de08feefbafde559dac87.png)
+Confirm that Prometheus monitors itself.
 
-Lastly, I head back to the CrateDB Admin UI and select the `metrics` table I just created.
+![Prometheus target details for the self-scrape job](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/57ccb5374b0ab524466de08feefbafde559dac87.png)
 
-I see that only after a few minutes of running, Prometheus has gathered over 300k data points.
+Return to the CrateDB Admin UI and select the `metrics` table you created.
 
-![im3|690x403](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/22e8c7d5a90ec9240a4cb4269774e143759aa92e.jpeg)
- 
-I can now enjoy CrateDB’s incredible query speed to analyze and visualize this
-data using tools like {ref}`grafana`, which works effortlessly with CrateDB.
+After a few minutes, Prometheus will have gathered hundreds of thousands of data points.
 
-Here are a few interesting tutorials on that matter:
+![CrateDB Admin UI showing the populated metrics table](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/22e8c7d5a90ec9240a4cb4269774e143759aa92e.jpeg)
 
-* https://cratedb.com/blog/visualizing-time-series-data-with-grafana-and-cratedb
-* https://cratedb.com/blog/monitoring-cratedb-with-prometheus-and-grafana
+Use CrateDB’s query engine to analyze and visualize this data with tools
+like {ref}`grafana`.
+
+Explore these related tutorials:
+
+* [Visualizing time‑series data with Grafana and CrateDB](https://cratedb.com/blog/visualizing-time-series-data-with-grafana-and-cratedb)
+* [Monitoring CrateDB with Prometheus and Grafana](https://cratedb.com/blog/monitoring-cratedb-with-prometheus-and-grafana)
+
+
+[CrateDB]: https://cratedb.com/database
+[CrateDB Prometheus Adapter]: https://github.com/crate/cratedb-prometheus-adapter
+[Docker Compose]: https://docs.docker.com/compose/
+[Docker containers]: https://www.docker.com/resources/what-container
+[Docker installation guide]: https://docs.docker.com/get-docker/
+[Prometheus]: https://prometheus.io/docs/introduction/overview/
+[Prometheus documentation]: https://prometheus.io/docs/prometheus/latest/getting_started/
