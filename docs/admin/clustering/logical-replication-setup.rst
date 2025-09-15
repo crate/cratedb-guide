@@ -10,11 +10,6 @@ As a publish/subscribe model, it allows a publishing cluster to make certain
 tables available for subscription. Subscribing clusters pull changes from a
 publication and replay them on their side.
 
-.. rubric:: Table of contents
-
-.. contents::
-   :local:
-
 .. _requirements:
 
 Requirements

@@ -1,6 +1,8 @@
 from crate.theme.rtd.conf.cratedb_guide import *
 
 # Fallback guards, when parent theme does not introduce relevant variables.
+if "html_css_files" not in globals():
+    html_css_files = []
 if "html_theme_options" not in globals():
     html_theme_options = {}
 if "intersphinx_mapping" not in globals():
@@ -35,6 +37,7 @@ linkcheck_ignore += [
     r"https://www.baeldung.com/.*",
     # 404 Client Error: Not Found
     r"https://github.com/crate-workbench/cratedb-toolkit/actions/runs/.*",
+    r"https://github.com/crate/cratedb-toolkit/actions/runs/.*",
     # 403 Client Error: Forbidden for url
     r"https://www.datacamp.com/.*",
     # Read timed out. (read timeout=15)
@@ -51,6 +54,23 @@ linkcheck_ignore += [
     r"https://www.softwareag.com/.*",
     # 403 Client Error: Forbidden for url
     r"https://dzone.com/.*",
+    # 504 Client Error: Gateway Timeout for url
+    r"https://web.archive.org/.*",
+    # 403 Client Error: Forbidden for url
+    r"https://www.tableau.com/",
+    # Read timed out. (read timeout=15)
+    r"https://kubernetes.io/",
+    # Connection to renenyffenegger.ch timed out.
+    r"https://renenyffenegger.ch",
+    # Failed to establish a new connection: [Errno 111] Connection refused
+    r"https://www.amqp.org/",
+    # "We are currently migrating Datatracker and Mail Archive to a new cloud provider."
+    r"https://datatracker.ietf.org",
+    # 403 Client Error: Forbidden
+    r"https://www.sqlalchemy.org/",
+    # 429 Client Error: Too Many Requests
+    r"https://www.terraform.io",
+    r"https://developer.hashicorp.com",
 ]
 
 linkcheck_anchors_ignore_for_url += [
@@ -86,3 +106,8 @@ myst_substitutions.update({
     "tutorial": "[![Navigate to Tutorial](https://img.shields.io/badge/Navigate%20to-Tutorial-darkcyan?logo=Markdown)]",
     "readmore": "[![Read More](https://img.shields.io/badge/Read-More-darkyellow?logo=Markdown)]",
 })
+
+
+html_css_files += [
+    'css/custom.css',
+]

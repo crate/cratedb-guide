@@ -7,11 +7,6 @@ Configuration Tuning for Inserts
 This document outlines a number of hardware and software configuration changes
 you can make to tune your setup for inserts performance.
 
-.. rubric:: Table of contents
-
-.. contents::
-   :local:
-
 Hardware
 ========
 

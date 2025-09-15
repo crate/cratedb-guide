@@ -3,9 +3,6 @@
 (all-features)=
 # All Features
 
-:::{include} /_include/styles.html
-:::
-
 All features of CrateDB at a glance.
 
 :::::{grid} 1 3 3 3
@@ -18,7 +15,6 @@ All features of CrateDB at a glance.
 :maxdepth: 1
 
 sql/index
-connectivity/index
 document/index
 relational/index
 Search: FTS, Geo, Vector, Hybrid <search/index>
@@ -75,7 +71,7 @@ landscapes.
 :gutter: 2
 
 :::{grid-item-card} {material-outlined}`link;2em` Connectivity
-:link: connectivity
+:link: connect
 :link-type: ref
 :link-alt: About connection options with CrateDB
 

@@ -1,0 +1,74 @@
+/*
+Custom styles for efficient tile layouts using card elements.
+
+TODO: Upstream to crate-docs-theme.
+*/
+
+/* General */
+.float-right {
+    float: right;
+}
+.clearfix {
+    clear: both;
+}
+.text-right {
+    text-align: right;
+}
+/*
+.sd-card-body {
+    line-height: 1.1em;
+}
+*/
+.sd-card-footer {
+    font-size: small;
+}
+
+/* No margins for images in tight layouts, e.g. badges  */
+/* Needed for domain/timeseries/advanced.md */
+.wrapper-content-right img {
+  margin-bottom: 0 !important;
+}
+
+
+/* Document Store */
+.wrapper-content-right ul {
+  margin-left: 0;
+}
+.rubric-slimmer p.rubric {
+  margin-bottom: 0.25em;
+}
+.rubric-slim p.rubric {
+  margin-bottom: 0;
+}
+.title-slim .sd-col > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.no-margin > * {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+
+/* Cards with Links */
+.sd-hide-link-text {
+  height: 0;
+}
+
+/* On tiled link overview index pages, give ul/li elements more space */
+.ul-li-wide ul li {
+  margin-bottom: 1rem;
+}
+
+/* When a logo wants to be displayed next to the title */
+
+#main-content h1 {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem; /* space between logo and title */
+}
+/* Optional: ensure logos inside h1 scale and align nicely */
+#main-content h1 img {
+    vertical-align: middle;
+    max-height: 2rem; /* adjust as needed per design */
+}

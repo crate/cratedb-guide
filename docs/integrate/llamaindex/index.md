@@ -4,8 +4,15 @@
 :::{include} /_include/links.md
 :::
 
-:::{rubric} About
-:::
+```{div} .float-right .text-right
+[![LlamaIndex logo](https://www.llamaindex.ai/llamaindex.svg){height=60px loading=lazy}][LlamaIndex]
+<br>
+<a href="https://github.com/crate/cratedb-examples/actions/workflows/ml-llamaindex.yml" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/ml-llamaindex.yml?branch=main&label=LlamaIndex" loading="lazy" alt="CI status: LlamaIndex"></a>
+```
+```{div} .clearfix
+```
+
 [LlamaIndex] is a data framework for Large Language Models (LLMs). It comes with
 pre-trained models on massive public datasets such as GPT-4 or Llama 2, and
 provides an interface to external data sources allowing for natural language
@@ -84,8 +91,7 @@ print("Answer was:", answer)
 **Demo: Using LlamaIndex with OpenAI and CrateDB**
 
 - Connect your CrateDB data to an LLM using OpenAI or Azure OpenAI.
-- Query the database in human language,
-  i.e. query CrateDB in plain English.
+- Text-to-SQL / Talk to your data: Query the database in human language; query CrateDB in plain English.
 
 {hyper-tutorial}`[LlamaIndex and CrateDB: Tutorial]`
 [![README](https://img.shields.io/badge/Open-README-darkblue?logo=GitHub)][LlamaIndex and CrateDB: Code Examples]
@@ -108,4 +114,4 @@ print("Answer was:", answer)
 [LlamaIndex: Using Workflows]: https://docs.llamaindex.ai/en/stable/understanding/workflows/
 [LlamaIndex and CrateDB: Code Examples]: https://github.com/crate/cratedb-examples/tree/main/topic/machine-learning/llama-index
 [LlamaIndex and CrateDB: Tutorial]: https://community.cratedb.com/t/how-to-connect-your-cratedb-data-to-llm-with-llamaindex-and-azure-openai/1612
-[llamaindex-nlquery-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/llama-index/main.py
+[llamaindex-nlquery-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/llama-index/demo_nlsql.py

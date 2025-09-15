@@ -7,8 +7,6 @@
 
 :::{include} /_include/links.md
 :::
-:::{include} /_include/styles.html
-:::
 
 
 :::::{grid}
@@ -376,7 +374,7 @@ and how they can be customized to specific needs, using plugins for CrateDB.
 
 options
 analyzer
-learn
+Tutorial <tutorial>
 :::
 
 
@@ -384,7 +382,7 @@ learn
 [BM25 vs. Lucene Default Similarity]: https://www.elastic.co/blog/found-bm-vs-lucene-default-similarity
 [full-text search]: https://en.wikipedia.org/wiki/Full_text_search
 [Indexing and Storage in CrateDB]: https://cratedb.com/blog/indexing-and-storage-in-cratedb
-[Indexing Text for Both Effective Search and Accurate Analysis]: https://www.qualtrics.com/eng/indexing-text-for-both-effective-search-and-accurate-analysis/
+[Indexing Text for Both Effective Search and Accurate Analysis]: https://web.archive.org/web/20250210021928/https://www.qualtrics.com/eng/indexing-text-for-both-effective-search-and-accurate-analysis/
 [MATCH predicate]: inv:crate-reference#predicates_match
 [Okapi BM25]: https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/okapi_trec3.pdf
 [search engine]: https://en.wikipedia.org/wiki/Search_engine

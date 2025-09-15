@@ -427,8 +427,5 @@ and about OBJECT indexing.
 :maxdepth: 1
 :hidden:
 
-learn
-```
-
-```{include} /_include/styles.html
+Tutorial <tutorial>
 ```

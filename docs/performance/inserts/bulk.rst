@@ -37,10 +37,6 @@ The rest of this document goes into more detail.
     nodes. CrateDB is a :ref:`distributed database <crate-reference:concept-clustering>`,
     and so, increasing overall cluster size is generally a good way to improve performance.
 
-.. rubric:: Table of contents
-
-.. contents::
-    :local:
 
 .. SEEALSO::
 
@@ -50,7 +46,7 @@ The rest of this document goes into more detail.
 
     :ref:`Best practices: Migrating from MySQL <migrating-mysql>`
 
-    :ref:`Best practices: Migrating from MongoDB <migrating-mongodb>`
+    :ref:`Best practices: Migrating from MongoDB <mongodb>`
 
 
 .. _bulk-configure-tables:

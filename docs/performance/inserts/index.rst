@@ -1,6 +1,6 @@
-==================
-Insert Performance
-==================
+============
+Fast Inserts
+============
 
 A ``INSERT INTO`` statement is processed as follows:
 
@@ -30,6 +30,5 @@ This section of the guide will show you how.
    parallel
    tuning
    testing
-   sequences
 
 .. _Abstract Syntax Tree: https://en.wikipedia.org/wiki/Abstract_syntax_tree

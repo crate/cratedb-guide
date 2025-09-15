@@ -12,11 +12,6 @@ by testing insert performance on a single node.
 You should only increase the size of your cluster for testing once you have
 established the baseline performance on a single node.
 
-.. rubric:: Table of contents
-
-.. contents::
-   :local:
-
 Test data
 =========
 
@@ -138,4 +133,4 @@ understand the performance profile of your setup.
    Setting the bulk records size to `1` approximates the performance of single
    inserts.
 
-.. _cr8: https://github.com/mfussenegger/cr8/
+.. _cr8: https://codeberg.org/mfussenegger/cr8/

@@ -9,27 +9,66 @@ This documentation section lists applications, frameworks, and libraries,
 which can be used together with CrateDB, and outlines how to use them
 optimally.
 
-```{toctree}
-:maxdepth: 2
-
-ide
-orm
-df
-etl/index
-cdc/index
-mcp/index
-metrics/index
-visualize/index
-bi/index
-lineage/index
-testing
-```
-
 :::{tip}
 Please also visit the [Overview of CrateDB integration tutorials].
 :::
 
+:::{toctree}
+:maxdepth: 1
 
+airflow/index
+amqp/index
+aws-lambda/index
+azure-functions/index
+cluvio/index
+datagrip/index
+dbeaver/index
+dbt/index
+debezium/index
+django/index
+dlt/index
+dms/index
+dynamodb/index
+estuary/index
+explo/index
+flink/index
+gradio/index
+grafana/index
+hop/index
+iceberg/index
+influxdb/index
+ingestr/index
+kafka/index
+kestra/index
+kinesis/index
+langchain/index
+llamaindex/index
+marquez/index
+meltano/index
+metabase/index
+mindsdb/index
+mongodb/index
+mqtt/index
+mysql/index
+n8n/index
+nifi/index
+node-red/index
+oracle/index
+plotly/index
+postgresql/index
+Power BI <powerbi/index>
+prometheus/index
+pyviz/index
+queryzen/index
+rill/index
+risingwave/index
+sql-server/index
+streamlit/index
+streamsets/index
+superset/index
+tableau/index
+telegraf/index
+:::
 
 
 [CrateDB's PostgreSQL interface]: inv:crate-reference#interface-postgresql

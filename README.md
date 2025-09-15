@@ -27,32 +27,48 @@
 
 </div>
 
-
-## 👨‍💻 Usage
+## 👨‍💻 About
 
 - This repository contains the sources for the documentation pages rendered
   to https://cratedb.com/docs/guide/. The content is optimally consumed
   from there.
 
-- If you are looking for something specific, please use the search
-  feature, for example, [searching for "flink"].
-
 - You can use the content and code snippets for educational and knowledge base
   purposes, or as blueprints for your own projects.
 
-
 ## 🧐 What's Inside
 
-- Sources for statically rendered documentation about CrateDB written in
-  [Markdown] and/or [reStructuredText].
+The main content tree of the CrateDB Guide includes a wide array of topics.
 
+If you are looking for something specific, please use the search feature on
+GitHub, for example, [searching for "flink"], or clone the repository and
+use a local search tool like `ripgrep` or the Silver Searcher.
+
+### ℹ️ General information
+
+- Sources for statically rendered documentation about CrateDB are written in
+  [Markdown] and/or [reStructuredText]. Please prefer using Markdown going forward.
 - The documentation system is based on [Sphinx], [MyST], [sphinx-design],
   [sphinx-design-elements], and many other Sphinx addons and plugins.
-
 - The documentation theme is [crate-docs-theme].
-
 - The project uses [Read the Docs] for publishing.
 
+### 📁 Directory layout
+
+The folder structure follows a few conventions and ideas. The order of the items
+enumerated below is the order how they are currently enumerated within the primary
+navigation element (left-hand menu).
+
+- `start` The canonical "Getting Started" section, providing an easy user journey.
+- `install` The canonical "How to install CrateDB" section.
+- `connect` The canonical "How to connect to CrateDB" section.
+- `feature` A backbone section about all features at a glance, using a flat layout.
+- `ingest` A category section bundling all ingest methods.
+- `topic` A category section bundling different topics [sic!] and application domains.
+- `use` A category section bundling different successful customer scenarios.
+- `integrate` A backbone section about all the integration items, using a flat layout.
+- `admin` A potpourri of operational guidelines.
+- `performance` A potpourri of performance tuning guidelines.
 
 ## 💁 Contributing
 
@@ -67,6 +83,7 @@ Your bug reports, feature requests, and patches are highly appreciated.
 See also the [developer docs] to learn how to set up a development sandbox, in
 order to start editing. The [contribution docs] include general information
 about how to contribute to CrateDB repositories.
+Please also refer to the [CrateDB Authoring Guide] for more information.
 
 
 ## 🌟 Contributors
@@ -77,6 +94,7 @@ about how to contribute to CrateDB repositories.
 
 [contribution docs]: https://github.com/crate/crate/blob/master/CONTRIBUTING.rst
 [CrateDB]: https://github.com/crate/crate
+[CrateDB Authoring Guide]: https://crate-docs-theme.readthedocs.io/en/latest/authoring.html
 [crate-docs-theme]: https://crate-docs-theme.readthedocs.io/
 [developer docs]: DEVELOP.md
 [Markdown]: https://daringfireball.net/projects/markdown/

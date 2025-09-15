@@ -4,17 +4,24 @@
 :::{include} /_include/links.md
 :::
 
-## About
-```{div}
-:style: "float: right"
-[![](https://www.getdbt.com/_next/image?url=%2Fimg%2Flogos%2Fdbt-labs-logo.svg&w=384&q=75){w=180px}](https://www.getdbt.com/)
+```{div} .float-right .text-right
+[![dbt logo](https://www.getdbt.com/_next/image?url=%2Fimg%2Flogos%2Fdbt-labs-logo.svg&w=384&q=75){height=60px loading=lazy}][dbt]
+<br>
+<a href="https://github.com/crate/cratedb-examples/actions/workflows/framework-dbt.yml" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/framework-dbt.yml?branch=main&label=dbt" loading="lazy" alt="CI status: dbt"></a>
 ```
+```{div} .clearfix
+```
+
+## About
 
 [dbt] is a tool for transforming data in data warehouses using Python and SQL.
 
-It is an SQL-first transformation workflow platform that lets teams quickly and
+It is an SQL‑first transformation workflow platform that lets teams quickly and
 collaboratively deploy analytics code following software engineering best practices
-like modularity, portability, CI/CD, and documentation.
+such as modularity, portability, CI/CD, and documentation.
+
+::::{dropdown} **Details**
 
 > dbt enables data analysts and engineers to transform their data using the same
 > practices that software engineers use to build applications.
@@ -23,7 +30,7 @@ With dbt, anyone on your data team can safely contribute to production-grade dat
 pipelines.
 
 The idea is that data engineers make source data available to an environment where
-dbt projects run, for example with [Debezium](#debezium) or with [Airflow](#apache-airflow).
+dbt projects run, for example with {ref}`debezium` or with {ref}`airflow`.
 Afterwards, data analysts can run their dbt projects against this data to produce models
 (tables and views) that can be used with a number of [BI tools](#bi-tools).
 
@@ -31,10 +38,33 @@ Afterwards, data analysts can run their dbt projects against this data to produc
 ![](https://www.getdbt.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fwl0ndo6t%2Fmain%2Fcd8cba01b3f756a3a7ed194e6e2d6a4072fac194-1220x1200.png%3Ffit%3Dmax%26auto%3Dformat&w=640&q=75){h=120px}
 ![](https://www.getdbt.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fwl0ndo6t%2Fmain%2F58b87e47c2aed57fde9ccd49c927c3dff5b57d3c-1466x1130.png%3Ffit%3Dmax%26auto%3Dformat&w=640&q=75){h=120px}
 
+:::{rubric} dbt's Features
+:::
+The data abstraction layer provided by [dbt-core] allows the decoupling of
+the models on which reports and dashboards rely from the source data. When
+business rules or source systems change, you can still maintain the same models
+as a stable interface.
+
+Some of the things that dbt can do include:
+
+* Import reference data from CSV files.
+* Track changes in source data with different strategies so that downstream
+  models do not need to be built every time from scratch.
+* Run tests on data, to confirm assumptions remain valid, and to validate
+  any changes made to the models' logic.
+
+:::{rubric} CrateDB's Benefits
+:::
+Due to its unique capabilities, CrateDB is an excellent warehouse choice for
+data transformation projects. It offers automatic indexing, fast aggregations,
+easy partitioning, and the ability to scale horizontally.
+
+::::
+
 :::{dropdown} **Managed dbt**
 ```{div}
 :style: "float: right"
-[![](https://www.getdbt.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fwl0ndo6t%2Fmain%2Fc24fbc41bfc3ddb7fcc64932be56f0836fd355c8-1771x780.png%3Ffit%3Dmax%26auto%3Dformat&w=640&q=75){w=180px}](https://www.getdbt.com/product/dbt-cloud/)
+[![dbt Cloud logo](https://www.getdbt.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fwl0ndo6t%2Fmain%2Fc24fbc41bfc3ddb7fcc64932be56f0836fd355c8-1771x780.png%3Ffit%3Dmax%26auto%3Dformat&w=640&q=75){w=180px}](https://www.getdbt.com/product/dbt-cloud/)
 ```
 
 With [dbt Cloud], you can ditch time-consuming setup, and the struggles
@@ -54,30 +84,9 @@ scale.
   use dbt Cloud. They’ve used its convenient and collaboration-friendly interface to
   eliminate the bottlenecks that keep growth limited.
 
-```{div}
-:style: "clear: both"
+```{div} .clearfix
 ```
 :::
-
-
-### dbt's Features
-The data abstraction layer provided by [dbt-core] allows the decoupling of
-the models on which reports and dashboards rely from the source data. When
-business rules or source systems change, you can still maintain the same models
-as a stable interface.
-
-Some of the things that dbt can do include:
-
-* Import reference data from CSV files.
-* Track changes in source data with different strategies so that downstream
-  models do not need to be built every time from scratch.
-* Run tests on data, to confirm assumptions remain valid, and to validate
-  any changes made to the models' logic.
-
-### CrateDB's Benefits
-Due to its unique capabilities, CrateDB is an excellent warehouse choice for
-data transformation projects. It offers automatic indexing, fast aggregations,
-easy partitioning, and the ability to scale horizontally.
 
 
 ## Setup
@@ -85,7 +94,6 @@ Install the most recent version of the [dbt-cratedb2] Python package.
 ```shell
 pip install --upgrade 'dbt-cratedb2'
 ```
-
 
 ## Configure
 Because CrateDB is compatible with PostgreSQL, the same connectivity
@@ -112,7 +120,7 @@ cratedb_analytics:
 
 ## Learn
 
-Learn how to use CrateDB with dbt by exploring concise examples.
+Learn how to use CrateDB with dbt by exploring a few examples.
 
 :::{rubric} Tutorials
 :::
@@ -121,7 +129,7 @@ Learn how to use CrateDB with dbt by exploring concise examples.
 :gutter: 5
 
 :::{grid-item-card}
-:link: dbt-usage
+:link: dbt-tutorial
 :link-type: ref
 :link-alt: dbt usage guidelines
 :padding: 3
@@ -134,7 +142,7 @@ Usage Guidelines
 :maxdepth: 2
 :hidden:
 
-usage
+Tutorial <tutorial>
 ```
 +++
 Usage guidelines, notes, and advanced configuration options.

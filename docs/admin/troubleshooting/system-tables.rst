@@ -13,11 +13,6 @@ analyze, identify the problem, and start mitigating it. While there is
 :ref:`detailed information about all system tables <crate-reference:system-information>`,
 this guide runs you through the most common situations.
 
-.. rubric:: Table of contents
-
-.. contents::
-   :local:
-
 
 Step 1: Inspect health checks
 =============================

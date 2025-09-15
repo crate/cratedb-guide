@@ -4,9 +4,9 @@
 :::{include} /_include/links.md
 :::
 
-```{div}
-:style: "float: right; margin-left: 0.5em"
-[![](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/DBeaver_logo.svg/512px-DBeaver_logo.svg.png){w=120px}](https://dbeaver.io/)
+```{div} .float-right
+:style: "margin-left: 0.5em"
+[![DBeaver logo](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/DBeaver_logo.svg/512px-DBeaver_logo.svg.png){w=120px loading=lazy}][DBeaver]
 ```
 
 [DBeaver] is a multipurpose cross-platform database tool for developers,
@@ -39,7 +39,7 @@ jdbc:postgresql://<clustername>.cratedb.net:5432/crate
 :::
 :::{grid-item}
 :columns: 5
-![Image](https://github.com/user-attachments/assets/630fcc7c-21c5-4070-be72-e38041c19d8e){w=480px}
+![DBeaver connection settings screenshot](https://github.com/user-attachments/assets/630fcc7c-21c5-4070-be72-e38041c19d8e){w=480px loading=lazy}
 :::
 
 ::::
@@ -49,19 +49,25 @@ jdbc:postgresql://<clustername>.cratedb.net:5432/crate
 Use the tree menu on the left-hand pane to navigate to the `doc` schema and
 its tables. Navigate to the Data tab to browse your table data.
 
-![Image](https://cratedb.com/hs-fs/hubfs/Screen-Shot-2019-04-05-at-17.15.05.png?width=1600&name=Screen-Shot-2019-04-05-at-17.15.05.png){h=240px}
-![Image](https://cratedb.com/hs-fs/hubfs/Screen-Shot-2019-04-05-at-17.15.13.png?width=1600&name=Screen-Shot-2019-04-05-at-17.15.13.png){h=240px}
+![DBeaver data tab screenshot 1](https://cratedb.com/hs-fs/hubfs/Screen-Shot-2019-04-05-at-17.15.05.png?width=1600&name=Screen-Shot-2019-04-05-at-17.15.05.png){h=240px loading=lazy}
+![DBeaver data tab screenshot 2](https://cratedb.com/hs-fs/hubfs/Screen-Shot-2019-04-05-at-17.15.13.png?width=1600&name=Screen-Shot-2019-04-05-at-17.15.13.png){h=240px loading=lazy}
 
 
 ## Learn
 
 :::{rubric} Tutorials
 :::
-- [Blog: Use CrateDB With DBeaver]
 
-:::{rubric} Product
+::::{grid}
+
+:::{grid-item-card} Blog: Use CrateDB With DBeaver
+:link: https://cratedb.com/blog/cratedb-dbeaver
+:link-type: url
+DBeaver is a multipurpose database tool for developers and database administrators.
+With the help of the CrateDB JDBC Standalone Driver, you can use DBeaver with CrateDB.
 :::
-- [CrateDB and DBeaver]
+
+::::
 
 :::{rubric} Notes
 :::
@@ -80,8 +86,11 @@ We are tracking interoperability issues per [Tool: DBeaver], and appreciate
 any contributions and reports.
 :::
 
+:::{seealso}
+[CrateDB and DBeaver]
+:::
 
-[Blog: Use CrateDB With DBeaver]: https://cratedb.com/blog/cratedb-dbeaver
+
 [CrateDB and DBeaver]: https://cratedb.com/integrations/cratedb-and-dbeaver
 [DBeaver]: https://dbeaver.io/
 [Tool: DBeaver]: https://github.com/crate/crate/labels/tool%3A%20DBeaver

@@ -21,11 +21,6 @@ how to solve it.
     identical to non-containerized applications.
 
 
-.. rubric:: Table of contents
-
-.. contents::
-   :local:
-
 Run ``jcmd`` inside container
 =============================
 

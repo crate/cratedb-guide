@@ -20,9 +20,8 @@ username and password.
 ## `CREATE USER` command
 
 In order to create a user that can be used to authenticate from a remote
-machine, first
-[install crash](inv:crate-crash:*:label#getting-started) or other
-[](inv:crate-clients-tools:*:label#index) on the same machine you installed
+machine, first {ref}`install the CrateDB shell <crate-crash:getting-started>`
+or {ref}`connect <connect>` with other tools on the same machine you installed
 CrateDB on. Then, connect to CrateDB running on `localhost`.
 
 While you can also perform the steps outlined below within
