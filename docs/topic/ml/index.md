@@ -98,43 +98,10 @@ r
 :::::
 
 
-(scikit-learn)=
 ### scikit-learn
-
-:::{rubric} About
+:::{seealso}
+Please navigate to the dedicated page about {ref}`scikit-learn`.
 :::
-```{div}
-:style: "float: right; margin-left: 1em"
-[![](https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/240px-Scikit_learn_logo_small.svg.png){w=180px}](https://scikit-learn.org/)
-
-[![](https://pandas.pydata.org/static/img/pandas.svg){w=180px}](https://pandas.pydata.org/)
-
-[![](https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg){w=180px}](https://jupyter.org/)
-```
-
-:::{rubric} Learn
-:::
-
-Use [scikit-learn] with CrateDB.
-
-::::{info-card}
-:::{grid-item}
-:columns: 9
-**Regression analysis with pandas and scikit-learn**
-
-Use [pandas] and [scikit-learn] to run a regression analysis within a
-[Jupyter Notebook].
-
-- [Machine Learning and CrateDB: An introduction]
-- [Machine Learning and CrateDB: Getting Started With Jupyter]
-- [Machine Learning and CrateDB: Experiment Design & Linear Regression]
-:::
-:::{grid-item}
-:columns: 3
-{tags-primary}`Fundamentals` \
-{tags-secondary}`Regression Analysis`
-:::
-::::
 
 
 ### TensorFlow
@@ -217,10 +184,3 @@ solution.
 [End-to-End RAG with CrateDB and LangChain]: https://speakerdeck.com/cratedb/how-to-use-private-data-in-generative-ai-end-to-end-solution-for-rag-with-cratedb-and-langchain
 [How to set up LangChain with CrateDB]: https://community.cratedb.com/t/how-to-set-up-langchain-with-cratedb/1576
 [How to Use Private Data in Generative AI]: https://youtu.be/icquKckM4o0?feature=shared
-[Jupyter Notebook]: https://jupyter.org/
-[Machine Learning and CrateDB: An introduction]: https://cratedb.com/blog/machine-learning-and-cratedb-part-one
-[Machine Learning and CrateDB: Getting Started With Jupyter]: https://cratedb.com/blog/machine-learning-cratedb-jupyter
-[Machine Learning and CrateDB: Experiment Design & Linear Regression]: https://cratedb.com/blog/machine-learning-and-cratedb-part-three-experiment-design-and-linear-regression
-[MLOps]: https://en.wikipedia.org/wiki/MLOps
-[pandas]: https://pandas.pydata.org/
-[scikit-learn]: https://scikit-learn.org/
