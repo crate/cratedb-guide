@@ -200,27 +200,10 @@ Use [pandas] and [scikit-learn] to run a regression analysis within a
 ::::
 
 
-(tensorflow)=
 ### TensorFlow
-
-Use [TensorFlow] with CrateDB.
-
-::::{info-card}
-:::{grid-item}
-:columns: 9
-**Predictive Maintenance**
-
-Build a machine learning model that will predict whether a machine will
-fail within a specified time window in the future.
-
-- {doc}`./tensorflow`
+:::{seealso}
+Please navigate to the dedicated page about {ref}`tensorflow`.
 :::
-:::{grid-item}
-:columns: 3
-{tags-primary}`Fundamentals` \
-{tags-secondary}`Prediction`
-:::
-::::
 
 
 ## LLMs / RAG
@@ -294,13 +277,11 @@ solution.
 
 
 
-```{toctree}
-:hidden:
-
-tensorflow
-```
-
-
+[AutoML with PyCaret and CrateDB]: https://github.com/crate/cratedb-examples/tree/main/topic/machine-learning/pycaret
+[automl-classify-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/pycaret/automl_classification_with_pycaret.py
+[automl-classify-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/pycaret/automl_classification_with_pycaret.ipynb
+[automl-forecasting-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/pycaret/automl_timeseries_forecasting_with_pycaret.ipynb
+[automl-forecasting-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/pycaret/automl_timeseries_forecasting_with_pycaret.ipynb
 [End-to-End RAG with CrateDB and LangChain]: https://speakerdeck.com/cratedb/how-to-use-private-data-in-generative-ai-end-to-end-solution-for-rag-with-cratedb-and-langchain
 [How to set up LangChain with CrateDB]: https://community.cratedb.com/t/how-to-set-up-langchain-with-cratedb/1576
 [How to Use Private Data in Generative AI]: https://youtu.be/icquKckM4o0?feature=shared
@@ -316,7 +297,6 @@ tensorflow
 [MLOps]: https://en.wikipedia.org/wiki/MLOps
 [pandas]: https://pandas.pydata.org/
 [scikit-learn]: https://scikit-learn.org/
-[TensorFlow]: https://www.tensorflow.org/
 [Time Series Modeling using Machine Learning]: https://cratedb.com/blog/introduction-to-time-series-modeling-with-cratedb-machine-learning-time-series-data
 [tracking-merlion-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/mlflow/tracking_merlion.ipynb
 [tracking-merlion-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/mlflow/tracking_merlion.ipynb
