@@ -3,9 +3,11 @@
 
 ## Introduction
 
-If you are running CrateDB in a production environment, you have probably wondered what would be the best way to monitor the servers to identify issues before they become problematic and to collect statistics that you can use for capacity planning.
+In production, monitor CrateDB proactively to catch issues early and
+collect statistics for capacity planning.
 
-We recommend pairing two well-known OSS solutions, [Prometheus](https://prometheus.io/) which is a system that collects and stores performance metrics, and [Grafana](https://grafana.com/) which is a system to create dashboards.
+Pair two OSS tools: use [Prometheus] to collect and store metrics,
+and [Grafana] to build dashboards.
 
 For a CrateDB environment, we are interested in:
 * CrateDB-specific metrics, such as the number of shards or number of failed queries
@@ -13,7 +15,8 @@ For a CrateDB environment, we are interested in:
 
 For what concerns CrateDB-specific metrics we recommend making these available to Prometheus by using the [Crate JMX HTTP Exporter](https://cratedb.com/docs/crate/reference/en/5.1/admin/monitoring.html#exposing-jmx-via-http) and [Prometheus SQL Exporter](https://github.com/justwatchcom/sql_exporter). For what concerns OS metrics, in Linux environments, we recommend using the [Prometheus Node Exporter](https://prometheus.io/docs/guides/node-exporter/).
 
-Things are a bit different of course if you are using containers, or if you are using the fully-managed cloud-hosted [CrateDB Cloud](https://cratedb.com/products/cratedb-cloud), but let’s see how all this works on an on-premises installation by setting all this up together.
+Containerized and [CrateDB Cloud] setups differ. This tutorial targets
+standalone and on‑premises installations.
 
 ## First we need a CrateDB cluster
 
@@ -21,14 +24,12 @@ First things first, we will need a CrateDB cluster, you may have one already and
 
 You can review the installation documentation at {ref}`install` and {ref}`multi_node_setup`.
 
-In my case, I am using Ubuntu and I did it like this, first I ssh to the first machine and run:
-
-```
+On Ubuntu, start on the first node and run:
+```shell
 nano /etc/default/crate
 ```
 
-This is a configuration file that will be used by CrateDB, we only need one line to configure memory settings here (this is a required step otherwise we will fail bootstrap checks):
-
+This configuration file sets the JVM heap. Configure it to satisfy bootstrap checks:
 ```
 CRATE_HEAP_SIZE=4G
 ```
@@ -89,9 +90,10 @@ And this requires both nodes to be available for the cluster to operate in this 
 Now let’s install CrateDB:
 
 ```bash
-wget https://cdn.crate.io/downloads/deb/DEB-GPG-KEY-crate
-apt-key add DEB-GPG-KEY-crate
-add-apt-repository "deb https://cdn.crate.io/downloads/deb/stable/ $(lsb_release -cs) main"
+apt update
+apt install --yes gpg lsb-release wget
+wget -O- https://cdn.crate.io/downloads/deb/DEB-GPG-KEY-crate | gpg --dearmor | tee /usr/share/keyrings/crate.gpg >/dev/null
+echo "deb [signed-by=/usr/share/keyrings/crate.gpg] https://cdn.crate.io/downloads/deb/stable/ $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/crate.list
 apt update
 apt install crate -o Dpkg::Options::="--force-confold"
 ```
@@ -105,14 +107,15 @@ This is very simple, on each node run the following:
 
 ```shell
 cd /usr/share/crate/lib
-wget https://repo1.maven.org/maven2/io/crate/crate-jmx-exporter/1.0.0/crate-jmx-exporter-1.0.0.jar
+wget https://repo1.maven.org/maven2/io/crate/crate-jmx-exporter/1.2.0/crate-jmx-exporter-1.2.0.jar
 nano /etc/default/crate
 ```
 
 then uncomment the `CRATE_JAVA_OPTS` line and change its value to:
 
-```
-CRATE_JAVA_OPTS="-javaagent:/usr/share/crate/lib/crate-jmx-exporter-1.0.0.jar=8080"
+```shell
+# Append to existing options (preserve other flags).
+CRATE_JAVA_OPTS="${CRATE_JAVA_OPTS:-} -javaagent:/usr/share/crate/lib/crate-jmx-exporter-1.2.0.jar=8080"
 ```
 
 and restart the crate daemon:
@@ -223,29 +226,46 @@ WHERE "state" = 'SUCCESS';
 
 You would run this on a machine that is not part of the CrateDB cluster and it can be installed with:
 
-```
+```shell
 apt install prometheus --no-install-recommends
 ```
 
-Please note that by default this will right away become available on port 9090 without authentication requirements, you can use `policy-rcd-declarative` to prevent the service from starting immediately after installation and you can define a YAML web config file with `basic_auth_users` and then refer to that file in `/etc/default/prometheus`.
+By default, Prometheus binds to :9090 without authentication. Prevent
+auto-start during install (e.g., with `policy-rcd-declarative`), then
+configure web auth using a YAML file.
 
-For a large deployment where you also use Prometheus to monitor other systems, you may also want to use a CrateDB cluster as the storage for all Prometheus metrics, you can read more about this at [CrateDB Prometheus Adapter](https://github.com/crate/cratedb-prometheus-adapter).
+Create `/etc/prometheus/web.yml`:
 
-Now we will configure Prometheus to scrape metrics from the node explorer from the CrateDB machines and also metrics from our Crate JMX HTTP Exporter:
+    basic_auth_users:
+      admin: <bcrypt hash>
 
-```
+Point Prometheus at it (e.g., `/etc/default/prometheus`):
+
+    ARGS="--web.config.file=/etc/prometheus/web.yml --web.enable-lifecycle"
+
+Restart Prometheus after setting ownership and 0640 permissions on `web.yml`.
+
+For a large deployment where you also use Prometheus to monitor other systems,
+you may also want to use a CrateDB cluster as the storage for all Prometheus
+metrics, you can read more about this at
+[CrateDB Prometheus Adapter](https://github.com/crate/cratedb-prometheus-adapter).
+
+Now we will configure Prometheus to scrape metrics from the node explorer from
+the CrateDB machines and also metrics from our Crate JMX HTTP Exporter:
+```shell
 nano /etc/prometheus/prometheus.yml
 ```
 
 Where it says:
-
 ```yaml
 - job_name: 'node'
   static_configs:
     - targets: ['localhost:9100']
 ```
 
-We replace this with the below configuration, which reflects port 8080 (Crate JMX Exporter), port 9100 (Prometheus Node Exporter), port 9237 (Prometheus SQL Exporter), as well as port 9100 (Prometheus Node Exporter).
+Replace it with the following jobs: port 9100 (Node Exporter),
+port 8080 (Crate JMX Exporter), and port 9237 (SQL Exporter),
+like outlined below.
 ```yaml
 - job_name: 'node'
   static_configs:
@@ -272,9 +292,11 @@ apt install grafana
 systemctl start grafana-server
 ```
 
-If you now point your browser to *http://\<Grafana host>:3000* you will be welcomed by the Grafana login screen, the first time you can log in with admin as both the username and password, make sure to change this password right away.
+Open `http://<grafana-host>:3000` to access the Grafana login screen.
+The default credentials are `admin`/`admin`; change the password immediately.
 
-Click on "Add your first data source", then click on "Prometheus", and enter the URL *http://\<Prometheus host>:9090*.
+Click on "Add your first data source", then click "Prometheus" and set the
+URL to `http://<prometheus-host>:9090`.
 
 If you had configured basic authentication for Prometheus this is where you would need to enter the credentials.
 
@@ -298,7 +320,6 @@ If you decide to build your own dashboard or use an entirely different monitorin
   * Circuit breaker memory in use: `sum(crate_circuitbreakers{property="used"}) by (name)`
   * Number of shards: `crate_node{name="shard_stats",property="total"}`
   * Garbage Collector rates: `sum(rate(jvm_gc_collection_seconds_count[5m])) by (gc)`
-  * Thread pool queue size: `crate_threadpools{property="queueSize"}`
   * Thread pool rejected operations: `crate_threadpools{property="rejected"}`
 * Operating system metrics
   * CPU utilization
@@ -311,3 +332,8 @@ If you decide to build your own dashboard or use an entirely different monitorin
 ## Wrapping up
 
 We got a Grafana dashboard that allows us to check live and historical data around performance and capacity metrics in our CrateDB cluster, this illustrates one possible setup. You could use different tools depending on your environment and preferences. Still, we recommend you use the interface of the Crate JMX HTTP Exporter to collect CrateDB-specific metrics and that you always also monitor the health of the environment at the OS level as we have done here with the Prometheus Node Exporter.
+
+
+[CrateDB Cloud]: https://cratedb.com/products/cratedb-cloud
+[Grafana]: https://grafana.com/
+[Prometheus]: https://prometheus.io/
