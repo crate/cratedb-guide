@@ -64,7 +64,7 @@ Prerequisites
 
 To be able to use the *boto3* AWS client, you will need to provide credentials
 to the client so you can connect to your AWS S3 Bucket. To not have these
-credentials in the code, use an AWS config file at ``~/.aws/config`` so it
+credentials in the code, use an AWS config file at ``~/.aws/credentials`` so it
 contains:
 
 .. code-block:: ini
@@ -218,15 +218,14 @@ while normalizing their values between (0,1).
     # Replacing the RECOVERING label with BROKEN so you only have two labels
     # and converting the string labels to numeric values (1 -> NORMAL, 0 -> BROKEN)
     df["machine_status"] = df["machine_status"].replace("RECOVERING", "BROKEN")
-    df["machine_status"] = label_binarize(df["machine_status"], classes=["BROKEN", "NORMAL"])
+    df["machine_status"] = label_binarize(df["machine_status"], classes=["BROKEN", "NORMAL"]).ravel()
 
     # Transform each feature of the data set in a range between 0 and 1
     min_max_scaler = MinMaxScaler(feature_range=(0, 1))
 
     # Defining the size of the train and test data: 70% will be used for training, 30% for testing
-    test_split = 70
-    df_size = len(df.index)
-    split = int((df_size / 100) * test_split)
+    train_percent = 70
+    split = int((len(df.index) * train_percent) / 100)
 
     # Create a new dataframe only containing the training data and the normalized training data columns
     df_train = df.iloc[0:split, :]
@@ -306,11 +305,10 @@ successive epochs by stopping training, using the ``EarlyStopping`` callback.
 
 .. code-block:: python
 
-    import tensorflow as f
+    import tensorflow as tf
     import matplotlib.pyplot as plt
     from tensorflow.python.keras.callbacks import EarlyStopping
     from tensorflow.keras import layers
-
 
     # Create the Sequential object, which will function as a linear stack of the neural network
     # layers with exactly one input vector and one output.
@@ -432,8 +430,8 @@ created previously alongside the TensorFlow model.
     dump(min_max_scaler, scaler_name)
 
     # Create the boto3 client to connect to the AWS S3 bucket, the credentials
-    # will be read from the ~/.aws/config file and then the files will be
-    # uploaded
+    # will be read from the ~/.aws/credentials file (via the default boto3 chain)
+    # and then the files will be uploaded.
     client = boto3.client("s3")
     client.upload_file(model_name, bucket, model_name)
     client.upload_file(scaler_name, bucket, scaler_name)
