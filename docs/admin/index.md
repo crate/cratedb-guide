@@ -20,6 +20,7 @@ create-user
 going-into-production
 memory
 circuit-breaker
+Monitoring <monitoring/prometheus-grafana>
 troubleshooting/index
 ```
 +++
