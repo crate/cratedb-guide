@@ -199,7 +199,7 @@ Besides the web interface, you can use `croud` to configure new jobs. Check the 
 croud clusters scheduled-jobs create \
     --name update-continuous-aggregates \
     --cluster-id 8d6a7c3c-61d5-11e9-a639-34e12d2331a1 \
-    --cron "5 * * * *" \
+    --cron "*/5 * * * *" \
     --sql "INSERT INTO sensor_readings_aggregated (ts_hour, sensor_id, value_avg)
            SELECT DATE_TRUNC('hour', ts),
                   sensor_id,
