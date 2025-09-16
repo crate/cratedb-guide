@@ -15,7 +15,7 @@ If you want to run this in your own environment, we've provided all of the code 
 ## Prerequisites
 
 * Python 3.10 or higher
-* Recent version of LlamaIndex, please follow the [installation instructions](https://gpt-index.readthedocs.io/en/latest/getting_started/installation.html)
+* Recent version of LlamaIndex, please follow the [installation instructions](https://developers.llamaindex.ai/python/framework/getting_started/installation/)
 * `openai` (Python SDK)
 * `sqlalchemy-cratedb`
 * `SQLAlchemy` (if not pulled transitively)

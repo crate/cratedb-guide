@@ -5,7 +5,7 @@
 :::
 
 ```{div} .float-right .text-right
-[![LlamaIndex logo](https://www.llamaindex.ai/llamaindex.svg){height=60px loading=lazy}][LlamaIndex]
+[![LlamaIndex logo](https://www.llamaindex.ai/brand/llamaindex-wordmark-black.svg){height=60px loading=lazy}][LlamaIndex]
 <br>
 <a href="https://github.com/crate/cratedb-examples/actions/workflows/ml-llamaindex.yml" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/ml-llamaindex.yml?branch=main&label=LlamaIndex" loading="lazy" alt="CI status: LlamaIndex"></a>
