@@ -99,7 +99,7 @@ Introduction to time‑series visualization in CrateDB and Apache Superset.
 **Apache Superset 101**
 
 From connecting databases to building charts, dashboards, and interactive filters,
-this video educates about at all the basic surfaces and workflows of Apache Superset.
+this video covers all the basic surfaces and workflows of Apache Superset.
 :::
 
 :::{grid-item}

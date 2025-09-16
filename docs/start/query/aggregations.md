@@ -207,7 +207,7 @@ GROUP BY status;
 
 CrateDB integrates seamlessly with:
 
-:Grafana: Build real-time dashboards with time-series aggregations
+:Grafana: Build real-time dashboards with time series aggregations
 :Apache Superset: Explore multidimensional data visually
 :Tableau, Power BI, Metabase: Connect via PostgreSQL wire protocol
 

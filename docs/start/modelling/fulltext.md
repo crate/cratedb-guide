@@ -151,8 +151,8 @@ constraints, all in one.
   walkthrough of full-text search capabilities.
 * Reference Manual:
   * {ref}`Full-text indices <crate-reference:fulltext-indices>`: Defining
-    indices, extending builtin analyzers, custom analyzers.
-  * {ref}`Full-text analyzers <crate-reference:sql-analyzer>`: Builtin
+    indices, extending built-in analyzers, custom analyzers.
+  * {ref}`Full-text analyzers <crate-reference:sql-analyzer>`: Built-in
     analyzers, tokenizers, token and char filters.
   * {ref}`SQL MATCH predicate <crate-reference:sql_dql_fulltext_search>`:
     Details about MATCH predicate arguments and options.
