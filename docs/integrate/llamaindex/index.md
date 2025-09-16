@@ -16,15 +16,13 @@
 :::{rubric} About
 :::
 
-[LlamaIndex] is a data framework for Large Language Models (LLMs). It comes with
-pre-trained models on massive public datasets such as GPT-4 or Llama 2, and
-provides an interface to external data sources allowing for natural language
-querying on your private data.
+[LlamaIndex] is a data framework for Large Language Models (LLMs). It integrates
+with providers and models such as GPT‑4 or Llama 3/4, and provides interfaces to
+external data sources for natural‑language querying of your private data.
 
-Azure Open AI Service is a fully managed service that runs on the Azure global
-infrastructure and allows developers to integrate OpenAI models into their
-applications. Through Azure Open AI API one can easily access a wide range of
-AI models in a scalable and reliable way.
+Azure OpenAI Service runs on the Azure global infrastructure and lets you
+integrate OpenAI models into your applications. The Azure OpenAI API provides
+scalable access to a wide range of models.
 
 :::{rubric} Use case examples
 :::
@@ -52,11 +50,11 @@ contemporary large language models, optionally offline.
 {tags-secondary}`RAG`
 :::
 
-:::{grid-item-card} Demo: Using LlamaIndex with OpenAI and CrateDB
+:::{grid-item-card} Demo: Using LlamaIndex with OpenAI/Azure OpenAI and CrateDB
 :link: llamaindex-tutorial
 :link-type: ref
-- Connect your CrateDB data to an LLM using OpenAI or Azure OpenAI.
-- Text-to-SQL / Talk to your data: Query the database in human language; query CrateDB in plain English.
+- Connect CrateDB to an LLM via OpenAI or Azure OpenAI.
+- Text‑to‑SQL: Query CrateDB in natural language.
 
 {tags-primary}`Cloud LLM`
 {tags-secondary}`LLM`
