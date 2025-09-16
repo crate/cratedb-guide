@@ -9,11 +9,12 @@ contemporary large language models, optionally offline.
 ## Install
 Project dependencies. For example, use them in a `requirements.txt` file.
 ```shell
-langchain-openai<0.3
-llama-index-embeddings-langchain<0.4
-llama-index-embeddings-openai<0.4
-llama-index-llms-azure-openai<0.4
-llama-index-llms-openai<0.4
+langchain-openai<0.4
+llama-index-embeddings-langchain<0.5
+llama-index-embeddings-openai<0.6
+llama-index-llms-azure-openai<0.5
+llama-index-llms-ollama<0.8
+llama-index-llms-openai<0.6
 sqlalchemy-cratedb
 ```
 
@@ -33,14 +34,14 @@ import os
 from llama_index.llms.ollama import Ollama
 from llama_index.llms.openai import OpenAI
 from llama_index.core import SQLDatabase
-from llama_index.core.indices.struct_store import NLSQLTableQueryEngine
+from llama_index.core.query_engine import NLSQLTableQueryEngine
 import sqlalchemy as sa
 ```
 :::
 
 :::{grid-item}
 :columns: 4
-Provision LLM using OpenAI model.
+Provision an LLM using an OpenAI model.
 :::
 :::{grid-item}
 :columns: 8
@@ -55,14 +56,14 @@ llm = OpenAI(
 
 :::{grid-item}
 :columns: 4
-Alternatively, provision LLM using self-hosted model.
+Alternatively, provision an LLM using a self-hosted model.
 :::
 :::{grid-item}
 :columns: 8
 ```python
 llm = Ollama(
     base_url=os.getenv("OLLAMA_BASE_URL", "http://localhost:11434"),
-    model="gemma3:1b",
+    model=os.getenv("OLLAMA_MODEL", "gemma3:1b"),
     temperature=0.0,
     request_timeout=120.0,
     keep_alive=-1,
@@ -78,7 +79,6 @@ Connect to CrateDB.
 :columns: 8
 ```python
 database = sa.create_engine(os.getenv("CRATEDB_SQLALCHEMY_URL", "crate://crate@localhost:4200"))
-database.connect()
 ```
 :::
 
@@ -117,7 +117,7 @@ answer = nlsql.query("Quelle est la valeur moyenne pour le capteur 1 ?")
 import os
 import sqlalchemy as sa
 
-from llama_index.core.utilities.sql_wrapper import SQLDatabase
+from llama_index.core import SQLDatabase
 from llama_index.core.query_engine import NLSQLTableQueryEngine
 from llama_index.core import Settings
 

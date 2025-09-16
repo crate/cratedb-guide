@@ -212,8 +212,8 @@ frameworks and libraries, see CrateDB's support for MLflow and PyCaret at
 
 
 ## Text-to-SQL
-Text-to-SQL: Talk to your data using human language and contemporary large
-language models, optionally offline.
+Text‑to‑SQL lets you query data in natural language with contemporary
+large language models, optionally offline.
 :::{seealso}
 {ref}`llamaindex-synopsis`
 :::
