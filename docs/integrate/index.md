@@ -21,6 +21,7 @@ amqp/index
 aws-lambda/index
 azure-functions/index
 cluvio/index
+dask/index
 datagrip/index
 dbeaver/index
 dbt/index
