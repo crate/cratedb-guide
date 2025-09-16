@@ -6,10 +6,8 @@ Automate CrateDB queries with Apache Airflow.
 :::
 
 ## Introduction
-This article is the first in a series of articles demonstrating how to
-effectively use [Apache Airflow](https://airflow.apache.org/) with CrateDB.
-In this part, we first introduce Apache Airflow and why we should use it
-for automating recurring queries in CrateDB.
+
+This first article shows how to use [Apache Airflow] with CrateDB to automate recurring queries.
 
 Then, we cover [Astronomer], the managed Apache Airflow provider, followed
 by instructions on how to set up the project with [Astronomer CLI].
@@ -120,5 +118,6 @@ To check all environment variables that are applied, run `env`.
 This will output some variables set by Astronomer by default including the variable for the CrateDB connection.
 
 
+[Apache Airflow]: https://airflow.apache.org/
 [Astronomer]: https://www.astronomer.io/
 [Astronomer CLI]: https://docs.astronomer.io/astro/cli/overview

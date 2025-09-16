@@ -68,8 +68,7 @@ journey. Spend time where it counts.
 :columns: 12
 :link: airflow-getting-started
 :link-type: ref
-Define an Airflow DAG to download, process, and store stock market data
-into CrateDB.
+Define an Airflow DAG that downloads, processes, and stores stock market data in CrateDB.
 :::
 
 :::{grid-item-card} Tutorial: Import Parquet files
@@ -96,7 +95,7 @@ into CrateDB.
 :::{grid-item-card} Tutorial: Export to S3
 :link: airflow-export-s3
 :link-type: ref
-Recurrently export data from CrateDB to S3.
+Export data from CrateDB to S3 on a schedule.
 :::
 
 :::{grid-item-card} Tutorial: Implement a data retention policy
