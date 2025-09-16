@@ -59,15 +59,15 @@ Example output:
 For other operating systems, follow the [official documentation](https://www.astronomer.io/docs/astro/cli/install-cli).
 After installing the Astronomer CLI, initialize a new project:
 
-* Create a project directory:
+- Create a project directory:
   ```bash
   mkdir astro-project && cd astro-project
   ```
-* Initialize the project with the following command:  
+- Initialize the project with the following command:
    ```bash
    astro dev init
    ```
-* This will create a skeleton project directory as follows:
+- This will create a skeleton project directory as follows:
    ```text
    ├── Dockerfile
    ├── README.md
@@ -81,14 +81,16 @@ After installing the Astronomer CLI, initialize a new project:
    ```
 
 The astronomer project consists of four Docker containers:
-*   PostgreSQL server (for configuration/runtime data)
-*   Airflow scheduler
-*   Web server for rendering Airflow UI
-*  Triggerer (running an event loop for deferrable tasks)
+- PostgreSQL server (for configuration/runtime data)
+- Airflow scheduler
+- Web server for rendering Airflow UI
+- Triggerer (running an event loop for deferrable tasks)
 
-The PostgreSQL server is configured to listen on port 5432. The web server is listening on port 8080 and can be accessed via http://localhost:8080/ with `admin` for both username and password.
+The PostgreSQL server listens on port 5432. The web server listens on port 8080
+and is available at <http://localhost:8080/> with `admin`/`admin`.
 
-If these ports are already in use, change them in `.astro/config.yaml`. For example, set the webserver to 8081 and PostgreSQL to 5435:
+If these ports are already in use, change them in `.astro/config.yaml`. For
+example, set the webserver to 8081 and PostgreSQL to 5435:
 ```yaml
 project:
   name: astro-project
@@ -98,7 +100,8 @@ postgres:
   port: 5435
 ```
 
-Start the project with `astro dev start`. After the containers start, access the Airflow UI at `http://localhost:8081`:
+Start the project with `astro dev start`. After the containers start, access
+the Airflow UI at <http://localhost:8081>:
 
 ![Airflow UI landing page](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/f298a4c609312133e388555a9eba51733bfd5645.png)
 
@@ -127,13 +130,17 @@ The initialized `astro-project` now has a home on GitHub.
 
 ## Add database credentials
 
-To configure the connection to CrateDB we need to set up a corresponding environment variable. On Astronomer the environment variable can be set up via the Astronomer UI, via `Dockerfile`, or via a `.env` file which is automatically generated during project initialization.
+To configure the CrateDB connection, set an environment variable. On
+Astronomer, set it via the UI, `Dockerfile`, or the `.env` file
+(generated during initialization).
 
 In this tutorial, we will set up the necessary environment variables via a `.env` file. To learn about alternative ways, please check the [Astronomer documentation](https://docs.astronomer.io/astro/environment-variables). The first variable we set is one for the CrateDB connection, as follows:
 
 `AIRFLOW_CONN_CRATEDB_CONNECTION=postgresql://<user>:<password>@<host>/doc?sslmode=disable`
 
-In case a TLS connection is required, change `sslmode=require`. To confirm that a new variable is applied, first, start the Airflow project and then create a bash session in the scheduler container by running `docker exec -it <scheduler_container_name> /bin/bash`.
+For TLS, set `sslmode=require`. To confirm that the variable is applied, start
+the project and open a bash session in the scheduler container:
+`docker exec -it <scheduler_container_name> /bin/bash`.
 
 Run `env` to list the applied environment variables.
 

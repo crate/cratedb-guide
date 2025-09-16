@@ -68,7 +68,7 @@ journey. Spend time where it counts.
 :columns: 12
 :link: airflow-getting-started
 :link-type: ref
-Define an Airflow DAG that downloads, processes, and stores stock market data in CrateDB.
+Define an Airflow DAG that downloads, processes, and stores data in CrateDB.
 :::
 
 :::{grid-item-card} Tutorial: Import Parquet files

@@ -1,35 +1,36 @@
 (airflow-import-stock-market-data)=
 # Updating stock market data automatically with CrateDB and Apache Airflow
 
-Watch this tutorial on Youtube: https://www.youtube.com/watch?v=YTTUzeaYUgQ&t=685s
+Watch this tutorial on YouTube: [Automating stock data with Airflow and CrateDB](https://www.youtube.com/watch?v=YTTUzeaYUgQ&t=685s).
 
 If you are struggling with keeping your stock market data up to date, this tutorial walks you through exactly what you need to do so you can automate data collection and storage from SP500 companies.
-![Picture by StockSnap on Pixabay](upload://tXDu25ajd6zX201Ju43lENW1uQ1.jpeg)
 
+## Quick overview
 
-## Quick Overview
 Let's have a quick overview of what you'll do:
 
-You have a goal: regularly update stock market data.
-To achieve your goal, you can divide it into tasks: download, prepare, and store data. You want to turn these tasks into a workflow, run it and observe the results; in other words, you want to orchestrate your workflow, and Airflow is the tool for that. 
-
-So the first thing to do is to start CrateDB and set up a table to store your data. Then, to orchestrate the process of regular data updates, you will create an Airflow project and establish the connection to CrateDB. Once you set up your Airflow project, you will write your tasks in Python as an Airflow DAG workflow (more details later). Finally, you will set a schedule for your workflow, and it's done!
+:Goal:      Update stock market data regularly.
+:Approach:  Define tasks to download, prepare, and store data; orchestrate them with Airflow.
+:Steps:     Start CrateDB and create a table; create an Airflow project and set the CrateDB connection; implement the DAG in Python; schedule it.
 
 ## Setup
+
 Let's get right to the setup on a Mac machine.
 You want to make sure you have Homebrew installed and Docker Desktop running.
 
 ### Run CrateDB and create a table to store data
 
-The first to do is to run CrateDB with Docker. It's easy: once you have Docker Desktop running, copy the Docker command from the CrateDB installation page and run it in your terminal. 
-
+First, run CrateDB with Docker. With Docker Desktop running, copy the command from the CrateDB installation page and run it:
 ```bash
 docker run --publish=4200:4200 --publish=5432:5432 --env CRATE_HEAP_SIZE=1g crate:latest
 ```
 
-With CrateDB running, you can now access the CrateDB Admin UI by going to your browser and typing *localhost:4200*.
+With CrateDB running, you can now access the CrateDB Admin UI by going to
+your browser and typing *localhost:4200*.
 
-Let’s now create a table to store your financial data. I'm particularly interested in the "adjusted-close" value for the stocks, so I will create a table that stores the date, the stock ticker, and the adjusted-close value. I will set the `closing_date` and `ticker` as primary keys. The final statement looks like this:
+Create a table to store financial data. Focus on the adjusted close value
+(“adjusted_close”) per ticker per day. Use a composite primary key on
+(`closing_date`, `ticker`):
 ```sql
 CREATE TABLE sp500 (
    closing_date TIMESTAMP,
@@ -75,20 +76,22 @@ Some information about the default settings: the PostgreSQL server is set up to 
 There are now three things you have to adjust before running Airflow:
 
 * Add your CrateDB credentials to the `.env` file. Open the file in a text editor, and add the following line, which takes the default credentials for CrateDB, with user = crate, and password = null. (note: my internal port for running CrateDB in Docker is 5433, which I use here. If using the standard Docker command with 5432, here it should also be 5432).
-   ```bash
-   AIRFLOW_CONN_CRATEDB_CONNECTION=postgresql://crate:null@host.docker.internal:5433/doc?sslmode=disable
-   ```
+  ```bash
+  # For local development only; do not commit real credentials
+  AIRFLOW_CONN_CRATEDB_CONNECTION=postgresql://crate:null@host.docker.internal:5433/doc?sslmode=disable
+  ```
 * If the default ports are unavailable, you can change them to free ports. Just open the `.astro/config.yaml` file in a text editor and update the web server port to 8081 (instead of default 8080) and Postgres port to 5435 (instead of the default 5432), like so:
-   ```yaml
-   project:
-      name: astro-project
-   webserver:
-      port: 8081
-   postgres:
-     port: 5435
-   ```
+  ```yaml
+  project:
+     name: astro-project
+  webserver:
+     port: 8081
+  postgres:
+    port: 5435
+  ```
 
 ### Start Airflow
+
 Now you are done with the last adjustments, head back to your terminal and run this command to start Airflow: `astro dev start`
 You can now access Airflow in your browser at `http://localhost:8081`.
 
