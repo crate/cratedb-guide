@@ -228,7 +228,7 @@ It is also not in the same shape as the other pages in this section.
 :::
 
 
-[Analyzing Device Readings with Metadata Integration]: project:#timeseries-analysis-metadata
+[Analyzing Device Readings with Metadata Integration]: project:#timeseries-with-metadata
 [bulk operations interface]: inv:crate-reference#http-bulk-ops
 [bulk operations for INSERTs]: project:#inserts_bulk_operations
 [HyperLogLog]: https://en.wikipedia.org/wiki/HyperLogLog
