@@ -19,7 +19,6 @@ Learn how to apply CrateDB within different use case scenarios.
 Business Intelligence <bi/index>
 Data Lineage <lineage/index>
 Data Visualization <visualize/index>
-Machine Learning <ml/index>
 Programming Frameworks <framework/index>
 Software Testing <testing/index>
 Time Series Data <timeseries/index>
@@ -50,19 +49,6 @@ to your data.
 **What's inside:**
 Tutorials about data-import and -export, statistical
 analysis, data visualization, and machine learning.
-:::
-
-
-:::{grid-item-card} {material-outlined}`model_training;2em` Machine Learning
-:link: machine-learning
-:link-type: ref
-:link-alt: About CrateDB for machine learning applications
-
-Learn how to integrate CrateDB with machine learning frameworks and tools.
-+++
-**What's inside:**
-Use CrateDB with LangChain, LlamaIndex, MLflow, PyCaret, scikit-learn,
-or TensorFlow.
 :::
 
 

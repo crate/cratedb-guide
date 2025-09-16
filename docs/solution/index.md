@@ -69,6 +69,19 @@ always have them ready for historical analysis.
 :::
 
 
+:::{grid-item-card} {material-outlined}`model_training;2em` Machine Learning
+:link: machine-learning
+:link-type: ref
+:link-alt: About CrateDB for machine learning applications
+
+Learn how to integrate CrateDB with machine learning frameworks and tools.
++++
+**What's inside:**
+Use CrateDB with LangChain, LlamaIndex, MLflow, PyCaret, scikit-learn,
+or TensorFlow.
+:::
+
+
 ::::
 
 
@@ -78,5 +91,6 @@ always have them ready for historical analysis.
 
 analytics/index
 industrial/index
+Machine learning <machine-learning/index>
 migrate/index
 ```
