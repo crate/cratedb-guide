@@ -2,19 +2,26 @@
 # Automating the import of Parquet files with Apache Airflow
 
 ## Introduction
-Using Airflow to import the NYC Taxi and Limousine dataset in Parquet format.
 
-CrateDB does not support `COPY FROM` for Parquet. It supports CSV and JSON. Therefore, this tutorial uses an alternative approach rather than switching the previous CSV workflow to Parquet.
+Use Airflow to import the NYC Taxi and Limousine dataset provided in Parquet format.
 
-First and foremost, keep in mind the strategy presented here for importing Parquet files into CrateDB, we have already covered this topic in a previous tutorial using a different approach from the one introduced in this tutorial, so feel free to have a look at the tutorial about {ref}`arrow-import-parquet` and explore with the different possibilities out there.
+CrateDB supports `COPY FROM` for CSV and JSON, not Parquet. This tutorial converts
+Parquet to CSV before loading.
+
+For an alternative Parquet ingestion approach, see {ref}`arrow-import-parquet`.
 
 ## Prerequisites
 
-Before getting started, you need to have some knowledge of Airflow and an instance of Airflow already running. Besides that, a CrateDB instance should already be set up before moving on with this tutorial. This SQL is also available in the setup folder in our [GitHub repository](https://github.com/crate/crate-airflow-tutorial).
+Before you start, have Airflow and CrateDB running. The SQL shown below also
+resides in the setup folder of the
+[GitHub repository](https://github.com/crate/crate-airflow-tutorial).
 
-We start by creating the two tables in CrateDB: A temporary staging table (`nyc_taxi.load_trips_staging`) and the final destination table (`nyc_taxi.trips`).
+Create two tables in CrateDB: a temporary staging table
+(`nyc_taxi.load_trips_staging`) and the final table (`nyc_taxi.trips`).
 
-In this case, the staging table is a primary insertion point, which was later used to cast data to their final types. For example, the `passenger_count` column is defined as `REAL` in the staging table, while it is defined as `INTEGER` in the `nyc_taxi.trips` table.
+Insert into the staging table first, then cast values into their final
+types when inserting into `nyc_taxi.trips`. For example, `passenger_count`
+is `REAL` in staging and `INTEGER` in `nyc_taxi.trips`.
 
 ```sql
 CREATE TABLE IF NOT EXISTS "nyc_taxi"."load_trips_staging" (
@@ -74,7 +81,7 @@ PARTITIONED BY ("pickup_year");
 To better understand how Airflow works and its applications, you can check other
 tutorials related to that topic {ref}`here <airflow-tutorials>`.
 
-Ok! So, once the tools are already set up with the corresponding tables created, we should be good to go.
+With the tools set up and tables created, proceed to the DAG.
 
 ## The Airflow DAG
 ![Airflow DAG workflow|690x76](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/29502f83c13d29d90ab703a399f58c6daeee6fe6.png)
@@ -86,10 +93,12 @@ The Airflow DAG used in this tutorial contains 7 tasks:
    https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-03.parquet
    ```
    The file path above corresponds to the data from March 2022. So, to retrieve a specific file, the task gets the date and formats it to compose the name of the specific file. Important to mention that the data is released with 2 months of delay, so it had to be taken into consideration.
-* **process_parquet:** afterward, the name is used to download the file to local storage and then transform it from Parquet to CSV using [`parquet-tools`] (Apache Parquet CLI, see [Apache Arrow])
-   * `curl -o "<LOCAL-PARQUET-FILE-PATH>" "<REMOTE-PARQUET-FILE>"`
-   * `parquet-tools csv <LOCAL-PARQUET-FILE-PATH> > <CSV-FILE-PATH>`
-   Both tasks are executed within one Bash Operator.
+* **process_parquet:** afterward, use the name to download the file to local storage and convert it from Parquet to CSV using `parquet-tools` (Apache Parquet CLI; see [Apache Arrow]).
+
+  * `curl -o "<LOCAL-PARQUET-FILE-PATH>" "<REMOTE-PARQUET-FILE>"`
+  * `parquet-tools csv <LOCAL-PARQUET-FILE-PATH> > <CSV-FILE-PATH>`
+
+  Both commands run within one `BashOperator`.
 * **copy_csv_to_s3:** Once the newly transformed file is available, it gets uploaded to an S3 Bucket to then, be used in the {ref}`crate-reference:sql-copy-from` SQL statement.
 * **copy_csv_staging:** copy the CSV file stored in S3 to the staging table described previously.
 * **copy_staging_to_trips:** finally, copy the data from the staging table to the trips table, casting the columns that are not in the right type yet.
@@ -101,9 +110,13 @@ The DAG was configured based on the characteristics of the data in use. In this 
 * How often does the data get updated
 * When was the first file made available
 
-In this case, according to the NYC TLC website “Trip data is published monthly (with two months delay)”. So, the DAG is set up to run monthly, and given the first file was made available in January 2009, the start date was set to March 2009. But why March and not January? As previously mentioned, the files are made available with 2 months of delay, so the first DAG instance, which has a logical execution date equal to "March 2009" will retrieve March as the current month minus 2, corresponding to January 2009, the very first file ever published.
+The NYC TLC publishes trip data monthly with a two‑month delay. Set the DAG to
+run monthly with a start date of March 2009. The first run (logical date March
+2009) downloads the file for January 2009 (logical date minus two months),
+2010) which is the first available dataset.
 
-You may find the full code for the DAG described above available in our [GitHub repository](https://github.com/crate/crate-airflow-tutorial/blob/main/dags/nyc_taxi_dag.py).
+You may find the full code for the DAG described above available in our
+[GitHub repository](https://github.com/crate/crate-airflow-tutorial/blob/main/dags/nyc_taxi_dag.py).
 
 ## Wrap up
 

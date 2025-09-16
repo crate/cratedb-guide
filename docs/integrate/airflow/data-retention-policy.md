@@ -100,11 +100,13 @@ In the DAG’s main method, use Airflow’s [dynamic task mapping](https://airfl
 SQLExecuteQueryOperator.partial(
     task_id="delete_partition",
     conn_id="cratedb_connection",
-    sql="DELETE FROM {{params.table_fqn}} WHERE {{params.column}} = {{params.value}};",
+    sql="DELETE FROM {{ params.table_fqn }} WHERE {{ params.column }} = {{ params.value }};",
 ).expand(params=get_policies().map(map_policy))
 ```
 
-`get_policies` returns a set of policies. On each policy, the `map_policy` is applied. The return value of `map_policy` is finally passed as `params` to the `SQLExecuteQueryOperator`.
+`get_policies` returns a set of policies. On each policy, the `map_policy` is
+applied. The return value of `map_policy` is finally passed as `params` to the
+`SQLExecuteQueryOperator`.
 
 This leads us already to the final version of the DAG:
 ```python
@@ -136,7 +138,7 @@ def data_retention_delete():
     SQLExecuteQueryOperator.partial(
         task_id="delete_partition",
         conn_id="cratedb_connection",
-        sql="DELETE FROM {{params.table_fqn}} WHERE {{params.column}} = {{params.value}};",
+        sql="DELETE FROM {{ params.table_fqn }} WHERE {{ params.column }} = {{ params.value }};",
     ).expand(params=get_policies().map(map_policy))
 
 
