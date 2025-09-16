@@ -1,30 +1,35 @@
 (rsyslog-tutorial)=
-# Storing server logs on CrateDB for fast search and aggregations
+# Store server logs on CrateDB for fast search and aggregations
 
 ## Introduction
 
-Did you know that CrateDB can be a great store for your server logs?
+CrateDB stores server logs efficiently and makes them easy to query.
 
-If you have been using log aggregation tools or even some of the most advanced commercial SIEM systems, you have probably experienced the same frustrations I have:
+Common pain points with traditional log stacks and SIEMs include:
 
-* timeouts when searching logs over long periods of time
-* a complex and proprietary query syntax
-* difficulties integrating queries on logs data into application monitoring dashboards
+* timeouts when searching across long time ranges
+* proprietary, complex query syntaxes
+* awkward integrations with application monitoring dashboards
 
-Storing server logs on CrateDB solves these problems, it allows to query the logs with standard SQL and from any tool supporting the PostgreSQL protocol; its unique indexing also makes full-text queries and aggregations super fast.
-Let me show you an example.
+CrateDB addresses these issues: query logs with standard SQL from any
+PostgreSQL‑compatible tool, and use full‑text search and aggregations
+backed by efficient indexes. The sections below walk through a minimal
+setup.
 
 ## Setup
 
 ### CrateDB
 
-First, we will need an instance of CrateDB, it may be best to have a dedicated cluster for this purpose, to separate the monitoring system from the systems being monitored, but for the purpose of this demo we can just have a single node cluster on a docker container:
+First, start CrateDB. For production, use a dedicated cluster. For this demo, run a single‑node container:
 
 ```bash
-sudo docker run -d --name cratedb --publish 4200:4200 --publish 5432:5432 --env CRATE_HEAP_SIZE=1g crate -Cdiscovery.type=single-node
+sudo docker run -d --name cratedb \
+  -p 4200:4200 -p 5432:5432 \
+  -e CRATE_HEAP_SIZE=1g \
+  crate:5.6.0 -Cdiscovery.type=single-node
 ```
 
-Next, we need a table to store the logs, let's connect to `http://localhost:4200/#!/console` and run:
+Next, create a table for logs. Open `http://localhost:4200/#!/console` and run:
 
 ```sql
 CREATE TABLE doc.systemevents (
@@ -39,7 +44,7 @@ CREATE TABLE doc.systemevents (
   SysLogTag TEXT
 );
 ```
-Tip: if you are on a headless system you can also run queries with {ref}`command-line tools <connect-cli>`.
+Tip: On headless systems, run queries with the {ref}`command-line tools <connect-cli>`.
 
 Then we need an account for the logging system:
 
@@ -59,11 +64,10 @@ GRANT DML ON TABLE doc.systemevents TO rsyslog;
 We will use [rsyslog](https://github.com/rsyslog/rsyslog) to send the logs to CrateDB, for this setup we need `rsyslog` v8.2202 or higher and the `ompgsql` module:
 
 ```bash
-sudo add-apt-repository ppa:adiscon/v8-stable
-sudo apt-get update
-sudo apt-get install rsyslog
+sudo add-apt-repository -y ppa:adiscon/v8-stable
+sudo apt-get update -y
 sudo debconf-set-selections <<< 'rsyslog-pgsql rsyslog-pgsql/dbconfig-install string false'
-sudo apt-get install rsyslog-pgsql
+sudo apt-get install -y rsyslog rsyslog-pgsql
 ```
 
 Let's now configure it to use the account we created earlier:
@@ -79,20 +83,20 @@ If you are interested in more advanced setups involving queuing for additional r
 
 ### MediaWiki
 
-Now let's imagine that we want to run a container with [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki) to host an intranet and we want all logs to go to CrateDB, we can just deploy this with:
+To generate logs, run a [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki) container and forward its logs to rsyslog:
 
 ```bash
 sudo docker run --name mediawiki -p 80:80 -d --log-driver syslog --log-opt syslog-address=unixgram:///dev/log mediawiki
 ```
 
-If we now point a web browser to port 80 at `http://localhost/`, you will see a new MediaWiki page.
-Let's play around a bit to generate log entries, just click on "set up the wiki" and then once on Continue.
-This will have generated entries in the `doc.systemevents` table with `syslogtag` matching the container id of the container running the site.
+Open `http://localhost/` to see the MediaWiki setup page.
+Click “set up the wiki”, then “Continue” to generate log entries.
+CrateDB now stores new rows in `doc.systemevents`, with `syslogtag` matching the container ID.
 
 
 ## Explore
 
-We can now use the {ref}`crate-reference:predicates_match` to find the error messages we are interested in:
+Use {ref}`crate-reference:predicates_match` to find specific error messages:
 
 ```sql
 SELECT devicereportedtime,message
@@ -110,7 +114,7 @@ ORDER BY 1 DESC;
 +--------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ```
 
-Let's now see which log sources created the most entries:
+Show the top log sources by event count:
 
 ```sql
 SELECT syslogtag,count(*)
@@ -132,4 +136,5 @@ LIMIT 5;
 +----------------------+----------+
 ```
 
-I hope you found this interesting. Please do not hesitate to let us know your thoughts in the [CrateDB Community](https://community.cratedb.com/).
+We hope this was useful. Share feedback and questions in the
+[CrateDB Community](https://community.cratedb.com/).

@@ -2,7 +2,7 @@
 (metrics-store)=
 (telemetry)=
 (integrate-metrics)=
-# Metrics, telemetry, and logging data
+# Metrics, telemetry, and logs
 
 :::::{grid}
 :padding: 0
@@ -59,10 +59,10 @@ Prometheus is an open-source systems monitoring and alerting toolkit
 for collecting metrics data from applications and infrastructures.
 ::::
 
-::::{grid-item-card} Rsyslog
+::::{grid-item-card} rsyslog
 :link: rsyslog
 :link-type: ref
-Rsyslog is a rocket-fast system for log processing.
+Send logs with rsyslog, a rocket‑fast system for log processing.
 ::::
 
 ::::{grid-item-card} Telegraf
