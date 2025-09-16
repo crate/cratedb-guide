@@ -71,31 +71,11 @@ See the dedicated page: {ref}`pycaret`.
 :::
 
 
-(iris-r)=
 ### R
-
-Use R with CrateDB.
-
-:::::{info-card}
-::::{grid-item}
-:columns: 9
-**Statistical analysis and visualization on huge datasets**
-
-Details about how to create a machine learning pipeline
-using R and CrateDB.
-
-:::{toctree}
-:maxdepth: 1
-
-r
+:::{seealso}
+Please navigate to the dedicated page about {ref}`r`.
 :::
 
-::::
-::::{grid-item}
-:columns: 3
-{tags-primary}`Fundamentals`
-::::
-:::::
 
 
 ### scikit-learn
