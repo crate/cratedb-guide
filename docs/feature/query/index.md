@@ -166,6 +166,8 @@ search, all based on vanilla SQL.
 - {ref}`vector-search`
 - {ref}`hybrid-search`
 
+## Text-to-SQL
+- {ref}`text-to-sql`
 
 ## Time Bucketing
 https://community.cratedb.com/t/resampling-time-series-data-with-date-bin/1009
