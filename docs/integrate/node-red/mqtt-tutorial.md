@@ -13,11 +13,12 @@ You need:
 
 ## Producing data
 
-First, generate data to populate the MQTT topic with Node-RED. If you already have an MQTT topic with regular messages, you can skip this part.
-![Screenshot 2021-09-13 at 14.58.42|690x134, 50%](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/5722946039148ca6ce69702d963f9f842c4f972c.png){h=134px}
+First, generate data to populate the MQTT topic with Node-RED. If you already
+have an MQTT topic with regular messages, you can skip this part.
+![Screenshot 2021-09-13 at 14.58.42|690x134, 50%](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/5722946039148ca6ce69702d963f9f842c4f972c.png){width=480px}
 
 The `inject` node creates a JSON payload with three attributes:
-![Screenshot 2021-09-13 at 14.56.42|690x293, 50%](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/8084a53e544d681e79f85d780c621a340a7d0d30.png){h=293px}
+![Screenshot 2021-09-13 at 14.56.42|690x293, 50%](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/8084a53e544d681e79f85d780c621a340a7d0d30.png){width=480px}
 
 In this example, two fields are static; only the timestamp changes.
 Download the full workflow definition: [flows-producer.json](https://community.cratedb.com/uploads/short-url/eOvAk3XzDkRbNZjcZV0pZ0SnGu4.json) (1.3 KB)
@@ -60,7 +61,7 @@ Download the full workflow definition: [flows-consumer.json](https://community.c
 ## Testing
 
 To test the workflow, click the square to the left of the timestamp node
-(![Screenshot 2021-09-13 at 14.24.50|70x68, 40%](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/d3e06521d875fe2daa959b3adc9f5bf6a22453e7.png){w=30px})
+(![Screenshot 2021-09-13 at 14.24.50|70x68, 40%](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/d3e06521d875fe2daa959b3adc9f5bf6a22453e7.png){width=30px})
 to inject a message. In this configuration, an INSERT triggers after two
 messages or after ten seconds if a second message does not arrive.
 
@@ -69,4 +70,4 @@ Then run a SELECT statement on your CrateDB cluster to see the inserted rows:
 SELECT *
 FROM nodered_target;
 ```
-![Screenshot 2021-09-13 at 16.05.33|690x419, 75%](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/37e20012ca132be3b1c810cc73340724640fb658.png){w=640px}
+![Screenshot 2021-09-13 at 16.05.33|690x419, 75%](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/37e20012ca132be3b1c810cc73340724640fb658.png){width=640px}

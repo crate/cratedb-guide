@@ -22,7 +22,7 @@ deployed to its runtime in a single-click.
 :::{dropdown} **Managed Node-RED**
 ```{div}
 :style: "float: right; margin: 0.5em"
-[![FlowFuse logo](https://github.com/crate/crate-clients-tools/assets/453543/200d1a92-1e38-453a-89bf-d8b727451fab){w=180px}][FlowFuse]
+[![FlowFuse logo](https://github.com/crate/crate-clients-tools/assets/453543/200d1a92-1e38-453a-89bf-d8b727451fab){width=180px}][FlowFuse]
 ```
 
 With [FlowFuse], and [FlowFuse Cloud], essentially unmanaged and managed DevOps
