@@ -30,8 +30,8 @@ often private or real-time.
 :::{grid-item-card} Documentation: Vector search
 :link: vector-search
 :link-type: ref
-CrateDB's FLOAT_VECTOR data type implements a vector store and the k-nearest
-neighbour (kNN) search algorithm to find vectors that are similar to a query
+CrateDB's FLOAT_VECTOR data type implements a vector store and the k‑nearest
+neighbors (k‑NN) search algorithm to find vectors that are similar to a query
 vector.
 +++
 Vector search on machine learning embeddings: CrateDB is all you need.
@@ -55,9 +55,8 @@ LangChain is a framework for developing applications powered by language models,
 written in Python, and with a strong focus on composability.
 It supports retrieval-augmented generation (RAG).
 +++
-The LangChain adapter for CrateDB provides support to use CrateDB as a vector
-store database, to load documents using LangChain’s DocumentLoader, and also
-supports LangChain’s conversational memory subsystem.
+The LangChain adapter lets you use CrateDB as a vector store database, load
+documents via document loaders, and use LangChain’s conversational memory.
 :::
 
 ::::
@@ -84,7 +83,7 @@ queries that can be executed by a database.
 :::{grid-item-card} All about MCP
 :link: mcp
 :link-type: ref
-The Model Context Protocol (MCP), is an open protocol that enables seamless
+The Model Context Protocol (MCP) is an open protocol that enables seamless
 integration between LLM applications and external data sources and tools.
 :::
 
