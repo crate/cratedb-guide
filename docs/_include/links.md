@@ -48,6 +48,7 @@
 [langchain-rag-sql-binder]: https://mybinder.org/v2/gh/crate/cratedb-examples/main?labpath=topic%2Fmachine-learning%2Flangchain%2Fcratedb-vectorstore-rag-openai-sql.ipynb
 [langchain-rag-sql-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/langchain/cratedb-vectorstore-rag-openai-sql.ipynb
 [langchain-rag-sql-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/langchain/cratedb-vectorstore-rag-openai-sql.ipynb
+[MLOps]: https://en.wikipedia.org/wiki/MLOps
 [MongoDB]: https://www.mongodb.com/docs/manual/
 [MongoDB Atlas]: https://www.mongodb.com/docs/atlas/
 [MongoDB CDC Relay]: inv:ctk:*:label#mongodb-cdc-relay
