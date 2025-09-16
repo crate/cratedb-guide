@@ -110,7 +110,6 @@ Optimizing storage for historic time series data.
 :hidden:
 
 Fundamentals <fundamentals>
-Advanced <advanced>
 video
 Long Term Store <longterm>
 :::

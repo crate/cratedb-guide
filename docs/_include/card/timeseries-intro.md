@@ -22,11 +22,11 @@ for fast aggregations.
 Combine time series data with document data: CrateDB is all you need.
 ::::
 
-::::{grid-item-card} {material-outlined}`lightbulb;2em` Time Series: Advanced SQL
+::::{grid-item-card} {material-outlined}`lightbulb;2em` Time Series: Analyzing Weather Data
 :link: guide:timeseries-analysis-weather
 :link-type: ref
 :class-footer: text-smaller
-CrateDB provides enhanced features for querying time series data.
+CrateDB provides advanced SQL features for querying time series data.
 
 :::{rubric} What's Inside
 :::
