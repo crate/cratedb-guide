@@ -3,7 +3,9 @@
 
 ## Introduction
 
-**LangChain** is a framework for developing applications powered by language models. For this tutorial, we are going to use it to interact with CrateDB using only natural language without writing any SQL. To achieve that, you will need a CrateDB instance running, an OpenAI API key, and some Python knowledge.
+**LangChain** is a framework for developing applications powered by language models.
+This tutorial uses LangChain to interact with CrateDB using only natural language without writing any SQL.
+To achieve that, you will need a CrateDB instance running, an OpenAI API key, and some Python knowledge.
 
 ## Set up database
 
@@ -32,45 +34,62 @@ INSERT INTO doc.people VALUES ('John M', {"like"=[1,2,3],"dislike"=[4,5]}, 1, 'n
 First, install the required libraries
 
 ```shell
-pip install 'langchain[openai]' 'sqlalchemy-cratedb'
+pip install --upgrade langchain-community langchain-openai 'sqlalchemy-cratedb>=0.42.0.dev2'
 ```
 
-Once installed, import every component that will be used as follows. Also, before running the code snippet below, make sure to replace the <API_KEY> with your OpenAI API key. Besides that, replace the URI with the correct connection string to your CrateDB instance. Finally, enter your question as a string replacing <TEXT_QUESTION> in the code.
+Once installed, import the required components:
+Also, before running the code snippet below, make sure to replace the
+`<API_KEY>` with your OpenAI API key. Besides that, replace the URI with
+the correct connection string to your CrateDB instance. Finally, enter
+your question as a string replacing `<TEXT_QUESTION>` in the code.
 
 ```python
-from langchain.agents import create_sql_agent
-from langchain.agents.agent_toolkits import SQLDatabaseToolkit
-from langchain.sql_database import SQLDatabase
-from langchain.llms.openai import OpenAI
-from langchain.agents import AgentExecutor
 import os
+from langchain_community.agent_toolkits import create_sql_agent
+from langchain_community.utilities import SQLDatabase
+from langchain_openai import ChatOpenAI
 
-os.environ["OPENAI_API_KEY"] = "<API_KEY>"
+# Prefer exporting OPENAI_API_KEY in the shell (not in code).
+# os.environ["OPENAI_API_KEY"] = "<API_KEY>"
 
-llm=OpenAI(temperature=0) #play around with this parameter
-#change the URI below to match your CrateDB instance
+# Change the database URI below to match your CrateDB instance.
+# e.g., local: "crate://localhost:4200"
+# e.g., Cloud (with TLS): "crate://<user>:<password>@<cluster>.cratedb.net:4200?ssl=true"
+# Play around with the LLM temperature parameter.
 db = SQLDatabase.from_uri("crate://")
-toolkit = SQLDatabaseToolkit(db=db,llm=llm)
 
+llm = ChatOpenAI(temperature=0)
 agent_executor = create_sql_agent(
     llm=llm,
-    toolkit=toolkit,
+    db=db,
     verbose=True
 )
 
-agent_executor.run("<TEXT_QUESTION>")
+agent_executor.invoke("<TEXT_QUESTION>")
 ```
 
 If you ask the question “Who is tall?“ to the model, the result will be as follows. As you can see, it queries all the tables and, based on their names and their columns' names, it decides which is relevant to the query. You can track the reasoning behind the decision-making process the model uses.
 
 ![Screenshot 2023-08-24 at 09.27.52|599x500](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/8/8b84ca86108a641c944c880894c0b9ac19628a52.png){h=400px}
 
+Now that everything is set up, feel free to explore with different questions
+and tables. Keep in mind that connecting an LLM agent to CrateDB enables it
+to run queries on your data. For production, use a least‑privileged database
+user and avoid sending sensitive data to external providers unless
+contractually approved.
 
-Now that everything is set up, feel free to explore with different questions and tables. Keep in mind, that by connecting to CrateDB with the OpenAI API, you are giving it access to perform a variety of queries on your data, so avoid using it with your production environment or use a specific user with limited permissions. If you are looking for a different model, you can explore the options available on the [LangChain Introduction].
+If you are looking for a different model, you can explore the options
+available on the [LangChain Introduction].
 
 ## Summary
 
-This tutorial covered the use of LangChain to interact with CrateDB by simply writing questions in English. If you explore different questions, you may encounter some wrong answers, so we recommend you use this tool with caution and always check the reasoning it provides behind every answer. If you are looking for more exciting integrations, have a look at the {ref}`integrations section <integrate>` in our documentation.
+This tutorial demonstrates how to use LangChain to interact with CrateDB by
+writing questions in English.
+If you explore different questions, you may encounter some wrong answers,
+so we recommend you use this tool with caution and always check the reasoning
+it provides behind every answer. If you are looking for more exciting
+integrations, have a look at the {ref}`integrations section <integrations>`
+in our documentation.
 
 
 [LangChain Introduction]: https://python.langchain.com/docs/introduction/
