@@ -6,7 +6,7 @@ orphan: true
 # Welcome to CrateDB
 
 CrateDB is a **distributed SQL database** designed for **real-time analytics
-and search** at scale. Whether you are working with time-series data, full-text
+and search** at scale. Whether you are working with time series data, full-text
 search, or large volumes of structured and semi-structured data, CrateDB gives
 you the **power of SQL**, the **scalability of NoSQL**, and the **flexibility
 of a modern data platform**.
@@ -26,7 +26,7 @@ CrateDB was built for speed, scale, and simplicity:
 * **Real-time performance:** Query millions of records per second with sub-second response times.
 * **AI/ML-ready:** Store and serve data for modern AI pipelines.
 * **Search + SQL**: Combine full-text search with rich SQL queries.
-* **Geospatial & time-series**: Native support for IoT, sensor data, and location-based use cases.
+* **Geospatial & time series**: Native support for IoT, sensor data, and location-based use cases.
 * **Horizontal scalability**: Add nodes effortlessly to handle more data and users.
 * **Resilient and fault-tolerant**: Built-in replication and recovery.
 ::::
@@ -60,7 +60,7 @@ real-time analytics and hybrid search applications that leverage CrateDB's
 unique features.
 
 * In a unified data platform, CrateDB lets you analyze relational, JSON,
-  time-series, geospatial, full-text, and vector data in a single system,
+  time series, geospatial, full-text, and vector data in a single system,
   eliminating the need for multiple databases.
 * The fully distributed SQL query engine, built on top of Apache Lucene,
   and inheriting technologies from Elasticsearch/OpenSearch, provides performant

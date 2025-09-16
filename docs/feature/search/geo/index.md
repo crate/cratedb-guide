@@ -189,11 +189,11 @@ tutorials, or example applications.
 **Getting Started with Geospatial Data in CrateDB**
 
 Discover how to effortlessly create a table and seamlessly import weather
-data into CrateDB in this video. Witness the power of CrateDB's time-series
+data into CrateDB in this video. Witness the power of CrateDB's time series
 query capabilities in action with a weather dataset, showcasing the dynamic
 schema flexibility.
 
-[CrateDB: Querying Multi-Model Heterogeneous Time-Series Data with SQL]
+[CrateDB: Querying Multi-Model Heterogeneous Time Series Data with SQL]
 
 Dive deeper into CrateDB's multi-modal features with demonstrations on
 handling JSON, geospatial data, and conducting full-text searches.
@@ -263,7 +263,7 @@ flip dot sign. The software is written in JavaScript and runs on Node.js.
 
 [Apache Solr Spatial Search]: https://solr.apache.org/guide/solr/latest/query-guide/spatial-search.html
 [Berlin and Geo Shapes in CrateDB]: https://cratedb.com/blog/geo-shapes-in-cratedb
-[CrateDB: Querying Multi-Model Heterogeneous Time-Series Data with SQL]: https://cratedb.com/resources/videos/unleashing-the-power-of-multi-model-data-querying-heterogeneous-time-series-data-with-sql-in-cratedb
+[CrateDB: Querying Multi-Model Heterogeneous Time Series Data with SQL]: https://cratedb.com/resources/videos/unleashing-the-power-of-multi-model-data-querying-heterogeneous-time-series-data-with-sql-in-cratedb
 [GeoJSON]: https://en.wikipedia.org/wiki/GeoJSON
 [Geometric Shapes Indexing with BKD-trees]: https://cratedb.com/blog/geometric-shapes-indexing-with-bkd-trees
 [Geospatial Indexing & Search at Scale with Lucene]: https://portal.ogc.org/files/?artifact_id=90337

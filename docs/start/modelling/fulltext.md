@@ -4,7 +4,7 @@
 CrateDB offers **native full-text search** powered by **Apache Lucene** and Okapi
 BM25 ranking, accessible via SQL for easy modelling and querying of large-scale
 textual data. It supports fuzzy matching, multi-language analysis, and composite
-indexing, while fully integrating with data types such as JSON, time-series,
+indexing, while fully integrating with data types such as JSON, time series,
 geospatial, vectors, and more for comprehensive multi-model queries. Whether you
 need document search, catalog lookup, or content analytics, CrateDB is an ideal
 solution.

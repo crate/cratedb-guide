@@ -4,7 +4,7 @@
 CrateDB supports **real-time geospatial analytics at scale**, enabling you to
 store, query, and analyze 2D location-based data using standard SQL over two
 dedicated types: **GEO\_POINT** and **GEO\_SHAPE**. You can seamlessly combine
-spatial data with full-text, vector, JSON, or time-series in the same SQL
+spatial data with full-text, vector, JSON, or time series in the same SQL
 queries.
 
 The strength of CrateDB's support for geospatial data includes:
@@ -12,7 +12,7 @@ The strength of CrateDB's support for geospatial data includes:
 * Designed for **real-time geospatial tracking and analytics** (e.g., fleet
   tracking, mapping, location-layered apps)
 * **Unified SQL platform**: spatial data can be combined with full-text search,
-  JSON, vectors, time-series — in the same table or query
+  JSON, vectors, time series — in the same table or query
 * **High ingest and query throughput**, suitable for large-scale location-based
   workloads
 

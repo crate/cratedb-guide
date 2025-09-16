@@ -119,11 +119,11 @@ this video educates about at all the basic surfaces and workflows of Apache Supe
 
 :::{grid-item}
 :columns: auto auto 8 8
-**Apache Superset and CrateDB: Introduction to Time-Series Visualization**
+**Apache Superset and CrateDB: Introduction to Time Series Visualization**
 
 In this webinar, we will discuss how to use different visualization options in
 Superset coupled with a SQL interface to derive interesting insights and findings
-from the time-series dataset.
+from the time series dataset.
 
 - [Introduction to time series visualization in CrateDB and Apache Superset (Webinar)]
 :::

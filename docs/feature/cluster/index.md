@@ -171,12 +171,12 @@ Guidelines about balancing your strategy to yield the best performance for your 
 
 :::{grid-item-card}
 :link: https://community.cratedb.com/t/sharding-and-partitioning-guide-for-time-series-data/737
-:link-alt: Sharding and partitioning guide for time-series data
+:link-alt: Sharding and partitioning guide for time series data
 :padding: 3
 :class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold
 :class-body: sd-text-center2 sd-fs2-5
 :class-footer: text-smaller
-Sharding and partitioning guide for time-series data
+Sharding and partitioning guide for time series data
 ^^^
 A hands-on walkthrough to support you with building a sharding and partitioning
 strategy for your time series data.

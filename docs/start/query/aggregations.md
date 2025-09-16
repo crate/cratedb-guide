@@ -22,7 +22,7 @@ Whether you are monitoring sensor networks, analyzing customer behavior, or powe
 :::
 
 - Aggregate over **high-ingestion** datasets (millions of records per hour)
-- Analyze **real-time** metrics across structured, JSON, or time-series fields
+- Analyze **real-time** metrics across structured, JSON, or time series fields
 - Build **dynamic dashboards** and run **interactive ad-hoc analytics**
 - Combine aggregations with **full-text**, **geospatial**, or **vector** filters
 
