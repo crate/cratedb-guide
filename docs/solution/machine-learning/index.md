@@ -24,7 +24,7 @@ RAG is a technique for augmenting LLM knowledge with additional data,
 often private or real-time.
 :::
 
-::::{grid} 2
+::::{grid} 1 2 2 2
 :gutter: 4
 
 :::{grid-item-card} Documentation: Vector search
@@ -155,7 +155,7 @@ including experiment tracking, and in the spirit of continuous development
 and DevOps.
 :::
 
-::::{grid} 2
+::::{grid} 1 2 2 2
 :gutter: 4
 
 :::{grid-item-card} MLflow
