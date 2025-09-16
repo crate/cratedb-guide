@@ -22,7 +22,7 @@ set of built-in functions.
 
 ::::{grid-item}
 :columns: auto 9 9 9
-**Analyzing Device Readings**
+**Analyze Device Readings**
 
 Effectively query measurement readings using enhanced features for time series data.
 
@@ -114,7 +114,7 @@ ORDER BY 1 DESC;
 ## Aggregations
 Fast aggregations, even with complex queries.
 - {ref}`aggregations`
-- [Analyzing Device Readings with Metadata Integration]
+- [Analyze Device Readings with Metadata Integration]
 
 ## Bulk Operations
 
@@ -132,7 +132,7 @@ The advantages are:
 (cte)=
 (ctes)=
 ## CTEs
-[Time Series: Analyzing Weather Data]
+[Time Series: Analyze Weather Data]
 
 
 (hyperloglog)=
@@ -154,8 +154,8 @@ https://community.cratedb.com/t/advanced-downsampling-with-the-lttb-algorithm/12
 
 (maximum-minimum)=
 ## Maximum/Minimum Values
-- [Analyzing Device Readings with Metadata Integration]
-- [Time Series: Analyzing Weather Data]
+- [Analyze Device Readings with Metadata Integration]
+- [Time Series: Analyze Weather Data]
 
 ## Search
 CrateDB provides capabilities for full-text search, vector search, and hybrid
@@ -183,7 +183,7 @@ https://community.cratedb.com/t/resampling-time-series-data-with-date-bin/1009
 (window-functions)=
 ## Window Functions
 - [Window functions in CrateDB]
-- [Time Series: Analyzing Weather Data]
+- [Time Series: Analyze Weather Data]
 
 
 
@@ -228,7 +228,7 @@ It is also not in the same shape as the other pages in this section.
 :::
 
 
-[Analyzing Device Readings with Metadata Integration]: project:#timeseries-with-metadata
+[Analyze Device Readings with Metadata Integration]: project:#timeseries-with-metadata
 [bulk operations interface]: inv:crate-reference#http-bulk-ops
 [bulk operations for INSERTs]: project:#inserts_bulk_operations
 [HyperLogLog]: https://en.wikipedia.org/wiki/HyperLogLog
@@ -238,6 +238,6 @@ It is also not in the same shape as the other pages in this section.
 [Ingesting into CrateDB with UNNEST and Node.js]: https://community.cratedb.com/t/connecting-to-cratedb-with-node-js/751#ingesting-into-cratedb-with-unnest-3
 [Introducing: HyperLogLog]: https://cratedb.com/blog/feature-focus-making-things-hyper-fast-fast
 [Optimizing storage for historic time-series data]: https://community.cratedb.com/t/optimizing-storage-for-historic-time-series-data/762
-[Time Series: Analyzing Weather Data]: project:#timeseries-analysis-weather
+[Time Series: Analyze Weather Data]: project:#timeseries-analysis-weather
 [UNNEST]: project:#inserts_unnest
 [Window functions in CrateDB]: https://community.cratedb.com/t/window-functions-in-cratedb/1398

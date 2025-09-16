@@ -11,8 +11,7 @@
 :::{rubric} About
 :::
 
-[Trino] is a fast distributed SQL query engine for big data analytics
-that helps you explore your data universe.
+[Trino] is a fast, distributed SQL query engine for analytics.
 
 :::{rubric} Learn
 :::

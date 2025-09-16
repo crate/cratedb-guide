@@ -1,19 +1,19 @@
 (trino-tutorial)=
 # Connecting to CrateDB in Trino
 
-[Trino](https://trino.io/) (formerly known as Presto SQL) is a distributed query engine, that allows running analytical queries across different data sources via SQL. One of those data sources can be CrateDB and this article is going to look at how to configure the connection.
+[Trino](https://trino.io/) is a distributed SQL query engine. This tutorial shows how to configure Trino to connect to CrateDB.
 
 ## Prerequisites
 
-We assume a Trino client/server installation is already in place as per [Trino’s installation instructions](https://trino.io/docs/current/installation.html).
+Assume you have a Trino client/server installation as per the [installation instructions](https://trino.io/docs/current/installation.html).
 
-For this post, I installed Trino on macOS using Homebrew with `brew install trino` and my installation directory is `/usr/local/Cellar/trino/375`. Depending on your installation method, there might be different ways to start the Trino server. For the sake of this post, I start it in my console from the installation directory with the command `./bin/trino-server run`. Your preferred way of starting might differ.
+For example, on macOS you can `brew install trino`. Start the server with `trino-server run` from your installation’s `bin` directory. Depending on your installation, the command and paths may differ.
 
 ## Connector configuration
 
-Due to CrateDB’s PostgreSQL protocol compatibility, we can make use of Trino’s [PostgreSQL connector](https://trino.io/docs/current/connector/postgresql.html). Create a new file `/usr/local/Cellar/trino/375/libexec/etc/catalog/postgresql.properties` to configure the connection:
+Because CrateDB speaks the PostgreSQL wire protocol, use Trino’s [PostgreSQL connector](https://trino.io/docs/current/connector/postgresql.html). Create a catalog properties file to configure the connection:
 
-```
+```ini
 connector.name=postgresql
 connection-url=jdbc:postgresql://<CrateDB hostname>:5432/
 connection-user=<CrateDB username>
@@ -21,15 +21,14 @@ connection-password=<CrateDB password>
 insert.non-transactional-insert.enabled=true
 ```
 
-Please replace the placeholders for the CrateDB hostname, username, and password to match your setup. Besides the connection details, the configuration has two particularities:
+Replace the placeholders for the CrateDB hostname, username, and password. Besides the connection details, note two specifics:
 
-* No database name: With PostgreSQL, a JDBC connection URL usually ends with a database name. We intentionally omit the database name when connecting to CrateDB for compatibility reasons.
-CrateDB consists of a single database with multiple schemas, hence we do not specify a database name in the `connection-url`. If a database name is specified, you will run into an error message on certain operations (`ERROR: Table with more than 2 QualifiedName parts is not supported. Only <schema>.<tableName> works`).
-* Disabling transactions: Being a database with eventual consistency, CrateDB doesn’t support transactions. By default, the PostgreSQL connector will wrap `INSERT` queries into transactions and attempt to create a temporary table. We disable this behavior with the `insert.non-transactional-insert.enabled` parameter.
+* No database name: CrateDB provides a single database with multiple schemas, so omit the database name in `connection-url`. Specifying a database triggers errors for operations that include `catalog.schema.table` (e.g., `ERROR: Table with more than 2 QualifiedName parts is not supported. Only <schema>.<tableName> works`).
+* Non‑transactional inserts: CrateDB doesn’t support transactions. By default, the PostgreSQL connector wraps `INSERT` statements in a transaction and uses a temporary table. Disable this with `insert.non-transactional-insert.enabled=true`.
 
 ## Running queries against CrateDB
 
-Once the PostgreSQL connector is configured, we can connect to the Trino server using its CLI:
+After configuring the connector, connect to the Trino server using its CLI:
 
 ```bash
 # schema refers to an existing CrateDB schema
@@ -37,9 +36,12 @@ $ ./bin/trino --catalog postgresql --schema doc
 trino:doc>
 ```
 
-A `SHOW TABLES` query should successfully list all existing tables in the specified CrateDB schema and you can proceed with querying them.
+Run `SHOW TABLES` to list all tables in the specified CrateDB schema, then query them.
 
-As CrateDB differs in some aspects from PostgreSQL, there are a few particularities to consider for your queries:
+Because CrateDB speaks the PostgreSQL wire protocol, use Trino’s [PostgreSQL connector](https://trino.io/docs/current/connector/postgresql.html). Create a catalog file, for example:
+
+- macOS (Homebrew): `/usr/local/etc/trino/catalog/postgresql.properties` (or `/opt/homebrew/etc/trino/catalog/...` on Apple Silicon)
+- Linux (tarball/systemd): `$TRINO_HOME/etc/catalog/postgresql.properties` or `/etc/trino/catalog/postgresql.properties`
 
 * Querying `OBJECT` columns: Columns of the data type `OBJECT` can usually be queried using the bracket notation, e.g. `SELECT my_object_column['my_object_key'] FROM my_table`. In Trino’s SQL dialect, the identifier needs to be wrapped in double quotes, such as `SELECT "my_object_column['my_object_key']" FROM my_table`.
 * `INSERT` queries: When inserting, Trino addresses tables with `catalog_name.schema_name.table_name`, which currently isn't supported by CrateDB. Please see [crate/crate#12658](https://github.com/crate/crate/issues/12658) on addressing this issue.
@@ -51,4 +53,6 @@ As CrateDB differs in some aspects from PostgreSQL, there are a few particularit
 
 ## Conclusion
 
-With a few parameter tweaks, Trino can successfully connect to CrateDB. The information presented in this post is the result of a short compatibility test and is likely not exhaustive. If you use Trino with CrateDB and are aware of any additional aspects, please let us know!
+With a few parameter tweaks, Trino connects to CrateDB. This guide reflects a
+short compatibility test and is not exhaustive. If you discover additional
+aspects, please let us know.
