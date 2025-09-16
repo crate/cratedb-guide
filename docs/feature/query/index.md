@@ -154,8 +154,8 @@ https://community.cratedb.com/t/advanced-downsampling-with-the-lttb-algorithm/12
 
 (maximum-minimum)=
 ## Maximum/Minimum Values
-[Analyzing Device Readings with Metadata Integration]
-[Time Series: Analyzing Weather Data]
+- [Analyzing Device Readings with Metadata Integration]
+- [Time Series: Analyzing Weather Data]
 
 ## Search
 CrateDB provides capabilities for full-text search, vector search, and hybrid
