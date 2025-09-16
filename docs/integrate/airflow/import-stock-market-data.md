@@ -34,7 +34,7 @@ Let’s now create a table to store your financial data. I'm particularly intere
 CREATE TABLE sp500 (
    closing_date TIMESTAMP,
    ticker TEXT,
-   adjusted_close double,
+   adjusted_close DOUBLE PRECISION,
    primary key (closing_date, ticker)
 );
 ```
@@ -105,22 +105,24 @@ Create a `.py` file for your DAG in your `astro-project/dags` folder; I will cal
 
 ### Import operators and modules
 
-Let’s start by importing the necessary operator to connect to CrateDB, the `PostgresOperator`, and the decorator to define the DAG and its tasks. You will also import the `datetime`, `pendulum` modules to set up your schedule and the `yfinance`, `pandas`, and `json` modules to download and manipulate the financial data later. 
+Import the operator used in this tutorial, `SQLExecuteQueryOperator`,
+and the decorator to define the DAG and its tasks. You will also import
+the `datetime`, `pendulum` modules to set up your schedule and the
+`yfinance`, `pandas`, and `json` modules to download and manipulate the
+financial data later.
 ```python
 import datetime
 import math
 import json
 import logging
 import pendulum
-import requests
-from bs4 import BeautifulSoup
 import yfinance as yf
 import pandas as pd
 from airflow.providers.common.sql.operators.sql import SQLExecuteQueryOperator
 from airflow.decorators import dag, task
 ```
 Don’t forget to add these modules to the `requirements.txt` file inside your project like so:
-```
+```text
 apache-airflow-providers-postgres>=5.3.1
 apache-airflow-providers-common-sql>=1.3.1
 apache-airflow[pandas]
@@ -133,7 +135,7 @@ The next step is to declare the necessary tasks to download, prepare and insert 
 #### Download task 
 
 Let's first write a function to download data from `yfinance`; I will call it `download_yfinance_data`.
-You can use ds for today’s date or get yesterday’s date with `airflow.macros.ds_add(ds, -1)`. You start by listing tickers from stocks of interest into a `tickers` variable. You then pass this list and the start date as arguments to the `yf.download` function and store the result in a `data `variable. `data` is a pandas data frame with various values for each stock, such as high/low, volume, dividends, and so on. Today, I will focus on the adjusted close value, so I filter data using the `Adj Close` key. Moreover, I return the data as a JSON object (instead of a data frame) because it works better with XCom, which is Airflow's mechanism to talk between tasks. Finally, you set this function as an Airflow task using the `@task` decorator and give it an execution timeout.
+You can use ds for today’s date or get yesterday’s date with `airflow.macros.ds_add(ds, -1)`. You start by listing tickers from stocks of interest into a `tickers` variable. You then pass this list and the start date as arguments to the `yf.download` function and store the result in a `data` variable. `data` is a pandas data frame with various values for each stock, such as high/low, volume, dividends, and so on. Today, I will focus on the adjusted close value, so I filter data using the `Adj Close` key. Moreover, I return the data as a JSON object (instead of a data frame) because it works better with XCom, which is Airflow's mechanism to talk between tasks. Finally, you set this function as an Airflow task using the `@task` decorator and give it an execution timeout.
 ```python
 @task(execution_timeout=datetime.timedelta(minutes=3))
 def download_yfinance_data(ds=None):
@@ -232,8 +234,6 @@ import math
 import json
 import logging
 import pendulum
-import requests
-from bs4 import BeautifulSoup
 import yfinance as yf
 import pandas as pd
 from airflow.providers.common.sql.operators.sql import SQLExecuteQueryOperator

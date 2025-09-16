@@ -7,7 +7,7 @@ In this fourth article on automating recurrent CrateDB queries with [Apache Airf
 
 A hot/cold storage strategy is often motivated by a tradeoff between performance and cost-effectiveness. In a database such as CrateDB, more recent data tends to have a higher significance for analytical queries. Well-performing disks (hot storage) play a key role on the infrastructure side to support performance requirements but can come at a high cost. As data ages and gets less business-critical for near-real-time analysis, transitioning it to slower/cheaper disks (cold storage) helps to improve the cost-performance ratio.
 
-In a CrateDB cluster, nodes can have different hardware specifications. Hence, a cluster can consist of a combination of hot and cold storage nodes, each with respective disks. By assigning corresponding attributes to nodes, CrateDB can be made aware of such node types and consider if when allocating partitions.
+In a CrateDB cluster, nodes can have different hardware specifications. Hence, a cluster can consist of a combination of hot and cold storage nodes, each with respective disks. By assigning corresponding attributes to nodes, CrateDB recognizes these node types and considers it when allocating partitions.
 
 ## CrateDB setup
 
@@ -131,11 +131,12 @@ To remember which partitions have already been reallocated, we can make use of t
 
 ## Airflow setup
 
-We assume that a basic Astronomer/Airflow setup is already in place, as described in our {ref}`first post <airflow-export-s3>`. Let’s quickly go through the three steps of the algorithm:
+Assume a basic Astronomer/Airflow setup is in place, as described in the {ref}`first post <airflow-export-s3>`. The algorithm has three steps:
 
 1. `get_policies`: A query on `doc.retention_policies` and `information_schema.table_partitions` identifies partitions affected by a retention policy.
 2. `map_policy`: A helper method transforming the output of `get_policies` into a Python `dict` data structure for easier handling.
-4. `reallocate_partitions`: Executes an SQL statement for each mapped policy: `ALTER TABLE <table> PARTITION (<partition key> = <partition value>) SET ("routing.allocation.require.storage" = 'cold');`
+3. `reallocate_partitions`: Executes an SQL statement for each mapped policy: `ALTER TABLE <table> PARTITION (<partition key> = <partition value>) SET ("routing.allocation.require.storage" = 'cold');`
+
 The CrateDB cluster will then automatically initiate the relocation of the affected partition to a node that fulfills the requirement (`cratedb03` in our case).
 
 The full implementation is available as [data_retention_reallocate_dag.py](https://github.com/crate/crate-airflow-tutorial/blob/main/dags/data_retention_reallocate_dag.py) on GitHub.
@@ -168,5 +169,5 @@ INSERT INTO doc.retention_policies (table_schema, table_name, partition_column, 
 
 ## Summary
 
-Building upon the previously discussed data retention policy implementation, we showed that reallocating partitions integrates seemingly and consists only of a single SQL statement.
-CrateDB’s self-organization capabilities take care of all low-level operations and the actual moving of partitions. Furthermore, we showed that a multi-staged approach to data retention policies can be achieved by first reallocating and eventually deleting partitions permanently.
+Building on the earlier data retention policy implementation, reallocating partitions integrates seamlessly and consists of a single SQL statement.
+CrateDB’s self-organization handles the low-level operations and the actual movement of partitions. A multi‑stage policy is straightforward: first reallocate, then delete.

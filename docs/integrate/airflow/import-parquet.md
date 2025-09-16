@@ -4,7 +4,7 @@
 ## Introduction
 Using Airflow to import the NYC Taxi and Limousine dataset in Parquet format.
 
-Currently, Parquet imports using COPY FROM are not supported by CrateDB, it only supports CSV and JSON files instead. Because of that, we implemented a different approach from simply changing the previous implementation from CSV to Parquet.
+CrateDB does not support `COPY FROM` for Parquet. It supports CSV and JSON. Therefore, this tutorial uses an alternative approach rather than switching the previous CSV workflow to Parquet.
 
 First and foremost, keep in mind the strategy presented here for importing Parquet files into CrateDB, we have already covered this topic in a previous tutorial using a different approach from the one introduced in this tutorial, so feel free to have a look at the tutorial about {ref}`arrow-import-parquet` and explore with the different possibilities out there.
 
@@ -80,20 +80,19 @@ Ok! So, once the tools are already set up with the corresponding tables created,
 ![Airflow DAG workflow|690x76](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/29502f83c13d29d90ab703a399f58c6daeee6fe6.png)
 
 The DAG pictured above represents a routine that will run every month to retrieve the latest released file by NYC TLC based on the execution date of that particular instance. Since it is configured to catch up with previous months when enabled, it will generate one instance for each previous month since January 2009 and each instance will download and process the corresponding month, based on the logical execution date.
-The Airflow DAG used in this tutorial contains 6 tasks which are described below:
-
+The Airflow DAG used in this tutorial contains 7 tasks:
 * **format_file_name:** according to the NYC Taxi and Limousine Commission (TLC) [documentation](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page), the files are named after the month they correspond to, for example:
-   ``` 
-  https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-03.parquet
+   ```text
+   https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-03.parquet
    ```
    The file path above corresponds to the data from March 2022. So, to retrieve a specific file, the task gets the date and formats it to compose the name of the specific file. Important to mention that the data is released with 2 months of delay, so it had to be taken into consideration.
-* **process_parquet:** afterward, the name is used to download the file to local storage and then transform it from the Parquet format into CSV using CLI tools of [Apache Arrow](https://github.com/apache/arrow), as follows:
+* **process_parquet:** afterward, the name is used to download the file to local storage and then transform it from Parquet to CSV using [`parquet-tools`] (Apache Parquet CLI, see [Apache Arrow])
    * `curl -o "<LOCAL-PARQUET-FILE-PATH>" "<REMOTE-PARQUET-FILE>"`
    * `parquet-tools csv <LOCAL-PARQUET-FILE-PATH> > <CSV-FILE-PATH>`
    Both tasks are executed within one Bash Operator.
 * **copy_csv_to_s3:** Once the newly transformed file is available, it gets uploaded to an S3 Bucket to then, be used in the {ref}`crate-reference:sql-copy-from` SQL statement.
 * **copy_csv_staging:** copy the CSV file stored in S3 to the staging table described previously.
-* **copy_stating_to_trips:** finally, copy the data from the staging table to the trips table, casting the columns that are not in the right type yet.
+* **copy_staging_to_trips:** finally, copy the data from the staging table to the trips table, casting the columns that are not in the right type yet.
 * **delete_staging:** after it is all processed, clean up the staging table by deleting all rows, and preparing for the next file.
 * **delete_local_parquet_csv:** delete the files (Parquet and CSV) from the storage.
 
@@ -114,3 +113,6 @@ are other approaches out there, we encourage you to try them out.
 
 If you want to continue to explore how CrateDB can be used with Airflow, you can
 check other tutorials related to that topic {ref}`here <airflow-tutorials>`.
+
+
+[Apache Arrow]: https://github.com/apache/arrow

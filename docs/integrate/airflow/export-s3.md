@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS "metrics" (
   "name" TEXT,
   "tags" OBJECT(DYNAMIC),
   "fields" OBJECT(DYNAMIC),
-  "month" TIMESTAMP AS date_trunc('quarter', "timestamp")
+  "month" TIMESTAMP AS date_trunc('month', "timestamp")
 )
 ```
 In general, to export data to a file one can use the `COPY TO` statement in CrateDB. This command exports the content of a table to one or more JSON files in a given directory. JSON files have unique names and they are formatted to contain one table row per line. The `TO` clause specifies the URI string of the output location. CrateDB supports two URI schemes: `file` and `s3`. We use the `s3` scheme to access the bucket on Amazon S3. Further information on different clauses of the `COPY TO` statement can be found in the official {ref}`CrateDB documentation <crate-reference:sql-copy-to>`.
@@ -34,7 +34,7 @@ To export data from the `metrics` table to S3, we need a statement such as:
 
 ## DAG implementation
 
-In order to build a generic DAG that is not specific to one single table configuration, we first create a file `include/table_exports.py`, containing a list of dictionaries (key/value pairs) for each table to export:
+To keep the DAG generic, create `include/table_exports.py` with one dictionary per table to export:
 ```python
 TABLES = [
     {
