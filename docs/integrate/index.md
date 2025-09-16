@@ -63,6 +63,7 @@ prometheus/index
 pycaret/index
 pyviz/index
 queryzen/index
+r/index
 rill/index
 risingwave/index
 scikit-learn/index

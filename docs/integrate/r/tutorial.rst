@@ -1,4 +1,5 @@
 .. _cratedb-r:
+.. _r-tutorial:
 
 ==============
 CrateDB with R
@@ -7,8 +8,7 @@ CrateDB with R
 This integration document details how to create a Machine Learning pipeline
 using R and CrateDB.
 
-Abstract
-========
+.. rubric:: Introduction
 
 Statistical analysis and visualization on huge datasets is a common task many
 data scientists face in their day-to-day life. One common tool for doing this
@@ -22,12 +22,7 @@ statistical computations.
 
 This can be accomplished with the `RPostgreSQL`_ library.
 
-
-Implementation
-==============
-
-Set Up
-------
+.. rubric:: About
 
 For this implementation, we will be using the classic `iris classification
 problem`_.
@@ -51,6 +46,8 @@ Using R, we want to:
 4. Retrieve our unclassified iris data, enrich the data with a prediction from
    our model, and insert the result into our iris table.
 
+Setup
+=====
 
 Prerequisites
 -------------
@@ -68,8 +65,8 @@ To install these libraries within R or RStudio, we can run:
     > install.packages("caret")
 
 
-CrateDB
--------
+Provision data
+--------------
 
 First, we need to create a table to hold our training data, as well as our
 unclassified irises:
@@ -112,9 +109,11 @@ We can verify that the data has been successfully imported like so:
     +----------+
     SELECT 1 row in set (0.130 sec)
 
+Usage
+=====
 
-Examining The Data
-------------------
+Explore data
+------------
 
 With our data in CrateDB, we can now load it into R or RStudio. Within
 R, we should first import our data. We do this by loading the ``RPostgreSQL``
@@ -186,8 +185,8 @@ As we can see, the lengths and widths of sepals and petals are very good
 indicators of iris species, with little overlap between them.
 
 
-Training A Model
-----------------
+Train model
+-----------
 
 Now that we have loaded our data and can visualize it to get a better idea of
 what it contains, we can create a machine learning model to predict a species
@@ -287,8 +286,8 @@ misclassified a *versicolor* as a *virginica* and vice versa. We could improve
 this by trying out other models, by tweaking our model, or by training on a
 larger dataset.
 
-Enriching Data
-..............
+Enrich data
+-----------
 
 Now that we have a model we are happy with, we can use this model to enrich
 unclassified iris flowers data.
