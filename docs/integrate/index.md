@@ -22,6 +22,7 @@ aws-lambda/index
 azure-functions/index
 cluvio/index
 datagrip/index
+datashader/index
 dbeaver/index
 dbt/index
 debezium/index
