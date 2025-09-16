@@ -101,7 +101,7 @@ postgres:
 ```
 
 Start the project with `astro dev start`. After the containers start, access
-the Airflow UI at <http://localhost:8081>:
+the Airflow UI at `http://localhost:8081`:
 
 ![Airflow UI landing page](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/f298a4c609312133e388555a9eba51733bfd5645.png)
 
