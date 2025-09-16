@@ -50,7 +50,7 @@ This allows you to easily integrate Polars into your existing data stack.
 - Text: CSV, JSON
 - Binary: Parquet, Delta Lake, Avro, Excel
 - IPC: Feather, Arrow IPC
-- Databases: MySQL, PostgreSQL, SQLite, Redshift, SQL Server, (others via ConnectorX)
+- Databases: MySQL, PostgreSQL, SQLite, Redshift, SQL Server, etc. (via ConnectorX)
 - Cloud storage: Amazon S3, Azure Blob/ADLS (via fsspec‑compatible backends)
 
 :::{rubric} Learn
