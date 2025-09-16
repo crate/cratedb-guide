@@ -27,7 +27,7 @@ Apache Kafka is a widely used open-source distributed event-store and streaming 
 
 ## Overview
 
-[Apache Kafka] is a distributed event log for high-throughput, durable, and scalable data streams. CrateDB is a distributed SQL database optimized for time-series, IoT, and analytics at scale. Together, they form a robust pipeline for moving operational events from producers into a queryable store with SQL and real-time analytics.
+[Apache Kafka] is a distributed event log for high-throughput, durable, and scalable data streams. CrateDB is a distributed SQL database optimized for time series, IoT, and analytics at scale. Together, they form a robust pipeline for moving operational events from producers into a queryable store with SQL and real-time analytics.
 
 ## Benefits of CrateDB + Apache Kafka
 
@@ -62,7 +62,7 @@ The processed results are then written into CrateDB, where they’re immediately
 
 ## Typical use cases
 
-*   **Time-series pipelines (sensors, logs, metrics, events)**
+*   **Time series pipelines (sensors, logs, metrics, events)**
 
     Stream high-volume data from IoT devices, application logs, or monitoring systems into Kafka, then land it in CrateDB for storage and real-time querying. Ideal for scenarios where you need to keep years of historical data but still run live analytics on the latest events.
 *   **CDC / operational data feeds (Debezium → Kafka → CrateDB)**

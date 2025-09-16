@@ -117,7 +117,7 @@ ORDER BY
   expected_time;
 ```
 
-### Typical time-series functions
+### Typical time series functions
 
 * **Time extraction:** `date_trunc(...)`, `extract(...)`, `date_part(...)`, `now()`, `current_timestamp`
 * **Time bucketing:** `date_bin()`, `interval`, `age()`

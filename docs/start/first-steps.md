@@ -29,10 +29,10 @@ or run them directly in the CrateDB Cloud Console.
 
   Learn how to use CrateDB’s full‑text search to explore a large dataset and manage a Netflix title catalog.
 
-* **Exploring time-series data?** Investigate weather data — see {{ '{}(#timeseries-querying)'.format(tutorial) }}
+* **Exploring time series data?** Investigate weather data — see {{ '{}(#timeseries-querying)'.format(tutorial) }}
 
   In this tutorial, you’ll work with weather readings from multiple locations
-  to learn how to efficiently store and analyze time-series datasets.
+  to learn how to efficiently store and analyze time series datasets.
 
 ## 3. Take an advanced tutorial
 

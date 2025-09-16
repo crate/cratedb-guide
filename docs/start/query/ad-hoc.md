@@ -237,7 +237,7 @@ Learn more about how to use ad-hoc queries effectively.
 | Feature                               | Description                                                                          | Documentation                                                |
 |---------------------------------------|--------------------------------------------------------------------------------------|--------------------------------------------------------------|
 | Dynamic schemas & <br> object columns | Flexible modeling of semi-structured JSON data <br> No need to predefine every field | {ref}`object` <br> {ref}`crate-reference:data-types-objects` |
-| Time-series support                   | Perfect for time-bound diagnostics                                                   | {ref}`timeseries`                                            |
+| Time series support                   | Perfect for time-bound diagnostics                                                   | {ref}`timeseries`                                            |
 | Intelligent indexing                  | Works out of the box for ad-hoc querying                                             | {ref}`search-overview`                                                |
 | Full-text & filter                    | Combine keyword search with structured queries                                       | {ref}`fts` <br> {ref}`crate-reference:fulltext-indices`      |
 
