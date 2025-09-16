@@ -41,7 +41,7 @@ worldwide across every industry.
 :::{grid-item-card} Tutorial: Connect Apache NiFi and CrateDB
 :link: nifi-tutorial
 :link-type: ref
-How to connect from Apache NiFi to CrateDB and ingest data from NiFi into CrateDB.
+Connect Apache NiFi to CrateDB and ingest data.
 :::
 
 ::::
