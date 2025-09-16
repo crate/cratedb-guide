@@ -167,6 +167,7 @@ search, all based on vanilla SQL.
 - {ref}`hybrid-search`
 
 ## Text-to-SQL
+Natural language to SQL conversions using adapters and frameworks.
 - {ref}`text-to-sql`
 
 ## Time Bucketing
