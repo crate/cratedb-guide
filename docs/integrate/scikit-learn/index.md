@@ -11,7 +11,7 @@
 :::{rubric} About
 :::
 
-[scikit-learn], built on NumPy, SciPy, and matplotlib, is an open-source
+[scikit-learn], built on NumPy, SciPy, and Matplotlib, is an open-source
 Python package that includes simple and efficient tools for predictive
 data analysis.
 

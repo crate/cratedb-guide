@@ -61,13 +61,13 @@ generation (RAG), and other applications.
 ### MLflow
 Use MLflow with CrateDB for experiment tracking and model registry.
 :::{seealso}
-Please navigate to the dedicated page about {ref}`mlflow`.
+See the dedicated page: {ref}`mlflow`.
 :::
 
 
 ### PyCaret
 :::{seealso}
-See the dedicated page: {ref}`tensorflow`.
+See the dedicated page: {ref}`pycaret`.
 :::
 
 
@@ -100,7 +100,7 @@ r
 
 ### scikit-learn
 :::{seealso}
-Please navigate to the dedicated page about {ref}`scikit-learn`.
+See the dedicated page: {ref}`scikit-learn`.
 :::
 
 
