@@ -108,7 +108,16 @@ The landing page of Apache Airflow UI shows the list of all DAGs, their status, 
 
 To track the project with Git, execute from the `astro-project` directory: `git init`.
 
-Go to [http://github.com](http://github.com) and create a new repository. The files that store sensitive information, such as credentials and environment variables should be added to `.gitignore`. Now, use the following instructions to publish `astro-project` to GitHub:
+Go to [https://github.com](https://github.com) and create a new repository.
+Add files that store sensitive information (for example, credentials and
+environment variables) to `.gitignore`, such as:
+```text
+.env
+airflow_settings.yaml
+**/secrets.*
+```
+
+Then publish `astro-project` to GitHub:
 
 ```bash
 git remote add origin https://github.com/username/new_repo
