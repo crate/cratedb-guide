@@ -8,20 +8,18 @@
 ```
 
 :::{div} sd-text-muted
-Modern Workflow Orchestration.
+Orchestrate modern data workflows in Python.
 :::
 
 :::{rubric} About
 :::
 
-[Prefect] is a workflow orchestration framework for building resilient data
-pipelines in Python.
+Use [Prefect] to orchestrate resilient data pipelines in Python.
 
-Give your team the power to build reliable workflows without sacrificing
-development speed. Prefect Core combines the freedom of pure Python
-development with production-grade resilience, putting you in control of
-your data operations. Transform your code into scalable workflows that
-deliver consistent results.
+Build reliable workflows without sacrificing development speed. Prefect
+combines the freedom of pure Python with production‑grade resilience,
+putting you in control of your data operations. Turn code into scalable
+workflows that deliver consistent results.
 
 :::{rubric} Learn
 :::
