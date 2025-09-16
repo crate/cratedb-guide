@@ -3,7 +3,7 @@
 
 ## Introduction
 
-[LlamaIndex](https://www.llamaindex.ai/) is a data framework for Large Language Models (LLMs). It comes with pre-trained models on massive public datasets such as [GPT-4](https://openai.com/gpt-4) or [Llama 2](https://ai.meta.com/llama/) and provides an interface to external data sources allowing for natural language querying on your private data.
+[LlamaIndex](https://www.llamaindex.ai/) is a data framework for Large Language Models (LLMs). It comes with pre-trained models on massive public datasets such as [GPT-4](https://openai.com/index/gpt-4/) or [Llama 4](https://www.llama.com/models/llama-4/) and provides an interface to external data sources allowing for natural language querying on your private data.
 
 [Azure Open AI Service](https://azure.microsoft.com/en-us/products/ai-services/openai-service) is a fully managed service that runs on the Azure global infrastructure and allows developers to integrate OpenAI models into their applications. Through Azure Open AI API one can easily access a wide range of AI models in a scalable and reliable way.
 

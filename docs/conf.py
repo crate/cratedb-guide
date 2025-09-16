@@ -71,6 +71,10 @@ linkcheck_ignore += [
     # 429 Client Error: Too Many Requests
     r"https://www.terraform.io",
     r"https://developer.hashicorp.com",
+    # 400 Client Error: Bad Request for url
+    r"https://www.llama.com/.*",
+    # 403 Client Error: Forbidden for url
+    r"https://openai.com/index/gpt-4/.*",
 ]
 
 linkcheck_anchors_ignore_for_url += [
