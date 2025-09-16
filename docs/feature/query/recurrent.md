@@ -1,10 +1,10 @@
 (recurrent-queries)=
-# Automating recurrent CrateDB queries
+# Automate recurrent CrateDB queries
 
-Certain database operations can require running identical queries recurringly, creating the wish to make use of a scheduling mechanism.
-This article will discuss different existing scheduling solutions and how to integrate them with CrateDB.
+Many database tasks run the same query repeatedly. Schedule them.
+This article shows several scheduling options and how to integrate them with CrateDB.
 
-As an example use case, we will look at implementing continuous aggregates, a strategy to improve the performance of certain aggregations by precalculating the result.
+As an example, we implement continuous aggregates: precompute results to speed up repeated aggregations.
 
 ## Use Case: Continuous Aggregates
 
@@ -17,7 +17,7 @@ CREATE TABLE sensor_readings_raw (
 );
 ```
 
-To analyze the sensor readings, an hourly average is calculated regularly by a data analytics tool:
+Calculate an hourly average regularly with your analytics tool:
 ```sql
 SELECT DATE_TRUNC('hour', ts),
        sensor_id,
@@ -31,7 +31,7 @@ We create a second table that stores the result set of the above query:
 ```sql
 CREATE TABLE sensor_readings_aggregated (
   ts_hour TIMESTAMP NOT NULL,
-  sensor_id TEXT NOT NULL,
+  sensor_id INTEGER NOT NULL,
   value_avg DOUBLE PRECISION NOT NULL,
   last_updated GENERATED ALWAYS AS NOW(),
   PRIMARY KEY(ts_hour, sensor_id)
@@ -50,7 +50,7 @@ GROUP BY 1, 2
 ON CONFLICT (ts_hour, sensor_id) DO UPDATE SET value_avg = excluded.value_avg;
 ```
 
-This INSERT query should be scheduled regularly to update the aggregated data.
+Schedule this INSERT to refresh the aggregates regularly.
 
 
 ## Scheduling Methods
@@ -58,7 +58,7 @@ This INSERT query should be scheduled regularly to update the aggregated data.
 We will now go through several scheduling methods and how to use them for the given use case.
 
 ### cron
-On Unix-based operating systems, a cron job can be used for scheduling.
+On Unix-based systems, use cron to schedule jobs.
 
 :::{rubric} Prerequisites
 :::
@@ -66,7 +66,7 @@ The CrateDB CLI client [crash](https://crate.io/docs/crate/crash/en/latest/) is 
 
 :::{rubric} Setup
 :::
-1. Crate a script ~/update_continuous_aggregates.sh with the following content (replace `<placeholders>` for CrateDB connection information accordingly):
+1. Create a script ~/update_continuous_aggregates.sh with the following content (replace `<placeholders>` for CrateDB connection information accordingly):
    ```bash
    #!/bin/bash
 
@@ -90,16 +90,16 @@ The CrateDB CLI client [crash](https://crate.io/docs/crate/crash/en/latest/) is 
 
 :::{rubric} Caveats
 :::
-Ensure that your cron jobs are monitored. By default, the cron daemon will attempt to deliver output (such as error messages) to the user’s mailbox if configured correctly.
+Monitor your cron jobs. By default, the cron daemon delivers output (including errors) to the user’s mailbox if configured.
 
-Several 3rd party cron job monitoring solutions exist as well for more sophisticated monitoring.
+You can also use third‑party cron monitoring services for deeper visibility.
 
 ### Apache Airflow
-[Airflow](https://airflow.apache.org/) is a tool to programmatically schedule and control complex workflows. Please see our dedicated [crate-airflow-tutorial](https://github.com/crate/crate-airflow-tutorial) repository for several Airflow examples.
+[Airflow](https://airflow.apache.org/) programmatically schedules and controls complex workflows. See our [crate-airflow-tutorial](https://github.com/crate/crate-airflow-tutorial) repository for examples.
 
 (node-red-recurrent-queries)=
 ### Node-RED
-[Node-RED](https://nodered.org) is a low-code programming tool also offering scheduling functionality.
+[Node-RED](https://nodered.org) is a low‑code tool that also offers scheduling.
 
 :::{rubric} Prerequisites
 :::
@@ -107,8 +107,8 @@ The [node-red-contrib-postgresql](https://flows.nodered.org/node/node-red-contri
 
 :::{rubric} Setup
 :::
-![Screenshot 2021-09-07 at 16.46.29|690x127](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/ea6c64ac6c2330cade043d56c53808b8c231941c.png)
-1. Import the attached workflow definition (replace `<placeholders>` for CrateDB connection information accordingly):
+![Node-RED flow editor](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/ea6c64ac6c2330cade043d56c53808b8c231941c.png)
+1. Import the workflow definition and replace the `<placeholders>` for CrateDB connection information:
     <details>
     <summary>Workflow definition</summary>
 
@@ -186,7 +186,7 @@ The [node-red-contrib-postgresql](https://flows.nodered.org/node/node-red-contri
 
 Specifically for CrateDB Cloud deployments, there is the SQL Job Scheduler option. As the name says, it allows you to schedule jobs in the Cloud platform to run in a defined interval through a centralized user interface. Whether you're looking to move data between tables or schedule regular data exports, the SQL Job Scheduler equips you with the necessary tools.
 
-You can use the Cloud Console Automation menu to create a new job, as demonstrated below. Start by defining the job’s name and its interval then the exact query you want to run, as seen below. Once defined, you can activate or deactivate the job. Once the job is created, you can check the execution history.
+Use the Cloud Console Automation menu to create a new job. Define the name, interval, and the exact query to run. You can activate/deactivate the job and review its execution history.
 
 ![Screenshot 2024-06-19 at 10.09.35|690x287](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/4/4b40ad5c25d287bbcad25b2d18f8000c78961f10.png)
 
@@ -200,7 +200,7 @@ croud clusters scheduled-jobs create \
     --name update-continuous-aggregates \
     --cluster-id 8d6a7c3c-61d5-11e9-a639-34e12d2331a1 \
     --cron "5 * * * *" \
-    --sql "INSERT INTO sensor_readings_aggregated (ts_hours, sensor_id, value_avg)
+    --sql "INSERT INTO sensor_readings_aggregated (ts_hour, sensor_id, value_avg)
            SELECT DATE_TRUNC('hour', ts),
                   sensor_id,
                   AVG(value)
