@@ -9,7 +9,7 @@ Apache Parquet is a free and open-source column-oriented data storage format. It
 
 ## Prerequisites
 
-The libraries needed are **crate**, **sqlalchemy** and **pyarrow**, so you should install them. To do so, you can use the following `pip install` command. To check the latest version supported by CrateDB, have a look at the {ref}`sqlalchemy-cratedb:index`.
+Install the required libraries: **sqlalchemy-cratedb** and **pyarrow**.
 
 ```shell
 pip install pyarrow sqlalchemy-cratedb
@@ -34,8 +34,7 @@ parquet_path = 'yellow_tripdata_2022-01.parquet'
 ny_taxi_parquet = pq.ParquetFile(parquet_path)
 ```
 
-Now, make sure to set up the SQLAlchemy engine and session as seen below. If you are not using localhost, remember to replace the URI string with your own.
-
+Set up the SQLAlchemy engine and session:
 ```python
 CRATE_URI = 'crate://localhost:4200'
 
@@ -47,13 +46,14 @@ session.configure(bind=engine, autoflush=False, expire_on_commit=False)
 
 ## Creating the model
 
-Before processing the newly imported file, the corresponding Model must be created, this is the representation of the final table, if you are using a different dataset, adapt the model to your data. Remember that the attribute name is case sensitive, so in our example **vendorID** will have the same name in CrateDB's table.
+Before processing the newly imported file, the corresponding Model must be created, this is the representation of the final table, if you are using a different dataset, adapt the model to your data. Attribute names are case‑sensitive. In this example, **VendorID** in the model maps to "VendorID" in CrateDB.
 
 ```python
 class TaxiTrip(Base):
     __tablename__='ny_taxi'
 
-    id = Column(String, primary_key=True, default=uuid4)
+    # Generate a text UUID to match Column(String)
+    id = Column(String, primary_key=True, default=lambda: str(uuid4()))
     VendorID = Column(String)
     tpep_pickup_datetime = Column(DateTime)
     tpep_dropoff_datetime = Column(DateTime)
@@ -80,7 +80,7 @@ Now if we call:
 ```python
 Base.metadata.create_all(engine)
 ```
-It will create the table in CrateDB **if it does not exist**, if you change the schema after creating the table, it might fail, in this case you will need to rename the table in CrateDB and adapt the model, if the data doesn't matter you can delete the table and re-create it.
+It creates the table in CrateDB if it does not exist. If you later change the schema, `create_all()` may fail. In that case, rename or drop the existing table, adjust the model, and recreate it.
 
 For further details on how to use the SQLAlchemy with CrateDB, you can refer to the {ref}`sqlalchemy-cratedb:index`.
 

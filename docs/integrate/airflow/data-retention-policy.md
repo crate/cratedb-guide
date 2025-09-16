@@ -66,7 +66,7 @@ The implementation of the corresponding tasks looks as follows:
 ```python
 @task
 def get_policies(ds=None):
-    """Retrieve all partitions effected by a policy"""
+    """Retrieve all partitions affected by a policy"""
     pg_hook = PostgresHook(postgres_conn_id="cratedb_connection")
     sql = Path("include/data_retention_retrieve_delete_policies.sql")
     return pg_hook.get_records(
@@ -94,7 +94,7 @@ def map_policy(policy):
     }
 ```
 
-In the DAG's main method, we can now make use of Airflows' [dynamic task mapping](https://airflow.apache.org/docs/apache-airflow/2.3.0/concepts/dynamic-task-mapping.html) which allows executing the same task several times, with different parameters:
+In the DAG’s main method, use Airflow’s [dynamic task mapping](https://airflow.apache.org/docs/apache-airflow/2.3.0/concepts/dynamic-task-mapping.html) to execute the same task several times with different parameters:
 
 ```python
 SQLExecuteQueryOperator.partial(
@@ -118,7 +118,7 @@ def map_policy(policy):
 
 @task
 def get_policies(ds=None):
-    """Retrieve all partitions effected by a policy"""
+    """Retrieve all partitions affected by a policy"""
     pg_hook = PostgresHook(postgres_conn_id="cratedb_connection")
     sql = Path("include/data_retention_retrieve_delete_policies.sql")
     return pg_hook.get_records(
