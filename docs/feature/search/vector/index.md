@@ -20,9 +20,13 @@
 :::{rubric} Overview
 :::
 CrateDB can be used as a [vector database] (VDBMS) for storing and retrieving
-vector embeddings based on the FLOAT_VECTOR data type and its accompanying
-KNN_MATCH and VECTOR_SIMILARITY functions, effectively conducting HNSW
-semantic similarity searches on them, also known as vector search.
+vector embeddings.
+
+CrateDB's FLOAT_VECTOR data type implements a vector store and the k-nearest
+neighbour (kNN) search algorithm to find vectors that are similar to a query
+vector. This works by using its accompanying KNN_MATCH and VECTOR_SIMILARITY
+functions, effectively conducting HNSW semantic similarity searches on them,
+also known as vector search.
 
 :::{rubric} About
 :::
@@ -34,6 +38,11 @@ Frequently used for semantic search, vector
 search finds similar data using approximate nearest neighbor (ANN) algorithms.
 Compared to traditional keyword search, vector search yields more relevant
 results and executes faster.
+
+Feature vectors may be computed from raw data using machine learning
+methods such as feature extraction algorithms, word embeddings, or deep
+learning networks.
+
 
 :::{rubric} Details
 :::
