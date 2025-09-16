@@ -2,6 +2,14 @@
 (timeseries-fundamentals)=
 # Time Series Fundamentals with CrateDB
 
+:::{div} sd-text-muted
+Learn how to conduct fundamental data analysis on large time series datasets
+with CrateDB.
+:::
+
+{tags-primary}`Metadata integration`
+{tags-primary}`Advanced SQL for time series`
+
 :::{include} /_include/links.md
 :::
 
@@ -17,6 +25,9 @@ for your own explorations.
 :::
 
 :::{include} /_include/card/timeseries-explore.md
+:::
+
+:::{include} /_include/card/timeseries-datashader.md
 :::
 
 :::{include} /_include/card/timeseries-dask.md

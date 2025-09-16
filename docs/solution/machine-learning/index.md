@@ -20,7 +20,8 @@ and other applications.
 
 These applications can answer questions about specific sources of information,
 for example using techniques like Retrieval Augmented Generation (RAG).
-RAG is a technique for augmenting LLM knowledge with additional data.
+RAG is a technique for augmenting LLM knowledge with additional data,
+often private or real-time.
 :::
 
 ::::{grid} 2
@@ -52,6 +53,7 @@ using SQL: CrateDB is all you need.
 :link-type: ref
 LangChain is a framework for developing applications powered by language models,
 written in Python, and with a strong focus on composability.
+It supports retrieval-augmented generation (RAG).
 +++
 The LangChain adapter for CrateDB provides support to use CrateDB as a vector
 store database, to load documents using LangChain’s DocumentLoader, and also
@@ -61,10 +63,13 @@ supports LangChain’s conversational memory subsystem.
 ::::
 
 
-## Text-to-SQL and MCP
+(text-to-sql)=
+## Text-to-SQL
 
-The adapters enumerated below integrate CrateDB for Text-to-SQL purposes,
+:::{div} sd-text-muted
+Integrate CrateDB with Text-to-SQL solutions,
 and provide MCP and AI enterprise data integrations.
+:::
 
 ::::{grid} 2
 :gutter: 4
@@ -76,7 +81,7 @@ Text-to-SQL is a technique that converts natural language queries into SQL
 queries that can be executed by a database.
 :::
 
-:::{grid-item-card} MCP
+:::{grid-item-card} All about MCP
 :link: mcp
 :link-type: ref
 The Model Context Protocol (MCP), is an open protocol that enables seamless
@@ -92,7 +97,53 @@ MindsDB is the platform for customizing AI from enterprise data.
 ::::
 
 
+## Time series analysis
+
+:::{div} sd-text-muted
+Load and analyze data from database systems for
+time series anomaly detection and forecasting.
+:::
+
+::::{grid} 2
+:gutter: 4
+
+:::{grid-item-card} Statistical analysis and visualization on huge datasets
+:link: r-tutorial
+:link-type: ref
+Learn how to create a machine learning pipeline using R and CrateDB.
+:::
+
+:::{grid-item-card} Regression analysis with pandas and scikit-learn
+:link: scikit-learn
+:link-type: ref
+Use pandas and scikit-learn to run a regression analysis within a Jupyter Notebook.
+:::
+
+:::{grid-item-card} Build model for predictive maintenance with TensorFlow
+:link: tensorflow-tutorial
+:link-type: ref
+Learn how to build a machine learning model that will predict whether
+a machine will fail within a specified time window in the future.
+:::
+
+:::{grid-item-card} Advanced time series analysis with MLflow and PyCaret
+:link: ml-timeseries
+:link-type: ref
+Learn how to conduct advanced data analysis on large time series datasets
+with CrateDB, MLflow, and PyCaret:
+Anomaly detection and forecasting, time series decomposition,
+Exploratory data analysis (EDA).
+:::
+
+::::
+
+
 ## MLOps and model training
+
+:::{div} sd-text-muted
+CrateDB supports MLOps procedures through adapters to best-of-breed software
+frameworks.
+:::
 
 :::{div}
 Training a machine learning model, running it in production, and maintaining
@@ -103,9 +154,6 @@ Machine Learning Operations [MLOps] is a paradigm that aims to deploy and
 maintain machine learning models in production reliably and efficiently,
 including experiment tracking, and in the spirit of continuous development
 and DevOps.
-
-CrateDB supports MLOps procedures through adapters to best-of-breed software
-frameworks.
 :::
 
 ::::{grid} 2
@@ -113,6 +161,7 @@ frameworks.
 
 :::{grid-item-card} MLflow
 :link: mlflow
+:link-type: ref
 MLflow is an open-source platform to manage the whole ML lifecycle,
 including experimentation, reproducibility, deployment, and a central
 model registry.
@@ -122,36 +171,29 @@ CrateDB can be used as a storage database for the MLflow Tracking subsystem.
 
 :::{grid-item-card} PyCaret
 :link: pycaret
+:link-type: ref
 PyCaret is an open-source, low-code machine learning library for Python
 that automates machine learning workflows (AutoML).
 +++
 CrateDB can be used as a storage database for training and production datasets.
 :::
 
-::::
-
-
-## Time-series anomaly detection and forecasting
-
-Load and analyze data from database systems.
-
-::::{grid} 2
-:gutter: 4
-
-:::{grid-item-card} Statistical analysis and visualization on huge datasets
-:link: r-tutorial
-Learn how to create a Machine Learning pipeline using R and CrateDB.
-:::
-
-:::{grid-item-card} Regression analysis with pandas and scikit-learn
-:link: scikit-learn-tutorial
-Use pandas and scikit-learn to run a regression analysis within a Jupyter Notebook.
-:::
-
-:::{grid-item-card} Use TensorFlow and CrateDB for predictive maintenance
-:link: tensorflow-tutorial
-Learn how to build a machine learning model that will predict whether
-a machine will fail within a specified time window in the future.
+:::{grid-item-card} Advanced time series analysis with MLflow and PyCaret
+:link: ml-timeseries
+:link-type: ref
+:columns: 12
+Learn how to conduct advanced data analysis on large time series datasets
+with CrateDB, MLflow, and PyCaret.
++++
+**What's inside:** Anomaly detection and forecasting, time series decomposition,
+exploratory data analysis (EDA).
 :::
 
 ::::
+
+
+:::{toctree}
+:maxdepth: 1
+:hidden:
+time-series
+:::

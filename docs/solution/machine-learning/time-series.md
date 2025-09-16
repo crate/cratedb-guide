@@ -1,16 +1,17 @@
+(ml-timeseries)=
 (timeseries-advanced)=
 (timeseries-analysis)=
-
 # Advanced Time Series Analysis
 
+:::{div} sd-text-muted
 Learn how to conduct advanced data analysis on large time series datasets
 with CrateDB.
+:::
 
 {tags-primary}`Anomaly detection`
 {tags-primary}`Forecasting / Prediction`
 {tags-primary}`Time series decomposition`
 {tags-primary}`Exploratory data analysis`
-{tags-primary}`Metadata integration`
 
 :::{include} /_include/links.md
 :::
@@ -169,102 +170,7 @@ identify patterns.
 ::::
 
 
-(timeseries-analysis-metadata)=
-## Metadata Integration
-
-CrateDB is particularly effective when you need to combine time series data
-with metadata, for instance, in scenarios where data like sensor readings
-or log entries, need to be augmented with additional context for more
-insightful analysis. See also [](#document).
-
-CrateDB supports effective time series analysis with fast aggregations, a
-rich set of built-in functions, and [JOIN](inv:crate-reference#sql_joins)
-operations.
-
-:::{rubric} Examples
-:::
-
-::::{info-card}
-
-:::{grid-item}
-:columns: auto 9 9 9
-**Analyzing Device Readings with Metadata Integration**
-
-This tutorial illustrates how to augment time series data with metadata, in
-order to enable more comprehensive analysis. It uses a time series dataset that
-captures various device readings, such as battery, CPU, and memory information.
-
-{{ '{}(#timeseries-objects)'.format(tutorial) }}
-:::
-
-:::{grid-item}
-:columns: 3
-
-{tags-primary}`Rich Time Series`
-{tags-primary}`Metadata`
-
-{tags-secondary}`SQL`
-:::
-
-::::
-
-
-(timeseries-analysis-sql)=
-## SQL Analysis
-
-CrateDB offers enhanced features for analysing time series data.
-
-**Examples**
-
-::::{info-card}
-
-:::{grid-item}
-:columns: 9
-**Analyzing Weather Data**
-
-Run aggregations with gap filling / interpolation, using common
-table expressions (CTEs) and LAG / LEAD window functions.
-
-Find maximum values using the MAX_BY aggregate function, returning
-the value from one column based on the maximum or minimum value of another
-column within a group.
-
-{{ '{}(#timeseries-analysis-weather)'.format(tutorial) }}
-:::
-
-:::{grid-item}
-:columns: 3
-
-{tags-primary}`Aggregations`
-{tags-primary}`Time series`
-
-{tags-secondary}`SQL`
-:::
-
-::::
-
-
-(timeseries-visualization)=
-## Visualization
-
-Similar to EDA, just applying [data and information visualization] can yield
-significant insights into the characteristics of your data. By using
-best-of-breed data visualization tools, initial data exploration is
-mostly your first encounter with the data.
-
-:::{rubric} Examples
-:::
-
-:::{include} /_include/card/timeseries-explore.md
-:::
-
-:::{include} /_include/card/timeseries-datashader.md
-:::
-
-
-
 [anomaly]: https://en.wikipedia.org/wiki/Anomaly_(natural_sciences)
-[Data and information visualization]: https://en.wikipedia.org/wiki/Data_and_information_visualization
 [Decomposition of time series]: https://en.wikipedia.org/wiki/Decomposition_of_time_series
 [Exploratory data analysis (EDA)]: https://en.wikipedia.org/wiki/Exploratory_data_analysis
 [forecasting]: https://en.wikipedia.org/wiki/Forecasting
