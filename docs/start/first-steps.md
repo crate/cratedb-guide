@@ -39,7 +39,7 @@ or run them directly in the CrateDB Cloud Console.
 * **Analyze device readings** with metadata integration — see {{ '{}(#timeseries-objects)'.format(tutorial) }}
   
   In this tutorial, capture device metrics such as battery level, CPU usage,
-  and memory usage, then enrich your time‑series data with JSON and text
+  and memory usage, then enrich your time series data with JSON and text
   metadata to enable more comprehensive analysis.
 
 
