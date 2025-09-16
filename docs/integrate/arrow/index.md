@@ -2,11 +2,18 @@
 (apache-arrow)=
 # Arrow
 
-[Apache Arrow] defines a language-independent columnar memory format for flat
-and nested data, organized for efficient analytic operations on modern
-hardware like CPUs and GPUs. The Arrow memory format also supports
-zero-copy reads for lightning-fast data access without serialization overhead.
+```{div} .float-right
+[![Apache Arrow logo](https://arrow.apache.org/img/arrow-logo_horizontal_black-txt_white-bg.png){height=60px loading=lazy}][Apache Arrow]
+```
+```{div} .clearfix
+```
 
+:::{rubric} About
+:::
+
+[Apache Arrow] defines a language-independent, columnar memory format for flat
+and nested data. It enables efficient analytics on modern CPUs and GPUs and
+supports zero-copy reads, avoiding serialization overhead.
 
 :::{rubric} Learn
 :::
@@ -16,7 +23,7 @@ zero-copy reads for lightning-fast data access without serialization overhead.
 :::{grid-item-card} Tutorial: Import Parquet files
 :link: arrow-import-parquet
 :link-type: ref
-Importing Parquet files into CrateDB using Apache Arrow and SQLAlchemy.
+Import Parquet files into CrateDB with Apache Arrow and SQLAlchemy.
 :::
 
 ::::
