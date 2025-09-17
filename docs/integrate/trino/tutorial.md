@@ -11,7 +11,9 @@ For example, on macOS you can `brew install trino`. Start the server with `trino
 
 ## Connector configuration
 
-Because CrateDB speaks the PostgreSQL wire protocol, use Trino’s [PostgreSQL connector](https://trino.io/docs/current/connector/postgresql.html). Create a catalog properties file to configure the connection:
+Because CrateDB speaks the PostgreSQL wire protocol, you can use
+[Trino’s PostgreSQL connector]. Create a catalog properties file
+to configure the connection:
 
 ```ini
 connector.name=postgresql
@@ -43,7 +45,7 @@ Because CrateDB speaks the PostgreSQL wire protocol, use Trino’s [PostgreSQL c
 - macOS (Homebrew): `/usr/local/etc/trino/catalog/postgresql.properties` (or `/opt/homebrew/etc/trino/catalog/...` on Apple Silicon)
 - Linux (tarball/systemd): `$TRINO_HOME/etc/catalog/postgresql.properties` or `/etc/trino/catalog/postgresql.properties`
 
-* Querying `OBJECT` columns: Columns of the data type `OBJECT` can usually be queried using the bracket notation, e.g. `SELECT my_object_column['my_object_key'] FROM my_table`. In Trino’s SQL dialect, the identifier needs to be wrapped in double quotes, such as `SELECT "my_object_column['my_object_key']" FROM my_table`.
+* Querying `OBJECT` columns: Columns of the data type `OBJECT` can usually be queried using the bracket notation e.g., `SELECT my_object_column['my_object_key'] FROM my_table`. In Trino’s SQL dialect, the identifier needs to be wrapped in double quotes, such as `SELECT "my_object_column['my_object_key']" FROM my_table`.
 * `INSERT` queries: When inserting, Trino addresses tables with `catalog_name.schema_name.table_name`, which currently isn't supported by CrateDB. Please see [crate/crate#12658](https://github.com/crate/crate/issues/12658) on addressing this issue.
 * Data types: Not all of Trino’s [data types](https://trino.io/docs/current/language/types.html) can be mapped to CrateDB data types and vice versa.
   * For creating tables, it can be advisable to run the `CREATE TABLE` statement directly in CrateDB. This approach is also recommended if you want to configure custom table settings, such as sharding, partitioning, or replication.
@@ -56,3 +58,6 @@ Because CrateDB speaks the PostgreSQL wire protocol, use Trino’s [PostgreSQL c
 With a few parameter tweaks, Trino connects to CrateDB. This guide reflects a
 short compatibility test and is not exhaustive. If you discover additional
 aspects, please let us know.
+
+
+[Trino’s PostgreSQL connector]: https://trino.io/docs/current/connector/postgresql.html
