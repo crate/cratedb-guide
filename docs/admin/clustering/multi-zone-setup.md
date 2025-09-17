@@ -1,0 +1,185 @@
+(multi-zone-setup)=
+
+# CrateDB multi-zone setup
+
+If possible, we recommend running all CrateDB nodes of a cluster inside the
+same physical space to minimize network latency and maximize speed between the
+nodes. These factors can have a significant impact on the performance of
+CrateDB clusters. This is especially true when running clusters in multiple
+regions.
+
+This is because replicas are written *synchronously*, and making a {ref}`write
+operation <crate-reference:concept-data-storage>` wait for all the replicas
+to write somewhere in a data center
+hundreds of miles away can lead to noticeable latency and cause the cluster to
+slow down.
+
+In some cases, it may be necessary to run a cluster across multiple data
+centers or availability zones (*zones*, for short). This guide shows you how
+to set up a multi-zone CrateDB cluster.
+
+(multi-zone-requirements)=
+
+## Multi-zone requirements
+
+For a multi-zone setup, CrateDB clusters need to fulfill the following:
+
+1. Data inserts should be replicated in a way where at least one full [replica]
+   is present in each zone.
+2. All data still needs to be fully available if a zone becomes unavailable.
+3. When querying data, all data should only be collected from shards that are
+   inside the same zone as the initial request.
+
+To achieve these requirements, make use of {ref}`shard allocation awareness
+<crate-reference:conf_routing>`, which
+allows you to configure [shard] and replica allocation. If you are new to setting
+up a multi-node CrateDB cluster, you should read our {ref}`multi-node setup
+<multi_node_setup>` guide first.
+
+(tag-assignments)=
+
+## Tag assignments
+
+Once you have fulfilled the {ref}`multi-zone requirements
+<multi-zone-requirements>`, assign a tag containing the name of the zone to
+the cluster nodes. This enables {ref}`shard allocation awareness
+<crate-reference:conf_routing>`.
+
+You can assign arbitrary tags to nodes in your [configuration] file with
+{ref}`node custom attributes <crate-reference:conf-node-attributes>` or via
+the `-C` option at startup.
+
+:::{SEEALSO}
+Read our in-depth [configuration guide] for more details on CrateDB
+configuration options.
+:::
+
+For example, you can assign a zone tag in your [configuration] file like this:
+
+```yaml
+node.attr.zone: us-east-1
+```
+
+The `node.attr` namespace is given a `zone` key and tagged with a
+`us-east-1` value, which is an availability zone of a cloud computing
+provider.
+
+Alternatively, you can configure this at startup with a command-line option.
+For example:
+
+```console
+sh$ bin/crate \
+        -Cnode.attr.zone=us-east-1
+```
+
+:::{NOTE}
+These tags and settings cannot be changed at runtime and need to be
+set on startup.
+:::
+
+(allocation-awareness)=
+
+## Allocation awareness
+
+Once you have assigned zone tags, they can be set as attributes for
+{ref}`shard allocation awareness <crate-reference:conf_routing>` with the
+`cluster.routing.allocation.awareness.attributes` setting.
+
+For example, use the `zone` tag that you just assigned to your node as an
+attribute in your [configuration] file, like this:
+
+```yaml
+cluster.routing.allocation.awareness.attributes: zone
+```
+
+This means that CrateDB will try to allocate [shards] and their [replicas]
+according to the `zone` tags, so that a shard and its replica are not on a
+node with the same `zone` value.
+
+Add a second and a third node in a different zone (`us-west-1`) and tag
+them accordingly:
+
+```yaml
+node.attr.zone: us-west-1
+cluster.routing.allocation.awareness.attributes: zone
+```
+
+Now start your cluster and then {ref}`create a table <crate-reference:sql-create-table>`
+with 6 shards and 1 replica.
+
+As an example, you can create such a table by executing a statement like this
+in the {ref}`CrateDB Shell <crate-crash:index>`:
+
+```sql
+cr> CREATE TABLE my_table (
+      first_column INTEGER,
+      second_column TEXT
+    ) CLUSTERED INTO 6 SHARDS
+    WITH (number_of_replicas = 1);
+```
+
+The 6 shards will be distributed evenly across the nodes (2 shards on
+each node) and the replicas will be allocated on nodes with a different
+`zone` value than its primary shard.
+
+If this is not possible (i.e. `num replicas > num zones - 1`), CrateDB will
+still allocate the replicas on nodes with the same `zone` value to avoid
+{ref}`unassigned shards <sharding-under-allocation>`.
+
+:::{NOTE}
+Allocation awareness only means that CrateDB *tries* to conform to the
+awareness attributes. To avoid such allocations, you can {ref}`force the
+awareness <force-awareness>`.
+:::
+
+(force-awareness)=
+
+## Force awareness
+
+To fulfill the third {ref}`multi-zone requirement <multi-zone-requirements>`,
+you need to ensure that when running a query on a node with a certain `zone`
+value, it only executes the request on [shards] allocated on nodes with the same
+`zone` value.
+
+This means you need to know the different `zone` attribute values to force
+awareness on nodes.
+
+You can force awareness on certain attributes with the
+`cluster.routing.allocation.awareness.force.*.values` setting, where `*`
+is a placeholder for the awareness attribute, which can be defined using the
+`cluster.routing.allocation.awareness.attributes` setting.
+
+For example, to force awareness on the pre-configured `zone` attribute for
+the `us-east-1` and `us-west-1` values, you can put the following in your
+[configuration] file:
+
+```yaml
+cluster.routing.allocation.awareness.force.zone.values: us-east-1,us-west-1
+```
+
+This means that no more [replicas] than needed are allocated on a specific group of
+nodes.
+
+:::{TIP}
+If you have 2 nodes with the `zone` attribute set to `us-east-1` and you
+{ref}`create a table <crate-reference:sql-create-table>` with 8 shards and 1 replica, 8 primary shards will be allocated
+and the 8 replica shards will be left unassigned. Only when you add a new node
+with the `zone` attribute set to `us-west-1` will the replica shards be
+allocated.
+
+If traffic between zones leaves a secured network, please be sure to
+{ref}`set up encryption <crate-reference:admin_ssl>` for CrateDB's
+intra-node transport protocol.
+:::
+
+By using all mentioned settings correctly and understanding the concepts behind
+them, you should be able to set up a functioning cluster that spans across
+multiple zones and regions. However, be aware of the drawbacks that a
+multi-region setup can have, specifically in regards to latency.
+
+[configuration]: https://cratedb.com/docs/crate/reference/en/latest/config/index.html
+[configuration guide]: https://cratedb.com/docs/reference/configuration.html
+[replica]: https://cratedb.com/docs/crate/reference/en/latest/general/ddl/replication.html
+[replicas]: https://cratedb.com/docs/crate/reference/en/latest/general/ddl/replication.html
+[shard]: https://cratedb.com/docs/crate/reference/en/latest/general/ddl/sharding.html
+[shards]: https://cratedb.com/docs/crate/reference/en/latest/general/ddl/sharding.html
