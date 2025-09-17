@@ -41,7 +41,7 @@ To integrate Rill with your CrateDB Cloud cluster:
 
 1. Install Rill by executing the shell install script:
 
-```sh
+```shell
 curl https://rill.sh | sh
 ```
 
