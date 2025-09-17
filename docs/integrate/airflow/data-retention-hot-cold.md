@@ -139,7 +139,7 @@ Assume a basic Astronomer/Airflow setup is in place, as described in the {ref}`f
 
 The CrateDB cluster will then automatically initiate the relocation of the affected partition to a node that fulfills the requirement (`cratedb03` in our case).
 
-The full implementation is available as [data_retention_reallocate_dag.py](https://github.com/crate/crate-airflow-tutorial/blob/main/dags/data_retention_reallocate_dag.py) on GitHub.
+The full implementation is available as [data_retention_reallocate_dag.py](https://github.com/crate/cratedb-airflow-tutorial/blob/main/dags/data_retention_reallocate_dag.py) on GitHub.
 
 To validate our implementation, we trigger the DAG once manually via the Airflow UI at `http://localhost:8081/`. Once executed, log messages of the `reallocate_partitions` task confirm the reallocation was triggered for the partition with the sample data set up earlier:
 

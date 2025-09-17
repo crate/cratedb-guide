@@ -42,7 +42,8 @@ INSERT INTO retention_policies (table_schema, table_name, partition_column, rete
 ```
 
 ## Implementation in Apache Airflow
-To automate the process of deleting expired data we use [Apache Airflow](https://airflow.apache.org/). Our workflow implementation does the following: _once a day, fetch policies from the database, and delete all data for which the retention period expired._
+
+Use [Apache Airflow](https://airflow.apache.org/) to automate deletions. Once a day, fetch policies from the database and delete data whose retention period expired.
 
 ### Retrieving Retention Policies
 The first step consists of a task that queries partitions affected by retention policies. We do this by joining `retention_policies` and `information_schema.table_partitions` tables and selecting values with expired retention periods. In CrateDB, `information_schema.table_partitions` [{ref}`documentation <crate-reference:is_table_partitions>`] contains information about all partitioned tables including the name of the table, schema, partition column, and the values of the partition.
@@ -79,7 +80,7 @@ The first step is to create the function `get_policies` that takes as a paramete
 ### Cross-Communication Between Tasks
 Before we continue into the implementation of the next task in Apache Airflow, we would like to give a brief overview of how the data is communicated between different tasks in a DAG. For this purpose, Airflow introduces the [XCom](https://airflow.apache.org/docs/apache-airflow/stable/concepts/xcoms.html) system. Simply speaking `XCom` can be seen as a small object with storage that allows tasks to `push` data into that storage that can be later used by a different task in the DAG.
 
-The key thing here is that it allows the exchange of a **small** amount of data between tasks. From Airflow 2.0, the return value of a Python method used as a task will be automatically stored in `XCom`. For our example, this means that the `get_policies` return value is available from the next task after the `get_policies` operator executes. To access the data from another task, a reference to the previous task can be passed to the next task when defining dependencies between tasks.
+XCom exchanges a small amount of data between tasks. Since Airflow 2.0, a Python task’s return value is stored in XCom. In our case, `get_policies` returns the partitions; the next task reads them via a reference to `get_policies` when defining dependencies.
 
 ### Applying Retention Policies
 Now that we retrieved the policies and Airflow automatically saved them via `XCom`, we need to create another task that will go through each element in the list and delete expired data.
@@ -147,7 +148,7 @@ data_retention_delete()
 
 On the `SQLExecuteQueryOperator`, a certain set of attributes are passed via `partial` instead of `expand`. These are static values that are the same for each `DELETE` statement, like the connection and task ID.
 
-The full DAG implementation of the data retention policy can be found in our [GitHub repository](https://github.com/crate/crate-airflow-tutorial/blob/main/dags/data_retention_delete_dag.py). To run the workflow, we rely on Astronomer infrastructure with the same setup as shown in the {ref}`getting started <airflow-getting-started>` section.
+The full DAG implementation of the data retention policy can be found in our [GitHub repository](https://github.com/crate/cratedb-airflow-tutorial/blob/main/dags/data_retention_delete_dag.py). To run the workflow, we rely on Astronomer infrastructure with the same setup as shown in the {ref}`getting started <airflow-getting-started>` section.
 
 ## Summary
 This tutorial gives a guide on how to delete data with expired retention policies. The first part shows how to design policies in CrateDB and then, how to use Apache Airflow to automate data deletion. The DAG implementation is fairly simple: the first task performs the extraction of relevant policies, while the second task makes sure that affected partitions are deleted. In the following tutorial, we will focus on another real-world example that can be automated with Apache Airflow and CrateDB.
