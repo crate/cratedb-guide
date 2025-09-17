@@ -13,7 +13,7 @@
 
 [Rsyslog] is a rocket-fast system for log processing.
 
-It offers high-performance, advanced security features, and a modular design.
+It offers high performance, advanced security features, and a modular design.
 Originally a regular syslogd, rsyslog has evolved into a highly versatile
 logging solution capable of ingesting data from numerous sources,
 transforming it, and outputting it to a wide variety of destinations.

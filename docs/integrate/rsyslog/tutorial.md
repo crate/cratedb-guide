@@ -26,7 +26,7 @@ First, start CrateDB. For production, use a dedicated cluster. For this demo, ru
 sudo docker run -d --name cratedb \
   -p 4200:4200 -p 5432:5432 \
   -e CRATE_HEAP_SIZE=1g \
-  crate:5.6.0 -Cdiscovery.type=single-node
+  crate:latest -Cdiscovery.type=single-node
 ```
 
 Next, create a table for logs. Open `http://localhost:4200/#!/console` and run:
@@ -65,9 +65,9 @@ We will use [rsyslog](https://github.com/rsyslog/rsyslog) to send the logs to Cr
 
 ```bash
 sudo add-apt-repository -y ppa:adiscon/v8-stable
-sudo apt-get update -y
+sudo apt update -y
 sudo debconf-set-selections <<< 'rsyslog-pgsql rsyslog-pgsql/dbconfig-install string false'
-sudo apt-get install -y rsyslog rsyslog-pgsql
+sudo apt install -y rsyslog rsyslog-pgsql
 ```
 
 Let's now configure it to use the account we created earlier:
