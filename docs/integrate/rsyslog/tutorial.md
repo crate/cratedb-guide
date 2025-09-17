@@ -29,7 +29,7 @@ sudo docker run -d --name cratedb \
   crate:latest -Cdiscovery.type=single-node
 ```
 
-Next, create a table for logs. Open `http://localhost:4200/#!/console` and run:
+Next, create a table for logs. Open `http://localhost:4200/#!/console` or invoke `crash` and run:
 
 ```sql
 CREATE TABLE doc.systemevents (
@@ -64,10 +64,11 @@ GRANT DML ON TABLE doc.systemevents TO rsyslog;
 We will use [rsyslog](https://github.com/rsyslog/rsyslog) to send the logs to CrateDB, for this setup we need `rsyslog` v8.2202 or higher and the `ompgsql` module:
 
 ```bash
+sudo DEBIAN_FRONTEND=noninteractive apt install --yes software-properties-common
 sudo add-apt-repository -y ppa:adiscon/v8-stable
-sudo apt update -y
+sudo apt update --yes
 sudo debconf-set-selections <<< 'rsyslog-pgsql rsyslog-pgsql/dbconfig-install string false'
-sudo apt install -y rsyslog rsyslog-pgsql
+sudo apt install --yes rsyslog rsyslog-pgsql
 ```
 
 Let's now configure it to use the account we created earlier:
@@ -86,7 +87,11 @@ If you are interested in more advanced setups involving queuing for additional r
 To generate logs, run a [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki) container and forward its logs to rsyslog:
 
 ```bash
-sudo docker run --name mediawiki -p 80:80 -d --log-driver syslog --log-opt syslog-address=unixgram:///dev/log mediawiki
+sudo docker run --name mediawiki \
+  -p 80:80 -d \
+  --log-driver syslog \
+  --log-opt syslog-address=unixgram:///dev/log \
+  mediawiki
 ```
 
 Open `http://localhost/` to see the MediaWiki setup page.
