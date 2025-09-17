@@ -3,25 +3,16 @@
 
 ## Introduction
 
-As with every other database, users want to run performance tests to get a feel for the performance of their workload.
+Like with any database, you’ll want to run performance tests to understand
+your workload’s behavior.
 
 CrateDB offers a couple of tools that can be used for specific use cases. For example, the [nodeIngestBench][] allows you to run high-performance ingest benchmarks against a CrateDB cluster or use the [TimeIt][] function within the cr8 toolkit to measure the runtime of a given SQL statement on a cluster.
 
-[nodeIngestBench]: https://github.com/proddata/nodeIngestBench
-[TimeIt]: https://github.com/mfussenegger/cr8#timeit
+Use Locust to run load tests with a customizable set of SQL statements. [Locust][] is a flexible, open‑source Python framework that can swarm the database with users and report RPS (requests per second) per query. This tutorial shows how to use Locust to load test CrateDB in your environment.
 
-We use Locust as the framework to run load tests with a customizable set of SQL statements. [Locust][] is a great, flexible, open-source (Python) framework that can swarm the database with users and get the RPS (request per second) for different queries. This small blog shows how to use Locust to load test CrateDB in your environment.
+For this tutorial, we use a 3‑node local Docker cluster (see this [tutorial][]).
 
-For this blog, I’m running a 3-node cluster created in a local docker environment as described in this [tutorial][].
-
-[tutorial]: https://cratedb.com/docs/crate/tutorials/en/latest/containers/docker.html
-[Locust]: https://locust.io
-
-First, we must set up the data model and load some data. I’m using [DBeaver][] to connect in this case, but this can be done by either the [CrateDB CLI tools][] or the Admin UI that comes with either the self- or [fully-managed][] CrateDB solution. 
-
-[DBeaver]: https://dbeaver.io
-[CrateDB CLI tools]: https://cratedb.com/docs/crate/clients-tools/en/latest/connect/cli.html#cli
-[fully-managed]: https://console.cratedb.cloud/
+First, set up the data model and load data. This example uses [DBeaver][], but you can also use the [CrateDB CLI tools][] or the Admin UI in self‑managed or [fully-managed][] CrateDB. 
 
 Create the following tables:
 
@@ -45,11 +36,11 @@ CREATE TABLE IF NOT EXISTS "weekly_aggr_weather_data"(
 );
 ```
 
-Create the user used further down the line.
+Create the user for the load test.
 ```sql
-CREATE USER locust with (password = 'load_test');
-GRANT ALL PRIVILEGES ON table weather_data to locust;
-GRANT ALL PRIVILEGES ON table weekly_aggr_weather_data to locust;
+CREATE USER locust WITH (password = 'load_test');
+GRANT ALL PRIVILEGES ON table weather_data TO locust;
+GRANT ALL PRIVILEGES ON table weekly_aggr_weather_data TO locust;
 ```
 
 Load some data into the `weather_data` table by using the following statement. 
@@ -60,7 +51,7 @@ FROM 'https://github.com/crate/cratedb-datasets/raw/main/cloud-tutorials/data_we
 WITH (format = 'csv', compression = 'gzip', empty_string_as_null = true);
 ```
 
-The `weather_data` table should now have 70k rows of data.
+The `weather_data` table now contains roughly 70k rows.
 
 ```text
 select count(*) from weather_data;
@@ -70,11 +61,11 @@ count(*)|
    70000|
 ```
 
-We leave the other table empty as that one will be populated as part of the load test. 
+Leave `weekly_aggr_weather_data` empty; the load test populates it.
 
 ## Install Locust
 
-In this case, I installed Locust on my Mac, but in an acceptance environment, you probably want to run this Locust on one or more “driver” machines. Especially when you want to push the database, you will need enough firepower on the driver side to push the database.
+Install Locust locally for a quick start. In staging or production‑like testing, run Locust on one or more driver machines to generate sufficient load.
 
 On Python (3.9 or later), install Locust as well as the CrateDB driver:
 ```bash
@@ -89,8 +80,10 @@ locust -V
 
 ## Run Locust
 
-Start with a simple test to ensure the connectivity is there and you can connect to the database. Copy the code below and write to a file named `locustfile.py`.
-Besides the pure Locust execution, it also contains a CrateDB-specific implementation, connecting to CrateDB using our Python driver, instead of a plain HTTP client.
+Start with a simple connectivity check.
+Copy the code below into a file named `locustfile.py`.
+It uses a CrateDB-specific client built on the Python driver rather than
+a generic HTTP client.
 
 ```python
 import time
@@ -119,13 +112,13 @@ class CrateDBClient:
         )
         self._request_event = request_event
 
-    def send_query(self, *args, **kwargs):
+    def send_query(self, sql, name, params=None):
         cursor = self._connection.cursor()
         start_time = time.perf_counter()
 
         request_meta = {
             "request_type": "CrateDB",
-            "name": args[1],
+            "name": name,
             "response_length": 0,
             "response": None,
             "context": {},
@@ -134,7 +127,7 @@ class CrateDBClient:
 
         response = None
         try:
-            cursor.execute(args[0])
+            cursor.execute(sql, params or ())
             response = cursor.fetchall()
         except Exception as e:
             request_meta["exception"] = e
@@ -142,7 +135,7 @@ class CrateDBClient:
         request_meta["response_time"] = (time.perf_counter() - start_time) * 1000
         request_meta["response"] = response
         # Approximate length, we don't have the original HTTP response body any more
-        request_meta["response_length"] = len(str(response))
+        request_meta["response_length"] = len(response) if response is not None else 0
 
         # This is what makes the request actually get logged in Locust
         self._request_event.fire(**request_meta)
@@ -178,7 +171,7 @@ Some explanation on some of the code above ☝️
 
 The class `CrateDBClient` implements how to connect to CrateDB and details on how to measure requests. `CrateDBUser` represents a Locust-generated user based on the `CrateDBClient`.
 
-In the actual Locust configuration, with the `wait_time = between (1, 5)`, you can control the number of queries and the randomization of the queries by using between. This will execute the different queries with a random interval between 1 and 5 sec. Another option that will give you more control over the amount of executed queries per second is using the `wait_time = constant_throughput(1.0)`, which will execute 1 of the queries per second for every user, or if you set it to `(2.0)`, will execute two queries every second.
+In Locust, `wait_time = between(1, 5)` randomizes task execution between 1 and 5 seconds. To control throughput more precisely, use `wait_time = constant_throughput(1.0)`, which runs one task per second per user (set to `2.0` for two tasks per second).
 
 For every query you want to include in your test, you will need to create a block like this:
 
@@ -205,11 +198,11 @@ Define the number of users and the spawn rate. As this is an initial test, we le
 
 ![Start new load test|272x500](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/d/d61218208d3f11d27d398e87c3954cb4327c9910.png){h=320px}
 
-Click “Start” to start the load test.
+Click "Start" to launch the load test.
 
 ![swarm-query0|690x133](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/5/56615b02ec7a792326acb1d5dc086f5d7636bbdb.png)
 
-As you can see, is 1 query being executed with an RPS of 1. The number of failures should be 0. If you stop the test and start a New test with ten users, you should get an RPS of 10.
+Locust executes one query at ~1 RPS (requests per second) with zero failures. If you stop and start a new test with 10 users, you’ll see ~10 RPS.
 
 ![swarm-10users-query0|690x133](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/2/2ae79d623b440d1735df0285fd0bf85996623bd2.png)
 
@@ -221,7 +214,7 @@ SELECT location, round(AVG(temperature)) AS avg_temp
 FROM weather_data
 WHERE location = 'CITY'
 GROUP BY location
-ORDER BY 2 DESC;
+ORDER BY avg_temp DESC;
 
 -- When was Max Temp 
 SELECT location,
@@ -264,7 +257,7 @@ SELECT a.timestamp,
 FROM weather_data a, minmax b
 WHERE a.location = b.location
   AND a.timestamp BETWEEN b.mintstamp AND b.maxtstamp
-ORDER BY 1;
+ORDER BY a.timestamp;
 
 -- Upsert the Aggr per week
 INSERT INTO weekly_aggr_weather_data (week, location, avgtemp, maxhumid, minwind, lastupdated)
@@ -317,13 +310,13 @@ class CrateDBClient:
         )
         self._request_event = request_event
 
-    def send_query(self, *args, **kwargs):
+    def send_query(self, sql, name, params=None):
         cursor = self._connection.cursor()
         start_time = time.perf_counter()
 
         request_meta = {
             "request_type": "CrateDB",
-            "name": args[1],
+            "name": name,
             "response_length": 0,
             "response": None,
             "context": {},
@@ -332,7 +325,7 @@ class CrateDBClient:
 
         response = None
         try:
-            cursor.execute(args[0])
+            cursor.execute(sql, params or ())
             response = cursor.fetchall()
         except Exception as e:
             request_meta["exception"] = e
@@ -340,7 +333,7 @@ class CrateDBClient:
         request_meta["response_time"] = (time.perf_counter() - start_time) * 1000
         request_meta["response"] = response
         # Approximate length, we don't have the original HTTP response body any more
-        request_meta["response_length"] = len(str(response))
+        request_meta["response_length"] = len(response) if response is not None else 0
 
         # This is what makes the request actually get logged in Locust
         self._request_event.fire(**request_meta)
@@ -368,15 +361,17 @@ class QuickstartUser(CrateDBUser):
 
     @task(5)
     def query01(self):
+        city = random.choice(self.cities)
         self.client.send_query(
-            f"""
+            """
                 SELECT location, ROUND(AVG(temperature)) AS avg_temp
                 FROM weather_data
-                WHERE location = '{random.choice(self.cities)}'
+                WHERE location = ?
                 GROUP BY location
-                ORDER BY 2 DESC
+                ORDER BY avg_temp DESC
             """,
             "Avg Temperature per City",
+            params=(city,),
         )
 
     @task(1)
@@ -417,14 +412,15 @@ class QuickstartUser(CrateDBUser):
 
     @task(5)
     def query04(self):
+        city = random.choice(self.cities)
         self.client.send_query(
-            f"""
+            """
                 WITH minmax AS (
                     SELECT location,
                            MIN(timestamp) AS mintstamp,
                            MAX(timestamp) AS maxtstamp
                     FROM weather_data
-                    WHERE location = '{random.choice(self.cities)}'
+                    WHERE location = ?
                     GROUP BY location
                 )
                 SELECT a.timestamp,
@@ -435,9 +431,10 @@ class QuickstartUser(CrateDBUser):
                 FROM weather_data a, minmax b
                 WHERE a.location = b.location
                 AND a.timestamp BETWEEN b.mintstamp AND b.maxtstamp
-                ORDER BY 1;
+                ORDER BY a.timestamp;
             """,
             "Bridge the Gaps per City",
+            params=(city,),
         )
 
     @task(1)
@@ -461,11 +458,9 @@ class QuickstartUser(CrateDBUser):
 
 ```
 
-Note that the weight (of query01 and query04) is five compared to the rest, which has a weight of 1, which means that the likelihood that two queries will execute is five times higher than the others. This shows how you can influence the weight of the different queries. 
+Queries 01 and 04 have weight 5; Locust schedules them ~5× as often as the others (weight 1). Use weights to shape your query mix.
 
-Let’s run this load test and see what happens. 
-
-I started the run with 100 users.
+Let’s run this load test and see what happens. The following run was started with 100 users.
 
 ![statistics-100users|690x206](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/a/aa31288ac528c7eaf3dec7657cc73bbac0bbf7b7.png)
 
@@ -482,3 +477,12 @@ If you want to download the locust data, you can do that on the last tab.
 ## Conclusion
 
 When you want to run a load test against a CrateDB Cluster with multiple queries, Locust is a great and flexible tool that lets you quickly define a load test and see what numbers regarding users and RPS are possible for that particular setup.
+
+
+[CrateDB CLI tools]: https://cratedb.com/docs/crate/clients-tools/en/latest/connect/cli.html#cli
+[DBeaver]: https://dbeaver.io
+[fully-managed]: https://console.cratedb.cloud/
+[Locust]: https://locust.io
+[nodeIngestBench]: https://github.com/proddata/nodeIngestBench
+[TimeIt]: https://github.com/mfussenegger/cr8#timeit
+[tutorial]: https://cratedb.com/docs/crate/tutorials/en/latest/containers/docker.html
