@@ -13,7 +13,7 @@
 
 [Locust] is an open source load testing tool.
 
-> Define user behaviour with Python code, and swarm your system with
+> Define user behavior with Python code, and swarm your system with
 > millions of simultaneous users. 
 
 :::{rubric} Learn
@@ -24,9 +24,8 @@
 :::{grid-item-card} Load testing CrateDB using Locust
 :link: locust-tutorial
 :link-type: ref
-Learn how to use Locust as the framework to run load tests with 
-a customizable set of SQL statements against CrateDB to measure
-its performance.
+Use Locust to run load tests with a customizable set of SQL statements
+against CrateDB and measure performance.
 :::
 
 ::::
