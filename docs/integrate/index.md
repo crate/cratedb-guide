@@ -15,67 +15,9 @@ Please also visit the [Overview of CrateDB integration tutorials].
 
 :::{toctree}
 :maxdepth: 1
+:glob:
 
-airflow/index
-amqp/index
-aws-lambda/index
-azure-functions/index
-cluvio/index
-datagrip/index
-dbeaver/index
-dbt/index
-debezium/index
-django/index
-dlt/index
-dms/index
-dynamodb/index
-estuary/index
-explo/index
-flink/index
-gradio/index
-grafana/index
-hop/index
-iceberg/index
-influxdb/index
-ingestr/index
-kafka/index
-kestra/index
-kinesis/index
-langchain/index
-llamaindex/index
-marquez/index
-meltano/index
-metabase/index
-mindsdb/index
-mlflow/index
-mongodb/index
-mqtt/index
-mysql/index
-n8n/index
-nifi/index
-node-red/index
-oracle/index
-plotly/index
-polars/index
-postgresql/index
-Power BI <powerbi/index>
-prometheus/index
-pycaret/index
-pyviz/index
-queryzen/index
-r/index
-rill/index
-risingwave/index
-rsyslog/index
-scikit-learn/index
-sql-server/index
-streamlit/index
-streamsets/index
-superset/index
-tableau/index
-telegraf/index
-tensorflow/index
-trino/index
+**/index
 :::
 
 

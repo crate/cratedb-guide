@@ -1,5 +1,5 @@
 (powerbi)=
-# Microsoft Power BI
+# Power BI
 
 ```{div} .float-right
 [![PowerBI logo](https://upload.wikimedia.org/wikipedia/en/thumb/2/20/Power_BI_logo.svg/192px-Power_BI_logo.svg.png?20200923233425){height=60px loading=lazy}][Power BI Desktop]
