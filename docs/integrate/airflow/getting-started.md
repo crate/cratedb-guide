@@ -87,7 +87,7 @@ The astronomer project consists of four Docker containers:
 - Triggerer (running an event loop for deferrable tasks)
 
 The PostgreSQL server listens on port 5432. The web server listens on port 8080
-and is available at <http://localhost:8080/> with `admin`/`admin`.
+and is available at `http://localhost:8080/` with `admin`/`admin`.
 
 If these ports are already in use, change them in `.astro/config.yaml`. For
 example, set the webserver to 8081 and PostgreSQL to 5435:

@@ -49,7 +49,7 @@ TABLES = [
 ```
 The DAG itself is specified as a Python file `astro-project/dags`. It loads the above-defined `TABLES` list and iterates over it. For each entry, a corresponding `SQLExecuteQueryOperator` is instantiated, which will perform the actual export during execution. If the `TABLES` list contains more than one element, Airflow will be able to process the corresponding exports in parallel, as there are no dependencies between them.
 
-The resulting DAG code is as follows (see the [GitHub repository](https://github.com/crate/crate-airflow-tutorial) for the complete project):
+The resulting DAG code is as follows (see the [GitHub repository](https://github.com/crate/cratedb-airflow-tutorial) for the complete project):
 ```python
 import os
 import pendulum
@@ -115,4 +115,4 @@ To find more details about running DAGs, go to `Browse/DAG runs` which opens a n
 After a successful DAG execution, the data will be stored on the remote filesystem.
 
 ## Summary
-This article covered a simple use case: periodic data export to a remote filesystem. In the following articles, we will cover more complex use cases composed of several tasks based on real-world scenarios. If you want to try our examples with Apache Airflow and Astronomer, you are free to check out the code on the public [GitHub repository](https://github.com/crate/crate-airflow-tutorial).
+This article covered a simple use case: periodic data export to a remote filesystem. In the following articles, we will cover more complex use cases composed of several tasks based on real-world scenarios. If you want to try our examples with Apache Airflow and Astronomer, you are free to check out the code on the public [GitHub repository](https://github.com/crate/cratedb-airflow-tutorial).

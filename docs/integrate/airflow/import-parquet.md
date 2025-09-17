@@ -14,7 +14,7 @@ For an alternative Parquet ingestion approach, see {ref}`arrow-import-parquet`.
 
 Before you start, have Airflow and CrateDB running. The SQL shown below also
 resides in the setup folder of the
-[GitHub repository](https://github.com/crate/crate-airflow-tutorial).
+[GitHub repository](https://github.com/crate/cratedb-airflow-tutorial).
 
 Create two tables in CrateDB: a temporary staging table
 (`nyc_taxi.load_trips_staging`) and the final table (`nyc_taxi.trips`).
@@ -78,8 +78,8 @@ CREATE TABLE IF NOT EXISTS "nyc_taxi"."trips" (
 )
 PARTITIONED BY ("pickup_year");
 ```
-To better understand how Airflow works and its applications, you can check other
-tutorials related to that topic {ref}`here <airflow-tutorials>`.
+To explore more Airflow use cases, see the related tutorials
+{ref}`here <airflow-tutorials>`.
 
 With the tools set up and tables created, proceed to the DAG.
 
@@ -93,17 +93,17 @@ The Airflow DAG used in this tutorial contains 7 tasks:
    https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-03.parquet
    ```
    The file path above corresponds to the data from March 2022. So, to retrieve a specific file, the task gets the date and formats it to compose the name of the specific file. Important to mention that the data is released with 2 months of delay, so it had to be taken into consideration.
-* **process_parquet:** afterward, use the name to download the file to local storage and convert it from Parquet to CSV using `parquet-tools` (Apache Parquet CLI; see [Apache Arrow]).
+* **process_parquet:** Use the formatted name to download the file to local storage and convert it from Parquet to CSV with `parquet-tools` (Apache Parquet CLI; see [Apache Arrow]).
 
   * `curl -o "<LOCAL-PARQUET-FILE-PATH>" "<REMOTE-PARQUET-FILE>"`
   * `parquet-tools csv <LOCAL-PARQUET-FILE-PATH> > <CSV-FILE-PATH>`
 
   Both commands run within one `BashOperator`.
-* **copy_csv_to_s3:** Once the newly transformed file is available, it gets uploaded to an S3 Bucket to then, be used in the {ref}`crate-reference:sql-copy-from` SQL statement.
-* **copy_csv_staging:** copy the CSV file stored in S3 to the staging table described previously.
-* **copy_staging_to_trips:** finally, copy the data from the staging table to the trips table, casting the columns that are not in the right type yet.
-* **delete_staging:** after it is all processed, clean up the staging table by deleting all rows, and preparing for the next file.
-* **delete_local_parquet_csv:** delete the files (Parquet and CSV) from the storage.
+* **copy_csv_to_s3:** Upload the transformed file to an S3 bucket and reference it in the {ref}`crate-reference:sql-copy-from` statement.
+* **copy_csv_staging:** Copy the CSV file stored in S3 to the staging table described previously.
+* **copy_staging_to_trips:** Copy data from the staging table to the trips table, casting columns to their final types.
+* **delete_staging:** After processing, delete all rows from the staging table to prepare for the next file.
+* **delete_local_parquet_csv:** Delete the local Parquet and CSV files.
 
 The DAG was configured based on the characteristics of the data in use. In this case, there are two crucial pieces of information about the data provider:
 
@@ -113,10 +113,10 @@ The DAG was configured based on the characteristics of the data in use. In this 
 The NYC TLC publishes trip data monthly with a two‑month delay. Set the DAG to
 run monthly with a start date of March 2009. The first run (logical date March
 2009) downloads the file for January 2009 (logical date minus two months),
-2010) which is the first available dataset.
+which is the first available dataset.
 
 You may find the full code for the DAG described above available in our
-[GitHub repository](https://github.com/crate/crate-airflow-tutorial/blob/main/dags/nyc_taxi_dag.py).
+[GitHub repository](https://github.com/crate/cratedb-airflow-tutorial/blob/main/dags/nyc_taxi_dag.py).
 
 ## Wrap up
 
@@ -124,8 +124,8 @@ The workflow represented in this tutorial is a simple way to import Parquet file
 to CrateDB by transforming them into a CSV file. As previously mentioned, there
 are other approaches out there, we encourage you to try them out.
 
-If you want to continue to explore how CrateDB can be used with Airflow, you can
-check other tutorials related to that topic {ref}`here <airflow-tutorials>`.
+To continue exploring CrateDB with Airflow, browse the related tutorials
+{ref}`here <airflow-tutorials>`.
 
 
 [Apache Arrow]: https://github.com/apache/arrow
