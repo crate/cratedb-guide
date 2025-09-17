@@ -26,7 +26,7 @@ Airflow has a modular architecture and uses a message queue to orchestrate an
 arbitrary number of workers. Pipelines are defined in Python, allowing for
 dynamic pipeline generation and on-demand, code-driven pipeline invocation.
 
-Airflow parameterizes pipelines with the Jinja templating engine.
+Use Jinja templates to parameterize Airflow pipelines.
 To extend the system, you can define your own operators and extend libraries
 to fit the level of abstraction that suits your environment.
 :::
@@ -38,7 +38,7 @@ to fit the level of abstraction that suits your environment.
 [![Astronomer logo](https://logowik.com/content/uploads/images/astronomer2824.jpg){w=180px}](https://www.astronomer.io/)
 ```
 
-[Astro][Astronomer] is a managed Airflow service.
+Astro is a managed Airflow service by [Astronomer].
 
 - Astro runs on the cloud of your choice. Astro manages Airflow and gives you all the
   features you need to focus on what really matters – your data. All while connecting
@@ -46,7 +46,7 @@ to fit the level of abstraction that suits your environment.
 - Create Airflow environments quickly.
 - Protect production DAGs with easy Airflow upgrades and custom high-availability configs.
 - Get visibility into what’s running with analytics views and easy interfaces for logs
-  and alerts. Across environments.
+  and alerts across environments.
 - Adopt Airflow best practices with support and timely upgrades.
 
 ```{div} .clearfix
