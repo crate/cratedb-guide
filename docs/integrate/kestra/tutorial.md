@@ -1,7 +1,11 @@
 (kestra-tutorial)=
 # Setting up data pipelines with CrateDB and Kestra
 
-[Kestra.io](http://kestra.io/) is an open-source workflow automation and orchestration tool that enables users to automate and manage complex workflows in a streamlined and efficient manner. The tool provides a wide range of features and integrations, including Postgres, Git, Docker, Kubernetes, and more, making automating processes across different platforms and environments easy. Kestra comes with a user-friendly web-based interface, allowing users to create, modify, and manage workflows ***without the need for any coding skills***.
+[Kestra.io](https://kestra.io/) is an open‑source workflow automation and
+orchestration tool that helps you automate and manage complex workflows
+efficiently. It integrates with Postgres, Git, Docker, Kubernetes, and
+more. Kestra’s web UI lets you create, modify, and manage workflows
+without writing code.
 
 In this tutorial, we will show you how CrateDB integrates with Kestra using the PostgreSQL plugin to create an efficient and scalable data pipeline.
 
@@ -9,16 +13,24 @@ In this tutorial, we will show you how CrateDB integrates with Kestra using the 
 
 Getting started with Kestra using Docker is a straightforward process. First, you'll need to install Docker on your machine, if you haven't already. Next, you can pull the Kestra official Docker image from the Docker registry and run it using the following command:
 
-`docker run -d -p 8080:8080 kestra/kestra:latest `
+```bash
+docker run -d -p 8080:8080 kestra/kestra:latest
+```
 
 This will start the Kestra server on your local machine, which you can access by navigating to [http://localhost:8080](http://localhost:8080/) in your web browser. From there, you can start creating workflows and automating your processes using Kestra's web interface.
 
-![57c8376e-02ff-4e10-89e7-9fc358153409|690x290](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/80c3eb1bbc2de07a343bc56b1a5db24cf0569df7.png)
+![Kestra UI home screen](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/80c3eb1bbc2de07a343bc56b1a5db24cf0569df7.png){width=690px height=290px}
 
 
 ## Deploy a CrateDB Cloud Cluster
 
-To deploy a new cluster on CrateDB Cloud, you need to sign up for a [CrateDB Cloud account](https://console.cratedb.cloud/). When creating a new organization, you are entitled to a [$200 free credit](https://crate.io/lp-free-trial) to spend on cluster deployment, scaling, and other operations as you see fit. Once you've signed up, you can create a new cluster by selecting the *Create Cluster* button and choosing your preferred cloud provider and region. You can then configure your cluster by selecting the number of nodes and the amount of storage you need. In this example, we used the 1-node cluster with 4GiB of storage which is enough for development environments and low-traffic applications.
+To deploy a new cluster on CrateDB Cloud, sign up for a
+[CrateDB Cloud account](https://console.cratedb.cloud/).
+New organizations receive a free trial credit (as of September 2025) for
+cluster deployment, scaling, and other operations. After signing up,
+create a cluster by selecting *Create Cluster* and choosing your preferred
+cloud provider and region. In this example, we use a 1‑node cluster with
+4 GiB of storage, sufficient for development and low‑traffic applications.
 
 ![49d00261-bd03-4935-bdaf-15dee6f24a4e|558x500](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/5c4c24dde906df6004392356138637444844f57d.png)
 
@@ -66,7 +78,7 @@ To query a PostgreSQL-compatible database, such as CrateDB, Kestra offers `io.ke
 
 The following snippet shows the declaration of our workflow and the specification of the first task that selects data from the `nyc_taxi` table and runs the query on the first CrateDB cluster:
 
-```
+```yaml
 id: cratedb-kestra
 namespace: io.kestra.crate
 tasks:
@@ -80,7 +92,7 @@ tasks:
 ```
 
 
-In this task, we set the `store` parameter is set to `true` to allow storing the results that will be used as input in the following task.
+In this task, we set the `store` parameter to `true` to store results for the next task.
 
 ### Insert data into the second table
 
@@ -88,7 +100,7 @@ In Kestra, a batch task is a type of task that allows you to fetch rows from a t
 
 The following snippet shows the Batch task declaration used for inserting data into the table on the second CrateDB cluster:
 
-```
+```yaml
 - id: update
   type: io.kestra.plugin.jdbc.postgresql.Batch
   from: "{{ outputs.query.uri }}"
@@ -105,7 +117,7 @@ In our example, the `output.query.uri` refers to the URI of the resource that wa
 
 Finally, once the data are imported to the second table, let’s create a new task that selects data from that table:
 
-```
+```yaml
 - id: select
   type: io.kestra.plugin.jdbc.postgresql.Query
   url: jdbc:postgresql://kestra-testing-cluster2.aks1.eastus2.azure.cratedb.net:5432/
@@ -133,7 +145,7 @@ Finally, let’s check the data in the second cluster. As illustrated below, we 
 
 ## Wrap up
 
-If you need to automatically manage CrateDB data pipelines, [kestra.io](http://kestra.io/) can be a good choice. It allows you to specify workflows without requiring coding skills. Furthermore, it supports integrations with various systems including Postgres (and CrateDB), Kubernetes, Docker, Git, and many others.
+If you need to automatically manage CrateDB data pipelines, [kestra.io](https://kestra.io/) is a good choice. It lets you define workflows without writing code and integrates with Postgres (and CrateDB), Kubernetes, Docker, Git, and more.
 
 In this tutorial, we have also shown how to deploy your CrateDB cluster in a few clicks. If you want to try it out and enjoy all of the CrateDB features, sign up for the [CrateDB Cloud](https://console.cratedb.cloud/?utm_campaign=2022-Q2-WS-Free-Trial&utm_source=website&utm_medium=free-trial-overhaul&hsCtaTracking=a7e2a487-cfb9-4a50-8e75-3029b9e176fb%7C7863166c-05e4-4334-9dd5-58dfdd6e78c1) trial.
 
