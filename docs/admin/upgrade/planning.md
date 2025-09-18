@@ -79,5 +79,5 @@ below:
 
 Choose the upgrade strategy below that works best for your scenario.
 
-- {ref}`rolling_upgrade`
-- {ref}`full_restart_upgrade`
+- {ref}`rolling-upgrade`
+- {ref}`full-restart-upgrade`

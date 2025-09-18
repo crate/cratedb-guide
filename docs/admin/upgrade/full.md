@@ -8,18 +8,18 @@
 ## Introduction
 
 The preferred way to upgrade a running CrateDB cluster is via the
-{ref}`rolling_upgrade` method. But this is not always an option (for example,
+{ref}`rolling-upgrade` method. But this is not always an option (for example,
 when you are upgrading from one feature version to the next and minor versions
 difference is greater than 1).
 
-When a {ref}`rolling_upgrade` is not possible, a full restart upgrade must be
+When a {ref}`rolling-upgrade` is not possible, a full restart upgrade must be
 done if you want to update CrateDB.
 
 :::{CAUTION}
 These instructions work for most ways of {ref}`installing <install>` and
 running CrateDB.
 However, if you are using Docker, take note that `docker service update`
-performs a {ref}`rolling_upgrade`.
+performs a {ref}`rolling-upgrade`.
 
 To do a full restart upgrade with Docker, you must remove the CrateDB
 service and then recreate it.

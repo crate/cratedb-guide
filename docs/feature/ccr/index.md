@@ -92,7 +92,7 @@ Learn how to set up logical replication between CrateDB clusters.
 :padding: 0
 
 :::{grid-item-card}
-:link: guide:logical_replication_setup
+:link: logical-replication-setup
 :link-type: ref
 :link-alt: Logical replication setup between CrateDB clusters
 :padding: 3
