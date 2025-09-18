@@ -22,6 +22,10 @@ These applications can answer questions about specific sources of information,
 for example using techniques like Retrieval Augmented Generation (RAG).
 RAG is a technique for augmenting LLM knowledge with additional data,
 often private or real-time.
+
+CrateDB supports high-dimensional vectors with `FLOAT_VECTOR`, e.g. to
+store and query word embeddings using [HNSW]-based nearest neighbor search
+through SQL.
 :::
 
 ::::{grid} 1 2 2 2
