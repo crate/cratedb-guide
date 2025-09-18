@@ -230,7 +230,7 @@ It is also not in the same shape as the other pages in this section.
 
 [Analyze Device Readings with Metadata Integration]: project:#timeseries-with-metadata
 [bulk operations interface]: inv:crate-reference#http-bulk-ops
-[bulk operations for INSERTs]: project:#inserts_bulk_operations
+[bulk operations for INSERTs]: project:#inserts-bulk-operations
 [HyperLogLog]: https://en.wikipedia.org/wiki/HyperLogLog
 [HyperLogLog++]: https://research.google/pubs/hyperloglog-in-practice-algorithmic-engineering-of-a-state-of-the-art-cardinality-estimation-algorithm/
 [hyperloglog_distinct]: inv:crate-reference#aggregation-hyperloglog-distinct
@@ -239,5 +239,5 @@ It is also not in the same shape as the other pages in this section.
 [Introducing: HyperLogLog]: https://cratedb.com/blog/feature-focus-making-things-hyper-fast-fast
 [Optimizing storage for historic time-series data]: https://community.cratedb.com/t/optimizing-storage-for-historic-time-series-data/762
 [Time Series: Analyze Weather Data]: project:#timeseries-analysis-weather
-[UNNEST]: project:#inserts_unnest
+[UNNEST]: project:#inserts-unnest
 [Window functions in CrateDB]: https://community.cratedb.com/t/window-functions-in-cratedb/1398

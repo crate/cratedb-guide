@@ -18,7 +18,7 @@ response before sending another insert.
 
 :::{NOTE}
 Before trying to parallelize your queries, you should evaluate whether
-{ref}`inserts_bulk_operations` are a good fit. In many cases, you will see
+{ref}`inserts-bulk-operations` are a good fit. In many cases, you will see
 even better performance from bulk opperations.
 :::
 
@@ -81,7 +81,7 @@ You can provide your own [Executor] using any object with the appropriate
 ## Testing
 
 Follow the basic {ref}`inserts performance testing
-<testing_inserts_performance>` procedure.
+<testing-inserts-performance>` procedure.
 
 To test parallel inserts, you should:
 
