@@ -2,7 +2,6 @@
 
 # How to expand an existing CrateDB cluster
 
-
 ## Introduction
 
 A significant feature in CrateDB is that it can scale horizontally, which means that instead of adding more RAM, CPU, and disk resources to our existing nodes we can add more nodes to our CrateDB cluster.

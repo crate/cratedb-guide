@@ -180,8 +180,7 @@ Alternatively, you can configure this at startup with a command-line option.
 For example:
 
 ```console
-sh$ bin/crate \
-        -Cdiscovery.seed_hosts=node-01.example.com,10.0.1.102,10.0.1.103
+sh$ bin/crate -Cdiscovery.seed_hosts=node-01.example.com,10.0.1.102,10.0.1.103
 ```
 
 :::{NOTE}
@@ -281,8 +280,7 @@ Alternatively, you can configure this at startup with a command-line option.
 For example:
 
 ```console
-sh$ bin/crate \
-        -Ccluster.initial_master_nodes=node-01.example.com,10.0.1.102,10.0.1.10
+sh$ bin/crate -Ccluster.initial_master_nodes=node-01.example.com,10.0.1.102,10.0.1.10
 ```
 
 :::{WARNING}
@@ -363,8 +361,7 @@ Alternatively, you can configure this setting at startup with a command-line
 option:
 
 ```console
-sh$ bin/crate \
-        -Ccluster.name=my_cluster
+sh$ bin/crate -Ccluster.name=my_cluster
 ```
 
 (multi-node-node-name)=
@@ -390,8 +387,7 @@ Alternatively, you can configure this setting at startup with a command-line
 option:
 
 ```console
-sh$ bin/crate \
-        -Cnode.name=node-01
+sh$ bin/crate -Cnode.name=node-01
 ```
 
 (master-eligible-nodes)=
@@ -435,6 +431,7 @@ transport.publish_port: 4321
 :::{SEEALSO}
 {ref}`More information about port settings <crate-reference:conf_ports>`
 :::
+
 
 [127.0.0.1:4200]: http://127.0.0.1:4200/
 [127.0.0.1:4201]: http://127.0.0.1:4201/

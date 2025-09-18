@@ -68,8 +68,7 @@ Alternatively, you can configure this at startup with a command-line option.
 For example:
 
 ```console
-sh$ bin/crate \
-        -Cnode.attr.zone=us-east-1
+sh$ bin/crate -Cnode.attr.zone=us-east-1
 ```
 
 :::{NOTE}
