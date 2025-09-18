@@ -299,7 +299,7 @@ connect/index
 feature/index
 Ingestion <ingest/index>
 topic/index
-solution/index
+Solutions <solution/index>
 integrate/index
 admin/index
 performance/index
