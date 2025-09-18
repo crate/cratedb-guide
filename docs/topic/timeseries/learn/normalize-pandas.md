@@ -204,23 +204,19 @@ Jupyter notebook should eventually display a table like this:
 
 Here are a few ways to improve this result:
 
-```{eval-rst}
-.. rst-class:: open
+* The current query returns all data. At first, this is probably okay for
+  visualization purposes. However, as you generate more data, you will probably
+  find it more useful to limit the results to a specific time window.
 
- * The current query returns all data. At first, this is probably okay for
-   visualization purposes. However, as you generate more data, you will probably
-   find it more useful to limit the results to a specific time window.
+* The ``timestamp`` column isn't human-readable. It would be easier to
+  understand the results if this value was as a human-readable time.
 
- * The ``timestamp`` column isn't human-readable. It would be easier to
-   understand the results if this value was as a human-readable time.
-
- * The ``position`` column is a :ref:`crate-reference:data-types-geo`. This data
-   type isn't easy to plot on a traditional graph. However, you can use the
-   :ref:`distance() <crate-reference:scalar-distance>` function to calculate the
-   distance between two ``geo_point`` values. If you compare ``position`` to a
-   fixed place, you can plot distance over time for a graph showing you how far
-   away the ISS is from some location of interest.
-```
+* The ``position`` column is a :ref:`crate-reference:data-types-geo`. This data
+  type isn't easy to plot on a traditional graph. However, you can use the
+  :ref:`distance() <crate-reference:scalar-distance>` function to calculate the
+  distance between two ``geo_point`` values. If you compare ``position`` to a
+  fixed place, you can plot distance over time for a graph showing you how far
+  away the ISS is from some location of interest.
 
 Here's an improvement that wraps the code in a function named `raw_data()` so
 that you can execute this query multiple times:
@@ -244,25 +240,21 @@ def raw_data():
 
 Specifically:
 
-```{eval-rst}
-.. rst-class:: open
+* You can define the `location`_ of Berlin and interpolate that into the query
+  to calculate the `DISTANCE()` of the ISS ground point in kilometers.
 
- * You can define the `location`_ of Berlin and interpolate that into the query
-   to calculate the ``DISTANCE()`` of the ISS ground point in kilometers.
+* You can use {ref}`CURRENT_TIMESTAMP <crate-reference:scalar-current_timestamp>` with an
+  interval {ref}`value expression <crate-reference:sql-value-expressions>`
+  (``INTERVAL '1' DAY``) to calculate a timestamp that is 24 hours in the
+  past. You can then use a {ref}`WHERE clause <crate-reference:sql-select-where>`
+  to filter out records with a ``timestamp`` older than one day.
 
- * You can use :ref:`CURRENT_TIMESTAMP <crate-reference:scalar-current_timestamp>` with an
-   interval :ref:`value expression <crate-reference:sql-value-expressions>`
-   (``INTERVAL '1' DAY``) to calculate a timestamp that is 24 hours in the
-   past. You can then use a :ref:`WHERE clause <crate-reference:sql-select-where>`
-   to filter out records with a ``timestamp`` older than one day.
+  An {ref}`ORDER BY clause <crate-reference:sql-select-order-by>` sorts the results
+  by ``timestamp``, oldest first.
 
-   An :ref:`ORDER BY clause <crate-reference:sql-select-order-by>` sorts the results
-   by ``timestamp``, oldest first.
-
- * You can use the ``parse_dates`` argument to specify which columns
-   ``read_sql()`` should parse as datetimes. Here, a dictionary with the value
-   of ``ms`` is used to specify that ``time`` is a millisecond integer.
-```
+* You can use the ``parse_dates`` argument to specify which columns
+  ``read_sql()`` should parse as datetimes. Here, a dictionary with the value
+  of ``ms`` is used to specify that ``time`` is a millisecond integer.
 
 Execute the `raw_data()` function:
 
@@ -506,20 +498,16 @@ itself well to accurate visualization.
 
 You can perform null interpolation like so:
 
-```{eval-rst}
-.. rst-class:: open
+1. Generate continuous null data for the same period as the right-hand table
+   of a join. You should sample this data at the frequency most appropriate
+   for your visualization.
 
- 1. Generate continuous null data for the same period as the right-hand table
-    of a join. You should sample this data at the frequency most appropriate
-    for your visualization.
+2. Select the data for the period you are interested in as the left-hand table
+   of a join. You should resample this data at the same frequency as your null
+   data.
 
- 2. Select the data for the period you are interested in as the left-hand table
-    of a join. You should resample this data at the same frequency as your null
-    data.
-
- 3. Join both tables with a left :ref:`inner join <crate-reference:inner-joins>` on
-    ``time`` to pull across any non-null values from the right-hand table.
-```
+3. Join both tables with a left {ref}`inner join <crate-reference:inner-joins>` on
+   ``time`` to pull across any non-null values from the right-hand table.
 
 The result is a row set that has one row per interval for a fixed period with
 null values filling in for missing data.
@@ -697,25 +685,21 @@ def data_24h():
 
 In the code above:
 
-```{eval-rst}
-.. rst-class:: open
-
- * The :ref:`generate_series() <crate-reference:table-functions-generate-series>`
-   table function creates a row set called ``time`` that has one row per minute
+ * The {ref}`generate_series() <crate-reference:table-functions-generate-series>`
+   table function creates a row set called `time` that has one row per minute
    for the past 24 hours.
 
- * The ``iss`` table can be joined to the ``time`` series by truncating the
-   ``iss.timestamp`` column to the minute for the :ref:`join condition
+ * The `iss` table can be joined to the `time` series by truncating the
+   `iss.timestamp` column to the minute for the {ref}`join condition
    <crate-reference:sql_joins>`.
 
- * Like before, a :ref:`GROUP BY <crate-reference:sql_dql_group_by>` clause can be
+ * Like before, a {ref}`GROUP BY <crate-reference:sql_dql_group_by>` clause can be
    used to collapse multiple rows per minute into a single row per minute.
 
-   Similarly, the :ref:`crate-reference:aggregation-avg` function can be used to
-   compute an aggregate ``DISTANCE`` value across multiple rows. There is no
-   need to check for null values here because the ``AVG()`` function discards
+   Similarly, the {ref}`crate-reference:aggregation-avg` function can be used to
+   compute an aggregate `DISTANCE` value across multiple rows. There is no
+   need to check for null values here because the `AVG()` function discards
    null values.
-```
 
 Test the function:
 
@@ -760,14 +744,11 @@ resamples raw data to regular intervals with the interpolation of missing values
 
 This visualization resolves both original issues:
 
-```{eval-rst}
-.. rst-class:: open
-```
-
 1. *You want to plot a single value per minute, but your data is spaced in
    10-second intervals. You will need to resample the data.*
 2. *You want to plot every minute for the past 24 hours, but you are missing
    data for some intervals. You will need to fill in the missing values.*
+
 
 [data binning]: https://en.wikipedia.org/wiki/Data_binning
 [geojson]: https://github.com/jazzband/geojson

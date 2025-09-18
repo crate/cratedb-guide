@@ -154,20 +154,16 @@ func getISSPosition() (string, error) {
 
 Above, the `getISSPosition()` function:
 
-```{eval-rst}
-.. rst-class:: open
+* Uses the `net/http`_ package from the Go standard library to issue an
+  HTTP GET request to the API endpoint
 
- * Uses the `net/http`_ package from the Go standard library to issue an
-   HTTP GET request to the API endpoint
+* Implements some basic error handling and checks to see whether the
+  response code is in the 200 range
 
- * Implements some basic error handling and checks to see whether the
-   response code is in the 200 range
+* Reads the response body and unmarshals the JSON into the defined
+  struct ``issInfo``
 
- * Reads the response body and unmarshals the JSON into the defined
-   struct ``issInfo``
-
- * Formats the return string and returns it
-```
+* Formats the return string and returns it
 
 Then in the main function, call the `getISSPosition()` function and print
 out the result:
@@ -354,18 +350,14 @@ func main() {
 
 Above, the `main()` function:
 
-```{eval-rst}
-.. rst-class:: open
+* Retrieves the latest ISS position through the ``getISSPosition()`` function
 
- * Retrieves the latest ISS position through the ``getISSPosition()`` function
+* Inserts the ISS position into CrateDB through the ``insertData()`` function
 
- * Inserts the ISS position into CrateDB through the ``insertData()`` function
+* Implements some basic error handling, in case either the API query or the
+  CrateDB operation fails
 
- * Implements some basic error handling, in case either the API query or the
-   CrateDB operation fails
-
- * Sleeps for 10 seconds after each sample using the `time`_ package
-```
+* Sleeps for 10 seconds after each sample using the `time`_ package
 
 Accordingly, the time series data will have a *resolution* of 10 seconds. If
 you wish to change this resolution, you may want to configure your script
@@ -402,6 +394,7 @@ will open up a map view showing the current position of the ISS:
 The ISS passes over large bodies of water. If the map looks empty, try
 zooming out.
 :::
+
 
 [compilation]: https://www.geeksforgeeks.org/difference-between-compiled-and-interpreted-language/
 [context]: https://golang.org/pkg/context/
