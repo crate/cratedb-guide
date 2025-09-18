@@ -34,7 +34,7 @@ To achieve these requirements, make use of {ref}`shard allocation awareness
 <crate-reference:conf_routing>`, which
 allows you to configure [shard] and replica allocation. If you are new to setting
 up a multi-node CrateDB cluster, you should read our {ref}`multi-node setup
-<multi_node_setup>` guide first.
+<multi-node-setup>` guide first.
 
 (tag-assignments)=
 

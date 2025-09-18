@@ -29,6 +29,5 @@ Also, let us outline those information entrypoints as suggestions to explore nex
 .. CAUTION::
 
     Please make sure to read the :ref:`upgrade-planning`, and the guidelines about :ref:`rolling
-    upgrades <rolling_upgrade>` and :ref:`full restart upgrades <full_restart_upgrade>`,
+    upgrades <rolling-upgrade>` and :ref:`full restart upgrades <full-restart-upgrade>`,
     before upgrading a running cluster.
-

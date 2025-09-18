@@ -10,7 +10,7 @@ document outlines the basics you need to consider when going into production.
 ## Configure bootstrapping
 
 The process of forming a cluster is known as *bootstrapping*. Consult the
-how-to guide on {ref}`CrateDB multi-node setups <multi_node_setup>` for an
+how-to guide on {ref}`CrateDB multi-node setups <multi-node-setup>` for an
 overview of the two different ways to bootstrap a cluster.
 
 If you have been using CrateDB for development on your local machine, there is
@@ -75,7 +75,7 @@ listens on port 4200-4299 for HTTP traffic and port 4300-4399 for node-to-node
 communication. Because CrateDB uses a port range, if one port is busy, it will
 automatically try the next port.
 
-When using {ref}`multiple hosts <multi_node_setup>`, nodes must bind to a
+When using {ref}`multiple hosts <multi-node-setup>`, nodes must bind to a
 non-loopback address.
 
 :::{CAUTION}
