@@ -191,5 +191,5 @@ Once this is done, the machines can safely be shutdown.
 If desired, new nodes can be deployed reusing the same names that were used for the temporary nodes before.
 
 
-[CrateDB 5.9.0]: https://cratedb.com/docs/crate/reference/en/latest/appendices/release-notes/5.9.0.html
+[CrateDB 5.9.0]: inv:crate-reference#version_5.9.0
 [shard allocation filtering]: inv:crate-reference#ddl_shard_allocation

@@ -116,9 +116,9 @@ gigabytes with the value `30500m`.
 
 [bootstrap.memory_lock]: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#memory
 [compressed oops]: https://wiki.openjdk.java.net/display/HotSpot/CompressedOops
-[configuration]: https://cratedb.com/docs/crate/reference/en/latest/config/index.html
-[configurations]: https://cratedb.com/docs/crate/reference/en/latest/config/index.html
-[crate_heap_size]: https://cratedb.com/docs/crate/reference/en/latest/config/environment.html#conf-env-heap-size
+[configuration]: inv:crate-reference#config
+[configurations]: inv:crate-reference#config
+[crate_heap_size]: inv:crate-reference#conf-env-heap-size
 [g1gc]: https://docs.oracle.com/javase/10/gctuning/garbage-first-garbage-collector.htm
 [garbage collection]: https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)
 [hotspot java virtual machine]: https://www.oracle.com/java/technologies/javase/javase-core-technologies-apis.html

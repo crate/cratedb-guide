@@ -84,7 +84,7 @@ exceeded `indices.breaker.total.limit`.
 [circuitbreakers mxbean]: https://cratedb.com/docs/crate/reference/en/master/admin/monitoring.html#circuitbreakers-mxbean
 [cloud monitoring]: https://community.cratedb.com/t/monitoring-cratedb-cloud-clusters/1397
 [cluster settings]: https://cratedb.com/docs/crate/reference/en/master/config/cluster.html#query-circuit-breaker
-[jmx monitoring]: https://cratedb.com/docs/crate/reference/en/master/admin/monitoring.html#jmx-monitoring
+[jmx monitoring]: inv:crate-reference#jmx_monitoring
 [on-prem monitoring]: https://community.cratedb.com/t/monitoring-a-self-managed-cratedb-cluster-with-prometheus-and-grafana/1236
-[table permissions]: https://cratedb.com/docs/crate/reference/en/master/admin/system-information.html#jobs-table-permissions
+[table permissions]: inv:crate-reference#jobs_table_permissions
 [the circuit breaker mechanism in cratedb]: https://zignar.net/2021/06/17/the-circuit-breaker-mechanism-in-cratedb/

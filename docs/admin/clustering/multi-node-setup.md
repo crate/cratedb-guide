@@ -440,8 +440,8 @@ transport.publish_port: 4321
 [127.0.0.1:4201]: http://127.0.0.1:4201/
 [amazon ec2 api]: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Welcome.html
 [azure virtual machine api]: https://docs.microsoft.com/en-us/rest/api/compute/virtualmachines
-[bin/crate]: https://cratedb.com/docs/crate/reference/en/latest/cli-tools.html#crate
-[cluster browser]: https://cratedb.com/docs/crate/admin-ui/en/latest/cluster.html
+[bin/crate]: inv:crate-reference#cli-crate
+[cluster browser]: inv:crate-admin-ui#cluster-browser
 [cluster.initial_master_nodes]: https://cratedb.com/docs/crate/reference/en/latest/config/cluster.html#cluster-initial-master-nodes
 [cluster.name]: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#cluster-name
 [configuration]: https://cratedb.com/docs/crate/reference/en/latest/config/index.html
