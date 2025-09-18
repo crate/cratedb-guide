@@ -1,9 +1,8 @@
-.. _sharding_guide:
-.. _sharding-performance:
+(sharding-guide)=
 
-==========================
-Sharding Performance Guide
-==========================
+(sharding-performance)=
+
+# Sharding Performance Guide
 
 This document is a sharding best practice guide for CrateDB.
 
@@ -14,26 +13,24 @@ Figuring out how many shards to use for your tables requires you to think about
 the type of data you're processing, the types of queries you're running, and
 the type of hardware you're using.
 
-.. NOTE::
+:::{NOTE}
+This guide assumes you know the basics.
 
-   This guide assumes you know the basics.
+If you are looking for an intro to sharding, see {ref}`sharding
+<crate-reference:ddl-sharding>`.
+:::
 
-   If you are looking for an intro to sharding, see :ref:`sharding
-   <crate-reference:ddl-sharding>`.
+## Optimising for query performance
 
-Optimising for query performance
-================================
+(sharding-under-allocation)=
 
-.. _sharding-under-allocation:
+### Under-allocation is bad
 
-Under-allocation is bad
------------------------
-
-.. CAUTION::
-
-   If you have fewer shards than CPUs in the cluster, this is called
-   *under-allocation*, and it means you're not getting the best performance out
-   of CrateDB.
+:::{CAUTION}
+If you have fewer shards than CPUs in the cluster, this is called
+*under-allocation*, and it means you're not getting the best performance out
+of CrateDB.
+:::
 
 Whenever possible, CrateDB will parallelize query workloads and distribute them
 across the whole cluster. The more CPUs this query workload can be distributed
@@ -48,14 +45,13 @@ In summary: the smaller your shards are, the more of them you will have, and so
 the more likely it is that they will be distributed across the whole cluster,
 and hence across all of your CPUs, and hence the faster your queries will run.
 
-Significant over-allocation is bad
-----------------------------------
+### Significant over-allocation is bad
 
-.. CAUTION::
-
-   If you have more shards per table than CPUs, this is called *over-allocation*. A
-   little over-allocation is desirable. But if you significantly over-allocate
-   your shards per table, you will see performance degradation.
+:::{CAUTION}
+If you have more shards per table than CPUs, this is called *over-allocation*. A
+little over-allocation is desirable. But if you significantly over-allocate
+your shards per table, you will see performance degradation.
+:::
 
 When you have slightly more shards per table than CPUs, you ensure that query
 workloads can be parallelized and distributed maximally, which in turn ensures
@@ -70,8 +66,7 @@ For performance reasons, one thousand shards per table per node is considered
 the highest recommended configuration. If you exceed this you will experience a
 failing cluster check.
 
-Balancing allocation
---------------------
+### Balancing allocation
 
 Finding the right balance when it comes to sharding will vary on a lot of
 things. And while it's generally advisable to slightly over-allocate, it's also
@@ -80,33 +75,32 @@ a good idea to benchmark your particular setup so as to find the sweet spot.
 If you don't manually set the number of shards per table, CrateDB will make a best guess,
 based on the assumption that your nodes have two CPUs each.
 
-.. TIP::
+:::{TIP}
+For the purposes of calculating how many shards a table should be clustered
+into, you can typically ignore replica partitions as these are not usually
+queried across for reads.
+:::
 
-   For the purposes of calculating how many shards a table should be clustered
-   into, you can typically ignore replica partitions as these are not usually
-   queried across for reads.
+:::{CAUTION}
+If you are using {ref}`partitioned tables <crate-reference:partitioned-tables>`,
+note that each partition is
+clustered into as many shards as you configure for the table.
 
-.. CAUTION::
+For example, a table with four shards and two partitions will have eight
+shards that can be commonly queried across. But a query that only touches
+one partition will only query across four shards.
 
-   If you are using :ref:`partitioned tables <crate-reference:partitioned-tables>`,
-   note that each partition is
-   clustered into as many shards as you configure for the table.
+How this factors into balancing your shard allocation will depend on the
+types of queries you intend to run.
+:::
 
-   For example, a table with four shards and two partitions will have eight
-   shards that can be commonly queried across. But a query that only touches
-   one partition will only query across four shards.
+(sharding-ingestion)=
 
-   How this factors into balancing your shard allocation will depend on the
-   types of queries you intend to run.
+## Optimising for ingestion performance
 
-.. _sharding_ingestion:
-
-Optimising for ingestion performance
-====================================
-
-As with `Optimising for query performance`_, when doing heavy ingestion, it is
-good to cluster a table across as many nodes as possible. However, `we have
-found`_ that ingestion throughput can often increase as the table shard per CPU
+As with [Optimising for query performance], when doing heavy ingestion, it is
+good to cluster a table across as many nodes as possible. However, [we have
+found][we have found] that ingestion throughput can often increase as the table shard per CPU
 ratio on each node *decreases*.
 
 Ingestion throughput typically varies on: data volume, individual payload
@@ -117,5 +111,4 @@ ingestion throughput.
 It's a good idea to benchmark your particular setup so as to find the sweet
 spot.
 
-
-.. _we have found: https://cratedb.com/blog/big-cluster-insights-ingesting
+[we have found]: https://cratedb.com/blog/big-cluster-insights-ingesting
