@@ -13,12 +13,12 @@ Choosing the best insert method is an easy way to improve insert performance.
 
 The three types of insert statements are:
 
-- {ref}`Single inserts <inserts_single_inserts>`
-- {ref}`UNNEST <inserts_unnest>`
-- {ref}`Multiple value expressions <inserts_multiple_values>`
+- {ref}`Single inserts <inserts-single-inserts>`
+- {ref}`UNNEST <inserts-unnest>`
+- {ref}`Multiple value expressions <inserts-multiple-values>`
 
 Each type of statement can be issued using any of the three types of
-{ref}`client approaches <inserts_client_approaches>`, which we cover in
+{ref}`client approaches <inserts-client-approaches>`, which we cover in
 the next section.
 
 (inserts-single-inserts)=
@@ -150,23 +150,23 @@ method.
 
 The three client approaches for doing inserts are:
 
-- {ref}`Standard querying <inserts_standard_querying>`
-- {ref}`Bulk operations <inserts_bulk_operations>`
-- {ref}`Prepared statements <inserts_prepared_statements>`
+- {ref}`Standard querying <inserts-standard-querying>`
+- {ref}`Bulk operations <inserts-bulk-operations>`
+- {ref}`Prepared statements <inserts-prepared-statements>`
 
 Each client approach can be used to insert {ref}`any type of insert statement
-<insert_statement_types>`.
+<insert-statement-types>`.
 
 (inserts-standard-querying)=
 
 ### Standard querying
 
 The standard way of issuing insert statements executes one statement at a time
-and does not make use of {ref}`inserts_bulk_operations` or any special
-{ref}`inserts_prepared_statements` client feature.
+and does not make use of {ref}`inserts-bulk-operations` or any special
+{ref}`inserts-prepared-statements` client feature.
 
 For example, using the CrateDB Python client, here's a {ref}`single insert
-<inserts_single_inserts>`:
+<inserts-single-inserts>`:
 
 ```python
 client.execute("INSERT INTO my_table (column_a) VALUES (?)", ["value 1"])
@@ -180,7 +180,7 @@ You can use the {ref}`bulk operations <crate-reference:http-bulk-ops>` feature
 of the {ref}`CrateDB HTTP endpoint <crate-reference:interface-http>` to perform
 many inserts in a single operation.
 
-The advantages are the same as using the {ref}`UNNEST method <inserts_unnest>`:
+The advantages are the same as using the {ref}`UNNEST method <inserts-unnest>`:
 
 - Significantly less internal network traffic than executing each insert
   statement individually
@@ -192,10 +192,10 @@ The advantages are the same as using the {ref}`UNNEST method <inserts_unnest>`:
 Because the advantages are the same as using the `UNNEST` method, you
 typically will not see a performance improvement by combining bulk operations
 with `UNNEST` statements or statements with {ref}`multiple value expressions
-<inserts_multiple_values>`.
+<inserts-multiple-values>`.
 
 Bulk operations are typically done with {ref}`single insert statements
-<inserts_single_inserts>` as an alternative to the `UNNEST` method.
+<inserts-single-inserts>` as an alternative to the `UNNEST` method.
 
 :::{SEEALSO}
 {ref}`Performance: Bulk inserts <bulk-inserts>`
@@ -235,20 +235,20 @@ use the binary protocol, contain almost no headers, and are executed over an
 already established connection.
 
 Typically, prepared statements are used {ref}`single insert statements
-<inserts_single_inserts>`.
+<inserts-single-inserts>`.
 
 Prepared statements with single inserts will usually perform better than
-{ref}`standard querying <inserts_standard_querying>` with single inserts, and
+{ref}`standard querying <inserts-standard-querying>` with single inserts, and
 should be comparable to standard querying with both the {ref}`UNNEST
-method <inserts_unnest>` and {ref}`multiple value expressions
-<inserts_multiple_values>`.
+method <inserts-unnest>` and {ref}`multiple value expressions
+<inserts-multiple-values>`.
 
 ## Testing
 
 Follow the basic {ref}`inserts performance testing
-<testing_inserts_performance>` procedure.
+<testing-inserts-performance>` procedure.
 
-To test {ref}`bulk operations <inserts_bulk_operations>`, you should:
+To test {ref}`bulk operations <inserts-bulk-operations>`, you should:
 
 1. Configure the setup you would like to test
 2. Run a number of different tests against that setup, using different

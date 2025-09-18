@@ -59,7 +59,7 @@ cluster.
 
 Having too many or too few shards has performance implications, so it is very
 important to get familiar with the {ref}`Sharding Performance Guide
-<sharding_guide>`.
+<sharding-guide>`.
 
 In particular, there is a soft limit of 1000 shards per node; so table schemas,
 partitioning strategy, and number of nodes need to be planned to stay well below

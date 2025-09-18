@@ -59,8 +59,8 @@ event of node failure or cluster partitions, but they do incur a performance cos
 
 ### Shards and partitioning
 
-The {ref}`sharding guide <sharding_guide>` has a section that covers
-{ref}`ingestion performance <sharding_ingestion>`.
+The {ref}`sharding guide <sharding-guide>` has a section that covers
+{ref}`ingestion performance <sharding-ingestion>`.
 
 ### Indexing
 
