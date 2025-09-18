@@ -1,5 +1,6 @@
 (scaling-clusters)=
-# Scale Clusters Up and Down
+
+# Scale clusters up and down
 
 A significant feature in CrateDB is that it can scale horizontally, which means
 that instead of adding more RAM, CPU, and disk resources to existing nodes, you
@@ -73,7 +74,7 @@ CrateDB Cloud REST API.
 A rough walkthrough how resource management works in CrateDB, to manage
 high-demand / peak situations.
 
-:::{rubric} Provision Resources
+:::{rubric} Provision resources
 :::
 Prepare by adding extra nodes to the database cluster.
 ```sql
@@ -84,7 +85,7 @@ ALTER TABLE test SET ("routing.allocation.exclude.storage" = 'temporarynodes');
 ALTER TABLE ONLY test RESET ("routing.allocation.exclude.storage");
 ```
 
-:::{rubric} Scale Up
+:::{rubric} Scale up
 :::
 Right before the high-demand event, adjust the table routing,
 so the cluster will use additional resources.
@@ -92,7 +93,7 @@ so the cluster will use additional resources.
 ALTER TABLE ONLY test SET ("routing.allocation.total_shards_per_node" = 2);
 ```
 
-:::{rubric} Scale Down
+:::{rubric} Scale down
 :::
 To decommission excess database nodes, move the data collected during
 the days of the event away.

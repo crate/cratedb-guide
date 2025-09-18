@@ -25,23 +25,25 @@ both roles for different tables. However, for the
 sake of simplicity, we will refer to the two clusters as
 `cluster-publishing` and `cluster-subscribing` here.
 
-```console
-sh$ docker run \
-      --name cluster-publishing \
-      --detach \
-      --publish 4201:4200 \
-      --publish 5433:5432 \
-      --env CRATE_HEAP_SIZE=1g \
-      crate:latest \
-      -Cdiscovery.type=single-node
-sh$ docker run \
-      --name cluster-subscribing \
-      --detach \
-      --publish 4202:4200 \
-      --publish 5434:5432 \
-      --env CRATE_HEAP_SIZE=1g \
-      crate:latest \
-      -Cdiscovery.type=single-node
+```shell
+docker run \
+  --name cluster-publishing \
+  --detach \
+  --publish 4201:4200 \
+  --publish 5433:5432 \
+  --env CRATE_HEAP_SIZE=1g \
+  crate:latest \
+  -Cdiscovery.type=single-node
+```
+```shell
+docker run \
+  --name cluster-subscribing \
+  --detach \
+  --publish 4202:4200 \
+  --publish 5434:5432 \
+  --env CRATE_HEAP_SIZE=1g \
+  crate:latest \
+  -Cdiscovery.type=single-node
 ```
 
 We apply an offset to the ports of each cluster, so they don't overlap. The
