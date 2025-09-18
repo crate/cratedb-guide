@@ -401,22 +401,22 @@ For security reasons, most production clusters should use wire encryption for
 network traffic between nodes and clients. Check out the reference manual on
 {ref}`secured communications <crate-reference:admin_ssl>` for more information.
 
-[configuration]: https://cratedb.com/docs/crate/reference/en/latest/config/index.html
-[configure]: https://cratedb.com/docs/crate/reference/en/latest/config/index.html
-[crate_heap_dump_path]: https://cratedb.com/docs/crate/reference/en/latest/config/environment.html#conf-env-dump-path
-[crate_heap_size]: https://cratedb.com/docs/crate/reference/en/latest/config/environment.html#crate-heap-size
-[crate_home]: https://cratedb.com/docs/crate/reference/en/latest/config/environment.html#conf-env-crate-home
-[crate_java_opts]: https://cratedb.com/docs/crate/reference/en/latest/config/environment.html#conf-env-java-opts
+[configuration]: inv:crate-reference#config
+[configure]: inv:crate-reference#config
+[crate_heap_dump_path]: inv:crate-reference#conf-env-dump-path
+[crate_heap_size]: inv:crate-reference#conf-env-heap-size
+[crate_home]: inv:crate-reference#conf-env-crate-home
+[crate_java_opts]: inv:crate-reference#conf-env-java-opts
 [data paths]: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#paths
 [filesystem hierarchy standard]: https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
 [iops]: https://en.wikipedia.org/wiki/IOPS
-[linux filesystem hierarchy]: https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/index.html
+[linux filesystem hierarchy]: https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/
 [localhost]: https://en.wikipedia.org/wiki/Localhost
 [multiple types of node]: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#node-types
-[network.host]: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#network-host
-[node.name]: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#node-name
+[network.host]: inv:crate-reference#network.host
+[node.name]: inv:crate-reference#node.name
 [path settings]: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#paths
-[path.data]: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#path-data
+[path.data]: inv:crate-reference#path.data
 [raid 0]: https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_0
 [shared-nothing]: https://en.wikipedia.org/wiki/Shared-nothing_architecture
 [stderr]: https://en.wikipedia.org/wiki/Standard_streams
