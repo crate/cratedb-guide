@@ -38,7 +38,7 @@ Store the payload as CrateDB’s {ref}`OBJECT data type
 For production, also consider the {ref}`partitioning and sharding guide <sharding-partitioning>`.
 
 To ingest efficiently, group messages into batches and use
-{ref}`multi-value INSERT statements <inserts_multiple_values>`
+{ref}`multi-value INSERT statements <inserts-multiple-values>`
 to avoid generating one INSERT per message:
 ![Screenshot 2021-09-13 at 11.57.32|690x80](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/020164a15268330789c6f316e2092245014d3362.png)
 
