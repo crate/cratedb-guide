@@ -9,20 +9,29 @@
 
 ## About
 
-[Apache JMeter] is an open-source application designed to load test functional behavior
-and measure performance. It was originally designed for testing Web Applications but
-has since expanded to other test functions. 
+[Apache JMeter] is an open‑source load‑testing tool for measuring functional
+behavior and performance. It started with web apps and now supports many
+protocols and back ends.
 
 ## Configure
 
-Follow the documentation about building a [JMeter Database Test Plan],
-this basically works out of the box.
+Start with the official guide to building a [JMeter Database Test Plan].
+Then add to your Test Plan:
 
-Make sure you added the [PostgreSQL JDBC Driver] to your JMeter `./lib`
-folder. Use default settings for your JDBC Connection Configuration
-with Database URL `jdbc:postgresql://your.cratedb.cluster:5432/doc`,
-JDBC Driver class `org.postgresql.Driver` and correct username and
-password.
+- Thread Group
+- JDBC Connection Configuration
+- JDBC Request (your SQL)
+
+Most defaults work out of the box.
+
+Add the [PostgreSQL JDBC Driver] JAR to JMeter’s `./lib` folder.
+Configure JDBC Connection Configuration with:
+
+- JDBC URL: `jdbc:postgresql://YOUR_HOST:5432/crate?currentSchema=doc`
+  - Append `&sslmode=require` if your cluster enforces TLS.
+- Driver class: `org.postgresql.Driver`
+- Username/Password: use a dedicated, least‑privileged user for load tests.
+- Max connections: size ≥ total JMeter threads.
 
 
 [Apache JMeter]: https://jmeter.apache.org/
