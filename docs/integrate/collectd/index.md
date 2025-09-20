@@ -28,7 +28,8 @@ Either use the `postgresql` plugin to store metrics into CrateDB,
 :::{literalinclude} collectd-cratedb.conf
 :::
 
-or use the `network` plugin to forward metrics to Telegraf.
+or use the `network` plugin to forward metrics to Telegraf, then
+using its built-in [CrateDB Output Plugin for Telegraf].
 
 :::{literalinclude} collectd-telegraf.conf
 :::
@@ -63,3 +64,4 @@ Tutorial with Telegraf <tutorial-telegraf>
 
 
 [collectd]: https://collectd.org/
+[CrateDB Output Plugin for Telegraf]: https://github.com/influxdata/telegraf/tree/master/plugins/outputs/cratedb
