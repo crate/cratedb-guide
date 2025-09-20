@@ -10,7 +10,7 @@ CrateDB.
 Docker is used for running all components. This approach works consistently
 across Linux, macOS, and Windows. Alternatively, you can use Podman.
 
-### CLI
+### Commands
 
 Prepare shortcut for the psql command.
 
@@ -76,7 +76,7 @@ CREATE TABLE doc.collectd_data (
 SQL
 ```
 
-### Build collectd OCI
+### Build collectd
 
 collectd is not available per OCI image, so either install standalone,
 or use these instructions for building an OCI to invoke on Docker or Podman.
@@ -98,11 +98,8 @@ the name `collectd-cratedb.conf`.
 :::{literalinclude} collectd-cratedb.conf
 :::
 
-## Start services
+## Start collectd
 
-### collectd
-
-Start collectd.
 ::::{tab-set}
 :sync-group: os
 
@@ -134,8 +131,8 @@ docker run --name=collectd --rm -it --network=cratedb-demo ^
 
 ## Explore data
 
-After starting the daemon, the first metrics will appear in the designated table in
-CrateDB, ready to be inspected.
+After the first scraping interval, metrics will show up in the
+designated table in CrateDB, ready to be inspected.
 ```shell
 psql "postgresql://crate:crate@cratedb:5432/" -c "SELECT * FROM doc.collectd_data LIMIT 5;"
 ```

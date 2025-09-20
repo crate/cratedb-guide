@@ -3,14 +3,15 @@
 
 This tutorial walks you through configuring and starting the [collectd]
 and [Telegraf] agents and daemons, and CrateDB, to submit and store
-system metrics into CrateDB.
+system metrics into CrateDB,
+using the built-in [CrateDB Output Plugin for Telegraf].
 
 ## Prerequisites
 
 Docker is used for running all components. This approach works consistently
 across Linux, macOS, and Windows. Alternatively, you can use Podman.
 
-### CLI
+### Commands
 
 Prepare shortcut for the psql command.
 
@@ -40,7 +41,7 @@ doskey psql=docker run --rm -i --network=cratedb-demo docker.io/postgres psql $*
 
 ::::
 
-### CrateDB
+### Start CrateDB
 
 Create a shared network.
 ```shell
@@ -54,7 +55,7 @@ docker run --name=cratedb --rm -it --network=cratedb-demo \
   --env=CRATE_HEAP_SIZE=2g docker.io/crate -Cdiscovery.type=single-node
 ```
 
-### collectd
+### Build collectd
 
 collectd is not available per OCI image, so either install standalone,
 or use these instructions for building an OCI to invoke on Docker or Podman.
@@ -69,7 +70,7 @@ docker build -t local/collectd -f Dockerfile .
 
 ## Configure
 
-### Telegraf
+### Configure Telegraf
 
 Configure Telegraf to receive metrics from collectd agents and to store them
 in CrateDB, by using the configuration blueprint outlined below, possibly
@@ -79,7 +80,7 @@ adjusting it to match your environment. Store this file under the name
 :::{literalinclude} telegraf.conf
 :::
 
-### collectd
+### Configure collectd
 
 To send the collected data to Telegraf, configure collectd by loading its
 [`network` plugin] and supplying settings. Store this file under
@@ -91,9 +92,8 @@ the name `collectd-telegraf.conf`.
 
 ## Start services
 
-### Telegraf
+### Start Telegraf
 
-Start Telegraf.
 ::::{tab-set}
 :sync-group: os
 
@@ -123,9 +123,8 @@ docker run --name=telegraf --rm -it --network=cratedb-demo ^
 :::
 ::::
 
-### collectd
+### Start collectd
 
-Start collectd.
 ::::{tab-set}
 :sync-group: os
 
@@ -157,8 +156,8 @@ docker run --name=collectd --rm -it --network=cratedb-demo ^
 
 ## Explore data
 
-After starting the daemon, the first metrics will appear in the designated table in
-CrateDB, ready to be inspected.
+After the first scraping interval, metrics will show up in the
+designated table in CrateDB, ready to be inspected.
 ```shell
 psql "postgresql://crate:crate@cratedb:5432/" -c "SELECT * FROM doc.metrics LIMIT 5;"
 ```
@@ -175,5 +174,6 @@ psql "postgresql://crate:crate@cratedb:5432/" -c "SELECT * FROM doc.metrics LIMI
 
 
 [collectd]: https://collectd.org/
+[CrateDB Output Plugin for Telegraf]: https://github.com/influxdata/telegraf/tree/master/plugins/outputs/cratedb
 [`network` plugin]: https://collectd.org/documentation/manpages/collectd.conf.html#plugin-network
 [Telegraf]: https://www.influxdata.com/time-series-platform/telegraf/
