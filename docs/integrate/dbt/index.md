@@ -31,8 +31,8 @@ such as modularity, portability, CI/CD, and documentation.
 
 ::::{grid-item}
 :columns: 5
-![](https://www.getdbt.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fwl0ndo6t%2Fmain%2Fcd8cba01b3f756a3a7ed194e6e2d6a4072fac194-1220x1200.png%3Ffit%3Dmax%26auto%3Dformat&w=640&q=75){h=120px}
-![](https://www.getdbt.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fwl0ndo6t%2Fmain%2F58b87e47c2aed57fde9ccd49c927c3dff5b57d3c-1466x1130.png%3Ffit%3Dmax%26auto%3Dformat&w=640&q=75){h=120px}
+![dbt workflow illustration 1](https://www.getdbt.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fwl0ndo6t%2Fmain%2Fcd8cba01b3f756a3a7ed194e6e2d6a4072fac194-1220x1200.png%3Ffit%3Dmax%26auto%3Dformat&w=640&q=75){h=120px}
+![dbt workflow illustration 2](https://www.getdbt.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fwl0ndo6t%2Fmain%2F58b87e47c2aed57fde9ccd49c927c3dff5b57d3c-1466x1130.png%3Ffit%3Dmax%26auto%3Dformat&w=640&q=75){h=120px}
 ::::
 
 :::::
@@ -49,7 +49,7 @@ pipelines.
 The idea is that data engineers make source data available to an environment where
 dbt projects run, for example with {ref}`debezium` or with {ref}`airflow`.
 Afterwards, data analysts can run their dbt projects against this data to produce models
-(tables and views) that can be used with a number of [BI tools](#bi-tools).
+(tables and views) that can be used with a number of {ref}`bi` applications.
 
 :::{rubric} Features
 :::
@@ -108,12 +108,12 @@ pip install --upgrade 'dbt-cratedb2'
 ```
 
 ## Configure
+
 Because CrateDB is compatible with PostgreSQL, the same connectivity
-options apply like outlined on the [dbt Postgres Setup] documentation
-page.
+options apply, as outlined in the [dbt Postgres Setup] documentation.
 
 The dbt connection profile settings for CrateDB stored in [`profiles.yml`]
-are identical with PostgreSQL.
+are identical to PostgreSQL.
 ```yaml
 cratedb_analytics:
   target: dev
@@ -126,7 +126,7 @@ cratedb_analytics:
       pass: [password]
       dbname: crate     # CrateDB's only catalog is `crate`.
       schema: doc       # Define schema. `doc` is the default.
-      search_path: doc  # Use the same value like `schema` by default.
+      search_path: doc  # Use the same value as `schema` by default.
 ```
 
 
@@ -216,7 +216,7 @@ These dbt features have been tested successfully:
 * [dbt source freshness](https://docs.getdbt.com/docs/deploy/source-freshness)
 * [dbt test](https://docs.getdbt.com/docs/build/tests)
 * [dbt seed](https://docs.getdbt.com/docs/build/seeds)
-* [Incremental materializations](https://docs.getdbt.com/docs/build/incremental-models) (with `incremental_strategy='delete+insert'` and without involving [OBJECT](https://crate.io/docs/crate/reference/en/5.4/general/ddl/data-types.html#objects) columns)
+* [Incremental materializations](https://docs.getdbt.com/docs/build/incremental-models) (with `incremental_strategy='delete+insert'` and without involving {ref}`crate-reference:type-object` columns)
 
 We hope you find this useful. CrateDB is continuously adding new features and we will be very happy to hear about your experience using CrateDB with dbt.
 
