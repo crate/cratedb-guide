@@ -75,6 +75,8 @@ linkcheck_ignore += [
     r"https://www.llama.com/.*",
     # 403 Client Error: Forbidden for url
     r"https://openai.com/index/gpt-4/.*",
+    # 403 Client Error: Forbidden for url
+    r"https://www.npmjs.com/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
