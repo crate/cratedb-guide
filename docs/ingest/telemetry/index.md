@@ -67,6 +67,12 @@ for collecting metrics data from applications and infrastructures.
 Send logs with rsyslog, a rocket‑fast system for log processing.
 ::::
 
+::::{grid-item-card} StatsD
+:link: statsd
+:link-type: ref
+Store metrics and statistics from StatsD, a daemon for stats aggregation.
+::::
+
 ::::{grid-item-card} Telegraf
 :link: telegraf
 :link-type: ref
