@@ -54,6 +54,12 @@ scenarios. CrateDB offers corresponding integration adapters.
 :padding: 0
 :gutter: 2
 
+::::{grid-item-card} collectd
+:link: collectd
+:link-type: ref
+Send metrics with collectd, a system and application metrics collection daemon.
+::::
+
 ::::{grid-item-card} Prometheus
 :link: prometheus
 :link-type: ref
