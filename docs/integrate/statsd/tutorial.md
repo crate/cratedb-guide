@@ -18,7 +18,7 @@ Prepare shortcut for the psql command.
 
 :::{tab-item} Linux and macOS
 :sync: unix
-To make the settings persistent, add them to your shell profile (`~/.profile`).
+Add these settings to your shell profile (`~/.profile`) to make them persistent.
 ```shell
 alias nc="docker run --rm -i --network=cratedb-demo docker.io/toolbelt/netcat:2025-08-23"
 alias psql="docker run --rm -i --network=cratedb-demo docker.io/postgres:16 psql"
@@ -26,7 +26,7 @@ alias psql="docker run --rm -i --network=cratedb-demo docker.io/postgres:16 psql
 :::
 :::{tab-item} Windows PowerShell
 :sync: powershell
-To make the settings persistent, add them to your PowerShell profile (`$PROFILE`).
+Add these settings to your PowerShell profile (`$PROFILE`) to make them persistent.
 ```powershell
 function nc { docker run --rm -i --network=cratedb-demo docker.io/toolbelt/netcat:2025-08-23 @args }
 function psql { docker run --rm -i --network=cratedb-demo docker.io/postgres:16 psql @args }
@@ -59,10 +59,9 @@ docker run --name=cratedb --rm -it --network=cratedb-demo \
 
 ## Configure Telegraf
 
-Configure Telegraf to receive StatsD and to store them
-in CrateDB, by using the configuration blueprint outlined below, possibly
-adjusting it to match your environment. Store this file under the name
-`telegraf.conf`.
+Use the configuration blueprint below to configure Telegraf to receive StatsD
+metrics and store them in CrateDB. Adjust the configuration to match your
+environment and save this file as `telegraf.conf`.
 
 :::{literalinclude} telegraf.conf
 :::
@@ -133,8 +132,9 @@ Nim.
 
 ## Explore data
 
-After receiving data, the first metrics will appear in the designated table in
-CrateDB, ready to be inspected.
+After Telegraf receives data, CrateDB stores the metrics in the designated table,
+ready for inspection.
+
 ```shell
 psql "postgresql://crate:crate@cratedb:5432/" -c "SELECT * FROM doc.metrics ORDER BY timestamp LIMIT 5;"
 ```
