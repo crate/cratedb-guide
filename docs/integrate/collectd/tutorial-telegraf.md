@@ -58,7 +58,7 @@ docker run --name=cratedb --rm -it --network=cratedb-demo \
 
 collectd is not available per OCI image, so either install standalone,
 or use these instructions for building an OCI to invoke on Docker or Podman.
-Store this file under the name `Dockername`, then invoke the command
+Store this file under the name `Dockerfile`, then invoke the command
 displayed below.
 
 :::{literalinclude} Dockerfile
