@@ -8,10 +8,10 @@ Powerful IoT device management made simple.
 :::{rubric} About
 :::
 
-[Balena] is an end-to-end IoT management solution based on a secure container-based
+[balena] is an end-to-end IoT management solution based on a secure container-based
 technology stack that enables you to develop, deploy, manage, and scale fleets of
-IoT Linux devices. The platform supports 80+ device types out of the box and offers
-a custom device support program on top.
+IoT Linux devices. The platform supports 80+ device types out of the box and
+also offers a custom device support program.
 
 :::{rubric} Learn
 :::
@@ -34,4 +34,4 @@ Tutorial <tutorial>
 :::
 
 
-[Balena]: https://www.balena.io/
+[balena]: https://www.balena.io/
