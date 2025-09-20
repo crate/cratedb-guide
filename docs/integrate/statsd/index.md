@@ -10,16 +10,16 @@
 :::{rubric} About
 :::
 
-[StatsD] is a daemon for easy but powerful system and application
+[StatsD] provides easy but powerful system and application
 metrics and stats aggregation.
 
-It is a network daemon that runs on the Node.js platform and listens for
-statistics, like counters and timers, sent over UDP or TCP and sends
+This network daemon runs on the Node.js platform and listens for
+statistics, like counters and timers, sent over UDP or TCP. It then sends
 aggregates to one or more pluggable backend services.
 
-StatsD traditionally uses the Graphite backend and its successors, but it
-can also use CrateDB as a backend, by relaying data through Telegraf and
-using its built-in [CrateDB Output Plugin for Telegraf].
+StatsD traditionally uses the Graphite backend and its successors, but you
+can also configure it to use CrateDB as a backend by relaying data through Telegraf
+with its built-in [CrateDB Output Plugin for Telegraf].
 
 :::{rubric} Synopsis
 :::
