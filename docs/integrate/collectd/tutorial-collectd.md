@@ -1,14 +1,13 @@
 (collectd-tutorial-base)=
 # Load data into CrateDB using collectd
 
-This tutorial walks you through configuring and starting the [collectd]
-agent and daemon, and CrateDB, to submit and store system metrics into
-CrateDB.
+This tutorial shows how to configure and start [collectd] and CrateDB
+so that collectd sends system metrics and CrateDB stores them.
 
 ## Prerequisites
 
-Docker is used for running all components. This approach works consistently
-across Linux, macOS, and Windows. Alternatively, you can use Podman.
+Docker runs all components consistently across Linux, macOS, and Windows.
+If you use Podman, substitute podman for docker in the commands.
 
 ### Commands
 
@@ -21,20 +20,20 @@ Prepare shortcut for the psql command.
 :sync: unix
 To make the settings persistent, add them to your shell profile (`~/.profile`).
 ```shell
-alias psql="docker run --rm -i --network=cratedb-demo docker.io/postgres psql"
+alias psql="docker run --rm -i --network=cratedb-demo docker.io/postgres:16 psql"
 ```
 :::
 :::{tab-item} Windows PowerShell
 :sync: powershell
 To make the settings persistent, add them to your PowerShell profile (`$PROFILE`).
 ```powershell
-function psql { docker run --rm -i --network=cratedb-demo docker.io/postgres psql @args }
+function psql { docker run --rm -i --network=cratedb-demo docker.io/postgres:16 psql @args }
 ```
 :::
 :::{tab-item} Windows Command
 :sync: dos
 ```shell
-doskey psql=docker run --rm -i --network=cratedb-demo docker.io/postgres psql $*
+doskey psql=docker run --rm -i --network=cratedb-demo docker.io/postgres:16 psql $*
 ```
 :::
 
@@ -78,8 +77,8 @@ SQL
 
 ### Build collectd
 
-collectd is not available per OCI image, so either install standalone,
-or use these instructions for building an OCI to invoke on Docker or Podman.
+collectd is not available as an OCI image, so either install it standalone,
+or use these instructions to build an OCI image to run on Docker or Podman.
 Store this file under the name `Dockerfile`, then invoke the command
 displayed below.
 
@@ -134,7 +133,7 @@ docker run --name=collectd --rm -it --network=cratedb-demo ^
 After the first scraping interval, metrics will show up in the
 designated table in CrateDB, ready to be inspected.
 ```shell
-psql "postgresql://crate:crate@cratedb:5432/" -c "SELECT * FROM doc.collectd_data LIMIT 5;"
+psql "postgresql://crate:crate@cratedb:5432/" -c "SELECT * FROM doc.collectd_data ORDER BY p_time LIMIT 5;"
 ```
 ```psql
            p_time           |    p_host    | p_plugin  | p_plugin_instance |   p_type   | p_type_instance | p_value_names |   p_type_names    |   p_values   |           month
