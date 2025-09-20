@@ -3,7 +3,8 @@
 
 ## Introduction
 
-In this tutorial, we'll explore how to leverage the power of [Cluvio](https://www.cluvio.com), a modern data analysis platform with [CrateDB Cloud](https://console.cratedb.cloud/) as the underlying database.
+Use [Cluvio] with [CrateDB Cloud] to analyze data and build interactive
+dashboards.
 
 ## Prerequisites
 
@@ -15,9 +16,9 @@ In this tutorial, we'll explore how to leverage the power of [Cluvio](https://ww
 
 Deploying a CrateDB cloud cluster has never been easier, simply follow our tutorial [here](https://crate.io/docs/cloud/en/latest/tutorials/cluster-deployment/stripe.html#cluster-deployment-stripe) and you can have a cluster up and running within minutes. We offer a CRFREE plan which offers up to 2 vCPUs, 2 GiB of memory, and 8 GiB of storage completely for free. Ideal for small-scale testing and evaluation purposes.
 
-### Load data into CrateDB cluster
+### Load data into CrateDB
 
-In this tutorial we'll use 2 tables as our datasource. [flights](http://stat-computing.org/dataexpo/2009) and [airports](https://openflights.org/data.php) from January of 2008. 
+In this tutorial, you use two tables—[flights](http://stat-computing.org/dataexpo/2009) and [airports](https://openflights.org/data.php)—from January 2008.
 
 #### Create tables
 
@@ -77,8 +78,8 @@ This creates 2 empty tables in your database. `flights` and `airports`, with the
 
 Now you should import the data into the tables. We will use Console "Import" feature in this example. Use the following links:
 
-* airports - https://s3.amazonaws.com/crate.sampledata/flights/dataset-airports.csv.gz
-* flights - https://s3.amazonaws.com/crate.sampledata/flights/dataset-flights.csv.gz
+* [Airports CSV (GZIP)]
+* [Flights CSV (GZIP)]
 
 ![.csv import|690x315](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/0/059227c592c98e2025b64c1d2d22e20c24624359.png)
 
@@ -86,7 +87,7 @@ Make sure to use your pre-created tables in the "Table name" field, otherwise th
 
 ![Import summary|690x224](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/3/364db0dc98d56d8e27e274fd072cb5f076cf1110.png)
 
-After this your tables should no longer be empty. `airports` contains 5876 records, and `flights` 150 000 records.
+After import, `airports` should contain about 5,876 rows and `flights` about 150,000 rows.
 
 ## Connect CrateDB to Cluvio
 
@@ -118,33 +119,34 @@ A dashboard is the main point of Cluvio. It is a collection of interactive repor
 * [Word Cloud Chart](https://docs.cluvio.com/chart-types/word-cloud-chart)
 * [Histogram Chart](https://docs.cluvio.com/chart-types/histogram-chart)
 
-![Example dashboard|690x343](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/4/4cc716d7a71c91476dfe2affa55881d39afe5d93.png)
+![Example dashboard|690x343](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/4/4cc716d7a71c91476dfe2affa55881d39afe5d93.png){width=800px}
 
 Now, let's create some and see how Cluvio works. Head to **[Dashboards](https://app.cluvio.com/dashboards)** -> `New Dashboard`. After naming your Dashboard, you can create your first report. Click the `New report` in the upper right.
 
 ### Number of flights and delays
 
-The first piece information you might be interested in, for a given period, is the number of flights and average delays of departures and arrivals. This is the code for this report:
+The first piece of information for a given period is the number of flights and
+the average departure and arrival delays. Use this query:
 
-```
+```sql
 SELECT
        COUNT(*)       AS "Number of flights",
        AVG(dep_delay) AS "Average Departure Delay",
        AVG(arr_delay) AS "Average Arrival Delay"
 FROM   doc.flights
-ORDER  BY 1 
+ORDER  BY 1
 ``` 
 This is a pretty simple query that counts the number of rows in the `flights` as the number of flights, and averages values in the `dep_delay` and `arr_delay` for the departure delays and arrival delays respectively.
 
-![Number of flights and delays|690x117](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/4/4841404a21b56cb1e5b92736af8b79656b0912ec.png){width=800}
+![Number of flights and delays|690x117](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/4/4841404a21b56cb1e5b92736af8b79656b0912ec.png){width=800px}
 
-To see the information displayed this way, you need to switch to "Number" chart after running query.
+After running the query, switch the visualization to the “Number” chart.
 
 ### Country distribution
 
 This query looks at the country distribution in the `airports` table:
 
-```
+```sql
 SELECT   country,
          COUNT(1)
 FROM     doc.airports
@@ -154,7 +156,7 @@ ORDER BY 2 DESC
 
 In this one, it's suitable to use pie chart to better see the distribution. We also used the `Value(%)` option for the legend, and edited the legend to show up to 25 values (countries).
 
-![Country distribution|690x452](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/2/2f11e42d61e93395267f847b3ee91d5be0d076f9.png){width=800}
+![Country distribution|690x452](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/2/2f11e42d61e93395267f847b3ee91d5be0d076f9.png){width=800px}
 
 ## Filters
 
@@ -162,7 +164,7 @@ In this one, it's suitable to use pie chart to better see the distribution. We a
 
 In the `flights` table in `day_of_week` column 1 represents Monday, 2 means Tuesday, etc. Using that, we can create a filter to display data for a specific day of the week without changing the SQL in our reports.
 
-```
+```sql
 VALUES 
 (1, 'Monday'),
 (2, 'Tuesday'),
@@ -176,9 +178,9 @@ ORDER BY 1
 
 Now we can filter the data by day of the week:
 
-![Using filter to display data for specific day of the week|690x255](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/9/90335d44316d329ebe6d70a6a63879dec52ee5e8.png){width=800}
+![Using filter to display data for specific day of the week|690x255](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/9/90335d44316d329ebe6d70a6a63879dec52ee5e8.png){width=800px}
 
-Find out more about filters [here](https://docs.cluvio.com/filters/overview).
+Learn more in the [Cluvio Filters overview](https://docs.cluvio.com/filters/overview).
 
 ## SQL snippets
 
@@ -186,7 +188,7 @@ SQL snippets are small reusable pieces of code that can make your work easier wi
 
 We used them to create JOIN statements:
 
-```
+```sql
 JOIN doc.airports AS origin_airport ON flights.origin = origin_airport.code
 JOIN doc.airports AS dest_airport ON flights.dest = dest_airport.code
 ```
@@ -195,7 +197,7 @@ This snippet creates two joins between the `flights` and `airports` tables, alia
 
 Then create a report using the snippet:
 
-```
+```sql
 SELECT flights.year,
        flights.month,
        origin_airport.city AS origin_city,
@@ -209,10 +211,22 @@ ORDER BY number_of_flights DESC
 LIMIT 100;
 ```
 
-Using the SQL snippets and filters, we can quickly find out what is the most popular destination departing from Los Angeles (LAX) on a Tuesday. Pretty cool.
+Using SQL snippets and filters, you can quickly find the most popular
+destination departing from Los Angeles (LAX) on a Tuesday.
 
-![Popular destinations|690x309](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/7/7257af47c58215459e1fe2de135a966c19fedbd5.png)
+![Popular destinations|690x309](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/7/7257af47c58215459e1fe2de135a966c19fedbd5.png){width=800px}
 
 ## Conclusion
 
-That's it for this tutorial. If using Cluvio could help you make sense of your data, feel free to head to [Cloud Console](https://console.cratedb.cloud/), connect your cluster to [Cluvio](https://app.cluvio.com/) and get started! Make sure to visit their [documentation](https://docs.cluvio.com/) to explore all the features.
+That’s it for this tutorial. Get started in the [CrateDB Cloud Console],
+connect your cluster to [Cluvio], and begin analyzing your data. Explore
+features in the [Cluvio documentation].
+
+
+[Airports CSV (GZIP)]: https://s3.amazonaws.com/crate.sampledata/flights/dataset-airports.csv.gz
+[Flights CSV (GZIP)]: https://s3.amazonaws.com/crate.sampledata/flights/dataset-flights.csv.gz
+
+[Cluvio]: https://www.cluvio.com/
+[Cluvio documentation]: https://docs.cluvio.com/
+[CrateDB Cloud]: https://console.cratedb.cloud/
+[CrateDB Cloud Console]: https://console.cratedb.cloud/
