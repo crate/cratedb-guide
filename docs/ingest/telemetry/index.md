@@ -17,7 +17,7 @@
 CrateDB works well for storing massive amounts of telemetry data, such as metrics and logs.
 
 CrateDB can serve as an alternative to time-series databases and metric stores
-like RRD, Whisper (Graphite), InfluxDB, Prometheus, Mimir, Thanos,
+like RRD, Whisper (Graphite), InfluxDB, Prometheus, Cortex, Mimir, Thanos,
 or VictoriaMetrics,
 while adding long‑term storage, standard database interfaces, SQL,
 and horizontal scalability.
