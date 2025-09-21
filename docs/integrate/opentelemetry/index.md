@@ -10,9 +10,9 @@
 :::{rubric} About
 :::
 
-[OpenTelemetry] is an open-source observability framework and toolkit designed
-to facilitate the export and collection of telemetry data such as traces,
-metrics, and logs.
+[OpenTelemetry] (OTel) is an open-source observability framework and toolkit
+designed to facilitate the export and collection of telemetry data such as
+traces, metrics, and logs.
 
 OpenTelemetry provides a unified framework and the APIs/SDKs to instrument
 applications, allowing for the use of a single standard across different
@@ -27,14 +27,31 @@ be used to submit and store [metrics] data into CrateDB.
 Configure OpenTelemetry Collector to send metrics data to the [CrateDB Prometheus Adapter].
 
 :::{literalinclude} collector/otelcol.yaml
-:lines: 20-29
+:lines: 26-34
 :::
 :::{literalinclude} collector/otelcol.yaml
-:lines: 40-43
+:lines: 38-43
 :::
 
 
 :::{rubric} Learn
+:::
+
+::::{grid}
+
+:::{grid-item-card} Tutorial: Use OTel Collector and CrateDB
+:link: opentelemetry-otelcol-tutorial
+:link-type: ref
+How to configure OpenTelemetry Collector to submit metrics to CrateDB.
+:::
+
+::::
+
+
+:::{toctree}
+:maxdepth: 1
+:hidden:
+Collector Tutorial <collector/tutorial>
 :::
 
 
