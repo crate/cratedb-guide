@@ -73,7 +73,9 @@ Submit metrics using the OpenTelemetry Python SDK. Download the example file
 
 **Option 1: Using uv (recommended)**
 ```shell
-uv run --with=opentelemetry-distro --with=opentelemetry-exporter-otlp opentelemetry-instrument --service_name=app python example.py
+export OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4317
+export OTEL_SERVICE_NAME=app
+uv run --with=opentelemetry-distro --with=opentelemetry-exporter-otlp opentelemetry-instrument python example.py
 ```
 
 **Option 2: Using pip**
