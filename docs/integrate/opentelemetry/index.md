@@ -49,14 +49,14 @@ Configure Telegraf to store OpenTelemetry metrics data into CrateDB.
 
 ::::{grid}
 
-:::{grid-item-card} Tutorial: Use OTel Collector and CrateDB
-:link: opentelemetry-otelcol-tutorial
+:::{grid-item-card} Guide: Use OTel Collector and CrateDB
+:link: opentelemetry-otelcol-usage
 :link-type: ref
 How to configure OpenTelemetry Collector to submit metrics to CrateDB.
 :::
 
-:::{grid-item-card} Tutorial: Use Telegraf and CrateDB
-:link: opentelemetry-telegraf-tutorial
+:::{grid-item-card} Guide: Use Telegraf and CrateDB
+:link: opentelemetry-telegraf-usage
 :link-type: ref
 How to configure Telegraf to submit OpenTelemetry metrics to CrateDB.
 :::
@@ -67,8 +67,8 @@ How to configure Telegraf to submit OpenTelemetry metrics to CrateDB.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-Collector Tutorial <collector/tutorial>
-Telegraf Tutorial <telegraf/tutorial>
+Collector Usage <collector/usage>
+Telegraf Usage <telegraf/usage>
 :::
 
 
