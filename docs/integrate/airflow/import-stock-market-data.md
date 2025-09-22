@@ -3,7 +3,7 @@
 
 Watch this tutorial on YouTube: [Automating stock data with Airflow and CrateDB](https://www.youtube.com/watch?v=YTTUzeaYUgQ&t=685s).
 
-This tutorial shows how to automate collecting and storing stock market data for S&P 500 companies.
+This guide shows how to automate collecting and storing stock market data for S&P 500 companies.
 
 ## Quick overview
 
@@ -109,7 +109,7 @@ Create `astro-project/dags/financial_dag.py`. The DAG file has the following str
 
 ### Import operators and modules
 
-Import the operator used in this tutorial, `SQLExecuteQueryOperator`,
+Import the operator used in this guide, `SQLExecuteQueryOperator`,
 and the decorator to define the DAG and its tasks. You will also import
 the `datetime`, `pendulum` modules to set up your schedule and the
 `yfinance`, `pandas`, and `json` modules to download and manipulate the

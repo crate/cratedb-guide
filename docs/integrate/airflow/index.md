@@ -54,9 +54,9 @@ Astro is a managed Airflow service by [Astronomer].
 
 :::
 
-(airflow-tutorials)=
+(airflow-guides)=
 
-:::{rubric} Learn: Starter Tutorials
+:::{rubric} Learn: Starter guides
 :::
 
 ::::{grid} 2
@@ -68,13 +68,13 @@ Astro is a managed Airflow service by [Astronomer].
 Define an Airflow DAG that downloads, processes, and stores data in CrateDB.
 :::
 
-:::{grid-item-card} Tutorial: Import Parquet files
+:::{grid-item-card} Guide: Import Parquet files
 :link: airflow-import-parquet
 :link-type: ref
 Define an Airflow DAG to import a Parquet file from S3 into CrateDB.
 :::
 
-:::{grid-item-card} Tutorial: Load stock market data
+:::{grid-item-card} Guide: Load stock market data
 :link: airflow-import-stock-market-data
 :link-type: ref
 Define an Airflow DAG to download, process, and store stock market data
@@ -84,25 +84,25 @@ into CrateDB.
 ::::
 
 
-:::{rubric} Learn: Advanced Tutorials
+:::{rubric} Learn: Advanced guides
 :::
 
 ::::{grid} 3
 
-:::{grid-item-card} Tutorial: Export to S3
+:::{grid-item-card} Guide: Export to S3
 :link: airflow-export-s3
 :link-type: ref
 Export data from CrateDB to S3 on a schedule.
 :::
 
-:::{grid-item-card} Tutorial: Implement a data retention policy
+:::{grid-item-card} Guide: Implement a data retention policy
 :link: airflow-data-retention-policy
 :link-type: ref
 An effective retention policy for time-series data, relating to the practice of
 storing and managing data for a designated period of time.
 :::
 
-:::{grid-item-card} Tutorial: Implement a hot and cold storage data retention policy
+:::{grid-item-card} Guide: Implement a hot and cold storage data retention policy
 :link: airflow-data-retention-hot-cold
 :link-type: ref
 A hot/cold storage strategy is often motivated by a tradeoff between performance

@@ -134,7 +134,10 @@ To configure the CrateDB connection, set an environment variable. On
 Astronomer, set it via the UI, `Dockerfile`, or the `.env` file
 (generated during initialization).
 
-In this tutorial, we will set up the necessary environment variables via a `.env` file. To learn about alternative ways, please check the [Astronomer documentation](https://docs.astronomer.io/astro/environment-variables). The first variable we set is one for the CrateDB connection, as follows:
+In this guide, you will set up the necessary environment variables via a `.env`
+file. To learn about alternative ways, please check the
+[Astronomer Environment variables documentation].
+The first variable to define is one for the CrateDB connection, as follows:
 
 `AIRFLOW_CONN_CRATEDB_CONNECTION=postgresql://<user>:<password>@<host>/doc?sslmode=disable`
 
@@ -150,3 +153,4 @@ This will output some variables set by Astronomer by default including the varia
 [Apache Airflow]: https://airflow.apache.org/
 [Astronomer]: https://www.astronomer.io/
 [Astronomer CLI]: https://docs.astronomer.io/astro/cli/overview
+[Astronomer Environment variables documentation]: https://docs.astronomer.io/astro/environment-variables

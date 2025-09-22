@@ -5,7 +5,7 @@
 
 Use Airflow to import the NYC Taxi and Limousine dataset provided in Parquet format.
 
-CrateDB supports `COPY FROM` for CSV and JSON, not Parquet. This tutorial converts
+CrateDB supports `COPY FROM` for CSV and JSON, not Parquet. This guide is about converting
 Parquet to CSV before loading.
 
 For an alternative Parquet ingestion approach, see {ref}`arrow-import-parquet`.
@@ -78,8 +78,8 @@ CREATE TABLE IF NOT EXISTS "nyc_taxi"."trips" (
 )
 PARTITIONED BY ("pickup_year");
 ```
-To explore more Airflow use cases, see the related tutorials
-{ref}`here <airflow-tutorials>`.
+To explore more Airflow use cases, see the related guides
+{ref}`here <airflow-guides>`.
 
 With the tools set up and tables created, proceed to the DAG.
 
@@ -87,7 +87,7 @@ With the tools set up and tables created, proceed to the DAG.
 ![Airflow DAG workflow|690x76](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/29502f83c13d29d90ab703a399f58c6daeee6fe6.png)
 
 The DAG pictured above represents a routine that will run every month to retrieve the latest released file by NYC TLC based on the execution date of that particular instance. Since it is configured to catch up with previous months when enabled, it will generate one instance for each previous month since January 2009 and each instance will download and process the corresponding month, based on the logical execution date.
-The Airflow DAG used in this tutorial contains 7 tasks:
+The Airflow DAG used in this guide contains 7 tasks:
 * **format_file_name:** according to the NYC Taxi and Limousine Commission (TLC) [documentation](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page), the files are named after the month they correspond to, for example:
    ```text
    https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-03.parquet
@@ -120,12 +120,12 @@ You may find the full code for the DAG described above available in our
 
 ## Wrap up
 
-The workflow represented in this tutorial is a simple way to import Parquet files
+The workflow represented in this guide is a simple way to import Parquet files
 to CrateDB by transforming them into a CSV file. As previously mentioned, there
 are other approaches out there, we encourage you to try them out.
 
-To continue exploring CrateDB with Airflow, browse the related tutorials
-{ref}`here <airflow-tutorials>`.
+To continue exploring CrateDB with Airflow, browse the related guides
+{ref}`here <airflow-guides>`.
 
 
 [Apache Arrow]: https://github.com/apache/arrow
