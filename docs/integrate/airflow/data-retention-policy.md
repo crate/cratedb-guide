@@ -6,7 +6,9 @@
 A data retention policy describes the practice of storing and managing data for a designated period of time. Once a data set completes its retention period, it should be deleted or archived, depending on requirements. Implementing data retention policies in the right way ensures compliance with existing guidelines and regulations, such as data privacy law, optimizes storage space by discarding outdated data and reduces storage costs.
 
 ## Specification of a Data Retention Policy in CrateDB
-In the [previous tutorial](https://community.cratedb.com/t/cratedb-and-apache-airflow-part-one/901), we illustrated how to use CrateDB and Apache Airflow to automate periodic data export to a remote filesystem with the infrastructure provided by [Astronomer](https://www.astronomer.io/). In this tutorial, we focus on a more complex use case: the implementation of an effective retention policy for time-series data. To define retention policies we create a new table in CrateDB with the following schema:
+
+In the [previous guide](https://community.cratedb.com/t/cratedb-and-apache-airflow-part-one/901), we illustrated how to use CrateDB and Apache Airflow to automate periodic data export to a remote filesystem with the infrastructure provided by [Astronomer](https://www.astronomer.io/).
+In this guide, we focus on a more complex use case: the implementation of an effective retention policy for time-series data. To define retention policies we create a new table in CrateDB with the following schema:
 
 ```sql
 CREATE TABLE IF NOT EXISTS "doc"."retention_policies" (
@@ -151,4 +153,12 @@ On the `SQLExecuteQueryOperator`, a certain set of attributes are passed via `pa
 The full DAG implementation of the data retention policy can be found in our [GitHub repository](https://github.com/crate/cratedb-airflow-tutorial/blob/main/dags/data_retention_delete_dag.py). To run the workflow, we rely on Astronomer infrastructure with the same setup as shown in the {ref}`getting started <airflow-getting-started>` section.
 
 ## Summary
-This tutorial gives a guide on how to delete data with expired retention policies. The first part shows how to design policies in CrateDB and then, how to use Apache Airflow to automate data deletion. The DAG implementation is fairly simple: the first task performs the extraction of relevant policies, while the second task makes sure that affected partitions are deleted. In the following tutorial, we will focus on another real-world example that can be automated with Apache Airflow and CrateDB.
+
+This guide introduced you on how to delete data with expired retention policies.
+The first part shows how to design policies in CrateDB and then, how to use
+Apache Airflow to automate data deletion.
+
+The DAG implementation is fairly simple: the first task performs the extraction
+of relevant policies, while the second task makes sure that affected partitions
+are deleted. In the following guide, we will focus on another real-world
+example that can be automated with Apache Airflow and CrateDB.
