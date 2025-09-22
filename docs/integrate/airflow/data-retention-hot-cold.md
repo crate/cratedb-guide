@@ -1,19 +1,19 @@
 (airflow-data-retention-hot-cold)=
 # Building a hot and cold storage data retention policy in CrateDB with Apache Airflow
 
-In this fourth article on automating recurrent CrateDB queries with [Apache Airflow](https://airflow.apache.org/), we will present a second strategy for implementing a data retention policy. Previously, we shared the {ref}`Data Retention Delete DAG <airflow-data-retention-policy>`, which dropped old partitions after a certain period of time. In that article, we introduce the complementary strategy of a hot/cold storage approach.
+This fourth article on automating recurring CrateDB queries with [Apache Airflow](https://airflow.apache.org/) presents a second data‑retention strategy. Previously, we introduced the {ref}`Data Retention Delete DAG <airflow-data-retention-policy>`, which drops old partitions after a set period. This article adds the complementary hot/cold storage approach.
 
 ## What is a hot/cold storage strategy?
 
-A hot/cold storage strategy is often motivated by a tradeoff between performance and cost-effectiveness. In a database such as CrateDB, more recent data tends to have a higher significance for analytical queries. Well-performing disks (hot storage) play a key role on the infrastructure side to support performance requirements but can come at a high cost. As data ages and gets less business-critical for near-real-time analysis, transitioning it to slower/cheaper disks (cold storage) helps to improve the cost-performance ratio.
+Hot/cold storage balances performance and cost. In CrateDB, recent data usually matters most for analytics. Fast disks (hot storage) meet performance requirements but are expensive. As data ages and becomes less critical, moving it to slower, cheaper disks (cold storage) improves the cost‑performance ratio.
 
-In a CrateDB cluster, nodes can have different hardware specifications. Hence, a cluster can consist of a combination of hot and cold storage nodes, each with respective disks. By assigning corresponding attributes to nodes, CrateDB recognizes these node types and considers it when allocating partitions.
+CrateDB clusters can mix nodes with different hardware. Mark nodes as hot or cold using attributes; CrateDB then considers these attributes when allocating partitions.
 
 ## CrateDB setup
 
-To create a multi-node setup, we make use of {ref}`docker-compose` to spin up three nodes – two hot nodes, and one cold node. For the scope of this article, we will not actually use different hardware specifications for disks, but each disk is represented as a separate Docker volume.
+Use {ref}`docker-compose` to start a three‑node cluster—two hot nodes and one cold node. For simplicity, use separate Docker volumes instead of distinct disk hardware.
 
-The designation of a node type is done by passing the `-Cnode.attr.storage` parameter to each node with the value hot or cold. The resulting `docker-compose.yml` file with two hot nodes and one cold node is as follows:
+Set the node type by passing `-Cnode.attr.storage=hot|cold` to each node. The following `docker-compose.yml` starts two hot nodes and one cold node:
 
 ```yaml
 services:
@@ -75,9 +75,9 @@ services:
       - CRATE_HEAP_SIZE=2g
 ```
 
-The cluster is started via `docker-compose up`. For more details, please see the above-linked documentation.
+Start the cluster with `docker compose up`. For details, see the linked documentation.
 
-Once the cluster is up and running, we create our partitioned time-series table. By specifying `"routing.allocation.require.storage" = 'hot'` in the `WITH` clause, we configure new partitions to be placed on a hot node.
+After the cluster starts, create a partitioned time‑series table. Set `"routing.allocation.require.storage" = 'hot'` in the `WITH` clause so CrateDB places new partitions on a hot node.
 
 ```sql
 CREATE TABLE IF NOT EXISTS doc.raw_metrics (
@@ -98,9 +98,9 @@ To validate the allocation of shards we insert a sample row:
 INSERT INTO doc.raw_metrics (variable, timestamp, value, quality) VALUES ('water-flow', NOW() - '5 months'::INTERVAL, 12, 1);
 ```
 
-The `INSERT` statement will implicitly trigger the creation of a new partition consisting of six shards. Since we configured `cratedb01` and `cratedb02` as hot nodes, we expect shards to be allocated only on those two nodes, and not on `cratedb03` (which is a cold node). The allocation can be validated by navigating to the “Shards” section in the Admin UI:
+The `INSERT` implicitly creates a new partition with six shards. Because `cratedb01` and `cratedb02` are hot nodes, CrateDB allocates shards only on those nodes, not on `cratedb03` (cold). Verify this in the Admin UI under “Shards”:
 
-![Screenshot 2021-12-08 at 11.03.44|273x250](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/ade3bbd61b56a642ee2493f2dca63a60cba7de1b.png){height=320px}
+![CrateDB Admin UI “Shards” view showing primary and replica shards evenly distributed across hot nodes; no shards on the cold node](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/ade3bbd61b56a642ee2493f2dca63a60cba7de1b.png){height=320px}
 
 As expected, primary shards, as well as replicas, are evenly distributed between the first two nodes, while no shards are stored on the third node.
 
@@ -127,11 +127,11 @@ The schema is an extension of what was introduced in the first article on the {r
 INSERT INTO doc.retention_policies VALUES ('doc', 'raw_metrics', 'ts_day', 60, 'storage', 'cold', NULL, 'reallocate');
 ```
 
-To remember which partitions have already been reallocated, we can make use of the `attributes` column in `sys.nodes` which reflects the hot/cold storage attribute we configured in the Docker Compose setup.
+Track which partitions are already reallocated by using the `attributes` column in `sys.nodes`, which reflects the hot/cold attribute from the Compose setup.
 
 ## Airflow setup
 
-Assume a basic Astronomer/Airflow setup is in place, as described in the {ref}`first post <airflow-export-s3>`. The algorithm has three steps:
+Assume a basic Astronomer/Airflow setup as described in the {ref}`first post <airflow-export-s3>`. The algorithm has three steps:
 
 1. `get_policies`: A query on `doc.retention_policies` and `information_schema.table_partitions` identifies partitions affected by a retention policy.
 2. `map_policy`: A helper method transforming the output of `get_policies` into a Python `dict` data structure for easier handling.
@@ -144,15 +144,16 @@ The full implementation is available as [data_retention_reallocate_dag.py](https
 To validate our implementation, we trigger the DAG once manually via the Airflow UI at `http://localhost:8081/`. Once executed, log messages of the `reallocate_partitions` task confirm the reallocation was triggered for the partition with the sample data set up earlier:
 
 ```text
-[2021-12-08, 12:39:44 UTC] {data_cleanup_dag.py:47} INFO - Reallocating partition ts_day = 1625702400000 for table doc.raw_metrics to storage = cold
+[2021-12-08, 12:39:44 UTC] {data_retention_reallocate_dag.py:47} INFO - Reallocating partition ts_day = 1625702400000 for table doc.raw_metrics to storage = cold
 [2021-12-08, 12:39:44 UTC] {dbapi.py:225} INFO - Running statement: ALTER TABLE doc.raw_metrics PARTITION (ts_day = 1625702400000) SET ("routing.allocation.require.storage" = 'cold');
 , parameters: None
 ```
 
 
-Revisiting the “Shards” section in the CrateDB Admin UI confirms that all shards have been moved to `cratedb03`. Since the default replication setting is `0-1` and there is only one cold node in this setup, replicas have been discarded.
+Revisiting the “Shards” section in the CrateDB Admin UI confirms that all shards have been moved to `cratedb03`.
+With `number_of_replicas = '0-1'` and only one cold node in this setup, CrateDB does not allocate replicas on cold storage.
 
-![Screenshot 2021-12-08 at 13.48.22|288x250](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/9f56283dcb4457b1123e1a653d951fc78e52a612.png){height=320px}
+![CrateDB Admin UI “Shards” view showing all shards relocated to the cold node; replicas not allocated](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/9f56283dcb4457b1123e1a653d951fc78e52a612.png){height=320px}
 
 ## Combined hot/cold and deletion strategy
 
@@ -169,5 +170,5 @@ INSERT INTO doc.retention_policies (table_schema, table_name, partition_column, 
 
 ## Summary
 
-Building on the earlier data retention policy implementation, reallocating partitions integrates seamlessly and consists of a single SQL statement.
-CrateDB’s self-organization handles the low-level operations and the actual movement of partitions. A multi‑stage policy is straightforward: first reallocate, then delete.
+Reallocation builds on the earlier data‑retention policy and requires a single SQL statement.
+CrateDB handles the low‑level movement automatically. A multi‑stage policy is straightforward: first reallocate, then delete.

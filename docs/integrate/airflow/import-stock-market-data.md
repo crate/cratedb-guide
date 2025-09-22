@@ -1,9 +1,9 @@
 (airflow-import-stock-market-data)=
-# Updating stock market data automatically with CrateDB and Apache Airflow
+# Automate stock market data updates with CrateDB and Apache Airflow
 
 Watch this tutorial on YouTube: [Automating stock data with Airflow and CrateDB](https://www.youtube.com/watch?v=YTTUzeaYUgQ&t=685s).
 
-If you are struggling with keeping your stock market data up to date, this tutorial walks you through exactly what you need to do so you can automate data collection and storage from SP500 companies.
+This tutorial shows how to automate collecting and storing stock market data for S&P 500 companies.
 
 ## Quick overview
 
@@ -15,8 +15,7 @@ Let's have a quick overview of what you'll do:
 
 ## Setup
 
-Let's get right to the setup on a Mac machine.
-You want to make sure you have Homebrew installed and Docker Desktop running.
+Set up on macOS. Ensure Homebrew is installed and Docker Desktop is running.
 
 ### Run CrateDB and create a table to store data
 
@@ -32,7 +31,7 @@ Create a table to store financial data. Focus on the adjusted close value
 (“adjusted_close”) per ticker per day. Use a composite primary key on
 (`closing_date`, `ticker`):
 ```sql
-CREATE TABLE sp500 (
+CREATE TABLE IF NOT EXISTS doc.sp500 (
    closing_date TIMESTAMP,
    ticker TEXT,
    adjusted_close DOUBLE PRECISION,
@@ -42,19 +41,19 @@ CREATE TABLE sp500 (
 We are done with the Admin UI for now. Let’s return to the terminal to install Astronomer.
 
 ### Install Astronomer CLI and initialize the project
-Let's return to the terminal, open a new tab, and install Astronomer with this command:
+In a new terminal tab, install Astronomer:
 
 ```bash
 brew install astro
 ```
 
-When Astronomer is ready, it's time to create a new directory for your airflow project. You can do that by running
+Create a new directory for the Airflow project:
 
 ```bash
 mkdir astro-project && cd astro-project
 ```
 
-Then, initialize the directory with the command
+Initialize the project:
 
 ```bash
 astro dev init
@@ -70,7 +69,8 @@ Now you have the skeleton of your Airflow project, which looks like this:
 > ├── setup # additional setup-related scripts/database schemas
 > └── requirements.txt # specification of Python packages
 
-Some information about the default settings: the PostgreSQL server is set up to listen on port 5432, and the web server is on port 8080. If these ports are unavailable, you can change them, and I'll show you how to do it shortly.
+By default, PostgreSQL listens on 5432 and the web server on 8080. If these ports are in use, change them as shown below.
+
 ### Last adjustments
 
 There are now three things you have to adjust before running Airflow:
@@ -97,10 +97,11 @@ You can now access Airflow in your browser at `http://localhost:8081`.
 
 ## Write the DAG
 
-In Airflow, you define tasks as nodes on a DAG - short for Direct Acyclic Graph. That means you set the tasks to run one after the other without cycles to avoid deadlocks.
+In Airflow, define tasks as nodes in a DAG—a Directed Acyclic Graph.
+That means you set the tasks to run one after the other without cycles to avoid deadlocks.
 A task (or node) does not stand by itself: it depends on other tasks, and other tasks depend on it. These dependencies are the edges of the Graph and make up the DAG structure by connecting the tasks. You bring the DAG to life by writing the tasks in Python with the help of Airflow operators and Python modules. Now you’ve learned enough to start building your DAG step-by-step! 
 
-Create a `.py` file for your DAG in your `astro-project/dags` folder; I will call it `financial_dag.py`. The DAG file has the following structure:
+Create `astro-project/dags/financial_dag.py`. The DAG file has the following structure:
 
 * Import operators and python modules
 * Declare functions
@@ -145,7 +146,7 @@ def download_yfinance_data(ds=None):
     """Downloads Adjusted Close data from S&P 500 companies"""
 
     # list of stocks of interest
-    tickers = {"AAPL", "AMZN", "META", "TSLA"}
+    tickers = ["AAPL", "AMZN", "META", "TSLA"]
     data = yf.download(tickers, start=ds)["Adj Close"]
     return data.to_json()
 ```
