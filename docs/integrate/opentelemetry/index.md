@@ -12,7 +12,7 @@
 
 [OpenTelemetry] (OTel) is an open-source observability framework and toolkit
 designed to facilitate the export and collection of telemetry data such as
-traces, metrics, and logs.
+[traces], [metrics], and [logs].
 
 OpenTelemetry provides a unified framework and the APIs/SDKs to instrument
 applications, allowing for the use of a single standard across different
