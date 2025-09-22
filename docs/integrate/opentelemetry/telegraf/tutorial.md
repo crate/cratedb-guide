@@ -61,8 +61,7 @@ Submit metrics using the OpenTelemetry Python SDK. Download the example file
 
 **Option 1: Using uv (recommended)**
 ```shell
-uv run --with=opentelemetry-distro --with=opentelemetry-exporter-otlp \
-  opentelemetry-instrument --service_name=app python example.py
+uv run --with=opentelemetry-distro --with=opentelemetry-exporter-otlp opentelemetry-instrument --service_name=app python example.py
 ```
 
 **Option 2: Using pip**
@@ -87,8 +86,7 @@ Erlang/Elixir, Go, Java, JavaScript, PHP, Python, Ruby, Rust, or Swift.
 
 CrateDB stores the metrics in the designated table, ready for inspection and analysis.
 ```shell
-crash --hosts "http://crate:crate@localhost:4200/" \
-  -c "SELECT * FROM metrics ORDER BY timestamp LIMIT 5;"
+crash --hosts "http://crate:crate@localhost:4200/" -c "SELECT * FROM metrics ORDER BY timestamp LIMIT 5;"
 ```
 ```psql
 +---------------------+---------------+-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+---------------+
