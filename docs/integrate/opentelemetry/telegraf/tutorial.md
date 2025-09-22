@@ -6,7 +6,7 @@ This tutorial walks you through configuring [Telegraf] to receive
 
 ## Prerequisites
 
-Docker is used for running all components. This approach works consistently
+Use Docker to run all components. This approach works consistently
 across Linux, macOS, and Windows. Alternatively, you can use Podman.
 
 ### Commands
