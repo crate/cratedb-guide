@@ -56,7 +56,7 @@ docker compose up
 
 ### Use Python
 
-Submit metrics using the OpenTelemetry Python SDK. Download the example file
+To submit metrics using the OpenTelemetry Python SDK, download the example file
 {download}`example.py` to your machine and choose one of these approaches:
 
 **Option 1: Using uv (recommended)**
