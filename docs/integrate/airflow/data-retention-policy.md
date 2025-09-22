@@ -3,11 +3,11 @@
 
 ## What is a Data Retention Policy?
 
-A data retention policy describes the practice of storing and managing data for a designated period of time. Once a data set completes its retention period, it should be deleted or archived, depending on requirements. Implementing data retention policies in the right way ensures compliance with existing guidelines and regulations, such as data privacy law, optimizes storage space by discarding outdated data and reduces storage costs.
+A data retention policy defines how long to keep data and what to do when it expires. Implement it to comply with data‑privacy rules, reduce storage, and cut costs.
 
 ## Specification of a Data Retention Policy in CrateDB
 
-In the [previous guide](https://community.cratedb.com/t/cratedb-and-apache-airflow-part-one/901), we illustrated how to use CrateDB and Apache Airflow to automate periodic data export to a remote filesystem with the infrastructure provided by [Astronomer](https://www.astronomer.io/).
+The {ref}`previous guide <airflow-export-s3>` shows how to use CrateDB and Apache Airflow to automate periodic data export to a remote filesystem on [Astronomer](https://www.astronomer.io/).
 In this guide, we focus on a more complex use case: the implementation of an effective retention policy for time-series data. To define retention policies we create a new table in CrateDB with the following schema:
 
 ```sql
@@ -20,8 +20,8 @@ CREATE TABLE IF NOT EXISTS "doc"."retention_policies" (
    PRIMARY KEY ("table_schema", "table_name")
 );
 ```
-The retention policy requires the use of a partitioned table, as in CrateDB, data can be deleted in an efficient way by dropping partitions. Therefore, for each retention policy, we store table schema, table name, the partition column, and the retention period defining how many days data should be retained.
-The `strategy` column is reserved for future implementations of additional data retention policies. For now, we will always set it to the value `delete`.
+A retention policy assumes a partitioned table because CrateDB can delete data efficiently by dropping partitions. For each policy, store the table schema, table name, partition column, and the retention period in days.
+Use the `strategy` column for future retention strategies. For now, set it to `delete`.
 
 Next, define the table for storing demo data:
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS "doc"."raw_metrics" (
 PARTITIONED BY ("ts_day");
 ```
 
-You may also use a different table. The important part is that data should be partitioned: in our case, we partition the table on the `ts_day` column. Finally, we store the retention policy of 1 day for demo data in the `retention_policies` table:
+You can use a different table. Ensure the table is partitioned; here, we partition on `ts_day`. Finally, insert a 1‑day demo policy into `retention_policies`:
 
 ```sql
 INSERT INTO retention_policies (table_schema, table_name, partition_column, retention_period, strategy) VALUES ('doc', 'raw_metrics', 'ts_day', 1, 'delete');
@@ -48,7 +48,8 @@ INSERT INTO retention_policies (table_schema, table_name, partition_column, rete
 Use [Apache Airflow](https://airflow.apache.org/) to automate deletions. Once a day, fetch policies from the database and delete data whose retention period expired.
 
 ### Retrieving Retention Policies
-The first step consists of a task that queries partitions affected by retention policies. We do this by joining `retention_policies` and `information_schema.table_partitions` tables and selecting values with expired retention periods. In CrateDB, `information_schema.table_partitions` [{ref}`documentation <crate-reference:is_table_partitions>`] contains information about all partitioned tables including the name of the table, schema, partition column, and the values of the partition.
+
+Create a task that queries partitions affected by retention policies.
 The resulting query is constructed as:
 ```sql
 SELECT QUOTE_IDENT(p.table_schema) || '.' || QUOTE_IDENT(p.table_name),
@@ -63,7 +64,7 @@ WHERE r.strategy = 'delete';
 To separate SQL logic from orchestration logic, we save the query as a file to `include/data_retention_retrieve_delete_policies.sql`.
 
 In the query, we use the `%(day)s` placeholder which will be substituted with the logical execution date. This is especially useful in case of failing workflow: the next time Airflow will pick up the date on which the job failed. This makes job runs consistent.
-To implement the query above we use a regular Python method, annotated with `@task` to make it executable by Airflow. The most important reason behind choosing this type of operator is the need to pass the query result to the next operator. In our case that would be the list of affected partitions. However, it would be natural to expect that we want to execute a query on CrateDB as an `SQLExecuteQueryOperator`, but since this operator always returns `None` as a result, we would not be able to access the query result outside the operator.
+Implement the query as a Python function decorated with `@task`.
 
 The implementation of the corresponding tasks looks as follows:
 ```python
@@ -80,12 +81,14 @@ def get_policies(ds=None):
 The first step is to create the function `get_policies` that takes as a parameter the logical date. The SQL statement gets loaded from a file. The `PostgresHook` establishes the connection with CrateDB. A `PostgresHook` takes the information from the `postgres_conn_id` and hooks us up with the CrateDB service. Then, the function executes the query and returns the result.
 
 ### Cross-Communication Between Tasks
-Before we continue into the implementation of the next task in Apache Airflow, we would like to give a brief overview of how the data is communicated between different tasks in a DAG. For this purpose, Airflow introduces the [XCom](https://airflow.apache.org/docs/apache-airflow/stable/concepts/xcoms.html) system. Simply speaking `XCom` can be seen as a small object with storage that allows tasks to `push` data into that storage that can be later used by a different task in the DAG.
+
+Before implementing the next task, briefly review how tasks exchange data in a DAG.
 
 XCom exchanges a small amount of data between tasks. Since Airflow 2.0, a Python task’s return value is stored in XCom. In our case, `get_policies` returns the partitions; the next task reads them via a reference to `get_policies` when defining dependencies.
 
 ### Applying Retention Policies
-Now that we retrieved the policies and Airflow automatically saved them via `XCom`, we need to create another task that will go through each element in the list and delete expired data.
+
+After retrieving the policies (stored in XCom), create another task that iterates over the list and deletes expired data.
 
 The `get_policies` task returns tuples with a positional index. As this makes further processing not very readable, we map tuples to a list with named indexes:
 ```python
@@ -97,7 +100,8 @@ def map_policy(policy):
     }
 ```
 
-In the DAG’s main method, use Airflow’s [dynamic task mapping](https://airflow.apache.org/docs/apache-airflow/2.3.0/concepts/dynamic-task-mapping.html) to execute the same task several times with different parameters:
+In the DAG’s main method, use Airflow’s [dynamic task mapping] 
+to execute the same task several times with different parameters:
 
 ```python
 SQLExecuteQueryOperator.partial(
@@ -154,11 +158,13 @@ The full DAG implementation of the data retention policy can be found in our [Gi
 
 ## Summary
 
-This guide introduced you on how to delete data with expired retention policies.
-The first part shows how to design policies in CrateDB and then, how to use
-Apache Airflow to automate data deletion.
+This guide introduced you on how to delete data whose retention period expired.
+First, design policies in CrateDB. Then use Apache Airflow to automate the deletion.
 
-The DAG implementation is fairly simple: the first task performs the extraction
-of relevant policies, while the second task makes sure that affected partitions
-are deleted. In the following guide, we will focus on another real-world
-example that can be automated with Apache Airflow and CrateDB.
+The DAG implementation is straightforward: one task extracts relevant policies;
+another one deletes the affected partitions.
+The {ref}`next guide <airflow-data-retention-hot-cold>` covers another real‑world
+example automated with Apache Airflow and CrateDB.
+
+
+[dynamic task mapping]: https://airflow.apache.org/docs/apache-airflow/stable/authoring-and-scheduling/dynamic-task-mapping.html

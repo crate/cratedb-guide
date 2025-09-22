@@ -98,7 +98,8 @@ Insert a sample row to validate shard allocation:
 INSERT INTO doc.raw_metrics (variable, timestamp, value, quality) VALUES ('water-flow', NOW() - '5 months'::INTERVAL, 12, 1);
 ```
 
-The `INSERT` implicitly creates a new partition with six shards. Because `cratedb01` and `cratedb02` are hot nodes, CrateDB allocates shards only on those nodes, not on `cratedb03` (cold). Verify this in the Admin UI under “Shards”:
+The `INSERT` implicitly creates a new partition with the table’s configured number of shards.
+Because `cratedb01` and `cratedb02` are hot nodes, CrateDB allocates shards only on those nodes, not on `cratedb03` (cold). Verify this in the Admin UI under “Shards”:
 
 ![CrateDB Admin UI “Shards” view showing primary and replica shards evenly distributed across hot nodes; no shards on the cold node](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/ade3bbd61b56a642ee2493f2dca63a60cba7de1b.png){height=320px}
 
@@ -135,7 +136,7 @@ Use a basic Astronomer/Airflow setup as described in the {ref}`first post <airfl
 
 1. `get_policies`: A query on `doc.retention_policies` and `information_schema.table_partitions` identifies partitions affected by a retention policy.
 2. `map_policy`: A helper method transforming the output of `get_policies` into a Python `dict` data structure for easier handling.
-3. `reallocate_partitions`: Executes an SQL statement for each mapped policy: `ALTER TABLE <table> PARTITION (<partition key> = <partition value>) SET ("routing.allocation.require.storage" = 'cold');`
+3. `reallocate_partitions`: Executes an SQL statement for each mapped policy: `ALTER TABLE "<schema>"."<table>" PARTITION ("<partition key>" = <partition value>) SET ("routing.allocation.require.storage" = 'cold');`
 
 CrateDB then automatically initiates relocation of the affected partition to a node that fulfills the requirement (`cratedb03` in this setup).
 
@@ -168,5 +169,5 @@ INSERT INTO doc.retention_policies (table_schema, table_name, partition_column, 
 
 ## Summary
 
-Reallocation builds on the earlier data‑retention policy and requires a single SQL statement.
-CrateDB handles the low‑level movement automatically. A multi‑stage policy is straightforward: first reallocate, then delete.
+Reallocation builds on the earlier data‑retention policy and uses a single SQL statement.
+CrateDB handles the movement automatically. A multi‑stage policy is straightforward: first reallocate, then delete.
