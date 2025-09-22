@@ -68,7 +68,7 @@ printf "temperature;job=app 42.42 1758486061\nhumidity;job=app 84.84 1758486061"
 
 ### Use Python
 
-Submit metrics using the OpenTelemetry Python SDK. Download the example file
+To submit metrics using the OpenTelemetry Python SDK, download the example file
 {download}`example.py` to your machine and choose one of these approaches:
 
 **Option 1: Using uv (recommended)**
