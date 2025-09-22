@@ -7,8 +7,10 @@ into CrateDB.
 
 ## Prerequisites
 
-Use Docker to run all components. This approach works consistently
-across Linux, macOS, and Windows. Alternatively, you can use Podman.
+Use Docker or Podman to run all components. This approach works consistently
+across Linux, macOS, and Windows.
+If you use Podman, replace `docker` with `podman` (or enable the podman‑docker
+compatibility shim) and run `podman compose up`.
 
 ### Commands
 
@@ -38,6 +40,8 @@ function nc { docker run --rm -i --network=cratedb-demo docker.io/toolbelt/netca
 ```shell
 doskey crash=docker compose exec -it cratedb crash $*
 doskey nc=docker run --rm -i --network=cratedb-demo docker.io/toolbelt/netcat:2025-08-23 $*
+REM Note: doskey macros reset each session. To persist, configure an AutoRun command
+REM pointing to a macro file, or re-run these in your shell startup script.
 ```
 :::
 
