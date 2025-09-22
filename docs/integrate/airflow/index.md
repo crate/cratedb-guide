@@ -60,6 +60,7 @@ Astro is a managed Airflow service by [Astronomer].
 :::
 
 ::::{grid} 2
+:gutter: 2
 
 :::{grid-item-card} Getting started with Apache Airflow
 :columns: 12
@@ -88,6 +89,7 @@ into CrateDB.
 :::
 
 ::::{grid} 3
+:gutter: 2
 
 :::{grid-item-card} Guide: Export to S3
 :link: airflow-export-s3
