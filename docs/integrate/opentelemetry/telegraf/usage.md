@@ -1,7 +1,7 @@
-(opentelemetry-telegraf-tutorial)=
+(opentelemetry-telegraf-usage)=
 # Store OpenTelemetry metrics using Telegraf and CrateDB
 
-This tutorial walks you through configuring [Telegraf] to receive
+This how-to guide walks you through configuring [Telegraf] to receive
 [OpenTelemetry] [metrics] and store them into CrateDB.
 
 ## Prerequisites

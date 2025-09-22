@@ -1,4 +1,4 @@
-(opentelemetry-otelcol-tutorial)=
+(opentelemetry-otelcol-usage)=
 # Connect the OpenTelemetry Collector to CrateDB
 
 Configure the [OpenTelemetry Collector], its built-in [Prometheus Remote Write Exporter], 
