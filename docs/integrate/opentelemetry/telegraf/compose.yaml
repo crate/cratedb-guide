@@ -1,0 +1,23 @@
+# Service composition file for Docker Compose or Podman Compose
+
+services:
+
+  cratedb:
+    image: docker.io/crate/crate:latest
+    ports:
+      - "4200:4200/tcp"
+      - "5432:5432/tcp"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4200/"]
+      interval: 5s
+      timeout: 30s
+      retries: 5
+
+  telegraf:
+    image: docker.io/telegraf:latest
+    ports:
+      - "4317:4317/tcp"  # OTLP gRPC
+    volumes:
+      - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
+    depends_on:
+      - cratedb

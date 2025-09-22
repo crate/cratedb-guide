@@ -19,7 +19,8 @@ applications, allowing for the use of a single standard across different
 observability tools.
 
 The [OpenTelemetry Collector] and its [Prometheus Remote Write Exporter] can
-be used to submit and store [metrics] data into CrateDB.
+be used to submit and store [metrics] data into CrateDB. Alternatively, you
+can use [Telegraf].
 
 :::{rubric} Synopsis
 :::
@@ -31,6 +32,15 @@ Configure OpenTelemetry Collector to send metrics data to the [CrateDB Prometheu
 :::
 :::{literalinclude} collector/otelcol.yaml
 :lines: 38-43
+:::
+
+Configure Telegraf to store OpenTelemetry metrics data into CrateDB.
+
+:::{literalinclude} telegraf/telegraf.conf
+:lines: 1-6
+:::
+:::{literalinclude} telegraf/telegraf.conf
+:lines: 27-33
 :::
 
 
@@ -45,6 +55,12 @@ Configure OpenTelemetry Collector to send metrics data to the [CrateDB Prometheu
 How to configure OpenTelemetry Collector to submit metrics to CrateDB.
 :::
 
+:::{grid-item-card} Tutorial: Use Telegraf and CrateDB
+:link: opentelemetry-telegraf-tutorial
+:link-type: ref
+How to configure Telegraf to submit OpenTelemetry metrics to CrateDB.
+:::
+
 ::::
 
 
@@ -52,6 +68,7 @@ How to configure OpenTelemetry Collector to submit metrics to CrateDB.
 :maxdepth: 1
 :hidden:
 Collector Tutorial <collector/tutorial>
+Telegraf Tutorial <telegraf/tutorial>
 :::
 
 
@@ -61,4 +78,5 @@ Collector Tutorial <collector/tutorial>
 [OpenTelemetry]: https://opentelemetry.io/docs/what-is-opentelemetry/
 [OpenTelemetry Collector]: https://opentelemetry.io/docs/collector/
 [Prometheus Remote Write Exporter]: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/prometheusremotewriteexporter
+[Telegraf]: https://www.influxdata.com/time-series-platform/telegraf/
 [traces]: https://opentelemetry.io/docs/concepts/signals/traces/
