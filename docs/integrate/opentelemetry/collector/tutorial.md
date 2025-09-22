@@ -8,7 +8,7 @@ store them into CrateDB.
 
 ## Prerequisites
 
-Docker is used for running all components. This approach works consistently
+Use Docker to run all components. This approach works consistently
 across Linux, macOS, and Windows. Alternatively, you can use Podman.
 
 ### Commands
@@ -23,7 +23,7 @@ Prepare shortcut for {ref}`crate-crash:index` command.
 Add these settings to your shell profile (`~/.profile`) to make them persistent.
 ```shell
 alias crash="docker run --rm -it --network=host crate/crate:latest crash"
-alias nc="docker run --rm -i --network=cratedb-demo docker.io/toolbelt/netcat:2025-08-23"
+alias nc="docker run --rm -i --network=host docker.io/toolbelt/netcat:2025-08-23"
 ```
 :::
 :::{tab-item} Windows PowerShell
@@ -31,14 +31,14 @@ alias nc="docker run --rm -i --network=cratedb-demo docker.io/toolbelt/netcat:20
 Add these settings to your PowerShell profile (`$PROFILE`) to make them persistent.
 ```powershell
 function crash { docker run --rm -i --network=host crate/crate:latest crash @args }
-function nc { docker run --rm -i --network=cratedb-demo docker.io/toolbelt/netcat:2025-08-23 @args }
+function nc { docker run --rm -i --network=host docker.io/toolbelt/netcat:2025-08-23 @args }
 ```
 :::
 :::{tab-item} Windows Command
 :sync: dos
 ```shell
 doskey crash=docker run --rm -i --network=host crate/crate:latest crash $*
-doskey nc=docker run --rm -i --network=cratedb-demo docker.io/toolbelt/netcat:2025-08-23 $*
+doskey nc=docker run --rm -i --network=host docker.io/toolbelt/netcat:2025-08-23 $*
 ```
 :::
 
