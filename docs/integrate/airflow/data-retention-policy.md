@@ -1,5 +1,5 @@
 (airflow-data-retention-policy)=
-# Implementing a data retention policy in CrateDB using Apache Airflow
+# Implement a data retention policy in CrateDB using Apache Airflow
 
 ## What is a Data Retention Policy?
 

@@ -1,5 +1,5 @@
 (airflow-import-parquet)=
-# Automating the import of Parquet files with Apache Airflow
+# Automate the import of Parquet files with Apache Airflow
 
 ## Introduction
 
