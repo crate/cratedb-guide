@@ -20,20 +20,20 @@ Prepare shortcut for {ref}`crate-crash:index` command.
 :sync: unix
 Add these settings to your shell profile (`~/.profile`) to make them persistent.
 ```shell
-alias crash="docker run --rm -it --network=host crate/crate:latest crash"
+alias crash="docker compose exec -it cratedb crash"
 ```
 :::
 :::{tab-item} Windows PowerShell
 :sync: powershell
 Add these settings to your PowerShell profile (`$PROFILE`) to make them persistent.
 ```powershell
-function crash { docker run --rm -i --network=host crate/crate:latest crash @args }
+function crash { docker compose exec -it cratedb crash @args }
 ```
 :::
 :::{tab-item} Windows Command
 :sync: dos
 ```shell
-doskey crash=docker run --rm -i --network=host crate/crate:latest crash $*
+doskey crash=docker compose exec -it cratedb crash $*
 ```
 :::
 
@@ -41,9 +41,9 @@ doskey crash=docker run --rm -i --network=host crate/crate:latest crash $*
 
 ### Services
 
-Save the files {download}`compose.yaml` and {download}`telegraf.conf`
-to your machine and start all services using
-Docker Compose or Podman Compose.
+Save {download}`compose.yaml` and {download}`telegraf.conf`, then start
+services using Docker Compose or Podman Compose.
+
 ```shell
 docker compose up
 ```
@@ -62,7 +62,7 @@ uv run --with=opentelemetry-distro --with=opentelemetry-exporter-otlp \
 ```
 
 **Option 2: Using pip**
-First install dependencies:
+Install dependencies:
 ```shell
 pip install opentelemetry-distro opentelemetry-exporter-otlp
 ```

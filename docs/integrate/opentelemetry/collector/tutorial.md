@@ -21,23 +21,23 @@ Prepare shortcut for {ref}`crate-crash:index` command.
 :sync: unix
 Add these settings to your shell profile (`~/.profile`) to make them persistent.
 ```shell
-alias crash="docker run --rm -it --network=host crate/crate:latest crash"
-alias nc="docker run --rm -i --network=host docker.io/toolbelt/netcat:2025-08-23"
+alias crash="docker compose exec -it cratedb crash"
+alias nc="docker run --rm -i --network=cratedb-demo docker.io/toolbelt/netcat:2025-08-23"
 ```
 :::
 :::{tab-item} Windows PowerShell
 :sync: powershell
 Add these settings to your PowerShell profile (`$PROFILE`) to make them persistent.
 ```powershell
-function crash { docker run --rm -i --network=host crate/crate:latest crash @args }
-function nc { docker run --rm -i --network=host docker.io/toolbelt/netcat:2025-08-23 @args }
+function crash { docker compose exec -it cratedb crash @args }
+function nc { docker run --rm -i --network=cratedb-demo docker.io/toolbelt/netcat:2025-08-23 @args }
 ```
 :::
 :::{tab-item} Windows Command
 :sync: dos
 ```shell
-doskey crash=docker run --rm -i --network=host crate/crate:latest crash $*
-doskey nc=docker run --rm -i --network=host docker.io/toolbelt/netcat:2025-08-23 $*
+doskey crash=docker compose exec -it cratedb crash $*
+doskey nc=docker run --rm -i --network=cratedb-demo docker.io/toolbelt/netcat:2025-08-23 $*
 ```
 :::
 
@@ -45,9 +45,9 @@ doskey nc=docker run --rm -i --network=host docker.io/toolbelt/netcat:2025-08-23
 
 ### Services
 
-Download {download}`compose.yaml`, {download}`cratedb-prometheus-adapter.yaml`,
-{download}`otelcol.yaml` and {download}`ddl.sql` to your machine. 
-Start all services using Docker Compose or Podman Compose.
+Save {download}`compose.yaml`, {download}`cratedb-prometheus-adapter.yaml`,
+{download}`otelcol.yaml` and {download}`ddl.sql` to your machine, then start
+services using Docker Compose or Podman Compose.
 
 ```shell
 docker compose up
@@ -60,7 +60,7 @@ docker compose up
 Use [netcat] to submit metrics using the [Carbon plaintext protocol].
 ```shell
 printf "temperature;job=app 42.42 1758486061\nhumidity;job=app 84.84 1758486061" \
-  | nc -c localhost 2003
+  | nc -c otelcol 2003
 ```
 
 ### Use Python
@@ -75,7 +75,7 @@ uv run --with=opentelemetry-distro --with=opentelemetry-exporter-otlp \
 ```
 
 **Option 2: Using pip**
-First install dependencies:
+Install dependencies:
 ```shell
 pip install opentelemetry-distro opentelemetry-exporter-otlp
 ```
