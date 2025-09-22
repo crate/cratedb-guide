@@ -52,21 +52,27 @@ docker compose up
 
 ### Use Python
 
-Use the OTel Python language SDK to submit metrics. To do that,
-save the Python OTel example file {download}`example.py` to your machine and
-use the `opentelemetry-instrument` program to invoke your Python application.
-```shell
-opentelemetry-instrument --service_name=app python example.py
-```
-:::{literalinclude} example.py
-:::
-The [uv] utility can invoke the demo program including dependencies,
-otherwise install them using `pip install opentelemetry-distro opentelemetry-exporter-otlp`
-or similarly.
+Submit metrics using the OpenTelemetry Python SDK. Download the example file
+{download}`example.py` to your machine and choose one of these approaches:
+
+**Option 1: Using uv (recommended)**
 ```shell
 uv run --with=opentelemetry-distro --with=opentelemetry-exporter-otlp \
   opentelemetry-instrument --service_name=app python example.py
 ```
+
+**Option 2: Using pip**
+First install dependencies:
+```shell
+pip install opentelemetry-distro opentelemetry-exporter-otlp
+```
+Then run the example:
+```shell
+opentelemetry-instrument --service_name=app python example.py
+```
+
+:::{literalinclude} example.py
+:::
 
 ### Use any language
 
@@ -75,7 +81,7 @@ Erlang/Elixir, Go, Java, JavaScript, PHP, Python, Ruby, Rust, or Swift.
 
 ## Explore data
 
-CrateDB stored the metrics in the designated table, ready for inspection and analysis.
+CrateDB stores the metrics in the designated table, ready for inspection and analysis.
 ```shell
 crash --hosts "http://crate:crate@localhost:4200/" \
   -c "SELECT * FROM metrics ORDER BY timestamp LIMIT 5;"
