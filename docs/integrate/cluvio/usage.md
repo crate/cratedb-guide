@@ -1,4 +1,4 @@
-(cluvio-tutorial)=
+(cluvio-usage)=
 # Data Analysis with Cluvio and CrateDB
 
 ## Introduction
@@ -18,7 +18,7 @@ Deploying a CrateDB cloud cluster has never been easier, simply follow our tutor
 
 ### Load data into CrateDB
 
-In this tutorial, you use two tables—[flights](http://stat-computing.org/dataexpo/2009) and [airports](https://openflights.org/data.php)—from January 2008.
+In this usage guide, you use two tables—[flights](http://stat-computing.org/dataexpo/2009) and [airports](https://openflights.org/data.php)—from January 2008.
 
 #### Create tables
 
@@ -218,7 +218,7 @@ destination departing from Los Angeles (LAX) on a Tuesday.
 
 ## Conclusion
 
-That’s it for this tutorial. Get started in the [CrateDB Cloud Console],
+That’s it for this. Get started in the [CrateDB Cloud Console],
 connect your cluster to [Cluvio], and begin analyzing your data. Explore
 features in the [Cluvio documentation].
 
