@@ -19,7 +19,7 @@ also offers a custom device support program.
 ::::{grid} 2
 
 :::{grid-item-card} Deploying CrateDB on balena\.io
-:link: balena-tutorial
+:link: balena-usage
 :link-type: ref
 Learn how to deploy CrateDB using the Balena platform.
 :::
@@ -30,7 +30,7 @@ Learn how to deploy CrateDB using the Balena platform.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-Tutorial <tutorial>
+Usage <usage>
 :::
 
 
