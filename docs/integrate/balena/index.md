@@ -1,0 +1,37 @@
+(balena)=
+# Balena
+
+:::{div} sd-text-muted
+Powerful IoT device management made simple.
+:::
+
+:::{rubric} About
+:::
+
+[balena] is an end-to-end IoT management solution based on a secure container-based
+technology stack that enables you to develop, deploy, manage, and scale fleets of
+IoT Linux devices. The platform supports 80+ device types out of the box and
+also offers a custom device support program.
+
+:::{rubric} Learn
+:::
+
+::::{grid} 2
+
+:::{grid-item-card} Deploying CrateDB on balena\.io
+:link: balena-usage
+:link-type: ref
+Learn how to deploy CrateDB using the Balena platform.
+:::
+
+::::
+
+
+:::{toctree}
+:maxdepth: 1
+:hidden:
+Usage <usage>
+:::
+
+
+[balena]: https://www.balena.io/
