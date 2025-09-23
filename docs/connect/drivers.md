@@ -8,6 +8,7 @@ This section lists drivers and adapters for supported programming languages,
 frameworks, and environments.
 
 ## PostgreSQL
+
 The drivers listed in this section all use the [CrateDB PostgreSQL interface].
 
 ::::{sd-table}
@@ -218,6 +219,7 @@ For connecting to CrateDB from Python, supporting Python's async implementations
 
 
 ## HTTP
+
 The drivers listed in this section all use the [CrateDB HTTP interface].
 
 ::::{sd-table}
@@ -378,3 +380,7 @@ Ruby on Rails ActiveRecord adapter for CrateDB.
 Please visit the {ref}`build-status` page for an overview about the integration
 status of the client drivers listed above, and more.
 ```
+
+
+[CrateDB HTTP interface]: inv:crate-reference:*:label#interface-http
+[CrateDB PostgreSQL interface]: inv:crate-reference:*:label#interface-postgresql

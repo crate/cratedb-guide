@@ -134,8 +134,6 @@ ruby
 [Authentication]: inv:crate-reference:*:label#admin_auth
 [Bulk operations]: inv:crate-reference:*:label#http-bulk-ops
 [CrateDB Examples]: https://github.com/crate/cratedb-examples
-[CrateDB HTTP interface]: inv:crate-reference:*:label#interface-http
-[CrateDB PostgreSQL interface]: inv:crate-reference:*:label#interface-postgresql
 [HTTP interface]: inv:crate-reference:*:label#interface-http
 [HTTP protocol]: https://en.wikipedia.org/wiki/HTTP
 [JDBC]: https://en.wikipedia.org/wiki/Java_Database_Connectivity
