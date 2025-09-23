@@ -34,7 +34,7 @@ your entire company in few minutes.
 ::::{grid} 2
 
 :::{grid-item-card} Data Analysis with Cluvio and CrateDB
-:link: cluvio-tutorial
+:link: cluvio-usage
 :link-type: ref
 Explore how to leverage the power of Cluvio, a modern data analysis platform
 with CrateDB Cloud as the underlying database.
@@ -50,7 +50,7 @@ with CrateDB Cloud as the underlying database.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-Tutorial <tutorial>
+Usage <usage>
 :::
 
 
