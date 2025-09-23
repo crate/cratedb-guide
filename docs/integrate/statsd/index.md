@@ -35,8 +35,8 @@ Configure Telegraf using the StatsD input plugin and the CrateDB output plugin.
 
 ::::{grid}
 
-:::{grid-item-card} Tutorial: Use StatsD with CrateDB
-:link: statsd-tutorial
+:::{grid-item-card} Use StatsD with CrateDB
+:link: statsd-usage
 :link-type: ref
 How to configure StatsD and Telegraf to submit statistics to CrateDB.
 :::
@@ -47,7 +47,7 @@ How to configure StatsD and Telegraf to submit statistics to CrateDB.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-Tutorial <tutorial>
+Usage <usage>
 :::
 
 
