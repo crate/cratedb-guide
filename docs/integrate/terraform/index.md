@@ -22,7 +22,7 @@ components like DNS entries and SaaS features.
 ::::{grid} 2
 
 :::{grid-item-card} Deploying CrateDB to the cloud via Terraform
-:link: terraform-tutorial
+:link: terraform-usage
 :link-type: ref
 Learn how to use Terraform to run a CrateDB cluster deployment on AWS.
 :::
@@ -32,7 +32,7 @@ Learn how to use Terraform to run a CrateDB cluster deployment on AWS.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-Tutorial <tutorial>
+Usage <usage>
 :::
 
 [Terraform]: https://developer.hashicorp.com/terraform

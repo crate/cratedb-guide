@@ -1,4 +1,4 @@
-(terraform-tutorial)=
+(terraform-usage)=
 # Deploying CrateDB to the cloud using Terraform
 
 ## Introduction
@@ -296,7 +296,7 @@ $ terraform output -json cratedb | jq
 ## Teardown
 
 :::{caution}
-This tutorial creates billable AWS resources. Destroy the stack when finished
+The next steps will create billable AWS resources. Destroy the stack when finished
 to avoid ongoing costs.
 :::
 
