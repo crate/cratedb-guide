@@ -107,6 +107,20 @@ article.
 [CrateDB Prometheus Adapter]
 
 
+:::{rubric} See also
+:::
+
+::::{grid} 2
+
+:::{grid-item-card} Tutorial: Monitoring CrateDB with Prometheus and Grafana
+:link: monitoring-prometheus-grafana
+:link-type: ref
+Production-grade monitoring and graphing of CrateDB metrics.
+:::
+
+::::
+
+
 ```{seealso}
 [CrateDB and Prometheus]
 ```
