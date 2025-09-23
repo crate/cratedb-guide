@@ -38,8 +38,8 @@ worldwide across every industry.
 
 ::::{grid} 2
 
-:::{grid-item-card} Tutorial: Connect Apache NiFi and CrateDB
-:link: nifi-tutorial
+:::{grid-item-card} Connect Apache NiFi and CrateDB
+:link: nifi-usage
 :link-type: ref
 Connect Apache NiFi to CrateDB and ingest data.
 :::
@@ -53,7 +53,7 @@ Connect Apache NiFi to CrateDB and ingest data.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-Tutorial <tutorial>
+Usage <usage>
 :::
 
 
