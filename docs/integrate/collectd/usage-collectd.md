@@ -1,7 +1,7 @@
-(collectd-tutorial-base)=
+(collectd-usage-base)=
 # Load data into CrateDB using collectd
 
-This tutorial shows how to configure and start [collectd] and CrateDB
+This usage guide shows how to configure and start [collectd] and CrateDB
 so that collectd sends system metrics and CrateDB stores them.
 
 ## Prerequisites
