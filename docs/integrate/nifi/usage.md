@@ -1,4 +1,4 @@
-(nifi-tutorial)=
+(nifi-usage)=
 # Connecting to CrateDB from Apache NiFi
 
 Learn how to connect from [Apache NiFi](https://nifi.apache.org) to CrateDB
