@@ -26,7 +26,7 @@ Airflow has a modular architecture and uses a message queue to orchestrate an
 arbitrary number of workers. Pipelines are defined in Python, allowing for
 dynamic pipeline generation and on-demand, code-driven pipeline invocation.
 
-Pipeline parameterization is using the powerful Jinja templating engine.
+Use Jinja templates to parameterize Airflow pipelines.
 To extend the system, you can define your own operators and extend libraries
 to fit the level of abstraction that suits your environment.
 :::
@@ -38,40 +38,46 @@ to fit the level of abstraction that suits your environment.
 [![Astronomer logo](https://logowik.com/content/uploads/images/astronomer2824.jpg){w=180px}](https://www.astronomer.io/)
 ```
 
-[Astro][Astronomer] is the best managed service in the market for teams on any step of their data
-journey. Spend time where it counts.
+Astro is a managed Airflow service by [Astronomer].
 
 - Astro runs on the cloud of your choice. Astro manages Airflow and gives you all the
   features you need to focus on what really matters – your data. All while connecting
   securely to any service in your network.
-- Create Airflow environments with a click of a button.
+- Create Airflow environments quickly.
 - Protect production DAGs with easy Airflow upgrades and custom high-availability configs.
 - Get visibility into what’s running with analytics views and easy interfaces for logs
-  and alerts. Across environments.
-- Take down tech-debt and learn how to drive Airflow best practices from the experts
-  behind the project. Get world-class support, fast-tracked bug fixes, and same-day
-  access to new Airflow versions.
+  and alerts across environments.
+- Adopt Airflow best practices with support and timely upgrades.
 
 ```{div} .clearfix
 ```
 
 :::
 
+(airflow-guides)=
 
-:::{rubric} Learn: Starter Tutorials
+:::{rubric} Learn: Starter guides
 :::
 
 ::::{grid} 2
+:gutter: 2
 
-:::{grid-item-card} Tutorial: Import Parquet files
-:link: https://community.cratedb.com/t/automating-the-import-of-parquet-files-with-apache-airflow/1247
-:link-type: url
+:::{grid-item-card} Getting started with Apache Airflow
+:columns: 12
+:link: airflow-getting-started
+:link-type: ref
+Define an Airflow DAG that downloads, processes, and stores data in CrateDB.
+:::
+
+:::{grid-item-card} Import Parquet files
+:link: airflow-import-parquet
+:link-type: ref
 Define an Airflow DAG to import a Parquet file from S3 into CrateDB.
 :::
 
-:::{grid-item-card} Tutorial: Load stock market data
-:link: https://community.cratedb.com/t/updating-stock-market-data-automatically-with-cratedb-and-apache-airflow/1304
-:link-type: url
+:::{grid-item-card} Load stock market data
+:link: airflow-import-stock-market-data
+:link-type: ref
 Define an Airflow DAG to download, process, and store stock market data
 into CrateDB.
 :::
@@ -79,27 +85,28 @@ into CrateDB.
 ::::
 
 
-:::{rubric} Learn: Advanced Tutorials
+:::{rubric} Learn: Advanced guides
 :::
 
 ::::{grid} 3
+:gutter: 2
 
-:::{grid-item-card} Tutorial: Export to S3
-:link: https://community.cratedb.com/t/cratedb-and-apache-airflow-automating-data-export-to-s3/901
-:link-type: url
-Recurrently export data from CrateDB to S3.
+:::{grid-item-card} Export to S3
+:link: airflow-export-s3
+:link-type: ref
+Export data from CrateDB to S3 on a schedule.
 :::
 
-:::{grid-item-card} Tutorial: Implement a data retention policy
-:link: https://community.cratedb.com/t/implementing-a-data-retention-policy-in-cratedb-using-apache-airflow/913
-:link-type: url
+:::{grid-item-card} Implement a data retention policy
+:link: airflow-data-retention-policy
+:link-type: ref
 An effective retention policy for time-series data, relating to the practice of
 storing and managing data for a designated period of time.
 :::
 
-:::{grid-item-card} Tutorial: Implement a hot and cold storage data retention policy
-:link: https://community.cratedb.com/t/cratedb-and-apache-airflow-building-a-hot-cold-storage-data-retention-policy/934
-:link-type: url
+:::{grid-item-card} Implement a hot and cold storage data retention policy
+:link: airflow-data-retention-hot-cold
+:link-type: ref
 A hot/cold storage strategy is often motivated by a tradeoff between performance
 and cost-effectiveness.
 :::
@@ -118,6 +125,18 @@ and cost-effectiveness.
 [ETL pipeline using Apache Airflow with CrateDB (Source)] |
 [Run an ETL pipeline with CrateDB and data quality checks]
 ```
+
+
+:::{toctree}
+:maxdepth: 1
+:hidden:
+Getting started <getting-started>
+Import Parquet files <import-parquet>
+Import stock market data <import-stock-market-data>
+Export to S3 <export-s3>
+Data retention policy <data-retention-policy>
+Hot/cold data retention <data-retention-hot-cold>
+:::
 
 
 [CrateDB and Apache Airflow]: https://cratedb.com/integrations/cratedb-and-apache-airflow
