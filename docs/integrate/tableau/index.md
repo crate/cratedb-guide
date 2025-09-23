@@ -26,7 +26,7 @@ data by translating drag-and-drop actions into data queries through an intuitive
 :::{grid-item-card} Blog: Connecting to CrateDB from Tableau with JDBC
 :link: https://cratedb.com/blog/connecting-to-cratedb-from-tableau-with-jdbc
 :link-type: url
-In this tutorial, you will:
+In this usage guide, you will:
 - In CrateDB, create a table and provision the Iris dataset.
 - Set up the PostgreSQL JDBC driver for Tableau.
 - Connect to CrateDB from Tableau using PostgreSQL JDBC.
@@ -34,7 +34,7 @@ In this tutorial, you will:
 :::
 
 :::{grid-item-card} Article: Using CrateDB with Tableau
-:link: tableau-tutorial
+:link: tableau-usage
 :link-type: ref
 How to install the latest PostgreSQL JDBC driver (e.g.
 `postgresql-42.7.1.jar` or newer) for using Tableau.
@@ -65,7 +65,7 @@ We are tracking interoperability issues per [Tool: Tableau] and
 :::{toctree}
 :maxdepth: 1
 :hidden:
-Tutorial <tutorial>
+Usage <usage>
 :::
 
 

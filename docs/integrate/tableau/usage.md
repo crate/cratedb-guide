@@ -1,4 +1,4 @@
-(tableau-tutorial)=
+(tableau-usage)=
 # Using CrateDB with Tableau
 
 For using Tableau with CrateDB, install the latest PostgreSQL driver, as detailed in the steps below.
