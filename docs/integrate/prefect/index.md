@@ -26,10 +26,10 @@ workflows that deliver consistent results.
 
 ::::{grid}
 
-:::{grid-item-card} Tutorial: Combining Prefect and CrateDB
-:link: prefect-tutorial
+:::{grid-item-card} Combine Prefect and CrateDB for building seamless data pipelines
+:link: prefect-usage
 :link-type: ref
-Building Seamless Data Pipelines Made Easy: Combining Prefect and CrateDB.
+Learn how to build Prefect workflows in Python, focused on tasks around CrateDB.
 :::
 
 ::::
@@ -38,7 +38,7 @@ Building Seamless Data Pipelines Made Easy: Combining Prefect and CrateDB.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-Tutorial <tutorial>
+Usage <usage>
 :::
 
 
