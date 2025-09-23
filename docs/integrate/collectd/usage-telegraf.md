@@ -1,7 +1,7 @@
-(collectd-tutorial-telegraf)=
+(collectd-usage-telegraf)=
 # Load data into CrateDB using collectd and Telegraf
 
-This tutorial shows how to configure and start [collectd], [Telegraf]
+This usage guide shows how to configure and start [collectd], [Telegraf]
 and CrateDB so that collectd sends system metrics to Telegraf, which
 stores it into CrateDB using the built-in [CrateDB Output Plugin for Telegraf].
 

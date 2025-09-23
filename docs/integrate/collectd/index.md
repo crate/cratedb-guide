@@ -40,14 +40,14 @@ using its built-in [CrateDB Output Plugin for Telegraf].
 
 ::::{grid}
 
-:::{grid-item-card} Tutorial: Use collectd with CrateDB
-:link: collectd-tutorial-base
+:::{grid-item-card} Use collectd with CrateDB
+:link: collectd-usage-base
 :link-type: ref
 How to configure collectd to submit metrics to CrateDB.
 :::
 
-:::{grid-item-card} Tutorial: Use collectd with Telegraf and CrateDB
-:link: collectd-tutorial-telegraf
+:::{grid-item-card} Use collectd with Telegraf and CrateDB
+:link: collectd-usage-telegraf
 :link-type: ref
 How to configure collectd and Telegraf to submit metrics to CrateDB.
 :::
@@ -58,8 +58,8 @@ How to configure collectd and Telegraf to submit metrics to CrateDB.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-Tutorial with collectd <tutorial-collectd>
-Tutorial with Telegraf <tutorial-telegraf>
+Usage with collectd <usage-collectd>
+Usage with Telegraf <usage-telegraf>
 :::
 
 
