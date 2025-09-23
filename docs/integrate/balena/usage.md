@@ -1,4 +1,4 @@
-(balena-tutorial)=
+(balena-usage)=
 # Deploying CrateDB on balena\.io
 
 [Balena] provides a complete set of tools to build, deploy, and manage fleets of
@@ -6,7 +6,7 @@ connected IoT devices. It lets fleet owners focus on their applications and
 growth with minimal friction.
 
 The tools work well together as a platform, and you can also pick only the
-components you need and adapt them to your use case. This short tutorial
+components you need and adapt them to your use case. This usage guide
 shows how to integrate CrateDB with Balena and run it on a Raspberry Pi 4
 (ARM) or a generic x86_64 device.
 
@@ -32,7 +32,7 @@ To use balena Deploy, click the button:
 
 [![Deploy with balena button](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/aea351a7522cd74ffa5739b602868f77eadb77c3.png)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/mpous/crate-balena)
 
-This tutorial shows how to deploy CrateDB with the balena CLI. For details, see
+This usage guide shows how to deploy CrateDB with the balena CLI. For details, see
 [https://balena.io](https://balena.io).
 
 Follow these steps to create a new fleet and add a device:
@@ -51,7 +51,7 @@ Follow these steps to create a new fleet and add a device:
         *   Set your Wi-Fi SSID
         *   Set your Wi-Fi password
 
-You are ready to explore CrateDB. Check our other tutorials to continue.
+You are ready to explore CrateDB. Check our other usage guides to continue.
 
 1.  Log in to your balenaCloud account: `balena login`
 
@@ -111,7 +111,7 @@ Alternatively, access the CrateDB Admin UI from your workstation:
 
 ![CrateDB Admin UI](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/08b793f31ed21a49509dc3182cc1795e8b190474.jpeg)
 
-Now, you are ready to explore CrateDB. Check our other tutorials for a
+Now, you are ready to explore CrateDB. Check our other usage guides for a
 successful start.
 
 
