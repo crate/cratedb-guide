@@ -1,7 +1,7 @@
-(statsd-tutorial)=
+(statsd-usage)=
 # Load data into CrateDB using StatsD and Telegraf
 
-This tutorial walks you through configuring [Telegraf] to receive [StatsD]
+This usage guide walks you through configuring [Telegraf] to receive [StatsD]
 metrics and store them into CrateDB.
 
 ## Prerequisites
