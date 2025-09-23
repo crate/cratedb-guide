@@ -1,0 +1,43 @@
+# Service composition file for Docker Compose or Podman Compose
+
+services:
+
+  cratedb:
+    image: docker.io/crate/crate:latest
+    ports:
+      - "4200:4200/tcp"
+      - "5432:5432/tcp"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4200/"]
+      interval: 5s
+      timeout: 30s
+      retries: 5
+
+  cratedb-ddl:
+    image: docker.io/crate/crate:latest
+    command: sh -c "crash --hosts http://cratedb:4200/ -c 'SELECT 1'; crash --hosts http://cratedb:4200/ < /var/ddl.sql"
+    volumes:
+      - ./ddl.sql:/var/ddl.sql
+    depends_on:
+      - cratedb
+
+  cratedb-prometheus-adapter:
+    image: ghcr.io/crate/cratedb-prometheus-adapter:0.5.8
+    command: -config.file /etc/cratedb-prometheus-adapter.yaml
+    ports:
+      - "9268:9268/tcp"
+    volumes:
+      - ./cratedb-prometheus-adapter.yaml:/etc/cratedb-prometheus-adapter.yaml
+    depends_on:
+      - cratedb-ddl
+
+  otelcol:
+    image: ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-contrib:0.135.0
+    ports:
+      - "2003:2003/tcp"  # Carbon plain text protocol based on TCP
+      - "4317:4317/tcp"  # OTLP gRPC
+      - "4318:4318/tcp"  # OTLP HTTP
+    volumes:
+      - ./otelcol.yaml:/etc/otelcol-contrib/config.yaml
+    depends_on:
+      - cratedb-prometheus-adapter
