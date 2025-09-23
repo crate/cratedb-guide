@@ -1,7 +1,7 @@
-(prometheus-tutorial)=
-# Storing long-term metrics with Prometheus in CrateDB
+(prometheus-usage)=
+# Store Prometheus long-term metrics into CrateDB
 
-This tutorial shows how to:
+This usage guide shows how to:
 
 * Set up Docker Compose to run CrateDB, Prometheus, and the CrateDB Prometheus Adapter
 * Run the applications with Docker Compose
@@ -167,7 +167,7 @@ After a few minutes, Prometheus will have gathered hundreds of thousands of data
 Use CrateDB’s query engine to analyze and visualize this data with tools
 like {ref}`grafana`.
 
-Explore these related tutorials:
+Explore these related resources:
 
 * [Visualizing time‑series data with Grafana and CrateDB](https://cratedb.com/blog/visualizing-time-series-data-with-grafana-and-cratedb)
 * [Monitoring CrateDB with Prometheus and Grafana](https://cratedb.com/blog/monitoring-cratedb-with-prometheus-and-grafana)
