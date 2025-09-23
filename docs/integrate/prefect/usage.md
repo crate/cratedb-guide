@@ -1,5 +1,5 @@
-(prefect-tutorial)=
-# Building Seamless Data Pipelines Made Easy: Combining Prefect and CrateDB
+(prefect-usage)=
+# Combine Prefect and CrateDB for building seamless data pipelines 
 
 ## Introduction
 
@@ -7,7 +7,7 @@
 
 You define Prefect workflows in Python. Each step is a “task,” and tasks form a directed acyclic graph (DAG). Flows can branch and include conditional logic. Prefect also provides built‑in scheduling and flow parameters so you can run the same flow with different inputs.
 
-This tutorial shows how to combine CrateDB and Prefect to streamline ETL with a few lines of Python.
+This usage guide shows how to combine CrateDB and Prefect to streamline ETL with a few lines of Python.
 
 ## Prerequisites
 
@@ -84,6 +84,6 @@ You can enrich the pipeline with Prefect features such as parameters, error hand
 
 ## Wrap up
 
-In this tutorial, you created a simple Prefect workflow, defined tasks, and orchestrated data transformations and loading into CrateDB. Both tools offer extensive features that help you optimize and scale your data workflows.
+In this usage guide, you created a simple Prefect workflow, defined tasks, and orchestrated data transformations and loading into CrateDB. Both tools offer extensive features that help you optimize and scale your data workflows.
 
 As you continue exploring, don’t forget to check out the {ref}`reference documentation <crate-reference:index>`. If you have further questions or would like to learn more about updates, features, and integrations, join the [CrateDB community](https://community.cratedb.com/). Happy data wrangling!
