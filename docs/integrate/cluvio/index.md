@@ -10,7 +10,10 @@
 :::{rubric} About
 :::
 
-[Cluvio] is a programmable and interactive dashboarding platform — your analytics
+[Cluvio] is a cloud-based business intelligence and analytics solution that
+enables businesses to analyze data through a dashboard.
+
+It provides a programmable and interactive dashboarding platform — your analytics
 cockpit. Run queries, filter your results, choose the most vivid way to display them,
 and share them with your colleagues and partners without efforts.
 
@@ -31,8 +34,8 @@ your entire company in few minutes.
 ::::{grid} 2
 
 :::{grid-item-card} Data Analysis with Cluvio and CrateDB
-:link: https://community.cratedb.com/t/data-analysis-with-cluvio-and-cratedb/1571
-:link-type: url
+:link: cluvio-usage
+:link-type: ref
 Explore how to leverage the power of Cluvio, a modern data analysis platform
 with CrateDB Cloud as the underlying database.
 :::
@@ -43,6 +46,12 @@ with CrateDB Cloud as the underlying database.
 ```{seealso}
 [CrateDB and Cluvio]
 ```
+
+:::{toctree}
+:maxdepth: 1
+:hidden:
+Usage <usage>
+:::
 
 
 [Cluvio]: https://www.cluvio.com/

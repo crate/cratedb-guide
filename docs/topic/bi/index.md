@@ -7,15 +7,7 @@
 Integrations of CrateDB with other tools, specifically related to business
 analytics and intelligence software.
 
-
-## PowerBI
-
+- {ref}`cluvio`
 - {ref}`powerbi`
-
-## Rill
-
 - {ref}`rill`
-
-## Tableau
-
 - {ref}`tableau`
