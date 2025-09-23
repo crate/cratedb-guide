@@ -94,7 +94,7 @@ Database connectivity options and tools.
 - {ref}`connect-php`
 - {ref}`connect-python`
 - {ref}`connect-ruby`
-- {ref}`connect-drivers`
+- Overview: {ref}`connect-drivers`
 
   All available CrateDB drivers and adapters for supported programming languages,
   frameworks, and environments.
