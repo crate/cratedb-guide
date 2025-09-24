@@ -26,7 +26,7 @@ the Python libraries that you know and love, like NumPy, pandas, and scikit-lear
 
 :::{rubric} Learn
 :::
-- {ref}`dask-tutorial`
+- {ref}`dask-usage`
 - [Efficient batch/bulk INSERT operations with pandas, Dask, and SQLAlchemy]
 - [Import weather data using Dask]
 - [Dask code examples]
@@ -35,7 +35,7 @@ the Python libraries that you know and love, like NumPy, pandas, and scikit-lear
 :::{toctree}
 :maxdepth: 1
 :hidden:
-Tutorial <tutorial>
+Usage <usage>
 :::
 
 
