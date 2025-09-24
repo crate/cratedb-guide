@@ -1,8 +1,9 @@
-(dask-tutorial)=
+(dask-usage)=
 # Efficient data ingestion with Dask and CrateDB
 
 ## Introduction
-Dask is a parallel computing library that enables distributed computing for tasks such as data processing and machine learning. In this tutorial, we'll explore how to leverage the power of CrateDB, a distributed SQL database, in conjunction with Dask, to perform efficient data processing and analysis tasks.
+Dask is a parallel computing library that enables distributed computing for tasks such as data processing and machine learning.
+In this usage guide, we'll explore how to leverage the power of CrateDB, a distributed SQL database, in conjunction with Dask, to perform efficient data processing and analysis tasks.
 
 Prerequisites:
 
@@ -20,7 +21,7 @@ python -m pip install "dask[complete]"
 
 ## Inserting data
 
-For this tutorial, we chose to use the California housing prices dataset, also available on [Kaggle](https://www.kaggle.com/datasets/camnugent/california-housing-prices?resource=download). This dataset is a popular dataset for regression tasks, consisting of median house values in census tracts in California, making it an excellent starting point for implementing basic machine learning algorithms.
+For this usage guide, we chose to use the California housing prices dataset, also available on [Kaggle](https://www.kaggle.com/datasets/camnugent/california-housing-prices?resource=download). This dataset is a popular dataset for regression tasks, consisting of median house values in census tracts in California, making it an excellent starting point for implementing basic machine learning algorithms.
 
 Before importing data, create a california_housing table in CrateDB:
 
@@ -190,6 +191,6 @@ On an M1 machine with 16 GB of RAM, the entire process of loading the 1.5 millio
 
 ## Conclusions
 
-In this tutorial, we've covered the essentials of using CrateDB with Dask for efficient data processing and analysis. By combining the distributed capabilities of CrateDB with the parallel computing power of Dask, you can unlock the potential to handle large-scale datasets, perform complex queries, and leverage advanced analytics techniques.
+In this usage guide, we've covered the essentials of using CrateDB with Dask for efficient data processing and analysis. By combining the distributed capabilities of CrateDB with the parallel computing power of Dask, you can unlock the potential to handle large-scale datasets, perform complex queries, and leverage advanced analytics techniques.
 
 To learn more about updates, features, and other questions you might have, join our [CrateDB community](https://community.cratedb.com/).
