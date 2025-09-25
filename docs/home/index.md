@@ -277,33 +277,17 @@ Through corresponding drivers, adapters, and client libraries, CrateDB is
 compatible with [ODBC], [JDBC], and other database API specifications.
 :::
 
-::::::
 
-
-:::{rubric} Drivers and Integrations
-:::
-
-Learn about database client libraries, drivers, adapters, connectors,
-and integrations with third-party applications and frameworks.
-
-::::{grid} 2 3 3 3
-:padding: 0
-
-:::{grid-item-card} Integrations
+:::{grid-item-card} {material-outlined}`integration_instructions;1.7em` Integrations
 :link: integrate
 :link-type: ref
-:link-alt: Integration Tutorials I
-:padding: 3
-:class-card: sd-pt-3
+:link-alt: Integrations
+:padding: 2
 :class-title: sd-fs-5
-:class-body: sd-text-center
-:class-footer: text-smaller
-{material-outlined}`integration_instructions;3.5em`
-+++
-Learn about the variety of options to connect and integrate with third-party applications.
-:::
 
-::::
+Explore the many options for integrating with third-party applications and
+frameworks.
+:::
 
 
 :::{rubric} Examples
