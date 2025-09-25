@@ -81,38 +81,20 @@ unique features.
 
 ## Get Started
 
-We've put together guides to help you set up your CrateDB instance
-quickly and easily. Enjoy reading!
-
-:::{card} {material-outlined}`rocket_launch;1.7em` CrateDB Cloud
-:link: cloud:index
-:link-type: ref
-:link-alt: CrateDB Cloud
-:class-title: sd-fs-5
-
-Start with a fully managed CrateDB instance to accelerate and simplify working
-with analytical data. CrateDB Cloud enables seamless deployment, monitoring,
-backups, and scaling of CrateDB clusters on AWS, Azure, or GCP, eliminating
-the need for direct database management.
-
-With CrateDB Cloud, you can skip infrastructure setup and focus on delivering
-value for your business with a query console, SQL Scheduler, table policies
-and various connectors to import data.
-+++
-```{button-link} https://cratedb.com/docs/cloud/tutorials/quick-start.html
-:color: primary
-:expand:
-**Start a forever-free cluster with 8 GB of storage**
-```
-:::
-
-:::{card} {material-outlined}`not_started;1.7em` Getting Started
+:::{card} {material-outlined}`not_started;1.7em` CrateDB Cloud
 :link: getting-started
 :link-type: ref
 :link-alt: Getting started with CrateDB
 :class-title: sd-fs-5
 
-Helpful guides about how to start working with your database cluster.
+Start with a fully managed FREE FOREVER CrateDB instance to quickly explore
+features through handheld tutorials or on your own with custom data.
++++
+```{button-link} https://cratedb.com/docs/cloud/tutorials/quick-start.html
+:color: primary
+:expand:
+**Get started with CrateDB Cloud**
+```
 :::
 
 
