@@ -289,7 +289,7 @@ and integrations with third-party applications and frameworks.
 ::::{grid} 2 3 3 3
 :padding: 0
 
-:::{grid-item-card} Integration Tutorials I
+:::{grid-item-card} Integrations
 :link: integrate
 :link-type: ref
 :link-alt: Integration Tutorials I
@@ -301,19 +301,6 @@ and integrations with third-party applications and frameworks.
 {material-outlined}`integration_instructions;3.5em`
 +++
 Learn about the variety of options to connect and integrate with third-party applications.
-:::
-
-:::{grid-item-card} Integration Tutorials II
-:link: https://community.cratedb.com/t/overview-of-cratedb-integration-tutorials/1015
-:link-alt: Integration Tutorials II
-:padding: 3
-:class-card: sd-pt-3
-:class-title: sd-fs-5
-:class-body: sd-text-center
-:class-footer: text-smaller
-{material-outlined}`local_library;3.5em`
-+++
-Integration-focused tutorials to help you use CrateDB together with other tools and libraries.
 :::
 
 ::::
