@@ -88,7 +88,7 @@ unique features.
 :class-title: sd-fs-5
 
 Start with a fully managed FREE FOREVER CrateDB instance to quickly explore
-features through handheld tutorials or on your own with custom data.
+features through guided tutorials or on your own with custom data.
 +++
 ```{button-link} https://cratedb.com/docs/cloud/tutorials/quick-start.html
 :color: primary
@@ -334,8 +334,8 @@ informed decisions that drive meaningful impact.
 :class-footer: sd-fs-6
 
 In [this video playlist] Simon Prickett shares videos he has been part of that
-shows you what CrateDB is and how you can use it for a variety of projects.
-Make sure you also do not miss relevant [CrateDB customer stories].
+show what CrateDB is and how you can use it for a variety of projects.
+Don't miss the relevant [CrateDB customer stories].
 ::::
 
 
