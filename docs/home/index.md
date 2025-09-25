@@ -82,7 +82,7 @@ unique features.
 ## Get Started
 
 :::{card} {material-outlined}`not_started;1.7em` CrateDB Cloud
-:link: getting-started
+:link: first-steps
 :link-type: ref
 :link-alt: Getting started with CrateDB Cloud
 :class-title: sd-fs-5
@@ -90,7 +90,7 @@ unique features.
 Start with a fully managed FREE FOREVER CrateDB instance to quickly explore
 features through guided tutorials or on your own with custom data.
 +++
-```{button-link} https://cratedb.com/docs/cloud/tutorials/quick-start.html
+```{button-link} first-steps
 :color: primary
 :expand:
 **Get started with CrateDB Cloud**
