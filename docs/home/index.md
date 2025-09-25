@@ -377,19 +377,18 @@ informed decisions that drive meaningful impact.
 :::
 ::::
 
-::::{card} CrateDB Videos curated by Simon Prickett
+::::{card} CrateDB curated videos
 :class-footer: sd-fs-6
 
-Simon leads Developer Relations at CrateDB. Here, he is [sharing a playlist
-of videos] he has been part of that will show you what CrateDB is and how
-you can use it for a variety of projects.
+In [this video playlist] Simon Prickett shares videos he has been part of that
+shows you what CrateDB is and how you can use it for a variety of projects.
 Make sure you also do not miss relevant [CrateDB customer stories].
 ::::
 
 
 [CrateDB customer stories]: https://www.youtube.com/playlist?list=PLDZqzXOGoWUJrAF_lVx9U6BzAGG9xYz_v
 [HTTP protocol]: https://en.wikipedia.org/wiki/HTTP
-[JDBC]: https://en.wikipedia.org/wiki/Java_Database_Connectivity 
+[JDBC]: https://en.wikipedia.org/wiki/Java_Database_Connectivity
 [ODBC]: https://en.wikipedia.org/wiki/Open_Database_Connectivity
 [PostgreSQL wire protocol]: https://www.postgresql.org/docs/current/protocol.html
-[sharing a playlist of videos]: https://www.youtube.com/playlist?list=PL3cZtICBssphXl5rHgsgG9vTNAVTw_Veq
+[this video playlist]: https://www.youtube.com/playlist?list=PL3cZtICBssphXl5rHgsgG9vTNAVTw_Veq
