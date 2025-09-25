@@ -99,11 +99,7 @@ With CrateDB Cloud, you can skip infrastructure setup and focus on delivering
 value for your business with a query console, SQL Scheduler, table policies
 and various connectors to import data.
 +++
-```{button-link} https://cratedb.com/docs/cloud/tutorials/quick-start.html
-:color: primary
-:expand:
-**Start a forever-free cluster with 8 GB of storage**
-```
+**Start a forever-free cluster with 8 GB of storage.**
 :::
 
 :::{card} {material-outlined}`not_started;1.7em` Getting Started
