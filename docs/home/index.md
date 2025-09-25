@@ -84,7 +84,7 @@ unique features.
 :::{card} {material-outlined}`not_started;1.7em` CrateDB Cloud
 :link: getting-started
 :link-type: ref
-:link-alt: Getting started with CrateDB
+:link-alt: Getting started with CrateDB Cloud
 :class-title: sd-fs-5
 
 Start with a fully managed FREE FOREVER CrateDB instance to quickly explore
@@ -259,7 +259,6 @@ Through corresponding drivers, adapters, and client libraries, CrateDB is
 compatible with [ODBC], [JDBC], and other database API specifications.
 :::
 
-
 :::{grid-item-card} {material-outlined}`integration_instructions;1.7em` Integrations
 :link: integrate
 :link-type: ref
@@ -271,6 +270,7 @@ Explore the many options for integrating with third-party applications and
 frameworks.
 :::
 
+::::::
 
 :::{rubric} Examples
 :::
