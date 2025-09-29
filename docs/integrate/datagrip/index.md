@@ -78,7 +78,7 @@ After refreshing, you can browse the data tree, and use the Query Console.
 
 ## Learn
 
-:::{rubric} Tutorials
+:::{rubric} Guides
 :::
 
 ::::{grid}

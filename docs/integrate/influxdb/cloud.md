@@ -1,7 +1,7 @@
 # Cloud to Cloud
 
 The procedure for importing data from [InfluxDB Cloud] into [CrateDB Cloud] is
-similar to the {ref}`standalone variant <influxdb-tutorial>`, with a few small
+similar to the {ref}`standalone variant <influxdb-usage>`, with a few small
 adjustments.
 
 First, helpful aliases:

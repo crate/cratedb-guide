@@ -44,13 +44,13 @@ a diverse range of AI/ML models.
 
 ::::{grid}
 
-:::{grid-item-card} Tutorial: MindsDB Quickstart
+:::{grid-item-card} MindsDB Quickstart Tutorial
 :link: https://docs.mindsdb.com/quickstart-tutorial
 :link-type: url
 How to get started with MindsDB.
 :::
 
-:::{grid-item-card} Tutorial: Use CrateDB with MindsDB
+:::{grid-item-card} Use CrateDB with MindsDB
 :link: https://docs.mindsdb.com/integrations/data-integrations/cratedb
 :link-type: url
 Learn more about MindsDB's integration with CrateDB and see examples.
