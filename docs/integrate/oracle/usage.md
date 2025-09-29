@@ -1,7 +1,7 @@
-(oracle-tutorial)=
+(oracle-usage)=
 # Load data from Oracle into CrateDB
 
-The tutorial will walk you through starting the [Oracle Database] and CrateDB,
+The usage guide will walk you through starting the [Oracle Database] and CrateDB,
 inserting a record into Oracle, loading data into a CrateDB table,
 and validating that the data has been stored successfully.
 The data transfer is supported by the
