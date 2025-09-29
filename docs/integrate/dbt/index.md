@@ -122,14 +122,14 @@ cratedb_analytics:
 
 Learn how to use CrateDB with dbt by exploring a few examples.
 
-:::{rubric} Tutorials
+:::{rubric} Guides
 :::
 
 ::::{grid} 2
 :gutter: 5
 
 :::{grid-item-card}
-:link: dbt-tutorial
+:link: dbt-usage
 :link-type: ref
 :link-alt: dbt usage guidelines
 :padding: 3
@@ -142,7 +142,7 @@ Usage Guidelines
 :maxdepth: 2
 :hidden:
 
-Tutorial <tutorial>
+Usage <usage>
 ```
 +++
 Usage guidelines, notes, and advanced configuration options.

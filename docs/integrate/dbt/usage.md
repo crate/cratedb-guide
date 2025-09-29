@@ -1,4 +1,4 @@
-(dbt-tutorial)=
+(dbt-usage)=
 # Using dbt with CrateDB
 
 :::{include} /_include/links.md
