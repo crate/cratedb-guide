@@ -254,7 +254,7 @@ Learn fundamentals about CrateDB's OBJECT data type.
 ::::
 
 
-:::{rubric} Tutorials
+:::{rubric} Guides
 :::
 
 ::::{info-card}
@@ -292,11 +292,11 @@ Today's data management tasks need to handle multi-structured and
 different data sources. CrateDB's dynamic OBJECT data type allows you to
 store and analyze complex and nested data efficiently.
 
-In this tutorial, we will explore how to leverage this feature in marketing
+In this usage guide, we will explore how to leverage this feature in marketing
 data analysis, along with the use of [generated columns], to parse and manage
 URLs.
 
-{{ '{}(#objects-basics)'.format(tutorial) }}
+{{ '{}(#objects-basics)'.format(guide) }}
 :::
 
 :::{grid-item}
@@ -427,5 +427,5 @@ and about OBJECT indexing.
 :maxdepth: 1
 :hidden:
 
-Tutorial <tutorial>
+Usage <usage>
 ```
