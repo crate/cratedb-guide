@@ -1,9 +1,10 @@
 (search-basics)=
+(search-fts-usage)=
 (search-tutorial-netflix)=
 
 # Full-Text: Exploring the Netflix Catalog
 
-In this tutorial, we will explore how to manage a dataset of Netflix titles,
+In this usage guide, we will explore how to manage a dataset of Netflix titles,
 making use of CrateDB Cloud's full-text search capabilities.
 Each entry in our imaginary dataset will have the following attributes:
 
