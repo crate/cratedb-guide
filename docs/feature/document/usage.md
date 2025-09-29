@@ -1,10 +1,10 @@
-(objects-basics)=
+(objects-usage)=
 
 # Objects: Analyzing Marketing Data
 
 Marketers often need to handle multi-structured data from different platforms.
 CrateDB's dynamic `OBJECT` data type allows us to store and analyze this complex,
-nested data efficiently. In this tutorial, we'll explore how to leverage this
+nested data efficiently. In this usage guide, we'll explore how to leverage this
 feature in marketing data analysis, along with the use of generated columns to
 parse and manage URLs.
 
@@ -124,5 +124,5 @@ GROUP BY 1
 ORDER BY 2 DESC;
 :::
 
-In this tutorial, we explored the versatility and power of CrateDB's dynamic
+In this usage guide, we explored the versatility and power of CrateDB's dynamic
 `OBJECT` data type for handling complex, nested marketing data.

@@ -114,6 +114,7 @@ myst_substitutions.update({
     "readme_github": "[![README](https://img.shields.io/badge/Open-README-darkblue?logo=GitHub)]",
     "blog": "[![Blog](https://img.shields.io/badge/Open-Blog-darkblue?logo=Markdown)]",
     "tutorial": "[![Navigate to Tutorial](https://img.shields.io/badge/Navigate%20to-Tutorial-darkcyan?logo=Markdown)]",
+    "guide": "[![Navigate to usage guide](https://img.shields.io/badge/Navigate%20to-usage-guide-darkcyan?logo=Markdown)]",
     "readmore": "[![Read More](https://img.shields.io/badge/Read-More-darkyellow?logo=Markdown)]",
 })
 
