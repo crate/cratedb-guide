@@ -1,8 +1,8 @@
-(metabase-tutorial)=
+(metabase-usage)=
 
 # Visualize data with Metabase
 
-This tutorial introduces [Metabase], an ultimate data analysis and visualization
+This usage guide introduces [Metabase], an ultimate data analysis and visualization
 tool that unlocks the full potential of your data.
 
 (metabase-prereqs)=
@@ -93,7 +93,7 @@ to monitor your data.
 
 ## Conclusion
 
-This was an introductory tutorial into the data visualization tool Metabase.
+This was an introductory usage guide into the data visualization tool Metabase.
 Metabase offers a quick and intuitive way to make sense of your data with
 interactive dashboards, automated reporting, and more.
 
