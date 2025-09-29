@@ -30,8 +30,8 @@ uvx 'cratedb-toolkit[io-ingestr]' load table \
 
 ::::{grid}
 
-:::{grid-item-card} Tutorial: Use CrateDB Toolkit
-:link: oracle-tutorial
+:::{grid-item-card} Load data from Oracle
+:link: oracle-usage
 :link-type: ref
 Load data from Oracle Database into CrateDB using CrateDB Toolkit.
 :::
@@ -42,7 +42,7 @@ Load data from Oracle Database into CrateDB using CrateDB Toolkit.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-Tutorial <tutorial>
+Usage <usage>
 :::
 
 
