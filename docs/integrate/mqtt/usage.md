@@ -1,7 +1,7 @@
-(mqtt-tutorial)=
+(mqtt-usage)=
 # Load data from an MQTT topic into CrateDB
 
-The tutorial will walk you through starting the [Eclipse Mosquitto] broker and CrateDB,
+The usage guide will walk you through starting the [Eclipse Mosquitto] broker and CrateDB,
 publishing JSON data to an MQTT topic, subscribing to the topic to relay
 data into a CrateDB table continuously, and validating that the data has
 been stored successfully.

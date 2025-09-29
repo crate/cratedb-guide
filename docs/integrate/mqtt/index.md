@@ -41,13 +41,13 @@ and transformations via a comfortable web interface.
 
 ::::{grid}
 
-:::{grid-item-card} Tutorial: Use LorryStream
-:link: mqtt-tutorial
+:::{grid-item-card} Load data from MQTT using LorryStream
+:link: mqtt-usage
 :link-type: ref
 How to load data from an MQTT topic into CrateDB using LorryStream.
 :::
 
-:::{grid-item-card} Tutorial: Use Node-RED
+:::{grid-item-card} Load data from MQTT using Node-RED
 :link: https://community.cratedb.com/t/ingesting-mqtt-messages-into-cratedb-using-node-red/803
 :link-type: url
 Ingesting MQTT messages into CrateDB using Node-RED.
@@ -58,7 +58,7 @@ Ingesting MQTT messages into CrateDB using Node-RED.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-Tutorial <tutorial>
+Usage <usage>
 :::
 
 
