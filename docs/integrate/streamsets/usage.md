@@ -1,5 +1,4 @@
-(streamsets-tutorial)=
-
+(streamsets-usage)=
 # Data Stream Pipelines with CrateDB and StreamSets Data Collector
 
 This integration document details how to create data streaming pipelines
