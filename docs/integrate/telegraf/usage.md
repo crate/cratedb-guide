@@ -1,7 +1,7 @@
-(telegraf-tutorial)=
+(telegraf-usage)=
 # Load data into CrateDB using Telegraf
 
-This tutorial walks you through starting the [Telegraf] agent and CrateDB,
+This usage guide walks you through starting the [Telegraf] agent and CrateDB,
 then configuring Telegraf to submit system metrics to CrateDB.
 
 ## Prerequisites
