@@ -90,7 +90,7 @@ unique features.
 Start with a fully managed FREE FOREVER CrateDB instance to quickly explore
 features through guided tutorials or on your own with custom data.
 +++
-```{button-link} first-steps
+```{button-ref} first-steps
 :color: primary
 :expand:
 **Get started with CrateDB Cloud**
