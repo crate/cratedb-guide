@@ -1,7 +1,7 @@
-(mongodb-tutorial)=
+(mongodb-usage)=
 # Load data from MongoDB into CrateDB
 
-The tutorial will walk you through starting MongoDB and CrateDB,
+The usage guide will walk you through starting MongoDB and CrateDB,
 inserting a record into a MongoDB collection, transferring the collection
 into a CrateDB table, and validating that the data has
 been stored successfully.
