@@ -1,4 +1,4 @@
-(rill-tutorial)=
+(rill-usage)=
 # Introducing Rill and BI as Code with CrateDB Cloud
 
 In the world of data analytics, Rill represents a revolutionary approach

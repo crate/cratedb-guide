@@ -55,7 +55,7 @@ BI tools, also breaking down information and knowledge barriers.
 ::::{grid} 2
 
 :::{grid-item-card} Rill and CrateDB
-:link: rill-tutorial
+:link: rill-usage
 :link-type: ref
 Introducing Rill and BI as Code with CrateDB Cloud.
 :::
@@ -65,7 +65,7 @@ Introducing Rill and BI as Code with CrateDB Cloud.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-Tutorial <tutorial>
+Usage <usage>
 :::
 
 
