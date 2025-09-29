@@ -1,7 +1,7 @@
-(postgresql-tutorial)=
+(postgresql-usage)=
 # Load data from PostgreSQL into CrateDB
 
-The tutorial will walk you through starting [PostgreSQL] and CrateDB,
+The usage guide will walk you through starting [PostgreSQL] and CrateDB,
 inserting a record into PostgreSQL, loading data into a CrateDB table,
 and validating that the data has been stored successfully.
 The data transfer is supported by the
