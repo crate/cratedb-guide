@@ -1,7 +1,7 @@
-(trino-tutorial)=
+(trino-usage)=
 # Connecting to CrateDB in Trino
 
-[Trino](https://trino.io/) is a distributed SQL query engine. This tutorial shows how to configure Trino to connect to CrateDB.
+[Trino](https://trino.io/) is a distributed SQL query engine. This usage guide shows how to configure Trino to connect to CrateDB.
 
 ## Prerequisites
 
