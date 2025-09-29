@@ -1,8 +1,8 @@
-(amqp-tutorial)=
+(amqp-usage)=
 
 # Load data from an AMQP queue into CrateDB
 
-The tutorial will walk you through starting the [RabbitMQ] AMQP broker
+The usage guide will walk you through starting the [RabbitMQ] AMQP broker
 and CrateDB, publishing JSON data to an AMQP queue, consuming and relaying
 it into a CrateDB table continuously, and validating that the data has
 been stored successfully.
