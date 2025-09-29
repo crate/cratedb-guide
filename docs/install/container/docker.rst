@@ -241,7 +241,7 @@ Taking it further
 :ref:`CrateDB settings <crate-reference:config>` are set
 using the ``-C`` flag, as shown in the examples above.
 
-Check out the `Docker docs <https://docs.docker.com/engine/reference/run/>`_
+Check out the `Docker docs <https://docs.docker.com/reference/cli/docker/>`_
 for more Docker-specific features that CrateDB can leverage.
 
 
@@ -494,14 +494,14 @@ example::
 .. _compose file version: https://docs.docker.com/compose/compose-file/compose-versioning/
 .. _containerization: https://www.docker.com/resources/what-container
 .. _CrateDB Docker image: https://hub.docker.com/_/crate/
-.. _default bridge network: https://docs.docker.com/network/drivers/bridge/#use-the-default-bridge-network
+.. _default bridge network: https://docs.docker.com/engine/network/drivers/bridge/#configure-the-default-bridge-network
 .. _Docker Stack YAML file: https://docs.docker.com/reference/compose-file/legacy-versions/
 .. _Docker Swarm: https://docs.docker.com/engine/swarm/
 .. _Docker volume: https://docs.docker.com/engine/tutorials/dockervolumes/
 .. _Docker: https://www.docker.com/
-.. _healthcheck: https://docs.docker.com/engine/reference/builder/#healthcheck
+.. _healthcheck: https://docs.docker.com/engine/containers/run/#healthchecks
 .. _horizontally scalable: https://en.wikipedia.org/wiki/Scalability#Horizontal_(scale_out)_and_vertical_scaling_(scale_up)
-.. _set the maximum memory: https://docs.docker.com/config/containers/resource_constraints/#memory
-.. _set the maximum number of CPUs: https://docs.docker.com/config/containers/resource_constraints/#cpu
+.. _set the maximum memory: https://docs.docker.com/engine/containers/resource_constraints/#memory
+.. _set the maximum number of CPUs: https://docs.docker.com/engine/containers/resource_constraints/#cpu
 .. _shared-nothing architecture: https://en.wikipedia.org/wiki/Shared-nothing_architecture
 .. _user-defined network: https://docs.docker.com/network/bridge/
