@@ -1,7 +1,7 @@
-(influxdb-tutorial)=
+(influxdb-usage)=
 # Import data from InfluxDB
 
-In this quick tutorial, you will use the [CrateDB Toolkit InfluxDB I/O subsystem]
+In this quick usage guide, you will use the [CrateDB Toolkit InfluxDB I/O subsystem]
 to import data from [InfluxDB] into [CrateDB]. You can also import data directly
 from files in InfluxDB line protocol format.
 
