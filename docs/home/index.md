@@ -81,34 +81,20 @@ unique features.
 
 ## Get Started
 
-We've put together guides to help you set up your CrateDB instance
-quickly and easily. Enjoy reading!
-
-:::{card} {material-outlined}`rocket_launch;1.7em` CrateDB Cloud
-:link: cloud:index
+:::{card} {material-outlined}`not_started;1.7em` CrateDB Cloud
+:link: first-steps
 :link-type: ref
-:link-alt: CrateDB Cloud
+:link-alt: Getting started with CrateDB Cloud
 :class-title: sd-fs-5
 
-Start with a fully managed CrateDB instance to accelerate and simplify working
-with analytical data. CrateDB Cloud enables seamless deployment, monitoring,
-backups, and scaling of CrateDB clusters on AWS, Azure, or GCP, eliminating
-the need for direct database management.
-
-With CrateDB Cloud, you can skip infrastructure setup and focus on delivering
-value for your business with a query console, SQL Scheduler, table policies
-and various connectors to import data.
+Start with a fully managed FREE FOREVER CrateDB instance to quickly explore
+features through guided tutorials or on your own with custom data.
 +++
-**Start a forever-free cluster with 8 GB of storage.**
-:::
-
-:::{card} {material-outlined}`not_started;1.7em` Getting Started
-:link: getting-started
-:link-type: ref
-:link-alt: Getting started with CrateDB
-:class-title: sd-fs-5
-
-Helpful guides about how to start working with your database cluster.
+```{button-link} first-steps
+:color: primary
+:expand:
+**Get started with CrateDB Cloud**
+```
 :::
 
 
@@ -273,47 +259,18 @@ Through corresponding drivers, adapters, and client libraries, CrateDB is
 compatible with [ODBC], [JDBC], and other database API specifications.
 :::
 
-::::::
-
-
-:::{rubric} Drivers and Integrations
-:::
-
-Learn about database client libraries, drivers, adapters, connectors,
-and integrations with third-party applications and frameworks.
-
-::::{grid} 2 3 3 3
-:padding: 0
-
-:::{grid-item-card} Integration Tutorials I
+:::{grid-item-card} {material-outlined}`integration_instructions;1.7em` Integrations
 :link: integrate
 :link-type: ref
-:link-alt: Integration Tutorials I
-:padding: 3
-:class-card: sd-pt-3
+:link-alt: Integrations
+:padding: 2
 :class-title: sd-fs-5
-:class-body: sd-text-center
-:class-footer: text-smaller
-{material-outlined}`integration_instructions;3.5em`
-+++
-Learn about the variety of options to connect and integrate with third-party applications.
+
+Explore the many options for integrating with third-party applications and
+frameworks.
 :::
 
-:::{grid-item-card} Integration Tutorials II
-:link: https://community.cratedb.com/t/overview-of-cratedb-integration-tutorials/1015
-:link-alt: Integration Tutorials II
-:padding: 3
-:class-card: sd-pt-3
-:class-title: sd-fs-5
-:class-body: sd-text-center
-:class-footer: text-smaller
-{material-outlined}`local_library;3.5em`
-+++
-Integration-focused tutorials to help you use CrateDB together with other tools and libraries.
-:::
-
-::::
-
+::::::
 
 :::{rubric} Examples
 :::
@@ -373,19 +330,18 @@ informed decisions that drive meaningful impact.
 :::
 ::::
 
-::::{card} CrateDB Videos curated by Simon Prickett
+::::{card} CrateDB curated videos
 :class-footer: sd-fs-6
 
-Simon leads Developer Relations at CrateDB. Here, he is [sharing a playlist
-of videos] he has been part of that will show you what CrateDB is and how
-you can use it for a variety of projects.
-Make sure you also do not miss relevant [CrateDB customer stories].
+In [this video playlist] Simon Prickett shares videos he has been part of that
+show what CrateDB is and how you can use it for a variety of projects.
+Don't miss the relevant [CrateDB customer stories].
 ::::
 
 
 [CrateDB customer stories]: https://www.youtube.com/playlist?list=PLDZqzXOGoWUJrAF_lVx9U6BzAGG9xYz_v
 [HTTP protocol]: https://en.wikipedia.org/wiki/HTTP
-[JDBC]: https://en.wikipedia.org/wiki/Java_Database_Connectivity 
+[JDBC]: https://en.wikipedia.org/wiki/Java_Database_Connectivity
 [ODBC]: https://en.wikipedia.org/wiki/Open_Database_Connectivity
 [PostgreSQL wire protocol]: https://www.postgresql.org/docs/current/protocol.html
-[sharing a playlist of videos]: https://www.youtube.com/playlist?list=PL3cZtICBssphXl5rHgsgG9vTNAVTw_Veq
+[this video playlist]: https://www.youtube.com/playlist?list=PL3cZtICBssphXl5rHgsgG9vTNAVTw_Veq
