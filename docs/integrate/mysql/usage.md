@@ -1,8 +1,8 @@
-(mariadb-tutorial)=
-(mysql-tutorial)=
+(mariadb-usage)=
+(mysql-usage)=
 # Load data from MySQL or MariaDB into CrateDB
 
-The tutorial will walk you through starting [MariaDB] and CrateDB,
+The usage guide will walk you through starting [MariaDB] and CrateDB,
 inserting a record into MariaDB, loading data into a CrateDB table,
 and validating that the data has been stored successfully.
 The data transfer is supported by the

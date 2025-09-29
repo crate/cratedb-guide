@@ -40,13 +40,13 @@ uvx 'cratedb-toolkit[io-ingestr]' load table \
 
 ::::{grid}
 
-:::{grid-item-card} Tutorial: Use CrateDB Toolkit
-:link: mysql-tutorial
+:::{grid-item-card} Load data from MySQL/MariaDB.
+:link: mysql-usage
 :link-type: ref
 Load data from MySQL into CrateDB using CrateDB Toolkit.
 :::
 
-:::{grid-item-card} Tutorial: Use SQL and CSV
+:::{grid-item-card} Use SQL and CSV
 :link: mysql-import-csv
 :link-type: ref
 Manually export CSV from MySQL, and import into CrateDB, all using SQL.
@@ -58,7 +58,7 @@ Manually export CSV from MySQL, and import into CrateDB, all using SQL.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-Tutorial <tutorial>
+Usage <usage>
 Use CSV <import-csv>
 :::
 
