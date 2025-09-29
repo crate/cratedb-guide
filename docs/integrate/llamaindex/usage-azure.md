@@ -1,4 +1,4 @@
-(llamaindex-tutorial)=
+(llamaindex-usage-azure)=
 # Text-to-SQL: Talk to your data using CrateDB, LlamaIndex, and Azure OpenAI
 
 ## Introduction
@@ -8,7 +8,7 @@ It integrates with models such as [GPT‑4](https://openai.com/index/gpt-4/) or 
 
 [Azure OpenAI Service](https://azure.microsoft.com/en-us/products/ai-services/openai-service) is a fully managed service on the Azure global infrastructure that lets developers integrate OpenAI models into applications. Through the Azure OpenAI API, you can access a wide range of AI models in a scalable and reliable way.
 
-This tutorial shows how to augment LLMs with data stored in CrateDB using LlamaIndex and Azure OpenAI, enabling natural‑language queries over your data.
+This usage guide shows how to augment LLMs with data stored in CrateDB using LlamaIndex and Azure OpenAI, enabling natural‑language queries over your data.
 
 If you want to run this in your own environment, we've provided all of the code and supporting resources that you'll need in the [`cratedb-examples`](https://github.com/crate/cratedb-examples/tree/main/topic/machine-learning/llama-index) GitHub repository.
 
@@ -26,7 +26,7 @@ If you want to run this in your own environment, we've provided all of the code 
 
 Before we use OpenAI models to generate responses for queries, we need to deploy two models in Azure: for the text generation task and for embeddings. There are several pre-trained models available in Azure OpenAI Studio we can choose from, as well as the capability to customize AI models, fine-tuned with custom data and hyperparameters.
 
-To deploy the models required for this tutorial, follow these steps:
+To deploy the models required for this usage guide, follow these steps:
 
 1. In Azure OpenAI resource choose Model Deployments and then Manage Deployments as illustrated below.
 
@@ -192,7 +192,7 @@ print(answer.metadata)
 
 ## Takeaway
 
-This tutorial shows how to query CrateDB data using natural language with
+This usage guide shows how to query CrateDB data using natural language with
 LlamaIndex and Azure OpenAI.
 
 Explore more CrateDB and generative‑AI resources as they become available.
