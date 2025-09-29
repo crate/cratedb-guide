@@ -1,10 +1,10 @@
-(langchain-tutorial)=
+(langchain-usage)=
 # How to set up LangChain with CrateDB
 
 ## Introduction
 
 **LangChain** is a framework for developing applications powered by language models.
-This tutorial uses LangChain to interact with CrateDB using only natural language without writing any SQL.
+This usage guide uses LangChain to interact with CrateDB using only natural language without writing any SQL.
 To achieve that, you will need a CrateDB instance running, an OpenAI API key, and some Python knowledge.
 
 ## Set up database
@@ -83,7 +83,7 @@ available on the [LangChain Introduction].
 
 ## Summary
 
-This tutorial demonstrates how to use LangChain to interact with CrateDB by
+This usage guide demonstrates how to use LangChain to interact with CrateDB by
 writing questions in English.
 If you explore different questions, you may encounter some wrong answers,
 so we recommend you use this tool with caution and always check the reasoning
