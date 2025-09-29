@@ -19,7 +19,7 @@
 ::::{grid} 2
 
 :::{grid-item-card} Connecting to CrateDB in Trino
-:link: trino-tutorial
+:link: trino-usage
 :link-type: ref
 Learn how to configure Trino to run queries against CrateDB.
 :::
@@ -29,7 +29,7 @@ Learn how to configure Trino to run queries against CrateDB.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-Tutorial <tutorial>
+Usage <usage>
 :::
 
 [Trino]: https://trino.io/
