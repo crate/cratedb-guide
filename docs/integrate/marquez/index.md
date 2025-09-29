@@ -31,8 +31,8 @@ runs of DAGs.
 
 ::::{grid} 2
 
-:::{grid-item-card} Tutorial: Use Marquez with CrateDB
-:link: marquez-tutorial
+:::{grid-item-card} Use Marquez with CrateDB
+:link: marquez-usage
 :link-type: ref
 Demonstrate how to run Airflow DAGs against a
 CrateDB database and view lineage data in Marquez.
@@ -42,7 +42,7 @@ CrateDB database and view lineage data in Marquez.
 
 :::{toctree}
 :hidden:
-Tutorial <tutorial>
+Usage <usage>
 :::
 
 

@@ -1,7 +1,7 @@
-(marquez-tutorial)=
+(marquez-usage)=
 # Use Marquez with CrateDB
 
-This tutorial demonstrates how to run Airflow DAGs against a
+This usage guide demonstrates how to run Airflow DAGs against a
 CrateDB database and view lineage data.
 
 ## Setup
