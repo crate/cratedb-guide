@@ -74,8 +74,8 @@ Telegraf output plugin configuration snippet for CrateDB.
 
 ::::{grid}
 
-:::{grid-item-card} Tutorial: Use Telegraf with CrateDB
-:link: telegraf-tutorial
+:::{grid-item-card} Use Telegraf with CrateDB
+:link: telegraf-usage
 :link-type: ref
 How to configure Telegraf to submit metrics to CrateDB.
 :::
@@ -93,7 +93,7 @@ and visualize the collected data with Grafana.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-Tutorial <tutorial>
+Usage <usage>
 :::
 
 ```{seealso}
