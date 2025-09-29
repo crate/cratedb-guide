@@ -1,4 +1,4 @@
-(rsyslog-tutorial)=
+(rsyslog-usage)=
 # Store server logs on CrateDB for fast search and aggregations
 
 ## Introduction

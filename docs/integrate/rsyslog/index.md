@@ -27,8 +27,8 @@ and remote forwarding, performance remains excellent.
 
 ::::{grid} 2
 
-:::{grid-item-card} Tutorial: Store server logs in CrateDB using rsyslog
-:link: rsyslog-tutorial
+:::{grid-item-card} Store server logs in CrateDB using rsyslog
+:link: rsyslog-usage
 :link-type: ref
 Storing server logs in CrateDB delivers fast search and aggregations on them.
 :::
@@ -38,7 +38,7 @@ Storing server logs in CrateDB delivers fast search and aggregations on them.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-Tutorial <tutorial>
+Usage <usage>
 :::
 
 
