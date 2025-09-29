@@ -79,6 +79,8 @@ linkcheck_ignore += [
     r"https://www.npmjs.com/",
     # 2025-09-29: Phased out CrateDB 3.3 docs
     r"https://cratedb.com/docs/crate/reference/en/3.3/",
+    # 403 Client Error: Forbidden for url
+    r"https://docs.docker.com/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
