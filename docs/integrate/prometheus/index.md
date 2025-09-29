@@ -52,7 +52,7 @@ Adapter] stores collected metrics data into CrateDB and
 takes advantage of its high ingestion and query speed to
 massively scale-out Prometheus.
 
-:::{rubric} Tutorials
+:::{rubric} Guides
 :::
 
 ::::{grid}
@@ -63,7 +63,7 @@ massively scale-out Prometheus.
 Getting started with Prometheus and CrateDB for long-term storage.
 :::
 
-:::{grid-item-card} Tutorial: Storing long-term metrics with Prometheus in CrateDB
+:::{grid-item-card} Storing long-term metrics with Prometheus in CrateDB
 :link: https://community.cratedb.com/t/storing-long-term-metrics-with-prometheus-in-cratedb/1012
 :link-type: url
 Set up CrateDB as a long-term metrics store for Prometheus using Docker Compose.
@@ -85,7 +85,7 @@ Learn how to start Prometheus, CrateDB, and the CrateDB Prometheus Adapter with
 Docker Compose, and how to configure Prometheus to use CrateDB as remote storage.
 
 This webinar accompanies the "Storing long-term metrics with Prometheus in CrateDB"
-tutorial.
+usage guide.
 
 [Prometheus with CrateDB: Long-Term Metrics Storage]
 :::

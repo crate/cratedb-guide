@@ -69,7 +69,7 @@ crate://<username>:<password>@<clustername>.cratedb.net:4200/?ssl=true
 
 ## Learn
 
-:::{rubric} Tutorials
+:::{rubric} Guides
 :::
 
 ::::{grid}

@@ -124,17 +124,17 @@ JdbcSink.sink(
 
 ## Learn
 
-:::{rubric} Tutorials
+:::{rubric} Guides
 :::
 
 ::::{grid}
 :gutter: 2
 
-:::{grid-item-card} Tutorial: Build a data ingestion pipeline
+:::{grid-item-card} Build a data ingestion pipeline
 :link: https://dev.to/crate/build-a-data-ingestion-pipeline-using-kafka-flink-and-cratedb-1h5o
 :link-type: url
 :columns: 12
-The tutorial explains how to build a data ingestion pipeline using three
+Learn how to build a data ingestion pipeline using three
 open-source tools: Apache Kafka, Flink, and CrateDB.
 +++
 Example: Kafka receives telemetry messages from IoT sensors and devices. Flink
