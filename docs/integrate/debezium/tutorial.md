@@ -20,7 +20,7 @@ We know we can address several of these points by using a system like CrateDB. C
 
 If only we could replicate data from our operational database to CrateDB without having to write custom code… it turns out we can.
 
-Enter Debezium, [Debezium ](https://debezium.io/)is a standard open-source system, built on top of Kafka, which allows to capture changes on a source database system and replicate them on another system without having to write custom scripts.
+Enter Debezium. [Debezium](https://debezium.io/) is a standard open-source system, built on top of Kafka, which allows to capture changes on a source database system and replicate them on another system without having to write custom scripts.
 
 In this post I want to show an example replicating changes on a table from MSSQL to CrateDB.
 
@@ -39,10 +39,10 @@ CREATE DATABASE erp;
 GO
 USE erp; 
 CREATE TABLE dbo.tbltest (
-	id INT PRIMARY KEY IDENTITY,
-	createdon DATETIME DEFAULT getdate(),
-	srcsystem NVARCHAR(max)
-	);
+  id INT PRIMARY KEY IDENTITY,
+  createdon DATETIME DEFAULT getdate(),
+  srcsystem NVARCHAR(max)
+);
 ```
 Let’s now create an account for Debezium to use to pull the changes:
 
@@ -60,15 +60,15 @@ And let’s enable change data capture on our example table:
 EXEC sys.sp_cdc_enable_db;
 ALTER DATABASE erp ADD FILEGROUP cdcfg;
 ALTER DATABASE erp ADD FILE (
-	NAME= erp_cdc_file1,
-	FILENAME='/var/opt/mssql/data/erp_cdc_file1.ndf'
-	) TO FILEGROUP cdcfg;
+  NAME= erp_cdc_file1,
+  FILENAME='/var/opt/mssql/data/erp_cdc_file1.ndf'
+) TO FILEGROUP cdcfg;
 EXEC sys.sp_cdc_enable_table
-	@source_schema='dbo',
-	@source_name='tbltest',
-	@role_name='debeziumrole',
-	@filegroup_name='cdcfg',
-	@supports_net_changes=0;
+  @source_schema='dbo',
+  @source_name='tbltest',
+  @role_name='debeziumrole',
+  @filegroup_name='cdcfg',
+  @supports_net_changes=0;
 ```
 
 ## Setup on the CrateDB side
@@ -98,10 +98,10 @@ And let’s create the structure of the table that will receive the data:
 
 ```sql
 CREATE TABLE dbo.tbltest (
-	id INT PRIMARY KEY /* we need the PK definition to match the source table so that this can be used to lookup records when they need to be updated */
-	,createdon TIMESTAMP /* CrateDB supports defaults -of course- but because the source table already has a default value we do not need that here */
-	,srcsystem TEXT
-	);
+  id INT PRIMARY KEY, /* we need the PK definition to match the source table so that this can be used to lookup records when they need to be updated */
+  createdon TIMESTAMP, /* CrateDB supports defaults -of course- but because the source table already has a default value we do not need that here */
+  srcsystem TEXT
+);
 ```
 
 ## Zookeeper and Kafka
@@ -141,7 +141,7 @@ mkdir confluentinc-kafka-connect-jdbc-10.6.3
 cd confluentinc-kafka-connect-jdbc-10.6.3
 unzip -j ../confluentinc-kafka-connect-jdbc-10.6.3.zip
 cd ..
-cat > Dockerfile <<EOF	
+cat > Dockerfile <<EOF
 FROM debezium/connect
 USER root:root
 COPY ./confluentinc-kafka-connect-jdbc-10.6.3/ /kafka/connect/
@@ -155,15 +155,15 @@ Let’s now start this custom image:
 
 ```bash
 sudo docker run -it --rm --name connect -p 8083:8083 \
-           -e GROUP_ID=1 \
-           -e CONFIG_STORAGE_TOPIC=my_connect_configs \
-		   -e OFFSET_STORAGE_TOPIC=my_connect_offsets \
-		   --add-host host.docker.internal:host-gateway \
-		   --add-host $(hostname):host-gateway \
-           -e BOOTSTRAP_SERVERS=host.docker.internal:9092 \
-           -e KEY_CONVERTER=org.apache.kafka.connect.json.JsonConverter \
-           -e VALUE_CONVERTER=org.apache.kafka.connect.json.JsonConverter \
-           cratedb-connect-debezium
+  -e GROUP_ID=1 \
+  -e CONFIG_STORAGE_TOPIC=my_connect_configs \
+  -e OFFSET_STORAGE_TOPIC=my_connect_offsets \
+  --add-host host.docker.internal:host-gateway \
+  --add-host $(hostname):host-gateway \
+  -e BOOTSTRAP_SERVERS=host.docker.internal:9092 \
+  -e KEY_CONVERTER=org.apache.kafka.connect.json.JsonConverter \
+  -e VALUE_CONVERTER=org.apache.kafka.connect.json.JsonConverter \
+  cratedb-connect-debezium
 ```
 
 This assumes Kafka is running locally on the same server, you will need to adjust `BOOTSTRAP_SERVERS` if that is not the case.
@@ -174,27 +174,27 @@ Let’s create a `connector.json` file as follows:
 
 ```json
 {
-    "name": "mssql-source-tbltest",
-    "config": {
-        "connector.class": "io.debezium.connector.sqlserver.SqlServerConnector",
-        "tasks.max": "1",
-        
-		"database.history.kafka.bootstrap.servers": "host.docker.internal:9092",
-		"schema.history.internal.kafka.bootstrap.servers": "host.docker.internal:9092",
-		"topic.prefix": "cratedbdemo",
-		"database.encrypt": "false",
-		
-		"database.hostname": "host.docker.internal",
-        "database.port": "1433",
-        "database.user": "debeziumlogin",
-        "database.password": "<enterStrongPasswordHere>",
-		"database.server.name": "mssql-server",
-        
-		"database.names": "erp",        
-        "table.whitelist": "dbo.tbltest",        
-        "database.history.kafka.topic": "schema-changes.mssql-server.tbltest",
-		"schema.history.internal.kafka.topic": "schema-changes.inventory.mssql-server.tbltest"				
-    }
+  "name": "mssql-source-tbltest",
+  "config": {
+    "connector.class": "io.debezium.connector.sqlserver.SqlServerConnector",
+    "tasks.max": "1",
+    
+    "database.history.kafka.bootstrap.servers": "host.docker.internal:9092",
+    "schema.history.internal.kafka.bootstrap.servers": "host.docker.internal:9092",
+    "topic.prefix": "cratedbdemo",
+    "database.encrypt": "false",
+    
+    "database.hostname": "host.docker.internal",
+    "database.port": "1433",
+    "database.user": "debeziumlogin",
+    "database.password": "<enterStrongPasswordHere>",
+    "database.server.name": "mssql-server",
+    
+    "database.names": "erp",
+    "table.whitelist": "dbo.tbltest",
+    "database.history.kafka.topic": "schema-changes.mssql-server.tbltest",
+    "schema.history.internal.kafka.topic": "schema-changes.inventory.mssql-server.tbltest"
+  }
 }
 ```
 
@@ -212,27 +212,27 @@ Let’s create a `destination-connector.json` file as follows:
 
 ```json
 {
-    "name": "cratedb-sink-tbltest",
-    "config": {
-        "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
-        "tasks.max": "1",		
- 
-		"connection.url": "jdbc:postgresql://host.docker.internal:5432/",              
-		"connection.user": "debezium",		
-		"connection.password": "debeziumpwdincratedb123",				
- 
-		"topics": "cratedbdemo.erp.dbo.tbltest", 
-		"table.name.format": "dbo.tbltest",
-        "auto.create": "false",
-        "auto.evolve": "false",
-
-		"insert.mode": "upsert",
-		"pk.fields": "id",
-		"pk.mode": "record_value",		
-		
-		"transforms": "unwrap",                                                 
-        "transforms.unwrap.type": "io.debezium.transforms.ExtractNewRecordState"
-    }
+  "name": "cratedb-sink-tbltest",
+  "config": {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+    "tasks.max": "1",
+    
+    "connection.url": "jdbc:postgresql://host.docker.internal:5432/",
+    "connection.user": "debezium",
+    "connection.password": "debeziumpwdincratedb123",
+    
+    "topics": "cratedbdemo.erp.dbo.tbltest",
+    "table.name.format": "dbo.tbltest",
+    "auto.create": "false",
+    "auto.evolve": "false",
+    
+    "insert.mode": "upsert",
+    "pk.fields": "id",
+    "pk.mode": "record_value",
+    
+    "transforms": "unwrap",
+    "transforms.unwrap.type": "io.debezium.transforms.ExtractNewRecordState"
+  }
 }
 ```
 
@@ -270,7 +270,7 @@ SET srcsystem = 'Updated successfully'
 WHERE id = 1
 ```
 
-![image|690x191](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/4476976451e1f943112082a7d1e0cd36524740a1.png)
+![CrateDB query result showing updated record](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/4476976451e1f943112082a7d1e0cd36524740a1.png)
 
 ## Conclusion
 
