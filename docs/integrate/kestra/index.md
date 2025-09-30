@@ -37,7 +37,7 @@ functionality to Kestra.
 ::::{grid} 2
 
 :::{grid-item-card} Data pipelines with Kestra and CrateDB
-:link: kestra-tutorial
+:link: kestra-usage
 :link-type: ref
 Learn how CrateDB integrates with Kestra using the
 PostgreSQL plugin to create an efficient and scalable data pipeline.
@@ -54,7 +54,7 @@ PostgreSQL plugin to create an efficient and scalable data pipeline.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-Tutorial <tutorial>
+Usage <usage>
 :::
 
 
