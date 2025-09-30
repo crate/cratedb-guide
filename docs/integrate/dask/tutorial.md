@@ -8,7 +8,7 @@ Prerequisites:
 
 Before getting started, you should have the following installed:
 
-* Python 3
+* Python 3.9 or higher
 * CrateDB
 * Dask
 
@@ -47,7 +47,11 @@ COPY "doc"."california_housing" FROM 'file:///path/to/file'
 
 ## Using Dask to query the data
 
-Dask provides three methods to read a SQL query or q database table into a Dataframe: read_sql, read_sql_table, and read_sql_query. The read_sql method is a convenience wrapper around the other two and it will delegate to a specific function based on the provided input. To use this method you will need the following parameters:
+Dask provides three methods to read an SQL query or a database table into a Dataframe:
+`read_sql`, `read_sql_table`, and `read_sql_query`.
+The `read_sql` method is a convenience wrapper around the other two, and it will
+delegate to a specific function based on the provided input. To use this method,
+you will need the following parameters:
 
 * `sql`: name of a SQL table in a database or an SQL query to be executed,
 * `uri`: the full sqlalchemy URI for the database connection
@@ -68,6 +72,8 @@ In the above example, we read the data from california_housing dataset and use t
 If you want to run read_sql with a query to be executed, you will need to provide an ***SQLAlchemy Selectable*** query. The following example shows how to query several columns from california_housing table and load the result to the Dask Dataframe.
 
 ```python
+from sqlalchemy import table, column
+
 data = table("california_housing",
         column("longitude"),
         column("latitude"),
