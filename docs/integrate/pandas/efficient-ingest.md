@@ -7,19 +7,21 @@ Bulk insert is a technique for efficiently inserting large amounts of data into 
 In this tutorial, you will learn how to efficiently perform [bulk inserts](https://crate.io/docs/python/en/latest/by-example/sqlalchemy/dataframe.html) into CrateDB with [pandas](https://pandas.pydata.org/) using the `insert_bulk` method, available in the `crate` Python library. To follow along with this tutorial, you should have the following:
 
 * A working installation of CrateDB. To get started with CrateDB check [this link](https://crate.io/lp-free-trial?hsCtaTracking=c2099713-cafa-4de6-a97e-2f86d80a788f%7C3a12b78e-e605-461c-9bd8-628d0d9e2522).
-* Python, Pandas, SQLAlchemy, and [crate driver](https://pypi.org/project/crate/) installed on your machine
+* Python, Pandas, SQLAlchemy, and the {ref}`sqlalchemy-cratedb:index` installed on your machine
 * Basic familiarity with pandas and SQL
 
 ## Bulk insert to CrateDB
 
-The following example illustrates how to implement batch insert with the pandas library by using the `insert_bulk` method available in the `crate` driver.
+The following example illustrates how to implement batch insert with the pandas
+library by using the `insert_bulk` support method available in the CrateDB
+SQLAlchemy dialect.
 
 ```python
 import sqlalchemy as sa
 import crate
 import pandas as pd
 from sqlalchemy import create_engine
-from crate.client.sqlalchemy.support import insert_bulk
+from sqlalchemy_cratedb import insert_bulk
 from pandas._testing import makeTimeDataFrame
 
 INSERT_RECORDS = 5000000
