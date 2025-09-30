@@ -18,7 +18,7 @@ This is a quick intro into getting started with [Azure Databricks](https://azure
 1. Create a new notebook of default language Python
 2. Add the following code and run the notebook
 
-```
+```python
 crateUsername = "<username>"
 cratePassword = "<password>"
 postgresqlUrl = "jdbc:postgresql://<url-to-server>:5432/?sslmode=require";
@@ -43,7 +43,7 @@ jdbcDF.head(n=10)
 1. Create a new notebook with default language Scala
 2. Add the following code and run the notebook
 
-```
+```scala
 val crateUsername = "<username>"
 val cratePassword = "<password>"
 val postgresqlUrl = "jdbc:postgresql://<url-to-server>:5432/?sslmode=require";
