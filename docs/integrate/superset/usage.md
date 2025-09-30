@@ -12,7 +12,7 @@ You will need Bash, Docker, and Python to be installed on your workstation. All 
 ## Install
 
 Set up a Python environment, and install and configure Apache Superset. You can locate the installation within an arbitrary folder on your workstation, for example `~/dev/cratedb-superset`.
-```console
+```shell
 # Create and activate Python virtualenv.
 python3 -m venv .venv
 source .venv/bin/activate
@@ -22,12 +22,12 @@ pip install apache-superset sqlalchemy-cratedb httpie
 ```
 
 You need to create a `superset_config.py` file, to configure an individual `SECRET_KEY` for your application.
-```console
+```shell
 echo "SECRET_KEY = '$(docker run --rm alpine/openssl rand -base64 42)'" > superset_config.py
 ```
 
 This sequence of commands initializes the metadata database at `~/.superset/superset.db`, and provisions a superuser account.
-```console
+```shell
 # Configure and initialize Apache Superset.
 export FLASK_APP=superset
 export SUPERSET_CONFIG_PATH=superset_config.py
@@ -39,7 +39,7 @@ superset init
 ## Start services
 
 Start CrateDB using Docker.
-```console
+```shell
 docker run --interactive --rm --pull=always \
   --publish=4200:4200 --publish=5432:5432 \
   --name=cratedb \
@@ -48,7 +48,7 @@ docker run --interactive --rm --pull=always \
 ```
 
 Run Superset server.
-```console
+```shell
 superset run --port=9000 --with-threads
 ```
 
@@ -57,7 +57,7 @@ superset run --port=9000 --with-threads
 Import six million records worth of data from the venerable NYC Yellowcab taxi ride dataset. Depending on the speed of the internet connection between the location of your database instance, and AWS S3, where data is loaded from, it may take about one minute of time.
 
 This is a one-shot command using the [crash](https://cratedb.com/docs/crate/crash/) database shell running in a Docker container, which includes a relevant SQL DDL statement to create the database table schema, and a `COPY FROM` statement to import data from a compressed JSON file located on AWS S3.
-```console
+```shell
 docker run --interactive --rm --network=host crate:latest crash <<EOF
 DROP TABLE IF EXISTS yellowcab;
 CREATE TABLE yellowcab (
@@ -112,7 +112,7 @@ In order to work with data in Apache Superset, before being able to create dashb
 Using [Apache Superset's HTTP API](https://superset.apache.org/docs/api), you can automate the provisioning process. The commands outlined below are using [HTTPie](https://httpie.io/docs/cli) for that purpose, saving a few clicks and keystrokes.
 
 **Connect a database instance**
-```console
+```shell
 # Authenticate and acquire a JWT token.
 AUTH_TOKEN=$(http --session=superset http://localhost:9000/api/v1/security/login username=admin password=admin provider=db | jq -r .access_token)
 
@@ -128,7 +128,7 @@ http --session=superset http://localhost:9000/api/v1/database/ \
 ```
 
 **Register a database table**
-```console
+```shell
 # Register database table as dataset.
 http --session=superset http://localhost:9000/api/v1/dataset/ \
   Authorization:"Bearer ${AUTH_TOKEN}" \
@@ -140,6 +140,11 @@ Now, you can navigate to the Superset Web UI for exploring your newly created da
 
 - `http://localhost:9000/explore/?datasource_type=table&datasource_id=1` 
 
+:::{note}
+The command assumes `database=1`, which implies this is the first database
+connection created. If you have already created other databases in your
+Superset instance, this ID might be incorrect.
+:::
 
 ## Clean up
 1. The development web server of Apache Superset can be terminated by hitting `CTRL+C`.
