@@ -1,9 +1,9 @@
-(spark-getting-started)=
+(spark-usage)=
 # Getting started with Apache Spark and CrateDB
 
 **Apache Spark** is an open-source distributed computing framework designed for high-speed, versatile big-data processing. It offers support for various data processing tasks, such as batch processing, real-time streaming, machine learning, and graph analytics. It is a popular choice for organizations looking to analyze large datasets efficiently.
 
-Using Apache Spark with CrateDB is a powerful combination for processing and analyzing large datasets. In this tutorial, we'll walk through the process of setting up PySpark (Python API for Spark) to work with CrateDB, including data loading, processing, and writing results back to CrateDB.
+Using Apache Spark with CrateDB is a powerful combination for processing and analyzing large datasets. In this usage guide, we'll walk through the process of setting up PySpark (Python API for Spark) to work with CrateDB, including data loading, processing, and writing results back to CrateDB.
 
 Prerequisites:
 
@@ -39,27 +39,33 @@ FROM
 
 ## Set up Apache Spark
 
-This tutorial will work with a single-node Apache Spark installation running on a Mac M1 machine. To set up Apache Spark on your machine use the following steps:
+This usage guide will work with a single-node Apache Spark installation running on a Mac M1 machine. To set up Apache Spark on your machine use the following steps:
 
 1. Install Java and Scala, as the Apache Spark requires both to run:
 
-`brew install openjdk@11
-brew install scala`
+   ```shell
+   brew install openjdk@11
+   brew install scala
+   ```
 
-Before verifying your Java installation, set the `JAVA_HOME` environment variable by adding the following line to your shell profile:
+   Before verifying your Java installation, set the `JAVA_HOME` environment variable by adding the following line to your shell profile:
 
-`export JAVA_HOME="/usr/local/opt/openjdk@11"`
+   `export JAVA_HOME="/usr/local/opt/openjdk@11"`
 
-2. To install the latest version of Apache Spark (which includes PySpark) run:
+2. Install the latest version of Apache Spark (which includes PySpark):
 
-`brew install apache-spark`
+   ```shell
+   brew install apache-spark
+   ```
 
 3. Verify the installation of apache-spark and pyspark:
 
-`spark-shell --version `
-`pyspark --version `
+   ```shell
+   spark-shell --version
+   pyspark --version
+   ```
 
-4. Finally, as CrateDB communicates with Spark via JDBC, download the [Postgres JDBC driver](https://jdbc.postgresql.org/download/) in your working directory. In this tutorial, we use the `postgresql-42.6.0.jar` driver.
+4. Finally, as CrateDB communicates with Spark via JDBC, download the [Postgres JDBC driver](https://jdbc.postgresql.org/download/) in your working directory. In this usage guide, we use the `postgresql-42.6.0.jar` driver.
 
 
 ## Data analysis
