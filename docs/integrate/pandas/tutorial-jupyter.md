@@ -409,6 +409,8 @@ def select_last_inserted_date(table_name):
 In the `get_period_to_download` function, I calculate the difference between today and the last inserted date and return the corresponding period.
 
 ```python
+from datetime import datetime, timedelta
+
 def get_period_to_download(last_date):
 
     # calculating the difference between today and the last date

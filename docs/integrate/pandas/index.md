@@ -12,11 +12,8 @@
 :::
 
 [pandas] is a fast, powerful, flexible, and easy-to-use open-source data analysis
-and manipulation tool, built on top of the Python programming language. 
-
-Pandas (stylized as pandas) is a software library written for the Python programming
-language for data manipulation and analysis. In particular, it offers data structures
-and operations for manipulating numerical tables and time series.
+and manipulation tool, built on top of the Python programming language. It offers
+data structures and operations for manipulating numerical tables and time series.
 
 :::{rubric} Data Model
 :::
