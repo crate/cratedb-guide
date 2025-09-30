@@ -9,6 +9,7 @@ Prerequisites:
 
 1. Running instance of [CrateDB](https://console.cratedb.cloud/)
 2. Python 3.x
+3. Java 11 or later
 
 ## Provision seed data to CrateDB
 
@@ -65,7 +66,8 @@ This usage guide will work with a single-node Apache Spark installation running 
    pyspark --version
    ```
 
-4. Finally, as CrateDB communicates with Spark via JDBC, download the [Postgres JDBC driver](https://jdbc.postgresql.org/download/) in your working directory. In this usage guide, we use the `postgresql-42.6.0.jar` driver.
+4. Finally, as CrateDB communicates with Spark via JDBC, download the [Postgres JDBC driver](https://jdbc.postgresql.org/download/) in your working directory.
+   In this usage guide, we use the `postgresql-42.6.0.jar` driver.
 
 
 ## Data analysis
