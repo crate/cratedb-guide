@@ -1,4 +1,4 @@
-(dapr-tutorial)=
+(dapr-usage)=
 # Connecting to CrateDB from Dapr
 
 ## Introduction
