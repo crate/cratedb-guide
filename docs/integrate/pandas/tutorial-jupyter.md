@@ -142,7 +142,7 @@ Its key data structure is called a DataFrame, which allows storage and manipulat
 
 So, the first thing I do is import the `yfinance`(0.1.63) and `pandas`(2.0.0)
 
-```
+```python
 import yfinance as yf
 import pandas as pd
 ```
@@ -279,7 +279,7 @@ def insert_values(table_name, data):
 
 * After all the row values have been added to the `values_array` list, I create a new table with the specified name (if it does not already exist) using the `create_table` function.
 * Then I create the first part of the SQL `INSERT` statement, which includes the table name and the column names we insert into (`closing_date`, `ticker`, and `close_value`). This part of the statement is stored in the `insert_stmt` variable.
-* Next, I add the values tuples from `values_array` to the `insert_stmt`, separated by commas. The final SQL `INSERT` statement is created by concatenating the `insert_stmt `variable and a semicolon at the end.
+* Next, I add the values tuples from `values_array` to the `insert_stmt`, separated by commas. The final SQL `INSERT` statement is created by concatenating the `insert_stmt` variable and a semicolon at the end.
 
 ```python 
     # creates a new table (in case it does not exist yet)
