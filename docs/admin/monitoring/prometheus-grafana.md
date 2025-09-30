@@ -282,13 +282,10 @@ Restart the `prometheus` daemon if it was already started (`systemctl restart pr
 
 ## Grafana setup
 
-This can be installed on the same machine where you have Prometheus and can be installed with:
-
+Grafana can be installed on the same machine where you installed Prometheus.
+To install Grafana on a Debian machine, please refer to its [documentation][grafana-debian].
+Then, start Grafana.
 ```shell
-echo "deb https://packages.grafana.com/oss/deb stable main" | tee -a /etc/apt/sources.list.d/grafana.list
-wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
-apt update
-apt install grafana
 systemctl start grafana-server
 ```
 
@@ -336,4 +333,5 @@ We got a Grafana dashboard that allows us to check live and historical data arou
 
 [CrateDB Cloud]: https://cratedb.com/products/cratedb-cloud
 [Grafana]: https://grafana.com/
+[grafana-debian]: https://grafana.com/docs/grafana/latest/setup-grafana/installation/debian/
 [Prometheus]: https://prometheus.io/
