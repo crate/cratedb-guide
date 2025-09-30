@@ -39,8 +39,8 @@ processing, real-time streaming, machine learning, and graph analytics.
 
 ::::{grid}
 
-:::{grid-item-card} Tutorial: Getting started with Apache Spark and CrateDB
-:link: spark-getting-started
+:::{grid-item-card} Getting started with Apache Spark and CrateDB
+:link: spark-usage
 :link-type: ref
 Using Apache Spark with CrateDB is a powerful combination for processing and
 analyzing large datasets.
@@ -58,7 +58,7 @@ Demonstrate how to load a Spark data frame into CrateDB.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-Tutorial <tutorial>
+Usage <usage>
 :::
 
 
