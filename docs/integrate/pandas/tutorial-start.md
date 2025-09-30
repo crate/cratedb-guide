@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS "doc"."customer_data" (
 );
 ```
 
-After creating the table, you can import the customer data dataset into CrateDB using the `COPY FROM `command:
+After creating the table, you can import the customer data dataset into CrateDB using the `COPY FROM` command:
 
 ```sql 
 COPY "doc"."customer_data" FROM 'file:///path/to/Customers.csv' WITH (format='csv', delimiter=',');
@@ -71,7 +71,7 @@ In the above code, we establish a connection to a local CrateDB instance running
 Now that data are loaded into the pandas DataFrame, we can perform various analyses and manipulations on it. For instance, we can group the data by a certain column and calculate the average value of another column:
 
 ```python
-avg_income = df.groupby("profession")["annualincome"].mean()
+income_by_profession = df.groupby("profession")["annualincome"].mean()
 ```
 
 In this example, we group the data in the DataFrame by the `profession` column and calculate the average annual income for each profession. You can plot the data about average incomes using `df.plot()` method, specifying the type of plot (a bar chart), and the columns to use for the x and y axes:
@@ -80,7 +80,7 @@ In this example, we group the data in the DataFrame by the `profession` column a
 import matplotlib.pyplot as plt
 
 income_by_profession.plot(kind='bar', legend=True, rot=0)
-plot.show()
+plt.show()
 ```
 
 We also use `plt.show()` from `matplotlib` to display the plot:
