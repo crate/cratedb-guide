@@ -1,4 +1,4 @@
-(superset-tutorial)=
+(superset-usage)=
 # Set up Apache Superset with CrateDB
 
 ## Introduction

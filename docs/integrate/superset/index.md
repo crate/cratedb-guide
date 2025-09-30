@@ -74,8 +74,8 @@ crate://<username>:<password>@<clustername>.cratedb.net:4200/?ssl=true
 
 ::::{grid}
 
-:::{grid-item-card} Tutorial: Set up Apache Superset with CrateDB
-:link: superset-tutorial
+:::{grid-item-card} Set up Apache Superset with CrateDB
+:link: superset-usage
 :link-type: ref
 Learn how to install Apache Superset, and how to connect it with CrateDB.
 :::
@@ -169,7 +169,7 @@ from the time series dataset.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-Tutorial <tutorial>
+Usage <usage>
 Sandbox <sandbox>
 :::
 
