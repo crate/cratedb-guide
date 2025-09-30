@@ -33,7 +33,7 @@ To configure the output binding of your application:
         version: v1
         metadata:
           - name: url
-            value: "postgres://<CrateDB user>:<CrateDB password>@<CrateDB host>/doc?ssl=true&&sslfactory=org.postgresql.ssl.NonValidatingFactory"
+            value: "postgres://<CrateDB user>:<CrateDB password>@<CrateDB host>/doc?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory"
       ```
 
 4. Start the application. In case of the sample application via `dapr run --app-id nodeapp --app-port 3000 --dapr-http-port 3500 --components-path=./components node app.js`.
@@ -59,7 +59,7 @@ curl -X POST http://localhost:3500/v1.0/bindings/crate \
   -d '{
   "operation": "exec",
   "metadata": {
-    "sql": "INSERT INTO <schema name>.<table name> VALUES (NOW(), 123, '"'"'some string...'"'"')"
+    "sql": "INSERT INTO <schema name>.<table name> VALUES (NOW(), 123, \'some string...\')"
   }
 }'
 
