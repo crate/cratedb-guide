@@ -1,4 +1,4 @@
-(kestra-tutorial)=
+(kestra-usage)=
 # Setting up data pipelines with CrateDB and Kestra
 
 [Kestra.io](https://kestra.io/) is an open‑source workflow automation and
@@ -7,7 +7,7 @@ efficiently. It integrates with Postgres, Git, Docker, Kubernetes, and
 more. Kestra’s web UI lets you create, modify, and manage workflows
 without writing code.
 
-In this tutorial, we will show you how CrateDB integrates with Kestra using the PostgreSQL plugin to create an efficient and scalable data pipeline.
+In this usage guide, we will show you how CrateDB integrates with Kestra using the PostgreSQL plugin to create an efficient and scalable data pipeline.
 
 ## Running Kestra on Docker
 
@@ -147,6 +147,6 @@ Finally, let’s check the data in the second cluster. As illustrated below, we 
 
 If you need to automatically manage CrateDB data pipelines, [kestra.io](https://kestra.io/) is a good choice. It lets you define workflows without writing code and integrates with Postgres (and CrateDB), Kubernetes, Docker, Git, and more.
 
-In this tutorial, we have also shown how to deploy your CrateDB cluster in a few clicks. If you want to try it out and enjoy all of the CrateDB features, sign up for the [CrateDB Cloud](https://console.cratedb.cloud/?utm_campaign=2022-Q2-WS-Free-Trial&utm_source=website&utm_medium=free-trial-overhaul&hsCtaTracking=a7e2a487-cfb9-4a50-8e75-3029b9e176fb%7C7863166c-05e4-4334-9dd5-58dfdd6e78c1) trial.
+In this usage guide, we have also shown how to deploy your CrateDB cluster in a few clicks. If you want to try it out and enjoy all of the CrateDB features, sign up for the [CrateDB Cloud](https://console.cratedb.cloud/?utm_campaign=2022-Q2-WS-Free-Trial&utm_source=website&utm_medium=free-trial-overhaul&hsCtaTracking=a7e2a487-cfb9-4a50-8e75-3029b9e176fb%7C7863166c-05e4-4334-9dd5-58dfdd6e78c1) trial.
 
 To learn more about updates, features, and other questions you might have, join our [CrateDB](https://community.cratedb.com/) community.
