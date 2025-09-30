@@ -1,23 +1,24 @@
 (kestra-usage)=
 # Setting up data pipelines with CrateDB and Kestra
 
-[Kestra.io](https://kestra.io/) is an open‑source workflow automation and
-orchestration tool that helps you automate and manage complex workflows
+[Kestra.io](https://kestra.io/) provides open‑source workflow automation and
+orchestration. You can use it to automate and manage complex workflows
 efficiently. It integrates with Postgres, Git, Docker, Kubernetes, and
-more. Kestra’s web UI lets you create, modify, and manage workflows
+more. The web UI lets you create, modify, and manage workflows
 without writing code.
 
 In this usage guide, we will show you how CrateDB integrates with Kestra using the PostgreSQL plugin to create an efficient and scalable data pipeline.
 
 ## Running Kestra on Docker
 
-Getting started with Kestra using Docker is a straightforward process. First, you'll need to install Docker on your machine, if you haven't already. Next, you can pull the Kestra official Docker image from the Docker registry and run it using the following command:
+You can quickly start Kestra using Docker. First, install Docker on your machine if you haven't already.
 
 ```bash
 docker run -d -p 8080:8080 kestra/kestra:latest
 ```
 
-This will start the Kestra server on your local machine, which you can access by navigating to [http://localhost:8080](http://localhost:8080/) in your web browser. From there, you can start creating workflows and automating your processes using Kestra's web interface.
+This starts the Kestra server on your local machine. Access it by navigating to [http://localhost:8080](http://localhost:8080/) in your web browser.
+From there, you can start creating workflows and automating your processes using Kestra's web interface.
 
 ![Kestra UI home screen](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/80c3eb1bbc2de07a343bc56b1a5db24cf0569df7.png){width=690px height=290px}
 
@@ -32,16 +33,16 @@ create a cluster by selecting *Create Cluster* and choosing your preferred
 cloud provider and region. In this example, we use a 1‑node cluster with
 4 GiB of storage, sufficient for development and low‑traffic applications.
 
-![49d00261-bd03-4935-bdaf-15dee6f24a4e|558x500](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/5c4c24dde906df6004392356138637444844f57d.png)
+![CrateDB Cloud cluster configuration screen showing a 1-node cluster with 4 GiB storage option](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/5c4c24dde906df6004392356138637444844f57d.png)
 
 
-Once your cluster is up and running, you can start using CrateDB's powerful distributed SQL database features via a web-based Admin UI.
+Once your cluster is up and running, use CrateDB's powerful distributed SQL database features via the web-based Admin UI.
 
 ## Move data between clusters with Kestra
 
-There are several ways you can use to move data between CrateDB clusters and in the following example, we will illustrate how to simply do this with Kestra. The prerequisite for this use case is to have two running CrateDB clusters. The most straightforward way is to deploy both CrateDB clusters on CrateDB Cloud.
+You can move data between CrateDB clusters in several ways. The following example shows how to do this with Kestra.
 
-Now, let’s import some data on the first cluster. To do so, go back to the cluster overview page and click on *Learn how to import data* link. This will open a list of statements you need to execute to load NYC taxi data.
+Now, let's import some data on the first cluster. Navigate to the cluster overview page and click the *Learn how to import data* link.
 
 ```sql
 CREATE TABLE "nyc_taxi" (
@@ -70,7 +71,9 @@ COPY "nyc_taxi" FROM 'https://s3.amazonaws.com/crate.sampledata/nyc.yellowcab/yc
 
 On the second cluster, create an empty `nyc_taxi` table. As a next step, we will create a new Kestra Flow to move data between clusters.
 
-Flows in Kestra are used to implement workflows. Each flow is defined as a declarative model in the YAML file and it contains all the tasks and the order in which the tasks will be run. A flow must have an identifier (id), a namespace, and a list of tasks.
+Flows in Kestra implement workflows.
+Each flow uses a declarative YAML model and contains all the tasks in the order they will run.
+A flow must have an identifier (id), a namespace, and a list of tasks.
 
 ### Query CrateDB table
 
@@ -111,9 +114,12 @@ The following snippet shows the Batch task declaration used for inserting data i
     INSERT INTO doc.nyc_taxi VALUES( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )
 ```
 
-When a Kestra task is executed, it may create or modify a resource, such as a file, database record, or API endpoint. Kestra allows the output produced by the task to be stored in the execution flow context and used by subsequent tasks. The `output` object is used to capture information about the results of the task, including any resources that were created or modified.
+When a Kestra task executes, it may create or modify a resource, such as a file, database record, or API endpoint.
+Kestra allows the output produced by the task to be stored in the execution flow context and used by subsequent tasks.
+The `output` object captures information about the task results, including any resources created or modified.
 
-In our example, the `output.query.uri` refers to the URI of the resource that was created by the previous task. Specifically, it refers to the URI of the database records returned by the `SELECT` statement.
+In our example, `output.query.uri` refers to the URI of the resource the previous task created.
+Specifically, it refers to the URI of the database records returned by the `SELECT` statement.
 
 Finally, once the data are imported to the second table, let’s create a new task that selects data from that table:
 
@@ -127,26 +133,27 @@ Finally, once the data are imported to the second table, let’s create a new ta
   store: false
 ```
 
-In the last task, we select the `passenger_count` value for which the `fare_amount` is the highest and to achieve that we use the `MAX_BY` aggregation function. `MAX_BY` is one of the latest aggregation functions supported by CrateDB and to learn more about it, check out our [recent blog post](https://crate.io/blog/find-the-latest-reported-values-with-ease.-introducing-max_by-and-min_by-aggregations-in-cratedb-5.2).
+In the last task, we select the `passenger_count` value with the highest `fare_amount` using the `MAX_BY` aggregation function. `MAX_BY` ranks among CrateDB's latest aggregation functions. Learn more in our [recent blog post](https://crate.io/blog/find-the-latest-reported-values-with-ease.-introducing-max_by-and-min_by-aggregations-in-cratedb-5.2).
 
 ### Execute the flow
 
 To execute the flow click on the *New Execution* button below the Flow specification. To monitor the execution of your Flow, check the Logs view:
 
-![8d50d548-710f-4496-b862-66eb1d166c0c|690x165](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/fd57f90eea19631daec9052dd8921fbce519d2a7.png)
+![Kestra Logs view showing execution status and running times for each task in the flow](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/fd57f90eea19631daec9052dd8921fbce519d2a7.png)
 
 
 The Logs view shows the execution status of each task, as well as the running times. There are other ways to monitor the execution of Flows in Kestra and we refer to the official Kestra documentation for a better overview of its full capabilities.
 
-Finally, let’s check the data in the second cluster. As illustrated below, we can see that exactly 1000 records got inserted:
+Finally, let's check the data in the second cluster. As illustrated below, exactly 1000 records were inserted:
 
-![4d84631b-ef55-4d90-a7ba-104046eb0300|690x133](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/c47fc7cdd3a91a007250c428a704f91962066e7b.png)
+![CrateDB query result showing 1000 records inserted into the nyc_taxi table](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/c47fc7cdd3a91a007250c428a704f91962066e7b.png)
 
 
 ## Wrap up
 
-If you need to automatically manage CrateDB data pipelines, [kestra.io](https://kestra.io/) is a good choice. It lets you define workflows without writing code and integrates with Postgres (and CrateDB), Kubernetes, Docker, Git, and more.
+If you need to automatically manage CrateDB data pipelines, [kestra.io](https://kestra.io/) provides a strong solution.
+It lets you define workflows without writing code and integrates with PostgreSQL (and CrateDB), Kubernetes, Docker, Git, and more.
 
-In this usage guide, we have also shown how to deploy your CrateDB cluster in a few clicks. If you want to try it out and enjoy all of the CrateDB features, sign up for the [CrateDB Cloud](https://console.cratedb.cloud/?utm_campaign=2022-Q2-WS-Free-Trial&utm_source=website&utm_medium=free-trial-overhaul&hsCtaTracking=a7e2a487-cfb9-4a50-8e75-3029b9e176fb%7C7863166c-05e4-4334-9dd5-58dfdd6e78c1) trial.
+In this usage guide, we have also shown how to deploy your CrateDB cluster in a few clicks. If you want to try it out and enjoy all of the CrateDB features, sign up for the [CrateDB Cloud](https://console.cratedb.cloud/) trial.
 
 To learn more about updates, features, and other questions you might have, join our [CrateDB](https://community.cratedb.com/) community.
