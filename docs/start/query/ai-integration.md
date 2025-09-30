@@ -56,8 +56,8 @@ Whether you're training models, running batch or real-time inference, or integra
 :::{rubric} See also
 :::
 - [Blog: Vector support and KNN search]
-- {ref}`Walkthrough: Text-to-SQL <llamaindex-synopsis>`
-- {ref}`Tutorial: Text-to-SQL <llamaindex-tutorial>`
+- {ref}`Synopsis: Text-to-SQL <llamaindex-synopsis>`
+- {ref}`Tutorial: Text-to-SQL using Azure <llamaindex-usage-azure>`
 - [Examples: ML]
 
 ::::
