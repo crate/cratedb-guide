@@ -90,21 +90,18 @@ import requests
 from bs4 import BeautifulSoup
 
 def get_sp500_ticker_symbols():
-    
+
     # getting html from SP500 Companies List wikipedia page
-    
     url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
     r = requests.get(url,timeout = 2.5)
     r_html = r.text
     soup = BeautifulSoup(r_html, 'html.parser')
-    
+
     # getting rows from wikipedia's table
-    
     components_table = soup.find_all(id = "constituents")
     data_rows = components_table[0].find("tbody").find_all("tr")[1:]
 
     # extracting ticker symbols from the data rows
-    
     tickers = []
     for row in range(len(data_rows)):
         stock = list(filter(None, data_rows[row].text.split("\n")))
@@ -164,22 +161,18 @@ def download_data(ticker, period):
     data = pd.DataFrame(columns=['closing_date', 'ticker', 'close_value'])
 
     # downloading history for this ticker ticker
-
     info = yf.Ticker(ticker)
     history = info.history(period=period)
     history.index.names = ['closing_date']
     history.reset_index(inplace=True)
 
     # adding a column for the ticker
-
     history['ticker'] = ticker
 
     # renaming column to fit into dataframe
-
     history.rename(columns={'Close': 'close_value'}, inplace=True)
 
     # adding values to the dataframe
-
     data = pd.concat(
         [data, history[['closing_date', 'ticker', 'close_value']]])
 
@@ -264,27 +257,22 @@ def insert_values(table_name, data):
     values_array = []
 
     # adding each closing date, ticker and close value tuple to values array
-
     for row in range(len(data)):
 
         # saving entries from the ith row as a list of date values
-
         row_values = data.iloc[row, :]
 
         # checking if there is a NaN entry and setting it to -1
-
         close_value = row_values['close_value']
         if (math.isnan(close_value)):
             close_value = -1
 
         # formatting date entries to match timestamp format
-
         closing_date = row_values['closing_date'].strftime("%Y-%m-%d")
         closing_date = "'{}'".format(
             closing_date + "{time}".format(time="T00:00:00Z"))
 
         # putting a comma between values tuples, but not on the last tuple
-
         values_array.append("({},\'{}\',{})".format(
             closing_date, row_values['ticker'], close_value))
 ```
@@ -295,16 +283,13 @@ def insert_values(table_name, data):
 
 ```python 
     # creates a new table (in case it does not exist yet)
-
     create_table(table_name)
 
     # first part of the insert statement
-
     insert_stmt = "INSERT INTO \"{}\" (closing_date, ticker, close_value) VALUES ".format(
         table_name)
 
     #  adding data tuples to the insert statement
-
     insert_stmt += ", ".join(values_array) + ";"
 ```
 * Finally, the function executes the `INSERT` statement using the `cursor.execute()` method, and prints out a message indicating how many rows were inserted into the table.
@@ -326,41 +311,33 @@ def insert_values(table_name, data):
     values_array = []
 
     # adding each closing date, ticker and close value tuple to values array
-
     for row in range(len(data)):
 
         # saving entries from the ith row as a list of date values
-
         row_values = data.iloc[row, :]
 
         # checking if there is a NaN entry and setting it to -1
-
         close_value = row_values['close_value']
         if (math.isnan(close_value)):
             close_value = -1
 
         # formatting date entries to match timestamp format
-
         closing_date = row_values['closing_date'].strftime("%Y-%m-%d")
         closing_date = "'{}'".format(
             closing_date + "{time}".format(time="T00:00:00Z"))
 
         # putting a comma between values tuples, but not on the last tuple
-
         values_array.append("({},\'{}\',{})".format(
             closing_date, row_values['ticker'], close_value))
 
     # creates a new table (in case it does not exist yet)
-
     create_table(table_name)
 
     # first part of the insert statement
-
     insert_stmt = "INSERT INTO \"{}\" (closing_date, ticker, close_value) VALUES ".format(
         table_name)
 
     #  adding data tuples to the insert statement
-
     insert_stmt += ", ".join(values_array) + ";"
 
     cursor.execute(insert_stmt)
@@ -381,27 +358,22 @@ That’s why I create this function, which selects the most recent date from the
 def select_last_inserted_date(table_name):
 
     # creating table (only in case it does not exist yet)
-
     create_table(table_name)
 
     # selecting the maximum date in my table
-
     statement = "select max(closing_date) from " + table_name + ";"
     cursor.execute(statement)
 
     # fetching the results from the query
-
     last_date_data = cursor.fetchall()
     last_date = last_date_data[0][0]
 
     # if the query is empty or the date is None, start by 2023/01/01
-
     if (len(last_date_data) == 0 or last_date is None):
         print("No data yet, will return: 2023-01-01")
         return datetime.strptime("2023-01-01", "%Y-%m-%d")
 
     # printing the last date
-
     print("Most recent data on CrateDB from: " + last_date.strftime("%Y-%m-%d"))
 
     return last_date
@@ -414,7 +386,6 @@ from datetime import datetime, timedelta
 def get_period_to_download(last_date):
 
     # calculating the difference between today and the last date
-
     today = datetime.now()
     days_difference = today - last_date.replace(tzinfo=None)
 
@@ -448,7 +419,6 @@ This is what the final function looks like:
 def update_table(table_name):
 
     # getting the last date in the table
-
     last_date = select_last_inserted_date(table_name)
 
     # calculating the period to download data from
@@ -474,13 +444,11 @@ To have a clean final test, I
 
 ```python
 # Connecting to CrateDB
-
 conn = ps.connect(host="<YOUR_CLUSTER>", port=5432,
                   user="admin", password="<PASSWORD>", sslmode="require")
 cursor = conn.cursor()
 
 # Updating table
-
 table_name = "sp500"
 
 update_table(table_name)
