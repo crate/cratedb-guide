@@ -41,7 +41,11 @@ and operations for manipulating numerical tables and time series.
 - {ref}`pandas-tutorial-jupyter`
 - {ref}`arrow-import-parquet`
 - {ref}`pandas-efficient-ingest`
-- [Efficient batch/bulk INSERT operations with pandas, Dask, and SQLAlchemy]
+- See also: {ref}`dask-efficient-ingest`
+- See also: [Efficient batch/bulk INSERT operations with pandas, Dask, and SQLAlchemy]
+
+:::{rubric} Code examples
+:::
 - [pandas code examples]
 
 

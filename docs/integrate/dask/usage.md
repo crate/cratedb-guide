@@ -1,4 +1,5 @@
 (dask-usage)=
+(dask-efficient-ingest)=
 # Efficient data ingestion with Dask and CrateDB
 
 ## Introduction
