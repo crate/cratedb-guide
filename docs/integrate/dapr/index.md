@@ -21,7 +21,7 @@ observability, so you can focus on your code.
 ::::{grid} 2
 
 :::{grid-item-card} Connecting to CrateDB from Dapr
-:link: dapr-tutorial
+:link: dapr-usage
 :link-type: ref
 Learn how to connect from Dapr to CrateDB.
 :::
@@ -32,7 +32,7 @@ Learn how to connect from Dapr to CrateDB.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-Tutorial <tutorial>
+Usage <usage>
 :::
 
 
