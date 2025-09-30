@@ -1,8 +1,8 @@
 (recurrent-queries)=
 # Automate recurrent CrateDB queries
 
-Many database tasks run the same query repeatedly. Schedule them.
-This article shows several scheduling options and how to integrate them with CrateDB.
+Many database tasks run the same query repeatedly. You can schedule them.
+This article shows several scheduling options and explains how to integrate them with CrateDB.
 
 As an example, we implement continuous aggregates: precompute results to speed up repeated aggregations.
 
@@ -25,7 +25,7 @@ SELECT DATE_TRUNC('hour', ts),
 FROM sensor_readings_raw;
 ```
 
-In certain cases, it can make sense to precalculate the result, e.g. due to strict performance requirements or a high volume of identical queries.
+In certain cases, precalculating the result improves performance when you face strict requirements or handle a high volume of identical queries.
 
 We create a second table that stores the result set of the above query:
 ```sql
@@ -62,7 +62,7 @@ On Unix-based systems, use cron to schedule jobs.
 
 :::{rubric} Prerequisites
 :::
-The CrateDB CLI client [crash](https://crate.io/docs/crate/crash/en/latest/) is installed.
+Install the CrateDB CLI client [crash](https://crate.io/docs/crate/crash/en/latest/).
 
 :::{rubric} Setup
 :::
@@ -90,7 +90,7 @@ The CrateDB CLI client [crash](https://crate.io/docs/crate/crash/en/latest/) is 
 
 :::{rubric} Caveats
 :::
-Monitor your cron jobs. By default, the cron daemon delivers output (including errors) to the user’s mailbox if configured.
+Monitor your cron jobs. By default, the cron daemon delivers output (including errors) to the user's mailbox when you configure it.
 
 You can also use third‑party cron monitoring services for deeper visibility.
 
@@ -103,7 +103,7 @@ You can also use third‑party cron monitoring services for deeper visibility.
 
 :::{rubric} Prerequisites
 :::
-The [node-red-contrib-postgresql](https://flows.nodered.org/node/node-red-contrib-postgresql) package is installed.
+Install the [node-red-contrib-postgresql](https://flows.nodered.org/node/node-red-contrib-postgresql) package.
 
 :::{rubric} Setup
 :::
@@ -184,7 +184,7 @@ The [node-red-contrib-postgresql](https://flows.nodered.org/node/node-red-contri
 
 ### CrateDB Cloud - SQL Job Scheduler
 
-Specifically for CrateDB Cloud deployments, there is the SQL Job Scheduler option. As the name says, it allows you to schedule jobs in the Cloud platform to run in a defined interval through a centralized user interface. Whether you're looking to move data between tables or schedule regular data exports, the SQL Job Scheduler equips you with the necessary tools.
+CrateDB Cloud deployments offer the SQL Job Scheduler. The scheduler runs jobs at defined intervals through a centralized user interface. Use it to move data between tables or schedule regular data exports.
 
 Use the Cloud Console Automation menu to create a new job. Define the name, interval, and the exact query to run. You can activate/deactivate the job and review its execution history.
 
@@ -193,7 +193,7 @@ Use the Cloud Console Automation menu to create a new job. Define the name, inte
 :::{rubric} API access
 :::
 
-Besides the web interface, you can use `croud` to configure new jobs. Check the [documentation](https://cratedb.com/docs/cloud/cli/en/latest/commands/scheduled-jobs.html) for further details on how to achieve that. For instance, to have the same result as the web UI, you can use the following command, assuming you have `croud` already configured in your environment:
+Besides the web interface, use `croud` to configure new jobs. Check the [documentation](https://cratedb.com/docs/cloud/cli/en/latest/commands/scheduled-jobs.html) for further details. For instance, to achieve the same result as the web UI, run the following command after you configure `croud` in your environment:
 
 ```bash
 croud clusters scheduled-jobs create \
