@@ -1,14 +1,8 @@
 (prometheus-usage)=
 # Store Prometheus long-term metrics into CrateDB
 
-This usage guide shows how to:
-
-* Set up Docker Compose to run CrateDB, Prometheus, and the CrateDB Prometheus Adapter
-* Run the applications with Docker Compose
-
-:::{note}
-These examples use CrateDB 4.7.0, Prometheus 2.33.3, and the CrateDB Prometheus Adapter 0.5.8.
-:::
+This usage guide shows how to use Docker Compose to run the services
+CrateDB, Prometheus, and the CrateDB Prometheus Adapter.
 
 ## Motivation
 
@@ -42,7 +36,7 @@ You will create these files in the following steps.
 ```yaml
 services:
   cratedb:
-    image: "crate:4.7.0"
+    image: "docker.io/crate:latest"
     ports:
       - "4200:4200"
       - "5432:5432"
@@ -50,14 +44,14 @@ services:
       - cratedb-data:/data
     restart: unless-stopped
   prometheus:
-    image: "prom/prometheus:v2.33.3"
+    image: "docker.io/prom/prometheus:latest"
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
       - "9090:9090"
     restart: unless-stopped
   cratedb-prometheus-adapter:
-    image: "ghcr.io/crate/cratedb-prometheus-adapter:0.5.8"
+    image: "ghcr.io/crate/cratedb-prometheus-adapter:latest"
     volumes:
       - ./config.yml:/etc/cratedb-prometheus-adapter/config.yml
     ports:
