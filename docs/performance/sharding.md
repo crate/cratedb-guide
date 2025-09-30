@@ -15,6 +15,42 @@ the type of hardware you're using.
 
 :::{NOTE}
 This guide assumes you know the basics.
+## Sizing considerations
+
+General principles requires careful consideration for cluster
+sizing and architecture.
+Keep the following things in mind when building your sharding strategy.
+Each shard incurs overhead in terms of open files, RAM allocation, and CPU cycles
+for maintenance operations.
+
+### Shard size vs. number of shards
+
+The optimal approach balances shard count with shard size. Individual shards should
+typically contain 3-70 GB of data, with 10-50 GB being the sweet spot for most
+workloads. In large clusters, this often means fewer shards than total CPU cores,
+as larger shards can still be processed efficiently by multiple CPU cores during
+query execution.
+Smaller shards also result in reduced Lucene index efficiency, which can adversely
+affect computed search term relevance.
+
+### CPU-to-shard ratio
+
+If most nodes have more shards per table than they have CPUs, the cluster can
+experience performance degradations.
+For example, on clusters with substantial CPU resources (e.g., 8 nodes × 32 CPUs
+= 256 total CPUs), creating 256+ shards per table often proves counterproductive.
+If you don't manually set the number of shards per table, CrateDB will make a
+best guess, based on the assumption that your nodes have two CPUs each.
+
+### 1000 shards per node limit
+
+To avoid _oversharding_, CrateDB by default limits the number of shards per node to
+1_000 as a critical stability boundary. Any operation that would exceed that limit
+leads to an exception.
+For an 8-node cluster, this allows up to 8_000 total shards across all tables.
+Approaching this limit typically indicates a suboptimal sharding strategy rather
+than optimal performance tuning. See also relevant documentation about
+{ref}`table reconfiguration <number-of-shards>` wrt. sharding options.
 
 If you are looking for an intro to sharding, see {ref}`sharding
 <crate-reference:ddl-sharding>`.
