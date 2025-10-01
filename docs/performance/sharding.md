@@ -105,6 +105,10 @@ For the purposes of calculating how many shards a table should be clustered
 into, you can typically ignore replica partitions as these are not usually
 queried across for reads.
 
+### Segments
+
+The number of segments within a shard affects query performance because more
+segments have to be visited.
 
 ## Notes
 
