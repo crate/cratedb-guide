@@ -49,8 +49,6 @@ typically contain 3-70 GB of data, with 10-50 GB being the sweet spot for most
 workloads. In large clusters, this often means fewer shards than total CPU cores,
 as larger shards can still be processed efficiently by multiple CPU cores during
 query execution.
-Smaller shards also result in reduced Lucene index efficiency, which can adversely
-affect computed search term relevance.
 
 ### CPU-to-shard ratio
 
