@@ -103,9 +103,9 @@ for a benchmark.
 - Identify the record size
 - Calculate the throughput
 
-Then, to calculate the number of shards, you should consider that the size of each
-shard should roughly be between 10 - 50 GB, and that each node can only manage
-up to 1000 shards.
+Then, to calculate the number of shards, consider that each shard should
+roughly be between 10 – 50 GB, and that each node can manage
+up to 1_000 shards by default.
 
 :::{caution}
 **Over-sharding and over-partitioning**
