@@ -101,10 +101,6 @@ types of queries you intend to run.
 CrateDB also has replicas of data and this results in additional shards in
 the cluster.
 
-For the purposes of calculating how many shards a table should be clustered
-into, you can typically ignore replica partitions as these are not usually
-queried across for reads.
-
 ### Segments
 
 The number of segments within a shard affects query performance because more
