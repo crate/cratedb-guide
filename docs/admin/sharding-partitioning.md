@@ -104,7 +104,7 @@ for a benchmark.
 - Calculate the throughput
 
 Then, to calculate the number of shards, you should consider that the size of each
-shard should roughly be between 5 - 50 GB, and that each node can only manage
+shard should roughly be between 10 - 50 GB, and that each node can only manage
 up to 1000 shards.
 
 :::{caution}
@@ -132,7 +132,7 @@ time series data with the following assumptions:
 Given the daily throughput is around 10 GB/day, the monthly throughput is 30 times
 that (~ 300 GB). The partition column can be day, week, month, quarter, etc. So,
 assuming a monthly partition, the next step is to calculate the number of shards
-with the **shard size recommendation** (5 - 50 GB) and the **number of nodes** in
+with the **shard size recommendation** (10 - 50 GB) and the **number of nodes** in
 the cluster in mind.
 
 With three shards, each shard would hold 100 GB (300 GB / 3 shards), which is above
