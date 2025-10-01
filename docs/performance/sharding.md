@@ -45,7 +45,7 @@ for maintenance operations.
 ### Shard size vs. number of shards
 
 The optimal approach balances shard count with shard size. Individual shards should
-typically contain 3-70 GB of data, with 10-50 GB being the sweet spot for most
+typically contain 10-50 GB of data, being the sweet spot for most
 workloads. In large clusters, this often means fewer shards than total CPU cores,
 as larger shards can still be processed efficiently by multiple CPU cores during
 query execution.

@@ -109,7 +109,7 @@ data loss, and to improve read performance.
 ## Synopsis
 With a monthly throughput of 300 GB, partitioning your table by month,
 and using six shards, each shard will manage 50 GB of data, which is
-within the recommended size range (5 - 50 GB).
+within the recommended size range (10 - 50 GB).
 
 Through replication, the table will store three copies of your data,
 in order to reduce the chance of permanent data loss.
