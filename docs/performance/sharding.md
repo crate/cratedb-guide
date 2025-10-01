@@ -106,7 +106,7 @@ into, you can typically ignore replica partitions as these are not usually
 queried across for reads.
 
 
-## Caveats
+## Notes
 
 :::{caution}
 :class: hero
@@ -146,7 +146,7 @@ workloads can be parallelized and distributed maximally, which in turn ensures
 maximal query performance.
 
 (sharding-ingestion)=
-## Optimising for ingestion
+### Optimize for ingestion
 
 When doing heavy ingestion, it is
 good to cluster a table across as many nodes as possible. However, [we have
