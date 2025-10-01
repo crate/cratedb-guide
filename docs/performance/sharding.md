@@ -62,7 +62,7 @@ best guess, based on the assumption that your nodes have two CPUs each.
 ### 1000 shards per node limit
 
 To avoid _oversharding_, CrateDB by default limits the number of shards per node to
-1_000 as a critical stability boundary. Any operation that would exceed that limit
+1_000 as a protection limit. Any operation that would exceed that limit
 leads to an exception.
 For an 8-node cluster, this allows up to 8_000 total shards across all tables.
 Approaching this limit typically indicates a suboptimal sharding strategy rather
