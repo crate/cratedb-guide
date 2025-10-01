@@ -33,6 +33,20 @@ implement the following guidelines as a rule of thumb:
 
 - Keep the number of records on each shard below 200 million.
 
+Finding the right balance when it comes to sharding will vary on a lot of
+things. While it is generally advisable to slightly over-allocate, we
+recommend to benchmark your particular setup to find the sweet spot to
+implement an appropriate sharding strategy.
+
+Figuring out how many shards to use for your tables requires you to think about
+the type of data you are processing, the types of queries you are running, and
+the type of hardware you are using.
+
+- Too many shards can degrade search performance and make the cluster unstable.
+  This is referred to as _oversharding_.
+
+- Very large shards can slow down cluster operations and prolong recovery times
+  after failures.
 
 ## Sizing considerations
 
@@ -99,23 +113,6 @@ queried across for reads.
 Balancing the number and size of your shards is important for the performance
 and stability of your CrateDB clusters.
 :::
-
-### Avoid imbalances
-
-- Too many shards can degrade search performance and make the cluster unstable.
-  This is referred to as _oversharding_.
-
-- Very large shards can slow down cluster operations and prolong recovery times
-  after failures.
-
-Finding the right balance when it comes to sharding will vary on a lot of
-things. While it's generally advisable to slightly over-allocate, we
-recommend to benchmark your particular setup to find the sweet spot to
-implement an appropriate sharding strategy.
-
-Figuring out how many shards to use for your tables requires you to think about
-the type of data you're processing, the types of queries you're running, and
-the type of hardware you're using.
 
 (sharding-under-allocation)=
 ### Avoid under-allocation
