@@ -48,25 +48,21 @@ large result sets from CrateDB][fetching large result sets from cratedb].
 
 ## Number of shards
 
-In CrateDB data in tables and partitions is distributed in storage units that we
-call shards.
+In CrateDB data in tables and partitions is distributed in storage units
+called "shards".
 
-If we do not specify how many shards we want for a table/partition CrateDB will
+If we do not specify how many shards we want for a table/partition, CrateDB will
 derive a default from the number of nodes.
 
-CrateDB also has replicas of data and this results in additional shards in the
-cluster.
-
 Having too many or too few shards has performance implications, so it is very
-important to get familiar with the {ref}`Sharding Performance Guide
-<sharding-guide>`.
+important to get familiar with the {ref}`sharding-guide`.
 
 In particular, there is a soft limit of 1000 shards per node; so table schemas,
 partitioning strategy, and number of nodes need to be planned to stay well below
 this limit, one strategy can be to aim for a configuration where even if one node
-in the cluster is lost the remaining nodes would still have less than 1000 shards.
+in the cluster is lost, the remaining nodes would still have less than 1000 shards.
 
-If this was not considered when initially defining the tables we have the
+If this was not taken into account when initially defining the tables, we have the
 following considerations:
 
 - changing the partitioning strategy requires creating a new table and copying

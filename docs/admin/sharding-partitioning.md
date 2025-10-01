@@ -1,6 +1,6 @@
 (sharding-partitioning)=
 
-# Sharding and Partitioning
+# Sharding and Partitioning 101
 
 ## Introduction
 
@@ -92,23 +92,7 @@ INSERT INTO second_table (ts, val) VALUES (1620415701974, 2.31);
 We can see that there are now 8 shards for the table `second_table` in the
 cluster.
 
-:::{danger}
-**Over-sharding and over-partitioning**
-
-Sharding can drastically improve the performance on large datasets.
-However, having too many small shards will most likely degrade performance.
-Over-sharding and over-partitioning are common flaws leading to an overall
-poor performance.
-
-**As a rule of thumb, a single shard should hold somewhere between 5 - 50
-GB of data.**
-
-To avoid oversharding, CrateDB by default limits the number of shards per
-node to 1000. Any operation that would exceed that limit, leads to an
-exception.
-:::
-
-## How to choose your sharding and partitioning strategy
+## Strategy
 
 An optimal sharding and partitioning strategy always depends on the specific
 use case and should typically be determined by conducting
@@ -119,13 +103,25 @@ for a benchmark.
 - Identify the record size
 - Calculate the throughput
 
-Then, to calculate the number of shards, you should consider that the size of each
-shard should roughly be between 5 - 50 GB, and that each node can only manage
-up to 1000 shards.
+Then, to calculate the number of shards, consider that each shard should
+roughly be between 10 – 50 GB, and that each node can manage
+up to 1_000 shards by default.
 
-### Time series example
+:::{caution}
+**Over-sharding and over-partitioning**
 
-To illustrate the steps above, let's use them on behalf of an example. Imagine
+Sharding can drastically improve the performance on large datasets.
+However, having too many small shards will most likely degrade performance.
+Over-sharding and over-partitioning are common flaws leading to an overall
+poor performance.
+
+Learn how to discover an optimal sharding strategy for your dataset
+in the {ref}`sharding-guide`.
+:::
+
+## Example
+
+Let's create a basic sharding strategy on behalf of a concrete example. Imagine
 you want to create a *partitioned table* on a *three-node cluster* to store
 time series data with the following assumptions:
 
@@ -136,7 +132,7 @@ time series data with the following assumptions:
 Given the daily throughput is around 10 GB/day, the monthly throughput is 30 times
 that (~ 300 GB). The partition column can be day, week, month, quarter, etc. So,
 assuming a monthly partition, the next step is to calculate the number of shards
-with the **shard size recommendation** (5 - 50 GB) and the **number of nodes** in
+with the **shard size recommendation** (10 - 50 GB) and the **number of nodes** in
 the cluster in mind.
 
 With three shards, each shard would hold 100 GB (300 GB / 3 shards), which is above
