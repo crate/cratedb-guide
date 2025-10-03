@@ -51,7 +51,7 @@ for record in result.all():
 gives application developers the full power and flexibility of SQL.
 
 Python-based {ref}`dataframe`
-and [ML](#machine-learning) frameworks, and a few [ETL](#etl)
+and {ref}`ML <machine-learning>` frameworks, and a few {ref}`ETL <etl>`
 frameworks, are using SQLAlchemy as database adapter library when connecting to
 [RDBMS].
 
