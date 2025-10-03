@@ -1,5 +1,5 @@
 (connect)=
-# Connect
+# Connect / Drivers
 
 :::{include} /_include/links.md
 :::
@@ -110,7 +110,6 @@ Database driver connection examples.
 
 general
 application
-Drivers <drivers>
 ```
 
 ```{toctree}
@@ -123,6 +122,7 @@ php
 python
 ruby
 natural
+All drivers <drivers>
 ```
 
 
