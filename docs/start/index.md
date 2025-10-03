@@ -114,11 +114,11 @@ and explore key features.
 :hidden:
 
 first-steps
-going-further
 modelling/index
 query/index
-Ingesting data <../ingest/index>
+ingest
 application/index
+going-further
 ```
 
 
