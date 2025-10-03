@@ -1,6 +1,55 @@
+(start-connect)=
+(connect-applications)=
+# Applications
+
+:::{include} /_include/links.md
+:::
+
+:::{div} sd-text-muted
+Connect to CrateDB from database shells and IDEs.
+:::
+
+
+(use-admin-ui)=
+## CrateDB Admin UI
+:::{div}
+CrateDB ships with a browser-based administration interface called
+[Admin UI].
+:::
+The Admin UI is enabled on each CrateDB node. You can use it to inspect and
+interact with the whole CrateDB cluster in various ways.
+
+If CrateDB is running on your workstation, access the Admin UI using
+`http://localhost:4200/`. Otherwise, replace `localhost` with the
+hostname CrateDB is running on.
+
+When using CrateDB Cloud, open the Admin UI from the Cloud Console
+using the link shown there (port 4200). The URL typically looks like
+`https://<cluster-name>.<region>.<provider>.cratedb.net:4200/`, e.g.
+`https://testdrive.aks1.westeurope.azure.cratedb.net:4200/`.
+
+![Admin UI SQL console showing a sample SELECT statement](https://cratedb.com/docs/crate/admin-ui/en/latest/_images/console-query.png){width=320px}
+![Admin UI navigation and overview panel](/_assets/img/getting-started/first-use/admin-ui.png){width=320px}
+
+:::{note}
+If you are running CrateDB on a remote machine, you will have to create
+a dedicated user account for accessing the Admin UI. See {ref}`create-user`.
+:::
+
+
+(use-crash)=
+## CrateDB Shell
+
+The CrateDB Shell, called `crash`, is an interactive command-line interface
+(CLI) program for working with CrateDB on your favorite terminal. To learn more
+about it, please refer to its documentation at {ref}`crate-crash:index`.
+
+![crash default screen after executing a query](https://cratedb.com/docs/crate/crash/en/latest/_images/query.png){width=320px}
+
+
 (cli)=
 (connect-cli)=
-# Using command-line programs with CrateDB
+## Command-line programs
 
 This section provides a quick overview about a few CLI programs, and how to
 use them for connecting to CrateDB clusters. We recommend to use crash,
@@ -18,7 +67,7 @@ When using CrateDB Cloud, `<hostname>` will be something like
 
 
 (crash)=
-## crash
+### crash
 
 ```{div}
 :style: "float: right"
@@ -58,7 +107,7 @@ crash --command "SELECT 42.42;"
 
 
 (psql)=
-## psql
+### psql
 
 ```{div}
 :style: "float: right"
@@ -97,7 +146,7 @@ psql postgresql://crate@localhost:5432/crate --command "SELECT 42.42;"
 
 
 (httpie)=
-## HTTPie
+### HTTPie
 
 ```{div}
 :style: "float: right"
@@ -136,7 +185,7 @@ http "localhost:4200/_sql?pretty" \
 
 
 (curl)=
-## curl
+### curl
 
 ```{div}
 :style: "float: right"
@@ -173,6 +222,22 @@ echo '{"stmt": "SELECT 42.42;"}' \
 :::
 
 ::::
+
+
+(ide)=
+(connect-ide)=
+## Database IDEs
+
+Mostly through its PostgreSQL interface, CrateDB supports working with popular
+database IDE (Integrated Development Environment) applications.
+
+### DataGrip
+
+- {ref}`datagrip`
+
+### DBeaver
+
+- {ref}`dbeaver`
 
 
 
