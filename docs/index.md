@@ -1,8 +1,5 @@
 (index)=
 (guides)=
-(howtos)=
-(tutorials)=
-(use-more-tutorials)=
 
 # The CrateDB Guide
 
@@ -302,7 +299,9 @@ topic/index
 Solutions <solution/index>
 integrate/index
 admin/index
-performance/index
+Performance <performance/index>
+howto/index
+tutorial/index
 ```
 
 
