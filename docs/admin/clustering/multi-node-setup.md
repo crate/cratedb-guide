@@ -191,7 +191,7 @@ discovers the rest of the cluster via the seed nodes.
 :::{TIP}
 If you are using CrateDB 3.x or below, you can use the
 [discovery.zen.ping.unicast.hosts] setting instead of
-`discovery.seed_hosts`.
+{ref}`crate-reference:discovery.seed_hosts`.
 :::
 
 (unicast-discovery)=
@@ -444,8 +444,8 @@ transport.publish_port: 4321
 [configuration]: https://cratedb.com/docs/crate/reference/en/latest/config/index.html
 [crate_home]: https://cratedb.com/docs/crate/reference/en/latest/config/environment.html#conf-env-crate-home
 [daemon]: https://en.wikipedia.org/wiki/Daemon_(computing)
-[discovery.zen.minimum_master_nodes]: https://cratedb.com/docs/crate/reference/en/3.3/config/cluster.html#discovery-zen-minimum-master-nodes
-[discovery.zen.ping.unicast.hosts]: https://cratedb.com/docs/crate/reference/en/3.3/config/cluster.html#unicast-host-discovery
+[discovery.zen.minimum_master_nodes]: https://github.com/crate/crate/blob/3.3/blackbox/docs/config/cluster.rst#discovery
+[discovery.zen.ping.unicast.hosts]: https://github.com/crate/crate/blob/3.3/blackbox/docs/config/cluster.rst#unicast-host-discovery
 [gateway.expected_data_nodes]: https://cratedb.com/docs/crate/reference/en/latest/config/cluster.html#gateway-expected-data-nodes
 [gateway.recover_after_data_nodes]: https://cratedb.com/docs/crate/reference/en/latest/config/cluster.html#gateway-recover-after-data-nodes
 [hostname]: https://en.wikipedia.org/wiki/Hostname
