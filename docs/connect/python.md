@@ -1,14 +1,15 @@
 (connect-python)=
-
 # Python
 
 This guide demonstrates how to connect to a CrateDB Cloud cluster using different
 kinds of Python drivers. Individual drivers offer specific features for specific
 needs of your application, so consider reading this enumeration carefully.
 
-(crate-python)=
+(python-drivers-official)=
+## Official drivers
 
-## crate-python
+(crate-python)=
+### crate-python
 
 The `crate` Python package offers a database client implementation compatible
 with the Python Database API 2.0 specification, and also includes the CrateDB
@@ -28,8 +29,7 @@ with conn:
 ```
 
 (sqlalchemy-cratedb)=
-
-## sqlalchemy-cratedb
+### sqlalchemy-cratedb
 
 The [SQLAlchemy] dialect for CrateDB, based on the HTTP-based DBAPI client
 library [crate-python].
@@ -47,9 +47,25 @@ for record in result.all():
     print(record)
 ```
 
+[SQLAlchemy] is the Python SQL toolkit and Object Relational Mapper that
+gives application developers the full power and flexibility of SQL.
+
+Python-based {ref}`dataframe`
+and [ML](#machine-learning) frameworks, and a few [ETL](#etl)
+frameworks, are using SQLAlchemy as database adapter library when connecting to
+[RDBMS].
+
+- [The CrateDB SQLAlchemy Dialect]
+- [Working with SQLAlchemy and CrateDB]
+- [SQLAlchemy Code Examples]
+
+
+(python-drivers-community)=
+## Community drivers
+
 (cratedb-async)=
 
-## cratedb-async
+### cratedb-async
 
 Asynchronous Python driver for CrateDB based on [HTTPX].
 See the full documentation at <https://github.com/surister/cratedb-async>.
@@ -69,7 +85,7 @@ asyncio.run(main())
 
 (psycopg2)=
 
-## psycopg2
+### psycopg2
 
 Psycopg is a popular PostgreSQL database adapter for Python. Its main features
 are the complete implementation of the Python DB API 2.0 specification and the
@@ -90,7 +106,7 @@ with conn:
 
 (psycopg3)=
 
-## psycopg3
+### psycopg3
 
 [Psycopg 3] is a newly designed PostgreSQL database adapter for the Python
 programming language. Psycopg 3 presents a familiar interface for everyone who
@@ -119,7 +135,7 @@ with psycopg.connect("postgres://crate@localhost:5432/doc") as conn:
 
 (aiopg)=
 
-## aiopg
+### aiopg
 
 aiopg is a python library for accessing a PostgreSQL database from the asyncio
 (PEP-3156/tulip) framework. It wraps asynchronous features of the Psycopg
@@ -144,7 +160,7 @@ loop.run_until_complete(run())
 
 (asyncpg)=
 
-## asyncpg
+### asyncpg
 
 asyncpg is a database interface library designed specifically for PostgreSQL
 and Python/asyncio. asyncpg is an efficient, clean implementation of the
@@ -167,9 +183,35 @@ loop = asyncio.get_event_loop()
 loop.run_until_complete(run())
 ```
 
+
+(python-dataframe)=
+(df)=
+(dataframe)=
+(dataframes)=
+(dataframe-examples)=
+## Dataframe libraries
+
+How to use CrateDB together with popular open-source DataFrame libraries.
+
+### Dask
+- {ref}`dask`
+
+### pandas
+- {ref}`pandas`
+
+### Polars
+- {ref}`polars`
+
+
+
 [aiopg documentation]: https://aiopg.readthedocs.io/
 [asyncpg documentation]: https://magicstack.github.io/asyncpg/current/
 [httpx]: https://www.python-httpx.org/
 [psycopg 3]: https://www.psycopg.org/psycopg3/docs/
 [psycopg documentation]: https://www.psycopg.org/docs/
-[sqlalchemy]: https://www.sqlalchemy.org/
+
+[RDBMS]: https://en.wikipedia.org/wiki/RDBMS
+[SQLAlchemy]: https://www.sqlalchemy.org/
+[SQLAlchemy Code Examples]: https://github.com/crate/cratedb-examples/tree/main/by-language/python-sqlalchemy
+[The CrateDB SQLAlchemy Dialect]: inv:sqlalchemy-cratedb:*:label#index
+[Working with SQLAlchemy and CrateDB]: inv:sqlalchemy-cratedb:*:label#by-example
