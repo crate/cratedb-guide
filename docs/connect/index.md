@@ -110,8 +110,6 @@ Database driver connection examples.
 
 general
 application
-CLI programs <cli>
-ide
 Drivers <drivers>
 DataFrame libraries <df/index>
 ../integrate/mcp/index
