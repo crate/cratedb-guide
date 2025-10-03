@@ -232,4 +232,6 @@ Solutions <../solution/index>
 ../integrate/index
 ../admin/index
 ../performance/index
+../howto/index
+../tutorial/index
 ```

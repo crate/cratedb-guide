@@ -1,6 +1,7 @@
 (timeseries-analysis-advanced)=
 (timeseries-analysis-weather)=
 (timeseries-querying)=
+(timeseries-tutorial-weather)=
 
 # Analyzing Weather Data
 

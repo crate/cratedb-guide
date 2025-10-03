@@ -1,5 +1,6 @@
 (objects-basics)=
 (objects-usage)=
+(objects-tutorial-marketing)=
 
 # Objects: Analyzing Marketing Data
 
