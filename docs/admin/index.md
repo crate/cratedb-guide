@@ -32,10 +32,9 @@ Production and troubleshooting guidelines and system resource considerations.
 
 clustering/index
 sharding-partitioning
-../performance/index
 ```
 +++
-Best practices and tips for clustering, sharding, partitioning, and performance tuning.
+Best practices and tips for clustering, sharding, and partitioning.
 ::::
 
 ::::{grid-item-card} {material-outlined}`system_update_alt;2em` Software Upgrades
