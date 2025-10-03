@@ -109,7 +109,7 @@ Database driver connection examples.
 :hidden:
 
 general
-connect
+application
 CLI programs <cli>
 ide
 Drivers <drivers>

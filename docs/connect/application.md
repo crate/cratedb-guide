@@ -1,5 +1,6 @@
 (start-connect)=
-# Connect to CrateDB
+(connect-applications)=
+# Applications
 
 :::{include} /_include/links.md
 :::
