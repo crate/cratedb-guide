@@ -111,9 +111,7 @@ Database driver connection examples.
 general
 application
 Drivers <drivers>
-DataFrame libraries <df/index>
 ../integrate/mcp/index
-ORM libraries <orm>
 ```
 
 ```{toctree}
