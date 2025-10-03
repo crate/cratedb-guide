@@ -111,7 +111,6 @@ Database driver connection examples.
 general
 application
 Drivers <drivers>
-../integrate/mcp/index
 ```
 
 ```{toctree}
@@ -123,6 +122,7 @@ javascript
 php
 python
 ruby
+natural
 ```
 
 
