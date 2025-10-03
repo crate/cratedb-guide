@@ -174,7 +174,7 @@ We need to allow the ports CrateDB uses through the Windows Firewall
 Start crate by running ``bin/crate``.
 
 
-.. _3.3: https://cratedb.com/docs/crate/reference/en/3.3/config/cluster.html#discovery
+.. _3.3: https://github.com/crate/crate/blob/3.3/blackbox/docs/config/cluster.rst#discovery
 .. _Java JDK installed: https://www.oracle.com/java/technologies/downloads/#java8
 .. _latest: https://cratedb.com/docs/crate/reference/en/latest/config/cluster.html#discovery
 .. _Learn how to install here: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli

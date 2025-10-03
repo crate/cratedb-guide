@@ -196,7 +196,7 @@ discovery by availability zone::
 
 See also :ref:`crate-reference:discovery.ec2.availability_zones`.
 
-.. _3.3: https://cratedb.com/docs/crate/reference/en/3.3/config/cluster.html#discovery
+.. _3.3: https://github.com/crate/crate/blob/3.3/blackbox/docs/config/cluster.rst#discovery
 .. _Amazon EC2: https://aws.amazon.com/ec2/
 .. _assign them with an IAM role: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/attach-iam-role.html
 .. _AWS guide: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html
