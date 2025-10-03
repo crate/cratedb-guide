@@ -108,7 +108,7 @@ Database driver connection examples.
 :maxdepth: 1
 :hidden:
 
-configure
+general
 connect
 CLI programs <cli>
 ide
