@@ -147,7 +147,7 @@ constraints, all in one.
 
 ## Further Learning & Resources
 
-* [**Full-text Search**](../../feature/search/fts/index.md): In-depth
+* {ref}`Full-text Search <fulltext-search>`: In-depth
   walkthrough of full-text search capabilities.
 * Reference Manual:
   * {ref}`Full-text indices <crate-reference:fulltext-indices>`: Defining
@@ -156,5 +156,8 @@ constraints, all in one.
     analyzers, tokenizers, token and char filters.
   * {ref}`SQL MATCH predicate <crate-reference:sql_dql_fulltext_search>`:
     Details about MATCH predicate arguments and options.
-* [**Hands‑On Academy Course**](https://learn.cratedb.com/cratedb-fundamentals?lesson=fulltext-search):
+* [Hands‑On Academy Course]:
   explore FTS on real datasets (e.g. Chicago neighborhoods).
+
+
+[Hands‑On Academy Course]: https://learn.cratedb.com/cratedb-fundamentals?lesson=fulltext-search

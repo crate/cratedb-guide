@@ -48,7 +48,7 @@ CrateDB is not just a real-time analytics database, it’s a powerful platform t
 
 aggregations
 ad-hoc
-../../feature/search/index
+search
 ai-integration
 Performance <performance>
 ```
