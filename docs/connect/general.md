@@ -1,5 +1,6 @@
 (connect-configure)=
-# Configure
+(connect-general)=
+# General information
 
 :::{include} /_include/links.md
 :::
