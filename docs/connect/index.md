@@ -65,44 +65,114 @@ protocol.
 :::::
 
 
-:::::{grid} 1 2 2 2
-:margin: 4 4 0 0
+:::{rubric} Get started
+:::
+To get started,
+please learn about typical connection URI formats for CrateDB and its
+default client applications.
+
+:::::{grid} 2 2 2 3
 :padding: 0
-:gutter: 2
+:gutter: 4
 
-::::{grid-item-card} {material-outlined}`link;2em` How to connect
-:class-body: ul-li-wide
-- {ref}`connect-configure`
-
-  To connect to CrateDB, your application or driver needs to be configured
-  with corresponding database URI and connection properties.
-
-- {ref}`CLI programs <connect-cli>`
-
-  Use CLI programs to connect to CrateDB.
-
-- {ref}`Database IDEs <connect-ide>`
-
-  Use IDEs to connect to CrateDB.
-+++
-Database connectivity options and tools.
+::::{grid-item-card} {material-outlined}`link;2em` General information
+:link: connect-configure
+:link-type: ref
+:link-alt: CrateDB connect URI
+Database URI and connection properties.
 ::::
 
-::::{grid-item-card} {material-outlined}`link;2em` How to connect
-- {ref}`connect-java`
-- {ref}`connect-javascript`
-- {ref}`connect-php`
-- {ref}`connect-python`
-- {ref}`connect-ruby`
-- Overview: {ref}`connect-drivers`
+::::{grid-item-card} {material-outlined}`apps;2em` Applications
+:link: connect-applications
+:link-type: ref
+:link-alt: CrateDB standard client applications
+Use CLI programs or database IDEs to connect to CrateDB.
+::::
 
-  All available CrateDB drivers and adapters for supported programming languages,
-  frameworks, and environments.
-+++
-Database driver connection examples.
+::::{grid-item-card} {material-outlined}`landscape;2em` All drivers
+:link: connect-drivers
+:link-type: ref
+:link-alt: All CrateDB drivers
+All available drivers and adapters.
 ::::
 
 :::::
+
+
+:::{rubric} Drivers by language
+:::
+CrateDB drivers and adapters for supported programming languages, frameworks, and environments.
+
+:::::{grid} 2 2 2 4
+:margin: 4 4 0 0
+:padding: 0
+
+::::{grid-item-card} Java
+:link: connect-java
+:link-type: ref
+:link-alt: Connect to CrateDB using Java
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+{fab}`java`
+::::
+
+::::{grid-item-card} JavaScript
+:link: connect-javascript
+:link-type: ref
+:link-alt: Connect to CrateDB using JavaScript
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+{material-regular}`javascript;2em`
+::::
+
+::::{grid-item-card} PHP
+:link: connect-php
+:link-type: ref
+:link-alt: Connect to CrateDB using PHP
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+{fab}`php`
+::::
+
+::::{grid-item-card} Python
+:link: connect-python
+:link-type: ref
+:link-alt: Connect to CrateDB using Python
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+{fab}`python`
+::::
+
+::::{grid-item-card} Ruby
+:link: connect-ruby
+:link-type: ref
+:link-alt: Connect to CrateDB using Ruby
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+
+```{image} https://www.svgrepo.com/download/508940/ruby.svg
+:width: 40px
+```
+
+::::
+
+:::::
+
 
 ```{toctree}
 :maxdepth: 1
