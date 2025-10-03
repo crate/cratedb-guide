@@ -162,3 +162,8 @@ crate://crate@localhost:4200/?schema=doc
 - For authenticating properly, please learn about the available
   [authentication] options.
 :::
+
+
+[authentication]: inv:crate-reference:*:label#admin_auth
+[schemas]: inv:crate-reference:*:label#ddl-create-table-schemas
+[superuser]: inv:crate-reference:*:label#administration_user_management
