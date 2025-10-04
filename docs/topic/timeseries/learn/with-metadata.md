@@ -4,6 +4,9 @@
 
 # Analyzing Device Readings with Metadata Integration
 
+:::{include} /_include/links.md
+:::
+
 CrateDB is highly regarded as an optimal database solution for managing
 time series data thanks to its unique blend of features. It is particularly
 effective when you need to combine time series data with metadata, for
@@ -50,6 +53,12 @@ like manufacturer, model, and firmware version.
 
 
 ## Creating the Tables
+
+:::{div}
+The fastest and easiest way to get started with CrateDB is by deploying a
+free tier (CRFREE) cluster on [CrateDB Cloud][CrateDB Cloud Console]. Otherwise,
+see the {ref}`install` section about to run CrateDB yourself.
+:::
 
 CrateDB uses SQL, the most popular query language for database management. To
 store the device readings and the device info data, define two tables with
@@ -126,7 +135,7 @@ WITH (compression='gzip', empty_string_as_null=true)
 RETURN SUMMARY;
 :::
 
-## Time Series Analysis with Metadata
+## Analyzing Data
 
 
 :::{rubric} JOIN Operations

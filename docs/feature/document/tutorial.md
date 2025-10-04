@@ -4,9 +4,12 @@
 
 # Objects: Analyzing Marketing Data
 
+:::{include} /_include/links.md
+:::
+
 Marketers often need to handle multi-structured data from different platforms.
 CrateDB's dynamic `OBJECT` data type allows us to store and analyze this complex,
-nested data efficiently. In this usage guide, we'll explore how to leverage this
+nested data efficiently. In this tutorial, we'll explore how to leverage this
 feature in marketing data analysis, along with the use of generated columns to
 parse and manage URLs.
 
@@ -28,6 +31,12 @@ Consider marketing data that captures details of various campaigns.
 To begin, let's create the schema for this dataset.
 
 ## Creating the Table
+
+:::{div}
+The fastest and easiest way to get started with CrateDB is by deploying a
+free tier (CRFREE) cluster on [CrateDB Cloud][CrateDB Cloud Console]. Otherwise,
+see the {ref}`install` section about to run CrateDB yourself.
+:::
 
 CrateDB uses SQL, the most popular query language for database management. To
 store the marketing data, create a table with columns tailored to the
@@ -126,5 +135,5 @@ GROUP BY 1
 ORDER BY 2 DESC;
 :::
 
-In this usage guide, we explored the versatility and power of CrateDB's dynamic
+In this tutorial, we explored the versatility and power of CrateDB's dynamic
 `OBJECT` data type for handling complex, nested marketing data.

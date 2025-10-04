@@ -4,7 +4,10 @@
 
 # Full-Text: Exploring the Netflix Catalog
 
-In this usage guide, we will explore how to manage a dataset of Netflix titles,
+:::{include} /_include/links.md
+:::
+
+In this tutorial, we will explore how to manage a dataset of Netflix titles,
 making use of CrateDB Cloud's full-text search capabilities.
 Each entry in our imaginary dataset will have the following attributes:
 
@@ -25,6 +28,12 @@ To begin, let's create the schema for this dataset.
 
 
 ## Creating the Table
+
+:::{div}
+The fastest and easiest way to get started with CrateDB is by deploying a
+free tier (CRFREE) cluster on [CrateDB Cloud][CrateDB Cloud Console]. Otherwise,
+see the {ref}`install` section about to run CrateDB yourself.
+:::
 
 CrateDB uses SQL, the most popular query language for database management. To
 store the data, create a table with columns tailored to the
