@@ -1,0 +1,25 @@
+# Service composition file for Docker Compose or Podman Compose
+
+services:
+
+  cratedb:
+    image: docker.io/crate/crate:latest
+    ports:
+      - "4200:4200/tcp"
+      - "5432:5432/tcp"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4200/"]
+      interval: 5s
+      timeout: 30s
+      retries: 5
+
+  mosquitto:
+    image: docker.io/eclipse-mosquitto:latest
+    command: >
+      /usr/sbin/mosquitto -c /mosquitto-no-auth.conf
+    ports:
+      - "1883:1883/tcp"
+
+  lorrystream:
+    image: ghcr.io/daq-tools/lorrystream:latest
+    scale: 0
