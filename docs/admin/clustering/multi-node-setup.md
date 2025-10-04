@@ -188,11 +188,6 @@ You must configure every node with a list of seed nodes. Each node
 discovers the rest of the cluster via the seed nodes.
 :::
 
-:::{TIP}
-If you are using CrateDB 3.x or below, you can use the
-[discovery.zen.ping.unicast.hosts] setting instead of
-{ref}`crate-reference:discovery.seed_hosts`.
-:::
 
 (unicast-discovery)=
 
@@ -293,11 +288,6 @@ independent clusters (which may result in data loss).
 CrateDB requires a [quorum] of nodes before a master can be elected. A quorum
 ensures that the cluster does not elect multiple masters in the event of a
 network partition (also known as a [split-brain] scenario).
-
-CrateDB (versions 4.x and above) will automatically determine the ideal [quorum
-size][quorum size], but if you are using CrateDB versions 3.x and below, you must manually set
-the quorum size using the [discovery.zen.minimum_master_nodes] setting. For
-a three-node cluster, you must declare all nodes to be master-eligible.
 
 (metadata-gateway)=
 
@@ -431,6 +421,17 @@ transport.publish_port: 4321
 :::{SEEALSO}
 {ref}`More information about port settings <crate-reference:conf_ports>`
 :::
+
+## CrateDB 3.x
+
+CrateDB (versions 4.x and above) will automatically determine the ideal [quorum
+size][quorum size], but if you are using CrateDB versions 3.x and below, you
+must manually set the quorum size using the [discovery.zen.minimum_master_nodes]
+setting. For a three-node cluster, you must declare all nodes to be master-eligible.
+
+If you are using CrateDB 3.x or below, to configure every node with a list of
+seed nodes, you can use the [discovery.zen.ping.unicast.hosts] setting instead
+of {ref}`crate-reference:discovery.seed_hosts`.
 
 
 [127.0.0.1:4200]: http://127.0.0.1:4200/

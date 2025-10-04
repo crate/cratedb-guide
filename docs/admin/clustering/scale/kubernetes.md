@@ -126,6 +126,7 @@ versions 4.x and above. Please refer to the current documentation section
 about {ref}`crate-reference:conf_discovery`.
 :::
 
+::::{dropdown} Details about `discovery.zen.minimum_master_nodes` on CrateDB 3.x
 The [discovery.zen.minimum_master_nodes] setting affects {ref}`metadata
 master <crate-reference:concept-clusters>` election with previous versions
 of CrateDB.
@@ -142,8 +143,8 @@ reconfiguration by altering the `discovery.zen.minimum_master_nodes` command
 option.
 
 Changes to the Kubernetes controller configuration can then be deployed using
-`kubectl replace` as shown in the previous subsection, [Using Version
-Control][using version control].
+`kubectl replace` as shown in the previous subsection, {ref}`using version
+control <scaling-kube-vc>`.
 
 :::{CAUTION}
 If [discovery.zen.minimum_master_nodes] is set to more than the current
@@ -153,6 +154,8 @@ hand, a number that is too small might lead to a [split-brain] scenario.
 Accordingly, it is important to adjust this number carefully when
 scaling CrateDB.
 :::
+
+::::
 
 (scaling-kube-recovery)=
 
@@ -175,8 +178,8 @@ reconfiguration by altering the `EXPECTED_NODES` environment variable and the
 `recover_after_data_nodes` command option.
 
 Changes to the Kubernetes controller configuration can then be deployed using
-`kubectl replace` as shown in the previous subsection, [Using Version
-Control][using version control].
+`kubectl replace` as shown in the previous subsection, {ref}`using version
+control <scaling-kube-vc>`.
 
 :::{NOTE}
 You can scale a CrateDB cluster without updating these values, but the
