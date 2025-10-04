@@ -21,3 +21,13 @@ services:
       - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
     depends_on:
       - cratedb
+
+  uv:
+    image: ghcr.io/astral-sh/uv:python3.13-trixie-slim
+    volumes:
+      - ./:/src
+      - uv-cache:/root/.cache/uv:cached
+    scale: 0
+
+volumes:
+  uv-cache:

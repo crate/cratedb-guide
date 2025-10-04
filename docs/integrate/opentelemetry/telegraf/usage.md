@@ -8,45 +8,20 @@ This how-to guide walks you through configuring [Telegraf] to receive
 
 Use Docker or Podman to run all components. This approach works consistently
 across Linux, macOS, and Windows.
-If you use Podman, replace `docker` with `podman` (or enable the podman‑docker
-compatibility shim) and run `podman compose up`.
 
-### Commands
+### Files
 
-Prepare shortcut for {ref}`crate-crash:index` command.
-
-::::{tab-set}
-:sync-group: os
-
-:::{tab-item} Linux, macOS, WSL
-:sync: unix
-Add these settings to your shell profile (`~/.profile`) to make them persistent.
-```shell
-alias crash="docker compose exec -it cratedb crash"
-```
-:::
-:::{tab-item} Windows PowerShell
-:sync: powershell
-Add these settings to your PowerShell profile (`$PROFILE`) to make them persistent.
-```powershell
-function crash { docker compose exec -it cratedb crash @args }
-```
-:::
-:::{tab-item} Windows Command
-:sync: dos
-```shell
-doskey crash=docker compose exec -it cratedb crash $*
-REM Note: doskey macros reset each session. To persist, configure an AutoRun command
-REM pointing to a macro file, or re-run these in your shell startup script.
-```
-:::
-
-::::
+First, download and save all required files to your machine.
+- {download}`.env`
+- {download}`compose.yaml`
+- {download}`example.py`
+- {download}`telegraf.conf`
 
 ### Services
 
-Save {download}`compose.yaml` and {download}`telegraf.conf`, then start
-services using Docker Compose or Podman Compose.
+Start services using Docker Compose or Podman Compose.
+If you use Podman, replace `docker` with `podman` (or enable the podman‑docker
+compatibility shim) and run `podman compose up`.
 
 ```shell
 docker compose up
@@ -56,18 +31,17 @@ docker compose up
 
 ### Use Python
 
-To submit metrics using the OpenTelemetry Python SDK, download the example file
-{download}`example.py` to your machine and choose one of these approaches:
+To submit metrics using the OpenTelemetry Python SDK, choose one of these
+approaches:
 
 **Option 1: Using uv (recommended)**
 ```shell
-export OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4317
-export OTEL_SERVICE_NAME=app
-uv run --with=opentelemetry-distro --with=opentelemetry-exporter-otlp opentelemetry-instrument python example.py
+docker compose run --rm --env-from-file=.env uv uv run --with=opentelemetry-distro --with=opentelemetry-exporter-otlp opentelemetry-instrument python /src/example.py
 ```
 
 **Option 2: Using pip**
-Install dependencies:
+
+First, install dependencies:
 ```shell
 pip install opentelemetry-distro opentelemetry-exporter-otlp
 ```
@@ -76,8 +50,10 @@ Then run the example:
 opentelemetry-instrument --service_name=app python example.py
 ```
 
+::::{dropdown} Display example\.py
 :::{literalinclude} example.py
 :::
+::::
 
 ### Use any language
 
@@ -88,7 +64,7 @@ Erlang/Elixir, Go, Java, JavaScript, PHP, Python, Ruby, Rust, or Swift.
 
 CrateDB stores the metrics in the designated table, ready for inspection and analysis.
 ```shell
-crash --hosts "http://crate:crate@localhost:4200/" -c "SELECT * FROM metrics ORDER BY timestamp LIMIT 5;"
+docker compose exec cratedb crash -c "SELECT * FROM doc.metrics ORDER BY timestamp LIMIT 5;"
 ```
 ```psql
 +---------------------+---------------+-------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+---------------+

@@ -41,3 +41,17 @@ services:
       - ./otelcol.yaml:/etc/otelcol-contrib/config.yaml
     depends_on:
       - cratedb-prometheus-adapter
+
+  nc:
+    image: docker.io/toolbelt/netcat:2025-08-23
+    scale: 0
+
+  uv:
+    image: ghcr.io/astral-sh/uv:python3.13-trixie-slim
+    volumes:
+      - ./:/src
+      - uv-cache:/root/.cache/uv:cached
+    scale: 0
+
+volumes:
+  uv-cache:
