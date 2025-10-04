@@ -10,93 +10,67 @@ pipeline element.
 
 ## Prerequisites
 
-Docker is used for running all components. This approach works consistently
+Use Docker or Podman to run all components. This approach works consistently
 across Linux, macOS, and Windows.
 
-Alternatively, you can use Podman. You can also use a different MQTT broker such as
+You can also use a different MQTT broker such as
 EMQX, HiveMQ, VerneMQ, or RabbitMQ. Azure IoT Hub speaks MQTT as well, but with
 protocol and authentication specifics; adjust settings accordingly.
 
-Create a shared network.
+### Files
+
+First, download and save all required files to your machine.
+- {download}`compose.yaml`
+
+### Services
+
+Start services using Docker Compose or Podman Compose.
+If you use Podman, replace `docker` with `podman` (or enable the podman‑docker
+compatibility shim) and run `podman compose up`.
+
 ```shell
-docker network create cratedb-demo
+docker compose up
 ```
 
-Start CrateDB.
-```shell
-docker run --name=cratedb --rm -it --network=cratedb-demo \
-  --publish=4200:4200 --publish=5432:5432 \
-  --env=CRATE_HEAP_SIZE=2g docker.io/crate -Cdiscovery.type=single-node
-```
-
-Start Mosquitto.
-```shell
-docker run --name=mosquitto --rm -it --network=cratedb-demo \
-  --publish=1883:1883 docker.io/eclipse-mosquitto \
-  mosquitto -c /mosquitto-no-auth.conf
-```
-> Note: This broker configuration allows anonymous access for demonstration purposes only.
-> Do not expose it to untrusted networks. For production, configure authentication/TLS.
-
-Prepare shortcuts for the CrateDB shell, LorryStream, and the Mosquitto client
-programs.
-
-::::{tab-set}
-
-:::{tab-item} Linux and macOS
-To make the settings persistent, add them to your shell profile (`~/.profile`).
-```shell
-alias crash="docker run --rm -it --network=cratedb-demo ghcr.io/crate/cratedb-toolkit crash"
-alias lorry="docker run --rm -i --network=cratedb-demo ghcr.io/daq-tools/lorrystream lorry"
-alias mosquitto_pub="docker run --rm -i --network=cratedb-demo docker.io/eclipse-mosquitto mosquitto_pub"
-alias mosquitto_sub="docker run --rm -i --network=cratedb-demo docker.io/eclipse-mosquitto mosquitto_sub"
-```
-:::
-:::{tab-item} Windows PowerShell
-To make the settings persistent, add them to your PowerShell profile (`$PROFILE`).
-```powershell
-function crash { docker run --rm -it --network=cratedb-demo ghcr.io/crate/cratedb-toolkit crash @args }
-function lorry { docker run --rm -i --network=cratedb-demo ghcr.io/daq-tools/lorrystream lorry @args }
-function mosquitto_pub { docker run --rm -i --network=cratedb-demo docker.io/eclipse-mosquitto mosquitto_pub @args }
-function mosquitto_sub { docker run --rm -i --network=cratedb-demo docker.io/eclipse-mosquitto mosquitto_sub @args }
-```
-:::
-:::{tab-item} Windows Command
-```shell
-doskey crash=docker run --rm -it --network=cratedb-demo ghcr.io/crate/cratedb-toolkit crash $*
-doskey lorry=docker run --rm -i --network=cratedb-demo ghcr.io/daq-tools/lorrystream lorry $*
-doskey mosquitto_pub=docker run --rm -i --network=cratedb-demo docker.io/eclipse-mosquitto mosquitto_pub $*
-doskey mosquitto_sub=docker run --rm -i --network=cratedb-demo docker.io/eclipse-mosquitto mosquitto_sub $*
-```
+:::{note}
+The MQTT broker configuration used here allows anonymous access for
+demonstration purposes only. Do not expose it to untrusted networks. For
+production, configure authentication/TLS.
 :::
 
-::::
-
-## Usage
+## Submit data
 
 Subscribe to all MQTT topics on the broker to monitor any traffic.
 ```shell
-mosquitto_sub -h mosquitto -t "#" -v
+docker compose exec --no-tty mosquitto mosquitto_sub -h mosquitto -t "#" -v
 ```
 
 Invoke the data transfer pipeline.
 ```shell
-lorry relay \
-  "mqtt://mosquitto/testdrive/%23?content-type=json" \
-  "crate://cratedb/?table=testdrive"
+docker compose run --rm lorrystream lorry relay "mqtt://mosquitto/testdrive/%23?content-type=json" "crate://cratedb/?table=mqtt_demo"
 ```
 
 Publish a JSON message to an MQTT topic.
 ```shell
-echo '{"temperature": 42.84, "humidity": 83.1}' | \
-  mosquitto_pub -h mosquitto -t testdrive/channel1 -s
+echo '{"temperature": 42.84, "humidity": 83.1}' | docker compose exec --no-tty mosquitto mosquitto_pub -h mosquitto -t testdrive/channel1 -s
 ```
+
+## Explore data
 
 Inspect data stored in CrateDB.
 ```shell
-crash --hosts cratedb -c "SELECT * FROM testdrive"
+docker compose exec cratedb crash -c "SELECT * FROM doc.mqtt_demo"
+```
+```psql
++-------------+----------+
+| temperature | humidity |
++-------------+----------+
+|       42.84 |     83.1 |
++-------------+----------+
+SELECT 1 row in set (0.004 sec)
 ```
 
 
 [Eclipse Mosquitto]: https://mosquitto.org/
+[LorryStream]: https://lorrystream.readthedocs.io/
 [LorryStream MQTT source]: https://lorrystream.readthedocs.io/source/mqtt.html
