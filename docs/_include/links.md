@@ -15,6 +15,7 @@
 [CTE]: inv:crate-reference#sql_dql_with
 [CrateDB BLOBs]: inv:crate-reference:*:label#blob_support
 [CrateDB Cloud]: inv:cloud:*:label#index
+[CrateDB Cloud Console]: https://console.cratedb.cloud/
 [CrateDB JDBC Driver]: https://cratedb.com/docs/jdbc/
 [CrateDB Reference Manual]: inv:crate-reference:*:label#index
 [CrateDB Self-Managed]: https://cratedb.com/product/self-managed

@@ -427,5 +427,5 @@ and about OBJECT indexing.
 :maxdepth: 1
 :hidden:
 
-Usage <usage>
+Tutorial <tutorial>
 ```
