@@ -1,5 +1,5 @@
 (influxdb-usage)=
-# Import data from InfluxDB
+# Load data from InfluxDB
 
 In this quick usage guide, you will use the [CrateDB Toolkit InfluxDB I/O subsystem]
 to import data from [InfluxDB] into [CrateDB]. You can also import data directly

@@ -1,13 +1,11 @@
 (index)=
 (guides)=
-(howtos)=
-(tutorials)=
-(use-more-tutorials)=
 
-# The CrateDB Guide
+# The CrateDB Handbook
 
-Guides and tutorials about how to use CrateDB and CrateDB Cloud in practice.
-
+:::{div} sd-text-muted
+How to use CrateDB and CrateDB Cloud in practice.
+:::
 
 ::::{grid} 4
 :padding: 0
@@ -41,6 +39,59 @@ Guides and tutorials about how to use CrateDB and CrateDB Cloud in practice.
 :::
 
 
+:::{grid-item-card} Connect
+:link: connect
+:link-type: ref
+:link-alt: CrateDB connectivity options at a glance.
+:padding: 1
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-5
+
+{material-outlined}`link;1.3em`
+:::
+
+
+::::
+
+
+## Learn
+
+How-to guides, tutorials, and explanations.
+
+::::{grid} 4
+:padding: 0
+
+
+:::{grid-item-card} How-to guides
+:link: howto-guides
+:link-type: ref
+:link-alt: CrateDB How-to guides
+:padding: 1
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-5
+
+{material-outlined}`help_center;1.3em`
+:::
+
+
+:::{grid-item-card} Tutorials
+:link: tutorials
+:link-type: ref
+:link-alt: CrateDB Tutorials
+:padding: 1
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-5
+
+{material-outlined}`school;1.3em`
+:::
+
+
 :::{grid-item-card} Administration
 :link: administration
 :link-type: ref
@@ -68,14 +119,10 @@ Guides and tutorials about how to use CrateDB and CrateDB Cloud in practice.
 {material-outlined}`speed;1.3em`
 :::
 
-
 ::::
 
 
 ## Features
-
-:::{rubric} Highlights
-:::
 
 ::::{grid} 1 2 3 3
 :padding: 0
@@ -302,7 +349,9 @@ topic/index
 Solutions <solution/index>
 integrate/index
 admin/index
-performance/index
+Performance <performance/index>
+howto/index
+tutorial/index
 ```
 
 
