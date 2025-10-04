@@ -285,7 +285,7 @@ files, and corresponding technical backgrounds about their implementations.
 The usage guide illustrates the BM25 ranking algorithm for information retrieval,
 by exploring how to manage a dataset of Netflix titles.
 
-{hyper-navigate}`Netflix Tutorial <search-fts-usage>`
+{hyper-navigate}`Netflix Tutorial <search-tutorial-netflix>`
 
 
 :::
@@ -374,7 +374,7 @@ and how they can be customized to specific needs, using plugins for CrateDB.
 
 options
 analyzer
-Usage <usage>
+Tutorial <tutorial>
 :::
 
 

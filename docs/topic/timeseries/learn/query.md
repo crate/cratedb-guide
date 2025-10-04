@@ -5,6 +5,9 @@
 
 # Analyzing Weather Data
 
+:::{include} /_include/links.md
+:::
+
 CrateDB is a powerful database designed to handle various use cases, one of
 which is managing time series data. Time series data refers to collections of
 data points recorded at specific intervals over time, like the hourly
@@ -50,6 +53,12 @@ readings from CrateDB offices across the globe. Each record includes:
 
 
 ## Creating the Table
+
+:::{div}
+The fastest and easiest way to get started with CrateDB is by deploying a
+free tier (CRFREE) cluster on [CrateDB Cloud][CrateDB Cloud Console]. Otherwise,
+see the {ref}`install` section about to run CrateDB yourself.
+:::
 
 CrateDB uses SQL, the most popular query language for database management. To
 store the weather data, create a table with columns tailored to the

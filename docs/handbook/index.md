@@ -1,7 +1,4 @@
-(guides)=
-(howtos)=
-(tutorials)=
-(use-more-tutorials)=
+(handbook)=
 
 # Handbook
 
