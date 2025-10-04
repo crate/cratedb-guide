@@ -336,6 +336,12 @@ sh$ bin/crate \
 [Metadata configuration settings]
 :::
 
+
+## Expand cluster
+
+Learn how to add more nodes to an existing cluster at {ref}`scale-expand`.
+
+
 (multi-node-other)=
 
 ## Other settings
