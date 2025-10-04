@@ -188,11 +188,6 @@ You must configure every node with a list of seed nodes. Each node
 discovers the rest of the cluster via the seed nodes.
 :::
 
-:::{TIP}
-If you are using CrateDB 3.x or below, you can use the
-[discovery.zen.ping.unicast.hosts] setting instead of
-`discovery.seed_hosts`.
-:::
 
 (unicast-discovery)=
 
@@ -293,11 +288,6 @@ independent clusters (which may result in data loss).
 CrateDB requires a [quorum] of nodes before a master can be elected. A quorum
 ensures that the cluster does not elect multiple masters in the event of a
 network partition (also known as a [split-brain] scenario).
-
-CrateDB (versions 4.x and above) will automatically determine the ideal [quorum
-size][quorum size], but if you are using CrateDB versions 3.x and below, you must manually set
-the quorum size using the [discovery.zen.minimum_master_nodes] setting. For
-a three-node cluster, you must declare all nodes to be master-eligible.
 
 (metadata-gateway)=
 
@@ -432,6 +422,17 @@ transport.publish_port: 4321
 {ref}`More information about port settings <crate-reference:conf_ports>`
 :::
 
+## CrateDB 3.x
+
+CrateDB (versions 4.x and above) will automatically determine the ideal [quorum
+size][quorum size], but if you are using CrateDB versions 3.x and below, you
+must manually set the quorum size using the [discovery.zen.minimum_master_nodes]
+setting. For a three-node cluster, you must declare all nodes to be master-eligible.
+
+If you are using CrateDB 3.x or below, to configure every node with a list of
+seed nodes, you can use the [discovery.zen.ping.unicast.hosts] setting instead
+of {ref}`crate-reference:discovery.seed_hosts`.
+
 
 [127.0.0.1:4200]: http://127.0.0.1:4200/
 [127.0.0.1:4201]: http://127.0.0.1:4201/
@@ -444,8 +445,8 @@ transport.publish_port: 4321
 [configuration]: https://cratedb.com/docs/crate/reference/en/latest/config/index.html
 [crate_home]: https://cratedb.com/docs/crate/reference/en/latest/config/environment.html#conf-env-crate-home
 [daemon]: https://en.wikipedia.org/wiki/Daemon_(computing)
-[discovery.zen.minimum_master_nodes]: https://cratedb.com/docs/crate/reference/en/3.3/config/cluster.html#discovery-zen-minimum-master-nodes
-[discovery.zen.ping.unicast.hosts]: https://cratedb.com/docs/crate/reference/en/3.3/config/cluster.html#unicast-host-discovery
+[discovery.zen.minimum_master_nodes]: https://github.com/crate/crate/blob/3.3/blackbox/docs/config/cluster.rst#discovery
+[discovery.zen.ping.unicast.hosts]: https://github.com/crate/crate/blob/3.3/blackbox/docs/config/cluster.rst#unicast-host-discovery
 [gateway.expected_data_nodes]: https://cratedb.com/docs/crate/reference/en/latest/config/cluster.html#gateway-expected-data-nodes
 [gateway.recover_after_data_nodes]: https://cratedb.com/docs/crate/reference/en/latest/config/cluster.html#gateway-recover-after-data-nodes
 [hostname]: https://en.wikipedia.org/wiki/Hostname
