@@ -18,7 +18,7 @@ Prepare shortcut for {ref}`crate-crash:index` command.
 ::::{tab-set}
 :sync-group: os
 
-:::{tab-item} Linux and macOS
+:::{tab-item} Linux, macOS, WSL
 :sync: unix
 Add these settings to your shell profile (`~/.profile`) to make them persistent.
 ```shell
