@@ -3,13 +3,28 @@
 (tutorials)=
 (use-more-tutorials)=
 
-# Handbook
+# The CrateDB Handbook
 
 Guides and tutorials about how to use CrateDB and CrateDB Cloud in practice.
 
 
 ::::{grid} 4
 :padding: 0
+
+
+:::{grid-item-card} Getting Started
+:link: getting-started
+:link-type: ref
+:link-alt: Getting started with CrateDB
+:padding: 1
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-5
+
+{material-outlined}`rocket_launch;1.3em`
+:::
+
 
 :::{grid-item-card} Installation
 :link: install
@@ -113,7 +128,7 @@ CrateDB is a distributed and scalable SQL database for storing and analyzing
 massive amounts of data in near real-time, even with complex queries. It is
 based on Lucene, combines a unique set of features, and is PostgreSQL-compatible.
 
-![CrateDB feature overview diagram](https://cratedb.com/hs-fs/hubfs/nativesql.png?width=800&name=nativesql.png)
+![](https://cratedb.com/hs-fs/hubfs/nativesql.png?width=800&name=nativesql.png)
 +++
 Read about all features of CrateDB at a glance.
 :::
@@ -170,22 +185,34 @@ Load data into CrateDB.
 
 ## Solutions
 
-Learn how others are using CrateDB successfully.
-
-::::{grid} 1 2 3 3
+::::{grid} 1 2 2 2
+:margin: 4 4 0 0
 :padding: 0
+:gutter: 2
 
-:::{grid-item-card} Solutions and use cases
+:::{grid-item-card} {material-outlined}`lightbulb;2em` Solutions and use cases
 :link: solutions
 :link-type: ref
 :link-alt: Solutions built with CrateDB
-:padding: 1
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
+Learn about solutions built with CrateDB and
+how others are using CrateDB successfully.
++++
+**What's inside:**
+Full-text and semantic search, real-time raw-data analytics,
+industrial data, machine learning, data migrations.
+:::
 
-{material-outlined}`lightbulb;1.3em`
+:::{grid-item-card} {material-outlined}`numbers;2em` Topics
+:link: solutions
+:link-type: ref
+:link-alt: Solutions built with CrateDB
+Learn how to apply CrateDB's features to optimally cover use-cases across different
+application and topic domains, for example, by connecting CrateDB with third-party
+software applications, libraries, and frameworks.
++++
+**What's inside:**
+Business intelligence, data lineage, data visualization,
+programming frameworks, software testing, time series data.
 :::
 
 ::::
@@ -271,6 +298,7 @@ software applications, libraries, and frameworks.
 
 
 ::::
+
 
 
 ```{toctree}
