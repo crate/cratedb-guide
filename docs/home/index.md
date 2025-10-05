@@ -1,8 +1,3 @@
----
-orphan: true
----
-
-
 # Welcome to CrateDB
 
 CrateDB is a **distributed SQL database** designed for **real-time analytics
@@ -385,7 +380,7 @@ Make sure you also do not miss relevant [CrateDB customer stories].
 
 [CrateDB customer stories]: https://www.youtube.com/playlist?list=PLDZqzXOGoWUJrAF_lVx9U6BzAGG9xYz_v
 [HTTP protocol]: https://en.wikipedia.org/wiki/HTTP
-[JDBC]: https://en.wikipedia.org/wiki/Java_Database_Connectivity 
+[JDBC]: https://en.wikipedia.org/wiki/Java_Database_Connectivity
 [ODBC]: https://en.wikipedia.org/wiki/Open_Database_Connectivity
 [PostgreSQL wire protocol]: https://www.postgresql.org/docs/current/protocol.html
 [sharing a playlist of videos]: https://www.youtube.com/playlist?list=PL3cZtICBssphXl5rHgsgG9vTNAVTw_Veq
