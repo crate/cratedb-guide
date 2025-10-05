@@ -64,7 +64,7 @@ Let's start by starting a `cratedb` container.
 ```console
 docker run --rm -it --name=cratedb \
     --publish=4200:4200 --publish=5432:5432 \
-    --env=CRATE_HEAP_SIZE=2g crate/crate:nightly \
+    --env=CRATE_HEAP_SIZE=1g crate/crate:nightly \
     -Cdiscovery.type=single-node
 ```
 

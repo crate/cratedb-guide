@@ -34,7 +34,7 @@ services:
               "-Cgateway.expected_data_nodes=3",
               "-Cgateway.recover_after_data_nodes=2"]
     environment:
-      - CRATE_HEAP_SIZE=2g
+      - CRATE_HEAP_SIZE=1g
 
   cratedb02:
     image: crate:latest
@@ -53,7 +53,7 @@ services:
               "-Cgateway.expected_data_nodes=3",
               "-Cgateway.recover_after_data_nodes=2"]
     environment:
-      - CRATE_HEAP_SIZE=2g
+      - CRATE_HEAP_SIZE=1g
 
   cratedb03:
     image: crate:latest
@@ -72,7 +72,7 @@ services:
               "-Cgateway.expected_data_nodes=3",
               "-Cgateway.recover_after_data_nodes=2"]
     environment:
-      - CRATE_HEAP_SIZE=2g
+      - CRATE_HEAP_SIZE=1g
 ```
 
 Start the cluster with `docker compose up`. For details, see the linked documentation.
