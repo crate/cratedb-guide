@@ -13,6 +13,5 @@ Look for the "Section A: Guide" section in the {% else %} branch.
 
 Overview <home/index>
 start/index
-handbook/index
-
+Handbook <handbook/index>
 ```
