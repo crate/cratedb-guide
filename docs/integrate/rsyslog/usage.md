@@ -23,10 +23,7 @@ setup.
 First, start CrateDB. For production, use a dedicated cluster. For this demo, run a single‑node container:
 
 ```bash
-sudo docker run -d --name cratedb \
-  -p 4200:4200 -p 5432:5432 \
-  -e CRATE_HEAP_SIZE=1g \
-  crate:latest -Cdiscovery.type=single-node
+sudo docker run -d --name cratedb -p 4200:4200 -p 5432:5432 -e CRATE_HEAP_SIZE=1g crate:latest -Cdiscovery.type=single-node
 ```
 
 Next, create a table for logs. Open `http://localhost:4200/#!/console` or invoke `crash` and run:
@@ -87,11 +84,7 @@ If you are interested in more advanced setups involving queuing for additional r
 To generate logs, run a [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki) container and forward its logs to rsyslog:
 
 ```bash
-sudo docker run --name mediawiki \
-  -p 80:80 -d \
-  --log-driver syslog \
-  --log-opt syslog-address=unixgram:///dev/log \
-  mediawiki
+sudo docker run --name mediawiki -p 80:80 -d --log-driver syslog --log-opt syslog-address=unixgram:///dev/log mediawiki
 ```
 
 Open `http://localhost/` to see the MediaWiki setup page.

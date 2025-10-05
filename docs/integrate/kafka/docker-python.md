@@ -66,11 +66,7 @@ CREATE TABLE IF NOT EXISTS sensor_readings (
 But this can also be done using `curl`:
 
 ```bash
-curl -sS -H 'Content-Type: application/json' \
-  -X POST http://localhost:4200/_sql \
-  -d '{
-    "stmt":"CREATE TABLE IF NOT EXISTS sensor_readings (device_id TEXT, ts TIMESTAMPTZ, temperature DOUBLE PRECISION, humidity DOUBLE PRECISION, PRIMARY KEY (device_id, ts))"
-  }'
+curl -sS -H 'Content-Type: application/json' -X POST http://localhost:4200/_sql -d '{"stmt":"CREATE TABLE IF NOT EXISTS sensor_readings (device_id TEXT, ts TIMESTAMPTZ, temperature DOUBLE PRECISION, humidity DOUBLE PRECISION, PRIMARY KEY (device_id, ts))"}'
 ```
 
 ### Create a Kafka topic and send a couple of messages
@@ -79,11 +75,9 @@ Creating a Kafka topic can be done in several ways, we are selecting to use
 `docker exec` in this way:
 
 ```bash
-docker exec -it kafka kafka-topics.sh --create \
-  --topic sensors --bootstrap-server kafka:9092 --partitions 3 --replication-factor 1
+docker exec -it kafka kafka-topics.sh --create --topic sensors --bootstrap-server kafka:9092 --partitions 3 --replication-factor 1
 
-docker exec -it kafka kafka-console-producer.sh \
-  --bootstrap-server kafka:9092 --topic sensors <<'EOF'
+docker exec -it kafka kafka-console-producer.sh --bootstrap-server kafka:9092 --topic sensors <<'EOF'
 {"device_id":"alpha","ts":"2025-08-19T12:00:00Z","temperature":21.4,"humidity":48.0}
 {"device_id":"alpha","ts":"2025-08-19T12:01:00Z","temperature":21.5,"humidity":47.6}
 {"device_id":"beta","ts":"2025-08-19T12:00:00Z","temperature":19.8,"humidity":55.1}
@@ -149,14 +143,12 @@ python quick_consumer.py
 ```
 
 :::{tip}
-This shows the custom client path: transform/filter as you like, do idempotent upserts on (device\_id, ts), and batch writes for speed.
+This shows the custom client path: transform/filter as you like, do idempotent upserts on (device_id, ts), and batch writes for speed.
 :::
 
 ## Verifying the data
 
 Use `curl` to submit a `SELECT` statement that verifies data has been stored in CrateDB.
 ```bash
-curl -sS -H 'Content-Type: application/json' -X POST http://localhost:4200/_sql \
-  -d '{"stmt":"SELECT device_id, ts, temperature, humidity FROM sensor_readings ORDER BY ts LIMIT 10"}' \
-  | jq
+curl -sS -H 'Content-Type: application/json' -X POST http://localhost:4200/_sql -d '{"stmt":"SELECT device_id, ts, temperature, humidity FROM sensor_readings ORDER BY ts LIMIT 10"}' | jq
 ```

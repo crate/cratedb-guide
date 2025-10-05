@@ -88,7 +88,7 @@ In practice, teams usually start containerised (for dev/test or early projects) 
 
 ## Key design considerations
 
-* **Topic & partition strategy** – Align Kafka partitions with expected throughput and consumer parallelism - aim for stable keys (e.g., device\_id) to keep ordering where needed.
+* **Topic & partition strategy** – Align Kafka partitions with expected throughput and consumer parallelism - aim for stable keys (e.g., device_id) to keep ordering where needed.
 * **Table modelling in CrateDB** – Choose primary keys and partitioning (e.g., by month on a timestamp column) to balance write speed and query performance - define shard count per table.
 * **Upserts & deduplication** – Include a stable event key (id, source+timestamp) to make writes idempotent when possible.
 * **Batching & back-pressure** – Tune sink batch size and retries to match CrateDB ingest capacity while keeping latency low.

@@ -32,9 +32,7 @@ For InfluxDB, they can be found in the [cloud platform] itself.
 Now, same as before, import data from InfluxDB bucket/measurement into 
 CrateDB schema/table.
 ```shell
-ctk load table \
-  "influxdb2://${INFLUX_ORG}:${INFLUX_TOKEN}@${INFLUX_HOST}/testdrive/demo?ssl=true" \
-  --cluster-url="crate://${CRATEDB_USER}:${CRATEDB_PASSWORD}@${CRATEDB_HOST}:4200/testdrive/demo?ssl=true"
+ctk load table "influxdb2://${INFLUX_ORG}:${INFLUX_TOKEN}@${INFLUX_HOST}/testdrive/demo?ssl=true" --cluster-url="crate://${CRATEDB_USER}:${CRATEDB_PASSWORD}@${CRATEDB_HOST}:4200/testdrive/demo?ssl=true"
 ```
 
 :::{note}

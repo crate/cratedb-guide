@@ -66,9 +66,7 @@ docker compose run --rm --no-TTY mariadb mariadb @args -e $sql
 
 Invoke the data transfer pipeline.
 ```shell
-docker compose run --rm --no-TTY ctk-ingest ctk load table \
-  "mysql://root:secret@mariadb:3306/?table=test.demo" \
-  --cluster-url="crate://crate:crate@cratedb:4200/doc/mysql_demo"
+docker compose run --rm --no-TTY ctk-ingest ctk load table "mysql://root:secret@mariadb:3306/?table=test.demo" --cluster-url="crate://crate:crate@cratedb:4200/doc/mysql_demo"
 ```
 
 ## Explore data

@@ -16,10 +16,7 @@ For this example, we will spin up 3 containers using [Podman]
 Let's first start a [Minio] instance:
 
 ```bash
-podman run -d --name minio -p 9000:9000 -p 9001:9001 \
-  -e MINIO_ROOT_USER=minioadmin \
-  -e MINIO_ROOT_PASSWORD=minioadmin \
-  quay.io/minio/minio server /data --console-address ":9001"
+podman run -d --name minio -p 9000:9000 -p 9001:9001 -e MINIO_ROOT_USER=minioadmin -e MINIO_ROOT_PASSWORD=minioadmin quay.io/minio/minio server /data --console-address ":9001"
 ```
 
 Now let's create a bucket called `warehouse`, for this point a browser to
