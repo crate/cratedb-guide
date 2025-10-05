@@ -1,0 +1,27 @@
+# Service composition file for Docker Compose or Podman Compose
+
+services:
+
+  cratedb:
+    image: docker.io/crate/crate:latest
+    ports:
+      - "4200:4200/tcp"
+      - "5432:5432/tcp"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4200/"]
+      interval: 5s
+      timeout: 30s
+      retries: 5
+
+  mongodb:
+    image: docker.io/mongo:latest
+    ports:
+      - "27017:27017/tcp"
+
+  ctk:
+    image: ghcr.io/crate/cratedb-toolkit:latest
+    scale: 0
+
+  mongosh:
+    image: docker.io/mongo:latest
+    command: mongosh
