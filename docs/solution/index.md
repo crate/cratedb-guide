@@ -2,6 +2,11 @@
 (solutions)=
 # Solutions and use cases
 
+:::{div} sd-text-muted
+Learn about solutions built with CrateDB and
+how others are using CrateDB successfully.
+:::
+
 CrateDB is being developed in an open-source spirit, and closely together
 with its users and customers. Learn about application scenarios where CrateDB
 derives many foundational features from, and how others are using CrateDB to

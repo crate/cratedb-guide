@@ -136,7 +136,7 @@ Read about all features of CrateDB at a glance.
 
 ## Data ingestion
 
-Load data into CrateDB.
+Load data from many sources into CrateDB.
 
 ::::{grid} 1 2 3 3
 :padding: 0
@@ -183,7 +183,7 @@ Load data into CrateDB.
 ::::
 
 
-## Solutions
+## Solutions and topics
 
 ::::{grid} 1 2 2 2
 :margin: 4 4 0 0
@@ -203,99 +203,18 @@ industrial data, machine learning, data migrations.
 :::
 
 :::{grid-item-card} {material-outlined}`numbers;2em` Topics
-:link: solutions
+:link: topics
 :link-type: ref
 :link-alt: Solutions built with CrateDB
-Learn how to apply CrateDB's features to optimally cover use-cases across different
-application and topic domains, for example, by connecting CrateDB with third-party
+Learn how to apply CrateDB's features to optimally cover use-cases
+across different application and topic domains.
+For example, by connecting CrateDB with third-party
 software applications, libraries, and frameworks.
 +++
 **What's inside:**
 Business intelligence, data lineage, data visualization,
 programming frameworks, software testing, time series data.
 :::
-
-::::
-
-
-## Topics
-
-Learn how to apply CrateDB's features to optimally cover use-cases across different
-application and topic domains, for example, by connecting CrateDB with third-party
-software applications, libraries, and frameworks.
-
-::::{grid} 1 2 3 3
-:padding: 0
-
-
-:::{grid-item-card} Business Intelligence
-:link: bi
-:link-type: ref
-:link-alt: Analyse information with CrateDB
-:padding: 3
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-
-{material-outlined}`analytics;1.3em`
-:::
-
-:::{grid-item-card} Data Visualization
-:link: visualization
-:link-type: ref
-:link-alt: Data visualization with CrateDB
-:padding: 3
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-
-{material-outlined}`bar_chart;1.3em`
-:::
-
-
-:::{grid-item-card} Machine Learning
-:link: machine-learning
-:link-type: ref
-:link-alt: Machine Learning with CrateDB
-:padding: 3
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-
-{material-outlined}`model_training;1.3em`
-:::
-
-
-:::{grid-item-card} Software Testing
-:link: testing
-:link-type: ref
-:link-alt: Software testing with CrateDB
-:padding: 3
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-
-{material-outlined}`integration_instructions;1.3em`
-:::
-
-
-:::{grid-item-card} Time Series Data
-:link: timeseries
-:link-type: ref
-:link-alt: Managing Time Series Data with CrateDB
-:padding: 3
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-
-{material-outlined}`stacked_line_chart;1.3em`
-:::
-
 
 ::::
 
