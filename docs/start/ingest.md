@@ -1,13 +1,6 @@
 (start-ingest)=
 # Ingesting data
 
-:::{card} All data ingestion methods for CrateDB at a glance 
-:link: ingest
-:link-type: ref
-CrateDB's data ingestion guide provides an overview of how to efficiently bring
-data from various sources into CrateDB.
-:::
-
 :::{rubric} Features
 :::
 
@@ -33,3 +26,13 @@ load) process, supporting use cases that range from one-time migrations to
 continuous, real-time data pipelines. As a result, CrateDB is well-suited
 for large-scale analytics, IoT, and time-series workloads that demand
 seamless and flexible ingestion strategies.
+
+:::{rubric} Next step
+:::
+
+:::{card} All data ingestion methods for CrateDB at a glance
+:link: ingest
+:link-type: ref
+CrateDB's data ingestion guide provides an overview of how to efficiently bring
+data from various sources into CrateDB.
+:::

@@ -1,12 +1,6 @@
 (start-search)=
 # Search
 
-:::{card} All search features of CrateDB at a glance 
-:link: search-overview
-:link-type: ref
-CrateDB provides full-text, geospatial, and vector search natively.
-:::
-
 :::{rubric} Features
 :::
 
@@ -29,3 +23,12 @@ information discovery. This versatility, together with horizontal
 scalability and SQL compatibility, makes CrateDB an exceptional choice for
 organisations wanting to run advanced search and analytics on diverse data
 types, including structured, semi-structured, and unstructured content.
+
+:::{rubric} Next step
+:::
+
+:::{card} All search features of CrateDB at a glance
+:link: search-overview
+:link-type: ref
+CrateDB provides full-text, geospatial, and vector search natively.
+:::
