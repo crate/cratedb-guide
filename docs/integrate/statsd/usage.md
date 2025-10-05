@@ -6,107 +6,32 @@ metrics and store them into CrateDB.
 
 ## Prerequisites
 
-Docker is used for running all components. This approach works consistently
-across Linux, macOS, and Windows. Alternatively, you can use Podman.
+Use Docker or Podman to run all components. This approach works consistently
+across Linux, macOS, and Windows.
 
-### CLI
+### Files
 
-Prepare shortcut for the psql command.
+First, download and save all required files to your machine.
+- {download}`compose.yaml`
+- {download}`telegraf.conf`
 
-::::{tab-set}
-:sync-group: os
+### Services
 
-:::{tab-item} Linux and macOS
-:sync: unix
-Add these settings to your shell profile (`~/.profile`) to make them persistent.
+Start services using Docker Compose or Podman Compose.
+If you use Podman, replace `docker` with `podman` (or enable the podman‑docker
+compatibility shim) and run `podman compose up`.
+
 ```shell
-alias nc="docker run --rm -i --network=cratedb-demo docker.io/toolbelt/netcat:2025-08-23"
-alias psql="docker run --rm -i --network=cratedb-demo docker.io/postgres:16 psql"
+docker compose up
 ```
-:::
-:::{tab-item} Windows PowerShell
-:sync: powershell
-Add these settings to your PowerShell profile (`$PROFILE`) to make them persistent.
-```powershell
-function nc { docker run --rm -i --network=cratedb-demo docker.io/toolbelt/netcat:2025-08-23 @args }
-function psql { docker run --rm -i --network=cratedb-demo docker.io/postgres:16 psql @args }
-```
-:::
-:::{tab-item} Windows Command
-:sync: dos
-```shell
-doskey nc=docker run --rm -i --network=cratedb-demo docker.io/toolbelt/netcat:2025-08-23 $*
-doskey psql=docker run --rm -i --network=cratedb-demo docker.io/postgres:16 psql $*
-```
-:::
-
-::::
-
-### CrateDB
-
-Create a shared network.
-```shell
-docker network create cratedb-demo
-```
-
-Start CrateDB.
-```shell
-docker run --name=cratedb --rm -it --network=cratedb-demo \
-  --publish=4200:4200 --publish=5432:5432 \
-  --env=CRATE_HEAP_SIZE=2g docker.io/crate -Cdiscovery.type=single-node
-```
-
-
-## Configure Telegraf
-
-Use the configuration blueprint below to configure Telegraf to receive StatsD
-metrics and store them in CrateDB. Adjust the configuration to match your
-environment and save this file as `telegraf.conf`.
-
-:::{literalinclude} telegraf.conf
-:::
-
-
-## Start Telegraf
-
-::::{tab-set}
-:sync-group: os
-
-:::{tab-item} Linux and macOS
-:sync: unix
-```shell
-docker run --name=telegraf --rm -it --network=cratedb-demo \
-  --volume "$(pwd)"/telegraf.conf:/etc/telegraf/telegraf.conf \
-  --publish 8125:8125/udp \
-  docker.io/telegraf
-```
-:::
-:::{tab-item} Windows PowerShell
-:sync: powershell
-```powershell
-docker run --name=telegraf --rm -it --network=cratedb-demo `
-  --volume "${PWD}\telegraf.conf:/etc/telegraf/telegraf.conf" `
-  --publish 8125:8125/udp `
-  docker.io/telegraf
-```
-:::
-:::{tab-item} Windows Command
-:sync: dos
-```shell
-docker run --name=telegraf --rm -it --network=cratedb-demo ^
-  --volume "%cd%\telegraf.conf:/etc/telegraf/telegraf.conf" ^
-  --publish 8125:8125/udp ^
-  docker.io/telegraf
-```
-:::
-::::
 
 ## Submit data
 
 ### netcat
 Use [netcat] for submitting data.
 ```shell
-echo "temperature:42|g\nhumidity:84|g" | nc -C -w 1 -u telegraf 8125
+echo "temperature:42|g" | docker compose run --rm nc -C -w 1 -u telegraf 8125
+echo "humidity:84|g"    | docker compose run --rm nc -C -w 1 -u telegraf 8125
 ```
 
 ### Python
@@ -136,7 +61,7 @@ After Telegraf receives data, CrateDB stores the metrics in the designated table
 ready for inspection.
 
 ```shell
-psql "postgresql://crate:crate@cratedb:5432/" -c "SELECT * FROM doc.metrics ORDER BY timestamp LIMIT 5;"
+docker compose run --rm psql psql "postgresql://crate:crate@cratedb:5432/" -c "SELECT * FROM doc.metrics ORDER BY timestamp LIMIT 5;"
 ```
 ```psql
        hash_id        |         timestamp          |    name     |                     tags                      |    fields    |            day
