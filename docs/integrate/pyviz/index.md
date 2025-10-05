@@ -5,8 +5,7 @@
 :::
 
 ```{div} .float-right
-[![hvPlot logo](https://hvplot.holoviz.org/_static/logo_horizontal.svg){height=60px loading=lazy}][hvPlot]
-[![Datashader logo](https://datashader.org/_static/logo_horizontal.svg){height=60px loading=lazy}][Datashader]
+[![PyViz logo](https://pyviz.org/_static/logo.png){height=100px loading=lazy}][PyViz]
 ```
 ```{div} .clearfix
 ```
@@ -15,8 +14,7 @@ The PyViz.org website is an open platform for helping users decide on the best
 open-source (OSS) Python data visualization tools.
 
 (hvplot)=
-(datashader)=
-## hvPlot and Datashader
+## hvPlot
 
 :::::{grid}
 :padding: 0
@@ -24,20 +22,13 @@ open-source (OSS) Python data visualization tools.
 ::::{grid-item}
 :columns: auto 8 8 8
 
-[hvPlot] is a familiar and high-level API for data exploration and visualization.
-[Datashader] is a graphics pipeline system for creating
-meaningful representations of large datasets quickly and flexibly.
-
-It is used on behalf of the [hvPlot] package, which is based on [HoloViews], from the
-family of [HoloViz] packages of the [PyViz] ecosystem.
-
-With Datashader, you can "just plot" large datasets and explore them instantly, with no
-parameter tweaking, magic numbers, subsampling, or approximation, up to the resolution
-of the display.
+[hvPlot], based on [HoloViews], is a familiar and high-level API for data
+exploration and visualization, from the family of [HoloViz] packages of
+the [PyViz] ecosystem.
 
 [hvPlot] sources its power in the [HoloViz] ecosystem. With [HoloViews], you get the
 ability to easily layout and overlay plots, with [Panel], you can get more interactive
-control of your plots with widgets, with [DataShader], you can
+control of your plots with widgets, with {ref}`datashader`, you can
 visualize and interactively explore large-scale datasets, and with [GeoViews], you can
 create geographic plots.
 ::::
@@ -87,7 +78,6 @@ _hvPlot and Panel: Visualize all your data easily, from notebooks to dashboards 
 
 
 [GeoViews]: https://geoviews.org/
-[HoloViz]: https://holoviz.org/
 [hvPlot]: https://hvplot.holoviz.org/
 [Panel]: https://panel.holoviz.org/
 [PyViz]: https://pyviz.org/

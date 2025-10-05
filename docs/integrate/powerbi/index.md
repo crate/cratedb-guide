@@ -21,7 +21,7 @@ you through the process of configuring that correctly.
 
 [Power BI Service] is an online data analysis and visualization tool, making it
 possible to publish your dashboards, in order to share them with others.
-[](project:#powerbi-service) has a corresponding tutorial.
+{ref}`powerbi-service` has a corresponding usage guide.
 
 ![Power BI: table navigator](https://cratedb.com/docs/crate/howtos/en/latest/_images/powerbi-table-navigator.png){h=160px}
 ![Power BI: pie chart example](https://cratedb.com/docs/crate/howtos/en/latest/_images/powerbi-pie-chart.png){h=160px}
@@ -33,13 +33,13 @@ possible to publish your dashboards, in order to share them with others.
 
 ::::{grid}
 
-:::{grid-item-card} Tutorial: Basic reports
+:::{grid-item-card} Usage: Basic reports
 :link: powerbi-desktop
 :link-type: ref
 Reports with Power BI Desktop.
 :::
 
-:::{grid-item-card} Tutorial: Real Time Reports
+:::{grid-item-card} Usage: Real Time Reports
 :link: powerbi-service
 :link-type: ref
 Real Time Reports using the Power BI service and the on-premises data gateway.

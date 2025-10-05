@@ -49,7 +49,7 @@ straightforward way. The notebooks referenced below demonstrate how this works.
 :::{rubric} Learn
 :::
 
-Tutorials and Notebooks about using [PyCaret] together with CrateDB.
+About using [PyCaret] together with CrateDB.
 
 ::::{info-card}
 :::{grid-item}

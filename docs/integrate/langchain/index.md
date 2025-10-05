@@ -46,32 +46,33 @@ build using LLMs:
 ```
 
 
-## Install
+:::{rubric} Install
+:::
+
 ```shell
 pip install --upgrade langchain-cratedb
 ```
 
 
-## Learn
-
-Tutorials and Notebooks about using [LangChain] together with CrateDB.
-
-:::{rubric} Tutorials
+:::{rubric} Learn
 :::
+
+About using [LangChain] together with CrateDB.
+
 
 ::::{info-card}
 :::{grid-item}
 :columns: 9
-**Tutorial: Set up LangChain with CrateDB**
+**Set up LangChain with CrateDB**
 
 LangChain is a framework for developing applications powered by language models.
-For this tutorial, we are going to use it to interact with CrateDB using only
+For this usage guide, we are going to use it to interact with CrateDB using only
 natural language without writing any SQL.
 
 To achieve that, you will need a CrateDB instance running, an OpenAI API key,
 and some Python knowledge.
 
-- {ref}`langchain-tutorial`
+- {ref}`langchain-usage`
 :::
 :::{grid-item}
 :columns: 3
@@ -207,7 +208,7 @@ solution.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-Tutorial <tutorial>
+Usage <usage>
 :::
 
 

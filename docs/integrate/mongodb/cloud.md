@@ -1,7 +1,7 @@
 # Cloud to Cloud
 
 The procedure for importing data from [MongoDB Atlas] into [CrateDB Cloud] is
-similar to the {ref}`standalone variant <mongodb-tutorial>`, with a few small
+similar to the {ref}`standalone variant <mongodb-usage>`, with a few small
 adjustments.
 
 First, helpful aliases:

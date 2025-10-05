@@ -51,7 +51,7 @@ contemporary large language models, optionally offline.
 :::
 
 :::{grid-item-card} Demo: Using LlamaIndex with OpenAI/Azure OpenAI and CrateDB
-:link: llamaindex-tutorial
+:link: llamaindex-usage-azure
 :link-type: ref
 - Connect CrateDB to an LLM via OpenAI or Azure OpenAI.
 - Text‑to‑SQL: Query CrateDB in natural language.
@@ -77,7 +77,7 @@ NL2SQL with LlamaIndex: Querying CrateDB using natural language.
 :maxdepth: 1
 :hidden:
 Text-to-SQL synopsis <synopsis>
-Text-to-SQL tutorial <tutorial>
+Text-to-SQL usage <usage-azure>
 :::
 
 

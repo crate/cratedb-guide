@@ -38,11 +38,11 @@ orchestration.
 ::::{grid}
 :gutter: 2
 
-:::{grid-item-card} Tutorial: Use Apache Hop with CrateDB
+:::{grid-item-card} Use Apache Hop with CrateDB
 :link: https://community.cratedb.com/t/using-apache-hop-with-cratedb/1754
 :link-type: url
 :columns: 12
-The tutorial explains how to deploy Apache Hop using Docker and connect it to CrateDB.
+Learn how to deploy Apache Hop using Docker and connect it to CrateDB.
 :::
 
 :::{grid-item-card} Dialect

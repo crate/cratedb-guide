@@ -55,7 +55,7 @@ its tables. Navigate to the Data tab to browse your table data.
 
 ## Learn
 
-:::{rubric} Tutorials
+:::{rubric} Guides
 :::
 
 ::::{grid}

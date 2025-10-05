@@ -34,8 +34,8 @@ data backplane, message relay, or pipeline subsystem.
 
 ::::{grid}
 
-:::{grid-item-card} Tutorial: Use LorryStream
-:link: amqp-tutorial
+:::{grid-item-card} Load data from AMQP
+:link: amqp-usage
 :link-type: ref
 How to load data from AMQP into CrateDB using LorryStream.
 :::
@@ -45,7 +45,7 @@ How to load data from AMQP into CrateDB using LorryStream.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-Tutorial <tutorial>
+Usage <usage>
 :::
 
 

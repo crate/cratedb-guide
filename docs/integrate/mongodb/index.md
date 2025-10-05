@@ -67,8 +67,8 @@ Data from MongoDB can also be loaded by other means.
 
 ::::{grid}
 
-:::{grid-item-card} Tutorial: Import data from MongoDB
-:link: mongodb-tutorial
+:::{grid-item-card} Import data from MongoDB
+:link: mongodb-usage
 :link-type: ref
 How to load data from MongoDB Server and MongoDB Atlas into CrateDB.
 :::
@@ -93,7 +93,7 @@ into CrateDB (`cdc`), optionally using transformations.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-Tutorial <tutorial>
+Usage <usage>
 cloud
 model
 :::

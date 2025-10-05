@@ -13,15 +13,32 @@
 ```{div} .clearfix
 ```
 
-## About
+:::::{grid} 2
+:margin: 0
+:padding: 0
 
+::::{grid-item}
+:columns: 7
+
+:::{rubric} About
+:::
 [dbt] is a tool for transforming data in data warehouses using Python and SQL.
 
 It is an SQL‑first transformation workflow platform that lets teams quickly and
 collaboratively deploy analytics code following software engineering best practices
 such as modularity, portability, CI/CD, and documentation.
+::::
 
-::::{dropdown} **Details**
+::::{grid-item}
+:columns: 5
+![dbt workflow illustration 1](https://www.getdbt.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fwl0ndo6t%2Fmain%2Fcd8cba01b3f756a3a7ed194e6e2d6a4072fac194-1220x1200.png%3Ffit%3Dmax%26auto%3Dformat&w=640&q=75){h=120px}
+![dbt workflow illustration 2](https://www.getdbt.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fwl0ndo6t%2Fmain%2F58b87e47c2aed57fde9ccd49c927c3dff5b57d3c-1466x1130.png%3Ffit%3Dmax%26auto%3Dformat&w=640&q=75){h=120px}
+::::
+
+:::::
+
+:::{rubric} Introduction
+:::
 
 > dbt enables data analysts and engineers to transform their data using the same
 > practices that software engineers use to build applications.
@@ -32,13 +49,9 @@ pipelines.
 The idea is that data engineers make source data available to an environment where
 dbt projects run, for example with {ref}`debezium` or with {ref}`airflow`.
 Afterwards, data analysts can run their dbt projects against this data to produce models
-(tables and views) that can be used with a number of [BI tools](#bi-tools).
+(tables and views) that can be used with a number of {ref}`bi` applications.
 
-![](https://www.getdbt.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fwl0ndo6t%2Fmain%2F6e98931b83c4b8bbe45751dced66bc80ea4ec9ac-1999x992.png%3Ffit%3Dmax%26auto%3Dformat&w=640&q=75){h=120px}
-![](https://www.getdbt.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fwl0ndo6t%2Fmain%2Fcd8cba01b3f756a3a7ed194e6e2d6a4072fac194-1220x1200.png%3Ffit%3Dmax%26auto%3Dformat&w=640&q=75){h=120px}
-![](https://www.getdbt.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fwl0ndo6t%2Fmain%2F58b87e47c2aed57fde9ccd49c927c3dff5b57d3c-1466x1130.png%3Ffit%3Dmax%26auto%3Dformat&w=640&q=75){h=120px}
-
-:::{rubric} dbt's Features
+:::{rubric} Features
 :::
 The data abstraction layer provided by [dbt-core] allows the decoupling of
 the models on which reports and dashboards rely from the source data. When
@@ -53,13 +66,12 @@ Some of the things that dbt can do include:
 * Run tests on data, to confirm assumptions remain valid, and to validate
   any changes made to the models' logic.
 
-:::{rubric} CrateDB's Benefits
+:::{rubric} dbt and CrateDB
 :::
 Due to its unique capabilities, CrateDB is an excellent warehouse choice for
 data transformation projects. It offers automatic indexing, fast aggregations,
 easy partitioning, and the ability to scale horizontally.
 
-::::
 
 :::{dropdown} **Managed dbt**
 ```{div}
@@ -96,12 +108,12 @@ pip install --upgrade 'dbt-cratedb2'
 ```
 
 ## Configure
+
 Because CrateDB is compatible with PostgreSQL, the same connectivity
-options apply like outlined on the [dbt Postgres Setup] documentation
-page.
+options apply, as outlined in the [dbt Postgres Setup] documentation.
 
 The dbt connection profile settings for CrateDB stored in [`profiles.yml`]
-are identical with PostgreSQL.
+are identical to PostgreSQL.
 ```yaml
 cratedb_analytics:
   target: dev
@@ -114,22 +126,23 @@ cratedb_analytics:
       pass: [password]
       dbname: crate     # CrateDB's only catalog is `crate`.
       schema: doc       # Define schema. `doc` is the default.
-      search_path: doc  # Use the same value like `schema` by default.
+      search_path: doc  # Use the same value as `schema` by default.
 ```
 
 
 ## Learn
 
-Learn how to use CrateDB with dbt by exploring a few examples.
+Learn how to use CrateDB with dbt by exploring a full tutorial and
+a few other examples.
 
-:::{rubric} Tutorials
+:::{rubric} Guides
 :::
 
 ::::{grid} 2
 :gutter: 5
 
 :::{grid-item-card}
-:link: dbt-tutorial
+:link: dbt-usage
 :link-type: ref
 :link-alt: dbt usage guidelines
 :padding: 3
@@ -142,7 +155,7 @@ Usage Guidelines
 :maxdepth: 2
 :hidden:
 
-Tutorial <tutorial>
+Usage <usage>
 ```
 +++
 Usage guidelines, notes, and advanced configuration options.
@@ -192,6 +205,20 @@ and then publish your project to a GitHub repository.
 :::
 
 ::::
+
+## Notes
+
+Please also refer to [CrateDB setup | dbt Developer Hub](https://docs.getdbt.com/docs/core/connect-data-platform/cratedb-setup).
+
+These dbt features have been tested successfully:
+
+* models with [view, table, and ephemeral materializations](https://docs.getdbt.com/docs/build/materializations)
+* [dbt source freshness](https://docs.getdbt.com/docs/deploy/source-freshness)
+* [dbt test](https://docs.getdbt.com/docs/build/tests)
+* [dbt seed](https://docs.getdbt.com/docs/build/seeds)
+* [Incremental materializations](https://docs.getdbt.com/docs/build/incremental-models) (with `incremental_strategy='delete+insert'` and without involving {ref}`crate-reference:type-object` columns)
+
+We hope you find this useful. CrateDB is continuously adding new features and we will be very happy to hear about your experience using CrateDB with dbt.
 
 
 [dbt]: https://www.getdbt.com/

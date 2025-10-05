@@ -69,7 +69,21 @@ crate://<username>:<password>@<clustername>.cratedb.net:4200/?ssl=true
 
 ## Learn
 
-:::{rubric} Tutorials
+:::{rubric} Guides
+:::
+
+::::{grid}
+
+:::{grid-item-card} Set up Apache Superset with CrateDB
+:link: superset-usage
+:link-type: ref
+Learn how to install Apache Superset, and how to connect it with CrateDB.
+:::
+
+::::
+
+
+:::{rubric} Blog
 :::
 
 ::::{grid}
@@ -80,8 +94,8 @@ crate://<username>:<password>@<clustername>.cratedb.net:4200/?ssl=true
 Use CrateDB and Apache Superset for open-source data warehousing and visualization.
 :::
 
-:::{grid-item-card} Blog: Time‑series visualization
-:link: https://preset.io/blog/timeseries-cratedb-superset/
+:::{grid-item-card} Blog: Introduction to time-series visualization
+:link: https://cratedb.com/blog/introduction-to-time-series-visualization-in-cratedb-and-superset
 :link-type: url
 Introduction to time‑series visualization in CrateDB and Apache Superset.
 :::
@@ -143,8 +157,7 @@ from the time series dataset.
 
 :::{rubric} Development
 :::
-- [Set up Apache Superset with CrateDB]
-- [Set up an Apache Superset development sandbox with CrateDB]
+- {ref}`superset-sandbox`
 - [Verify Apache Superset with CrateDB]
 
 
@@ -152,6 +165,13 @@ from the time series dataset.
 ```{seealso}
 [CrateDB and Apache Superset]
 ```
+
+:::{toctree}
+:maxdepth: 1
+:hidden:
+Usage <usage>
+Sandbox <sandbox>
+:::
 
 
 [Apache Superset]: https://superset.apache.org/
@@ -162,6 +182,4 @@ from the time series dataset.
 [how to install database drivers in Docker Images]: https://superset.apache.org/docs/configuration/databases#installing-drivers-in-docker-images
 [Preset]: https://preset.io/
 [Preset Cloud]: https://preset.io/product/
-[Set up Apache Superset with CrateDB]: https://community.cratedb.com/t/set-up-apache-superset-with-cratedb/1716
-[Set up an Apache Superset development sandbox with CrateDB]: https://community.cratedb.com/t/set-up-an-apache-superset-development-sandbox-with-cratedb/1163
 [Verify Apache Superset with CrateDB]: https://github.com/crate/cratedb-examples/tree/main/application/apache-superset

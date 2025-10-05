@@ -77,11 +77,20 @@ linkcheck_ignore += [
     r"https://openai.com/index/gpt-4/.*",
     # 403 Client Error: Forbidden for url
     r"https://www.npmjs.com/",
+    r"https://www.computerhope.com/",
+    # Out of service.
+    r"https://s3.amazonaws.com/nyc-tlc/.*",
+    # 2025-09-29: Phased out CrateDB 3.3 docs
+    r"https://cratedb.com/docs/crate/reference/en/3.3/",
+    # 403 Client Error: Forbidden for url
+    r"https://docs.docker.com/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
     # Anchor 'XXX' not found
-    r"https://pypi.org/.*"
+    r"https://pypi.org/.*",
+    # https://kafka.apache.org/documentation/#topicconfigs - Anchor 'topicconfigs' not found
+    r"https://kafka.apache.org/.*",
 ]
 
 # Configure intersphinx.
@@ -110,6 +119,7 @@ myst_substitutions.update({
     "readme_github": "[![README](https://img.shields.io/badge/Open-README-darkblue?logo=GitHub)]",
     "blog": "[![Blog](https://img.shields.io/badge/Open-Blog-darkblue?logo=Markdown)]",
     "tutorial": "[![Navigate to Tutorial](https://img.shields.io/badge/Navigate%20to-Tutorial-darkcyan?logo=Markdown)]",
+    "guide": "[![Navigate to usage guide](https://img.shields.io/badge/Navigate%20to-usage%20guide-darkcyan?logo=Markdown)]",
     "readmore": "[![Read More](https://img.shields.io/badge/Read-More-darkyellow?logo=Markdown)]",
 })
 

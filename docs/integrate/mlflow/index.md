@@ -22,7 +22,7 @@ across code, data, config, and results.
 
 :::{rubric} Learn
 :::
-Tutorials and Notebooks about using [MLflow] together with CrateDB.
+About using [MLflow] together with CrateDB.
 
 ::::{info-card}
 :::{grid-item}

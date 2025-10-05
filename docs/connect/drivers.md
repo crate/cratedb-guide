@@ -47,7 +47,7 @@ For connecting to CrateDB from any environment that supports it.
 [Npgsql](https://www.npgsql.org/)
 ```
 ```{sd-item}
-An open source ADO.NET Data Provider for PostgreSQL, for program written in C#,
+An open source ADO\.NET Data Provider for PostgreSQL, for program written in C#,
 Visual Basic, and F#.
 ```
 ```{sd-item}

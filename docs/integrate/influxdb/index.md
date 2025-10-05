@@ -43,8 +43,8 @@ That's the blueprint for the InfluxDB URI:
 
 ::::{grid}
 
-:::{grid-item-card} Tutorial: Import data from InfluxDB
-:link: influxdb-tutorial
+:::{grid-item-card} Import data from InfluxDB
+:link: influxdb-usage
 :link-type: ref
 How to load data from InfluxDB Server and files in InfluxDB line protocol
 format (ILP) into CrateDB.
@@ -61,7 +61,7 @@ Load InfluxDB collections into CrateDB.
 :::{toctree}
 :maxdepth: 1
 :hidden:
-Tutorial <tutorial>
+Usage <usage>
 cloud
 model
 :::

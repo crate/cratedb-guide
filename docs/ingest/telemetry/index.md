@@ -54,6 +54,20 @@ scenarios. CrateDB offers corresponding integration adapters.
 :padding: 0
 :gutter: 2
 
+::::{grid-item-card} collectd
+:link: collectd
+:link-type: ref
+Send metrics with collectd, a system and application metrics collection daemon.
+::::
+
+::::{grid-item-card} OpenTelemetry
+:link: opentelemetry
+:link-type: ref
+OpenTelemetry is an open-source observability framework and toolkit designed
+to facilitate the export and collection of telemetry data such as traces,
+metrics, and logs.
+::::
+
 ::::{grid-item-card} Prometheus
 :link: prometheus
 :link-type: ref
@@ -65,6 +79,12 @@ for collecting metrics data from applications and infrastructures.
 :link: rsyslog
 :link-type: ref
 Send logs with rsyslog, a rocket‑fast system for log processing.
+::::
+
+::::{grid-item-card} StatsD
+:link: statsd
+:link-type: ref
+Store metrics and statistics from StatsD, a daemon for stats aggregation.
 ::::
 
 ::::{grid-item-card} Telegraf

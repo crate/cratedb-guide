@@ -332,7 +332,7 @@ zooming out.
 [detailed guide]: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Promises
 [ground point]: https://en.wikipedia.org/wiki/Ground_track
 [input values]: https://node-postgres.com/features/queries#Parameterized%20query
-[interactive repl mode]: https://web.archive.org/web/20240910181004/https://www.oreilly.com/library/view/learning-node-2nd/9781491943113/ch04.html
+[interactive repl mode]: https://www.oreilly.com/library/view/learning-node-2nd/9781491943113/ch04.html
 [international space station]: https://www.nasa.gov/mission_pages/station/main/index.html
 [node-postgres]: https://www.npmjs.com/package/pg
 [node.js]: https://nodejs.org/en/

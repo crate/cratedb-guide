@@ -258,7 +258,7 @@ like applying [](#fts-fuzzy), or using [](#fts-synonyms).
 :columns: auto 9 9 9
 **Custom Analyzers**
 
-This tutorial illustrates how to define custom analyzers using the `CREATE
+This page illustrates how to define custom analyzers using the `CREATE
 ANALYZER` SQL command, for example to use fuzzy searching, how to use synonym
 files, and corresponding technical backgrounds about their implementations.
 
@@ -274,7 +274,7 @@ files, and corresponding technical backgrounds about their implementations.
 ::::
 
 
-:::{rubric} Tutorials
+:::{rubric} Guides
 :::
 
 ::::{info-card}
@@ -282,10 +282,10 @@ files, and corresponding technical backgrounds about their implementations.
 :columns: auto 9 9 9
 **Exploring the Netflix catalog using full-text search**
 
-The tutorial illustrates the BM25 ranking algorithm for information retrieval,
+The usage guide illustrates the BM25 ranking algorithm for information retrieval,
 by exploring how to manage a dataset of Netflix titles.
 
-{hyper-navigate}`Netflix Tutorial <search-basics>`
+{hyper-navigate}`Netflix Tutorial <search-fts-usage>`
 
 
 :::
@@ -374,7 +374,7 @@ and how they can be customized to specific needs, using plugins for CrateDB.
 
 options
 analyzer
-Tutorial <tutorial>
+Usage <usage>
 :::
 
 
