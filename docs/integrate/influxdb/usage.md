@@ -35,91 +35,57 @@ crash --host=cratedb.example.org --username=user --command='SELECT * FROM testdr
 
 ## Prerequisites
 
-Docker is used for running all components. This approach works consistently
-across Linux, macOS, and Windows. Alternatively, you can use Podman.
+Use Docker or Podman to run all components. This approach works consistently
+across Linux, macOS, and Windows.
 
-Create a shared network.
+### Files
+
+First, download and save all required files to your machine.
+- {download}`compose.yaml`
+
+### Services
+
+Start services using Docker Compose or Podman Compose.
+If you use Podman, replace `docker` with `podman` (or enable the podman‑docker
+compatibility shim) and run `podman compose up`.
+
 ```shell
-docker network create cratedb-demo
+docker compose up
 ```
 
-Start CrateDB.
-```shell
-docker run --rm --name=cratedb --network=cratedb-demo \
-  --publish=4200:4200 \
-  --volume="$PWD/var/lib/cratedb:/data" \
-  docker.io/crate -Cdiscovery.type=single-node
-```
-
-Start InfluxDB.
-```shell
-docker run --rm --name=influxdb --network=cratedb-demo \
-  --publish=8086:8086 \
-  --env=DOCKER_INFLUXDB_INIT_MODE=setup \
-  --env=DOCKER_INFLUXDB_INIT_USERNAME=admin \
-  --env=DOCKER_INFLUXDB_INIT_PASSWORD=secret0000 \
-  --env=DOCKER_INFLUXDB_INIT_ORG=example \
-  --env=DOCKER_INFLUXDB_INIT_BUCKET=testdrive \
-  --env=DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=token \
-  docker.io/influxdb:2
-```
-
-Prepare shortcuts for the CrateDB shell, CrateDB Toolkit, and the InfluxDB client
-programs.
-
-::::{tab-set}
-
-:::{tab-item} Linux and macOS
-To make the settings persistent, add them to your shell profile (`~/.profile`).
-```shell
-alias crash="docker run --rm -it --network=cratedb-demo ghcr.io/crate/cratedb-toolkit crash"
-alias ctk="docker run --rm -i --network=cratedb-demo ghcr.io/crate/cratedb-toolkit ctk"
-alias influx="docker exec influxdb influx"
-alias influx-write="influx write --bucket=testdrive --org=example --token=token --precision=s"
-```
-:::
-:::{tab-item} Windows PowerShell
-To make the settings persistent, add them to your PowerShell profile (`$PROFILE`).
-```powershell
-function crash { docker run --rm -it --network=cratedb-demo ghcr.io/crate/cratedb-toolkit crash @args }
-function ctk { docker run --rm -i --network=cratedb-demo ghcr.io/crate/cratedb-toolkit ctk @args }
-function influx { docker exec influxdb influx @args }
-function influx-write { influx write --bucket=testdrive --org=example --token=token --precision=s @args }
-```
-:::
-:::{tab-item} Windows Command
-```shell
-doskey crash=docker run --rm -it --network=cratedb-demo ghcr.io/crate/cratedb-toolkit crash $*
-doskey ctk=docker run --rm -i --network=cratedb-demo ghcr.io/crate/cratedb-toolkit ctk $*
-doskey influx=docker exec influxdb influx $*
-doskey influx-write=influx write --bucket=testdrive --org=example --token=token --precision=s $*
-```
-:::
-
-::::
-
-## Usage
+## Submit data
 
 Write a few sample records to InfluxDB.
 ```shell
-influx-write "demo,region=amazonas temperature=27.4,humidity=92.3,windspeed=4.5 1588363200"
-influx-write "demo,region=amazonas temperature=28.2,humidity=88.7,windspeed=4.7 1588549600"
-influx-write "demo,region=amazonas temperature=27.9,humidity=91.6,windspeed=3.2 1588736000"
-influx-write "demo,region=amazonas temperature=29.1,humidity=88.1,windspeed=2.4 1588922400"
-influx-write "demo,region=amazonas temperature=28.6,humidity=93.4,windspeed=2.9 1589108800"
+docker compose exec influxdb influx write --bucket=testdrive --org=example --token=token --precision=s "demo,region=amazonas temperature=27.4,humidity=92.3,windspeed=4.5 1588363200"
+docker compose exec influxdb influx write --bucket=testdrive --org=example --token=token --precision=s "demo,region=amazonas temperature=28.2,humidity=88.7,windspeed=4.7 1588549600"
+docker compose exec influxdb influx write --bucket=testdrive --org=example --token=token --precision=s "demo,region=amazonas temperature=27.9,humidity=91.6,windspeed=3.2 1588736000"
+docker compose exec influxdb influx write --bucket=testdrive --org=example --token=token --precision=s "demo,region=amazonas temperature=29.1,humidity=88.1,windspeed=2.4 1588922400"
+docker compose exec influxdb influx write --bucket=testdrive --org=example --token=token --precision=s "demo,region=amazonas temperature=28.6,humidity=93.4,windspeed=2.9 1589108800"
 ```
 
 Invoke the data transfer pipeline, importing data from
 InfluxDB bucket/measurement into CrateDB schema/table.
 ```shell
-ctk load table \
+docker compose run --rm --no-TTY ctk ctk load table \
   "influxdb2://example:token@influxdb:8086/testdrive/demo" \
-  --cluster-url="crate://crate@cratedb:4200/doc/testdrive"
+  --cluster-url="crate://crate@cratedb:4200/doc/influxdb_demo"
 ```
+
+## Explore data
 
 Inspect data stored in CrateDB.
 ```shell
-crash --hosts cratedb -c "SELECT * FROM doc.testdrive"
+docker compose exec cratedb crash -c "SELECT * FROM doc.influxdb_demo"
+```
+```psql
++---------------+----------+----------+-------------+-----------+
+|          time | region   | humidity | temperature | windspeed |
++---------------+----------+----------+-------------+-----------+
+| 1588549600000 | amazonas |     88.7 |        28.2 |       4.7 |
+| 1588363200000 | amazonas |     92.3 |        27.4 |       4.5 |
++---------------+----------+----------+-------------+-----------+
+SELECT 2 rows in set (0.027 sec)
 ```
 
 
