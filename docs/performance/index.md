@@ -1,6 +1,6 @@
 (performance)=
 (performance-guides)=
-# Performance Guides
+# Performance guides
 
 :::{div} sd-text-muted
 Best practices and tips for sharding, scaling, and performance tuning.
