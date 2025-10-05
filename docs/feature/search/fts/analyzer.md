@@ -168,7 +168,7 @@ s(900516492,3,'Bill',n,1,0).
 docker run --rm -it --name=cratedb --publish=4200:4200 --env=CRATE_HEAP_SIZE=2g \
   --volume="$PWD/synonyms-solr.txt:/crate/config/synonyms-solr.txt" \
   --volume="$PWD/synonyms-wordnet.txt:/crate/config/synonyms-wordnet.txt" \
-  crate -Cdiscovery.type=single-node 
+  crate
 ```
 
 This example uses the `synonyms-solr.txt` in Solr format.
