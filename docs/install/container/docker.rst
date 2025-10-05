@@ -83,7 +83,7 @@ Breaking the command down:
 - Puts the container into the ``crate`` network and maps port ``4201`` on your
   host machine to port ``4200`` on the container (admin UI).
 - Defines the environment variable:ref:`CRATE_HEAP_SIZE <manual:conf-env-heap-size>`,
-  which is used by CrateDB to allocate 2G for its heap.
+  which is used by CrateDB to allocate 1 GB for its heap memory.
 - Runs the command ``crate`` inside the container with parameters:
     * ``network.host``: The ``_site_`` value results in the binding of the
       CrateDB process to a site-local IP address.
@@ -298,7 +298,7 @@ define your services like this:
           restart_policy:
             condition: on-failure
         environment:
-          - CRATE_HEAP_SIZE=2g
+          - CRATE_HEAP_SIZE=1g
 
       cratedb02:
         image: crate:latest
@@ -320,7 +320,7 @@ define your services like this:
           restart_policy:
             condition: on-failure
         environment:
-          - CRATE_HEAP_SIZE=2g
+          - CRATE_HEAP_SIZE=1g
 
       cratedb03:
         image: crate:latest
@@ -342,7 +342,7 @@ define your services like this:
           restart_policy:
             condition: on-failure
         environment:
-          - CRATE_HEAP_SIZE=2g
+          - CRATE_HEAP_SIZE=1g
 
 In the file above:
 
@@ -485,7 +485,7 @@ example::
 
     $ docker run -d \
         --cpus 1.5 \
-        --memory 2g \
+        --memory 1g \
         --env CRATE_HEAP_SIZE=1g \
         crate \
         crate -Cnetwork.host=_site_

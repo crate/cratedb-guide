@@ -205,7 +205,7 @@ services:
       - "4200:4200"
       - "5432:5432"
     environment:
-      CRATE_HEAP_SIZE: 2g
+      CRATE_HEAP_SIZE: 1g
 ```
 
 Each tool in this stack plays an integral role for proper functioning of the 

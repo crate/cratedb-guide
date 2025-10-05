@@ -18,7 +18,7 @@ cluster, and a Python installation on your workstation. You can use
 
 To start a CrateDB instance for evaluation purposes, use Docker or Podman.
 ```shell
-docker run --rm --publish=4200:4200 --publish=5432:5432 --env=CRATE_HEAP_SIZE=2g crate:latest
+docker run --rm --publish=4200:4200 --publish=5432:5432 --env=CRATE_HEAP_SIZE=1g crate:latest
 ```
 
 Install the most recent version of the [dbt-cratedb2] Python package.
