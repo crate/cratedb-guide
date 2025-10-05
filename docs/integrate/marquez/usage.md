@@ -65,7 +65,7 @@ astro dev start
 And we will start a single-node local CrateDB instance using port 5436 for the PostgreSQL wire protocol interface:
 
 ```bash
-sudo docker run -d --name cratedb --publish=4200:4200 --publish=5436:5432 --env CRATE_HEAP_SIZE=1g crate/crate:5.9.5 -Cdiscovery.type=single-node
+sudo docker run -d --name cratedb --publish=4200:4200 --publish=5436:5432 --env CRATE_HEAP_SIZE=1g crate/crate:5.9.5
 ```
 
 (NB this will return immediately once the image is downloaded but CrateDB may take a few seconds to start)
