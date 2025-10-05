@@ -9,72 +9,40 @@ The data transfer is supported by the
 
 ## Prerequisites
 
-Docker is used for running all components. This approach works consistently
-across Linux, macOS, and Windows. Alternatively, you can use Podman.
+Use Docker or Podman to run all components. This approach works consistently
+across Linux, macOS, and Windows.
 
-Create a shared network.
+### Files
+
+First, download and save all required files to your machine.
+- {download}`compose.yaml`
+
+### Services
+
+Start services using Docker Compose or Podman Compose.
+If you use Podman, replace `docker` with `podman` (or enable the podman‑docker
+compatibility shim) and run `podman compose up`.
+
 ```shell
-docker network create cratedb-demo
+docker compose up
 ```
 
-Start CrateDB.
-```shell
-docker run --rm --name=cratedb --network=cratedb-demo \
-  --publish=4200:4200 --publish=5432:5432 \
-  docker.io/crate -Cdiscovery.type=single-node
-```
-
-Start PostgreSQL.
-```shell
-docker run --rm --name=postgresql --network=cratedb-demo \
-  --publish=6432:5432 --env "POSTGRES_HOST_AUTH_METHOD=trust" \
-  docker.io/postgres postgres -c log_statement=all
-```
 :::{note}
-Because CrateDB is configured to listen on port `5432` with its PostgreSQL
-interface, let's use a different port for PostgreSQL itself.
+CrateDB is configured to listen on port `5432`,
+while PostgreSQL is configured to listen on port `6432`.
 :::
 :::{note}
-Using `POSTGRES_HOST_AUTH_METHOD=trust` disables password checks.
-Use it for local demos only.
+PostgreSQL is configured using `POSTGRES_HOST_AUTH_METHOD=trust`.
+This allows anonymous access for demonstration purposes only.
+Do not expose it to untrusted networks. For production, configure
+authentication/TLS.
 :::
 
-Prepare shortcuts for the CrateDB shell, CrateDB Toolkit, and the PostgreSQL client
-programs.
-
-::::{tab-set}
-
-:::{tab-item} Linux and macOS
-To make the settings persistent, add them to your shell profile (`~/.profile`).
-```shell
-alias crash="docker run --rm -it --network=cratedb-demo ghcr.io/crate/cratedb-toolkit crash"
-alias ctk-ingest="docker run --rm -i --network=cratedb-demo ghcr.io/crate/cratedb-toolkit-ingest ctk"
-alias psql="docker run --rm -i --network=cratedb-demo docker.io/postgres psql"
-```
-:::
-:::{tab-item} Windows PowerShell
-To make the settings persistent, add them to your PowerShell profile (`$PROFILE`).
-```powershell
-function crash { docker run --rm -it --network=cratedb-demo ghcr.io/crate/cratedb-toolkit crash @args }
-function ctk-ingest { docker run --rm -i --network=cratedb-demo ghcr.io/crate/cratedb-toolkit-ingest ctk @args }
-function psql { docker run --rm -i --network=cratedb-demo docker.io/postgres psql @args }
-```
-:::
-:::{tab-item} Windows Command
-```shell
-doskey crash=docker run --rm -it --network=cratedb-demo ghcr.io/crate/cratedb-toolkit crash $*
-doskey ctk-ingest=docker run --rm -i --network=cratedb-demo ghcr.io/crate/cratedb-toolkit-ingest ctk $*
-doskey psql=docker run --rm -i --network=cratedb-demo docker.io/postgres psql $*
-```
-:::
-
-::::
-
-## Usage
+## Submit data
 
 Write a few sample records to PostgreSQL.
 ```shell
-psql "postgresql://postgres:postgres@postgresql:5432/" <<SQL
+docker compose run --rm --no-TTY psql psql "postgresql://postgres:postgres@postgresql:5432/" <<SQL
 CREATE DATABASE test;
 \connect test;
 CREATE TABLE IF NOT EXISTS demo (id BIGINT, data JSONB);
@@ -85,14 +53,25 @@ SQL
 
 Invoke the data transfer pipeline.
 ```shell
-ctk-ingest load table \
+docker compose run --rm --no-TTY ctk-ingest ctk load table \
   "postgresql://postgres:postgres@postgresql:5432/test?table=public.demo" \
   --cluster-url="crate://crate:crate@cratedb:4200/doc/postgresql_demo"
 ```
 
+## Explore data
+
 Inspect data stored in CrateDB.
 ```shell
-crash --hosts cratedb -c "SELECT * FROM doc.postgresql_demo"
+docker compose exec cratedb crash -c "SELECT * FROM doc.postgresql_demo"
+```
+```psql
++----+-------------------------------------------+
+| id | data                                      |
++----+-------------------------------------------+
+|  1 | {"humidity": 83.1, "temperature": 42.84}  |
+|  2 | {"humidity": 56.99, "temperature": 84.84} |
++----+-------------------------------------------+
+SELECT 2 rows in set (0.017 sec)
 ```
 
 

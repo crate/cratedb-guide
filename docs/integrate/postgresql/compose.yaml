@@ -1,0 +1,31 @@
+# Service composition file for Docker Compose or Podman Compose
+
+services:
+
+  cratedb:
+    image: docker.io/crate/crate:latest
+    ports:
+      - "4200:4200/tcp"
+      - "5432:5432/tcp"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4200/"]
+      interval: 5s
+      timeout: 30s
+      retries: 5
+
+  postgresql:
+    image: docker.io/postgres:latest
+    command: >
+      postgres -c log_statement=all
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "6432:5432/tcp"
+
+  psql:
+    image: docker.io/postgres:latest
+    scale: 0
+
+  ctk-ingest:
+    image: ghcr.io/crate/cratedb-toolkit-ingest:latest
+    scale: 0
