@@ -10,67 +10,32 @@ The data transfer is supported by the
 
 ## Prerequisites
 
-Docker is used for running all components. This approach works consistently
-across Linux, macOS, and Windows. Alternatively, you can use Podman.
+Use Docker or Podman to run all components. This approach works consistently
+across Linux, macOS, and Windows.
 
-Create a shared network.
+### Files
+
+First, download and save all required files to your machine.
+- {download}`compose.yaml`
+
+### Services
+
+Start services using Docker Compose or Podman Compose.
+If you use Podman, replace `docker` with `podman` (or enable the podman‑docker
+compatibility shim) and run `podman compose up`.
+
 ```shell
-docker network create cratedb-demo
+docker compose up
 ```
 
-Start CrateDB.
-```shell
-docker run --name=cratedb --rm --network=cratedb-demo \
-  --publish=4200:4200 --publish=5432:5432 --env=CRATE_HEAP_SIZE=2g \
-  docker.io/crate -Cdiscovery.type=single-node
-```
-
-Start MariaDB.
-```shell
-docker run --name=mariadb --rm --network=cratedb-demo \
-  --publish=3306:3306 --env "MARIADB_ROOT_PASSWORD=secret" \
-  docker.io/mariadb
-```
-
-Prepare shortcuts for the CrateDB shell, CrateDB Toolkit, and the MariaDB client
-programs.
-
-::::{tab-set}
-
-:::{tab-item} Linux and macOS
-To make the settings persistent, add them to your shell profile (`~/.profile`).
-```shell
-alias crash="docker run --rm -it --network=cratedb-demo ghcr.io/crate/cratedb-toolkit crash"
-alias ctk-ingest="docker run --rm -i --network=cratedb-demo ghcr.io/crate/cratedb-toolkit-ingest ctk"
-alias mariadb="docker run --rm -i --network=cratedb-demo docker.io/mariadb mariadb"
-```
-:::
-:::{tab-item} Windows PowerShell
-To make the settings persistent, add them to your PowerShell profile (`$PROFILE`).
-```powershell
-function crash { docker run --rm -it --network=cratedb-demo ghcr.io/crate/cratedb-toolkit crash @args }
-function ctk-ingest { docker run --rm -i --network=cratedb-demo ghcr.io/crate/cratedb-toolkit-ingest ctk @args }
-function mariadb { docker run --rm -i --network=cratedb-demo docker.io/mariadb mariadb @args }
-```
-:::
-:::{tab-item} Windows Command
-```shell
-doskey crash=docker run --rm -it --network=cratedb-demo ghcr.io/crate/cratedb-toolkit crash $*
-doskey ctk-ingest=docker run --rm -i --network=cratedb-demo ghcr.io/crate/cratedb-toolkit-ingest ctk $*
-doskey mariadb=docker run --rm -i --network=cratedb-demo docker.io/mariadb mariadb $*
-```
-:::
-
-::::
-
-## Usage
+## Submit data
 
 Write a few sample records to MariaDB.
 
 ::::{tab-set}
-:::{tab-item} Linux and macOS
+:::{tab-item} Linux, macOS, WSL
 ```shell
-mariadb --protocol=tcp --host=mariadb --user=root --password=secret <<SQL
+docker compose run --rm --no-TTY mariadb mariadb --protocol=tcp --host=mariadb --user=root --password=secret <<SQL
 CREATE DATABASE IF NOT EXISTS test;
 USE test;
 CREATE TABLE IF NOT EXISTS demo (id BIGINT, data JSON);
@@ -94,21 +59,32 @@ CREATE TABLE IF NOT EXISTS demo (id BIGINT, data JSON);
 INSERT INTO demo (id, data) VALUES (1, '{"temperature": 42.84, "humidity": 83.1}');
 INSERT INTO demo (id, data) VALUES (2, '{"temperature": 84.84, "humidity": 56.99}');
 '@
-mariadb @args -e $sql
+docker compose run --rm --no-TTY mariadb mariadb @args -e $sql
 ```
 :::
 ::::
 
 Invoke the data transfer pipeline.
 ```shell
-ctk-ingest load table \
+docker compose run --rm --no-TTY ctk-ingest ctk load table \
   "mysql://root:secret@mariadb:3306/?table=test.demo" \
   --cluster-url="crate://crate:crate@cratedb:4200/doc/mysql_demo"
 ```
 
+## Explore data
+
 Inspect data stored in CrateDB.
 ```shell
-crash --hosts cratedb -c "SELECT * FROM doc.mysql_demo"
+docker compose exec cratedb crash -c "SELECT * FROM doc.mysql_demo"
+```
+```psql
++----+-------------------------------------------+
+| id | data                                      |
++----+-------------------------------------------+
+|  2 | {"temperature": 84.84, "humidity": 56.99} |
+|  1 | {"temperature": 42.84, "humidity": 83.1}  |
++----+-------------------------------------------+
+SELECT 2 rows in set (0.016 sec)
 ```
 
 
