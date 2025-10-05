@@ -77,7 +77,7 @@ and explore key features.
 :::
 
 To learn more about CrateDB, we invite you to explore the other sections
-of the documentation portal.
+of the documentation.
 
 :::::{card}
 
@@ -145,15 +145,6 @@ its concepts and details.
 :::
 
 :::{sd-row}
-```{sd-item} Advanced guides
-:class: sd-font-weight-bolder
-```
-```{sd-item}
-Dive deeper into clustering concepts, reference architectures, installation, deployment, migration, and upgrades.
-```
-:::
-
-:::{sd-row}
 ```{sd-item}
 :class: sd-font-weight-bolder
 {ref}`Sample applications <example-applications>`
@@ -169,8 +160,22 @@ Explore ready-to-run sample projects that demonstrate how to build real-world so
 {ref}`Database management <administration>`
 ```
 ```{sd-item}
-Learn to manage your cluster with ease: configuration, sizing, performance tuning,
+Learn to manage your cluster: configuration, sizing,
+production deployment, migration and upgrade procedures,
+sharding and partitioning, troubleshooting, user creation,
 and cost optimization. Explore monitoring, alerting, and automation.
+```
+:::
+
+:::{sd-row}
+```{sd-item}
+:class: sd-font-weight-bolder
+{ref}`performance`
+```
+```{sd-item}
+Learn about best practices and recommendations to ensure optimal
+system efficiency. Key points include performance tuning details around
+selecting your sharding strategy, storage advice, and query optimization guidelines.
 ```
 :::
 
