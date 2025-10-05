@@ -6,60 +6,39 @@ so that collectd sends system metrics and CrateDB stores them.
 
 ## Prerequisites
 
-Docker runs all components consistently across Linux, macOS, and Windows.
-If you use Podman, substitute podman for docker in the commands.
+Use Docker or Podman to run all components. This approach works consistently
+across Linux, macOS, and Windows.
 
-### Commands
+### Files
 
-Prepare shortcut for the psql command.
+First, download and save all required files to your machine.
+- {download}`compose.yaml`
+- {download}`Dockerfile`
+- {download}`collectd-cratedb.conf`
 
-::::{tab-set}
-:sync-group: os
+### Services
 
-:::{tab-item} Linux and macOS
-:sync: unix
-To make the settings persistent, add them to your shell profile (`~/.profile`).
+Start services using Docker Compose or Podman Compose.
+If you use Podman, replace `docker` with `podman` (or enable the podman‑docker
+compatibility shim) and run `podman compose up`.
+
 ```shell
-alias psql="docker run --rm -i --network=cratedb-demo docker.io/postgres:16 psql"
+docker compose up
 ```
-:::
-:::{tab-item} Windows PowerShell
-:sync: powershell
-To make the settings persistent, add them to your PowerShell profile (`$PROFILE`).
-```powershell
-function psql { docker run --rm -i --network=cratedb-demo docker.io/postgres:16 psql @args }
-```
-:::
-:::{tab-item} Windows Command
-:sync: dos
-```shell
-doskey psql=docker run --rm -i --network=cratedb-demo docker.io/postgres:16 psql $*
-```
-:::
 
+To send the collected data to CrateDB, collectd is configured to load its
+[`postgresql` plugin].
+
+::::{dropdown} collectd configuration `collectd-cratedb.conf`
+:::{literalinclude} collectd-cratedb.conf
+:::
 ::::
-
-### CrateDB
-
-Create a shared network.
-```shell
-docker network create cratedb-demo
-```
-
-Start CrateDB.
-```shell
-docker run --name=cratedb --rm -it --network=cratedb-demo \
-  --publish=4200:4200 --publish=5432:5432 \
-  --env=CRATE_HEAP_SIZE=2g docker.io/crate -Cdiscovery.type=single-node
-```
-
-## Configure
 
 ### Provision database
 
 Create a database table that stores collected metrics.
 ```shell
-psql "postgresql://crate:crate@cratedb:5432/" <<SQL
+docker compose run --rm --no-TTY psql psql "postgresql://crate:crate@cratedb:5432/" <<SQL
 CREATE TABLE doc.collectd_data (
    p_time timestamp with time zone,
    p_host TEXT,
@@ -75,65 +54,12 @@ CREATE TABLE doc.collectd_data (
 SQL
 ```
 
-### Build collectd
-
-collectd is not available as an OCI image, so either install it standalone,
-or use these instructions to build an OCI image to run on Docker or Podman.
-Store this file under the name `Dockerfile`, then invoke the command
-displayed below.
-
-:::{literalinclude} Dockerfile
-:::
-```shell
-docker build -t local/collectd -f Dockerfile .
-```
-
-### Configure collectd
-
-To send the collected data to CrateDB, configure collectd by loading its
-[`postgresql` plugin] and supplying settings. Store this file under
-the name `collectd-cratedb.conf`.
-
-:::{literalinclude} collectd-cratedb.conf
-:::
-
-## Start collectd
-
-::::{tab-set}
-:sync-group: os
-
-:::{tab-item} Linux and macOS
-:sync: unix
-```shell
-docker run --name=collectd --rm -it --network=cratedb-demo \
-  --volume ${PWD}/collectd-cratedb.conf:/etc/collectd/collectd.conf.d/collectd-cratedb.conf \
-  local/collectd
-```
-:::
-:::{tab-item} Windows PowerShell
-:sync: powershell
-```powershell
-docker run --name=collectd --rm -it --network=cratedb-demo `
-  --volume "${PWD}\collectd-cratedb.conf:/etc/collectd/collectd.conf.d/collectd-cratedb.conf" `
-  local/collectd
-```
-:::
-:::{tab-item} Windows Command
-:sync: dos
-```shell
-docker run --name=collectd --rm -it --network=cratedb-demo ^
-  --volume "%cd%\collectd-cratedb.conf:/etc/collectd/collectd.conf.d/collectd-cratedb.conf" ^
-  local/collectd
-```
-:::
-::::
-
 ## Explore data
 
 After the first scraping interval, metrics will show up in the
 designated table in CrateDB, ready to be inspected.
 ```shell
-psql "postgresql://crate:crate@cratedb:5432/" -c "SELECT * FROM doc.collectd_data ORDER BY p_time LIMIT 5;"
+docker compose run --rm --no-TTY psql psql "postgresql://crate:crate@cratedb:5432/" -c "SELECT * FROM doc.collectd_data ORDER BY p_time LIMIT 5;"
 ```
 ```psql
            p_time           |    p_host    | p_plugin  | p_plugin_instance |   p_type   | p_type_instance | p_value_names |   p_type_names    |   p_values   |           month
