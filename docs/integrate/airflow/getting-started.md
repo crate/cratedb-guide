@@ -17,7 +17,7 @@ You will:
 :::{rubric} Apache Airflow
 :::
 Apache Airflow programmatically creates, schedules, and monitors workflows
-\[[Official documentation](https://airflow.apache.org/docs/)\]. A workflow
+([Official documentation](https://airflow.apache.org/docs/)). A workflow
 is a directed acyclic graph (DAG) where each node represents a task. Each
 task runs independently; the DAG tracks dependencies. Run DAGs on demand
 or on schedules (for example, twice a week).

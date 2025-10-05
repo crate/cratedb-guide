@@ -29,9 +29,7 @@ For MongoDB, they can be found in the [cloud platform] itself.
 Now, same as before, import data from MongoDB database/collection into 
 CrateDB schema/table.
 ```shell
-ctk load table \
-  "mongodb+srv://admin:a..1@cluster0.nttj7.mongodb.net/testdrive/demo" \
-  --cluster-url='crate://admin:-..n@gray-wicket.aks1.westeurope.azure.cratedb.net:4200/testdrive/demo?ssl=true'
+ctk load table "mongodb+srv://admin:a..1@cluster0.nttj7.mongodb.net/testdrive/demo" --cluster-url='crate://admin:-..n@gray-wicket.aks1.westeurope.azure.cratedb.net:4200/testdrive/demo?ssl=true'
 ```
 
 :::{note}

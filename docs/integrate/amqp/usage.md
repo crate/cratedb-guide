@@ -44,16 +44,12 @@ production, configure authentication/TLS.
 
 Invoke the data transfer pipeline.
 ```shell
-docker compose run --rm --no-TTY lorrystream lorry relay \
-  "amqp://guest:guest@rabbitmq:5672/%2F?exchange=default&queue=default&routing-key=testdrive&setup=exchange,queue,bind&content-type=json" \
-  "crate://cratedb/?table=amqp_demo"
+docker compose run --rm --no-TTY lorrystream lorry relay "amqp://guest:guest@rabbitmq:5672/%2F?exchange=default&queue=default&routing-key=testdrive&setup=exchange,queue,bind&content-type=json" "crate://cratedb/?table=amqp_demo"
 ```
 
 Publish a JSON message to AMQP.
 ```shell
-echo '{"temperature": 42.84, "humidity": 83.1}' | \
-  docker compose run --rm --no-TTY amqpcat amqpcat --producer --uri='amqp://guest:guest@rabbitmq:5672/%2F' \
-    --exchange=default --queue=default --routing-key=testdrive
+echo '{"temperature": 42.84, "humidity": 83.1}' | docker compose run --rm --no-TTY amqpcat amqpcat --producer --uri='amqp://guest:guest@rabbitmq:5672/%2F' --exchange=default --queue=default --routing-key=testdrive
 ```
 
 ## Explore data

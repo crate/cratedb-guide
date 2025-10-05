@@ -37,9 +37,7 @@ docker compose run --rm --no-TTY sqlplus sys/secret@oracledb/freepdb1 as sysdba 
 
 Invoke the data transfer pipeline.
 ```shell
-docker compose run --rm --no-TTY ctk-ingest ctk load table \
-  "oracle://sys:secret@oracledb:1521/?service_name=freepdb1&table=sys.demo&mode=sysdba" \
-  --cluster-url="crate://crate:crate@cratedb:4200/doc/oracle_demo"
+docker compose run --rm --no-TTY ctk-ingest ctk load table "oracle://sys:secret@oracledb:1521/?service_name=freepdb1&table=sys.demo&mode=sysdba" --cluster-url="crate://crate:crate@cratedb:4200/doc/oracle_demo"
 ```
 
 ## Explore data
