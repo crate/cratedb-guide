@@ -1,5 +1,9 @@
 (rsyslog-usage)=
-# Store server logs on CrateDB for fast search and aggregations
+# Using rsyslog to store server logs in CrateDB
+
+:::{div} sd-text-muted
+Store server logs in CrateDB for fast search and aggregations.
+:::
 
 ## Introduction
 
@@ -97,7 +101,7 @@ CrateDB now stores new rows in `doc.systemevents`, with `syslogtag` matching the
 Use {ref}`crate-reference:predicates_match` to find specific error messages:
 
 ```sql
-SELECT devicereportedtime,message
+SELECT devicereportedtime, message
 FROM doc.systemevents
 WHERE MATCH(message_ft, 'Could not reliably determine') USING PHRASE
 ORDER BY 1 DESC;
@@ -115,7 +119,7 @@ ORDER BY 1 DESC;
 Show the top log sources by event count:
 
 ```sql
-SELECT syslogtag,count(*)
+SELECT syslogtag, count(*)
 FROM doc.systemevents
 GROUP BY 1
 ORDER BY 2 DESC
