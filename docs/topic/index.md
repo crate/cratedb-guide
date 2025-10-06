@@ -28,10 +28,10 @@ Learn how to use CrateDB for business analytics.
 Cluvio, Power BI, Rill, Tableau.
 :::
 
-:::{grid-item-card} {material-outlined}`bar_chart;2em` Data Lineage
-:link: visualization
+:::{grid-item-card} {material-outlined}`troubleshoot;2em` Data Lineage
+:link: lineage
 :link-type: ref
-:link-alt: Data visualization with CrateDB
+:link-alt: Data lineage with CrateDB
 Data lineage refers to the process of tracking how data is generated,
 transformed, transmitted and used across a system over time.
 +++
@@ -59,7 +59,7 @@ Learn how to use CrateDB for machine learning.
 CrateDB vector store, Text-to-SQL, Time series analysis, MLOps and model training.
 :::
 
-:::{grid-item-card} {material-outlined}`model_training;2em` Programming Frameworks
+:::{grid-item-card} {material-outlined}`grid_goldenratio;2em` Programming Frameworks
 :link: framework
 :link-type: ref
 :link-alt: Using programming frameworks with CrateDB
