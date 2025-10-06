@@ -84,6 +84,8 @@ linkcheck_ignore += [
     r"https://cratedb.com/docs/crate/reference/en/3.3/",
     # 403 Client Error: Forbidden for url
     r"https://docs.docker.com/",
+    # 500 Server Error: Internal Server Error
+    r"https://aiven.io/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
