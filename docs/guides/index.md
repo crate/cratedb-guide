@@ -301,5 +301,3 @@ Solutions <../solution/index>
 ../admin/index
 ../performance/index
 ```
-
-[Overview of CrateDB integration tutorials]: https://community.cratedb.com/t/overview-of-cratedb-integration-tutorials/1015
