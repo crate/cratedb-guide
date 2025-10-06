@@ -208,7 +208,7 @@ industrial data, machine learning, data migrations.
 :link-alt: CrateDB topics overview
 Learn how to apply CrateDB's features to optimally cover use-cases
 across different application and topic domains.
-For example, by connecting CrateDB with third-party
+For example, connect CrateDB with third-party
 software applications, libraries, and frameworks.
 +++
 **What's inside:**
