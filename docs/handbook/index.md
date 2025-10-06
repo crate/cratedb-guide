@@ -3,7 +3,7 @@
 (tutorials)=
 (use-more-tutorials)=
 
-# The CrateDB Handbook
+# Handbook
 
 Guides and tutorials about how to use CrateDB and CrateDB Cloud in practice.
 
