@@ -1,8 +1,8 @@
-crate-docs-theme>=0.41
+crate-docs-theme>=0.41.0.dev0
 
 # Comment the first line and uncomment and adjust path in the following line
 # to use a local version of crate-docs-theme:
-# -e file:/Users/yourpath/crate-docs-theme
+# -e file:/Users/bmunkholm/code/c/docs/crate-docs-theme
 
 # cache-buster-20240305
 # Remark: Used for PyPI download cache busting on GHA.
