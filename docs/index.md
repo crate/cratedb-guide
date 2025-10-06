@@ -13,6 +13,6 @@ Look for the "Section A: Guide" section in the {% else %} branch.
 
 Overview <home/index>
 start/index
-Guides <guides/index>
+handbook/index
 
 ```
