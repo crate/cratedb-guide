@@ -1,3 +1,5 @@
+# https://cratedb.com/docs/guide/integrate/opentelemetry/
+
 cratedb_endpoints:
 - host: "cratedb"           # Host to connect to (default: "localhost").
   port: 5432                # Port to connect to (default: 5432).

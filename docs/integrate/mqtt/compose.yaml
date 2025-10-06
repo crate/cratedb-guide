@@ -1,4 +1,5 @@
 # Service composition file for Docker Compose or Podman Compose
+# https://cratedb.com/docs/guide/integrate/mqtt/
 
 services:
 

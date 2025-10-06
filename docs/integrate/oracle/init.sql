@@ -1,3 +1,5 @@
+-- https://cratedb.com/docs/guide/integrate/oracle/
+
 DROP TABLE demo;
 CREATE TABLE IF NOT EXISTS demo (id LONG, temperature FLOAT, humidity FLOAT);
 INSERT INTO demo (id, temperature, humidity) VALUES (1, 42.84, 83.1);
