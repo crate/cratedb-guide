@@ -25,6 +25,6 @@ services:
       DOCKER_INFLUXDB_INIT_BUCKET: testdrive
       DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: token
 
-  ctk:
+  cratedb-toolkit:
     image: ghcr.io/crate/cratedb-toolkit:latest
     profiles: ["cli"]

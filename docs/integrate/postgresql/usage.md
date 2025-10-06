@@ -42,7 +42,7 @@ authentication/TLS.
 
 Write a few sample records to PostgreSQL.
 ```shell
-docker compose run --rm --no-TTY psql psql "postgresql://postgres:postgres@postgresql:5432/" <<SQL
+docker compose run --rm --no-TTY postgresql psql "postgresql://postgres:postgres@postgresql:5432/" <<SQL
 CREATE DATABASE test;
 \connect test;
 CREATE TABLE IF NOT EXISTS demo (id BIGINT, data JSONB);

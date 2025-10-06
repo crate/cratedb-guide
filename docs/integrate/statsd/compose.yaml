@@ -26,6 +26,6 @@ services:
     image: docker.io/toolbelt/netcat:2025-08-23
     profiles: ["cli"]
 
-  psql:
+  postgresql:
     image: docker.io/postgres:18
     profiles: ["cli"]

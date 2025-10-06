@@ -22,10 +22,6 @@ services:
     ports:
       - "6432:5432/tcp"
 
-  psql:
-    image: docker.io/postgres:latest
-    profiles: ["cli"]
-
   ctk-ingest:
     image: ghcr.io/crate/cratedb-toolkit-ingest:latest
     profiles: ["cli"]

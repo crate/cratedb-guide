@@ -32,12 +32,12 @@ docker compose up
 
 Insert a record into a MongoDB collection; you can repeat this step as needed.
 ```shell
-docker compose run --rm --no-TTY mongosh mongosh --host mongodb --db test --eval 'db.demo.insert({"temperature": 42.84, "humidity": 83.1})'
+docker compose run --rm --no-TTY mongodb mongosh --host mongodb --db test --eval 'db.demo.insert({"temperature": 42.84, "humidity": 83.1})'
 ```
 
 Invoke the data transfer pipeline.
 ```shell
-docker compose run --rm --no-TTY ctk ctk load table "mongodb://mongodb/test/demo" --cluster-url="crate://cratedb/doc/mongodb_demo"
+docker compose run --rm --no-TTY cratedb-toolkit ctk load table "mongodb://mongodb/test/demo" --cluster-url="crate://cratedb/doc/mongodb_demo"
 ```
 
 ## Explore data
