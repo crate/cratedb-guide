@@ -60,6 +60,10 @@ protocol.
 - [JDBC]
 - [ODBC]
 - [SQL]
+
+```{rubric} Related
+```
+- {ref}`All drivers <connect-drivers>`
 ::::
 
 :::::
@@ -87,13 +91,6 @@ Database URI and connection properties.
 :link-type: ref
 :link-alt: CrateDB standard client applications
 Use CLI programs or database IDEs to connect to CrateDB.
-::::
-
-::::{grid-item-card} {material-outlined}`landscape;2em` All drivers
-:link: connect-drivers
-:link-type: ref
-:link-alt: All CrateDB drivers
-All available drivers and adapters.
 ::::
 
 :::::
