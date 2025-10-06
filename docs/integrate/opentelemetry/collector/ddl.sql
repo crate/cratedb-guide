@@ -1,3 +1,5 @@
+-- https://cratedb.com/docs/guide/integrate/opentelemetry/
+
 CREATE TABLE IF NOT EXISTS "testdrive"."metrics" (
     "timestamp" TIMESTAMP,
     "labels_hash" TEXT,

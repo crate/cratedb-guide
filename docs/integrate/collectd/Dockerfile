@@ -1,3 +1,5 @@
+# https://cratedb.com/docs/guide/integrate/collectd/
+
 FROM docker.io/debian:13-slim
 
 # Configure system environment.

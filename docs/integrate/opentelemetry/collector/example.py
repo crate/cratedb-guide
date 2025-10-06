@@ -1,4 +1,5 @@
 # OpenTelemetry demo application.
+# https://cratedb.com/docs/guide/integrate/opentelemetry/
 from opentelemetry import metrics
 
 
