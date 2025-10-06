@@ -61,7 +61,7 @@ After Telegraf receives data, CrateDB stores the metrics in the designated table
 ready for inspection.
 
 ```shell
-docker compose run --rm psql psql "postgresql://crate:crate@cratedb:5432/" -c "SELECT * FROM doc.metrics ORDER BY timestamp LIMIT 5;"
+docker compose run --rm postgresql psql "postgresql://crate:crate@cratedb:5432/" -c "SELECT * FROM doc.metrics ORDER BY timestamp LIMIT 5;"
 ```
 ```psql
        hash_id        |         timestamp          |    name     |                     tags                      |    fields    |            day

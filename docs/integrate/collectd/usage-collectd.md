@@ -38,7 +38,7 @@ To send the collected data to CrateDB, collectd is configured to load its
 
 Create a database table that stores collected metrics.
 ```shell
-docker compose run --rm --no-TTY psql psql "postgresql://crate:crate@cratedb:5432/" <<SQL
+docker compose run --rm --no-TTY postgresql psql "postgresql://crate:crate@cratedb:5432/" <<SQL
 CREATE TABLE doc.collectd_data (
    p_time timestamp with time zone,
    p_host TEXT,
@@ -59,7 +59,7 @@ SQL
 After the first scraping interval, metrics will show up in the
 designated table in CrateDB, ready to be inspected.
 ```shell
-docker compose run --rm --no-TTY psql psql "postgresql://crate:crate@cratedb:5432/" -c "SELECT * FROM doc.collectd_data ORDER BY p_time LIMIT 5;"
+docker compose run --rm --no-TTY postgresql psql "postgresql://crate:crate@cratedb:5432/" -c "SELECT * FROM doc.collectd_data ORDER BY p_time LIMIT 5;"
 ```
 ```psql
            p_time           |    p_host    | p_plugin  | p_plugin_instance |   p_type   | p_type_instance | p_value_names |   p_type_names    |   p_values   |           month

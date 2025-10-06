@@ -18,11 +18,6 @@ services:
     ports:
       - "27017:27017/tcp"
 
-  ctk:
+  cratedb-toolkit:
     image: ghcr.io/crate/cratedb-toolkit:latest
-    profiles: ["cli"]
-
-  mongosh:
-    image: docker.io/mongo:latest
-    command: mongosh
     profiles: ["cli"]
