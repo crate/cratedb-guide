@@ -24,7 +24,7 @@ database results can easily be converted to Polars or pandas.
 :::
 
 ```shell
-uv pip install --upgrade conecta pyarrow
+uv pip install --upgrade conecta polars pyarrow
 ```
 
 :::{rubric} Usage
