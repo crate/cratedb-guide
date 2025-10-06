@@ -20,8 +20,9 @@ services:
 
   ctk:
     image: ghcr.io/crate/cratedb-toolkit:latest
-    scale: 0
+    profiles: ["cli"]
 
   mongosh:
     image: docker.io/mongo:latest
     command: mongosh
+    profiles: ["cli"]

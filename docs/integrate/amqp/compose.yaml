@@ -20,7 +20,8 @@ services:
 
   lorrystream:
     image: ghcr.io/daq-tools/lorrystream:latest
-    scale: 0
+    profiles: ["cli"]
 
   amqpcat:
     image: docker.io/cloudamqp/amqpcat:latest
+    profiles: ["cli"]

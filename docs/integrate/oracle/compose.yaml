@@ -23,12 +23,12 @@ services:
   sqlplus:
     image: docker.io/gvenzl/oracle-free:23-slim
     entrypoint: sqlplus
-    scale: 0
     environment:
       ORACLE_PASSWORD: secret
     volumes:
       - .:/demo
+    profiles: ["cli"]
 
   ctk-ingest:
     image: ghcr.io/crate/cratedb-toolkit-ingest:latest
-    scale: 0
+    profiles: ["cli"]

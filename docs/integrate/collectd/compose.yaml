@@ -38,4 +38,4 @@ services:
 
   psql:
     image: docker.io/postgres:18
-    scale: 0
+    profiles: ["cli"]

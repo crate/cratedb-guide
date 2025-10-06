@@ -24,8 +24,8 @@ services:
 
   nc:
     image: docker.io/toolbelt/netcat:2025-08-23
-    scale: 0
+    profiles: ["cli"]
 
   psql:
     image: docker.io/postgres:18
-    scale: 0
+    profiles: ["cli"]
