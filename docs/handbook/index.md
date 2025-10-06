@@ -205,7 +205,7 @@ industrial data, machine learning, data migrations.
 :::{grid-item-card} {material-outlined}`numbers;2em` Topics
 :link: topics
 :link-type: ref
-:link-alt: Solutions built with CrateDB
+:link-alt: CrateDB topics overview
 Learn how to apply CrateDB's features to optimally cover use-cases
 across different application and topic domains.
 For example, by connecting CrateDB with third-party
