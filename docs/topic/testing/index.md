@@ -1,9 +1,10 @@
 (testing)=
 # Software Testing
 
-Java and Python based test frameworks and libraries that support software
+:::{div} sd-text-muted
+Test frameworks and libraries that support software
 integration testing with CrateDB.
-
+:::
 
 (java-junit)=
 ## Java JUnit

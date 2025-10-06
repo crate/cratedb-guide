@@ -1,10 +1,12 @@
 (lineage)=
 # Data Lineage
 
-[Data lineage] refers to the process of tracking how data is generated,
+:::{div} sd-text-muted
+The process of tracking how data is generated,
 transformed, transmitted and used across a system over time.
+:::
 
-It documents data's origins, transformations and movements, providing
+[Data lineage] documents data's origins, transformations and movements, providing
 detailed visibility into its life cycle.
 Processes implementing data lineage simplify the identification of errors
 in data analytics workflows, by enabling users to trace issues back to their
