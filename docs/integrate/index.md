@@ -9,10 +9,6 @@ This documentation section lists applications, frameworks, and libraries,
 which can be used together with CrateDB, and outlines how to use them
 optimally.
 
-:::{tip}
-Please also visit the [Overview of CrateDB integration tutorials].
-:::
-
 :::{toctree}
 :maxdepth: 1
 :glob:
@@ -22,4 +18,3 @@ Please also visit the [Overview of CrateDB integration tutorials].
 
 
 [CrateDB's PostgreSQL interface]: inv:crate-reference#interface-postgresql
-[Overview of CrateDB integration tutorials]: https://community.cratedb.com/t/overview-of-cratedb-integration-tutorials/1015

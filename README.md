@@ -17,7 +17,6 @@
 
 📖 More information:
 [Drivers and Integrations](https://cratedb.com/docs/clients/) •
-[Integration Tutorials](https://community.cratedb.com/t/overview-of-cratedb-integration-tutorials/1015) •
 [Reference Documentation](https://cratedb.com/docs/crate/reference/)
 
 ✅ CI Status:
