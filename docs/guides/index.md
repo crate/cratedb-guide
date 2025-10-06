@@ -11,21 +11,6 @@ Guides and tutorials about how to use CrateDB and CrateDB Cloud in practice.
 ::::{grid} 4
 :padding: 0
 
-
-:::{grid-item-card} Getting Started
-:link: getting-started
-:link-type: ref
-:link-alt: Getting started with CrateDB
-:padding: 1
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-
-{material-outlined}`rocket_launch;1.3em`
-:::
-
-
 :::{grid-item-card} Installation
 :link: install
 :link-type: ref
