@@ -12,6 +12,14 @@ Conecta integrates natively with the arrow ecosystem by supporting several
 arrow libraries: [pyarrow], [arro3] and [nanoarrow]. Additionally, the
 database results can easily be converted to Polars or pandas.
 
+:::{rubric} Features
+:::
+
+* Connection pooling
+* Real multithreading
+* Client-based query partitioning
+* Utilities like: SQL bind parameters
+
 :::{rubric} Install
 :::
 
