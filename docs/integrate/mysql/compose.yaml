@@ -22,4 +22,4 @@ services:
 
   ctk-ingest:
     image: ghcr.io/crate/cratedb-toolkit-ingest:latest
-    scale: 0
+    profiles: ["cli"]

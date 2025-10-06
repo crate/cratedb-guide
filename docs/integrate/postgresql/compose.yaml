@@ -24,8 +24,8 @@ services:
 
   psql:
     image: docker.io/postgres:latest
-    scale: 0
+    profiles: ["cli"]
 
   ctk-ingest:
     image: ghcr.io/crate/cratedb-toolkit-ingest:latest
-    scale: 0
+    profiles: ["cli"]

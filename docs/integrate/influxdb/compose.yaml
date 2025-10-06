@@ -27,4 +27,4 @@ services:
 
   ctk:
     image: ghcr.io/crate/cratedb-toolkit:latest
-    scale: 0
+    profiles: ["cli"]
