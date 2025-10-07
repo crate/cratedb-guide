@@ -38,7 +38,7 @@ will become more fuzzy.
 
 :::{tip}
 CrateDB also provides a dedicated option for conducting [](#fuzzy-search),
-which is the recommended way to conduct fuzzy searches. This section
+which is the recommended way to conduct fuzzy searches. This example
 outlines how to achieve the same by using a custom analyzer.
 :::
 

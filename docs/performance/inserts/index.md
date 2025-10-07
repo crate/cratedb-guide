@@ -14,9 +14,7 @@ each primary shard.
 
 You can reduce the processing overhead by either eliminating the needless
 repetition of some steps or by reducing the work needed to be done by one or
-more steps.
-
-This section of the guide will show you how.
+more steps. This guide will show you how.
 
 ```{eval-rst}
 .. rubric:: Table of contents

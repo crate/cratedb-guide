@@ -1,7 +1,6 @@
 ---
 description: >-
-  This section gives you some guidelines on how to get started quickly with
-  CrateDB.
+  Guidelines on how to get started quickly with CrateDB.
 ---
 (first-steps)=
 # First steps with CrateDB

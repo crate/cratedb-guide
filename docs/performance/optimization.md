@@ -2,8 +2,11 @@
 
 # Query Optimization 101
 
-This article covers some essential principles for optimizing queries in CrateDB
-while avoiding the most common pitfalls. The patterns are relevant to both the
+:::{div} sd-text-muted
+Essential principles for optimizing queries in CrateDB...
+:::
+
+...while avoiding the most common pitfalls. The patterns are relevant to both the
 troubleshooting of slow queries and the proactive tuning of CrateDB deployments,
 and they show how small adjustments to filters, data transformations, and
 schemas can yield dramatic improvements in execution speed and resource
@@ -13,8 +16,9 @@ utilization.
 
 ## Early Filtering and Data Reduction
 
-This section focuses on minimizing data processed early in queries to reduce
-overhead.
+:::{div} sd-text-muted
+Minimize processed data early in queries to reduce overhead.
+:::
 
 (filtering-early)=
 
@@ -158,8 +162,10 @@ which can make a huge difference.
 
 ## Efficient Query Structure and Constructs
 
-This section focuses on optimizing SQL logic by prioritizing efficient syntax
-and avoiding redundant operations.
+:::{div} sd-text-muted
+Optimize SQL logic by prioritizing efficient syntax
+and avoid redundant operations.
+:::
 
 (only-sort-when-needed)=
 
@@ -376,8 +382,10 @@ FROM customers;
 
 ## Handling Large and Complex Queries
 
-This section discusses strategies for breaking down complex operations on large
+:::{div} sd-text-muted
+Strategies for breaking down complex operations on large
 datasets into manageable steps.
+:::
 
 (batch-operations)=
 
@@ -450,8 +458,9 @@ execution using multiple cluster nodes.
 
 ## Schema and Function Optimization
 
-This section focuses on schema design and function usage to streamline
-performance.
+:::{div} sd-text-muted
+Schema design and function usage to streamline performance.
+:::
 
 (consider-generated-columns)=
 
@@ -488,10 +497,12 @@ SQL.
 
 (group-filter-expression-optimizations)=
 
-This section discusses expressions that improve filter efficiency and handling
-of specific data Structures.
-
 ## Filter and Expression Optimization
+
+:::{div} sd-text-muted
+Expressions that improve filter efficiency
+and processing of specific data structures.
+:::
 
 (positive-filters)=
 

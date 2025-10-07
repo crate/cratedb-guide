@@ -1,8 +1,9 @@
 (connect-python)=
 # Python
 
-This guide demonstrates how to connect to a CrateDB Cloud cluster using different
-kinds of Python drivers. Individual drivers offer specific features for specific
+Connect to CrateDB and CrateDB Cloud using different kinds of Python drivers.
+
+Individual drivers offer specific features for specific
 needs of your application, so consider reading this enumeration carefully.
 
 (python-drivers-official)=

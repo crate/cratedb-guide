@@ -2,8 +2,9 @@
 
 # Ruby
 
-This section shows an example implementation of Ruby client library for CrateDB
-Cloud:
+How to connect to CrateDB using Ruby.
+
+An example implementation of Ruby client library for CrateDB Cloud:
 
 ```ruby
 require 'crate_ruby'

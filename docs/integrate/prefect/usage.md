@@ -28,7 +28,7 @@ Now you are ready to build your first data workflows!
 
 ## Run your first ETL workflow with CrateDB
 
-This section walks you through a simple workflow that fetches data, applies a basic transformation, and loads it into CrateDB. It uses the [yellow taxi trip dataset](https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz), which includes pickup time, geo‑coordinates, passenger count, and other fields. The goal is to write transformed data to a CrateDB table named `trip_data`:
+A simple workflow that fetches data, applies a basic transformation, and loads it into CrateDB. It uses the [yellow taxi trip dataset](https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz), which includes pickup time, geo‑coordinates, passenger count, and other fields. The goal is to write transformed data to a CrateDB table named `trip_data`:
 
 ```python
 import pandas as pd
