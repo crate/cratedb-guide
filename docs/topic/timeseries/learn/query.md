@@ -57,7 +57,7 @@ readings from CrateDB offices across the globe. Each record includes:
 :::{div}
 The fastest and easiest way to get started with CrateDB is by deploying a
 free tier (CRFREE) cluster on [CrateDB Cloud][CrateDB Cloud Console]. Otherwise,
-see the {ref}`install` section about to run CrateDB yourself.
+see the {ref}`install` section to run CrateDB yourself.
 :::
 
 CrateDB uses SQL, the most popular query language for database management. To
