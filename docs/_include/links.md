@@ -1,6 +1,7 @@
 <!-- markdownlint-disable MD034 -->
 <!-- markdownlint-disable MD053 -->
 
+[ADBC]: https://arrow.apache.org/docs/format/ADBC.html
 [Admin UI]: inv:crate-admin-ui:*:label#index
 [Amazon DynamoDB Streams]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html
 [Amazon Kinesis Data Streams]: https://docs.aws.amazon.com/streams/latest/dev/introduction.html
@@ -16,6 +17,7 @@
 [CrateDB BLOBs]: inv:crate-reference:*:label#blob_support
 [CrateDB Cloud]: inv:cloud:*:label#index
 [CrateDB Cloud Console]: https://console.cratedb.cloud/
+[CrateDB Examples]: https://github.com/crate/cratedb-examples
 [CrateDB JDBC Driver]: https://cratedb.com/docs/jdbc/
 [CrateDB Reference Manual]: inv:crate-reference:*:label#index
 [CrateDB Self-Managed]: https://cratedb.com/product/self-managed
@@ -37,9 +39,11 @@
 [HNSW paper]: https://arxiv.org/pdf/1603.09320
 [HoloViews]: https://www.holoviews.org/
 [HoloViz]: https://holoviz.org/
+[HTTP protocol]: https://en.wikipedia.org/wiki/HTTP
 [Indexing, Columnar Storage, and Aggregations]: https://cratedb.com/product/features/indexing-columnar-storage-aggregations
 [InfluxDB]: https://github.com/influxdata/influxdb
 [inverted index]: https://en.wikipedia.org/wiki/Inverted_index
+[JDBC]: https://en.wikipedia.org/wiki/Java_Database_Connectivity
 [JOIN]: inv:crate-reference#sql_joins
 [JSON Database]: https://cratedb.com/solutions/json-database
 [kNN]: https://en.wikipedia.org/wiki/K-nearest_neighbor_algorithm
@@ -60,7 +64,9 @@
 [Multi-model Database]: https://cratedb.com/solutions/multi-model-database
 [nearest neighbor search]: https://en.wikipedia.org/wiki/Nearest_neighbor_search
 [Nested Data Structure]: https://cratedb.com/product/features/nested-data-structure
+[ODBC]: https://en.wikipedia.org/wiki/Open_Database_Connectivity
 [PostgreSQL JDBC Driver]: https://jdbc.postgresql.org/
+[PostgreSQL wire protocol]: https://www.postgresql.org/docs/current/protocol.html
 [python-dbapi-by-example]: inv:crate-python:*:label#by-example
 [python-sqlalchemy-by-example]: inv:sqlalchemy-cratedb:*:label#by-example
 [query DSL based on JSON]: https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html
@@ -69,6 +75,7 @@
 [Replicating CDC events from DynamoDB to CrateDB]: https://cratedb.com/blog/replicating-cdc-events-from-dynamodb-to-cratedb
 [Replicating CDC events to CrateDB using AWS DMS]: https://cratedb.com/blog/replicating-cdc-events-to-cratedb-using-aws-dms
 [Replicating data to CrateDB with Debezium and Kafka]: https://community.cratedb.com/t/replicating-data-to-cratedb-with-debezium-and-kafka/1388
+[SQL]: https://en.wikipedia.org/wiki/Sql
 [TF–IDF]: https://en.wikipedia.org/wiki/Tf%E2%80%93idf
 [timeseries-queries-and-visualization-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/timeseries/timeseries-queries-and-visualization.ipynb
 [timeseries-queries-and-visualization-github]: https://github.com/crate/cratedb-examples/blob/main/topic/timeseries/timeseries-queries-and-visualization.ipynb

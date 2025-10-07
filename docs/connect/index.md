@@ -45,24 +45,17 @@ protocol.
 :class: rubric-slim
 :columns: auto 3 3 3
 
-```{rubric} Reference Manual
+```{rubric} Reference
 ```
 - [HTTP interface]
 - [PostgreSQL interface]
-- [SQL query syntax]
-- [Bulk operations]
-- [BLOB support][CrateDB BLOBs]
-
-```{rubric} Protocols and API Standards
-```
-- [HTTP protocol]
-- [PostgreSQL wire protocol]
-- [JDBC]
-- [ODBC]
-- [SQL]
 
 ```{rubric} Related
 ```
+- [Authentication]
+- [SQL query syntax]
+- [Bulk operations]
+- [BLOB support][CrateDB BLOBs]
 - {ref}`All drivers <connect-drivers>`
 ::::
 
@@ -193,18 +186,8 @@ All drivers <drivers>
 ```
 
 
-[ADBC]: https://arrow.apache.org/docs/format/ADBC.html
 [Authentication]: inv:crate-reference:*:label#admin_auth
 [Bulk operations]: inv:crate-reference:*:label#http-bulk-ops
-[CrateDB Examples]: https://github.com/crate/cratedb-examples
 [HTTP interface]: inv:crate-reference:*:label#interface-http
-[HTTP protocol]: https://en.wikipedia.org/wiki/HTTP
-[JDBC]: https://en.wikipedia.org/wiki/Java_Database_Connectivity
-[ODBC]: https://en.wikipedia.org/wiki/Open_Database_Connectivity
 [PostgreSQL interface]: inv:crate-reference:*:label#interface-postgresql
-[PostgreSQL wire protocol]: https://www.postgresql.org/docs/current/protocol.html
-[schema]: inv:crate-reference:*:label#ddl-create-table-schemas
-[schemas]: inv:crate-reference:*:label#ddl-create-table-schemas
-[SQL]: https://en.wikipedia.org/wiki/Sql
 [SQL query syntax]: inv:crate-reference:*:label#sql
-[superuser]: inv:crate-reference:*:label#administration_user_management
