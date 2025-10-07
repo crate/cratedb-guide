@@ -1,23 +1,26 @@
 <div align="center">
 
-# The CrateDB Guide
+# The CrateDB Handbook
 
-📖 _Guidelines and tutorials about [CrateDB]._ 📖
+📖 _How-to guides, tutorials, explanations, and extended reference material about [CrateDB]._ 📖
 
-🔗 Handbook:
+🔗 Learning path:
+[Getting Started](https://cratedb.com/docs/guide/start/) •
 [Install](https://cratedb.com/docs/guide/install/) •
-[Getting Started](https://cratedb.com/docs/guide/getting-started.html) •
+[How-to guides](https://cratedb.com/docs/guide/howto/) •
+[Tutorials](https://cratedb.com/docs/guide/tutorial/) •
 [Administration](https://cratedb.com/docs/guide/admin/) •
 [Performance](https://cratedb.com/docs/guide/performance/)
 
-🔗 Ecosystem:
-[Application Domains](https://cratedb.com/docs/guide/domain/) •
-[Integrations](https://cratedb.com/docs/guide/integrate/) •
-[Reference Architectures](https://cratedb.com/docs/guide/reference-architectures/)
+🔗 Reference material:
+[All features](https://cratedb.com/docs/guide/feature/) •
+[Ingestion](https://cratedb.com/docs/guide/ingest/) •
+[Topics](https://cratedb.com/docs/guide/topic/) •
+[Solutions](https://cratedb.com/docs/guide/solution/) •
+[Integrations](https://cratedb.com/docs/guide/integrate/)
 
 📖 More information:
-[Drivers and Integrations](https://cratedb.com/docs/clients/) •
-[Reference Documentation](https://cratedb.com/docs/crate/reference/)
+[Reference Manual](https://cratedb.com/docs/crate/reference/)
 
 ✅ CI Status:
 [![](https://github.com/crate/cratedb-guide/actions/workflows/docs.yml/badge.svg)](https://github.com/crate/cratedb-guide/actions/workflows/docs.yml)
@@ -37,7 +40,10 @@
 
 ## 🧐 What's Inside
 
-The main content tree of the CrateDB Guide includes a wide array of topics.
+The main content tree of the CrateDB Handbook includes an array of topics,
+roughly based on two approaches to convey information: A "learning path"
+style documentation serving newcomers, and a "reference lookup" style
+documentation serving experienced users.
 
 If you are looking for something specific, please use the search feature on
 GitHub, for example, [searching for "flink"], or clone the repository and
@@ -58,16 +64,21 @@ The folder structure follows a few conventions and ideas. The order of the items
 enumerated below is the order how they are currently enumerated within the primary
 navigation element (left-hand menu).
 
+**Learning path**
 - `start` The canonical "Getting Started" section, providing an easy user journey.
 - `install` The canonical "How to install CrateDB" section.
 - `connect` The canonical "How to connect to CrateDB" section.
+- `howto` How-to guides about CrateDB.
+- `tutorial` Tutorials about CrateDB.
+- `admin` A potpourri of operational guidelines.
+- `performance` A potpourri of performance tuning guidelines.
+
+**Reference material**
 - `feature` A backbone section about all features at a glance, using a flat layout.
 - `ingest` A category section bundling all ingest methods.
 - `topic` A category section bundling different topics [sic!] and application domains.
-- `use` A category section bundling different successful customer scenarios.
+- `solution` A category section bundling different successful customer scenarios.
 - `integrate` A backbone section about all the integration items, using a flat layout.
-- `admin` A potpourri of operational guidelines.
-- `performance` A potpourri of performance tuning guidelines.
 
 ## 💁 Contributing
 
@@ -93,7 +104,7 @@ Please also refer to the [CrateDB Authoring Guide] for more information.
 
 [contribution docs]: https://github.com/crate/crate/blob/master/CONTRIBUTING.rst
 [CrateDB]: https://github.com/crate/crate
-[CrateDB Authoring Guide]: https://crate-docs-theme.readthedocs.io/en/latest/authoring.html
+[CrateDB Authoring Guide]: https://crate-docs-theme.readthedocs.io/en/latest/authoring/
 [crate-docs-theme]: https://crate-docs-theme.readthedocs.io/
 [developer docs]: DEVELOP.md
 [Markdown]: https://daringfireball.net/projects/markdown/
