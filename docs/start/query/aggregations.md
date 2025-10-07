@@ -6,13 +6,6 @@
 High-performance aggregations on massive volumes of data using SQL.
 :::
 
-:::::{grid}
-:padding: 0
-
-::::{grid-item}
-:class: rubric-slimmer
-:columns: auto 9 9 9
-
 :::{rubric} Introduction
 :::
 
@@ -36,34 +29,6 @@ Whether you are monitoring sensor networks, analyzing customer behavior, or powe
 | Real-time ingestion           | Query freshly ingested data without delay                                |
 | Aggregations on any data type | Structured, JSON, full-text, geospatial, or vector                       |
 | Smart indexing                | Built-in indexing and configuration options that can boost performance   |
-
-::::
-
-::::{grid-item}
-:class: rubric-slim
-:columns: auto 3 3 3
-
-:::{rubric} Documentation
-:::
-- {ref}`crate-reference:aggregation`
-- {ref}`performance-select`
-
-:::{rubric} Integrations
-:::
-- {ref}`grafana`
-- {ref}`metabase`
-- {ref}`powerbi`
-- {ref}`superset`
-- {ref}`tableau`
-
-:::{rubric} See also
-:::
-- {ref}`analytics`
-- [Hands-on: Aggregating and Grouping Data]
-- [Real-Time Analytics Primer]
-::::
-
-:::::
 
 
 ## Supported Aggregation Functions
@@ -217,5 +182,37 @@ To learn about the full set of integrations, please visit the
 documentation at {ref}`bi` and {ref}`visualization`.
 
 
-[Hands-on: Aggregating and Grouping Data]: https://cratedb.com/academy/fundamentals/working-with-data-in-cratedb/hands-on-aggregating-and-grouping-data
-[Real-Time Analytics Primer]: https://cratedb.com/real-time-analytics/definition
+## Further reading
+
+:::::{grid} 1 3 3 3
+:margin: 4 4 0 0
+:padding: 0
+:gutter: 2
+
+::::{grid-item-card} {material-outlined}`article;1.5em` Documentation
+:columns: 3
+- {ref}`crate-reference:aggregation`
+- {ref}`performance-select`
+::::
+
+::::{grid-item-card} {material-outlined}`integration_instructions;1.5em` Integrations
+:columns: 3
+- {ref}`grafana`
+- {ref}`metabase`
+- {ref}`powerbi`
+- {ref}`superset`
+- {ref}`tableau`
+::::
+
+::::{grid-item-card} {material-outlined}`read_more;1.5em` Read more
+:columns: 6
+- Learn: [Real-time analytics primer]
+- Learn: [Hands-on: Aggregating and grouping data]
+- Solution: {ref}`analytics`
+::::
+
+:::::
+
+
+[Hands-on: Aggregating and grouping data]: https://cratedb.com/academy/fundamentals/working-with-data-in-cratedb/hands-on-aggregating-and-grouping-data
+[Real-time analytics primer]: https://cratedb.com/real-time-analytics/definition

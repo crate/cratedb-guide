@@ -1,13 +1,6 @@
 (ai-integration)=
 # AI integration
 
-:::::{grid}
-:padding: 0
-
-::::{grid-item}
-:class: rubric-slimmer
-:columns: auto 9 9 9
-
 :::{rubric} Introduction
 :::
 
@@ -33,36 +26,6 @@ Whether you're training models, running batch or real-time inference, or integra
 | Monitoring          | Track model performance, drift, or input quality      |
 | Data Collection     | Capture telemetry, events, logs, and raw user data    |
 
-::::
-
-::::{grid-item}
-:class: rubric-slim
-:columns: auto 3 3 3
-
-:::{rubric} Related
-:::
-- {ref}`vector-search`
-- {ref}`hybrid-search`
-- {ref}`Machine Learning <ml>`
-
-:::{rubric} Integrations
-:::
-- {ref}`langchain`
-- {ref}`llamaindex`
-- {ref}`mindsdb`
-- {ref}`mlflow`
-- {ref}`pycaret`
-
-:::{rubric} See also
-:::
-- [Blog: Vector support and KNN search]
-- {ref}`Synopsis: Text-to-SQL <llamaindex-synopsis>`
-- {ref}`Tutorial: Text-to-SQL using Azure <llamaindex-usage-azure>`
-- [Examples: ML]
-
-::::
-
-:::::
 
 :::{rubric} Use cases
 :::
@@ -231,6 +194,39 @@ Learn more about how to combine ML features with other major features of CrateDB
 | Joins & aggregates  | Combine data in real-time                   | {ref}`relational`, {ref}`aggregations` |
 | Time-series support | Perfect for sensor-based training data      | {ref}`timeseries`                      |
 
+
+## Further reading
+
+:::::{grid} 1 3 3 3
+:margin: 4 4 0 0
+:padding: 0
+:gutter: 2
+
+::::{grid-item-card} {material-outlined}`article;1.5em` Documentation
+:columns: 3
+- {ref}`vector-search`
+- {ref}`hybrid-search`
+- {ref}`Machine Learning <ml>`
+::::
+
+::::{grid-item-card} {material-outlined}`integration_instructions;1.5em` Integrations
+:columns: 3
+- {ref}`langchain`
+- {ref}`llamaindex`
+- {ref}`mindsdb`
+- {ref}`mlflow`
+- {ref}`pycaret`
+::::
+
+::::{grid-item-card} {material-outlined}`read_more;1.5em` Read more
+:columns: 6
+- [Blog: Vector support and KNN search]
+- {ref}`Synopsis: Text-to-SQL <llamaindex-synopsis>`
+- {ref}`Tutorial: Text-to-SQL using Azure <llamaindex-usage-azure>`
+- [Examples: ML]
+::::
+
+:::::
 
 
 [Blog: Vector support and KNN search]: https://cratedb.com/blog/unlocking-the-power-of-vector-support-and-knn-search-in-cratedb

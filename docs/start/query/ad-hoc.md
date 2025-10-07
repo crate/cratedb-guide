@@ -5,13 +5,6 @@
 Support highly dynamic ad-hoc querying even on large-scale, real-time datasets.
 :::
 
-:::::{grid}
-:padding: 0
-
-::::{grid-item}
-:class: rubric-slimmer
-:columns: auto 9 9 9
-
 :::{rubric} Introduction
 :::
 
@@ -55,35 +48,6 @@ They are unpredictable by nature—and CrateDB is designed to handle exactly tha
 - **Query fresh data instantly**, without waiting for batch jobs
 - Combine structured + JSON + full-text + spatial + vector data
 - Avoid maintaining rigid ETL pipelines or OLAP cubes
-
-
-::::
-
-::::{grid-item}
-:class: rubric-slim
-:columns: auto 3 3 3
-
-:::{rubric} Related Features
-:::
-- {ref}`object`
-- {ref}`fts`
-- {ref}`timeseries`
-
-:::{rubric} Reference Documentation
-:::
-- {ref}`CrateDB SQL Reference <crate-reference:sql>`
-- {ref}`CrateDB Console <crate-crash:index>`
-- {ref}`crate-reference:data-types-objects`
-- {ref}`crate-reference:fulltext-indices`
-
-:::{rubric} Learn more
-:::
-- [Exploratory Time Series Data Analysis]
-- [Academy: Time Series Query Optimization]
-- [CrateDB Scalability Benchmark: Query Throughput]
-::::
-
-:::::
 
 
 ## Common Query Patterns
@@ -240,6 +204,38 @@ Learn more about how to use ad-hoc queries effectively.
 | Time series support                   | Perfect for time-bound diagnostics                                                   | {ref}`timeseries`                                            |
 | Intelligent indexing                  | Works out of the box for ad-hoc querying                                             | {ref}`search-overview`                                                |
 | Full-text & filter                    | Combine keyword search with structured queries                                       | {ref}`fts` <br> {ref}`crate-reference:fulltext-indices`      |
+
+
+## Further reading
+
+:::::{grid} 1 3 3 3
+:margin: 4 4 0 0
+:padding: 0
+:gutter: 2
+
+::::{grid-item-card} {material-outlined}`article;1.5em` Documentation
+:columns: 3
+- {ref}`SQL reference <crate-reference:sql>`
+- {ref}`crate-reference:data-types-objects`
+- {ref}`crate-reference:fulltext-indices`
+::::
+
+::::{grid-item-card} {material-outlined}`link;1.5em` Related
+:columns: 3
+- {ref}`object`
+- {ref}`fts`
+- {ref}`timeseries`
+- {ref}`CrateDB Console <crate-crash:index>`
+::::
+
+::::{grid-item-card} {material-outlined}`read_more;1.5em` Read more
+:columns: 6
+- [Exploratory Time Series Data Analysis]
+- [Academy: Time Series Query Optimization]
+- [CrateDB Scalability Benchmark: Query Throughput]
+::::
+
+:::::
 
 
 [Academy: Time Series Query Optimization]: https://cratedb.com/academy/time-series/time-series-data-manipulation-and-visualization/time-series-query-optimization
