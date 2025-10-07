@@ -2,8 +2,7 @@
 
 # PHP
 
-This section provides a quick overview of available PHP extensions for CrateDB
-Cloud.
+Available PHP extensions for CrateDB and CrateDB Cloud.
 
 ## PDO
 

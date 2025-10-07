@@ -1,6 +1,6 @@
 # MCP Community Servers
 
-This section introduces popular community-run Model Context Protocol servers
+Popular community-run Model Context Protocol servers
 for PostgreSQL and CrateDB.
 
 ::::{grid} 1

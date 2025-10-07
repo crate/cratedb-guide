@@ -5,8 +5,11 @@
 Installation from Tarball Archive
 #################################
 
-This section of the documentation outlines how to use the release archives to
-install CrateDB. The walkthrough is suitable to install and run CrateDB on
+.. div:: sd-text-muted
+
+    How to use the release archives to install CrateDB.
+
+The walkthrough is suitable to install and run CrateDB on
 `Unix-like`_ systems, for example Linux and macOS.
 
 .. CAUTION::

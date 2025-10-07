@@ -35,9 +35,8 @@ Managing Kubernetes
 
 Kubernetes deployments can be `managed`_ in many different ways. Which one
 makes sense for you will depend on your situation.
-
-This section shows you three basic commands you can use to create and update a
-resource.
+On Kubernetes, CrateDB is managed as a resource. The following commands
+will give you an idea how.
 
 You can create a resource like so:
 
@@ -72,7 +71,7 @@ restart your pods with the new configuration one-by-one.
 Configuration
 =============
 
-This section provides four Kubernetes `configuration`_ snippets that can be
+A range of Kubernetes `configuration`_ snippets that can be
 used to create a three-node CrateDB cluster.
 
 

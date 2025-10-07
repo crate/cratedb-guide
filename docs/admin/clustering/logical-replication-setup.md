@@ -59,7 +59,7 @@ For reaching each other, they will use the special `host.docker.internal` addres
 ## Setting up a publication
 
 :::{NOTE}
-All SQL statements in this section are executed on `cluster-publishing`.
+The following SQL statements are executed on `cluster-publishing`.
 :::
 
 Before setting up the replication, we create a simple table that is going to be
@@ -95,7 +95,7 @@ With this, we are already all set on the publication side.
 ## Setting up a subscription
 
 :::{NOTE}
-All SQL statements in this section are executed on `cluster-subscribing`.
+The following SQL statements are executed on `cluster-subscribing`.
 :::
 
 A subscription needs connection information to the publishing cluster as

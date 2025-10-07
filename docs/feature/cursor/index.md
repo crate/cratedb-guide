@@ -21,7 +21,7 @@ and iterate it, fetching the rows progressively using
 {material-outlined}`construction;2em` This page is currently under construction.
 It includes not even the most basic essentials, and needs expansion. For example,
 the "Usage" and "Learn" sections are missing completely, and it's also not in the
-same shape like the other pages in this section.
+same shape as the other pages in this section.
 :::
 
 

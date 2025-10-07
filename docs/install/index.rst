@@ -4,9 +4,10 @@
 Install
 #######
 
-This section of the documentation covers the installation of CrateDB on different
-kinds of operating systems and environments, both suitable for on-premises and
-development sandbox operations.
+.. div:: sd-text-muted
+
+    Install CrateDB on different operating systems and environments,
+    for on-premises and development operations.
 
 .. toctree::
     :maxdepth: 3

@@ -4,6 +4,10 @@
 Container Setup
 ###############
 
+.. div:: sd-text-muted
+
+    Install CrateDB in container environments.
+
 CrateDB is ideal for containerized environments, creating and scaling a cluster
 takes minutes and your valuable data is always in sync and available.
 
@@ -44,7 +48,7 @@ official `CrateDB Docker image`_, use::
 Advanced
 ********
 
-This section demonstrates advanced container setup scenarios using Docker
+Advanced container setup scenarios using Docker
 and Kubernetes.
 
 .. toctree::

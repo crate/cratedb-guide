@@ -4,12 +4,12 @@
 :::{include} /_include/links.md
 :::
 
-This section lists drivers and adapters for supported programming languages,
+Drivers and adapters for supported programming languages,
 frameworks, and environments.
 
 ## PostgreSQL
 
-The drivers listed in this section all use the [CrateDB PostgreSQL interface].
+The drivers listed here all use the [CrateDB PostgreSQL interface].
 
 ::::{sd-table}
 :widths: 2 3 5 2
@@ -220,7 +220,7 @@ For connecting to CrateDB from Python, supporting Python's async implementations
 
 ## HTTP
 
-The drivers listed in this section all use the [CrateDB HTTP interface].
+The drivers listed here all use the [CrateDB HTTP interface].
 
 ::::{sd-table}
 :widths: 2 3 5 2

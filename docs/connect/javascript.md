@@ -2,8 +2,7 @@
 
 # JavaScript
 
-This section provides a quick overview of available Node.js modules and
-drivers for CrateDB Cloud.
+Available Node.js modules and drivers for CrateDB and CrateDB Cloud.
 
 ## node-postgres
 
