@@ -5,6 +5,10 @@
 :::{include} /_include/links.md
 :::
 
+:::{div} sd-text-muted
+About connection properties for CrateDB.
+:::
+
 To connect to CrateDB properly, your application or driver needs to be
 configured with corresponding connection properties. Please note that different
 applications and drivers may obtain connection properties in different formats.

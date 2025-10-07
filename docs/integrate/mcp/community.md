@@ -1,7 +1,9 @@
 # MCP Community Servers
 
+:::{div} sd-text-muted
 Popular community-run Model Context Protocol servers
 for PostgreSQL and CrateDB.
+:::
 
 ::::{grid} 1
 :gutter: 2

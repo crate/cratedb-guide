@@ -2,6 +2,10 @@
 
 # Java
 
+:::{div} sd-text-muted
+Connect to CrateDB using JDBC.
+:::
+
 JDBC is a standard Java API that provides a common interface for accessing
 databases in Java.
 

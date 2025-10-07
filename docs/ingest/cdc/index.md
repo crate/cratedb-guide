@@ -4,6 +4,10 @@
 :::{include} /_include/links.md
 :::
 
+:::{div} sd-text-muted
+Integrate CrateDB with CDC applications and frameworks.
+:::
+
 :::{div}
 CDC applications typically use [CrateDB's PostgreSQL interface].
 CrateDB also provides native adapter components to leverage advanced features.

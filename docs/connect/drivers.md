@@ -4,8 +4,10 @@
 :::{include} /_include/links.md
 :::
 
+:::{div} sd-text-muted
 Drivers and adapters for supported programming languages,
 frameworks, and environments.
+:::
 
 ## PostgreSQL
 

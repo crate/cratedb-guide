@@ -4,9 +4,12 @@
 CrateDB and Kubernetes
 ======================
 
-CrateDB and `Docker`_ are a great match thanks to CrateDB’s `horizontally
-scalable`_ `shared-nothing architecture`_ that lends itself well to
-`containerization`_.
+.. div:: sd-text-muted
+
+    CrateDB and Kubernetes are a great match.
+
+CrateDB’s `horizontally scalable`_ `shared-nothing architecture` lends itself
+well to `containerization`_.
 
 `Kubernetes`_ is an open-source container orchestration system for the
 management, deployment, and scaling of containerized systems.
