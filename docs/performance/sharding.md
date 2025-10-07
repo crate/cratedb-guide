@@ -29,7 +29,7 @@ If you are looking for an intro to sharding, see also the
 To avoid running your clusters with too many shards or too large shards,
 implement the following guidelines as a rule of thumb:
 
-- Use shard sizes between 10 GB and 50 GB.
+- Use shard sizes between 5 GB and 50 GB.
 
 - Keep the number of records on each shard below 200 million.
 
@@ -59,7 +59,7 @@ for maintenance operations.
 ### Shard size vs. number of shards
 
 The optimal approach balances shard count with shard size. Individual shards should
-typically contain 10-50 GB of data, being the sweet spot for most
+typically contain 5-50 GB of data, being the sweet spot for most
 workloads. In large clusters, this often means fewer shards than total CPU cores,
 as larger shards can still be processed efficiently by multiple CPU cores during
 query execution.
