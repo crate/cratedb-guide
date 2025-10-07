@@ -98,12 +98,18 @@ types of queries you intend to run.
 
 ### Replicas
 
-CrateDB also has replicas of data and this results in additional shards in
-the cluster.
-By default, CrateDB uses the replica setting `0-1` on newly created tables,
-so it will end up with twice the number of shards configured. The more
-replicas you add, the higher is the multiplier (x3, x4, etc.) how you
-compute required capacities.
+CrateDB uses replicas for both data durability and query performance. When a
+node goes down, replicas ensure no data is lost. For read operations, CrateDB
+randomly distributes queries across both primary and replica shards, improving
+concurrent read throughput.
+
+Each replica adds to the total shard count in the cluster. By default, CrateDB
+uses the replica setting `0-1` on newly created tables, resulting in twice the
+number of configured shards. The more replicas you add, the higher the
+multiplier (x3, x4, etc.) for capacity planning
+
+See the {ref}`replication reference <crate-reference:ddl-replication>`
+documentation for more details.
 
 ### Segments
 
