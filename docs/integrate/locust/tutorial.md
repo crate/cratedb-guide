@@ -479,7 +479,7 @@ If you want to download the locust data, you can do that on the last tab.
 When you want to run a load test against a CrateDB Cluster with multiple queries, Locust is a great and flexible tool that lets you quickly define a load test and see what numbers regarding users and RPS are possible for that particular setup.
 
 
-[CrateDB CLI tools]: https://cratedb.com/docs/crate/clients-tools/en/latest/connect/cli.html#cli
+[CrateDB CLI tools]: project:#cli
 [DBeaver]: https://dbeaver.io
 [fully-managed]: https://console.cratedb.cloud/
 [Locust]: https://locust.io
