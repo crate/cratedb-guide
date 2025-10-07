@@ -4,66 +4,17 @@
 :::{include} /_include/links.md
 :::
 
-:::::{grid}
-:padding: 0
-
-::::{grid-item}
-:class: rubric-slimmer
-:columns: auto 9 9 9
-
-
-:::{rubric} Overview
-:::
+:::{div} sd-text-muted
 CrateDB connectivity options at a glance.
-
-You have a variety of options to connect to CrateDB, and to integrate it with
-off-the-shelf, 3rd-party, open-source, and proprietary applications or frameworks.
-
-:::{rubric} Protocol Support
 :::
-CrateDB supports both the HTTP protocol and the PostgreSQL wire protocol,
-which ensures that many clients that work with PostgreSQL, will also work with
-CrateDB.
 
-Through corresponding drivers, CrateDB is compatible with ODBC,
-JDBC, and other database API specifications. By supporting SQL, CrateDB is
-compatible with many standard database environments out of the box.
-
-The HTTP protocol can be used to connect from environments where
-PostgreSQL-based communication is not applicable.
-
-:::{rubric} Notes
-:::
-While it is generally recommended to use the PostgreSQL interface (PG) for maximum
-compatibility in PostgreSQL environments, the HTTP interface supports CrateDB
-bulk operations and BLOBs, which are not supported by the PostgreSQL
-protocol.
-::::
-
-
-::::{grid-item}
-:class: rubric-slim
-:columns: auto 3 3 3
-
-```{rubric} Reference
-```
-- [HTTP interface]
-- [PostgreSQL interface]
-
-```{rubric} Related
-```
-- [Authentication]
-- [SQL query syntax]
-- [Bulk operations]
-- [BLOB support][CrateDB BLOBs]
-- {ref}`All drivers <connect-drivers>`
-::::
-
-:::::
-
+Choose from a variety of options to connect to CrateDB, and to integrate it with
+off-the-shelf, third-party, open-source, and proprietary applications, drivers,
+and frameworks.
 
 :::{rubric} Get started
 :::
+
 To get started,
 please learn about typical connection URI formats for CrateDB and its
 default client applications.
@@ -76,7 +27,7 @@ default client applications.
 :link: connect-configure
 :link-type: ref
 :link-alt: CrateDB connect URI
-Database URI and connection properties.
+Database URI and connection properties for different drivers.
 ::::
 
 ::::{grid-item-card} {material-outlined}`apps;2em` Applications
@@ -91,6 +42,7 @@ Use CLI programs or database IDEs to connect to CrateDB.
 
 :::{rubric} Drivers by language
 :::
+
 CrateDB drivers and adapters for supported programming languages, frameworks, and environments.
 
 :::::{grid} 2 2 2 4
@@ -159,6 +111,60 @@ CrateDB drivers and adapters for supported programming languages, frameworks, an
 :width: 40px
 ```
 
+::::
+
+:::::
+
+
+:::{rubric} Protocol Support
+:::
+
+CrateDB supports both the HTTP protocol and the PostgreSQL wire protocol,
+which ensures that many clients that work with PostgreSQL, will also work with
+CrateDB.
+
+Through corresponding drivers, CrateDB is compatible with ODBC,
+JDBC, and other database API specifications. By supporting SQL, CrateDB is
+compatible with many standard database environments out of the box.
+
+The HTTP protocol can be used to connect from environments where
+PostgreSQL-based communication is not applicable.
+
+:::{note}
+While it is generally recommended to use the PostgreSQL interface (PG) for maximum
+compatibility in PostgreSQL environments, the HTTP interface supports CrateDB
+bulk operations and BLOBs, which are not supported by the PostgreSQL
+protocol.
+:::
+
+:::{rubric} Further reading
+:::
+
+:::::{grid} 1 3 3 3
+:margin: 4 4 0 0
+:padding: 0
+:gutter: 2
+
+::::{grid-item-card} {material-outlined}`article;1.5em` Documentation
+:columns: 3
+- [HTTP interface]
+- [PostgreSQL interface]
+::::
+
+::::{grid-item-card} {material-outlined}`link;1.5em` Related
+:columns: 3
+- [Authentication]
+- [SQL query syntax]
+- [Bulk operations]
+- [BLOB support][CrateDB BLOBs]
+::::
+
+::::{grid-item-card} {material-outlined}`read_more;1.5em` Read more
+:columns: 6
+- {ref}`All drivers <connect-drivers>`
+- {ref}`All integrations <integrate>`
+- {ref}`Ingestion methods <ingest>`
+- {ref}`connect-natural`
 ::::
 
 :::::
