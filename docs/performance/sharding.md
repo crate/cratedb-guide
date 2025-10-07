@@ -100,6 +100,10 @@ types of queries you intend to run.
 
 CrateDB also has replicas of data and this results in additional shards in
 the cluster.
+By default, CrateDB uses the replica setting `0-1` on newly created tables,
+so it will end up with twice the number of shards configured. The more
+replicas you add, the higher is the multiplier (x3, x4, etc.) how you
+compute required capacities.
 
 ### Segments
 
@@ -133,7 +137,7 @@ the more likely it is that they will be distributed across the whole cluster,
 and hence across all of your CPUs, and hence the faster your queries will run.
 
 (sharding-over-allocation)=
-### Avoid too much over-allocation
+### Avoid extensive over-allocation
 
 :::{CAUTION}
 If you have more shards per table than CPUs, this is called *over-allocation*. A

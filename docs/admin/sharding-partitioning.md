@@ -121,7 +121,7 @@ in the {ref}`sharding-guide`.
 
 ## Example
 
-Let's create a basic sharding strategy on behalf of a concrete example. Imagine
+Let's create a basic sharding strategy by using a concrete example. Imagine
 you want to create a *partitioned table* on a *three-node cluster* to store
 time series data with the following assumptions:
 
