@@ -64,7 +64,7 @@ workloads. In large clusters, this often means fewer shards than total CPU cores
 as larger shards can still be processed efficiently by multiple CPU cores during
 query execution.
 
-### CPU-to-shard ratio
+### Shard-per-CPU ratio
 
 If most nodes have more shards per table than they have CPUs, the cluster can
 experience performance degradations.
@@ -72,6 +72,7 @@ For example, on clusters with substantial CPU resources (e.g., 8 nodes × 32 CPU
 = 256 total CPUs), creating 256+ shards per table often proves counterproductive.
 If you don't manually set the number of shards per table, CrateDB will make a
 best guess, based on the assumption that your nodes have two CPUs each.
+The general advice is to calculate with 1 shard per CPU as a starting point.
 
 ### 1000 shards per node limit
 
