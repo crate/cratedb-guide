@@ -2,7 +2,9 @@
 
 # JavaScript
 
+:::{div} sd-text-muted
 Available Node.js modules and drivers for CrateDB and CrateDB Cloud.
+:::
 
 ## node-postgres
 

@@ -1,10 +1,9 @@
 # CrateDB MCP Server
 
-:::{rubric} About
+:::{div} sd-text-muted
+The CrateDB MCP Server provides natural-language
+Text-to-SQL and documentation retrieval.
 :::
-
-The CrateDB MCP Server for natural-language Text-to-SQL and documentation
-retrieval specializes in CrateDB database clusters.
 
 The Model Context Protocol ([MCP]) is a protocol that standardizes providing
 context to language models and AI assistants.

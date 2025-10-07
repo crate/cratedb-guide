@@ -2,7 +2,9 @@
 
 # PHP
 
+:::{div} sd-text-muted
 Available PHP extensions for CrateDB and CrateDB Cloud.
+:::
 
 ## PDO
 

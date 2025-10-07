@@ -2,7 +2,9 @@
 
 # Ruby
 
+:::{div} sd-text-muted
 How to connect to CrateDB using Ruby.
+:::
 
 An example implementation of Ruby client library for CrateDB Cloud:
 

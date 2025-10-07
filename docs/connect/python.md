@@ -1,7 +1,9 @@
 (connect-python)=
 # Python
 
+:::{div} sd-text-muted
 Connect to CrateDB and CrateDB Cloud using different kinds of Python drivers.
+:::
 
 Individual drivers offer specific features for specific
 needs of your application, so consider reading this enumeration carefully.

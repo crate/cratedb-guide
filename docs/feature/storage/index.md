@@ -4,7 +4,9 @@
 :::{include} /_include/links.md
 :::
 
+:::{div} sd-text-muted
 The CrateDB storage layer is based on Lucene.
+:::
 
 By default, all fields are indexed,
 nested or not, but the indexing can be turned off selectively.

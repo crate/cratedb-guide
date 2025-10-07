@@ -1,7 +1,9 @@
 (ingest)=
 # CrateDB data ingestion
 
-All data ingestion methods for CrateDB at a glance.
+:::{div} sd-text-muted
+Data ingestion methods for CrateDB at a glance.
+:::
 
 :::::{grid} 1 2 2 2
 :margin: 4 4 0 0

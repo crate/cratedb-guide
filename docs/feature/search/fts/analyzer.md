@@ -3,6 +3,10 @@
 
 # Analyzers, Tokenizers, and Filters
 
+:::{div} sd-text-muted
+Adjust the full-text search behaviour by using built-in and custom analyzers.
+:::
+
 CrateDB provides the capabilities to adjust the full-text search behaviour
 by using analyzers from the large array of open-source Lucene components,
 or by employing proprietary analyzers.

@@ -6,6 +6,10 @@
 :::{include} /_include/links.md
 :::
 
+:::{div} sd-text-muted
+Integrate CrateDB with ETL and ELT applications and frameworks.
+:::
+
 :::{div}
 ETL applications typically use [CrateDB's PostgreSQL interface].
 CrateDB also provides native adapter components to leverage advanced features.
