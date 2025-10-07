@@ -2,12 +2,13 @@
 
 # Handbook
 
-Guides and tutorials about how to use CrateDB and CrateDB Cloud in practice.
+:::{div} sd-text-muted
+About using CrateDB and CrateDB Cloud in practice.
+:::
 
 
 ::::{grid} 4
 :padding: 0
-
 
 :::{grid-item-card} Getting Started
 :link: getting-started
@@ -18,10 +19,8 @@ Guides and tutorials about how to use CrateDB and CrateDB Cloud in practice.
 :class-card: sd-pt-3
 :class-body: sd-fs-1
 :class-title: sd-fs-5
-
 {material-outlined}`rocket_launch;1.3em`
 :::
-
 
 :::{grid-item-card} Installation
 :link: install
@@ -32,10 +31,54 @@ Guides and tutorials about how to use CrateDB and CrateDB Cloud in practice.
 :class-card: sd-pt-3
 :class-body: sd-fs-1
 :class-title: sd-fs-5
-
 {material-outlined}`download_for_offline;1.3em`
 :::
 
+:::{grid-item-card} Connect
+:link: connect
+:link-type: ref
+:link-alt: Connecting to CrateDB
+:padding: 1
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-5
+{material-outlined}`settings_input_svideo;1.3em`
+:::
+
+::::
+
+
+## Learn
+
+How-to guides, tutorials, and explanations.
+
+::::{grid} 4
+:padding: 0
+
+:::{grid-item-card} How-to guides
+:link: howtos
+:link-type: ref
+:link-alt: How-to guides about CrateDB
+:padding: 1
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-5
+{material-outlined}`assistant_direction;1.3em`
+:::
+
+:::{grid-item-card} Tutorials
+:link: tutorials
+:link-type: ref
+:link-alt: Tutorials about CrateDB
+:padding: 1
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-5
+{material-outlined}`school;1.3em`
+:::
 
 :::{grid-item-card} Administration
 :link: administration
@@ -46,24 +89,20 @@ Guides and tutorials about how to use CrateDB and CrateDB Cloud in practice.
 :class-card: sd-pt-3
 :class-body: sd-fs-1
 :class-title: sd-fs-5
-
-{material-outlined}`auto_stories;1.3em`
+{material-outlined}`manage_accounts;1.3em`
 :::
 
-
-:::{grid-item-card} Performance Guides
+:::{grid-item-card} Performance guides
 :link: performance
 :link-type: ref
-:link-alt: CrateDB Performance Guides
+:link-alt: CrateDB Performance guides
 :padding: 1
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
 :class-title: sd-fs-5
-
 {material-outlined}`speed;1.3em`
 :::
-
 
 ::::
 
@@ -222,13 +261,13 @@ programming frameworks, software testing, time series data.
 
 ../install/index
 ../connect/index
+../howto/index
+../tutorial/index
+../admin/index
+../performance/index
 ../feature/index
 Ingestion <../ingest/index>
 ../topic/index
 Solutions <../solution/index>
 ../integrate/index
-../admin/index
-../performance/index
-../howto/index
-../tutorial/index
 ```
