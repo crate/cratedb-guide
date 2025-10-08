@@ -11,7 +11,7 @@ The CrateDB storage layer is based on Lucene.
 By default, all fields are indexed,
 nested or not, but the indexing can be turned off selectively.
 
-This page enumerates some concepts of Lucene, the article [Indexing and Storage in
+This page enumerates some concepts of Lucene. The article [Indexing and Storage in
 CrateDB] goes into more details by exploring its internal workings.
 
 ## Lucene
