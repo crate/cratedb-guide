@@ -99,7 +99,7 @@ interactive dashboards, automated reporting, and more.
 If you'd like to see how the other questions were configured, feel free to
 check out the [video tutorial] on this topic.
 
-If this integration could benefit you, feel free to head to [CreateDB Cloud]
+If this integration could benefit you, feel free to head to [CrateDB Cloud]
 and get started!
 
 [CrateDB Cloud]: https://console.cratedb.cloud/
