@@ -13,11 +13,14 @@ dashboards.
 
 ## Set up CrateDB
 
-Deploying a CrateDB cloud cluster has never been easier, setup a [CrateDB Cloud] cluster within minutes. We offer a free plan with up to 2 vCPUs, 2 GiB of memory, and 8 GiB of storage.
+Deploying a CrateDB cloud cluster has never been easier, set up a [CrateDB Cloud]
+cluster within minutes. We offer a free plan with up to 2 vCPUs, 2 GiB of memory,
+and 8 GiB of storage.
 
 ### Load data into CrateDB
 
-In this usage guide, you use two tables—[flights](http://stat-computing.org/dataexpo/2009) and [airports](https://openflights.org/data.php)—from January 2008.
+In this usage guide, you use two tables—[flights](http://stat-computing.org/dataexpo/2009)
+and [airports](https://openflights.org/data.php)—from January 2008.
 
 #### Create tables
 
