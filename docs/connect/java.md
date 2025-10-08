@@ -184,3 +184,8 @@ Connect to CrateDB and CrateDB Cloud using JDBC.
 Demonstrates a basic example using both the vanilla PostgreSQL JDBC Driver
 and the CrateDB JDBC Driver.
 :::
+
+## Further reading
+
+For testing Java applications against CrateDB, see also documentation
+about {ref}`java-junit` and {ref}`testcontainers`.
