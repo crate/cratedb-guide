@@ -102,6 +102,7 @@ check out the [video tutorial] on this topic.
 If this integration could benefit you, feel free to head to [CrateDB Cloud]
 and get started!
 
+[Cloud console]: https://console.cratedb.cloud/
 [CrateDB Cloud]: https://console.cratedb.cloud/
 [in this how-to]: https://community.cratedb.com/t/importing-data-to-cratedb-cloud-clusters/1467
 [metabase]: https://www.metabase.com/
