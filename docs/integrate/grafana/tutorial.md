@@ -221,4 +221,4 @@ out more, refer to the [Grafana documentation].
 [grafana]: https://www.grafana.com/
 [grafana documentation]: https://grafana.com/docs/grafana/latest/?pg=oss-graf&plcmt=quick-links
 [grafana panels]: https://grafana.com/docs/grafana/latest/panels/
-[CrateDB Cloud cluster]: https:console.cratedb.cloud
+[CrateDB Cloud cluster]: https://console.cratedb.cloud
