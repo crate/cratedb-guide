@@ -77,7 +77,7 @@ We will need a CrateDB instance, for the purpose of this example we can spin one
 
 ```bash
 sudo apt install docker.io
-sudo docker run --publish 4200:4200 --publish 5432:5432 --env CRATE_HEAP_SIZE=1g crate:latest
+sudo docker run --publish 4200:4200 --publish 5432:5432 --env CRATE_HEAP_SIZE=1g crate:latest -Cdiscovery.type=single-node
 ```
 
 Now we need to run a couple of SQL commands on this instance, an easy way to do this is using the Admin UI that can be accessed navigating with a web browser to port 4200 on the server where CrateDB is running, for instance `http://localhost:4200` and then open the console (second icon from the top on the left-hand side navigation bar).

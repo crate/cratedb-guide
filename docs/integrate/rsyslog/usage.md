@@ -27,7 +27,7 @@ setup.
 First, start CrateDB. For production, use a dedicated cluster. For this demo, run a single‑node container:
 
 ```bash
-sudo docker run -d --name cratedb -p 4200:4200 -p 5432:5432 -e CRATE_HEAP_SIZE=1g crate:latest
+sudo docker run -d --name cratedb -p 4200:4200 -p 5432:5432 -e CRATE_HEAP_SIZE=1g crate:latest -Cdiscovery.type=single-node
 ```
 
 Next, create a table for logs. Open `http://localhost:4200/#!/console` or invoke `crash` and run:
