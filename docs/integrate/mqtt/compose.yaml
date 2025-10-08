@@ -5,6 +5,8 @@ services:
 
   cratedb:
     image: docker.io/crate/crate:latest
+    command: >
+      crate -Cdiscovery.type=single-node
     ports:
       - "4200:4200/tcp"
       - "5432:5432/tcp"
