@@ -23,8 +23,12 @@ PostgreSQL JDBC uses the `jdbc:postgresql://` protocol identifier,
 while CrateDB JDBC uses `jdbc:crate://`.
 :::
 
-Applications using the PostgreSQL JDBC Driver may emit PostgreSQL-specific
-SQL that CrateDB doesn't understand. Use the CrateDB JDBC Driver instead
+You are encouraged to probe the PostgreSQL JDBC Driver first. This is the
+most convenient option, specifically if the system you are connecting with
+already includes the driver jar.
+
+However, applications using the PostgreSQL JDBC Driver may emit PostgreSQL-specific
+SQL that CrateDB does not understand. Use the CrateDB JDBC Driver instead
 to ensure compatibility and allow downstream components to handle
 CrateDB-specific behavior, for example, by employing a CrateDB-specific
 SQL dialect implementation.
