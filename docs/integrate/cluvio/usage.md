@@ -8,17 +8,19 @@ dashboards.
 
 ## Prerequisites
 
-* [CrateDB Cloud cluster up and running](https://crate.io/docs/cloud/en/latest/tutorials/cluster-deployment/index.html)
 * [Cluvio account](https://www.cluvio.com/)
 
 
 ## Set up CrateDB
 
-Deploying a CrateDB cloud cluster has never been easier, simply follow our tutorial [here](https://crate.io/docs/cloud/en/latest/tutorials/cluster-deployment/stripe.html#cluster-deployment-stripe) and you can have a cluster up and running within minutes. We offer a CRFREE plan which offers up to 2 vCPUs, 2 GiB of memory, and 8 GiB of storage completely for free. Ideal for small-scale testing and evaluation purposes.
+Deploying a CrateDB cloud cluster has never been easier, set up a [CrateDB Cloud]
+cluster within minutes. We offer a free plan with up to 2 vCPUs, 2 GiB of memory,
+and 8 GiB of storage.
 
 ### Load data into CrateDB
 
-In this usage guide, you use two tables—[flights](http://stat-computing.org/dataexpo/2009) and [airports](https://openflights.org/data.php)—from January 2008.
+In this usage guide, you use two tables—[flights](http://stat-computing.org/dataexpo/2009)
+and [airports](https://openflights.org/data.php)—from January 2008.
 
 #### Create tables
 
@@ -72,7 +74,7 @@ CREATE TABLE flights (
 );
 ```
 
-This creates 2 empty tables in your database. `flights` and `airports`, with the correct data types of the columns. 
+This creates 2 empty tables in your database. `flights` and `airports`, with the correct data types of the columns.
 
 #### Import data
 
@@ -135,7 +137,7 @@ SELECT
        AVG(arr_delay) AS "Average Arrival Delay"
 FROM   doc.flights
 ORDER  BY 1
-``` 
+```
 This is a pretty simple query that counts the number of rows in the `flights` as the number of flights, and averages values in the `dep_delay` and `arr_delay` for the departure delays and arrival delays respectively.
 
 ![Number of flights and delays|690x117](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/4/4841404a21b56cb1e5b92736af8b79656b0912ec.png){width=800px}
@@ -160,12 +162,12 @@ In this one, it's suitable to use pie chart to better see the distribution. We a
 
 ## Filters
 
-[Filters](https://app.cluvio.com/settings/filters) offer a great way to quickly specify the condition under which you want to display your data. 
+[Filters](https://app.cluvio.com/settings/filters) offer a great way to quickly specify the condition under which you want to display your data.
 
 In the `flights` table in `day_of_week` column 1 represents Monday, 2 means Tuesday, etc. Using that, we can create a filter to display data for a specific day of the week without changing the SQL in our reports.
 
 ```sql
-VALUES 
+VALUES
 (1, 'Monday'),
 (2, 'Tuesday'),
 (3, 'Wednesday'),

@@ -10,8 +10,7 @@ tool that unlocks the full potential of your data.
 ## Prerequisites
 
 First, you will need a running cluster. You can use Metabase with both
-CrateDB self-managed and its managed offering
-{ref}`CrateDB Cloud <cluster-deployment-stripe>`.
+CrateDB self-managed and its managed [CrateDB Cloud] offering.
 
 To use Metabase, you must have an existing data set in your CrateDB cluster.
 Feel free to use the sample dataset available in the [Cloud Console] or
@@ -100,10 +99,11 @@ interactive dashboards, automated reporting, and more.
 If you'd like to see how the other questions were configured, feel free to
 check out the [video tutorial] on this topic.
 
-If this integration could benefit you, feel free to head to [Cloud Console]
+If this integration could benefit you, feel free to head to [CrateDB Cloud]
 and get started!
 
-[cloud console]: https://console.cratedb.cloud/
+[Cloud console]: https://console.cratedb.cloud/
+[CrateDB Cloud]: https://console.cratedb.cloud/
 [in this how-to]: https://community.cratedb.com/t/importing-data-to-cratedb-cloud-clusters/1467
 [metabase]: https://www.metabase.com/
 [video tutorial]: https://www.youtube.com/watch?v=veuR_76njCo
