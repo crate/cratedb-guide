@@ -39,7 +39,7 @@ Managing Kubernetes
 Kubernetes deployments can be `managed`_ in many different ways. Which one
 makes sense for you will depend on your situation.
 On Kubernetes, CrateDB is managed as a resource. The following commands
-will give you an idea how.
+will give you an idea of how.
 
 You can create a resource like so:
 
