@@ -168,3 +168,16 @@ dependencies {
 {material-outlined}`download;2em`
 Download and install the PostgreSQL JDBC Driver.
 :::
+
+
+## Example
+
+:::{card}
+:link: https://github.com/crate/cratedb-examples/tree/main/by-language/java-jdbc
+:link-type: url
+{material-outlined}`play_arrow;2em`
+Connect to CrateDB and CrateDB Cloud using JDBC.
++++
+Demonstrates a basic example using both the vanilla PostgreSQL JDBC Driver
+and the CrateDB JDBC Driver.
+:::
