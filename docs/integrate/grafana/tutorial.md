@@ -8,9 +8,8 @@ to CrateDB, which is purpose-built for monitoring large volumes of machine
 data in real-time.
 
 For the purposes of this guide, it is assumed that you
-have a cluster up and running and can access the Console. If not, please refer
-to the {ref}`tutorial on how to deploy a cluster for the first time
-<cluster-deployment>`.
+have a CrateDB cluster up and running and can access the Console. If not, please
+setup a free [CrateDB Cloud cluster].
 
 (grafana-load-dataset)=
 
@@ -222,3 +221,4 @@ out more, refer to the [Grafana documentation].
 [grafana]: https://www.grafana.com/
 [grafana documentation]: https://grafana.com/docs/grafana/latest/?pg=oss-graf&plcmt=quick-links
 [grafana panels]: https://grafana.com/docs/grafana/latest/panels/
+[CrateDB Cloud cluster]: https:console.cratedb.cloud
