@@ -37,6 +37,8 @@ You will create these files in the following steps.
 services:
   cratedb:
     image: "docker.io/crate:latest"
+    command: >
+      crate -Cdiscovery.type=single-node
     ports:
       - "4200:4200"
       - "5432:5432"
