@@ -44,7 +44,7 @@ docker run --interactive --rm --pull=always \
   --publish=4200:4200 --publish=5432:5432 \
   --name=cratedb \
   --env CRATE_HEAP_SIZE=1g \
-  crate:latest
+  crate:latest -Cdiscovery.type=single-node
 ```
 
 Run Superset server.

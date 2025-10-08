@@ -32,7 +32,7 @@ podman run -d --name risingwave -it -p 4566:4566 -p 5691:5691 docker.io/risingwa
 And finally, an instance of CrateDB:
 
 ```bash
-podman run -d --name cratedb --publish=4200:4200 --publish=5432:5432 --env CRATE_HEAP_SIZE=1g docker.io/crate/crate:5.10.7
+podman run -d --name cratedb --publish=4200:4200 --publish=5432:5432 --env CRATE_HEAP_SIZE=1g docker.io/crate/crate:5.10.7 -Cdiscovery.type=single-node
 ```
 
 We will need three terminals for this demonstration.
