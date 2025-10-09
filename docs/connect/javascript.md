@@ -8,27 +8,38 @@ Available Node.js modules and drivers for CrateDB and CrateDB Cloud.
 
 ## node-postgres
 
-node-postgres is a collection of Node.js modules for interfacing with a CrateDB
+node-postgres is a collection of Node.js modules (including pg and pg-cursor) for interfacing with a CrateDB
 Cloud database.
 
 Example implementation will look like this:
 
 ```javascript
-const { Client } = require("pg");
+import pg from "pg";
+import Cursor from "pg-cursor";
 
-const crateClient = new Client({
+const pool = new pg.Pool({
   host: "<name-of-your-cluster>.cratedb.net",
   port: 5432,
   user: "admin",
   password: "<PASSWORD>",
   ssl: true,
 });
+const conn = await pool.connect();
 
-(async () => {
-  await crateClient.connect();
-  const result = await crateClient.query("SELECT name FROM sys.cluster");
-  console.log(result.rows[0]);
-})();
+const stmt = "SELECT * FROM tbl";
+const cursor = conn.query(new Cursor(stmt));
+cursor.read(100, (err, rows) => {
+  if (err) {
+    console.error(err);
+  } else {
+    console.log(rows);
+  }
+  cursor.close(() => {
+    conn.release();
+    pool.end();
+  });
+});
+
 ```
 
 For more information see [node-postgres documentation].
@@ -41,14 +52,12 @@ the `_sql` HTTP endpoint.
 Example implementation will look like this:
 
 ```javascript
-const crate = require("node-crate");
+import { default as crate } from "node-crate";
 
 crate.connect(`https://admin:${encodeURIComponent("<PASSWORD>")}@<name-of-your-cluster>.cratedb.net:4200`);
 
-(async () => {
-  const result = await crate.execute("SELECT name FROM sys.cluster");
-  console.log(result.rows[0]);
-})();
+const result = await crate.execute("SELECT name FROM sys.cluster");
+console.log(result.rows[0]);
 ```
 
 For more information see [node-crate documentation].
