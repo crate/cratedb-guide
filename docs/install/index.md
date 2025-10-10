@@ -1,40 +1,44 @@
-.. _install:
+(install)=
 
-#######
-Install
-#######
+# Install
 
+```{eval-rst}
 .. div:: sd-text-muted
 
     Install CrateDB on different operating systems and environments,
     for on-premises and development operations.
+```
 
-.. toctree::
-    :maxdepth: 3
-    :hidden:
+```{toctree}
+:hidden: true
+:maxdepth: 3
 
-    Debian, Ubuntu <debian-ubuntu>
-    Red Hat, SUSE <redhat>
-    Windows <windows>
-    Tarball <tarball>
+Debian, Ubuntu <debian-ubuntu>
+Red Hat, SUSE <redhat>
+Windows <windows>
+Tarball <tarball>
 
-    container/index
-    cloud/index
+container/index
+cloud/index
 
-    configure
+configure
+```
 
+% Layout stolen from Streamlink.
 
-.. Layout stolen from Streamlink.
-.. https://github.com/streamlink/streamlink/blob/master/docs/install.rst?plain=1
+% https://github.com/streamlink/streamlink/blob/master/docs/install.rst?plain=1
 
-.. Icons from sphinx{design}.
-.. https://sphinx-design.readthedocs.io/en/latest/badges_buttons.html#inline-icons
-.. https://fontawesome.com/icons/
+% Icons from sphinx{design}.
 
-.. sphinx-design currently doesn't support autosectionlabel, so set labels for
-.. the following sections explicitly
+% https://sphinx-design.readthedocs.io/en/latest/badges_buttons.html#inline-icons
 
+% https://fontawesome.com/icons/
 
+% sphinx-design currently doesn't support autosectionlabel, so set labels for
+
+% the following sections explicitly
+
+```{eval-rst}
 .. grid:: 2 2 2 4
     :padding: 0
     :class-container: installation-grid
@@ -138,36 +142,34 @@ Install
         :octicon:`gear`
 
 
+```
 
-We recommend to use the package-based installation methods for :ref:`install-deb` and
-:ref:`install-rpm`, by subscribing to the corresponding package release channels.
+We recommend to use the package-based installation methods for {ref}`install-deb` and
+{ref}`install-rpm`, by subscribing to the corresponding package release channels.
 
-Alternatively, you can also do an :ref:`install-tarball`.
+Alternatively, you can also do an {ref}`install-tarball`.
 
-
-*****
-Notes
-*****
+## Notes
 
 After the installation is finished, the CrateDB service should be up and
-running, and will run a HTTP server on ``localhost:4200``. To access the
-:ref:`Admin UI <crate-admin-ui:index>` from your local machine, navigate
-to::
+running, and will run a HTTP server on `localhost:4200`. To access the
+{ref}`Admin UI <crate-admin-ui:index>` from your local machine, navigate
+to:
 
-    http://localhost:4200/
+```
+http://localhost:4200/
+```
 
-.. note::
+:::{note}
+CrateDB requires a [Java virtual machine] to run.
 
-    CrateDB requires a `Java virtual machine`_ to run.
+- Starting with CrateDB 4.2, Java is bundled with CrateDB, and no extra
+  installation is necessary.
+- CrateDB versions before 4.2 required a separate Java installation. For
+  CrateDB 3.0 to 4.1, Java 11 is the minimum requirement. CrateDB versions
+  before 3.0 require Java 8. We recommend to use [OpenJDK] on Linux Systems.
+:::
 
-    - Starting with CrateDB 4.2, Java is bundled with CrateDB, and no extra
-      installation is necessary.
-
-    - CrateDB versions before 4.2 required a separate Java installation. For
-      CrateDB 3.0 to 4.1, Java 11 is the minimum requirement. CrateDB versions
-      before 3.0 require Java 8. We recommend to use OpenJDK_ on Linux Systems.
-
-
-.. _Java virtual machine: https://en.wikipedia.org/wiki/Java_virtual_machine
-.. _OpenJDK: https://openjdk.java.net/projects/jdk/
-.. _Other releases of CrateDB: https://cdn.crate.io/downloads/releases/
+[java virtual machine]: https://en.wikipedia.org/wiki/Java_virtual_machine
+[openjdk]: https://openjdk.java.net/projects/jdk/
+[other releases of cratedb]: https://cdn.crate.io/downloads/releases/
