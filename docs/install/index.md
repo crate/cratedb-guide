@@ -2,16 +2,14 @@
 
 # Install
 
-```{eval-rst}
-.. div:: sd-text-muted
+:::{div} sd-text-muted
+Install CrateDB on different operating systems and environments,
+for on-premises and development operations.
+:::
 
-    Install CrateDB on different operating systems and environments,
-    for on-premises and development operations.
-```
-
-```{toctree}
-:hidden: true
-:maxdepth: 3
+:::{toctree}
+:maxdepth: 1
+:hidden:
 
 Debian, Ubuntu <debian-ubuntu>
 Red Hat, SUSE <redhat>
@@ -22,7 +20,7 @@ container/index
 cloud/index
 
 configure
-```
+:::
 
 % Layout stolen from Streamlink.
 
@@ -38,111 +36,109 @@ configure
 
 % the following sections explicitly
 
-```{eval-rst}
-.. grid:: 2 2 2 4
-    :padding: 0
-    :class-container: installation-grid
+::::{grid} 2 2 2 4
+:padding: 0
+:class-container: installation-grid
 
-    .. grid-item-card:: Debian, Ubuntu
-        :link: install-debian
-        :link-type: ref
-        :link-alt: Debian and Ubuntu Linux
-        :padding: 3
-        :text-align: center
-        :class-card: sd-pt-3
-        :class-body: sd-fs-1
-        :class-title: sd-fs-6
+:::{grid-item-card} Debian, Ubuntu
+:link: install-debian
+:link-type: ref
+:link-alt: Debian and Ubuntu Linux
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+{fab}`linux`
+{fab}`ubuntu`
+:::
 
-        :fab:`linux`
-        :fab:`ubuntu`
+:::{grid-item-card} Red Hat, SUSE
+:link: install-rpm
+:link-type: ref
+:link-alt: RPM Linux: Red Hat, SUSE
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+{fab}`redhat`
+{fab}`suse`
+:::
 
-    .. grid-item-card:: Red Hat, SUSE
-        :link: install-rpm
-        :link-type: ref
-        :link-alt: RPM Linux: Red Hat, SUSE
-        :padding: 3
-        :text-align: center
-        :class-card: sd-pt-3
-        :class-body: sd-fs-1
-        :class-title: sd-fs-6
+:::{grid-item-card} macOS
+:link: install-macos
+:link-type: ref
+:link-alt: macOS
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+{fab}`apple`
+:::
 
-        :fab:`redhat`
-        :fab:`suse`
+:::{grid-item-card} Windows
+:link: install-windows
+:link-type: ref
+:link-alt: Windows
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+{fab}`windows`
+:::
 
-    .. grid-item-card:: macOS
-        :link: install-macos
-        :link-type: ref
-        :link-alt: macOS
-        :padding: 3
-        :text-align: center
-        :class-card: sd-pt-3
-        :class-body: sd-fs-1
-        :class-title: sd-fs-6
+:::{grid-item-card} Tarball Archive
+:link: install-tarball
+:link-type: ref
+:link-alt: Installation from Tarball
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+{octicon}`archive`
+:::
 
-        :fab:`apple`
+:::{grid-item-card} Container Setup
+:link: install-container
+:link-type: ref
+:link-alt: Container Setup
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+{octicon}`container`
+:::
 
-    .. grid-item-card:: Windows
-        :link: install-windows
-        :link-type: ref
-        :link-alt: Windows
-        :padding: 3
-        :text-align: center
-        :class-card: sd-pt-3
-        :class-body: sd-fs-1
-        :class-title: sd-fs-6
+:::{grid-item-card} Cloud Hosting
+:link: install-cloud
+:link-type: ref
+:link-alt: Cloud Hosting
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+{octicon}`cloud`
+:::
 
-        :fab:`windows`
+:::{grid-item-card} Config Settings
+:link: install-configure
+:link-type: ref
+:link-alt: Configuration Settings
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+{octicon}`gear`
+:::
 
-    .. grid-item-card:: Tarball Archive
-        :link: install-tarball
-        :link-type: ref
-        :link-alt: Installation from Tarball
-        :padding: 3
-        :text-align: center
-        :class-card: sd-pt-3
-        :class-body: sd-fs-1
-        :class-title: sd-fs-6
-
-        :octicon:`archive`
-
-    .. grid-item-card:: Container Setup
-        :link: install-container
-        :link-type: ref
-        :link-alt: Container Setup
-        :padding: 3
-        :text-align: center
-        :class-card: sd-pt-3
-        :class-body: sd-fs-1
-        :class-title: sd-fs-6
-
-        :octicon:`container`
-
-    .. grid-item-card:: Cloud Hosting
-        :link: install-cloud
-        :link-type: ref
-        :link-alt: Cloud Hosting
-        :padding: 3
-        :text-align: center
-        :class-card: sd-pt-3
-        :class-body: sd-fs-1
-        :class-title: sd-fs-6
-
-        :fa:`cloud`
-
-    .. grid-item-card:: Config Settings
-        :link: install-configure
-        :link-type: ref
-        :link-alt: Configuration Settings
-        :padding: 3
-        :text-align: center
-        :class-card: sd-pt-3
-        :class-body: sd-fs-1
-        :class-title: sd-fs-6
-
-        :octicon:`gear`
-
-
-```
+::::
 
 We recommend to use the package-based installation methods for {ref}`install-deb` and
 {ref}`install-rpm`, by subscribing to the corresponding package release channels.

@@ -1,9 +1,6 @@
-```{highlight} bash
-```
-
 (install-windows)=
 
-# Running CrateDB on Windows
+# CrateDB on Windows
 
 How to use the release archives to run CrateDB on Microsoft Windows.
 
@@ -19,34 +16,34 @@ us][contact us] so we can work with you on a solution.
    command-line shell or by using a GUI tool like [7-Zip]. We recommend
    using [PowerShell] when using terminal:
 
-   ```
+   ```doscon
    # Extract Zip archive
    unzip -o crate-*.zip
    ```
 
 3. On the terminal, change into the extracted `crate` directory:
 
-   ```
+   ```doscon
    cd crate-*
    ```
 
 4. Run a CrateDB single-node instance on the local network interface:
 
-   ```
+   ```doscon
    ./bin/crate
    ```
 
 5. You will be notified by an INFO message similar to this, when your
    single-node cluster is started successfully:
 
-   ```
+   ```text
    [2022-07-04T19:41:12,340][INFO ][o.e.n.Node] [Aiguille Verte] started
    ```
 
 6. In order to stop CrateDB again, use {kbd}`ctrl-c`. You will be asked to
    terminate the job. Input {kbd}`Y`:
 
-   ```
+   ```text
    Terminate batch job (Y/N)? Y
    ```
 

@@ -1,9 +1,6 @@
-```{highlight} yaml
-```
-
 (ec2-setup)=
 
-# Running CrateDB on Amazon EC2
+# CrateDB on Amazon EC2
 
 ## Introduction
 
@@ -60,7 +57,7 @@ CrateDB binds to the loopback interface by default. To get EC2 discovery
 working, you need to update the {ref}`host <crate-reference:conf_hosts>`
 setting, in order to bind to and publish the site-local address:
 
-```
+```yaml
 network.host: _site_
 ```
 
@@ -134,7 +131,7 @@ security group then, you can easily filter instances by that group.
 For example, when you launch your instances with the security group
 `sg-crate-demo`, your CrateDB setting would be:
 
-```
+```yaml
 discovery.ec2.groups: sg-crate-demo
 ```
 
@@ -181,7 +178,7 @@ This way, any number of tags can be used for filtering, using the
 Filtering by tags can help when you want to launch several CrateDB clusters
 within the same security group, e.g:
 
-```
+```yaml
 discovery.ec2:
     groups: sg-crate-demo
     tag.env: production
@@ -198,7 +195,7 @@ you have several clusters for the same tenant in different availability zones
 same security group (e.g. `sg-crate-demo`) and filter the instances used for
 discovery by availability zone:
 
-```
+```yaml
 discovery.ec2:
     groups: sg-crate-demo
     availability_zones: us-west-1

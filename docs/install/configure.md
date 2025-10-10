@@ -32,7 +32,7 @@ working directory.
 
 Here is an example:
 
-```
+```shell
 # Configure heap size (defaults to 256m min, 1g max).
 CRATE_HEAP_SIZE=2g
 
