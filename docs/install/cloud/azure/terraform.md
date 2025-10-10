@@ -115,7 +115,7 @@ The Azure-specific variables need to be adjusted according to your environment:
 | ``location``             | The geographic region in which to create the Azure           | ``az account list-locations``    |
 |                          | resources                                                    |                                  |
 +---------------+----------+--------------------------------------------------------------+----------------------------------+
-| ``storage_account_type`` | Storage Account Type of the disk containing the CrateDB      | `List of Storage Account Types`_ |
+| ``storage_account_type`` | Storage Account Type of the disk containing the CrateDB      | [List of Storage Account Types]  |
 |                          | data directory                                               |                                  |
 +--------------------------+--------------------------------------------------------------+----------------------------------+
 | ``size``                 | Specifies the size of the VM                                 | ``az vm list-sizes``             |

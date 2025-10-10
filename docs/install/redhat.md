@@ -87,13 +87,12 @@ yum install sudo
 sudo rpm --import https://cdn.crate.io/downloads/yum/RPM-GPG-KEY-crate
 ```
 
-```{eval-rst}
-.. include:: _control-linux.rst
-```
+:::{include} _control-linux.md
+:::
 
-```{eval-rst}
-.. include:: _post-install.rst
-```
+:::{include} _post-install.md
+:::
+
 
 [dnf]: https://en.wikipedia.org/wiki/DNF_(software)
 [release workflow]: https://github.com/crate/crate/blob/master/devs/docs/release.rst

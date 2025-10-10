@@ -63,10 +63,9 @@ Consult the {ref}`crate-reference:cli` documentation for further information
 about the `./bin/crate` command.
 :::
 
-```{eval-rst}
-.. include:: _post-install.rst
+:::{include} _post-install.md
+:::
 
-```
 
 [7-zip]: https://www.7-zip.org/
 [cratedb release archive]: https://cdn.crate.io/downloads/releases/cratedb/
