@@ -1,4 +1,5 @@
-# Post-install notes
+:::{rubric} Post-install notes
+:::
 
 After successfully installing CrateDB, for example on your workstation, the web-based
 Admin UI can be visited at:

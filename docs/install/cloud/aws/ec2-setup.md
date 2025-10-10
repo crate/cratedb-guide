@@ -32,12 +32,24 @@ with the same cluster name and form a cluster.
 Once you have your instances running and CrateDB installed, you can enable EC2
 discovery:
 
-| CrateDB Version | Reference | Example |
-| --------------- | --------- | ------- |
-| >=4.x           | [latest]  | ```
-discovery.seed_providers: ec2 ```         |
-| \<=3.x          | [3.3]     | ```
-discovery.zen.hosts_provider: ec2 ```         |
+````{list-table}
+---
+header-rows: 1
+---
+* - CrateDB Version
+  - Reference
+  - Configuration Example
+* - \>=4.x
+  - [latest]
+  - ```yaml
+    discovery.seed_providers: ec2
+    ```
+* - <=3.x
+  - [3.3]
+  - ```yaml
+    discovery.zen.hosts_provider: ec2
+    ```
+````
 
 To be able to use the EC2 API, CrateDB must [sign the requests] by using
 AWS credentials consisting of an access key and a secret key. Therefore

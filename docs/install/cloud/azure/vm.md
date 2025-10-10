@@ -93,12 +93,33 @@ configuration file at */etc/crate/crate.yml*.
 
 Uncomment / add these lines:
 
-| CrateDB Version | Reference | Configuration Example |
-| --------------- | --------- | --------------------- |
-| \<=4.x          | [latest]  | ```yaml
-discovery.seed_hosts:   - node1.example.com:4300   - node2.example.com:4300   - 10.0.1.102:4300   - 10.0.1.103:4300 ```                       |
-| \<=3.x          | [3.3]     | ```yaml
-discovery.zen.ping.unicast.hosts:   - node1.example.com:4300   - node2.example.com:4300   - 10.0.1.102:4300   - 10.0.1.103:4300 ```                       |
+
+````{list-table}
+---
+header-rows: 1
+---
+* - CrateDB Version
+  - Reference
+  - Configuration Example
+* - \>=4.x
+  - [latest]
+  - ```yaml
+    discovery.seed_hosts:
+      - node1.example.com:4300
+      - node2.example.com:4300
+      - 10.0.1.102:4300
+      - 10.0.1.103:4300
+    ```
+* - <=3.x
+  - [3.3]
+  - ```yaml
+    discovery.zen.ping.unicast.hosts:
+      - node1.example.com:4300
+      - node2.example.com:4300
+      - 10.0.1.102:4300
+      - 10.0.1.103:4300
+    ```
+````
 
 Note: You might want to try {ref}`DNS based discovery
 <crate-reference:conf_dns_discovery>` for inter-node communication.
