@@ -1,6 +1,6 @@
 (install-cloud)=
 
-# Cloud Hosting
+# Cloud hosting
 
 CrateDB provides packages and executables that will work on any operating
 system capable of running Java.

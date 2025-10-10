@@ -1,12 +1,10 @@
 (install-container)=
 
-# Container Setup
+# Container setup
 
-```{eval-rst}
-.. div:: sd-text-muted
-
-    Install CrateDB in container environments.
-```
+:::{div} sd-text-muted
+Install CrateDB in container environments.
+:::
 
 CrateDB is ideal for containerized environments, creating and scaling a cluster
 takes minutes and your valuable data is always in sync and available.

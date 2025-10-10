@@ -1,14 +1,11 @@
 (install-tarball)=
-
 (install-macos)=
 
 # Installation from Tarball Archive
 
-```{eval-rst}
-.. div:: sd-text-muted
-
-    How to use the release archives to install CrateDB.
-```
+:::{div} sd-text-muted
+How to use the release archives to install CrateDB.
+:::
 
 The walkthrough is suitable to install and run CrateDB on
 [Unix-like] systems, for example Linux and macOS.
@@ -26,20 +23,20 @@ can be found in our [manual build guide].
 2. Once downloaded, extract the archive either using your favorite terminal or
    command line shell or by using a GUI tool like [7-Zip]:
 
-   ```
+   ```shell
    # Extract tarball on Unix-like systems
    tar -xzf crate-*.tar.gz
    ```
 
 3. On the terminal, change into the extracted `crate` directory:
 
-   ```
+   ```shell
    cd crate-*
    ```
 
 4. Run a CrateDB single-node instance on the local network interface:
 
-   ```
+   ```shell
    ./bin/crate
    ```
 

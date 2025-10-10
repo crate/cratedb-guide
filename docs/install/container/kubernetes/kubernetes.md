@@ -2,11 +2,9 @@
 
 # CrateDB and Kubernetes
 
-```{eval-rst}
-.. div:: sd-text-muted
-
-    CrateDB and Kubernetes are a great match.
-```
+:::{div} sd-text-muted
+CrateDB and Kubernetes are a great match.
+:::
 
 CrateDB’s [horizontally scalable] `shared-nothing architecture` lends itself
 well to [containerization].

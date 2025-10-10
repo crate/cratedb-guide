@@ -1,6 +1,3 @@
-```{highlight} sh
-```
-
 (cratedb-docker)=
 
 # Run CrateDB on Docker
@@ -35,7 +32,7 @@ with no vote.
 
 To create the [user-defined network], run the command:
 
-```
+```shell
 sh$ docker network create crate
 ```
 
@@ -120,7 +117,7 @@ f79116373877        crate               "/docker-entrypoin..."   16 seconds ago 
 
 You can have a look at the container's logs in tail mode like this:
 
-```text
+```shell
 sh$ docker logs -f crate01
 ```
 
@@ -139,7 +136,7 @@ page that lists a single node.
 
 Now add the second node, `crate02`, to the cluster:
 
-```
+```shell
 sh$ docker run --rm -d \
       --name=crate02 \
       --net=crate \
@@ -169,7 +166,7 @@ should see two nodes.
 
 You can now add `crate03` like this:
 
-```
+```shell
 sh$ docker run --rm -d \
       --name=crate03 \
       --net=crate -p 4203:4200  \
@@ -213,7 +210,7 @@ If the limit cannot be adjusted on the host system, the memory map limit check
 can be bypassed by passing the `-Cnode.store.allow_mmap=false` option to
 the `crate` command:
 
-```
+```shell
 sh$ docker run -d --name=crate01 \
       --net=crate -p 4201:4200 --env CRATE_HEAP_SIZE=1g \
       crate -Cnetwork.host=_site_ \
@@ -227,7 +224,7 @@ This will result in degraded performance.
 You can also start a single node without any {ref}`bootstrap checks
 <bootstrap-checks>` by passing the `-Cdiscovery.type=single-node` option:
 
-```
+```shell
 sh$ docker run -d --name=crate01 \
       --net=crate -p 4201:4200 \
       --env CRATE_HEAP_SIZE=1g \
@@ -255,7 +252,7 @@ If you wanted to run `crash` inside a user-defined network called `crate`
 and connect to three hosts named `crate01`, `crate02`, and `crate03`
 (i.e. the example covered in the [Creating a Cluster] section) you could run:
 
-```
+```shell
 $ docker run --rm -ti \
     --net=crate crate \
     crash --hosts crate01 crate02 crate03
@@ -370,7 +367,7 @@ per host machine.
 If you are running one container per machine, you can map the container ports
 to the host ports so that the host acts like a native installation. For example:
 
-```
+```shell
 $ docker run -d -p 4200:4200 -p 4300:4300 -p 5432:5432 --env CRATE_HEAP_SIZE=1g crate \
     crate -Cnetwork.host=_site_
 ```
@@ -382,7 +379,7 @@ and go, and any data inside them is lost when the container is removed. For
 this reason, you should mount a persistent `data` directory on your host
 machine to the `/data` directory inside the container:
 
-```
+```shell
 $ docker run -d -v /srv/crate/data:/data --env CRATE_HEAP_SIZE=1g crate \
     crate -Cnetwork.host=_site_
 ```
@@ -401,7 +398,7 @@ removed.
 
 Here is an example of how you could mount the `crate.yml` config file:
 
-```
+```shell
 $ docker run -d \
     -v /srv/crate/config/crate.yml:/crate/config/crate.yml \
     --env CRATE_HEAP_SIZE=1g crate \
@@ -470,7 +467,7 @@ If you want the container to use a maximum of 1.5 CPUs, a maximum of 2 GB
 memory, with a heap size of 1 GB, you could configure everything at once. For
 example:
 
-```
+```shell
 $ docker run -d \
     --cpus 1.5 \
     --memory 1g \

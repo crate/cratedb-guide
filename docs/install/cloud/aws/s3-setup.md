@@ -1,6 +1,3 @@
-```{highlight} yaml
-```
-
 (s3-setup)=
 
 # Using Amazon S3 as a snapshot repository
@@ -15,7 +12,7 @@ Support for *Snapshot* and *Restore* to the [Amazon S3] service is enabled by
 default in CrateDB. If you need to explicitly turn it off, disable the cloud
 setting in the `crate.yml` file:
 
-```
+```yaml
 cloud.enabled: false
 ```
 

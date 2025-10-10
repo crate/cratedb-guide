@@ -1,6 +1,6 @@
 (azure-vm-setup)=
 
-# Running CrateDB on Azure VMs
+# CrateDB on Azure VMs
 
 Getting CrateDB working on Azure with Linux or Windows is a simple process. You
 can use Azure's management console or CLI interface ([Learn how to install

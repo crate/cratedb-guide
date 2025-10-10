@@ -1,30 +1,26 @@
-```{highlight} bash
-```
-
 (red-hat)=
-
 (install-rpm)=
-
 (install-redhat)=
-
 (install-suse)=
 
 # CrateDB on Red Hat, SUSE, and Derivates
 
+:::{div} sd-text-muted
 Install CrateDB [RPM] packages using the [DNF], [YUM], or [ZYpp] package managers.
+:::
 
 This installation method is suitable for RedHat Enterprise Linux (RHEL) and compatible
 systems like Fedora, CentOS, Rocky Linux, AlmaLinux, AWS Linux, Oracle Linux, or
 Scientific Linux. Installation also works on openSUSE and SUSE Linux Enterprise Server
 (SLES) systems.
 
-## Configure package repository
+## Package repository
 
 To register with the CrateDB package repository, create a file called `cratedb.repo`
 in the `/etc/yum.repos.d/` directory for RedHat based distributions, or in the
 `/etc/zypp/repos.d/` directory for OpenSuSE based distributions, containing:
 
-```
+```ini
 [cratedb-ce-stable]
 name=CrateDB RPM package repository - $basearch - Stable
 baseurl=https://cdn.crate.io/downloads/yum/7/$basearch
@@ -58,7 +54,7 @@ can read more about the [release workflow].
 
 With everything set up, you can install CrateDB:
 
-```
+```shell
 sudo dnf install --enablerepo=cratedb-ce-stable crate
 ```
 
@@ -79,7 +75,7 @@ In order to trust the package signing key upfront, before being prompted
 to do it on the first installation of CrateDB, you can also import it
 into your repository keyring, like that:
 
-```
+```shell
 # Install prerequisites.
 yum install sudo
 
