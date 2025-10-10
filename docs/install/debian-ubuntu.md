@@ -77,13 +77,12 @@ http://localhost:4200/
 Please visit the {ref}`install-configure` documentation section to learn
 about the location and meaning of CrateDB's configuration files.
 
-```{eval-rst}
-.. include:: _control-linux.rst
-```
+:::{include} _control-linux.md
+:::
 
-```{eval-rst}
-.. include:: _post-install.rst
-```
+:::{include} _post-install.md
+:::
+
 
 [apt]: https://en.wikipedia.org/wiki/APT_(software)
 [deb]: https://en.wikipedia.org/wiki/Deb_(file_format)

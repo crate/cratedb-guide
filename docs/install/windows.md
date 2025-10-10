@@ -68,10 +68,9 @@ PS> ./bin/crate
 ```
 :::
 
-```{eval-rst}
-.. include:: _post-install.rst
+:::{include} _post-install.md
+:::
 
-```
 
 [7-zip]: https://www.7-zip.org/
 [contact us]: https://cratedb.com/contact/
