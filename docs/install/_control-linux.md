@@ -1,4 +1,5 @@
-# Control CrateDB on Linux
+:::{rubric} Control CrateDB on Linux
+:::
 
 You can control the `crate` service with the `systemctl` utility program:
 
@@ -9,7 +10,8 @@ sudo systemctl COMMAND crate
 Replace `COMMAND` with `start`, `stop`, `restart`, `status` and
 so on.
 
-# Notes
+:::{rubric} Notes
+:::
 
 After the installation is finished, the `crate` service should be installed,
 but may not be configured to start automatically. Use the following command to
