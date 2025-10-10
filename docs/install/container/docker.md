@@ -79,7 +79,7 @@ Breaking the command down:
   {ref}`docker-compose` as reference).
 - Puts the container into the `crate` network and maps port `4201` on your
   host machine to port `4200` on the container (admin UI).
-- Defines the environment variable:ref:`CRATE_HEAP_SIZE <manual:conf-env-heap-size>`,
+- Defines the environment variable {ref}`CRATE_HEAP_SIZE <crate-reference:conf-env-heap-size>`,
   which is used by CrateDB to allocate 1 GB for its heap memory.
 - Runs the command `crate` inside the container with parameters:
   : - `network.host`: The `_site_` value results in the binding of the
