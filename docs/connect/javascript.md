@@ -54,7 +54,7 @@ Example implementation will look like this:
 ```javascript
 import { default as crate } from "node-crate";
 
-crate.connect(`https://admin:"<PASSWORD>"}@<name-of-your-cluster>.cratedb.net:4200`);
+crate.connect(`https://admin:<PASSWORD>@<name-of-your-cluster>.cratedb.net:4200`);
 
 const result = await crate.execute("SELECT * FROM sys.summits LIMIT 3");
 console.log(result.rows[0]);
