@@ -25,10 +25,10 @@ instances.
 
 ### Authentication
 
-It is recommended to restrict the permissions of CrateDB on the S3 to only the
-required extend. First, an IAM role is required. This [AWS guide] gives a
-short description of how to create a policy offer using the CLI or the AWS
-management console. Further, access of the snapshot to the S3 bucket needs to
+It is recommended to restrict the permissions of CrateDB on S3 to only the
+required extent. First, an IAM role is required. This [AWS IAM policy guide]
+explains how to create a policy by using the CLI or the AWS Management Console.
+Further, access of the snapshot to the S3 bucket needs to
 be restricted. An example policy file granting anybody access to a bucket
 called `snaps.example.com` is attached below:
 
@@ -92,7 +92,7 @@ within the policy:
 ```
 
 [amazon s3]: https://aws.amazon.com/s3/
-[aws guide]: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html
+[AWS IAM policy guide]: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html
 [aws policy examples]: https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html
 [aws principals]: https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html
 [iam roles]: https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html

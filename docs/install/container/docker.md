@@ -22,6 +22,8 @@ The official [CrateDB Docker image].
 
 ## Quick start
 
+(container-create-cluster)=
+
 ### Creating a cluster
 
 To get started with CrateDB and Docker, you will create a three-node cluster
@@ -38,8 +40,10 @@ sh$ docker network create crate
 
 You should then be able to see something like this:
 
-```text
+```shell
 sh$ docker network ls
+```
+```text
 NETWORK ID          NAME                DRIVER              SCOPE
 1bf1b7acd66f        bridge              bridge              local
 51cebbdf7d2b        crate               bridge              local
@@ -55,7 +59,7 @@ container `crate03` will run cluster node `crate03`.
 
 You can then create your first CrateDB container and node, like this:
 
-```
+```shell
 sh$ docker run --rm -d \
       --name=crate01 \
       --net=crate \
@@ -82,25 +86,26 @@ Breaking the command down:
 - Defines the environment variable {ref}`CRATE_HEAP_SIZE <crate-reference:conf-env-heap-size>`,
   which is used by CrateDB to allocate 1 GB for its heap memory.
 - Runs the command `crate` inside the container with parameters:
-  : - `network.host`: The `_site_` value results in the binding of the
-      CrateDB process to a site-local IP address.
-    - `node.name`: Defines the node's name as `crate01` (used by
-      master election).
-    - `discovery.seed_hosts`: This parameter lists the other hosts in the
-      cluster. The format is a comma-separated list of `host:port` entries,
-      where port defaults to setting `transport.tcp.port`. Each node must
-      contain the name of all the other hosts in this list. Notice also that
-      any node in the cluster might be started at any time, and this will
-      create connection exceptions in the log files, however all nodes will
-      eventually be running and interconnected.
-    - `cluster.initial_master_nodes`: Defines the list of master-eligible
-      node names which will participate in the vote of the first master
-      (first bootstrap). If this parameter is not defined, then it is expected
-      that the node will join an already formed cluster. This parameter is only
-      relevant for the first election.
-    - `gateway.expected_data_nodes` and `gateway.recover_after_data_nodes`:
-      Specifies how many nodes you expect in the cluster and how many nodes must
-      be discovered before the cluster state is recovered.
+
+  - `network.host`: The `_site_` value results in the binding of the
+    CrateDB process to a site-local IP address.
+  - `node.name`: Defines the node's name as `crate01` (used by
+    master election).
+  - `discovery.seed_hosts`: This parameter lists the other hosts in the
+    cluster. The format is a comma-separated list of `host:port` entries,
+    where port defaults to setting `transport.tcp.port`. Each node must
+    contain the name of all the other hosts in this list. Notice also that
+    any node in the cluster might be started at any time, and this will
+    create connection exceptions in the log files, however all nodes will
+    eventually be running and interconnected.
+  - `cluster.initial_master_nodes`: Defines the list of master-eligible
+    node names which will participate in the vote of the first master
+    (first bootstrap). If this parameter is not defined, then it is expected
+    that the node will join an already formed cluster. This parameter is only
+    relevant for the first election.
+  - `gateway.expected_data_nodes` and `gateway.recover_after_data_nodes`:
+    Specifies how many nodes you expect in the cluster and how many nodes must
+    be discovered before the cluster state is recovered.
 
 :::{NOTE}
 If this command aborts with an error, consult the
@@ -250,10 +255,11 @@ The CrateDB Shell, `crash`, is bundled with the Docker image.
 
 If you wanted to run `crash` inside a user-defined network called `crate`
 and connect to three hosts named `crate01`, `crate02`, and `crate03`
-(i.e. the example covered in the [Creating a Cluster] section) you could run:
+(i.e. the example covered in the {ref}`container-create-cluster` section)
+you could run:
 
 ```shell
-$ docker run --rm -ti \
+sh$ docker run --rm -ti \
     --net=crate crate \
     crash --hosts crate01 crate02 crate03
 ```
@@ -266,7 +272,7 @@ Docker's Compose tool allows developers to define and run multi-container
 Docker applications that can be started with a single `docker-compose up`
 command.
 
-Read about Docker Compose specifics [here](https://docs.docker.com/compose/).
+Read about Docker Compose specifics in the [Docker Compose documentation](https://docs.docker.com/compose/).
 
 You can define the services that make up your app in a `docker-compose.yml`
 file. To recreate the three-node cluster in the previous example, you can
@@ -357,6 +363,11 @@ In the file above:
 - The start order of the containers is not deterministic and you want all
   three containers to be up and running before the election of the master node.
 
+:::{NOTE}
+The `deploy` section is used by Docker Swarm (`docker stack deploy`) and is
+ignored by `docker compose up`.
+:::
+
 ## Best Practices
 
 ### One container per host
@@ -368,7 +379,7 @@ If you are running one container per machine, you can map the container ports
 to the host ports so that the host acts like a native installation. For example:
 
 ```shell
-$ docker run -d -p 4200:4200 -p 4300:4300 -p 5432:5432 --env CRATE_HEAP_SIZE=1g crate \
+sh$ docker run -d -p 4200:4200 -p 4300:4300 -p 5432:5432 --env CRATE_HEAP_SIZE=1g crate \
     crate -Cnetwork.host=_site_
 ```
 
@@ -380,7 +391,7 @@ this reason, you should mount a persistent `data` directory on your host
 machine to the `/data` directory inside the container:
 
 ```shell
-$ docker run -d -v /srv/crate/data:/data --env CRATE_HEAP_SIZE=1g crate \
+sh$ docker run -d -v /srv/crate/data:/data --env CRATE_HEAP_SIZE=1g crate \
     crate -Cnetwork.host=_site_
 ```
 
@@ -399,7 +410,7 @@ removed.
 Here is an example of how you could mount the `crate.yml` config file:
 
 ```shell
-$ docker run -d \
+sh$ docker run -d \
     -v /srv/crate/config/crate.yml:/crate/config/crate.yml \
     --env CRATE_HEAP_SIZE=1g crate \
     crate -Cnetwork.host=_site_
@@ -408,7 +419,7 @@ $ docker run -d \
 Here, `/srv/crate/config/crate.yml` is an example path, and should be
 replaced with the path to your host machine's `crate.yml` file.
 
-## Troubleshooting
+## Healthcheck troubleshooting
 
 The official [CrateDB Docker image] ships with a liveness [healthcheck]
 configured.
@@ -468,9 +479,9 @@ memory, with a heap size of 1 GB, you could configure everything at once. For
 example:
 
 ```shell
-$ docker run -d \
+sh$ docker run -d \
     --cpus 1.5 \
-    --memory 1g \
+    --memory 2g \
     --env CRATE_HEAP_SIZE=1g \
     crate \
     crate -Cnetwork.host=_site_

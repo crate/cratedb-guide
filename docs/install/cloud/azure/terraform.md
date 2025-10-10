@@ -2,7 +2,7 @@
 
 # Deploy using Terraform
 
-In {ref}`azure_vm_setup`, we elaborated on how to leverage Azure's functionality to
+In {ref}`azure-vm-setup`, we elaborated on how to leverage Azure's functionality to
 set up a CrateDB cluster. Here, we will explore how to automate this kind of
 setup.
 
