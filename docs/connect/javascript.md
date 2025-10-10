@@ -26,7 +26,7 @@ const pool = new pg.Pool({
 });
 const conn = await pool.connect();
 
-const stmt = "SELECT * FROM tbl";
+const stmt = "SELECT * FROM sys.summits LIMIT 3";
 const cursor = conn.query(new Cursor(stmt));
 cursor.read(100, (err, rows) => {
   if (err) {
@@ -34,9 +34,9 @@ cursor.read(100, (err, rows) => {
   } else {
     console.log(rows);
   }
-  cursor.close(() => {
+  cursor.close(async () => {
     conn.release();
-    pool.end();
+    await pool.end();
   });
 });
 
@@ -54,9 +54,9 @@ Example implementation will look like this:
 ```javascript
 import { default as crate } from "node-crate";
 
-crate.connect(`https://admin:${encodeURIComponent("<PASSWORD>")}@<name-of-your-cluster>.cratedb.net:4200`);
+crate.connect(`https://admin:"<PASSWORD>"}@<name-of-your-cluster>.cratedb.net:4200`);
 
-const result = await crate.execute("SELECT name FROM sys.cluster");
+const result = await crate.execute("SELECT * FROM sys.summits LIMIT 3");
 console.log(result.rows[0]);
 ```
 
