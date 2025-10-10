@@ -23,7 +23,7 @@ under the *new* left hand panel of the Azure portal.
 ### Create a network security group
 
 CrateDB uses two ports, one for inter-node communication (`4300`) and one for
-it's http endpoint (`4200`), so access to these needs to be opened.
+its HTTP endpoint (`4200`), so access to these needs to be opened.
 
 Create a *New Security Group*, giving it a name and assigning it to the
 'Resource Group' just created.
@@ -32,7 +32,7 @@ Create a *New Security Group*, giving it a name and assigning it to the
 :alt: Create New Security Group
 ```
 
-Find that security group in your resources list and open it's settings,
+Find that security group in your resources list and open its settings,
 navigating to the *Inbound security rules* section.
 
 ```{image} /_assets/img/install/cloud/azure-nsg-inbound.png
@@ -71,7 +71,7 @@ earlier to the subnet.
 ### Create virtual machines
 
 Next create virtual machines to act as your CrateDB nodes. In this tutorial, I
-chose two low-specification Ubuntu 14.04 servers, but you likely have your own
+chose two low-specification Ubuntu servers, but you likely have your own
 preferred configurations.
 
 Most importantly, make sure you select the Virtual Network created earlier.
@@ -142,14 +142,14 @@ the same steps as for Azure and Linux.
 ### Create virtual machines
 
 Similar steps to creating Virtual Machines for Azure and Linux, but create the
-VM based on the 'Windows Server 2012 R2 Datacenter' image.
+VM based on a recent "Windows Server LTS" image.
 
 ### Install CrateDB
 
 *Note that these instructions should be followed on each VM in your cluster.*
 
 To install CrateDB on Windows Server, you will need a [Java JDK installed].
-Ensure that the `JAVA*HOME` environment variable is set.
+Ensure that the `JAVA_HOME` environment variable is set.
 
 ```{image} /_assets/img/install/cloud/azure-envvar.png
 :alt: Environment Variables
@@ -171,7 +171,7 @@ We need to allow the ports CrateDB uses through the Windows Firewall
 :alt: Firewall configuration
 ```
 
-Start crate by running `bin/crate`.
+Start CrateDB by running `.\bin\crate.bat` (PowerShell) or `bin\crate.bat` (CMD).
 
 [3.3]: https://github.com/crate/crate/blob/3.3/blackbox/docs/config/cluster.rst#discovery
 [java jdk installed]: https://www.oracle.com/java/technologies/downloads/#java8

@@ -65,7 +65,6 @@ needs.
 
 :::{rubric} CrateDB Cloud
 :::
-- {ref}`cloud:index`
 - {ref}`Documentation <cloud:index>`
 - [Web Console]
 

@@ -2,7 +2,7 @@
 
 # Deploy using Terraform
 
-In {ref}`ec2_setup`, we elaborated on how to leverage EC2's functionality to set
+In {ref}`ec2-setup`, we elaborated on how to leverage EC2's functionality to set
 up a CrateDB cluster. Here, we will explore how to automate this kind of setup.
 
 [Terraform] is an infrastructure as code tool, often used as an abstraction

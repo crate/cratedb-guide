@@ -6,7 +6,7 @@
 CrateDB and Kubernetes are a great match.
 :::
 
-CrateDB’s [horizontally scalable] `shared-nothing architecture` lends itself
+CrateDB’s [horizontally scalable] [shared-nothing architecture] lends itself
 well to [containerization].
 
 [Kubernetes] is an open-source container orchestration system for the
@@ -15,8 +15,8 @@ management, deployment, and scaling of containerized systems.
 Together, Docker and Kubernetes are a fantastic way to deploy and scale CrateDB.
 
 :::{NOTE}
-While Kubernetes works with a variety of container technologies, this
-document only covers its use with Docker.
+While Kubernetes supports multiple container runtimes, this document
+uses Docker-compatible container images.
 :::
 
 :::{SEEALSO}
@@ -41,7 +41,7 @@ You can create a resource like so:
 
 ```console
 sh$ kubectl create -f crate-controller.yaml --namespace crate
-statefulset.apps/crate-controller created
+statefulset.apps/crate created
 ```
 
 Here, we are creating a [StatefulSet] controller in the `crate` namespace
@@ -149,6 +149,12 @@ load balancers.
 For local development, [Minikube] provides a LoadBalancer service.
 :::
 
+:::{WARNING}
+Ensure proper network controls and authentication are in place before
+exposing ports 4200 (HTTP) and 5432 (PostgreSQL) via a LoadBalancer.
+Restrict source IPs and configure users/roles to avoid unauthorized access.
+:::
+
 ### Controller
 
 A Kubernetes [pod] is a group of one or more containers. Pods are designed to
@@ -213,7 +219,7 @@ spec:
         # Use the CrateDB 5.1.1 Docker image.
         image: crate:5.1.1
         # Pass in configuration to CrateDB via command-line options.
-        # We are setting the name of the node's explicitly, which is
+        # We are setting the node name explicitly, which is
         # needed to determine the initial master nodes. These are set to
         # the name of the pod.
         # We are using the SRV records provided by Kubernetes to discover
@@ -228,9 +234,9 @@ spec:
           - -Cgateway.expected_data_nodes=${EXPECTED_NODES}
           - -Cpath.data=/data
         volumeMounts:
-              # Mount the `/data` directory as a volume named `data`.
+            # Mount the volume named `cratedb-data` to the `/data` directory.
             - mountPath: /data
-              name: data
+              name: cratedb-data
         resources:
           limits:
             # How much memory each pod gets.
@@ -247,7 +253,7 @@ spec:
           name: postgres
         # Environment variables passed through to the container.
         env:
-          # This is variable is detected by CrateDB.
+          # This variable is detected by CrateDB.
         - name: CRATE_HEAP_SIZE
           value: "256m"
           # The rest of these variables are used in the command-line
@@ -267,7 +273,7 @@ spec:
   volumeClaimTemplates:
     # Use persistent storage.
     - metadata:
-        name: data
+        name: cratedb-data
       spec:
         accessModes:
         - ReadWriteOnce
@@ -333,7 +339,7 @@ You can then use this in your controller configuration with something like this:
 [...]
   volumeClaimTemplates:
     - metadata:
-        name: persistant-data
+        name: cratedb-data
       spec:
         # This will create one 100GB read-write Azure Managed Disks volume
         # for every CrateDB pod.
@@ -341,26 +347,23 @@ You can then use this in your controller configuration with something like this:
         storageClassName: crate-premium
         resources:
           requests:
-            storage: 100g
+            storage: 100Gi
 ```
 
 [azure managed disks]: https://azure.microsoft.com/en-us/pricing/details/managed-disks/
 [configuration]: https://kubernetes.io/docs/concepts/configuration/overview/
 [containerization]: https://www.docker.com/resources/what-container
 [cratedb docker image]: https://hub.docker.com/_/crate/
-[docker]: https://www.docker.com/
 [horizontally scalable]: https://en.wikipedia.org/wiki/Scalability#Horizontal_(scale_out)_and_vertical_scaling_(scale_up)
 [ingress]: https://kubernetes.io/docs/concepts/services-networking/ingress/
 [kubernetes]: https://kubernetes.io/
 [loadbalancer]: https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer
 [managed]: https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/
 [minikube]: https://kubernetes.io/docs/setup/minikube/
-[persistent volume]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/
 [persistent volumes]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/
 [pod]: https://kubernetes.io/docs/concepts/workloads/pods/
 [rolling update strategy]: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#rolling-updates
 [service]: https://kubernetes.io/docs/concepts/services-networking/service/
-[services]: https://kubernetes.io/docs/concepts/services-networking/service/
 [setting up your first cratedb cluster on kubernetes]: https://cratedb.com/blog/run-your-first-cratedb-cluster-on-kubernetes-part-one
 [shared-nothing architecture]: https://en.wikipedia.org/wiki/Shared-nothing_architecture
 [statefulset]: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/

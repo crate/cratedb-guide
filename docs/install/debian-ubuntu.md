@@ -4,13 +4,13 @@
 (install-debian)=
 (install-ubuntu)=
 
-# CrateDB on Debian, Ubuntu, and Derivates
+# CrateDB on Debian, Ubuntu, and Derivatives
 
 :::{div} sd-text-muted
 Install CrateDB [deb] packages using the [apt] package manager.
 :::
 
-This installation method is suitable for Debian systems and derivates
+This installation method is suitable for Debian systems and derivatives
 like Ubuntu.
 
 ## Package repository
@@ -63,7 +63,7 @@ sh$ sudo systemctl start crate
 
 Once the service is up and running, you can access CrateDB by visiting:
 
-```
+```text
 http://localhost:4200/
 ```
 
