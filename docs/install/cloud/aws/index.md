@@ -1,6 +1,4 @@
-========================================
-Run CrateDB on Amazon Web Services (AWS)
-========================================
+# Run CrateDB on Amazon Web Services (AWS)
 
 Amazon Web Services (AWS) offers a wide range of cloud services, allowing to
 easily run and scale applications such as CrateDB.
@@ -8,11 +6,13 @@ easily run and scale applications such as CrateDB.
 This section explains particularities in setting up CrateDB on AWS, to make the
 best use of its capabilities.
 
-.. rubric:: Table of contents
+```{rubric} Table of contents
+```
 
-.. toctree::
-   :maxdepth: 1
+```{toctree}
+:maxdepth: 1
 
-   ec2-setup
-   aws-terraform-setup
-   s3-setup
+ec2-setup
+aws-terraform-setup
+s3-setup
+```
