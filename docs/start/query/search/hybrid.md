@@ -1,27 +1,10 @@
 # Hybrid search
 
-CrateDB supports **hybrid search** by combining **vector similarity search** (kNN) and **term-based full-text search** (BM25) in a single SQL query. It’s fully powered by Apache Lucene and accessible through standard SQL—no external services or DSLs required.
+While **vector search** provides powerful semantic retrieval based on machine learning models, it's not always optimal, especially when models are not fine-tuned for a specific domain. On the other hand, **traditional full-text search** (e.g., BM25 scoring) offers high precision on exact or keyword-based queries, with strong performance out of the box. **Hybrid search** blends these approaches, combining semantic understanding with keyword relevance to deliver more accurate, robust, and context-aware search results.
 
-:::{note}
-CrateDB is all you need: run hybrid, vector, full-text, and geospatial search with SQL at scale.
-:::
+Hybrid search is particularly effective for **Knowledge bases, Product or document search, Multilingual content search, FAQ bots and semantic assistants**, and **AI-powered search experiences.** It allows applications to go beyond keyword matching, incorporating vector similarity while still respecting domain-specific terms.
 
-## Overview
-
-While **vector search** provides powerful semantic retrieval based on machine learning models, it's not always optimal, especially when models are not fine-tuned for a specific domain.
-
-On the other hand, **traditional full-text search** (e.g., BM25 scoring) offers high precision on exact or keyword-based queries, with strong performance out of the box.
-
-**Hybrid search** blends these approaches, combining semantic understanding with keyword relevance to deliver more accurate, robust, and context-aware search results.
-
-## What Is Hybrid Search?
-
-Hybrid search enhances relevancy by combining the scores or rankings from multiple search algorithms, typically:
-
-* **BM25** for keyword relevance
-* **kNN** for semantic proximity in vector space
-
-CrateDB lets you implement hybrid search natively in SQL using **Common Table Expressions (CTEs)** and **scoring fusion techniques**, such as:
+CrateDB supports **hybrid search** by combining **vector similarity search** (kNN) and **term-based full-text search** (BM25) in a single SQL query. CrateDB lets you implement hybrid search natively in SQL using **Common Table Expressions (CTEs)** and **scoring fusion techniques**, such as:
 
 * **Convex combination** (weighted sum of scores)
 * **Reciprocal Rank Fusion (RRF)**
@@ -91,24 +74,3 @@ You can adjust the weighting (`0.5`) depending on your desired balance between k
 | 0.03057     | 8          | 3            | Usage                                         |
 
 > RRF rewards documents that rank highly across multiple methods, regardless of exact score values.
-
-## Why Use Hybrid Search?
-
-| Benefit                   | Description                                                       |
-| ------------------------- | ----------------------------------------------------------------- |
-| 🔍 **Improved relevance** | Combines semantic and keyword-based matches                       |
-| ⚙️ **Pure SQL**           | No DSLs or external services—runs directly in CrateDB             |
-| ⚡ **High performance**    | Built on Apache Lucene with CrateDB’s distributed SQL engine      |
-| 🔄 **Flexible ranking**   | Use scoring functions (convex, RRF, etc.) based on use case needs |
-
-## Usage in Applications
-
-Hybrid search is particularly effective for:
-
-* **Knowledge bases**
-* **Product or document search**
-* **Multilingual content search**
-* **FAQ bots and semantic assistants**
-* **AI-powered search experiences**
-
-It allows applications to go beyond keyword matching, incorporating vector similarity while still respecting domain-specific terms.
