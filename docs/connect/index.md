@@ -64,6 +64,19 @@ Any (ODBC)
 ::::
 
 ::::{grid-item-card}
+:link: connect-elixir
+:link-type: ref
+:class-body: sd-fs-1 sd-text-center
+:class-footer: sd-fs-5 sd-font-weight-bold
+
+```{image} https://cdn.prod.website-files.com/6047a9e35e5dc54ac86ddd90/63064ea203056632171dfaa2_43c017db.png
+:width: 40px
+```
++++
+Elixir
+::::
+
+::::{grid-item-card}
 :link: connect-go
 :link-type: ref
 :class-body: sd-fs-1 sd-text-center
@@ -205,6 +218,7 @@ application
 :maxdepth: 1
 :hidden:
 
+elixir/index
 go/index
 java/index
 javascript
