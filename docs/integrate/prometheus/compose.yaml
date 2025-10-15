@@ -12,6 +12,11 @@ services:
       - "5432:5432"
     volumes:
       - cratedb-data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4200/"]
+      interval: 5s
+      timeout: 30s
+      retries: 5
     restart: unless-stopped
 
   cratedb-ddl:
