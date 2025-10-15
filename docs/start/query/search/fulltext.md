@@ -1,11 +1,15 @@
 (start-fulltext)=
 # Full-text search
 
-Unlike exact-match filters, full-text search allows **fuzzy, linguistic matching** on human language text. It tokenizes input, analyzes language, and searches for **tokens, stems, synonyms**, etc.
+:::{div} sd-text-muted
+CrateDB enables real-time full-text search at scale.
+:::
 
-CrateDB supports powerful **full-text search** capabilities directly via the `FULLTEXT` index and the `MATCH()` SQL predicate. This allows you to **combine unstructured search with structured filtering and aggregations**—all in one query, with no need for external search systems like Elasticsearch.
+Unlike exact-match filters, **full-text search** allows **fuzzy, linguistic matching** on human language text. It tokenizes input, analyzes language, and searches for **tokens, stems, synonyms**, etc.
 
-Whether you're working with log messages, customer feedback, machine-generated data, or IoT event streams, CrateDB enables **real-time full-text search at scale**.
+CrateDB supports powerful full-text search capabilities directly via the `FULLTEXT` index and the `MATCH()` SQL predicate. This allows you to **combine unstructured search with structured filtering and aggregations**—all in one query, with no need for external search systems like Elasticsearch.
+
+CrateDB supports you whether you are working with log messages, customer feedback, machine-generated data, or IoT event streams.
 
 ## Why CrateDB for Full-text Search?
 

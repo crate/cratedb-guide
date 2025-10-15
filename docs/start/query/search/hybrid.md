@@ -1,22 +1,27 @@
 (start-hybrid)=
 # Hybrid search
 
+:::{div} sd-text-muted
+Combine vector similarity (kNN) and term-based full-text (BM25)
+searches in a single SQL query.
+:::
+
 While **vector search** provides powerful semantic retrieval based on machine learning models, it's not always optimal, especially when models are not fine-tuned for a specific domain. On the other hand, **traditional full-text search** (e.g., BM25 scoring) offers high precision on exact or keyword-based queries, with strong performance out of the box. **Hybrid search** blends these approaches, combining semantic understanding with keyword relevance to deliver more accurate, robust, and context-aware search results.
 
-Hybrid search is particularly effective for **Knowledge bases, Product or document search, Multilingual content search, FAQ bots and semantic assistants**, and **AI-powered search experiences.** It allows applications to go beyond keyword matching, incorporating vector similarity while still respecting domain-specific terms.
+Hybrid search is particularly effective for **knowledge bases, product or document search, multilingual content search, FAQ bots and semantic assistants**, and **AI-powered search experiences.** It allows applications to go beyond keyword matching, incorporating vector similarity while still respecting domain-specific terms.
 
-CrateDB supports **hybrid search** by combining **vector similarity search** (kNN) and **term-based full-text search** (BM25) in a single SQL query. CrateDB lets you implement hybrid search natively in SQL using **Common Table Expressions (CTEs)** and **scoring fusion techniques**, such as:
+CrateDB supports **hybrid search** by combining **vector similarity search** (kNN) and **term-based full-text search** (BM25) in a single SQL query. CrateDB lets you implement hybrid search natively in SQL using **common table expressions (CTEs)** and **scoring fusion techniques**, such as:
 
 * **Convex combination** (weighted sum of scores)
-* **Reciprocal Rank Fusion (RRF)**
+* **Reciprocal rank fusion (RRF)**
 
 ## Supported Search Capabilities in CrateDB
 
 | Search Type           | Function      | Description                                    |
-| --------------------- | ------------- | ---------------------------------------------- |
+| --------------------- | ------------- |------------------------------------------------|
 | **Vector search**     | `KNN_MATCH()` | Finds vectors closest to a given vector        |
 | **Full-text search**  | `MATCH()`     | Uses Lucene's BM25 scoring                     |
-| **Geospatial search** | `MATCH()`     | For shapes and points (see: Geospatial Search) |
+| **Geospatial search** | `MATCH()`     | For shapes and points (see: Geospatial search) |
 
 CrateDB enables all three through **pure SQL**, allowing flexible combinations and advanced analytics.
 
@@ -74,7 +79,11 @@ You can adjust the weighting (`0.5`) depending on your desired balance between k
 | 0.03105     | 7          | 2            | Searching On Multiple Columns                 |
 | 0.03057     | 8          | 3            | Usage                                         |
 
-> RRF rewards documents that rank highly across multiple methods, regardless of exact score values.
+:::{note}
+RRF rewards documents that rank highly across multiple methods,
+regardless of exact score values.
+:::
+
 ## Further reading
 
 :::::{grid} 1 3 3 3
@@ -101,7 +110,11 @@ You can adjust the weighting (`0.5`) depending on your desired balance between k
 
 ::::{grid-item-card} {material-outlined}`read_more;1.5em` Read more
 :columns: 6
+- [Doing Hybrid Search in CrateDB]
 - {ref}`Hybrid search feature details <hybrid-search>`
 ::::
 
 :::::
+
+
+[Doing Hybrid Search in CrateDB]: https://cratedb.com/blog/hybrid-search-explained
