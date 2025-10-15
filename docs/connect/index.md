@@ -64,6 +64,22 @@ Any (ODBC)
 ::::
 
 ::::{grid-item-card}
+:link: connect-csharp
+:link-type: ref
+:link-alt: Connect to CrateDB using C#
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+```{image} /_assets/icon/csharp-logo.svg
+:height: 50px
+```
++++
+C#
+::::
+
+::::{grid-item-card}
 :link: connect-elixir
 :link-type: ref
 :class-body: sd-fs-1 sd-text-center
@@ -84,6 +100,22 @@ Elixir
 {fab}`erlang`
 +++
 Erlang
+::::
+
+::::{grid-item-card}
+:link: connect-fsharp
+:link-type: ref
+:link-alt: Connect to CrateDB using F#
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+```{image} /_assets/icon/fsharp-logo.svg
+:height: 50px
+```
++++
+F#
 ::::
 
 ::::{grid-item-card}
@@ -181,6 +213,22 @@ Rust
 Scala
 ::::
 
+::::{grid-item-card}
+:link: connect-visualbasic
+:link-type: ref
+:link-alt: Connect to CrateDB using Visual Basic
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+```{image} /_assets/icon/visualbasic-logo.svg
+:height: 50px
+```
++++
+Visual Basic
+::::
+
 :::::
 
 
@@ -250,8 +298,10 @@ application
 :maxdepth: 1
 :hidden:
 
+csharp/index
 elixir/index
 erlang/index
+fsharp/index
 go/index
 java/index
 javascript
@@ -262,6 +312,7 @@ ruby
 rust/index
 scala/index
 odbc/index
+visualbasic/index
 natural
 All drivers <drivers>
 ```
