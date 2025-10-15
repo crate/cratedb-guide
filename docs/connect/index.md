@@ -110,7 +110,18 @@ CrateDB drivers and adapters for supported programming languages, frameworks, an
 ```{image} /_assets/icon/ruby-logo.svg
 :width: 40px
 ```
+::::
 
+::::{grid-item-card} Rust
+:link: connect-rust
+:link-type: ref
+:link-alt: Connect to CrateDB using Rust
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+{fab}`rust`
 ::::
 
 :::::
@@ -187,6 +198,7 @@ javascript
 php
 python
 ruby
+rust
 natural
 All drivers <drivers>
 ```
