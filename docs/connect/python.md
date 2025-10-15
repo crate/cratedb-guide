@@ -243,6 +243,26 @@ loop = asyncio.get_event_loop()
 loop.run_until_complete(run())
 ```
 
+(connectorx)=
+
+### ConnectorX
+
+[ConnectorX] enables you to load data from databases into Python in the
+fastest and most memory-efficient way.
+
+```python
+import connectorx as cx
+
+cx.read_sql(
+    "postgresql://username:password@server:port/database",
+    "SELECT * FROM lineitem",
+    partition_on="l_orderkey",
+    partition_num=10,
+)
+```
+
+- [Connect to CrateDB using ConnectorX]
+
 
 (python-dataframe)=
 (df)=
@@ -266,10 +286,12 @@ How to use CrateDB together with popular open-source DataFrame libraries.
 
 [aiopg documentation]: https://aiopg.readthedocs.io/
 [asyncpg documentation]: https://magicstack.github.io/asyncpg/current/
+[ConnectorX]: https://sfu-db.github.io/connector-x/
 [httpx]: https://www.python-httpx.org/
 [psycopg 3]: https://www.psycopg.org/psycopg3/docs/
 [psycopg documentation]: https://www.psycopg.org/docs/
 
+[Connect to CrateDB using ConnectorX]: https://github.com/crate/cratedb-examples/tree/main/by-language/python-connectorx
 [RDBMS]: https://en.wikipedia.org/wiki/RDBMS
 [SQLAlchemy]: https://www.sqlalchemy.org/
 [SQLAlchemy Code Examples]: https://github.com/crate/cratedb-examples/tree/main/by-language/python-sqlalchemy
