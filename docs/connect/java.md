@@ -9,6 +9,7 @@
 Java applications mostly use JDBC to connect to CrateDB.
 :::
 
+:::
 [JDBC] is a standard Java API that provides a common interface for accessing
 databases in Java.
 :::
