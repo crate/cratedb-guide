@@ -173,7 +173,7 @@ public class Main {
 ```
 :::
 
-## Example
+## JDBC example
 
 :::{card}
 :link: https://github.com/crate/cratedb-examples/tree/main/by-language/java-jdbc
@@ -185,7 +185,62 @@ Demonstrates a basic example using both the vanilla PostgreSQL JDBC Driver
 and the CrateDB JDBC Driver.
 :::
 
-## See also
+[![Java: JDBC, QA](https://github.com/crate/cratedb-examples/actions/workflows/lang-java-maven.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-java-maven.yml)
+
+## Hibernate / JPA
+
+:::{div}
+[Hibernate] is the top dog ORM for Java, supporting a range of databases,
+including PostgreSQL. [JPA], or Jakarta Persistence API (formerly Java
+Persistence API), is a Java specification that simplifies the process of
+mapping Java objects to relational databases.
+:::
+
+:::{card}
+:link: https://github.com/crate/cratedb-examples/tree/main/by-language/java-quarkus-panache
+:link-type: url
+{material-outlined}`play_arrow;2em`
+Connect to CrateDB and CrateDB Cloud using JPA and Panache.
++++
+How CrateDB can be utilized with Quarkus in a very intuitive way
+using the Hibernate ORM deriving from PostgreSQL.
+:::
+
+## jOOQ
+
+:::{div}
+[jOOQ] is an internal DSL and source code generator, modelling the SQL
+language as a type-safe Java API to help you write better SQL.
+:::
+
+```java
+// Fetch records, with filtering and sorting.
+Result<Record> result = db.select()
+        .from(AUTHOR)
+        .where(AUTHOR.NAME.like("Ja%"))
+        .orderBy(AUTHOR.NAME)
+        .fetch();
+
+// Iterate and display records.
+for (Record record : result) {
+    Integer id = record.getValue(AUTHOR.ID);
+    String name = record.getValue(AUTHOR.NAME);
+    System.out.println("id: " + id + ", name: " + name);
+}
+```
+
+:::{card}
+:link: https://github.com/crate/cratedb-examples/tree/main/by-language/java-jooq
+:link-type: url
+{material-outlined}`play_arrow;2em`
+Connect to CrateDB and CrateDB Cloud using jOOQ.
++++
+Java jOOQ demo application with CrateDB using PostgreSQL JDBC.
+:::
+
+[![Java jOOQ](https://github.com/crate/cratedb-examples/actions/workflows/lang-java-jooq.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-java-jooq.yml)
+
+## Software testing
 
 For testing Java applications against CrateDB, see also documentation
 about {ref}`java-junit` and {ref}`testcontainers`.
