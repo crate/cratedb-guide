@@ -1,0 +1,65 @@
+(connect-go)=
+
+# Go
+
+:::{include} /_include/links.md
+:::
+
+:::{div} sd-text-muted
+Use pgx to connect to CrateDB from Go applications.
+:::
+
+:::{rubric} About
+:::
+
+[pgx] is a pure Go driver and toolkit for PostgreSQL.
+
+:::{rubric} Synopsis
+:::
+
+```golang
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+
+	"github.com/jackc/pgx/v5"
+)
+
+func main() {
+	// urlExample := "postgres://username:password@localhost:5432/schema_name"
+	conn, err := pgx.Connect(context.Background(), os.Getenv("DATABASE_URL"))
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Unable to connect to database: %v\n", err)
+		os.Exit(1)
+	}
+	defer conn.Close(context.Background())
+
+	err = conn.QueryRow(context.Background(), "SELECT * FROM sys.summits ORDER BY height DESC LIMIT 3").Scan()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "QueryRow failed: %v\n", err)
+		os.Exit(1)
+	}
+
+	fmt.Println(name, weight)
+}
+```
+
+
+## Example
+
+:::{card}
+:link: https://github.com/crate/cratedb-examples/tree/main/by-language/go-pgx
+:link-type: url
+{material-outlined}`play_arrow;2em`
+Connect to CrateDB and CrateDB Cloud using Go.
++++
+Demonstrates basic examples and bulk insert operations using the pgx driver.
+:::
+
+[![Go pgx](https://github.com/crate/cratedb-examples/actions/workflows/lang-go-pgx.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-go-pgx.yml)
+
+
+[pgx]: https://github.com/jackc/pgx
