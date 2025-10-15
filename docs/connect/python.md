@@ -63,8 +63,36 @@ frameworks, are using SQLAlchemy as database adapter library when connecting to
 - [SQLAlchemy Code Examples]
 
 
-(python-drivers-community)=
-## Community drivers
+(python-drivers-more)=
+## Special purpose drivers
+
+(conecta-intro)=
+
+### Conecta
+
+{ref}`conecta` is a library designed to load data from SQL databases into
+Arrow with maximum speed and memory efficiency by leveraging zero-copy and
+true concurrency in Python.
+
+```python
+from pprint import pprint
+from conecta import read_sql
+
+table = read_sql(
+    "postgres://crate:crate@localhost:5432/doc",
+    queries=["SELECT country, region, mountain, height, latitude(coordinates), longitude(coordinates) FROM sys.summits ORDER BY height DESC LIMIT 3"],
+)
+
+# Display in Python format.
+pprint(table.to_pylist())
+
+# Optionally convert to pandas dataframe.
+print(table.to_pandas())
+
+# Optionally convert to Polars dataframe.
+import polars as pl
+print(pl.from_arrow(table))
+```
 
 (cratedb-async)=
 
@@ -111,6 +139,9 @@ response = crate.execute(
 
 print(response)
 ```
+
+(python-drivers-community)=
+## Community drivers
 
 (psycopg2)=
 
