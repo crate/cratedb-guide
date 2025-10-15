@@ -263,6 +263,20 @@ cx.read_sql(
 
 - [Connect to CrateDB using ConnectorX]
 
+(turbodbc)=
+### turbodbc
+
+[Turbodbc] is a Python module to access relational databases via the Open
+Database Connectivity (ODBC) interface. Its primary target audience are
+data scientist that use databases for which no efficient native Python
+drivers are available.
+
+For maximum performance, turbodbc offers built-in NumPy and Apache Arrow
+support and internally relies on batched data transfer instead of single-
+record communication as other popular ODBC modules do.
+
+- [Using CrateDB with turbodbc]
+
 
 (python-dataframe)=
 (df)=
@@ -290,10 +304,12 @@ How to use CrateDB together with popular open-source DataFrame libraries.
 [httpx]: https://www.python-httpx.org/
 [psycopg 3]: https://www.psycopg.org/psycopg3/docs/
 [psycopg documentation]: https://www.psycopg.org/docs/
+[turbodbc]: https://turbodbc.readthedocs.io/
 
 [Connect to CrateDB using ConnectorX]: https://github.com/crate/cratedb-examples/tree/main/by-language/python-connectorx
 [RDBMS]: https://en.wikipedia.org/wiki/RDBMS
 [SQLAlchemy]: https://www.sqlalchemy.org/
 [SQLAlchemy Code Examples]: https://github.com/crate/cratedb-examples/tree/main/by-language/python-sqlalchemy
 [The CrateDB SQLAlchemy Dialect]: inv:sqlalchemy-cratedb:*:label#index
+[Using CrateDB with turbodbc]: https://github.com/crate/cratedb-examples/tree/main/by-language/python-turbodbc
 [Working with SQLAlchemy and CrateDB]: inv:sqlalchemy-cratedb:*:label#by-example
