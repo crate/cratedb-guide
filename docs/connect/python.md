@@ -285,16 +285,49 @@ record communication as other popular ODBC modules do.
 (dataframe-examples)=
 ## Dataframe libraries
 
-How to use CrateDB together with popular open-source DataFrame libraries.
+How to use CrateDB together with popular open-source dataframe libraries.
 
-### Dask
-- {ref}`dask`
+:::::{grid} 2 2 2 4
+:margin: 4 4 0 0
+:padding: 0
 
-### pandas
-- {ref}`pandas`
+::::{grid-item-card} Dask
+:link: dask
+:link-type: ref
+:link-alt: Connect to CrateDB using Dask
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+![](https://github.com/crate/crate-clients-tools/assets/453543/99bd2234-c501-479b-ade7-bcc2bfc1f288){height=40px}
+::::
 
-### Polars
-- {ref}`polars`
+::::{grid-item-card} pandas
+:link: pandas
+:link-type: ref
+:link-alt: Connect to CrateDB using pandas
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+![pandas logo](https://pandas.pydata.org/static/img/pandas.svg){height=40px}
+::::
+
+::::{grid-item-card} Polars
+:link: polars
+:link-type: ref
+:link-alt: Connect to CrateDB using Polars
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+![Polars logo](https://github.com/pola-rs/polars-static/raw/master/logos/polars-logo-dark.svg){height=40px}
+::::
+
+:::::
 
 
 
