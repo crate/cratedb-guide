@@ -88,6 +88,8 @@ linkcheck_ignore += [
     r"https://qz.surister.dev/",
     # Read timed out.
     r"https://flowfuse.com/",
+    # 404 Client Error: Not Found
+    r"https://crates.io/crates/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
