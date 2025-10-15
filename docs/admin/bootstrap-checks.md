@@ -19,7 +19,7 @@ run, but it is still a good idea to follow these instructions.
 If you are using Docker, these checks are dependent on the host system. You
 must configure the host system appropriately if you wish to run CrateDB on
 Docker. Consult the additional documentation on Docker {ref}`resource
-constraints <resource_constraints>` for more information.
+constraints <resource-constraints>` for more information.
 :::
 
 ## System settings

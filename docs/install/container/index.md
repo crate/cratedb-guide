@@ -24,7 +24,7 @@ docker run --publish=4200:4200 --publish=5432:5432 --env CRATE_HEAP_SIZE=1g --pu
 :::{TIP}
 If this command aborts with an error, please consult the {ref}`Docker
 troubleshooting guide <docker-troubleshooting>`. You are also
-welcome to learn more about {ref}`resource_constraints` with respect
+welcome to learn more about {ref}`resource-constraints` with respect
 to running CrateDB within containers.
 :::
 
