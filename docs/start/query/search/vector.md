@@ -1,18 +1,23 @@
 (start-vector)=
 # Vector search
 
-Vector search retrieves the most semantically similar items to a query vector using **Approximate Nearest Neighbor (ANN)** algorithms (e.g., HNSW via Lucene).&#x20;
+:::{div} sd-text-muted
+Store, manage, and search vector embeddings at scale.
+:::
+
+Vector search retrieves the most semantically similar items to a query vector using **approximate nearest neighbor (ANN)** algorithms (e.g., HNSW via Lucene).&#x20;
 
 CrateDB supports **native vector search**, enabling you to perform **similarity-based retrieval** directly in SQL, without needing a separate vector database or search engine.
 
-Whether you're powering **semantic search**, **recommendation engines**, **anomaly detection**, or **AI-enhanced applications**, CrateDB lets you store, manage, and search vector embeddings at scale **right alongside your structured, JSON, and full-text data.**
+Whether you're powering **semantic search**, **recommendation engines**, **anomaly detection**, or **AI-enhanced applications**, CrateDB lets you manage vector data **right alongside your structured, JSON, and full-text data.**
 
 ## Why CrateDB for Vector Search?
 
-| FLOAT\_VECTOR      | Store embeddings up to 2048 dimensions                       |
-| ------------------ | ------------------------------------------------------------ |
-| KNN\_MATCH         | SQL-native k-nearest neighbor function with `_score` support |
-| VECTOR\_SIMILARITY | Compute similarity scores between vectors in queries         |
+| Feature            | Benefit                                                      |
+|--------------------|--------------------------------------------------------------|
+| FLOAT_VECTOR       | Store embeddings up to 2048 dimensions                       |
+| KNN_MATCH          | SQL-native k-nearest neighbor function with `_score` support |
+| VECTOR_SIMILARITY  | Compute similarity scores between vectors in queries         |
 | Real-time indexing | Fresh vectors are immediately searchable                     |
 | Hybrid queries     | Combine vector search with filters, full-text, and JSON      |
 
@@ -35,7 +40,7 @@ Returns top 3 most similar embeddings.
 SELECT product_name, _score
 FROM products
 WHERE category = 'shoes'
-  AND KNN_MATCH(features, [0.2, 0.1, …], 5)
+  AND KNN_MATCH(features, [0.2, 0.1, 0.3], 5)
 ORDER BY _score DESC;
 ```
 

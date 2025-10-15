@@ -1,15 +1,17 @@
 (start-geospatial)=
 # Geospatial search
 
-CrateDB enables geospatial search using **Lucene’s Prefix Tree** and **BKD Tree** indexing structures. With CrateDB, you can:
+:::{div} sd-text-muted
+Query geospatial data through SQL, combining ease of use with advanced capabilities.
+:::
+
+CrateDB enables geospatial search using **Lucene’s prefix tree** and **BKD tree** indexing structures. With CrateDB, you can:
 
 * Store and index geographic **points** and **shapes**
 * Perform spatial queries using **bounding boxes**, **circles**, **donut shapes**, and more
 * Filter, sort, or boost results by **distance**, **area**, or **spatial relationship**
 
-You interact with geospatial data through SQL, combining ease of use with advanced capabilities.
-
-See the Data Modelling (!!! add link) section for details of Data Types and how to insert data.
+See the {ref}`data-modelling` section for details of data types and how to insert data.
 
 ## Querying Geospatial Data
 
@@ -70,7 +72,7 @@ You can choose and configure the indexing method when defining your table schema
 
 While CrateDB can perform **exact computations** on complex geometries (e.g. large polygons, geometry collections), these can be computationally expensive. Choose your index strategy carefully based on your query patterns.
 
-For full details, refer to the Geo Shape Column Definition section (!!! add link) in the reference.
+For full details, refer to the Geo Shape column definition section in the reference documentation.
 
 ## Further reading
 
