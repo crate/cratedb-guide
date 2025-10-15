@@ -1,14 +1,10 @@
 # Full-text search
 
-CrateDB supports powerful **full-text search** capabilities directly within its distributed SQL engine. This allows you to **combine unstructured search with structured filtering and aggregations**—all in one query, with no need for external search systems like Elasticsearch.
-
-Whether you're working with log messages, customer feedback, machine-generated data, or IoT event streams, CrateDB enables **real-time full-text search at scale**.
-
-## What Is Full-text Search?
-
 Unlike exact-match filters, full-text search allows **fuzzy, linguistic matching** on human language text. It tokenizes input, analyzes language, and searches for **tokens, stems, synonyms**, etc.
 
-CrateDB enables this via the `FULLTEXT` index and the `MATCH()` SQL predicate.
+CrateDB supports powerful **full-text search** capabilities directly via the `FULLTEXT` index and the `MATCH()` SQL predicate. This allows you to **combine unstructured search with structured filtering and aggregations**—all in one query, with no need for external search systems like Elasticsearch.
+
+Whether you're working with log messages, customer feedback, machine-generated data, or IoT event streams, CrateDB enables **real-time full-text search at scale**.
 
 ## Why CrateDB for Full-text Search?
 
@@ -115,33 +111,9 @@ SELECT * FROM docs WHERE MATCH(text, 'power outage') USING 'english';
 | Use `MATCH()` not `LIKE`         | Full-text is more performant and relevant |
 | Combine with filters             | Boost performance using `WHERE` clauses   |
 
-## When to Use CrateDB for Full-text Search
-
-CrateDB is ideal when you need to:
-
-* Search human-generated data (logs, comments, messages)
-* Perform search + filtering + aggregation in a **single SQL query**
-* Handle **real-time ingestion** and **search immediately**
-* Avoid managing a separate search engine or ETL pipeline
-* Search **text within structured or semi-structured data**
-
-## Related Features
-
-| Feature               | Description                                          |
-| --------------------- | ---------------------------------------------------- |
-| Language analyzers    | Built-in support for many languages                  |
-| JSON object support   | Index and search nested fields                       |
-| SQL + full-text       | Unified queries for structured and unstructured data |
-| Distributed execution | Fast, scalable search across nodes                   |
-| Aggregations          | Group and analyze search results at scale            |
-
-## Learn More
+## Further Learning & Resources
 
 * Full-text Search Data Model
 * MATCH Clause Documentation
 * How CrateDB Differs from Elasticsearch
 * Tutorial: Full-text Search on Logs
-
-## Summary
-
-CrateDB delivers fast, scalable, and **SQL-native full-text search**—perfect for modern applications that need to search and analyze semi-structured or human-generated text in real time. By merging search and analytics into a **single operational database**, CrateDB simplifies your stack while unlocking rich insight.
