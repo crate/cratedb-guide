@@ -136,6 +136,16 @@ R
 Ruby
 ::::
 
+::::{grid-item-card}
+:link: connect-rust
+:link-type: ref
+:class-body: sd-fs-1 sd-text-center
+:class-footer: sd-fs-5 sd-font-weight-bold
+{fab}`rust`
++++
+Rust
+::::
+
 :::::
 
 
@@ -212,6 +222,7 @@ php
 python
 r/index
 ruby
+rust/index
 odbc/index
 natural
 All drivers <drivers>
