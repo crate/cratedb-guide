@@ -1,3 +1,4 @@
+(start-hybrid)=
 # Hybrid search
 
 While **vector search** provides powerful semantic retrieval based on machine learning models, it's not always optimal, especially when models are not fine-tuned for a specific domain. On the other hand, **traditional full-text search** (e.g., BM25 scoring) offers high precision on exact or keyword-based queries, with strong performance out of the box. **Hybrid search** blends these approaches, combining semantic understanding with keyword relevance to deliver more accurate, robust, and context-aware search results.
@@ -74,3 +75,33 @@ You can adjust the weighting (`0.5`) depending on your desired balance between k
 | 0.03057     | 8          | 3            | Usage                                         |
 
 > RRF rewards documents that rank highly across multiple methods, regardless of exact score values.
+## Further reading
+
+:::::{grid} 1 3 3 3
+:margin: 4 4 0 0
+:padding: 0
+:gutter: 2
+
+::::{grid-item-card} {material-outlined}`article;1.5em` Reference
+:columns: 3
+- {ref}`crate-reference:sql_dql_fulltext_search`
+- {ref}`crate-reference:fulltext-indices`
+- {ref}`crate-reference:predicates_match`
+- {ref}`crate-reference:scalar_knn_match`
+- {ref}`crate-reference:scalar_vector_similarity`
+- {ref}`crate-reference:type-float_vector`
+::::
+
+::::{grid-item-card} {material-outlined}`link;1.5em` Related
+:columns: 3
+- {ref}`start-fulltext`
+- {ref}`start-geospatial`
+- {ref}`start-vector`
+::::
+
+::::{grid-item-card} {material-outlined}`read_more;1.5em` Read more
+:columns: 6
+- {ref}`Hybrid search feature details <hybrid-search>`
+::::
+
+:::::

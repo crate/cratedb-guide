@@ -1,3 +1,4 @@
+(start-fulltext)=
 # Full-text search
 
 Unlike exact-match filters, full-text search allows **fuzzy, linguistic matching** on human language text. It tokenizes input, analyzes language, and searches for **tokens, stems, synonyms**, etc.
@@ -111,9 +112,38 @@ SELECT * FROM docs WHERE MATCH(text, 'power outage') USING 'english';
 | Use `MATCH()` not `LIKE`         | Full-text is more performant and relevant |
 | Combine with filters             | Boost performance using `WHERE` clauses   |
 
-## Further Learning & Resources
+## Further reading
 
-* Full-text Search Data Model
-* MATCH Clause Documentation
-* How CrateDB Differs from Elasticsearch
-* Tutorial: Full-text Search on Logs
+:::::{grid} 1 3 3 3
+:margin: 4 4 0 0
+:padding: 0
+:gutter: 2
+
+::::{grid-item-card} {material-outlined}`article;1.5em` Reference
+:columns: 3
+- {ref}`crate-reference:sql_dql_fulltext_search`
+- {ref}`crate-reference:fulltext-indices`
+- {ref}`crate-reference:predicates_match`
+- {ref}`crate-reference:ref-create-analyzer`
+::::
+
+::::{grid-item-card} {material-outlined}`link;1.5em` Related
+:columns: 3
+- {ref}`start-geospatial`
+- {ref}`start-vector`
+- {ref}`start-hybrid`
+::::
+
+::::{grid-item-card} {material-outlined}`read_more;1.5em` Read more
+:columns: 6
+- [How CrateDB differs from Elasticsearch]
+- [Tutorial: Full-text search on logs]
+- {ref}`FTS feature details <fulltext-search>`
+- {ref}`Data modeling with FTS <model-fulltext>`
+::::
+
+:::::
+
+
+[How CrateDB differs from Elasticsearch]: https://archive.fosdem.org/2018/schedule/event/cratedb/
+[Tutorial: Full-text search on logs]: https://community.cratedb.com/t/storing-server-logs-on-cratedb-for-fast-search-and-aggregations/1562

@@ -1,3 +1,4 @@
+(start-vector)=
 # Vector search
 
 Vector search retrieves the most semantically similar items to a query vector using **Approximate Nearest Neighbor (ANN)** algorithms (e.g., HNSW via Lucene).&#x20;
@@ -90,9 +91,37 @@ ORDER BY _score ASC
 LIMIT 1;
 ```
 
-## Further Learning & Resources
+## Further reading
 
-* [Vector Search Guide](https://cratedb.com/docs/guide/feature/search/vector/index.html)&#x20;
-* `KNN_MATCH` & `VECTOR_SIMILARITY` reference
-* [Intro Blog: Vector support & KNN search in CrateDB](https://cratedb.com/blog/unlocking-the-power-of-vector-support-and-knn-search-in-cratedb)
-* [LangChain & Vector Store integration](https://cratedb.com/docs/guide/domain/ml/index.html)
+:::::{grid} 1 3 3 3
+:margin: 4 4 0 0
+:padding: 0
+:gutter: 2
+
+::::{grid-item-card} {material-outlined}`article;1.5em` Reference
+:columns: 3
+- {ref}`crate-reference:type-float_vector`
+- {ref}`crate-reference:scalar_knn_match`
+- {ref}`crate-reference:scalar_vector_similarity`
+::::
+
+::::{grid-item-card} {material-outlined}`link;1.5em` Related
+:columns: 3
+- {ref}`start-fulltext`
+- {ref}`start-geospatial`
+- {ref}`start-hybrid`
+::::
+
+::::{grid-item-card} {material-outlined}`read_more;1.5em` Read more
+:columns: 6
+- [Intro Blog: Vector support & KNN search in CrateDB]
+- {ref}`Vector search feature details <vector-search>`
+- {ref}`Data modeling with vector data <model-vector>`
+- {ref}`machine-learning`
+- {ref}`Integration with LangChain <langchain>`
+::::
+
+:::::
+
+
+[Intro Blog: Vector support & KNN search in CrateDB]: https://cratedb.com/blog/unlocking-the-power-of-vector-support-and-knn-search-in-cratedb
