@@ -11,19 +11,42 @@ Connect to CrateDB from Rust applications.
 
 [postgres] is a synchronous Rust client for the PostgreSQL database.
 
-:::{rubric} Install
+:::{rubric} Synopsis (localhost)
 :::
 ```shell
 cargo add postgres
 ```
-
-:::{rubric} Synopsis
-:::
 ```rust
 use postgres::{Client, NoTls};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let mut client = Client::connect("host=localhost user=crate", NoTls)?;
+    let mut client = Client::connect("postgresql://crate@localhost:5432/?sslmode=disable", NoTls)?;
+
+    for row in client.query(
+        "SELECT mountain, height FROM sys.summits ORDER BY height DESC LIMIT 3",
+        &[],
+    )? {
+        let mountain: &str = row.get(0);
+        let height: i32 = row.get(1);
+        println!("found mountain: {} {}", mountain, height);
+    }
+    Ok(())
+}
+```
+
+:::{rubric} Synopsis (CrateDB Cloud)
+:::
+```shell
+cargo add postgres postgres-native-tls native-tls
+```
+```rust
+use postgres::Client;
+use native_tls::TlsConnector;
+use postgres_native_tls::MakeTlsConnector;
+
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let tls = MakeTlsConnector::new(TlsConnector::new()?);
+    let mut client = Client::connect("postgresql://crate:<password>@<cluster-name>.<region>.cratedb.net:5432/?sslmode=require", tls)?;
 
     for row in client.query(
         "SELECT mountain, height FROM sys.summits ORDER BY height DESC LIMIT 3",
