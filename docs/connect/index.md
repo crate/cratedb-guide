@@ -110,6 +110,29 @@ CrateDB drivers and adapters for supported programming languages, frameworks, an
 
 :::::
 
+:::{rubric} Language-agnostic drivers
+:::
+
+:::::{grid} 2 2 2 4
+:margin: 4 4 0 0
+:padding: 0
+
+::::{grid-item-card} ODBC
+:link: connect-odbc
+:link-type: ref
+:link-alt: Connect to CrateDB using ODBC
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+```{image} /_assets/icon/odbc-logo.png
+:height: 80px
+```
+::::
+
+:::::
+
 
 :::{rubric} Protocol Support
 :::
@@ -181,6 +204,7 @@ javascript
 php
 python
 ruby
+odbc
 natural
 All drivers <drivers>
 ```
