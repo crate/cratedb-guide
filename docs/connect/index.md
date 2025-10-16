@@ -159,6 +159,20 @@ Ruby
 Rust
 ::::
 
+::::{grid-item-card} Scala
+:link: connect-scala
+:link-type: ref
+:link-alt: Connect to CrateDB using Scala
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+```{image} /_assets/icon/scala-logo.svg
+:height: 50px
+```
+::::
+
 :::::
 
 
@@ -237,6 +251,7 @@ python
 r/index
 ruby
 rust/index
+scala/index
 odbc/index
 natural
 All drivers <drivers>
