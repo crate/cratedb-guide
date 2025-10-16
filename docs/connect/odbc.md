@@ -80,7 +80,7 @@ connection.Close();
 
 ### Python
 
-[pyodbc] is an open source Python module that makes accessing ODBC databases
+[pyodbc] is an open-source Python module that makes accessing ODBC databases
 simple. It implements the DB API 2.0 specification and adds other Pythonic
 convenience. For more information, please visit the
 [pyodbc installation instructions] and [connecting to PostgreSQL with pyodbc].
@@ -149,7 +149,6 @@ cn.Close
 
 [.NET Framework Data Provider for ODBC]: https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/data-providers#net-framework-data-provider-for-odbc
 [Connecting to PostgreSQL with pyodbc]: https://github.com/mkleehammer/pyodbc/wiki/Connecting-to-PostgreSQL
-[postgres]: https://crates.io/crates/postgres
 [psqlodbc]: https://odbc.postgresql.org/
 [psqlodbc download]: https://www.postgresql.org/ftp/odbc/releases/
 [psqlODBC with Visual Basic]: https://odbc.postgresql.org/howto-vb.html
