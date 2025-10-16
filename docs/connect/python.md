@@ -31,6 +31,8 @@ with conn:
     print(result)
 ```
 
+- [Connect to CrateDB using Python DB API] &nbsp; [![Python DB API](https://github.com/crate/cratedb-examples/actions/workflows/lang-python-dbapi.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-python-dbapi.yml)
+
 (sqlalchemy-cratedb)=
 ### sqlalchemy-cratedb
 
@@ -60,7 +62,7 @@ frameworks, are using SQLAlchemy as database adapter library when connecting to
 
 - [The CrateDB SQLAlchemy Dialect]
 - [Working with SQLAlchemy and CrateDB]
-- [SQLAlchemy Code Examples]
+- [SQLAlchemy Code Examples] &nbsp; [![SQLAlchemy](https://github.com/crate/cratedb-examples/actions/workflows/lang-python-sqlalchemy.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-python-sqlalchemy.yml)
 
 
 (python-drivers-more)=
@@ -93,6 +95,9 @@ print(table.to_pandas())
 import polars as pl
 print(pl.from_arrow(table))
 ```
+
+[![Test conecta-core](https://github.com/surister/conecta/actions/workflows/test_core.yml/badge.svg)](https://github.com/surister/conecta/actions/workflows/test_core.yml)
+[![Test conecta-python](https://github.com/surister/conecta/actions/workflows/test_python.yml/badge.svg)](https://github.com/surister/conecta/actions/workflows/test_python.yml)
 
 (cratedb-async)=
 
@@ -139,6 +144,8 @@ response = crate.execute(
 
 print(response)
 ```
+
+[![Tests](https://github.com/crate/micropython-cratedb/actions/workflows/tests.yml/badge.svg)](https://github.com/crate/micropython-cratedb/actions/workflows/tests.yml)
 
 (python-drivers-community)=
 ## Community drivers
@@ -261,21 +268,21 @@ cx.read_sql(
 )
 ```
 
-- [Connect to CrateDB using ConnectorX]
+- [Connect to CrateDB using ConnectorX] &nbsp; [![Python ConnectorX](https://github.com/crate/cratedb-examples/actions/workflows/lang-python-connectorx.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-python-connectorx.yml)
 
 (turbodbc)=
 ### turbodbc
 
 [Turbodbc] is a Python module to access relational databases via the Open
 Database Connectivity (ODBC) interface. Its primary target audience are
-data scientist that use databases for which no efficient native Python
+data scientists that use databases for which no efficient native Python
 drivers are available.
 
 For maximum performance, turbodbc offers built-in NumPy and Apache Arrow
-support and internally relies on batched data transfer instead of single-
-record communication as other popular ODBC modules do.
+support and internally relies on batched data transfer instead of
+single-record communication as other popular ODBC modules do.
 
-- [Using CrateDB with turbodbc]
+- [Using CrateDB with turbodbc] &nbsp; [![Python turbodbc](https://github.com/crate/cratedb-examples/actions/workflows/lang-python-turbodbc.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-python-turbodbc.yml)
 
 
 (python-dataframe)=
@@ -300,7 +307,7 @@ How to use CrateDB together with popular open-source dataframe libraries.
 :class-card: sd-pt-3
 :class-body: sd-fs-1
 :class-title: sd-fs-6
-![](https://github.com/crate/crate-clients-tools/assets/453543/99bd2234-c501-479b-ade7-bcc2bfc1f288){height=40px}
+![Dask logo](https://github.com/crate/crate-clients-tools/assets/453543/99bd2234-c501-479b-ade7-bcc2bfc1f288){height=40px}
 ::::
 
 ::::{grid-item-card} pandas
@@ -340,6 +347,7 @@ How to use CrateDB together with popular open-source dataframe libraries.
 [turbodbc]: https://turbodbc.readthedocs.io/
 
 [Connect to CrateDB using ConnectorX]: https://github.com/crate/cratedb-examples/tree/main/by-language/python-connectorx
+[Connect to CrateDB using Python DB API]: https://github.com/crate/cratedb-examples/tree/main/by-language/python-dbapi
 [RDBMS]: https://en.wikipedia.org/wiki/RDBMS
 [SQLAlchemy]: https://www.sqlalchemy.org/
 [SQLAlchemy Code Examples]: https://github.com/crate/cratedb-examples/tree/main/by-language/python-sqlalchemy
