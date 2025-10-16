@@ -32,7 +32,7 @@ while CrateDB JDBC uses `jdbc:crate://`.
 
 ```scala
 import java.sql.{Connection, DriverManager, ResultSet}
-
+import scala.util.Using
 
 object ScalaJdbcDemo {
 
@@ -43,27 +43,24 @@ object ScalaJdbcDemo {
     val url = "jdbc:postgresql://<name-of-your-cluster>.cratedb.net:5432/"
     val username = "crate"
     val password = "crate"
+
     try {
       Class.forName(driver)
-      var connection:Connection = DriverManager.getConnection(url, username, password)
-
-      // Invoke query
-      val statement = connection.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY)
-      val resultSet = statement.executeQuery("SELECT mountain, height FROM sys.summits ORDER BY height DESC LIMIT 3")
       
-      // Display results
-      while ( resultSet.next() ) {
-        val mountain = resultSet.getString("mountain")
-        val height = resultSet.getInteger("height")
-        println(mountain + ": " + height)
+      Using(DriverManager.getConnection(url, username, password)) { connection =>
+        val statement = connection.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY)
+        val resultSet = statement.executeQuery("SELECT mountain, height FROM sys.summits ORDER BY height DESC LIMIT 3")
+        
+        while (resultSet.next()) {
+          val mountain = resultSet.getString("mountain")
+          val height = resultSet.getInt("height")
+          println(mountain + ": " + height)
+        }
       }
     } catch {
-      case e => e.printStackTrace
+      case e: Exception => e.printStackTrace()
     }
-    
-    // Clean up
-    connection.close()
-  }
 
+  }
 }
 ```
