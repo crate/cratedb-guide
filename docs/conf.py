@@ -84,6 +84,8 @@ linkcheck_ignore += [
     r"https://docs.docker.com/",
     # 500 Server Error: Internal Server Error
     r"https://aiven.io/",
+    # 404 Client Error: Not Found
+    r"https://crates.io/crates/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
