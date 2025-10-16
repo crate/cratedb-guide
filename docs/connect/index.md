@@ -106,7 +106,7 @@ CrateDB drivers and adapters for supported programming languages, frameworks, an
 :class-card: sd-pt-3
 :class-body: sd-fs-1
 :class-title: sd-fs-6
-{fab}`r`
+{fab}`r-project`
 ::::
 
 ::::{grid-item-card} Ruby

@@ -18,22 +18,28 @@ Connect to CrateDB from R applications and notebooks.
 # Install driver on demand.
 # RPostgreSQL: R Interface to the 'PostgreSQL' Database System
 # https://cran.r-project.org/web/packages/RPostgreSQL/
-if (!require(RPostgreSQL)) {
-    install.packages("RPostgreSQL", repos="http://cran.us.r-project.org")
-}
-stopifnot(require(RPostgreSQL))
 
-# Load the DBI library.
+# Optionally install the PostgreSQL library.
+if (!requireNamespace("RPostgreSQL", quietly = TRUE)) {
+    install.packages("RPostgreSQL", repos="https://cran.r-project.org")
+}
+
+# Load the DBI and PostgreSQL libraries.
 library(DBI)
-drv <- dbDriver("PostgreSQL")
+library(RPostgreSQL)
+drv <- RPostgreSQL::PostgreSQL()
 
 # Open a database connection, where `dbname` is the name of the CrateDB schema.
 con <- dbConnect(drv,
                  host = "localhost",
                  port = 5432,
+                 # For CrateDB Cloud:
+                 # sslmode = "require",
                  user = "crate",
-                 dbname = "testdrive",
+                 password = Sys.getenv("CRATEDB_PASSWORD"),
+                 dbname = "testdrive"
                  )
+on.exit(DBI::dbDisconnect(con), add = TRUE)
 
 # Invoke a basic select query.
 res <- dbGetQuery(con, "SELECT mountain, region, height FROM sys.summits ORDER BY height DESC LIMIT 3;")
