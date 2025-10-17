@@ -49,6 +49,20 @@ CrateDB drivers and adapters for supported programming languages, frameworks, an
 :margin: 4 4 0 0
 :padding: 0
 
+::::{grid-item-card} Crystal
+:link: connect-crystal
+:link-type: ref
+:link-alt: Connect to CrateDB using Crystal
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+```{image} /_assets/icon/crystal-logo.svg
+:height: 70px
+```
+::::
+
 ::::{grid-item-card} Java
 :link: connect-java
 :link-type: ref
@@ -182,6 +196,7 @@ application
 :maxdepth: 1
 :hidden:
 
+crystal/index
 java
 javascript
 php
