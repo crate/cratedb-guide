@@ -108,7 +108,7 @@ CrateDB drivers and adapters for supported programming languages, frameworks, an
 :class-title: sd-fs-6
 
 ```{image} /_assets/icon/ruby-logo.svg
-:width: 40px
+:height: 40px
 ```
 
 ::::
