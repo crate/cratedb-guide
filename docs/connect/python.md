@@ -31,6 +31,8 @@ with conn:
     print(result)
 ```
 
+- [Connect to CrateDB using Python DB API] &nbsp; [![Python DB API](https://github.com/crate/cratedb-examples/actions/workflows/lang-python-dbapi.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-python-dbapi.yml)
+
 (sqlalchemy-cratedb)=
 ### sqlalchemy-cratedb
 
@@ -60,11 +62,42 @@ frameworks, are using SQLAlchemy as database adapter library when connecting to
 
 - [The CrateDB SQLAlchemy Dialect]
 - [Working with SQLAlchemy and CrateDB]
-- [SQLAlchemy Code Examples]
+- [SQLAlchemy Code Examples] &nbsp; [![SQLAlchemy](https://github.com/crate/cratedb-examples/actions/workflows/lang-python-sqlalchemy.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-python-sqlalchemy.yml)
 
 
-(python-drivers-community)=
-## Community drivers
+(python-drivers-more)=
+## Special purpose drivers
+
+(conecta-intro)=
+
+### Conecta
+
+{ref}`conecta` is a library designed to load data from SQL databases into
+Arrow with maximum speed and memory efficiency by leveraging zero-copy and
+true concurrency in Python.
+
+```python
+from pprint import pprint
+from conecta import read_sql
+
+table = read_sql(
+    "postgres://crate:crate@localhost:5432/doc",
+    queries=["SELECT country, region, mountain, height, latitude(coordinates), longitude(coordinates) FROM sys.summits ORDER BY height DESC LIMIT 3"],
+)
+
+# Display in Python format.
+pprint(table.to_pylist())
+
+# Optionally convert to pandas dataframe.
+print(table.to_pandas())
+
+# Optionally convert to Polars dataframe.
+import polars as pl
+print(pl.from_arrow(table))
+```
+
+[![Test conecta-core](https://github.com/surister/conecta/actions/workflows/test_core.yml/badge.svg)](https://github.com/surister/conecta/actions/workflows/test_core.yml)
+[![Test conecta-python](https://github.com/surister/conecta/actions/workflows/test_python.yml/badge.svg)](https://github.com/surister/conecta/actions/workflows/test_python.yml)
 
 (cratedb-async)=
 
@@ -85,6 +118,37 @@ async def main():
 
 asyncio.run(main())
 ```
+
+(micropython-cratedb)=
+
+### micropython-cratedb
+
+A MicroPython library connecting to the CrateDB HTTP API.
+See the full documentation at <https://github.com/crate/micropython-cratedb>.
+The package can be installed using `mpremote mip install github:crate/micropython-cratedb`.
+
+```python
+import cratedb
+
+crate = cratedb.CrateDB(
+    host="localhost",
+    port=4200,
+    user="crate",
+    password="crate",
+    use_ssl=False
+)
+
+response = crate.execute(
+    "SELECT * FROM sys.summits ORDER BY height DESC LIMIT 3"
+)
+
+print(response)
+```
+
+[![Tests](https://github.com/crate/micropython-cratedb/actions/workflows/tests.yml/badge.svg)](https://github.com/crate/micropython-cratedb/actions/workflows/tests.yml)
+
+(python-drivers-community)=
+## Community drivers
 
 (psycopg2)=
 
@@ -186,6 +250,40 @@ loop = asyncio.get_event_loop()
 loop.run_until_complete(run())
 ```
 
+(connectorx)=
+
+### ConnectorX
+
+[ConnectorX] enables you to load data from databases into Python in the
+fastest and most memory-efficient way.
+
+```python
+import connectorx as cx
+
+cx.read_sql(
+    "postgresql://username:password@server:port/database",
+    "SELECT * FROM lineitem",
+    partition_on="l_orderkey",
+    partition_num=10,
+)
+```
+
+- [Connect to CrateDB using ConnectorX] &nbsp; [![Python ConnectorX](https://github.com/crate/cratedb-examples/actions/workflows/lang-python-connectorx.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-python-connectorx.yml)
+
+(turbodbc)=
+### turbodbc
+
+[Turbodbc] is a Python module to access relational databases via the Open
+Database Connectivity (ODBC) interface. Its primary target audience are
+data scientists that use databases for which no efficient native Python
+drivers are available.
+
+For maximum performance, turbodbc offers built-in NumPy and Apache Arrow
+support and internally relies on batched data transfer instead of
+single-record communication as other popular ODBC modules do.
+
+- [Using CrateDB with turbodbc] &nbsp; [![Python turbodbc](https://github.com/crate/cratedb-examples/actions/workflows/lang-python-turbodbc.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-python-turbodbc.yml)
+
 
 (python-dataframe)=
 (df)=
@@ -194,27 +292,65 @@ loop.run_until_complete(run())
 (dataframe-examples)=
 ## Dataframe libraries
 
-How to use CrateDB together with popular open-source DataFrame libraries.
+How to use CrateDB together with popular open-source dataframe libraries.
 
-### Dask
-- {ref}`dask`
+:::::{grid} 2 2 2 4
+:margin: 4 4 0 0
+:padding: 0
 
-### pandas
-- {ref}`pandas`
+::::{grid-item-card} Dask
+:link: dask
+:link-type: ref
+:link-alt: Connect to CrateDB using Dask
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+![Dask logo](https://github.com/crate/crate-clients-tools/assets/453543/99bd2234-c501-479b-ade7-bcc2bfc1f288){height=40px}
+::::
 
-### Polars
-- {ref}`polars`
+::::{grid-item-card} pandas
+:link: pandas
+:link-type: ref
+:link-alt: Connect to CrateDB using pandas
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+![pandas logo](https://pandas.pydata.org/static/img/pandas.svg){height=40px}
+::::
+
+::::{grid-item-card} Polars
+:link: polars
+:link-type: ref
+:link-alt: Connect to CrateDB using Polars
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+![Polars logo](https://github.com/pola-rs/polars-static/raw/master/logos/polars-logo-dark.svg){height=40px}
+::::
+
+:::::
 
 
 
 [aiopg documentation]: https://aiopg.readthedocs.io/
 [asyncpg documentation]: https://magicstack.github.io/asyncpg/current/
+[ConnectorX]: https://sfu-db.github.io/connector-x/
 [httpx]: https://www.python-httpx.org/
 [psycopg 3]: https://www.psycopg.org/psycopg3/docs/
 [psycopg documentation]: https://www.psycopg.org/docs/
+[turbodbc]: https://turbodbc.readthedocs.io/
 
+[Connect to CrateDB using ConnectorX]: https://github.com/crate/cratedb-examples/tree/main/by-language/python-connectorx
+[Connect to CrateDB using Python DB API]: https://github.com/crate/cratedb-examples/tree/main/by-language/python-dbapi
 [RDBMS]: https://en.wikipedia.org/wiki/RDBMS
 [SQLAlchemy]: https://www.sqlalchemy.org/
 [SQLAlchemy Code Examples]: https://github.com/crate/cratedb-examples/tree/main/by-language/python-sqlalchemy
 [The CrateDB SQLAlchemy Dialect]: inv:sqlalchemy-cratedb:*:label#index
+[Using CrateDB with turbodbc]: https://github.com/crate/cratedb-examples/tree/main/by-language/python-turbodbc
 [Working with SQLAlchemy and CrateDB]: inv:sqlalchemy-cratedb:*:label#by-example
