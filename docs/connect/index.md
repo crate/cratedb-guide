@@ -113,6 +113,20 @@ CrateDB drivers and adapters for supported programming languages, frameworks, an
 
 ::::
 
+::::{grid-item-card} Zig
+:link: connect-zig
+:link-type: ref
+:link-alt: Connect to CrateDB using Zig
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+```{image} /_assets/icon/zig-logo.png
+:height: 50px
+```
+::::
+
 :::::
 
 
@@ -187,6 +201,7 @@ javascript
 php
 python
 ruby
+zig
 natural
 All drivers <drivers>
 ```
