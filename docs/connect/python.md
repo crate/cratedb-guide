@@ -270,6 +270,28 @@ cx.read_sql(
 
 - [Connect to CrateDB using ConnectorX] &nbsp; [![Python ConnectorX](https://github.com/crate/cratedb-examples/actions/workflows/lang-python-connectorx.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-python-connectorx.yml)
 
+(records)=
+### Records
+
+[Records] is a very simple, but powerful, library for making raw SQL
+queries to most relational databases. Powered by SQLAlchemy and Tablib,
+it covers many database types and allows you to export your results to
+CSV, XLS, JSON, HTML Tables, YAML, or pandas dataframes with a single
+line of code.
+
+```shell
+pip install --upgrade records sqlalchemy-cratedb
+```
+```python
+import records
+
+db = records.Database("crate://", echo=True)
+rows = db.query("SELECT region, mountain, height FROM sys.summits ORDER BY height DESC LIMIT 3")
+data = rows.all()
+
+print(rows.export("json"))
+```
+
 (turbodbc)=
 ### turbodbc
 
@@ -344,6 +366,7 @@ How to use CrateDB together with popular open-source dataframe libraries.
 [httpx]: https://www.python-httpx.org/
 [psycopg 3]: https://www.psycopg.org/psycopg3/docs/
 [psycopg documentation]: https://www.psycopg.org/docs/
+[Records]: https://github.com/kennethreitz/records
 [turbodbc]: https://turbodbc.readthedocs.io/
 
 [Connect to CrateDB using ConnectorX]: https://github.com/crate/cratedb-examples/tree/main/by-language/python-connectorx
