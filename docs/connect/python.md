@@ -5,11 +5,11 @@
 Connect to CrateDB and CrateDB Cloud using different kinds of Python drivers.
 :::
 
-Individual drivers offer specific features for specific
+Individual clients and drivers offer specific features for specific
 needs of your application, so consider reading this enumeration carefully.
 
-(python-drivers-official)=
-## Official drivers
+(python-client-official)=
+## Official clients
 
 (crate-python)=
 ### crate-python
@@ -65,8 +65,8 @@ frameworks, are using SQLAlchemy as database adapter library when connecting to
 - [SQLAlchemy Code Examples] &nbsp; [![SQLAlchemy](https://github.com/crate/cratedb-examples/actions/workflows/lang-python-sqlalchemy.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-python-sqlalchemy.yml)
 
 
-(python-drivers-more)=
-## Special purpose drivers
+(python-client-special)=
+## Special purpose clients
 
 (conecta-intro)=
 
@@ -147,8 +147,8 @@ print(response)
 
 [![Tests](https://github.com/crate/micropython-cratedb/actions/workflows/tests.yml/badge.svg)](https://github.com/crate/micropython-cratedb/actions/workflows/tests.yml)
 
-(python-drivers-community)=
-## Community drivers
+(python-client-community)=
+## Tertiary clients
 
 (psycopg2)=
 
