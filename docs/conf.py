@@ -88,6 +88,8 @@ linkcheck_ignore += [
     r"https://qz.surister.dev/",
     # Read timed out.
     r"https://flowfuse.com/",
+    # 403 Client Error: Forbidden
+    r"https://swiftpackageindex.com/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
