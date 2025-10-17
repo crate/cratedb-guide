@@ -84,6 +84,8 @@ linkcheck_ignore += [
     r"https://docs.docker.com/",
     # 500 Server Error: Internal Server Error
     r"https://aiven.io/",
+    # HTTPSConnectionPool(host='qz.surister.dev', port=443): Read timed out. (read timeout=15)
+    r"https://qz.surister.dev/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
