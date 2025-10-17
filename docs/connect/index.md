@@ -242,6 +242,19 @@ Scala
 Visual Basic
 ::::
 
+::::{grid-item-card}
+:link: connect-zig
+:link-type: ref
+:link-alt: Connect to CrateDB using Zig
+:class-body: sd-fs-1 sd-text-center
+:class-footer: sd-fs-5 sd-font-weight-bold
+```{image} /_assets/icon/zig-logo.png
+:height: 50px
+```
++++
+Zig
+::::
+
 :::::
 
 
@@ -328,6 +341,7 @@ rust/index
 scala/index
 odbc/index
 visualbasic/index
+zig/index
 natural
 ```
 
