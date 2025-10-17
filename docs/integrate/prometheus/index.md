@@ -7,8 +7,8 @@
 ```{div} .clearfix
 ```
 
-
-## About
+:::{rubric} About
+:::
 
 [Prometheus] is an open-source systems monitoring and alerting toolkit
 for collecting metrics data from applications and infrastructures.
@@ -37,8 +37,6 @@ Prometheus's main features are:
 ::::
 
 
-## Learn
-
 :::{rubric} Remote Endpoints and Storage
 :::
 
@@ -57,15 +55,10 @@ massively scale-out Prometheus.
 
 ::::{grid}
 
-:::{grid-item-card} Blog: Getting started
-:link: https://cratedb.com/blog/getting-started-prometheus-cratedb-long-term-storage
-:link-type: url
-Getting started with Prometheus and CrateDB for long-term storage.
-:::
-
 :::{grid-item-card} Store Prometheus long-term metrics into CrateDB
 :link: prometheus-usage
 :link-type: ref
+:columns: 6
 Set up CrateDB as a long-term metrics store for Prometheus using Docker Compose.
 :::
 
@@ -98,13 +91,6 @@ usage guide.
 
 ::::
 
-
-:::{rubric} Repositories
-:::
-
-[CrateDB] •
-[Prometheus] •
-[CrateDB Prometheus Adapter]
 
 
 ```{seealso}

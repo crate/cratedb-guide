@@ -11,6 +11,7 @@ Instructions how to get tasks done with CrateDB.
 :::{rubric} 2025
 :::
 
+- {ref}`prometheus-usage`
 - {ref}`influxdb-usage`
 - {ref}`amqp-usage`
 - {ref}`mqtt-usage`
@@ -61,11 +62,6 @@ Instructions how to get tasks done with CrateDB.
 - {ref}`prefect-usage`
 - {ref}`terraform-usage`
 - {ref}`trino-usage`
-
-:::{rubric} 2022
-:::
-
-- {ref}`prometheus-usage`
 
 
 :::{note}
