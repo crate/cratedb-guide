@@ -153,6 +153,18 @@ JavaScript
 ::::
 
 ::::{grid-item-card}
+:link: connect-julia
+:link-type: ref
+:class-body: sd-fs-1 sd-text-center
+:class-footer: sd-fs-5 sd-font-weight-bold
+```{image} /_assets/icon/julia-logo.svg
+:height: 40px
+```
++++
+Julia
+::::
+
+::::{grid-item-card}
 :link: connect-kotlin
 :link-alt: Connect to CrateDB using Kotlin
 :link-type: ref
@@ -332,6 +344,7 @@ go/index
 groovy/index
 java/index
 javascript/index
+julia/index
 kotlin/index
 php/index
 python/index

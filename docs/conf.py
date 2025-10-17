@@ -104,6 +104,8 @@ linkcheck_ignore += [
     r"https://github.com/",
     # HTTPSConnectionPool(host='opentelemetry.io', port=443): Read timed out. (read timeout=15)
     r"https://opentelemetry.io/",
+    # 403 Client Error: Forbidden
+    r"https://blog.stackademic.com/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
