@@ -178,6 +178,19 @@ Kotlin
 ::::
 
 ::::{grid-item-card}
+:link: connect-perl
+:link-alt: Connect to CrateDB using Perl
+:link-type: ref
+:class-body: sd-fs-1 sd-text-center
+:class-footer: sd-fs-5 sd-font-weight-bold
+```{image} /_assets/icon/perl-logo.svg
+:height: 40px
+```
++++
+Perl
+::::
+
+::::{grid-item-card}
 :link: connect-php
 :link-type: ref
 :class-body: sd-fs-1 sd-text-center
@@ -346,6 +359,7 @@ java/index
 javascript/index
 julia/index
 kotlin/index
+perl/index
 php/index
 python/index
 r/index
