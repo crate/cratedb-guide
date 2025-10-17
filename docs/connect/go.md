@@ -24,23 +24,24 @@ import (
   "context"
   "fmt"
   "os"
-  
+
   "github.com/jackc/pgx/v5"
 )
 
 func main() {
 
+
   ctx := context.Background()
   
   // urlExample := "postgres://username:password@localhost:5432/schema_name"
-  conn, err := pgx.Connect(ctx, os.Getenv("DATABASE_URL"))
+  conn, err := pgx.Connect(ctx, os.Getenv("CRATE_URL"))
   if err != nil {
     fmt.Fprintf(os.Stderr, "Unable to connect to database: %v\n", err)
     os.Exit(1)
   }
-  defer conn.Close(ctx)
-  
-  err = conn.Query(ctx, "SELECT mountain, height FROM sys.summits ORDER BY height DESC LIMIT 3").Scan()
+  defer conn.Close(context.Background())
+ 
+  rows, err := conn.Query(ctx, "SELECT mountain, height FROM sys.summits ORDER BY height DESC LIMIT 3")
   if err != nil {
     fmt.Fprintf(os.Stderr, "Query failed: %v\n", err)
     os.Exit(1)
@@ -53,7 +54,7 @@ func main() {
       fmt.Fprintf(os.Stderr, "Scan failed: %v\n", err)
       os.Exit(1)
     }
-    fmt.Println(name, height)
+    fmt.Println(mountain, height)
   }
   if err := rows.Err(); err != nil {
     fmt.Fprintf(os.Stderr, "Rows error: %v\n", err)
