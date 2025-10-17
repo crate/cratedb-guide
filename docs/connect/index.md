@@ -64,6 +64,7 @@ Any (ODBC)
 ::::
 
 ::::{grid-item-card}
+<<<<<<< HEAD
 :link: connect-elixir
 :link-type: ref
 :class-body: sd-fs-1 sd-text-center
@@ -74,6 +75,15 @@ Any (ODBC)
 ```
 +++
 Elixir
+=======
+:link: connect-erlang
+:link-type: ref
+:class-body: sd-fs-1 sd-text-center
+:class-footer: sd-fs-5 sd-font-weight-bold
+{fab}`erlang`
++++
+Erlang
+>>>>>>> 11da959b (Connect/Erlang: Add dedicated page)
 ::::
 
 ::::{grid-item-card}
@@ -229,6 +239,7 @@ application
 :hidden:
 
 elixir/index
+erlang/index
 go/index
 java/index
 javascript
