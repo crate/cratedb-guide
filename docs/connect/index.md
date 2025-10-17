@@ -73,6 +73,20 @@ CrateDB drivers and adapters for supported programming languages, frameworks, an
 {material-regular}`javascript;2em`
 ::::
 
+::::{grid-item-card} Julia
+:link: connect-julia
+:link-type: ref
+:link-alt: Connect to CrateDB using Julia
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+```{image} /_assets/icon/julia-logo.svg
+:height: 40px
+```
+::::
+
 ::::{grid-item-card} PHP
 :link: connect-php
 :link-type: ref
@@ -184,6 +198,7 @@ application
 
 java
 javascript
+julia/index
 php
 python
 ruby
