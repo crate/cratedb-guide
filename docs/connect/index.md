@@ -76,6 +76,19 @@ C#
 ::::
 
 ::::{grid-item-card}
+:link: connect-dart
+:link-type: ref
+:link-alt: Connect to CrateDB using Dart
+:class-body: sd-fs-1 sd-text-center
+:class-footer: sd-fs-5 sd-font-weight-bold
+```{image} /_assets/icon/dart-logo.svg
+:height: 50px
+```
++++
+Dart
+::::
+
+::::{grid-item-card}
 :link: connect-elixir
 :link-type: ref
 :class-body: sd-fs-1 sd-text-center
@@ -337,6 +350,7 @@ application
 :hidden:
 
 csharp/index
+dart/index
 elixir/index
 erlang/index
 fsharp/index
