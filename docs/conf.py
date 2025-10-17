@@ -110,6 +110,8 @@ linkcheck_ignore += [
     r"https://docs.astronomer.io/",
     r"https://www.confluent.io/",
     r"https://www.tensorflow.org/",
+    # 403 Client Error: Forbidden
+    r"https://swiftpackageindex.com/",
 ]
 
 linkcheck_anchors_ignore_for_url += [

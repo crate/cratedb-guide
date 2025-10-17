@@ -255,6 +255,17 @@ Visual Basic
 ::::
 
 ::::{grid-item-card}
+:link: connect-swift
+:link-type: ref
+:link-alt: Connect to CrateDB using Swift
+:class-body: sd-fs-1 sd-text-center
+:class-footer: sd-fs-5 sd-font-weight-bold
+{fab}`swift`
++++
+Swift
+::::
+
+::::{grid-item-card}
 :link: connect-zig
 :link-type: ref
 :link-alt: Connect to CrateDB using Zig
@@ -352,6 +363,7 @@ r/index
 ruby
 rust/index
 scala/index
+swift/index
 odbc/index
 visualbasic/index
 zig/index
