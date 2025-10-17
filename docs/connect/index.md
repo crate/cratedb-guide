@@ -73,6 +73,21 @@ CrateDB drivers and adapters for supported programming languages, frameworks, an
 {material-regular}`javascript;2em`
 ::::
 
+::::{grid-item-card} Perl
+:link: connect-perl
+:link-type: ref
+:link-alt: Connect to CrateDB using Perl
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+```{image} /_assets/icon/perl-logo.svg
+:height: 40px
+```
+
+::::
+
 ::::{grid-item-card} PHP
 :link: connect-php
 :link-type: ref
@@ -184,6 +199,7 @@ application
 
 java
 javascript
+perl
 php
 python
 ruby
