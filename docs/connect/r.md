@@ -45,6 +45,13 @@ res <- dbGetQuery(conn, "SELECT * FROM sys.summits ORDER BY height DESC LIMIT 10
 print(res)
 ```
 
+:::{note}
+**⚠️ Security note:** The example uses hardcoded credentials and disables SSL
+for simplicity. In production, use environment variables or secrets management
+(e.g., `.Renviron`, keyvault) and enable TLS verification
+(`sslmode="verify-full"` or `"require"`).
+:::
+
 ## Example
 
 :::{card}
