@@ -113,6 +113,18 @@ CrateDB drivers and adapters for supported programming languages, frameworks, an
 
 ::::
 
+::::{grid-item-card} Swift
+:link: connect-swift
+:link-type: ref
+:link-alt: Connect to CrateDB using Swift
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+{fab}`swift`
+::::
+
 :::::
 
 
@@ -187,6 +199,7 @@ javascript
 php
 python
 ruby
+swift
 natural
 All drivers <drivers>
 ```

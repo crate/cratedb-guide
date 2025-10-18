@@ -86,6 +86,8 @@ linkcheck_ignore += [
     r"https://aiven.io/",
     # HTTPSConnectionPool(host='qz.surister.dev', port=443): Read timed out. (read timeout=15)
     r"https://qz.surister.dev/",
+    # 403 Client Error: Forbidden
+    r"https://swiftpackageindex.com/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
