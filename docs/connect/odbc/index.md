@@ -23,7 +23,7 @@ The application uses ODBC functions through an _ODBC driver manager_ and
 addresses the driver and database using a _Data Source Name (DSN)_.
 :::
 
-:::{include} setup-widget.md
+:::{include} /connect/odbc/setup-widget.md
 :::
 
 ## Examples
