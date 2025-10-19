@@ -210,7 +210,7 @@ javascript
 php
 python
 ruby
-odbc
+odbc/index
 natural
 All drivers <drivers>
 ```
