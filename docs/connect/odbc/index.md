@@ -115,6 +115,44 @@ cursor.close()
 connection.close()
 ```
 
+### Python (turbodbc)
+
+[turbodbc] is a Python module to access relational databases via the Open
+Database Connectivity (ODBC) interface. turbodbc offers built-in NumPy and
+Apache Arrow for maximum performance.
+
+```shell
+pip install --upgrade turbodbc
+```
+```python
+import turbodbc
+
+# Connect to database
+connection_string = \
+    "Driver={PostgreSQL ODBC};Server=localhost;Port=5432;" \
+    "Uid=crate;Pwd=crate;Database=doc;MaxVarcharSize=1073741824"
+connection = turbodbc.connect(connection_string)
+
+# Invoke query
+cursor = connection.cursor()
+cursor.execute("SELECT * FROM sys.summits ORDER BY height DESC LIMIT 5")
+
+# Display results
+for row in cursor:
+    print(row)
+
+# Clean up
+cursor.close()
+connection.close()
+```
+
+:::{todo}
+Enable with the [Python patch](https://github.com/crate/cratedb-guide/pull/403).
+```
+- {ref}`Turbodbc -- a high-performance ODBC library <turbodbc>`
+```
+:::
+
 ### Visual Basic
 
 See also [psqlODBC with Visual Basic]. Please navigate to the
@@ -156,3 +194,4 @@ cn.Close
 [pyodbc]: https://github.com/mkleehammer/pyodbc
 [pyodbc installation instructions]: https://github.com/mkleehammer/pyodbc/wiki/Install
 [System.Data.Odbc]: https://learn.microsoft.com/en-us/dotnet/api/system.data.odbc
+[turbodbc]: https://turbodbc.readthedocs.io/
