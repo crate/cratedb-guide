@@ -23,26 +23,13 @@ The application uses ODBC functions through an _ODBC driver manager_ and
 addresses the driver and database using a _Data Source Name (DSN)_.
 :::
 
-:::{rubric} Prerequisites
+:::{include} setup-widget.md
 :::
-
-While Windows OS typically includes an ODBC driver manager, you can
-install the [unixODBC] driver manager on Linux and macOS systems.
-The PostgreSQL ODBC driver is called [psqlodbc].
-
-:::{rubric} DSN
-:::
-
-A typical connection string for CrateDB is:
-
-```text
-ODBC;Driver={PostgreSQL};Server=localhost;Port=5432;Uid=crate;Pwd=crate;MaxVarcharSize=1073741824; 
-```
 
 ## Examples
 
 A few examples to demonstrate CrateDB connectivity with ODBC. While the examples
-enumerated below use `Driver={PostgreSQL}` for addressing the driver, you can
+enumerated below use `Driver={PostgreSQL ODBC}` for addressing the driver, you can
 also address a named connection using `Dsn=your_dsn_name` instead.
 
 ### C#
@@ -54,8 +41,8 @@ through the [System.Data.Odbc] namespace.
 ```c#
 using System.Data.Odbc;
 
-// Open connection
-string connection_string = "ODBC;Driver={PostgreSQL};Server=localhost;Port=5432;Uid=crate;Pwd=crate;Database=doc;MaxVarcharSize=1073741824;";
+// Connect to database
+string connection_string = "ODBC;Driver={PostgreSQL ODBC};Server=localhost;Port=5432;Uid=crate;Pwd=crate;Database=doc;MaxVarcharSize=1073741824";
 OdbcConnection connection = new OdbcConnection(connection_string);
 connection.Open();
 
@@ -78,7 +65,7 @@ command.Dispose();
 connection.Close();
 ```
 
-### Python
+### Python (pyodbc)
 
 [pyodbc] is an open-source Python module that makes accessing ODBC databases
 simple. It implements the DB API 2.0 specification and adds other Pythonic
@@ -86,15 +73,15 @@ convenience. For more information, please visit the
 [pyodbc installation instructions] and [connecting to PostgreSQL with pyodbc].
 
 ```shell
-pip install pyodbc
+pip install --upgrade pyodbc
 ```
 ```python
 import pyodbc
 
-# Open connection
+# Connect to database
 connection_string = \
-    "ODBC;Driver={PostgreSQL};Server=localhost;Port=5432;" \
-    "Uid=crate;Pwd=crate;Database=doc;MaxVarcharSize=1073741824;"
+    "Driver={PostgreSQL ODBC};Server=localhost;Port=5432;" \
+    "Uid=crate;Pwd=crate;Database=doc;MaxVarcharSize=1073741824"
 connection = pyodbc.connect(connection_string)
 
 # Invoke query
@@ -112,15 +99,16 @@ connection.close()
 
 ### Visual Basic
 
-See also [psqlODBC with Visual Basic]. Please navigate to [psqlodbc download]
-to download and install the `psqlodbc` driver for Windows systems.
+See also [psqlODBC with Visual Basic]. Please navigate to the
+[psqlODBC download site] to download and install the `psqlodbc`
+driver for Windows systems.
 
 ```visualbasic
 Dim cn as New ADODB.Connection
 Dim rs as New ADODB.Recordset
 
-'Open connection
-cn.Open "DSN=<MyDataSourceName>;" & _
+'Connect to database
+cn.Open "Dsn=<MyDataSourceName>;" & _
         "Server=localhost;" & _
         "Port=5432;" & _
         "Uid=crate;" & _
@@ -142,17 +130,10 @@ rs.Close
 cn.Close
 ```
 
-## See also
-
-- {ref}`Turbodbc -- a high-performance ODBC library <turbodbc>`
-
 
 [.NET Framework Data Provider for ODBC]: https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/data-providers#net-framework-data-provider-for-odbc
 [Connecting to PostgreSQL with pyodbc]: https://github.com/mkleehammer/pyodbc/wiki/Connecting-to-PostgreSQL
-[psqlodbc]: https://odbc.postgresql.org/
-[psqlodbc download]: https://www.postgresql.org/ftp/odbc/releases/
 [psqlODBC with Visual Basic]: https://odbc.postgresql.org/howto-vb.html
 [pyodbc]: https://github.com/mkleehammer/pyodbc
 [pyodbc installation instructions]: https://github.com/mkleehammer/pyodbc/wiki/Install
 [System.Data.Odbc]: https://learn.microsoft.com/en-us/dotnet/api/system.data.odbc
-[unixODBC]: https://www.unixodbc.org/
