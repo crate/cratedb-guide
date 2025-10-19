@@ -11,7 +11,7 @@ The PostgreSQL ODBC driver is called [psqlODBC].
 
 :Windows:
 
-  On Windows, download the latest 64 bit driver installer
+  On Windows, download the latest 64-bit driver installer
   (MSI file) from the [psqlODBC download site] and invoke it.
   [Installing PostgreSQL ODBC Drivers] includes a walkthrough
   including screenshots.
@@ -57,8 +57,10 @@ odbcinst -i -d -f odbcinst.ini
 A typical connection string for CrateDB is:
 
 ```text
-ODBC;Driver={PostgreSQL ODBC};Server=localhost;Port=5432;Uid=crate;Pwd=crate;MaxVarcharSize=1073741824 
+ODBC;Driver={PostgreSQL ODBC};Server=localhost;Port=5432;Uid=crate;Pwd=crate;MaxVarcharSize=1073741824
 ```
+
+For some drivers, you will need to omit the `ODBC;` prefix.
 
 
 [Installing PostgreSQL ODBC Drivers]: https://help.campbellsci.com/PC400%20Manual/viewpro/installing_postgresql_odbc_drivers.htm
