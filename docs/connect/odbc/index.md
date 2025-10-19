@@ -65,6 +65,24 @@ command.Dispose();
 connection.Close();
 ```
 
+### Erlang
+
+The [Erlang ODBC application] provides an interface to communicate
+with relational SQL-databases out of the box.
+
+```erlang
+odbc:start(),
+{ok, Ref} = odbc:connect("Driver={PostgreSQL ODBC};Server=localhost;Port=5432;Uid=crate;Pwd=crate", []),
+io:fwrite("~p~n", [odbc:sql_query(Ref, "SELECT mountain, height FROM sys.summits ORDER BY height DESC LIMIT 3")]),
+```
+
+:::{todo}
+Enable with the [Erlang patch](https://github.com/crate/cratedb-guide/pull/420).
+```
+- {ref}`connect-erlang`
+```
+:::
+
 ### Python (pyodbc)
 
 [pyodbc] is an open-source Python module that makes accessing ODBC databases
@@ -133,6 +151,7 @@ cn.Close
 
 [.NET Framework Data Provider for ODBC]: https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/data-providers#net-framework-data-provider-for-odbc
 [Connecting to PostgreSQL with pyodbc]: https://github.com/mkleehammer/pyodbc/wiki/Connecting-to-PostgreSQL
+[Erlang ODBC application]: https://www.erlang.org/docs/28/apps/odbc/odbc.html
 [psqlODBC with Visual Basic]: https://odbc.postgresql.org/howto-vb.html
 [pyodbc]: https://github.com/mkleehammer/pyodbc
 [pyodbc installation instructions]: https://github.com/mkleehammer/pyodbc/wiki/Install
