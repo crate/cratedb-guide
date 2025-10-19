@@ -47,14 +47,14 @@ OdbcConnection connection = new OdbcConnection(connection_string);
 connection.Open();
 
 // Invoke query
-OdbcCommand command = new OdbcCommand("SELECT mountain, height FROM sys.summits ORDER BY height DESC LIMIT 5");
+OdbcCommand command = new OdbcCommand("SELECT mountain, height FROM sys.summits ORDER BY height DESC LIMIT 5", connection);
 OdbcDataReader reader = command.ExecuteReader();
 
 // Display results
-while(reader.Read()) 
+while(reader.Read())
 {
-  String mountain = reader.GetString(0);    
-  Integer height = reader.GetString(1);    
+  String mountain = reader.GetString(0);
+  int height = reader.GetInt32(1);
   Console.Write(mountain + ": " + height);
   Console.WriteLine();
 }
@@ -188,7 +188,7 @@ cn.Close
 
 
 [.NET Framework Data Provider for ODBC]: https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/data-providers#net-framework-data-provider-for-odbc
-[Connecting to PostgreSQL with pyodbc]: https://github.com/mkleehammer/pyodbc/wiki/Connecting-to-PostgreSQL
+[connecting to PostgreSQL with pyodbc]: https://github.com/mkleehammer/pyodbc/wiki/Connecting-to-PostgreSQL
 [Erlang ODBC application]: https://www.erlang.org/docs/28/apps/odbc/odbc.html
 [psqlODBC with Visual Basic]: https://odbc.postgresql.org/howto-vb.html
 [pyodbc]: https://github.com/mkleehammer/pyodbc
