@@ -86,6 +86,8 @@ linkcheck_ignore += [
     r"https://aiven.io/",
     # HTTPSConnectionPool(host='qz.surister.dev', port=443): Read timed out. (read timeout=15)
     r"https://qz.surister.dev/",
+    # Read timed out.
+    r"https://flowfuse.com/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
