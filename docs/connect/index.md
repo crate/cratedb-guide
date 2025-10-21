@@ -141,6 +141,19 @@ JavaScript
 ::::
 
 ::::{grid-item-card}
+:link: connect-kotlin
+:link-alt: Connect to CrateDB using Kotlin
+:link-type: ref
+:class-body: sd-fs-1 sd-text-center
+:class-footer: sd-fs-5 sd-font-weight-bold
+```{image} /_assets/icon/kotlin-logo.svg
+:height: 50px
+```
++++
+Kotlin
+::::
+
+::::{grid-item-card}
 :link: connect-php
 :link-type: ref
 :class-body: sd-fs-1 sd-text-center
@@ -293,6 +306,7 @@ fsharp/index
 go/index
 java/index
 javascript/index
+kotlin/index
 php/index
 python/index
 r/index
