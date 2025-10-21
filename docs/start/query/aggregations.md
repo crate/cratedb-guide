@@ -182,7 +182,7 @@ To learn about the full set of integrations, please visit the
 documentation at {ref}`bi` and {ref}`visualization`.
 
 
-## Further reading
+## See also
 
 :::::{grid}
 :padding: 0

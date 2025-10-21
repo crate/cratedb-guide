@@ -66,7 +66,7 @@ ORDER BY _score DESC;
 This ranks results by **vector similarity** to the vector supplied by searching
 top 2 nearest neighbours.
 
-## Further Learning & Resources
+## See also
 
 * {ref}`Vector Search <vector-search>`: More details about searching with
   vectors

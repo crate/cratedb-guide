@@ -168,7 +168,7 @@ table is 1000, more could impact performance.
 Object fields are treated as any other column, therefore **`GROUP BY`**,
 **`HAVING`**, and **window functions** are supported.
 
-## Further Learning & Resources
+## See also
 
 * Reference Manual:
   * {ref}`Objects <crate-reference:data-types-objects>`

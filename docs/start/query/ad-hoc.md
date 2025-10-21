@@ -206,7 +206,7 @@ Learn more about how to use ad-hoc queries effectively.
 | Full-text & filter                    | Combine keyword search with structured queries                                       | {ref}`fts` <br> {ref}`crate-reference:fulltext-indices`      |
 
 
-## Further reading
+## See also
 
 :::::{grid}
 :padding: 0

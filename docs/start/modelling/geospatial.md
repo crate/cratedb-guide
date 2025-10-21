@@ -82,7 +82,7 @@ in queries.
 
 See {ref}`Geo Search <crate-reference:sql_dql_geo_search>` for details.
 
-## Further Learning & Resources
+## See also
 
 * Reference manual:
   * {ref}`Geo Search <crate-reference:sql_dql_geo_search>`

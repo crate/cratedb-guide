@@ -156,7 +156,7 @@ All types are supported within the same table or joined together.
 * Supports long‑term retention with performant historic storage.
 * Columnar layout reduces storage footprint and accelerates aggregation queries.
 
-## Further Learning & Resources
+## See also
 
 * **Documentation:** {ref}`Advanced Time Series Analysis <timeseries-analysis>`,
   {ref}`Time Series Long Term Storage <timeseries-longterm>`

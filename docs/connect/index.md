@@ -132,7 +132,7 @@ bulk operations and BLOBs, which are not supported by the PostgreSQL
 protocol.
 :::
 
-:::{rubric} Further reading
+:::{rubric} See also
 :::
 
 :::::{grid}
