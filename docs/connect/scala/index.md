@@ -1,0 +1,95 @@
+(connect-scala)=
+
+# Scala
+
+:::{include} /_include/links.md
+:::
+
+:::{div} sd-text-muted
+Use JDBC to connect to CrateDB from Scala applications.
+:::
+
+:::{rubric} About
+:::
+
+:::
+[JDBC] is a standard Java API that provides a common interface for accessing
+databases in Java.
+:::
+
+:::{rubric} Driver options
+:::
+
+:::{div}
+Like when using {ref}`connect-java`, you have two JDBC driver options:
+The [PostgreSQL JDBC Driver] and the {ref}`crate-jdbc:index`.
+PostgreSQL JDBC uses the `jdbc:postgresql://` protocol identifier,
+while CrateDB JDBC uses `jdbc:crate://`.
+:::
+
+:::{rubric} Synopsis
+:::
+
+`build.sbt`
+```scala
+scalaVersion := "3.3.7"
+libraryDependencies ++= Seq(
+  "org.postgresql" % "postgresql" % "42.7.8",
+)
+```
+`example.scala`
+```scala
+import java.sql.{Connection, DriverManager, ResultSet}
+import scala.util.Using
+
+object Example {
+
+  def main(args: Array[String]): Unit = {
+
+    // Configure connection.
+    val driver = "org.postgresql.Driver"
+    val url = "jdbc:postgresql://localhost:5432/doc?sslmode=disable"
+    val username = "crate"
+    val password = "crate"
+
+    // Connect to the database.
+    Class.forName(driver)
+    try {
+      Using.resource(DriverManager.getConnection(url, username, password)) { connection =>
+
+        // Run a basic query.
+        val statement = connection.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY)
+        val resultSet = statement.executeQuery("SELECT mountain, height FROM sys.summits ORDER BY height DESC LIMIT 5")
+
+        // Display results.
+        while (resultSet.next()) {
+          val mountain = resultSet.getString("mountain")
+          val height = resultSet.getInt("height")
+          println(mountain + ": " + height)
+        }
+      }
+    } catch {
+      case e: Exception => e.printStackTrace()
+    }
+
+  }
+}
+```
+
+:::{include} ../_cratedb.md
+:::
+```shell
+sbt run
+```
+
+:::{rubric} CrateDB Cloud
+:::
+
+For connecting to CrateDB Cloud, use `sslmode = "require"`, and
+replace username, password, and hostname with values matching
+your environment.
+```scala
+val url = "jdbc:postgresql://testcluster.cratedb.net:5432/doc?sslmode=require"
+val username = "admin"
+val password = "password"
+```
