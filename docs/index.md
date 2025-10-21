@@ -23,7 +23,7 @@ search, or large volumes of structured and semi-structured data, CrateDB gives
 you the **power of SQL**, the **scalability of NoSQL**, and the **flexibility
 of a modern data platform**.
 
-See our [Product overview] to learn more about high level features and use cases.
+See our [Product overview] to learn more about high-level features and use cases.
 
 This documentation is about helping you get started, explore in practice, and
 operate in details.
