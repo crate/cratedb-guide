@@ -77,7 +77,7 @@ Similar exceptions exist for the other breaker types `[request]`, `[parent]`, `[
 If you experience a `CircuitBreakingException [parent]` it is because other queries/tasks were running simultaneously and their summed estimate
 exceeded `indices.breaker.total.limit`.
 
-## Further Reading
+## See also
 
 [The Circuit Breaker Mechanism in CrateDB]
 

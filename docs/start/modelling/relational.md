@@ -164,7 +164,7 @@ LEFT JOIN order_counts oc
     ON c.id = oc.customer_id;
 ```
 
-## Further Learning & Resources
+## See also
 
 * Reference Manual:
   * How to {ref}`query with joins <crate-reference:sql_joins>`

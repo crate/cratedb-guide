@@ -195,7 +195,7 @@ Learn more about how to combine ML features with other major features of CrateDB
 | Time-series support | Perfect for sensor-based training data      | {ref}`timeseries`                      |
 
 
-## Further reading
+## See also
 
 :::::{grid}
 :gutter: 2

@@ -145,7 +145,7 @@ WHERE
 This blend lets you query by text relevance, numeric filters, and spatial
 constraints, all in one.
 
-## Further Learning & Resources
+## See also
 
 * {ref}`Full-text Search <fulltext-search>`: In-depth
   walkthrough of full-text search capabilities.

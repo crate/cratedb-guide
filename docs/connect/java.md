@@ -185,7 +185,7 @@ Demonstrates a basic example using both the vanilla PostgreSQL JDBC Driver
 and the CrateDB JDBC Driver.
 :::
 
-## Further reading
+## See also
 
 For testing Java applications against CrateDB, see also documentation
 about {ref}`java-junit` and {ref}`testcontainers`.
