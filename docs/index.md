@@ -72,14 +72,14 @@ Learn how to interact with the database for the first time.
 :::
 
 :::{grid-item-card}
-:link: index
+:link: handbook
 :link-type: ref
-:link-alt: The CrateDB Guide
+:link-alt: The CrateDB Handbook
 :padding: 3
 :class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold sd-text-capitalize
 :class-body: sd-text-center sd-fs-5
 :class-footer: text-smaller
-The CrateDB Guide
+The CrateDB Handbook
 ^^^
 {material-outlined}`hiking;3.5em`
 +++
@@ -288,7 +288,7 @@ show what CrateDB is and how you can use it for a variety of projects.
 Don't miss the relevant [CrateDB customer stories].
 ::::
 
-
+[Product overview]: https://cratedb.com/database
 [CrateDB customer stories]: https://www.youtube.com/playlist?list=PLDZqzXOGoWUJrAF_lVx9U6BzAGG9xYz_v
 [HTTP protocol]: https://en.wikipedia.org/wiki/HTTP
 [JDBC]: https://en.wikipedia.org/wiki/Java_Database_Connectivity
