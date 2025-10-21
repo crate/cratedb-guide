@@ -121,6 +121,18 @@ Go
 ::::
 
 ::::{grid-item-card}
+:link: connect-groovy
+:link-type: ref
+:class-body: sd-fs-1 sd-text-center
+:class-footer: sd-fs-5 sd-font-weight-bold
+```{image} /_assets/icon/groovy-logo.svg
+:height: 50px
+```
++++
+Groovy
+::::
+
+::::{grid-item-card}
 :link: connect-java
 :link-type: ref
 :class-body: sd-fs-1 sd-text-center
@@ -291,6 +303,7 @@ elixir/index
 erlang/index
 fsharp/index
 go/index
+groovy/index
 java/index
 javascript/index
 php/index
