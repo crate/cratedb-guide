@@ -231,14 +231,38 @@ echo '{"stmt": "SELECT 42.42;"}' \
 Mostly through its PostgreSQL interface, CrateDB supports working with popular
 database IDE (Integrated Development Environment) applications.
 
-### DataGrip
 
-- {ref}`datagrip`
+:::::{grid} 2 2 2 4
+:gutter: 3
+:padding: 0
 
-### DBeaver
+::::{grid-item-card} DataGrip
+:link: datagrip
+:link-type: ref
+:link-alt: Connect to CrateDB using DataGrip
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+```{image} /_assets/icon/datagrip-logo.svg
+:height: 60px
+```
+::::
 
-- {ref}`dbeaver`
+::::{grid-item-card} DBeaver
+:link: dbeaver
+:link-type: ref
+:link-alt: Connect to CrateDB using DBeaver
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+```{image} /_assets/icon/dbeaver-logo.svg
+:height: 60px
+```
+::::
 
+:::::
 
 
 [curl]: https://curl.se/

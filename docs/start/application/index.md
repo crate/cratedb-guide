@@ -8,7 +8,7 @@
 ::::{grid} 1 2 2 3
 :gutter: 2
 
-:::{grid-item-card} JavaScript guestbook app
+:::{grid-item-card} JavaScript guestbook
 :link: https://github.com/crate/crate-sample-apps
 :link-type: url
 A JavaScript guestbook app with several backend implementations.
@@ -16,13 +16,13 @@ A JavaScript guestbook app with several backend implementations.
 Each uses a different client library to communicate with CrateDB over HTTP.
 :::
 
-:::{grid-item-card} Geospatial demo with CrateDB
+:::{grid-item-card} Geospatial data
 :link: https://github.com/crate/devrel-shipping-forecast-geo-demo
 :link-type: url
 Geospatial data demo application using CrateDB and the Express.js framework.
 +++
-Click on the map to drop a marker in the waters around the British Isles,
-then select Search to see which Shipping Forecast region your marker is in.
+Select a point of interest on a map,
+then drill up to the corresponding region.
 :::
 
 ::::
@@ -34,49 +34,48 @@ then select Search to see which Shipping Forecast region your marker is in.
 ::::{grid} 1 2 2 3
 :gutter: 2
 
-:::{grid-item-card} CrateDB UK Offshore Wind Farms Data Workshop
+:::{grid-item-card} UK offshore wind farms data » Workshop
 :link: https://github.com/crate/cratedb-examples/tree/main/topic/multi-model
 :link-type: url
-The workshop explores multimodel data modeling and queries with CrateDB.
+The workshop explores multimodel data modeling and queries
+with CrateDB and Leaflet.
 +++
 Acquire geographic data in WKT format and hourly performance data in JSONL
-from The Crown Estate (manager of the UK's offshore wind farm sites),
-import them into CrateDB, and display them on a Leaflet map.
+format about UK's offshore wind farm sites,
+import them into CrateDB, and display them on map.
 :::
 
-:::{grid-item-card} CrateDB UK Offshore Wind Farms Data Demo
+:::{grid-item-card} UK offshore wind farms data » Demo
 :link: https://github.com/crate/devrel-offshore-wind-farms-demo
 :link-type: url
 Demo application that visualizes data in the UK offshore wind farms
 example dataset using CrateDB.
 +++
-Navigate the map widget to see the locations of individual wind farms, then
-click on a marker to see details about that wind farm's performance.
-Zoom in and drill down to locations and performance data of individual turbines.
+Navigate the map widget to see the locations of wind farms, then drill
+down into performance details about that wind farm and individual turbines.
 :::
 
-:::{grid-item-card} Planespotting with SDR and CrateDB
+:::{grid-item-card} Planespotting with SDR
 :link: https://github.com/crate/devrel-plane-spotting-with-cratedb
 :link-type: url
-Plane Spotting with Software Defined Radio (SDR), CrateDB, and Node.js.
+Plane spotting with software-defined radio (SDR), CrateDB, and Node.js.
 +++
-Import data from the FlightAware API, then query the latest data for planes
-that have a plane_id, callsign, altitude, and position and have been updated
-within the last 2 minutes.
+Import data from the FlightAware API, then query the latest data for active
+transmitting planes that has been updated within the last 2 minutes.
 :::
 
-:::{grid-item-card} CrateDB GTFS / GTFS-RT Transit Data Demo
+:::{grid-item-card} GTFS / GTFS-RT transit data
 :link: https://github.com/crate/devrel-gtfs-transit
 :link-type: url
-Capture GTFS and GTFS-RT data for storage and analysis with CrateDB.
+Store and analyze transit networks using a
+a Python/JavaScript/Leaflet application and CrateDB.
 +++
-The demo application has a Python backend and a JavaScript/Leaflet
-maps frontend. It uses GTFS (General Transit Feed Specification) and GTFS‑RT
-(the extra real-time feeds for GTFS) to store and analyze transit system route,
-trip, stop, and vehicle‑movement data stored in CrateDB.
+Store and analyze data about transit system routes,
+trips, stops, and vehicle movements,
+based on GTFS and GTFS‑RT data (General Transit Feed Specification).
 :::
 
-:::{grid-item-card} CrateDB RAG / Hybrid Search PDF Chatbot
+:::{grid-item-card} Hybrid-search PDF chatbot
 :link: https://github.com/crate/devrel-pdf-rag-chatbot
 :link-type: url
 A natural language chatbot powered by CrateDB using RAG techniques and data from PDF files.
