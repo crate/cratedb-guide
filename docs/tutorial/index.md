@@ -44,24 +44,6 @@ Learn how to analyze time series data on behalf of a practical example.
 :::::
 
 
-## Academy
-
-:::{card}
-:width: 50%
-:link: https://learn.cratedb.com/
-:link-alt: The CrateDB Academy
-:class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold sd-text-capitalize
-:class-body: sd-text-center sd-fs-5
-:class-footer: text-smaller
-Academy Courses
-^^^
-{material-outlined}`school;3.5em`
-+++
-A learning hub dedicated to data enthusiasts, including educational material
-about CrateDB fundamentals and advanced time series.
-:::
-
-
 ## Integrations
 
 Learn how to integrate CrateDB with 3rd-party, industry-standard products.
@@ -87,6 +69,24 @@ Learn how to integrate CrateDB with 3rd-party, industry-standard products.
 - {ref}`grafana-tutorial`
 - {ref}`tensorflow-tutorial`
 - {ref}`r-tutorial`
+
+
+## Academy
+
+:::{card}
+:width: 50%
+:link: https://learn.cratedb.com/
+:link-alt: The CrateDB Academy
+:class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold sd-text-capitalize
+:class-body: sd-text-center sd-fs-5
+:class-footer: text-smaller
+Academy Courses
+^^^
+{material-outlined}`school;3.5em`
++++
+A learning hub dedicated to data enthusiasts, including educational material
+about CrateDB fundamentals and advanced time series.
+:::
 
 
 :::{note}
