@@ -116,13 +116,14 @@ features through guided tutorials or on your own with custom data.
 :::
 Learn about the fundamentals of CrateDB, guided and self-guided.
 
-::::{grid} 2 2 4 4
+::::{grid} 2 2 2 4
 :padding: 0
+:gutter: 0
 
 :::{grid-item-card}
 :link: getting-started
 :link-type: ref
-:padding: 3
+:padding: 2
 :class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold sd-text-capitalize
 :class-body: sd-text-center sd-fs-5
 :class-footer: text-smaller
@@ -137,7 +138,7 @@ Learn how to interact with the database for the first time.
 :link: index
 :link-type: ref
 :link-alt: The CrateDB Guide
-:padding: 3
+:padding: 2
 :class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold sd-text-capitalize
 :class-body: sd-text-center sd-fs-5
 :class-footer: text-smaller
@@ -151,7 +152,7 @@ Guides and tutorials about how to use CrateDB in practice.
 :::{grid-item-card}
 :link: https://learn.cratedb.com/
 :link-alt: The CrateDB Academy
-:padding: 3
+:padding: 2
 :class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold sd-text-capitalize
 :class-body: sd-text-center sd-fs-5
 :class-footer: text-smaller
@@ -165,7 +166,7 @@ A learning hub dedicated to data enthusiasts.
 :::{grid-item-card}
 :link: https://community.cratedb.com/
 :link-alt: The CrateDB Community Portal
-:padding: 3
+:padding: 2
 :class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold sd-text-capitalize
 :class-body: sd-text-center sd-fs-5
 :class-footer: text-smaller
@@ -190,7 +191,7 @@ Learn about the fundamental tools that support working directly with CrateDB.
 :link: crate-admin-ui:index
 :link-type: ref
 :link-alt: The CrateDB Admin UI
-:padding: 3
+:padding: 2
 :class-card: sd-pt-3
 :class-title: sd-fs-5
 :class-body: sd-text-center
@@ -204,7 +205,7 @@ Learn about CrateDB's included web administration interface.
 :link: crate-crash:index
 :link-type: ref
 :link-alt: The Crash CLI
-:padding: 3
+:padding: 2
 :class-card: sd-pt-3
 :class-title: sd-fs-5
 :class-body: sd-text-center
@@ -295,7 +296,7 @@ Learn how to use CrateDB by digesting concise examples.
 :::{grid-item-card} CrateDB Examples
 :link: https://github.com/crate/cratedb-examples
 :link-alt: CrateDB Examples
-:padding: 3
+:padding: 2
 :class-card: sd-pt-3
 :class-title: sd-fs-5
 :class-body: sd-text-center
@@ -308,7 +309,7 @@ A collection of clear, concise examples of how to work with CrateDB.
 :::{grid-item-card} Sample Apps
 :link: https://github.com/crate/crate-sample-apps/
 :link-alt: CrateDB Sample Apps
-:padding: 3
+:padding: 2
 :class-card: sd-pt-3
 :class-title: sd-fs-5
 :class-body: sd-text-center

@@ -10,7 +10,7 @@ and explore key features.
 :::{rubric} Warm up
 :::
 
-:::::{grid} 2 2 2 4
+:::::{grid} 2 2 4 4
 :padding: 0
 :class-container: installation-grid
 
@@ -18,8 +18,7 @@ and explore key features.
 :link: first-steps
 :link-type: ref
 :link-alt: First steps with CrateDB
-:columns: 6 3 3 3
-:padding: 3
+:padding: 2
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
@@ -32,8 +31,7 @@ and explore key features.
 :link: connect
 :link-type: ref
 :link-alt: Connect to CrateDB
-:columns: 6 3 3 3
-:padding: 3
+:padding: 2
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
@@ -46,8 +44,7 @@ and explore key features.
 :link: query-capabilities
 :link-type: ref
 :link-alt: Query Capabilities
-:columns: 6 3 3 3
-:padding: 3
+:padding: 2
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
@@ -60,8 +57,7 @@ and explore key features.
 :link: ingest
 :link-type: ref
 :link-alt: Ingesting Data
-:columns: 6 3 3 3
-:padding: 3
+:padding: 2
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
