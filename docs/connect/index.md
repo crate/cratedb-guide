@@ -73,6 +73,20 @@ CrateDB drivers and adapters for supported programming languages, frameworks, an
 {material-regular}`javascript;2em`
 ::::
 
+::::{grid-item-card} Kotlin
+:link: connect-kotlin
+:link-type: ref
+:link-alt: Connect to CrateDB using Kotlin
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+```{image} /_assets/icon/kotlin-logo.svg
+:height: 50px
+```
+::::
+
 ::::{grid-item-card} PHP
 :link: connect-php
 :link-type: ref
@@ -184,6 +198,7 @@ application
 
 java
 javascript
+kotlin/index
 php
 python
 ruby
