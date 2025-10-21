@@ -7,7 +7,7 @@ About using CrateDB and CrateDB Cloud in practice.
 :::
 
 
-::::{grid} 2 2 4 4
+::::{grid} 2 2 3 3
 :gutter: 2
 :padding: 0
 
@@ -51,7 +51,7 @@ About using CrateDB and CrateDB Cloud in practice.
 
 How-to guides, tutorials, and explanations.
 
-::::{grid} 2 2 4 4
+::::{grid} 2 2 3 3
 :gutter: 2
 :padding: 0
 
@@ -63,7 +63,7 @@ How-to guides, tutorials, and explanations.
 :class-card: sd-pt-3
 :class-body: sd-fs-1
 :class-title: sd-fs-5
-{material-outlined}`assistant_direction;1.3em`
+{material-outlined}`integration_instructions;1.3em`
 :::
 
 :::{grid-item-card} Tutorials
@@ -75,6 +75,17 @@ How-to guides, tutorials, and explanations.
 :class-body: sd-fs-1
 :class-title: sd-fs-5
 {material-outlined}`school;1.3em`
+:::
+
+:::{grid-item-card} Explanations
+:link: explanations
+:link-type: ref
+:link-alt: Explanations about subject matters concerning CrateDB
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-5
+{material-outlined}`lightbulb;1.3em`
 :::
 
 :::{grid-item-card} Administration
@@ -247,6 +258,7 @@ programming frameworks, software testing, time series data.
 ../connect/index
 ../howto/index
 ../tutorial/index
+../explain/index
 ../admin/index
 ../performance/index
 ../feature/index
