@@ -5,7 +5,7 @@
 Data ingestion methods for CrateDB at a glance.
 :::
 
-:::::{grid} 1 2 2 2
+:::::{grid} 1 1 2 2
 :margin: 4 4 0 0
 :padding: 0
 :gutter: 2

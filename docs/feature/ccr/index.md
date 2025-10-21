@@ -88,14 +88,14 @@ LEFT JOIN pg_subscription_rel r ON s.oid = r.srsubid;
 
 Learn how to set up logical replication between CrateDB clusters.
 
-::::{grid} 2 2 2 2
+::::{grid} 1 2 2 2
+:gutter: 2
 :padding: 0
 
 :::{grid-item-card}
 :link: logical-replication-setup
 :link-type: ref
 :link-alt: Logical replication setup between CrateDB clusters
-:padding: 3
 :class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold
 :class-body: sd-text-center2 sd-fs2-5
 :class-footer: text-smaller
@@ -111,7 +111,6 @@ How to configure logical replication on standalone clusters.
 :link: cloud:logical-replication
 :link-type: ref
 :link-alt: Logical replication setup on CrateDB Cloud
-:padding: 3
 :class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold
 :class-body: sd-text-center2 sd-fs2-5
 :class-footer: text-smaller

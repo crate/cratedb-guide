@@ -131,14 +131,14 @@ partitioning strategies. Learn about the details of shard allocation, that
 will support you to choose the right strategy for your data and your most
 prominent types of workloads.
 
-::::{grid} 2 2 2 2
+::::{grid} 1 2 2 2
+:gutter: 2
 :padding: 0
 
 :::{grid-item-card}
 :link: sharding-partitioning
 :link-type: ref
 :link-alt: Sharding and Partitioning
-:padding: 3
 :class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold
 :class-body: sd-text-center2 sd-fs2-5
 :class-footer: text-smaller
@@ -156,7 +156,6 @@ presenting best practices and examples.
 :link: sharding-performance
 :link-type: ref
 :link-alt: Sharding and Partitioning
-:padding: 3
 :class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold
 :class-body: sd-text-center2 sd-fs2-5
 :class-footer: text-smaller
@@ -172,7 +171,6 @@ Guidelines about balancing your strategy to yield the best performance for your 
 :::{grid-item-card}
 :link: https://community.cratedb.com/t/sharding-and-partitioning-guide-for-time-series-data/737
 :link-alt: Sharding and partitioning guide for time series data
-:padding: 3
 :class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold
 :class-body: sd-text-center2 sd-fs2-5
 :class-footer: text-smaller

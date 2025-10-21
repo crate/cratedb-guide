@@ -36,7 +36,8 @@ configure
 
 % the following sections explicitly
 
-::::{grid} 2 2 2 4
+::::{grid} 2 3 3 4
+:gutter: 3
 :padding: 0
 :class-container: installation-grid
 
@@ -44,7 +45,6 @@ configure
 :link: install-debian
 :link-type: ref
 :link-alt: Debian and Ubuntu Linux
-:padding: 3
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
@@ -57,7 +57,6 @@ configure
 :link: install-rpm
 :link-type: ref
 :link-alt: RPM Linux: Red Hat, SUSE
-:padding: 3
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
@@ -70,7 +69,6 @@ configure
 :link: install-macos
 :link-type: ref
 :link-alt: macOS
-:padding: 3
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
@@ -82,7 +80,6 @@ configure
 :link: install-windows
 :link-type: ref
 :link-alt: Windows
-:padding: 3
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
@@ -94,7 +91,6 @@ configure
 :link: install-tarball
 :link-type: ref
 :link-alt: Installation from Tarball
-:padding: 3
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
@@ -106,7 +102,6 @@ configure
 :link: install-container
 :link-type: ref
 :link-alt: Container Setup
-:padding: 3
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
@@ -118,7 +113,6 @@ configure
 :link: install-cloud
 :link-type: ref
 :link-alt: Cloud Hosting
-:padding: 3
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
@@ -130,7 +124,6 @@ configure
 :link: install-configure
 :link-type: ref
 :link-alt: Configuration Settings
-:padding: 3
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1

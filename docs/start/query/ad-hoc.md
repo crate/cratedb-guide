@@ -208,20 +208,19 @@ Learn more about how to use ad-hoc queries effectively.
 
 ## Further reading
 
-:::::{grid} 1 3 3 3
-:margin: 4 4 0 0
+:::::{grid}
 :padding: 0
 :gutter: 2
 
 ::::{grid-item-card} {material-outlined}`article;1.5em` Documentation
-:columns: 3
+:columns: 12 6 3 3
 - {ref}`SQL reference <crate-reference:sql>`
 - {ref}`crate-reference:data-types-objects`
 - {ref}`crate-reference:fulltext-indices`
 ::::
 
 ::::{grid-item-card} {material-outlined}`link;1.5em` Related
-:columns: 3
+:columns: 12 6 3 3
 - {ref}`object`
 - {ref}`fts`
 - {ref}`timeseries`
@@ -229,7 +228,7 @@ Learn more about how to use ad-hoc queries effectively.
 ::::
 
 ::::{grid-item-card} {material-outlined}`read_more;1.5em` Read more
-:columns: 6
+:columns: 12 12 6 6
 - [Exploratory Time Series Data Analysis]
 - [Academy: Time Series Query Optimization]
 - [CrateDB Scalability Benchmark: Query Throughput]
