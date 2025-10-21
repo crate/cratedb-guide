@@ -14,7 +14,7 @@
 [cloud-datashader-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/amo/cloud-datashader/topic/timeseries/explore/cloud-datashader.ipynb
 [cloud-datashader-github]: https://github.com/crate/cratedb-examples/blob/amo/cloud-datashader/topic/timeseries/explore/cloud-datashader.ipynb
 [CTE]: inv:crate-reference#sql_dql_with
-[CrateDB BLOBs]: inv:crate-reference:*:label#blob_support
+[CrateDB BLOB support]: inv:crate-reference:*:label#blob_support
 [CrateDB Cloud]: inv:cloud:*:label#index
 [CrateDB Cloud Console]: https://console.cratedb.cloud/
 [CrateDB Examples]: https://github.com/crate/cratedb-examples

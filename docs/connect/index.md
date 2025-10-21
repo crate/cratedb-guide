@@ -150,7 +150,7 @@ protocol.
 - [Authentication]
 - [SQL query syntax]
 - [Bulk operations]
-- [BLOB support][CrateDB BLOBs]
+- [BLOB support][CrateDB BLOB support]
 ::::
 
 ::::{grid-item-card} {material-outlined}`read_more;1.5em` Read more
