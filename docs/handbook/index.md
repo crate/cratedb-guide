@@ -7,14 +7,14 @@ About using CrateDB and CrateDB Cloud in practice.
 :::
 
 
-::::{grid} 4
+::::{grid} 2 2 4 4
+:gutter: 2
 :padding: 0
 
 :::{grid-item-card} Getting Started
 :link: getting-started
 :link-type: ref
 :link-alt: Getting started with CrateDB
-:padding: 1
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
@@ -26,7 +26,6 @@ About using CrateDB and CrateDB Cloud in practice.
 :link: install
 :link-type: ref
 :link-alt: Installing CrateDB
-:padding: 1
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
@@ -38,7 +37,6 @@ About using CrateDB and CrateDB Cloud in practice.
 :link: connect
 :link-type: ref
 :link-alt: Connecting to CrateDB
-:padding: 1
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
@@ -53,14 +51,14 @@ About using CrateDB and CrateDB Cloud in practice.
 
 How-to guides, tutorials, and explanations.
 
-::::{grid} 4
+::::{grid} 2 2 4 4
+:gutter: 2
 :padding: 0
 
 :::{grid-item-card} How-to guides
 :link: howtos
 :link-type: ref
 :link-alt: How-to guides about CrateDB
-:padding: 1
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
@@ -72,7 +70,6 @@ How-to guides, tutorials, and explanations.
 :link: tutorials
 :link-type: ref
 :link-alt: Tutorials about CrateDB
-:padding: 1
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
@@ -84,7 +81,6 @@ How-to guides, tutorials, and explanations.
 :link: administration
 :link-type: ref
 :link-alt: CrateDB Administration
-:padding: 1
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
@@ -96,7 +92,6 @@ How-to guides, tutorials, and explanations.
 :link: performance
 :link-type: ref
 :link-alt: CrateDB Performance guides
-:padding: 1
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
@@ -112,19 +107,18 @@ How-to guides, tutorials, and explanations.
 :::{rubric} Highlights
 :::
 
-::::{grid} 1 2 3 3
+::::{grid} 2 2 3 3
+:gutter: 2
 :padding: 0
 
 :::{grid-item-card} Document Store
 :link: document
 :link-type: ref
 :link-alt: Storing JSON documents using CrateDB's `OBJECT` data type
-:padding: 3
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
 :class-title: sd-fs-5
-
 {material-outlined}`article;1.3em`
 :::
 
@@ -132,12 +126,10 @@ How-to guides, tutorials, and explanations.
 :link: search-overview
 :link-type: ref
 :link-alt: About CrateDB's search capabilities
-:padding: 3
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
 :class-title: sd-fs-5
-
 {material-outlined}`manage_search;1.3em`
 :::
 
@@ -145,12 +137,10 @@ How-to guides, tutorials, and explanations.
 :link: advanced-querying
 :link-type: ref
 :link-alt: About CrateDB's advanced querying capabilities
-:padding: 3
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
 :class-title: sd-fs-5
-
 {material-outlined}`engineering;1.3em`
 :::
 
@@ -174,19 +164,18 @@ Read about all features of CrateDB at a glance.
 
 Load data from many sources into CrateDB.
 
-::::{grid} 1 2 3 3
+::::{grid} 2 2 3 3
+:gutter: 2
 :padding: 0
 
 :::{grid-item-card} ETL
 :link: etl
 :link-type: ref
 :link-alt: Load and export data into/from CrateDB
-:padding: 3
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
 :class-title: sd-fs-5
-
 {material-outlined}`transform;1.3em`
 :::
 
@@ -194,12 +183,10 @@ Load data from many sources into CrateDB.
 :link: cdc
 :link-type: ref
 :link-alt: Change Data Capture (CDC) into CrateDB
-:padding: 3
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
 :class-title: sd-fs-5
-
 {material-outlined}`double_arrow;1.3em`
 :::
 
@@ -207,12 +194,10 @@ Load data from many sources into CrateDB.
 :link: telemetry
 :link-type: ref
 :link-alt: Use CrateDB with metrics collection agents, brokers, and stores
-:padding: 3
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
 :class-title: sd-fs-5
-
 {material-outlined}`query_stats;1.3em`
 :::
 
@@ -222,9 +207,8 @@ Load data from many sources into CrateDB.
 ## Solutions and topics
 
 ::::{grid} 1 2 2 2
-:margin: 4 4 0 0
-:padding: 0
 :gutter: 2
+:padding: 0
 
 :::{grid-item-card} {material-outlined}`lightbulb;2em` Solutions and use cases
 :link: solutions

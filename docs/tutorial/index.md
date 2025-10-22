@@ -8,13 +8,14 @@ Acquire skills and knowledge about how to interact with CrateDB along
 the lines of a few learning sessions.
 :::
 
+
 ## Get started
 
 Learn about fundamental features of CrateDB with hands-on example tutorials.
 
 :::::{grid} 2
+:gutter: 3
 :padding: 0
-:gutter: 4
 
 ::::{grid-item-card} Objects: Analyzing Marketing Data
 :link: objects-tutorial-marketing

@@ -184,19 +184,18 @@ documentation at {ref}`bi` and {ref}`visualization`.
 
 ## Further reading
 
-:::::{grid} 1 3 3 3
-:margin: 4 4 0 0
+:::::{grid}
 :padding: 0
 :gutter: 2
 
 ::::{grid-item-card} {material-outlined}`article;1.5em` Documentation
-:columns: 3
+:columns: 12 6 3 3
 - {ref}`crate-reference:aggregation`
 - {ref}`performance-select`
 ::::
 
 ::::{grid-item-card} {material-outlined}`integration_instructions;1.5em` Integrations
-:columns: 3
+:columns: 12 6 3 3
 - {ref}`grafana`
 - {ref}`metabase`
 - {ref}`powerbi`
@@ -205,7 +204,7 @@ documentation at {ref}`bi` and {ref}`visualization`.
 ::::
 
 ::::{grid-item-card} {material-outlined}`read_more;1.5em` Read more
-:columns: 6
+:columns: 12 12 6 6
 - Learn: [Real-time analytics primer]
 - Learn: [Hands-on: Aggregating and grouping data]
 - Solution: {ref}`analytics`

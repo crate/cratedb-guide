@@ -49,10 +49,9 @@ be used together with CrateDB, and educates about how to use them optimally.
 Storing metrics data for the long term is a common need in systems monitoring
 scenarios. CrateDB offers corresponding integration adapters.
 
-:::::{grid} auto 3 3 3
-:margin: 4 4 0 0
-:padding: 0
+:::::{grid} 1 2 3 3
 :gutter: 2
+:padding: 0
 
 ::::{grid-item-card} collectd
 :link: collectd

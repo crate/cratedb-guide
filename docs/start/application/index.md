@@ -5,7 +5,7 @@
 :::{rubric} Starter
 :::
 
-::::{grid} 3
+::::{grid} 1 2 2 3
 :gutter: 2
 
 :::{grid-item-card} JavaScript guestbook app
@@ -31,7 +31,7 @@ then select Search to see which Shipping Forecast region your marker is in.
 :::{rubric} Advanced
 :::
 
-::::{grid} 3
+::::{grid} 1 2 2 3
 :gutter: 2
 
 :::{grid-item-card} CrateDB UK Offshore Wind Farms Data Workshop

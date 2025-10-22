@@ -305,7 +305,7 @@ For connecting to CrateDB from PHP, using DBAL and Doctrine.
 [CrateDB Python driver](https://cratedb.com/docs/python/)
 ```
 ```{sd-item}
-For connecting to CrateDB from Python. Has support for [CrateDB BLOBs].
+For connecting to CrateDB from Python. Provides [CrateDB BLOB support].
 ```
 ```{sd-item}
 [![](https://img.shields.io/github/v/tag/crate/crate-python?label=latest)](https://github.com/crate/crate-python)

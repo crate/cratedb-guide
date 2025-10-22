@@ -29,7 +29,7 @@ through SQL.
 :::
 
 ::::{grid} 1 2 2 2
-:gutter: 4
+:gutter: 3
 
 :::{grid-item-card} Documentation: Vector search
 :link: vector-search
@@ -75,7 +75,7 @@ and provide MCP and AI enterprise data integrations.
 :::
 
 ::::{grid} 2
-:gutter: 4
+:gutter: 3
 
 :::{grid-item-card} Text-to-SQL with LlamaIndex
 :link: llamaindex
@@ -108,7 +108,7 @@ time series anomaly detection and forecasting.
 :::
 
 ::::{grid} 2
-:gutter: 4
+:gutter: 3
 
 :::{grid-item-card} Statistical analysis and visualization on huge datasets
 :link: r-tutorial
@@ -160,7 +160,7 @@ and DevOps.
 :::
 
 ::::{grid} 1 2 2 2
-:gutter: 4
+:gutter: 3
 
 :::{grid-item-card} MLflow
 :link: mlflow

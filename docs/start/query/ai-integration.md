@@ -197,20 +197,19 @@ Learn more about how to combine ML features with other major features of CrateDB
 
 ## Further reading
 
-:::::{grid} 1 3 3 3
-:margin: 4 4 0 0
-:padding: 0
+:::::{grid}
 :gutter: 2
+:padding: 0
 
 ::::{grid-item-card} {material-outlined}`article;1.5em` Documentation
-:columns: 3
+:columns: 12 6 3 3
 - {ref}`vector-search`
 - {ref}`hybrid-search`
 - {ref}`Machine Learning <ml>`
 ::::
 
 ::::{grid-item-card} {material-outlined}`integration_instructions;1.5em` Integrations
-:columns: 3
+:columns: 12 6 3 3
 - {ref}`langchain`
 - {ref}`llamaindex`
 - {ref}`mindsdb`
@@ -219,7 +218,7 @@ Learn more about how to combine ML features with other major features of CrateDB
 ::::
 
 ::::{grid-item-card} {material-outlined}`read_more;1.5em` Read more
-:columns: 6
+:columns: 12 12 6 6
 - [Blog: Vector support and KNN search]
 - {ref}`Synopsis: Text-to-SQL <llamaindex-synopsis>`
 - {ref}`Tutorial: Text-to-SQL using Azure <llamaindex-usage-azure>`

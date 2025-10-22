@@ -20,8 +20,8 @@ please learn about typical connection URI formats for CrateDB and its
 default client applications.
 
 :::::{grid} 2 2 2 3
+:gutter: 3
 :padding: 0
-:gutter: 4
 
 ::::{grid-item-card} {material-outlined}`link;2em` General information
 :link: connect-configure
@@ -46,14 +46,13 @@ Use CLI programs or database IDEs to connect to CrateDB.
 CrateDB drivers and adapters for supported programming languages, frameworks, and environments.
 
 :::::{grid} 2 2 2 4
-:margin: 4 4 0 0
+:gutter: 3
 :padding: 0
 
 ::::{grid-item-card} Java
 :link: connect-java
 :link-type: ref
 :link-alt: Connect to CrateDB using Java
-:padding: 3
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
@@ -65,7 +64,6 @@ CrateDB drivers and adapters for supported programming languages, frameworks, an
 :link: connect-javascript
 :link-type: ref
 :link-alt: Connect to CrateDB using JavaScript
-:padding: 3
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
@@ -77,7 +75,6 @@ CrateDB drivers and adapters for supported programming languages, frameworks, an
 :link: connect-php
 :link-type: ref
 :link-alt: Connect to CrateDB using PHP
-:padding: 3
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
@@ -89,7 +86,6 @@ CrateDB drivers and adapters for supported programming languages, frameworks, an
 :link: connect-python
 :link-type: ref
 :link-alt: Connect to CrateDB using Python
-:padding: 3
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
@@ -101,7 +97,6 @@ CrateDB drivers and adapters for supported programming languages, frameworks, an
 :link: connect-ruby
 :link-type: ref
 :link-alt: Connect to CrateDB using Ruby
-:padding: 3
 :text-align: center
 :class-card: sd-pt-3
 :class-body: sd-fs-1
@@ -140,27 +135,26 @@ protocol.
 :::{rubric} Further reading
 :::
 
-:::::{grid} 1 3 3 3
-:margin: 4 4 0 0
-:padding: 0
+:::::{grid}
 :gutter: 2
+:padding: 0
 
 ::::{grid-item-card} {material-outlined}`article;1.5em` Documentation
-:columns: 3
+:columns: 12 6 3 3
 - [HTTP interface]
 - [PostgreSQL interface]
 ::::
 
 ::::{grid-item-card} {material-outlined}`link;1.5em` Related
-:columns: 3
+:columns: 12 6 3 3
 - [Authentication]
 - [SQL query syntax]
 - [Bulk operations]
-- [BLOB support][CrateDB BLOBs]
+- [BLOB support][CrateDB BLOB support]
 ::::
 
 ::::{grid-item-card} {material-outlined}`read_more;1.5em` Read more
-:columns: 6
+:columns: 12 12 6 6
 - {ref}`All drivers <connect-drivers>`
 - {ref}`All integrations <integrate>`
 - {ref}`Ingestion methods <ingest>`
