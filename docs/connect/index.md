@@ -256,7 +256,7 @@ go/index
 java/index
 javascript
 php
-python
+python/index
 r/index
 ruby
 rust/index
