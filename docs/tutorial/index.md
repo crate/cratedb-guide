@@ -29,16 +29,16 @@ CrateDB’s dynamic OBJECT data type can store and analyze complex and nested da
 Learn how to make use of CrateDB's full-text search capabilities.
 ::::
 
-::::{grid-item-card} Analyzing Device Readings with Metadata Integration
-:link: timeseries-tutorial-metadata
-:link-type: ref
-Learn how to combine time series data with metadata.
-::::
-
 ::::{grid-item-card} Analyzing Weather Data
 :link: timeseries-tutorial-weather
 :link-type: ref
 Learn how to analyze time series data on behalf of a practical example.
+::::
+
+::::{grid-item-card} Analyzing Device Readings with Metadata Integration
+:link: timeseries-tutorial-metadata
+:link-type: ref
+Learn how to combine time series data with metadata.
 ::::
 
 :::::
@@ -68,16 +68,16 @@ Learn how to integrate CrateDB with 3rd-party, industry-standard products.
 
 :::{rubric} 2024
 :::
-- {ref}`airflow-import-parquet`
-- {ref}`airflow-export-s3`
-- {ref}`airflow-data-retention-policy`
-- {ref}`airflow-data-retention-hot-cold`
 - {ref}`debezium-tutorial`
 - {ref}`azure-functions-tutorial`
 - {ref}`locust-tutorial`
 
 :::{rubric} 2023
 :::
+- {ref}`airflow-import-parquet`
+- {ref}`airflow-export-s3`
+- {ref}`airflow-data-retention-policy`
+- {ref}`airflow-data-retention-hot-cold`
 - {ref}`node-red-tutorial`
 - {ref}`pandas-tutorial-start`
 - {ref}`pandas-tutorial-jupyter`
@@ -85,6 +85,9 @@ Learn how to integrate CrateDB with 3rd-party, industry-standard products.
 :::{rubric} 2021
 :::
 - {ref}`grafana-tutorial`
+
+:::{rubric} 2020
+:::
 - {ref}`tensorflow-tutorial`
 - {ref}`r-tutorial`
 
