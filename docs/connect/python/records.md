@@ -8,7 +8,7 @@
 :::{div} .clearfix
 :::
 
-[Records] is a very simple, but powerful, library for making raw SQL
+[Records] is a deceptively simple but powerful library for making raw SQL
 queries to most relational databases. Powered by SQLAlchemy and Tablib,
 it covers many database types and allows you to export your results to
 CSV, XLS, JSON, HTML Tables, YAML, or pandas dataframes with a single
