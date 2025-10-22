@@ -97,5 +97,4 @@ or TensorFlow.
 analytics/index
 industrial/index
 Machine learning <machine-learning/index>
-migrate/index
 ```
