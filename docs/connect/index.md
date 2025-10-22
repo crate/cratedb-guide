@@ -179,7 +179,7 @@ application
 java
 javascript
 php
-python
+python/index
 ruby
 natural
 All drivers <drivers>
