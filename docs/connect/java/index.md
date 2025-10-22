@@ -22,24 +22,15 @@ databases in Java.
 :::{rubric} Driver options
 :::
 
-:::{div}
-You have two JDBC driver options: The {ref}`postgresql-jdbc` Driver
-and the {ref}`cratedb-jdbc` Driver.
-PostgreSQL JDBC uses the `jdbc:postgresql://` protocol identifier,
-while CrateDB JDBC uses `jdbc:crate://`.
-:::
+Choose one of two JDBC drivers:
 
-You are encouraged to probe the PostgreSQL JDBC Driver first. This is the
-most convenient option, specifically if the system you are connecting with
-already includes the PostgreSQL driver JAR file, and you can't change it.
+- {ref}`postgresql-jdbc` — `jdbc:postgresql://`
+- {ref}`cratedb-jdbc` — `jdbc:crate://`
 
-However, applications using the PostgreSQL JDBC Driver may emit PostgreSQL-specific
-SQL that CrateDB does not understand, while the framework assumes the
-database would understand the PostgreSQL dialect completely.
-In this case, use the CrateDB JDBC Driver instead
-to ensure compatibility and allow downstream components to handle
-CrateDB-specific behavior, for example, by employing a CrateDB-specific
-SQL dialect implementation for their purposes and realms.
+Prefer the PostgreSQL JDBC driver first—it’s often already on your classpath
+and works out of the box. If your application or framework emits
+PostgreSQL‑specific SQL that CrateDB doesn’t support, switch to the CrateDB
+JDBC driver for full CrateDB dialect support and smoother integration.
 
 The {ref}`crate-jdbc:internals` page includes more information
 about compatibility and differences between the two driver variants,
