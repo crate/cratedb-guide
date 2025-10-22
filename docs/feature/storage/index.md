@@ -11,8 +11,8 @@ The CrateDB storage layer is based on Lucene.
 By default, all fields are indexed,
 nested or not, but the indexing can be turned off selectively.
 
-This page enumerates some concepts of Lucene. The article [Indexing and Storage in
-CrateDB] goes into more details by exploring its internal workings.
+This page enumerates some concepts of Lucene. The article {ref}`indexing-and-storage`
+goes into more details by exploring its internal workings.
 
 ## Lucene
 
@@ -88,7 +88,15 @@ Inverted indexes for text values, BKD trees for numeric values, and DocValues.
   all field values that are not analyzed as strings in a compact column, making it more
   effective for sorting and aggregations.
 
+## See also
+
+- {ref}`indexing-and-storage`
+
+
+:::{toctree}
+:hidden:
+indexing-and-storage
+:::
 
 
 [column-based store]: https://cratedb.com/docs/crate/reference/en/latest/general/ddl/storage.html
-[Indexing and Storage in CrateDB]: https://cratedb.com/blog/indexing-and-storage-in-cratedb
