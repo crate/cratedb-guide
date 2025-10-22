@@ -1,10 +1,10 @@
 (timeseries-video)=
-# Video Tutorials
+# Video tutorials
 
 Video tutorials about time series with CrateDB.
 
 
-## Time Series Data and CrateDB
+## Time series data and CrateDB
 
 ::::{info-card}
 
@@ -20,7 +20,7 @@ CrateDB simplifies the complexity of managing time-series data.
 It provides a comprehensive solution for storing, querying, and extracting
 insights from large-scale and high-volume time-series datasets.
 
-Learn more about CrateDB and [](#timeseries).
+Learn more about CrateDB and {ref}`timeseries`.
 :::
 
 :::{grid-item}
@@ -35,7 +35,7 @@ Learn more about CrateDB and [](#timeseries).
 ::::
 
 
-## Importing and Exporting Data with CrateDB
+## Importing and exporting data with CrateDB
 
 ::::{info-card}
 
@@ -54,7 +54,7 @@ Afterwards, it will demonstrate how to export data from CrateDB to a local file
 system, using the [`COPY TO`] statement.
 
 For more information about how to import and export
-data from/into CrateDB, please refer to [](#import-export).
+data from/into CrateDB, please refer to {ref}`import-export`.
 :::
 
 :::{grid-item}
@@ -70,7 +70,7 @@ data from/into CrateDB, please refer to [](#import-export).
 
 
 
-## Analyzing Time Series Data with CrateDB
+## Analyzing time series data with CrateDB
 
 ::::{info-card}
 
@@ -109,7 +109,7 @@ strategy for your time series data in CrateDB.
 ::::
 
 
-## CrateDB in Analytics Applications
+## CrateDB in analytics applications
 
 ::::{info-card}
 
@@ -120,7 +120,7 @@ strategy for your time series data in CrateDB.
 Learn how Bitmovin leverages CrateDB to support real-time analytics on
 top of tracking data from their video streaming broadcasting system.
 
-- [](#bitmovin)
+- {ref}`bitmovin`
 :::
 
 :::{grid-item}
@@ -136,7 +136,7 @@ top of tracking data from their video streaming broadcasting system.
 ::::
 
 
-## CrateDB in Industrial Applications
+## CrateDB in industrial applications
 
 ::::{info-card}
 
@@ -146,14 +146,14 @@ top of tracking data from their video streaming broadcasting system.
 **Industrial Analytics Platform, High-Speed Production Lines, and Logistics**
 
 Learn how ABB, Rauch, SPGo!, and TGW leverage CrateDB to support their
-application platforms, high-speed shop-floor production lines, machine
+application platforms, high-speed shop floor production lines, machine
 monitoring solutions, and logistics databases for warehouses around the
 world.
 
-- [](#abb)
-- [](#rauch)
-- [](#spgo)
-- [](#tgw)
+- {ref}`abb`
+- {ref}`rauch`
+- {ref}`spgo`
+- {ref}`tgw`
 :::
 
 :::{grid-item}

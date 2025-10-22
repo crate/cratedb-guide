@@ -288,8 +288,8 @@ Learn how to migrate your database use cases and workloads from Rockset to Crate
 - [MongoDB CDC Relay]
 :::{rubric} General I/O
 :::
-- [Data loading](#etl) with CrateDB.
-- [](#cdc) with CrateDB.
+- {ref}`Data loading <etl>` with CrateDB.
+- {ref}`cdc` with CrateDB.
 ::::
 
 ::::{grid-item-card}

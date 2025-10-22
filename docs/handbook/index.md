@@ -225,26 +225,29 @@ Load data from many sources into CrateDB.
 :link: solutions
 :link-type: ref
 :link-alt: Solutions built with CrateDB
-Learn about solutions built with CrateDB and
-how others are using CrateDB successfully.
+Learn how to use CrateDB for time series use-cases,
+about industry solutions built with CrateDB and
+how others are using CrateDB successfully with
+both standard software components and in
+proprietary system landscapes.
 +++
 **What's inside:**
-Full-text and semantic search, real-time raw-data analytics,
-industrial data, machine learning, data migrations.
+Time series data. Industrial big data.
+Real-time raw-data analytics. Machine learning.
 :::
 
-:::{grid-item-card} {material-outlined}`numbers;2em` Topics
+:::{grid-item-card} {material-outlined}`numbers;2em` Categories / Topics
 :link: topics
 :link-type: ref
 :link-alt: CrateDB topics overview
-Learn how to apply CrateDB's features to optimally cover use-cases
-across different application and topic domains.
+Learn how to apply CrateDB's features to optimally cover
+different application categories and topic domains.
 For example, connect CrateDB with third-party
 software applications, libraries, and frameworks.
 +++
 **What's inside:**
-Business intelligence, data lineage, data visualization,
-programming frameworks, software testing, time series data.
+Business intelligence, data lineage, data migrations, data visualization,
+programming frameworks, software testing.
 :::
 
 ::::

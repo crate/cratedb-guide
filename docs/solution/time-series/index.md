@@ -1,13 +1,13 @@
 (timeseries)=
-# Time Series Data
+# Time series data
 
 :::{div} sd-text-muted
-Learn how to use CrateDB for time series use cases.
+Use CrateDB to store and query massive amounts of time series data.
 :::
 
 CrateDB is a distributed and scalable SQL database for storing and analyzing
 massive amounts of data in near real-time, even with complex queries. It is
-PostgreSQL-compatible, and based on Lucene. 
+PostgreSQL-compatible, and based on Lucene.
 
 ::::{grid} 1 2 2 2
 :margin: 4 4 0 0
@@ -28,8 +28,8 @@ Operations: Sharding and Partitioning.
 :::
 
 
-:::{grid-item-card} {material-outlined}`analytics;2em` Advanced
-:link: timeseries-analysis
+:::{grid-item-card} {material-outlined}`analytics;2em` Advanced analysis
+:link: timeseries-analysis-advanced
 :link-type: ref
 :link-alt: About time series analysis
 
@@ -41,7 +41,7 @@ anomaly detection, forecasting.
 :::
 
 
-:::{grid-item-card} {material-outlined}`smart_display;2em` Video Tutorials
+:::{grid-item-card} {material-outlined}`smart_display;2em` Video tutorials
 :link: timeseries-video
 :link-type: ref
 :link-alt: Video tutorials about time series with CrateDB
@@ -54,7 +54,7 @@ and analyzing. Industrial applications.
 :::
 
 
-:::{grid-item-card} {material-outlined}`school;2em` Academy » Advanced Time Series
+:::{grid-item-card} {material-outlined}`school;2em` Academy » Advanced time series
 :link: https://cratedb.com/academy/time-series/
 :link-type: url
 :link-alt: Academy Resources: Advanced Time Series
@@ -69,7 +69,7 @@ Machine Learning on Time Series Data: EDA, Decomposition, AutoML.
 :::
 
 
-:::{grid-item-card} {material-outlined}`manage_history;2em` Long Term Storage
+:::{grid-item-card} {material-outlined}`manage_history;2em` Long-term storage
 :link: timeseries-longterm
 :link-type: ref
 :link-alt: About storing time series data for the long term
@@ -90,17 +90,17 @@ Optimizing storage for historic time series data.
 :::{seealso}
 
 **Domains:**
-[](#metrics-store) •
-[](#analytics) •
-[](#industrial) •
-[](#machine-learning)
+{ref}`analytics` •
+{ref}`industrial` •
+{ref}`machine-learning` •
+{ref}`metrics-store`
 
 **Features:**
-[](#connect) •
-[](#querying) •
-[](#document) •
-[](#fulltext) •
-[](#geospatial)
+{ref}`connect` •
+{ref}`querying` •
+{ref}`document` •
+{ref}`fulltext` •
+{ref}`geospatial`
 
 **Product:**
 [Time Series Data] •
@@ -112,8 +112,9 @@ Optimizing storage for historic time series data.
 :hidden:
 
 Fundamentals <fundamentals>
+Advanced analysis <analysis>
 video
-Long Term Store <longterm>
+Long-term store <longterm>
 :::
 
 

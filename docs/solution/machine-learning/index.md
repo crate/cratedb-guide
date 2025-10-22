@@ -1,13 +1,13 @@
 (ml)=
 (ml-tools)=
 (machine-learning)=
-# Machine learning with CrateDB
+# Machine learning
 
 :::{include} /_include/links.md
 :::
 
 :::{div} sd-text-muted
-CrateDB provides a vector store natively, and adapters for integrating
+CrateDB provides a vector type natively, and adapters for integrating
 with machine learning frameworks.
 :::
 
@@ -107,38 +107,14 @@ Load and analyze data from database systems for
 time series anomaly detection and forecasting.
 :::
 
-::::{grid} 2
-:gutter: 3
-
-:::{grid-item-card} Statistical analysis and visualization on huge datasets
-:link: r-tutorial
+:::{card} Time series analysis using ML
+:link: timeseries-analysis-ml
 :link-type: ref
-Learn how to create a machine learning pipeline using R and CrateDB.
+- **End-to-end:** Statistical analysis and visualization on huge datasets.
+- **Traditional:** Regression analysis within a Jupyter Notebook.
+- **Predictive maintenance:** Build a machine learning model to predict machine failures.
+- **Advanced time series analysis:** Conduct advanced data analysis on large time series datasets.
 :::
-
-:::{grid-item-card} Regression analysis with pandas and scikit-learn
-:link: scikit-learn
-:link-type: ref
-Use pandas and scikit-learn to run a regression analysis within a Jupyter Notebook.
-:::
-
-:::{grid-item-card} Build model for predictive maintenance with TensorFlow
-:link: tensorflow-tutorial
-:link-type: ref
-Learn how to build a machine learning model that will predict whether
-a machine will fail within a specified time window in the future.
-:::
-
-:::{grid-item-card} Advanced time series analysis with MLflow and PyCaret
-:link: ml-timeseries
-:link-type: ref
-Learn how to conduct advanced data analysis on large time series datasets
-with CrateDB, MLflow, and PyCaret:
-Anomaly detection and forecasting, time series decomposition,
-Exploratory data analysis (EDA).
-:::
-
-::::
 
 
 ## MLOps and model training
@@ -193,10 +169,3 @@ exploratory data analysis (EDA).
 :::
 
 ::::
-
-
-:::{toctree}
-:maxdepth: 1
-:hidden:
-time-series
-:::

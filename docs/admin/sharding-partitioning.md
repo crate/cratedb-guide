@@ -1,6 +1,6 @@
 (sharding-partitioning)=
 
-# Sharding and Partitioning 101
+# Sharding and partitioning 101
 
 ## Introduction
 

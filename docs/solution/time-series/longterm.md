@@ -1,6 +1,6 @@
 (timeseries-longterm)=
 (timeseries-long-term-storage)=
-# Time Series Long Term Storage
+# Time series long-term storage
 
 CrateDB stores large volumes of data, keeping it accessible for querying
 and insightful analysis, even considering historic data records.
@@ -45,12 +45,12 @@ a dedicated layout, and querying using the UNNEST table function.
 **CrateDB as metrics and log data store for the long term**
 
 Store and analyze high volumes of system monitoring information.
-Read more about using CrateDB as [](#metrics-store).
+Read more about using CrateDB as {ref}`metrics-store`.
 :::
 
 :::{grid-item}
 :columns: 3
-{tags-primary}`Long Term Storage`
+{tags-primary}`Long-term Storage`
 {tags-primary}`Metrics`
 {tags-primary}`Logging`
 :::
@@ -65,13 +65,13 @@ Read more about using CrateDB as [](#metrics-store).
 **CrateDB provides real-time analytics on raw data stored for the long term**
 
 Keep massive amounts of data ready in the hot zone for analytics purposes.
-Read more about using CrateDB for [](#analytics).
+Read more about using CrateDB for {ref}`analytics`.
 :::
 
 :::{grid-item}
 :columns: 3
-{tags-primary}`Long Term Storage`
-{tags-primary}`Real-Time Analytics`
+{tags-primary}`Long-term storage`
+{tags-primary}`Real-time analytics`
 :::
 
 ::::

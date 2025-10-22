@@ -70,16 +70,16 @@ under a different name, or there may be a simple workaround for your use cases.
 | APPROX_DISTINCT(x[, e])| `hyperloglog_distinct`  |
 | ARRAY_CONCAT(array1, array2, ...)| `array_cat`  |
 | ARRAY_CONTAINS(array, element)| `element = ANY (array)`  |
-| ARRAY_CREATE(val1, val2, ...)| `[val1, val2, ...]` or `_array(val1,val2, ...)`  |
+| ARRAY_CREATE(val1, val2, ...)| `[val1, val2, ...]` or `_array(val1,val2, ...)` |
 | ARRAY_DISTINCT(array)| `array_unique`  |
 | ARRAY_EXCEPT(array1, array2)| `array_unique(array_difference(array1, array2))` |
 | ARRAY_FLATTEN(array)| `array_unnest`  |
-| ARRAY_INTERSECT(array1, array2)| ` array(select DISTINCT a FROM UNNEST(array1) a WHERE a IN (SELECT UNNEST(array2)))`  |
+| ARRAY_INTERSECT(array1, array2)| `array(select DISTINCT a FROM UNNEST(array1) a WHERE a IN (SELECT UNNEST(array2)))` |
 | ARRAY_JOIN(array, delimiter, nullReplacement)| [`array_to_string`]  |
-| ARRAY_MAP(function_name, array)| `(select array_agg(function_name(unnest)) from unnest(array))`  |
+| ARRAY_MAP(function_name, array)| `(select array_agg(function_name(unnest)) from unnest(array))` |
 | ARRAY_REMOVE(array, val)| `array_difference(array,[val])`  |
-| ARRAY_SHUFFLE(array)| `array(select unnest from unnest(array) ORDER BY random())`  |
-| ARRAY_SORT(array)| `array(select unnest from unnest(array) ORDER BY unnest)`  |
+| ARRAY_SHUFFLE(array)| `array(select unnest from unnest(array) ORDER BY random())` |
+| ARRAY_SORT(array)| `array(select unnest from unnest(array) ORDER BY unnest)` |
 | ARRAY_UNION(array1, array2)| `array_unique`  |
 | ASINH(x)| `LN(x + SQRT((x * x) + 1))`   |
 | ATANH(x)| `0.5*ln((1+x)/(1-x))`  |
@@ -112,7 +112,7 @@ under a different name, or there may be a simple workaround for your use cases.
 | MILLISECONDS(n)| `AGE(n::LONG,0)`  |
 | MINUTES(n)| `'n MINUTES'::INTERVAL`  |
 | MONTHS(n)| `'n MONTHS'::INTERVAL`  |
-| PARSE_DATE_ISO8601(string)| `date_trunc('day',string::TIMESTAMP)`  |
+| PARSE_DATE_ISO8601(string)| `date_trunc('day',string::TIMESTAMP)` |
 | PARSE_DATETIME_ISO8601(string)| `string::TIMESTAMP`  |
 | POSITION(substring IN string)| `strpos(string , substring)`  |
 | POW(x, y)| `power(x,y)`  |
@@ -121,7 +121,7 @@ under a different name, or there may be a simple workaround for your use cases.
 | SEQUENCE(start, stop[, step])| `generate_series`  |
 | SIGN(x)| See [^sign] for CrateDB <5.8  |
 | SPLIT(string, delimiter)[index]| `split_part(string, delimiter, index)` |
-| ST_ASTEXT(geography)| See [](#ST_ASTEXT) for `POLYGON`s  |
+| ST_ASTEXT(geography)| See {ref}`ST_ASTEXT` for `POLYGON`s  |
 | ST_GEOGFROMTEXT(well_known_text)| `well_known_text::geo_shape`  |
 | ST_GEOGPOINT(longitude, latitude)| `[longitude, latitude]::geo_point`  |
 | ST_INTERSECTS(geography_a, geography_b)| `intersects(geo_shape, geo_shape)`  |

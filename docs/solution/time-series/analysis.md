@@ -1,7 +1,6 @@
 (ml-timeseries)=
-(timeseries-advanced)=
-(timeseries-analysis)=
-# Advanced Time Series Analysis
+(timeseries-analysis-advanced)=
+# Advanced time series analysis
 
 :::{div} sd-text-muted
 Learn how to conduct advanced data analysis on large time series datasets
@@ -17,7 +16,7 @@ with CrateDB.
 :::
 
 (timeseries-anomaly-forecasting)=
-## Anomaly Detection and Forecasting
+## Anomaly detection and forecasting
 
 To gain insights from your data in a one-shot or recurring way, based on
 machine learning techniques, you may want to look into applying [anomaly]
@@ -77,7 +76,7 @@ to train various time series forecasting models.
 
 
 (timeseries-decomposition)=
-## Time Series Decomposition
+## Time series decomposition
 
 [Decomposition of time series] is a statistical task that deconstructs a [time
 series] into several components, each representing one of the underlying

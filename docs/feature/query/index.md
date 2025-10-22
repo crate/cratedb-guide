@@ -53,7 +53,7 @@ FROM OrderedData
 ORDER BY location, timestamp;
 :::
 
-{{ '{}(#timeseries-analysis-advanced)'.format(tutorial) }}
+{{ '{}(#timeseries-analysis-weather)'.format(tutorial) }}
 ::::
 
 ::::{grid-item}
