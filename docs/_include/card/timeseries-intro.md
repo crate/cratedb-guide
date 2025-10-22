@@ -3,8 +3,8 @@
 :padding: 0
 :gutter: 2
 
-::::{grid-item-card} {material-outlined}`topic;2em` Time Series: Device Readings with Metadata
-:link: guide:timeseries-objects
+::::{grid-item-card} {material-outlined}`topic;2em` Time series: Device readings with metadata
+:link: timeseries-objects
 :link-type: ref
 :class-footer: text-smaller
 
@@ -19,11 +19,11 @@ for fast aggregations.
 - Relational JOIN operations.
 - Common table expressions (CTEs).
 +++
-Combine time series data with document data: CrateDB is all you need.
+Combine time series with document data: CrateDB is all you need.
 ::::
 
-::::{grid-item-card} {material-outlined}`lightbulb;2em` Time Series: Analyzing Weather Data
-:link: guide:timeseries-analysis-weather
+::::{grid-item-card} {material-outlined}`lightbulb;2em` Time series: Analyzing weather data
+:link: timeseries-analysis-weather
 :link-type: ref
 :class-footer: text-smaller
 CrateDB provides advanced SQL features for querying time series data.
@@ -40,5 +40,22 @@ CrateDB provides advanced SQL features for querying time series data.
 Advanced queries on time series data: CrateDB is all you need.
 ::::
 
+::::{grid-item-card} {material-outlined}`area_chart;2em` Time series: Process financial data
+:link: pandas-tutorial-jupyter
+:link-type: ref
+:class-footer: text-smaller
+Acquire and store historical data from S&P-500 companies into CrateDB
+using Python.
+
+:::{rubric} What's Inside
+:::
+- Acquire historical stock ticker data from the Yahoo! Finance API.
+
+- Store data into CrateDB.
+
+- Query back data from CrateDB.
++++
+Custom ETL tasks: CrateDB is all you need.
+::::
 
 :::::

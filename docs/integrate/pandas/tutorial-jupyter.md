@@ -1,5 +1,5 @@
 (pandas-tutorial-jupyter)=
-# Automating financial data collection and storage in CrateDB with Python and pandas
+# Process financial data using CrateDB, Jupyter, and pandas
 
 :::{article-info}
 ---
@@ -27,11 +27,14 @@ Before anything else, I must make sure I have my setup ready.
 
 So, let’s get started.
 
-## Setting up CrateDB, Jupyter, and Python
+## Prerequisites
+
+You will need access to a CrateDB cluster and a Jupyter environment with
+pandas and the psycopg2 packages installed.
 
 ### CrateDB
 
-If you’re new to CrateDB and want to get started quickly and easily, a great option is to try the **Free Tier** in CrateDB Cloud. With the **Free Tier**, you have a limited Cluster that is free forever; no payment method is required. Now, if you are ready to experience the full power of CrateDB Cloud, take advantage of the 200$ in free credits to try the cluster of your dreams.
+If you’re new to CrateDB and want to get started quickly and easily, a great option is to try the **Free Tier** in CrateDB Cloud. With the **Free Tier**, you have a limited Cluster that is free forever; no payment method is required. Now, if you are ready to experience the full power of CrateDB Cloud, take advantage of $200 in free credits to explore CrateDB Cloud's full capabilities.
 
 To start with CrateDB Cloud, [navigate to the CrateDB website](https://cratedb.com/download?hsCtaTracking=caa20047-f2b6-4e8c-b7f9-63fbf818b17f%7Cf1ad6eaa-39ac-49cd-8115-ed7d5dac4d63) and follow the steps to create your CrateDB Cloud account. Once you log in to the CrateDB Cloud UI, select **Deploy Cluster** to create your free cluster, and you are ready to go!
 
@@ -55,9 +58,9 @@ The [Jupyter Notebook](https://jupyter.org/) is an open-source web application t
 
 A Jupyter Notebook is an excellent environment for this project. It contains executable documents (the code) and human-readable documents (tables, figures, etc.) in the same place!
 
-I follow the [Jupiter Installation tutorial](https://jupyter.org/install.html) for the Notebook, which is quickly done with Python and the terminal command
+I follow the [Jupyter Installation tutorial](https://jupyter.org/install.html) for the Notebook, which is quickly done with Python and the terminal command
 `pip3 install notebook`
-and now I run the Notebook (using Jupyter 1.0.0) with the command
+and now I run the Notebook with the command
 `jupyter notebook`
 
 Setup done!
@@ -204,7 +207,7 @@ and it looks like this:
 
 ## Connecting to CrateDB
 
-In the **Overview** tab of my CrateDB Cloud Cluster I find several ways to connect to CrateDB with CLI, Python, JavaScript, among others. So I select the **Python** option and choose one of the variants, such as **psycopg2**(version 2.9.1).
+In the **Overview** tab of my CrateDB Cloud Cluster I find several ways to connect to CrateDB with CLI, Python, JavaScript, among others. So I select the **Python** option and choose one of the variants, such as **psycopg2**.
 
 ![connections-for-cratedb-cloud|690x386](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/2891e21d7ad9cd34eed068153285530badb0dc66.png){w=800px}
 

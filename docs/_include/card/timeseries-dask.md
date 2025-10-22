@@ -2,7 +2,7 @@
 
 :::{grid-item}
 :columns: auto 9 9 9
-**Notebook: How to Build Time Series Applications with CrateDB**
+**Notebook: How to build time series applications with CrateDB**
 
 This notebook illustrates how to import and work with time series data using
 CrateDB and [Dask DataFrame]s.

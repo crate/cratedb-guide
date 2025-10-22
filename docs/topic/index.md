@@ -15,8 +15,8 @@ with third-party software applications, libraries, and frameworks.
 
 ::::{grid} 1 2 2 2
 :margin: 4 4 0 0
-:padding: 0
 :gutter: 2
+:padding: 0
 
 :::{grid-item-card} {material-outlined}`analytics;2em` Business Intelligence
 :link: bi
@@ -49,16 +49,6 @@ Learn how to use CrateDB for data visualization.
 Cluvio, Explo, Grafana, Metabase, Plotly, PyViz, Superset.
 :::
 
-:::{grid-item-card} {material-outlined}`model_training;2em` Machine Learning
-:link: machine-learning
-:link-type: ref
-:link-alt: Machine Learning with CrateDB
-Learn how to use CrateDB for machine learning.
-+++
-**What's inside:**
-CrateDB vector store, Text-to-SQL, Time series analysis, MLOps and model training.
-:::
-
 :::{grid-item-card} {material-outlined}`grid_goldenratio;2em` Programming Frameworks
 :link: framework
 :link-type: ref
@@ -79,18 +69,35 @@ Learn how to do software testing with CrateDB.
 Java, Python, Testcontainers.
 :::
 
-:::{grid-item-card} {material-outlined}`stacked_line_chart;2em` Time Series Data
-:link: timeseries
+:::{grid-item-card} {material-outlined}`drive_file_move;2em` Warehouse Migrations
+:link: migrations
 :link-type: ref
-:link-alt: About CrateDB for time series data analysis
-Learn how to use CrateDB for time series use-cases,
-and how to apply time series modeling and analysis procedures
-to your data.
+:link-alt: Migrate workloads to CrateDB
+Guidelines, tools, and ETL recipes, to support migrating data
+warehouse workloads to CrateDB.
 +++
 **What's inside:**
-About data-import and -export, advanced statistical
-analysis, scientific computing, data visualization,
-and machine learning.
+Java, Python, Testcontainers.
+:::
+
+::::
+
+:::{rubric} See also
+:::
+
+::::{grid} 1 2 2 2
+:margin: 4 4 0 0
+:gutter: 2
+:padding: 0
+
+:::{grid-item-card} {material-outlined}`model_training;2em` Machine Learning
+:link: machine-learning
+:link-type: ref
+:link-alt: Machine Learning with CrateDB
+Learn how to use CrateDB for machine learning.
++++
+**What's inside:**
+CrateDB vector store, Text-to-SQL, Time series analysis, MLOps and model training.
 :::
 
 ::::
@@ -105,6 +112,5 @@ Data Lineage <lineage/index>
 Data Visualization <visualize/index>
 Programming Frameworks <framework/index>
 Software Testing <testing/index>
-Time Series Data <timeseries/index>
 migrate/index
 ```
