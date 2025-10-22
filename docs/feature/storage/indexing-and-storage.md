@@ -17,40 +17,28 @@ class-container: sd-p-2 sd-outline-muted sd-rounded-1
 
 ## Introduction
 
-In this article series, we look at CrateDB from different perspectives. We start
-from the bottom of CrateDB architecture and gradually move up to higher layers,
-presenting the most important aspects of CrateDB internals. The motivation is to
-better understand CrateDB, as well as to aid users in maximizing the
-effectiveness of CrateDB features.
-
-In the first part, we explore the internal workings of the storage layer in
-CrateDB. The storage layer ensures that data is stored in a safe and accurate
-way and returned completely and efficiently. The CrateDB storage layer is based
-on Lucene indexes. Lucene offers scalable and high-performance indexing which
-enables efficient search and aggregations over documents and rapid updates to
-the existing documents. We will look at the three main Lucene structures that
-are used within CrateDB: Inverted Indexes for text values, BKD-Trees for numeric
-values, and Doc Values.
+This article explores the internal workings of the storage layer in CrateDB.
+The storage layer ensures that data is stored in a safe and accurate
+way and returned completely and efficiently.
+CrateDB's storage layer is based on Lucene indexes.
 
 ## What's inside
 
-This article explores the internal workings of the storage layer in CrateDB,
-with a focus on Lucene's indexing strategies.
+Lucene offers scalable and high-performance indexing, which enables efficient
+search and aggregations over documents and rapid updates to the existing
+documents. We will look at the three main Lucene structures that are used
+within CrateDB: Inverted indexes for text values, BKD trees for numeric
+values, and doc values.
 
-The CrateDB storage layer is based on Lucene indexes. Lucene offers scalable and
-high-performance indexing which enables efficient search and aggregations over
-documents and rapid updates to the existing documents. We will look at the three
-main Lucene structures that are used within CrateDB: Inverted Indexes for text
-values, BKD-Trees for numeric values, and Doc Values.
+:Inverted index: Understand how inverted indexes are implemented in Lucene
+and how CrateDB uses them to index text values and enable fast text searches.
 
-:Inverted Index: You will learn how inverted indexes are implemented in Lucene
-and CrateDB, and how they are used for indexing text values.
-
-:BKD Tree: Better understand the BKD tree, starting from KD trees, and how this
+:BKD tree: Understand the BKD tree, starting from KD trees, and how this
 data structure supports range queries on numeric values in CrateDB.
 
-:Doc Values: This data structure supports more efficient querying document
-fields by id, performs column-oriented retrieval of data, and improves the
+:Doc values: This data structure
+enables efficient queries by document field name,
+performs column-oriented retrieval of data, and improves the
 performance of aggregation and sorting operations.
 
 ## Indexing text values
@@ -95,7 +83,9 @@ example:
 The diagram below shows the indexing terms from two documents, the sorted
 sequence, and finally the index.
 
+:::{div} sd-bg-white
 ![Indexing terms sorted sequence and index](https://crate.io/hubfs/Sequence-of-terms-Sorted-Sequence-Index.png)
+:::
 
 ### Lucene segments
 
@@ -122,9 +112,8 @@ separately.
 To illustrate both indexing methods, let’s consider a simple table called
 *Product*:
 
-|               |              |              |
-| ------------- | ------------ | ------------ |
 | **productID** | **name**     | **quantity** |
+| ------------- | ------------ | ------------ |
 | 1             | Almond Milk  | 100          |
 | 2             | Almond Flour | 200          |
 | 3             | Milk         | 300          |
@@ -166,10 +155,12 @@ Lucene 6.0 adds an implementation of Block KD (BKD) tree data structure.
 
 ### BKD tree
 
-To better understand the BKD tree data structure, let’s start with a short
+To better understand the BKD tree data structure, let's begin with an
 introduction to KD trees. A KD tree is a binary tree for multidimensional
 queries. KD tree shares the same properties as binary search trees (BST), but
-the dimensions alternate for each level of the tree. For instance, starting from
+the dimensions alternate for each level of the tree.
+
+For instance, starting from
 the root node, the x value of the left nodes is always less than the x value of
 the root node. The same applies to the right node and all intermediate nodes up
 to leaf nodes. KDB tree is a special kind of KD tree with properties found in
@@ -211,7 +202,9 @@ construction process is as follows:
   construction process stops. Finally, the KDB tree is constructed as
   illustrated in the figure below:
 
+:::{div} sd-bg-white
 ![KDB tree divided by y dimension](https://crate.io/hubfs/divded-by-y-dimension.png)
+:::
 
 The index file with the resulting data structure is then created as a series of
 blocks that contain data from leaf nodes, intermediate nodes, and the metadata
@@ -220,7 +213,7 @@ of this article.
 
 ### Range queries
 
-Numerical indexing relies on BKD-Tree to accelerate the performance of range
+Numerical indexing relies on BKD tree to accelerate the performance of range
 queries. Considering our KDB tree, to query all points in the range x in [1,8]
 and y in [9,11], the engine does the following:
 
@@ -233,25 +226,54 @@ and y in [9,11], the engine does the following:
 - All child nodes of the right subtree satisfy our query range and zero child
   nodes from the left subtree. Finally, the query output is: {7,11} and {8,9}.
 
-## Doc Values
+## Fast sorting and aggregations
 
-Until Lucene 4.0 columns were indexed using an inverted index data structure
-that maps terms to document ids. For searching documents by terms, this is a
-very good solution. However, if we have to find field values given document id,
-this solution was not equally effective. Furthermore, to perform column-oriented
+### Document fields
+
+Before Lucene 4.0, inverted indexes efficiently mapped terms to document ids
+but struggled with reverse lookups (document id → field value) and
+column-oriented retrieval. Doc values, introduced in Lucene 4.0, address
+this by storing field values in a column-stride format at index time,
+optimizing aggregations, sorting, and field access.
+
+Lucene's stored document
+fields store all field values for one document together in a
+row-stride fashion, and are therefore relatively slow to access.
+
+To perform column-oriented
 retrieval of data, it was necessary to traverse and extract all fields that
 appear in the collection of documents. This can cause memory and performance
-issues if we need to extract a large amount of data.
+issues when extracting a large amount of data from an inverted index.
 
-To improve the performance of aggregations and sorting, a new data structure was
-introduced, namely Doc Values. Doc Values is a column-based data storage built
-at document index time. They store all field values that are not analyzed as
-strings in a compact column making it more effective for sorting and
-aggregations.
+### Doc values
 
-CrateDB implements Column Store based on Doc Values in Lucene. The Column Store
-is created for each field in a document and generated as the following
-structures for fields in the Product table:
+Doc values store data column-stride (per field), unlike stored fields which
+are row-stride (per document), enabling faster field-specific access,
+and provide fast sorting and aggregations.
+
+Doc values is a column-based data storage built at document index time.
+They store all field values that are not analyzed as strings in a compact
+column, making it more effective for sorting and aggregations.
+
+Because Lucene’s inverted index data structure implementation is not
+optimal for finding field values by given document identifier, and for
+performing column-oriented retrieval of data, the doc values data
+structure is used for those purposes instead.
+
+Doc values allow storing numerics and timestamps (single-valued or
+arrays), keywords (single-valued or arrays) and binary data per row.
+These values are quite fast to access at search time, since they are
+stored column-stride such that only the value for that one field needs
+to be decoded per row searched.
+
+:::{seealso}
+-- [Document values with Apache Lucene]
+:::
+
+### Column store
+
+CrateDB implements a {ref}`column store <crate-reference:ddl-storage-columnstore>`
+based on doc values in Lucene. Using the *Product* table example:
 
 |           | **Document 1** | **Document 2** | **Document 3** |
 | --------- | -------------- | -------------- | -------------- |
@@ -259,41 +281,33 @@ structures for fields in the Product table:
 | name      | Almond Milk    | Almond Flour   | Milk           |
 | quantity  | 100            | 200            | 300            |
 
+Each field's values are stored contiguously in a column store (e.g.,
+all `productID` values: 1, 2, 3), enabling efficient column-based operations.
+
 For example, for the first document, CrateDB creates the following mappings as
-Column Store: {productID → 1, name → “Almond Milk“, quantity → 100}.
+a column store: {productID → 1, name → “Almond Milk“, quantity → 100}.
 
-Column Store significantly improves aggregations and grouping as the data for
-one column is packed in one place. Instead of traversing each document and
-fetching values of the field that can also be very scattered, we extract all
-field data from the existing Column Store. This approach significantly improves
-the performance of sorting, grouping, and aggregation operations. In CrateDB,
-Column Store is enabled by default and can be disabled only for text fields, not
-for other primitive types. Furthermore, CrateDB does not support storing values
-for {ref}`container <container>` and {ref}`geographic <geospatial>` data types
-in Column Store.
+This storage layout improves sorting, grouping, and aggregations by keeping field
+data together rather than scattered across documents. The column store is enabled
+by default in CrateDB and can be disabled only for text fields. It does not support
+{ref}`container <container>` or {ref}`geographic <geospatial>` data types.
 
-Besides fields, CrateDB also supports Column Store for the JSON representation
-of each row in a table. For our example, row-based Column Store is generated as
+Besides fields, CrateDB also supports the column store for the JSON representation
+of each row in a table. For this example, the row-based column store is generated as
 the following:
 
 | **Document** | **Row**                                         |
 | ------------ | ----------------------------------------------- |
-| 1            | {“id“:1, “name“:”Almond Milk”, “quantity“:100}  |
-| 2            | {“id“:2, “name“:”Almond Flour”, “quantity“:200} |
-| 3            | {“id“:3, “name“:”Milk”, “quantity“:300}         |
+| 1            | {"id":1, "name":"Almond Milk", "quantity":100}  |
+| 2            | {"id":2, "name":"Almond Flour", "quantity":200} |
+| 3            | {"id":3, "name":"Milk", "quantity":300}         |
 
-The use of Column Store results in a small disk footprint, thanks to specialized
+The use of a column store results in a small disk footprint, thanks to specialized
 compression algorithms such as delta encoding, bit packing, and GCD.
-
-## Summary
-
-This article describes the core design principles of the storage layer in
-CrateDB. Being based on the Lucene index, it enables effective and efficient
-search over the arbitrary size of documents with an arbitrary number of fields.
 
 Besides inverted indexes, the Lucene indexing strategy also relies on BKD trees
 and Doc Values that are successfully adopted by CrateDB as well as many popular
 search engines. With a better understanding of the storage layer, we move to
 another interesting topic: [Handling Dynamic Objects in CrateDB].
 
-[Handling Dynamic Objects in CrateDB]: https://cratedb.com/blog/handling-dynamic-objects-in-cratedb
+[Document values with Apache Lucene]: https://www.elastic.co/blog/sparse-versus-dense-document-values-with-apache-lucene
