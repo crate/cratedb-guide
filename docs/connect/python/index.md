@@ -7,7 +7,7 @@ Connect to CrateDB and CrateDB Cloud from Python.
 
 Individual adapters, clients, and drivers offer specific features for specific
 needs of your application, so please read this enumeration carefully, to
-select the optimal adapter driver for your purposes.
+select the optimal adapter client or driver for your purposes.
 
 As a general recommendation, using the SQLAlchemy adapter for many reasons
 isn't a bad choice, because many other frameworks will use it anyway.
@@ -21,7 +21,7 @@ looking at using the PostgreSQL protocol.
 
 :::{rubric} Standard
 :::
-Standard drivers implementing the Python DB API and the CrateDB dialect for SQLAlchemy.
+Standard clients implementing the Python DB API and the CrateDB dialect for SQLAlchemy.
 <small>`crate-python` uses `urllib3`. `sqlalchemy-cratedb` uses `crate-python`.</small>
 :::{toctree}
 crate-python
@@ -31,7 +31,7 @@ sqlalchemy-cratedb
 (python-client-special)=
 :::{rubric} Special purpose
 :::
-Adapters and drivers for special requirements on the environment or
+Adapter clients and drivers for special requirements on the environment or
 on performance details.
 `conecta` uses Rust and Apache Arrow.
 `cratedb-async` uses `httpx`.
