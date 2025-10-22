@@ -1,6 +1,18 @@
 (node-red-tutorial)=
 # Ingesting MQTT messages into CrateDB using Node-RED
 
+:::{article-info}
+---
+avatar: https://sea2.discourse-cdn.com/flex020/user_avatar/community.cratedb.com/hammerhead/288/270_2.png
+avatar-link: https://github.com/hammerhead
+avatar-outline: muted
+author: Niklas Schmidtmer
+date: March 29, 2023
+read-time: 6 min read
+class-container: sd-p-2 sd-outline-muted sd-rounded-1
+---
+:::
+
 [Node-RED](https://nodered.org/) is a workflow automation tool that lets you orchestrate message flows and transformations through a web interface.
 This tutorial shows how to read messages from an MQTT broker with Node-RED and insert them into CrateDB.
 

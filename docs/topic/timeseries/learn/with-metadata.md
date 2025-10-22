@@ -4,6 +4,18 @@
 
 # Analyzing Device Readings with Metadata Integration
 
+:::{article-info}
+---
+avatar: https://sea2.discourse-cdn.com/flex020/user_avatar/community.cratedb.com/marija/288/428_2.png
+avatar-link: https://github.com/marijaselakovic
+avatar-outline: muted
+author: Marija Selakovic
+date: November 15, 2023
+read-time: 6 min read
+class-container: sd-p-2 sd-outline-muted sd-rounded-1
+---
+:::
+
 :::{include} /_include/links.md
 :::
 

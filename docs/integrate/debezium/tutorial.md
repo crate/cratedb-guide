@@ -1,6 +1,18 @@
 (debezium-tutorial)=
 # Replicate data from MSSQL to CrateDB with Debezium and Kafka
 
+:::{article-info}
+---
+avatar: https://sea2.discourse-cdn.com/flex020/user_avatar/community.cratedb.com/hernanc/288/676_2.png
+avatar-link: https://github.com/hlcianfagna
+avatar-outline: muted
+author: Hernan Cianfagna
+date: January 18, 2024
+read-time: 20 min read
+class-container: sd-p-2 sd-outline-muted sd-rounded-1
+---
+:::
+
 ## Introduction
 
 You may have line-of-business applications such as ERP software that work with transactional database systems like MSSQL, Oracle, or MySQL.

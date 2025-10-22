@@ -1,6 +1,18 @@
 (locust-tutorial)=
 # Load testing CrateDB using Locust
 
+:::{article-info}
+---
+avatar: https://sea2.discourse-cdn.com/flex020/user_avatar/community.cratedb.com/wierd/288/1080_2.png
+avatar-link: https://github.com/wierdvanderhaar
+avatar-outline: muted
+author: Wierd van der Haar
+date: August 14, 2024
+read-time: 12 min read
+class-container: sd-p-2 sd-outline-muted sd-rounded-1
+---
+:::
+
 ## Introduction
 
 Like with any database, you’ll want to run performance tests to understand

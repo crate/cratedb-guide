@@ -1,6 +1,18 @@
 (airflow-data-retention-hot-cold)=
 # Build a hot and cold storage data retention policy in CrateDB with Apache Airflow
 
+:::{article-info}
+---
+avatar: https://sea2.discourse-cdn.com/flex020/user_avatar/community.cratedb.com/hammerhead/288/270_2.png
+avatar-link: https://github.com/hammerhead
+avatar-outline: muted
+author: Niklas Schmidtmer
+date: May 4, 2023
+read-time: 20 min read
+class-container: sd-p-2 sd-outline-muted sd-rounded-1
+---
+:::
+
 This fourth article on automating recurring CrateDB queries with [Apache Airflow](https://airflow.apache.org/) presents a second data‑retention strategy. Previously, the {ref}`Data Retention Delete DAG <airflow-data-retention-policy>` dropped old partitions after a set period. This article adds a complementary hot/cold storage approach.
 
 ## What is a hot/cold storage strategy?

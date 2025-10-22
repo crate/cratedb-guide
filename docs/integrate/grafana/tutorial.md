@@ -2,6 +2,18 @@
 
 # Visualize data with Grafana
 
+:::{article-info}
+---
+avatar: https://avatars.githubusercontent.com/u/60756253?v=4
+avatar-link: https://github.com/carlotasoto
+avatar-outline: muted
+author: Carlota Soto
+date: March 4, 2021
+read-time: 13 min read
+class-container: sd-p-2 sd-outline-muted sd-rounded-1
+---
+:::
+
 [Grafana] is an open-source tool that helps you build real-time dashboards,
 graphs, and all sorts of data visualizations. It is the perfect complement
 to CrateDB, which is purpose-built for monitoring large volumes of machine

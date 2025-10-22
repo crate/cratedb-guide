@@ -4,6 +4,18 @@
 
 # Full-Text: Exploring the Netflix Catalog
 
+:::{article-info}
+---
+avatar: https://avatars.githubusercontent.com/u/23557193?v=4
+avatar-link: https://github.com/proddata
+avatar-outline: muted
+author: Georg Traar
+date: September 29, 2023
+read-time: 4 min read
+class-container: sd-p-2 sd-outline-muted sd-rounded-1
+---
+:::
+
 :::{include} /_include/links.md
 :::
 
