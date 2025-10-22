@@ -1,6 +1,18 @@
 (airflow-import-parquet)=
 # Automate the import of Parquet files with Apache Airflow
 
+:::{article-info}
+---
+avatar: https://sea2.discourse-cdn.com/flex020/user_avatar/community.cratedb.com/karynsaz/288/611_2.png
+avatar-link: https://github.com/karynzv
+avatar-outline: muted
+author: Karyn Azevedo
+date: March 28, 2023
+read-time: 10 min read
+class-container: sd-p-2 sd-outline-muted sd-rounded-1
+---
+:::
+
 ## Introduction
 
 Use Airflow to import the NYC Taxi and Limousine dataset provided in Parquet format.

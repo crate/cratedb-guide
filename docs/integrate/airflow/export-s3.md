@@ -1,6 +1,18 @@
 (airflow-export-s3)=
 # Export data from CrateDB to S3 using Apache Airflow
 
+:::{article-info}
+---
+avatar: https://sea2.discourse-cdn.com/flex020/user_avatar/community.cratedb.com/marija/288/428_2.png
+avatar-link: https://github.com/marijaselakovic
+avatar-outline: muted
+author: Marija Selakovic
+date: June 10, 2024
+read-time: 20 min read
+class-container: sd-p-2 sd-outline-muted sd-rounded-1
+---
+:::
+
 ## Introduction
 This article covers the automation of a typical daily data export to a remote filesystem.
 The idea is to report data collected from the previous day to the Amazon Simple Storage

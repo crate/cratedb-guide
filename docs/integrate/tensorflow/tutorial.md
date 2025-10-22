@@ -1,16 +1,24 @@
 (ml-tensorflow)=
-
 (cratedb-distributed-ml)=
-
 (tensorflow-tutorial)=
 
 # TensorFlow and CrateDB
 
-```{eval-rst}
-.. div:: sd-text-muted
+:::{article-info}
+---
+avatar: https://avatars.githubusercontent.com/u/25979206?v=4
+avatar-link: https://github.com/Taliik
+avatar-outline: muted
+author: Fabian Reisegger
+date: July 2, 2020
+read-time: 10 min read
+class-container: sd-p-2 sd-outline-muted sd-rounded-1
+---
+:::
 
-    Distributed deep-learning with CrateDB and TensorFlow.
-```
+:::{div} sd-text-muted
+Distributed deep-learning with CrateDB and TensorFlow.
+:::
 
 ## Introduction
 

@@ -1,6 +1,18 @@
 (pandas-tutorial-jupyter)=
 # Automating financial data collection and storage in CrateDB with Python and pandas
 
+:::{article-info}
+---
+avatar: https://sea2.discourse-cdn.com/flex020/user_avatar/community.cratedb.com/rafaelasantana/288/358_2.png
+avatar-link: https://github.com/rafaelasantana
+avatar-outline: muted
+author: Rafaela Santana
+date: April 7, 2023
+read-time: 10 min read
+class-container: sd-p-2 sd-outline-muted sd-rounded-1
+---
+:::
+
 This tutorial will teach you how to automatically collect historical data from S&P-500
 companies and store it all in CrateDB using Python.
 

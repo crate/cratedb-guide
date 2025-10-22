@@ -1,8 +1,19 @@
 (cratedb-r)=
-
 (r-tutorial)=
 
 # CrateDB with R
+
+:::{article-info}
+---
+avatar: https://avatars.githubusercontent.com/u/12958979?v=4
+avatar-link: https://github.com/autophagy
+avatar-outline: muted
+author: Mika Naylor
+date: May 26, 2020
+read-time: 10 min read
+class-container: sd-p-2 sd-outline-muted sd-rounded-1
+---
+:::
 
 This integration document details how to create a Machine Learning pipeline
 using R and CrateDB.

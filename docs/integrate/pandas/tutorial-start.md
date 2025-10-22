@@ -1,6 +1,18 @@
 (pandas-tutorial-start)=
 # From data storage to data analysis: Tutorial on CrateDB and pandas
 
+:::{article-info}
+---
+avatar: https://sea2.discourse-cdn.com/flex020/user_avatar/community.cratedb.com/marija/288/428_2.png
+avatar-link: https://github.com/marijaselakovic
+avatar-outline: muted
+author: Marija Selakovic
+date: April 5, 2023
+read-time: 4 min read
+class-container: sd-p-2 sd-outline-muted sd-rounded-1
+---
+:::
+
 ## Introduction
 
 Pandas is an open-source data manipulation and analysis library for Python. It is widely used for handling and analyzing data in a variety of fields, including finance, research, etc.

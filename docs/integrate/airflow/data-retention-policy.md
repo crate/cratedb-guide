@@ -1,6 +1,18 @@
 (airflow-data-retention-policy)=
 # Implement a data retention policy in CrateDB using Apache Airflow
 
+:::{article-info}
+---
+avatar: https://sea2.discourse-cdn.com/flex020/user_avatar/community.cratedb.com/marija/288/428_2.png
+avatar-link: https://github.com/marijaselakovic
+avatar-outline: muted
+author: Marija Selakovic
+date: August 1, 2023
+read-time: 20 min read
+class-container: sd-p-2 sd-outline-muted sd-rounded-1
+---
+:::
+
 ## What is a Data Retention Policy?
 
 A data retention policy defines how long to keep data and what to do when it expires. Implement it to comply with data‑privacy rules, reduce storage, and cut costs.
