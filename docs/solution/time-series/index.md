@@ -69,21 +69,6 @@ Machine Learning on Time Series Data: EDA, Decomposition, AutoML.
 :::
 
 
-:::{grid-item-card} {material-outlined}`manage_history;2em` Long-term storage
-:link: timeseries-longterm
-:link-type: ref
-:link-alt: About storing time series data for the long term
-
-Run efficient data operations for current and historical time series data.
-
-+++
-**What's inside:**
-Time-based bucketing.
-Import data using Dask.
-Optimizing storage for historic time series data.
-:::
-
-
 ::::
 
 
@@ -92,6 +77,7 @@ Optimizing storage for historic time series data.
 **Domains:**
 {ref}`analytics` •
 {ref}`industrial` •
+{ref}`longterm-store` •
 {ref}`machine-learning` •
 {ref}`metrics-store`
 
@@ -114,7 +100,6 @@ Optimizing storage for historic time series data.
 Fundamentals <fundamentals>
 Advanced analysis <analysis>
 video
-Long-term store <longterm>
 :::
 
 
