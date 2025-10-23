@@ -1,5 +1,5 @@
 (airflow-data-retention-hot-cold)=
-# Build a hot and cold storage data retention policy in CrateDB with Apache Airflow
+# Build a hot/cold storage data retention policy in CrateDB with Apache Airflow
 
 :::{article-info}
 ---
