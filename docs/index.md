@@ -1,5 +1,7 @@
 (index)=
 
+# Welcome to CrateDB
+
 <!--
 NOTE: When adding or removing top-level entries in this toctree, you must also
 update the corresponding hardcoded links in the theme's sidebartoc.html file:
@@ -14,8 +16,6 @@ Look for the "Section A: Guide" section in the {% else %} branch.
 start/index
 handbook/index
 ```
-
-# Welcome to CrateDB
 
 CrateDB is a **distributed SQL database** designed for **real-time analytics,
 search and AI** at scale. Whether you are working with time series data, full-text
