@@ -293,7 +293,7 @@ fsharp/index
 go/index
 java/index
 javascript/index
-php
+php/index
 python/index
 r/index
 ruby
