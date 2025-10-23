@@ -13,6 +13,7 @@ PostgreSQL client based on Amp.
 
 :::{rubric} Synopsis
 :::
+
 ```php
 <?php
 require 'vendor/autoload.php';
@@ -33,6 +34,10 @@ await(async(function () {
 }));
 ?>
 ```
+```shell
+composer require amphp/postgres
+```
+
 :::{rubric} Example
 :::
 - [Connect to CrateDB and CrateDB Cloud using AMPHP/PostgreSQL]
