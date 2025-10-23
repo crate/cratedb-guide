@@ -7,6 +7,7 @@
 :hidden:
 time-series/index
 industrial/index
+longterm/index
 analytics/index
 machine-learning/index
 :::
@@ -15,7 +16,7 @@ machine-learning/index
 ## Explanations
 
 :::{div} sd-text-muted
-About time series data storage and analytics, and machine learning.
+About time series and long-term data storage, real-time analytics, and machine learning.
 :::
 
 ::::{grid} 1 2 2 2
@@ -34,6 +35,20 @@ and how to apply time series modeling and analysis procedures to your data.
 - Data visualization
 - Machine learning
 - Scientific computing
+:::
+
+:::{grid-item-card} {material-outlined}`manage_history;2em` Long-term store
+:link: longterm-store
+:link-type: ref
+:link-alt: About storing time series data for the long term
+Permanently keeping your raw data accessible for querying yields insightful
+analysis opportunities other systems can't provide easily.
++++
+**What's inside:**
+- Time-based bucketing.
+- Advanced querying.
+- Import data using Dask.
+- Optimizing storage for historic time series data.
 :::
 
 :::{grid-item-card} {material-outlined}`model_training;2em` Machine learning

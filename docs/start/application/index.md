@@ -1,5 +1,5 @@
 (example-applications)=
-# Sample Applications
+# Sample applications
 
 
 :::{rubric} Starter
@@ -86,3 +86,34 @@ Users can ask questions of the knowledge base using natural language.
 :::
 
 ::::
+
+
+:::{rubric} Community
+:::
+
+:::::{grid} 1 2 2 3
+:gutter: 2
+
+::::{grid-item-card}
+:link: https://wetterdienst.readthedocs.io/en/latest/usage/python-api.html#export
+:link-type: url
+(weather-data-storage)=
+:::{rubric} Store and analyze massive amounts of synoptic weather data
+:::
+Wetterdienst uses CrateDB for mass storage of weather data, allowing you to
+query it efficiently. It provides access to data at more than ten canonical
+sources of raw weather data from domestic weather agencies.
++++
+**What's inside:**
+
+{tags-primary}`Earth observations`
+{tags-primary}`Metadata`
+{tags-primary}`Sensor data`
+{tags-primary}`Time series`
+
+{tags-secondary}`pandas`
+{tags-secondary}`Polars`
+{tags-secondary}`SQL`
+::::
+
+:::::
