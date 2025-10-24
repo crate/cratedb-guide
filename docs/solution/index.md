@@ -41,8 +41,8 @@ Learn how others are successfully running real-time multi-tenant data
 analytics applications on top of billions of records.
 +++
 **What's inside:**
-If you absolutely must keep the records, because they are unique,
-downsampling is not an option.
+For scenarios where all records must be retained due
+to their unique value, downsampling is not applicable.
 :::
 
 

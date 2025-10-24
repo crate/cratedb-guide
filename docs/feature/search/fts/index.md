@@ -61,6 +61,7 @@ of a [search engine].
 - {ref}`vector-search`
 - {ref}`hybrid-search`
 - {ref}`query`
+- {ref}`storage-layer`
 
 {tags-primary}`SQL`
 {tags-primary}`Full-Text Search`
@@ -304,43 +305,6 @@ by exploring how to manage a dataset of Netflix titles.
 ::::{info-card}
 :::{grid-item}
 :columns: auto 9 9 9
-**Indexing and Storage in CrateDB**
-
-This article explores the internal workings of the storage layer in CrateDB,
-with a focus on Lucene's indexing strategies.
-
-{hyper-navigate}`Indexing and Storage in CrateDB <[Indexing and Storage in CrateDB]>`
-
-The CrateDB storage layer is based on Lucene indexes.
-Lucene offers scalable and high-performance indexing which enables efficient search
-and aggregations over documents and rapid updates to the existing documents.
-We will look at the three main Lucene structures that are used within CrateDB:
-Inverted Indexes for text values, BKD-Trees for numeric values, and Doc Values.
-
-:Inverted Index:
-    You will learn how inverted indexes are implemented in Lucene and CrateDB.
-
-:BKD Tree:
-    Better understand the BKD tree, starting from KD trees, and how this data
-    structure supports range queries in CrateDB.
-
-:Doc Values:
-    This data structure supports more efficient querying document fields by id,
-    performs column-oriented retrieval of data, and improves the performance of
-    aggregation and sorting operations.
-
-:::
-:::{grid-item}
-:columns: auto 3 3 3
-{tags-primary}`Introduction` \
-{tags-secondary}`Lucene Indexing`
-:::
-::::
-
-
-::::{info-card}
-:::{grid-item}
-:columns: auto 9 9 9
 **Indexing Text for Both Effective Search and Accurate Analysis**
 
 This article explores how Qualtrics uses CrateDB in Text iQ to provide text
@@ -381,7 +345,6 @@ Tutorial <tutorial>
 [BM25: The Next Generation of Lucene Relevance]: https://opensourceconnections.com/blog/2015/10/16/bm25-the-next-generation-of-lucene-relevation/
 [BM25 vs. Lucene Default Similarity]: https://www.elastic.co/blog/found-bm-vs-lucene-default-similarity
 [full-text search]: https://en.wikipedia.org/wiki/Full_text_search
-[Indexing and Storage in CrateDB]: https://cratedb.com/blog/indexing-and-storage-in-cratedb
 [Indexing Text for Both Effective Search and Accurate Analysis]: https://web.archive.org/web/20250210021928/https://www.qualtrics.com/eng/indexing-text-for-both-effective-search-and-accurate-analysis/
 [MATCH predicate]: inv:crate-reference#predicates_match
 [Okapi BM25]: https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/okapi_trec3.pdf
