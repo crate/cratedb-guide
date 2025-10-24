@@ -9,6 +9,15 @@ CrateDB is a distributed and scalable SQL database for storing and analyzing
 massive amounts of data in near real-time, even with complex queries. It is
 PostgreSQL-compatible, and based on Lucene.
 
+:::{todo}
+**Instructions:**
+Elaborate a bit longer about the topic domain and the ingredients of this section
+in an abstract way, concisely highlighting and summarizing relevant benefits,
+like the `../analytics/index`, `../industrial/index`, and `../longterm/index`
+pages are doing it already.
+Use concise language, active voice, and avoid yapping.
+:::
+
 ::::{grid} 1 2 2 2
 :margin: 4 4 0 0
 :padding: 0

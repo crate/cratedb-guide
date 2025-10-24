@@ -15,6 +15,15 @@ your fingertips, for live querying. Batch jobs to roll up raw data into
 analytical results are not an option, because users' queries are too
 individual, so you need to run them on real data in real time.
 
+:::{todo}
+**Instructions:**
+Elaborate a bit longer about the topic domain and the ingredients of this section
+in an abstract way, concisely highlighting and summarizing relevant benefits,
+like the `../analytics/index`, `../industrial/index`, and `../longterm/index`
+pages are doing it already.
+Use concise language, active voice, and avoid yapping.
+:::
+
 With CrateDB, compatible to PostgreSQL, you can do all of that using plain SQL.
 Other than integrating well with commodity systems using standard database
 access interfaces like ODBC or JDBC, it provides a proprietary HTTP interface
