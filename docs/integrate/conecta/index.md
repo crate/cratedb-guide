@@ -24,7 +24,7 @@ database results can easily be converted to Polars or pandas.
 :::
 
 ```shell
-uv pip install --upgrade conecta polars pyarrow
+uv pip install --upgrade conecta pandas polars pyarrow
 ```
 
 :::{rubric} Usage
@@ -36,7 +36,7 @@ from conecta import read_sql
 
 table = read_sql(
     "postgres://crate:crate@localhost:5432/doc",
-    queries=["SELECT country, region, mountain, height, latitude(coordinates), longitude(coordinates) FROM sys.summits ORDER BY height DESC LIMIT 3"],
+    query="SELECT country, region, mountain, height, coordinates FROM sys.summits ORDER BY height DESC LIMIT 3",
 )
 
 # Display in Python format.
@@ -51,24 +51,39 @@ print(pl.from_arrow(table))
 ```
 
 ```python
-[{'country': 'FR/IT',
+[{'coordinates': [6.86444, 45.8325],
+  'country': 'FR/IT',
   'height': 4808,
-  'latitude': 45.8325,
-  'longitude': 6.86444,
   'mountain': 'Mont Blanc',
   'region': 'Mont Blanc massif'},
- {'country': 'CH',
+ {'coordinates': [7.86694, 45.93694],
+  'country': 'CH',
   'height': 4634,
-  'latitude': 45.93694,
-  'longitude': 7.86694,
   'mountain': 'Monte Rosa',
   'region': 'Monte Rosa Alps'},
- {'country': 'CH',
+ {'coordinates': [7.85889, 46.09389],
+  'country': 'CH',
   'height': 4545,
-  'latitude': 46.09389,
-  'longitude': 7.85889,
   'mountain': 'Dom',
   'region': 'Mischabel'}]
+```
+```text
+  country             region    mountain  height          coordinates
+0   FR/IT  Mont Blanc massif  Mont Blanc    4808   [6.86444, 45.8325]
+1      CH    Monte Rosa Alps  Monte Rosa    4634  [7.86694, 45.93694]
+2      CH          Mischabel         Dom    4545  [7.85889, 46.09389]
+shape: (3, 5)
+```
+```text
+┌─────────┬───────────────────┬────────────┬────────┬─────────────────────┐
+│ country ┆ region            ┆ mountain   ┆ height ┆ coordinates         │
+│ ---     ┆ ---               ┆ ---        ┆ ---    ┆ ---                 │
+│ str     ┆ str               ┆ str        ┆ i32    ┆ list[f64]           │
+╞═════════╪═══════════════════╪════════════╪════════╪═════════════════════╡
+│ FR/IT   ┆ Mont Blanc massif ┆ Mont Blanc ┆ 4808   ┆ [6.86444, 45.8325]  │
+│ CH      ┆ Monte Rosa Alps   ┆ Monte Rosa ┆ 4634   ┆ [7.86694, 45.93694] │
+│ CH      ┆ Mischabel         ┆ Dom        ┆ 4545   ┆ [7.85889, 46.09389] │
+└─────────┴───────────────────┴────────────┴────────┴─────────────────────┘
 ```
 
 
