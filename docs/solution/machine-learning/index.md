@@ -11,6 +11,15 @@ CrateDB provides a vector type natively, and adapters for integrating
 with machine learning frameworks.
 :::
 
+:::{todo}
+**Instructions:**
+Elaborate a bit longer about the topic domain and the ingredients of this section
+in an abstract way, concisely highlighting and summarizing relevant benefits,
+like the `../analytics/index`, `../industrial/index`, and `../longterm/index`
+pages are doing it already.
+Use concise language, active voice, and avoid yapping.
+:::
+
 ## Vector store
 
 :::{div}
