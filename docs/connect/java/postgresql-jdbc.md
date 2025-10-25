@@ -135,7 +135,8 @@ of `wget`.
 Invoke-WebRequest https://repo1.maven.org/maven2/org/postgresql/postgresql/42.7.8/postgresql-42.7.8.jar -OutFile postgresql-42.7.8.jar
 ```
 :::
-Invoke program. Needs Java >= 21 ([JEP 445]), alternatively see [](#full-example).
+Invoke program. This example needs Java >= 25 ([JEP 512]),
+with earlier versions please use the [](#full-example).
 ```shell
 java -cp postgresql-42.7.8.jar example.java
 ```
@@ -146,4 +147,4 @@ java -cp postgresql-42.7.8.jar example.java
 :::
 
 
-[JEP 445]: https://openjdk.org/jeps/445
+[JEP 512]: https://openjdk.org/jeps/512

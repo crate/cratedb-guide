@@ -137,7 +137,8 @@ of `wget`.
 Invoke-WebRequest https://repo1.maven.org/maven2/io/crate/crate-jdbc-standalone/2.7.0/crate-jdbc-standalone-2.7.0.jar -OutFile crate-jdbc-standalone-2.7.0.jar
 ```
 :::
-Invoke program. Needs Java >= 21 ([JEP 445]), alternatively see [](#full-example).
+Invoke program. This example needs Java >= 25 ([JEP 512]),
+with earlier versions please use the [](#full-example).
 ```shell
 java -cp crate-jdbc-standalone-2.7.0.jar example.java
 ```
@@ -149,4 +150,4 @@ java -cp crate-jdbc-standalone-2.7.0.jar example.java
 :::
 
 
-[JEP 445]: https://openjdk.org/jeps/445
+[JEP 512]: https://openjdk.org/jeps/512
