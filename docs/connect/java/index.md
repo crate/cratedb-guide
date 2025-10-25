@@ -27,12 +27,12 @@ Choose one of two JDBC drivers:
 - {ref}`postgresql-jdbc` — `jdbc:postgresql://`
 - {ref}`cratedb-jdbc` — `jdbc:crate://`
 
-Prefer the PostgreSQL JDBC driver first—it’s often already on your classpath
+Prefer the PostgreSQL JDBC driver first, it’s often already in your classpath
 and works out of the box. If your application or framework emits
 PostgreSQL‑specific SQL that CrateDB doesn’t support, switch to the CrateDB
 JDBC driver for full CrateDB dialect support and smoother integration.
 
-The {ref}`crate-jdbc:internals` page includes more information
+The {ref}`CrateDB JDBC internals <crate-jdbc:internals>` page includes more information
 about compatibility and differences between the two driver variants,
 and more details about the CrateDB JDBC Driver.
 
@@ -61,7 +61,7 @@ The CrateDB JDBC driver.
 :link: hibernate
 :link-type: ref
 :link-alt: Hibernate with CrateDB
-A Quarkus/Panache example using Hibernate.
+A Hibernate example using Quarkus/Panache.
 ::::
 
 ::::{grid-item-card} ![jOOQ logo][jOOQ logo]{height=40px} &nbsp; jOOQ
@@ -80,14 +80,6 @@ JUnit support and Testcontainers for CrateDB.
 
 :::::
 
-## HTTP
-
-You can also talk to CrateDB using HTTP, using any HTTP library of your choice.
-Below is a quick example using Apache Commons HTTP.
-
-:::{todo}
-Add example.
-:::
 
 
 :::{toctree}
