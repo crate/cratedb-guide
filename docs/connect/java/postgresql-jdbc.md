@@ -61,26 +61,6 @@ void main() throws SQLException {
 }
 ```
 
-:::{include} ../_cratedb.md
-:::
-Download JAR file.
-```shell
-wget https://repo1.maven.org/maven2/org/postgresql/postgresql/42.7.8/postgresql-42.7.8.jar
-```
-:::{dropdown} Instructions for Windows users
-If you don't have the `wget` program installed, for example on Windows, just
-download the JAR file using your web browser of choice.
-If you want to use PowerShell, invoke the `Invoke-WebRequest` command instead
-of `wget`.
-```powershell
-Invoke-WebRequest https://repo1.maven.org/maven2/org/postgresql/postgresql/42.7.8/postgresql-42.7.8.jar -OutFile postgresql-42.7.8.jar
-```
-:::
-Invoke program. Needs Java >= 21 ([JEP 445]), alternatively see [](#full-example).
-```shell
-java -cp postgresql-42.7.8.jar example.java
-```
-
 :::{rubric} CrateDB Cloud
 :::
 
@@ -134,6 +114,30 @@ repositories {
 dependencies {
     implementation 'org.postgresql:postgresql:42.7.8'
 }
+```
+
+## Quickstart example
+
+Create a file `example.java` including the synopsis code shared above.
+
+:::{include} ../_cratedb.md
+:::
+Download JAR file.
+```shell
+wget https://repo1.maven.org/maven2/org/postgresql/postgresql/42.7.8/postgresql-42.7.8.jar
+```
+:::{dropdown} Instructions for Windows users
+If you don't have the `wget` program installed, for example on Windows, just
+download the JAR file using your web browser of choice.
+If you want to use PowerShell, invoke the `Invoke-WebRequest` command instead
+of `wget`.
+```powershell
+Invoke-WebRequest https://repo1.maven.org/maven2/org/postgresql/postgresql/42.7.8/postgresql-42.7.8.jar -OutFile postgresql-42.7.8.jar
+```
+:::
+Invoke program. Needs Java >= 21 ([JEP 445]), alternatively see [](#full-example).
+```shell
+java -cp postgresql-42.7.8.jar example.java
 ```
 
 ## Full example
