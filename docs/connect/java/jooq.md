@@ -5,6 +5,12 @@
 :::{include} /_include/links.md
 :::
 
+```{div} .float-right .text-right
+[![Java jOOQ](https://github.com/crate/cratedb-examples/actions/workflows/lang-java-jooq.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-java-jooq.yml)
+```
+```{div} .clearfix
+```
+
 :::{div}
 [jOOQ] is an internal DSL and source code generator, modelling the SQL
 language as a type-safe Java API to help you write better SQL.
@@ -35,6 +41,3 @@ Connect to CrateDB using jOOQ.
 +++
 Java jOOQ demo application with CrateDB using PostgreSQL JDBC.
 :::
-
-
-[![Java jOOQ](https://github.com/crate/cratedb-examples/actions/workflows/lang-java-jooq.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-java-jooq.yml)
