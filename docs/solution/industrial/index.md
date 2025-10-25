@@ -80,6 +80,11 @@ production systems in manufacturing, shipping, fulfillment, and logistics.
 
 :::::
 
+:Related:
+  {ref}`analytics` •
+  {ref}`longterm-store` •
+  {ref}`machine-learning`
+
 :Tags:
   {tags-primary}`Data Historian`
   {tags-primary}`Industrial IoT`
