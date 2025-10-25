@@ -5,18 +5,30 @@
 Use CrateDB to store and query massive amounts of time series data.
 :::
 
-CrateDB is a distributed and scalable SQL database for storing and analyzing
-massive amounts of data in near real-time, even with complex queries. It is
-PostgreSQL-compatible, and based on Lucene.
+Time series data represents one of the fastest-growing data types across industries,
+from IoT sensors and industrial equipment to application metrics and financial transactions.
+The challenge lies not just in handling the sheer volume of incoming data points, but in
+maintaining query performance across both real-time streams and historical datasets while
+managing storage costs effectively.
 
-:::{todo}
-**Instructions:**
-Elaborate a bit longer about the topic domain and the ingredients of this section
-in an abstract way, concisely highlighting and summarizing relevant benefits,
-like the `../analytics/index`, `../industrial/index`, and `../longterm/index`
-pages are doing it already.
-Use concise language, active voice, and avoid yapping.
-:::
+Traditional databases struggle with the unique characteristics of time series workloads:
+high write throughput, time-based queries spanning variable ranges, the need for downsampling
+and aggregation, and retention policies that balance storage with analytical requirements.
+Many organizations find themselves cobbling together multiple systems—one for ingestion,
+another for querying, and yet another for long-term storage—creating operational complexity
+and data silos.
+
+CrateDB handles time series data natively through its distributed architecture, combining
+high-speed ingestion with powerful SQL analytics across any time range. Its partitioning
+capabilities enable efficient data lifecycle management, while built-in functions for
+downsampling, interpolation, and time-window operations simplify complex analytical tasks.
+You can query billions of data points in seconds, whether analyzing recent trends or exploring
+patterns across years of historical data.
+
+With CrateDB, compatible to PostgreSQL, you can do all of that using plain SQL.
+Other than integrating well with commodity systems using standard database
+access interfaces like ODBC or JDBC, it provides a proprietary HTTP interface
+on top.
 
 ::::{grid} 1 2 2 2
 :margin: 4 4 0 0
