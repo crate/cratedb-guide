@@ -95,6 +95,17 @@ Navigate to the CrateDB JDBC Driver installation page.
 Directly download the recommended `crate-jdbc-standalone-2.7.0.jar`.
 :::
 
+:::{card} Linux / macOS
+```shell
+wget https://repo1.maven.org/maven2/io/crate/crate-jdbc-standalone/2.7.0/crate-jdbc-standalone-2.7.0.jar
+```
+:::
+:::{card} Windows
+```powershell
+Invoke-WebRequest https://repo1.maven.org/maven2/io/crate/crate-jdbc-standalone/2.7.0/crate-jdbc-standalone-2.7.0.jar -OutFile crate-jdbc-standalone-2.7.0.jar
+```
+:::
+
 :::{rubric} Maven `pom.xml`
 :::
 ```xml
@@ -118,33 +129,23 @@ dependencies {
 }
 ```
 
-## Quickstart example
+## Run
 
-Create a file `example.java` including the synopsis code shared above.
+:::{rubric} Quickstart example
+:::
+
+Create the file `example.java` including the synopsis code shared above.
 
 :::{include} ../_cratedb.md
 :::
-Download JAR file.
-```shell
-wget https://repo1.maven.org/maven2/io/crate/crate-jdbc-standalone/2.7.0/crate-jdbc-standalone-2.7.0.jar
-```
-:::{dropdown} Instructions for Windows users
-If you don't have the `wget` program installed, for example on Windows, just
-download the JAR file using your web browser of choice.
-If you want to use PowerShell, invoke the `Invoke-WebRequest` command instead
-of `wget`.
-```powershell
-Invoke-WebRequest https://repo1.maven.org/maven2/io/crate/crate-jdbc-standalone/2.7.0/crate-jdbc-standalone-2.7.0.jar -OutFile crate-jdbc-standalone-2.7.0.jar
-```
-:::
 Invoke program. This example needs Java >= 25 ([JEP 512]),
-with earlier versions please use the [](#full-example).
+with earlier versions please use the full example.
 ```shell
 java -cp crate-jdbc-standalone-2.7.0.jar example.java
 ```
 
-
-## Full example
+:::{rubric} Full example
+:::
 
 :::{include} _jdbc_example.md
 :::
