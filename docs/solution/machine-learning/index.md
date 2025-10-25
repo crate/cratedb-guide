@@ -11,14 +11,30 @@ CrateDB provides a vector type natively, and adapters for integrating
 with machine learning frameworks.
 :::
 
-:::{todo}
-**Instructions:**
-Elaborate a bit longer about the topic domain and the ingredients of this section
-in an abstract way, concisely highlighting and summarizing relevant benefits,
-like the `../analytics/index`, `../industrial/index`, and `../longterm/index`
-pages are doing it already.
-Use concise language, active voice, and avoid yapping.
-:::
+Modern AI and machine learning applications demand efficient storage and
+retrieval of high-dimensional vectors, seamless integration with ML frameworks,
+and the ability to combine traditional analytics with semantic search capabilities.
+From retrieval-augmented generation (RAG) systems to predictive maintenance models,
+organizations need a unified platform that handles vector embeddings, training datasets,
+and production model artifacts without juggling multiple specialized systems.
+
+CrateDB unifies vector search, time series analysis, and ML operations in a single
+platform. Store and query high-dimensional embeddings using native FLOAT_VECTOR support
+with HNSW-based similarity search, integrate directly with LangChain and LlamaIndex for
+AI applications, and leverage MLflow and PyCaret for end-to-end MLOps workflows. Whether
+you're building semantic search engines, training forecasting models on large time series
+datasets, or implementing hybrid search combining full-text and vector similarity, CrateDB
+eliminates data movement and infrastructure complexity.
+
+By keeping vector embeddings, training data, and model metadata in one queryable system,
+you avoid the overhead of synchronizing between specialized vector databases, data lakes,
+and model registries. Your ML pipelines remain agile, your queries span structured and
+vector data seamlessly, and your infrastructure stays lean.
+
+With CrateDB, compatible to PostgreSQL, you can do all of that using plain SQL.
+Other than integrating well with commodity systems using standard database
+access interfaces like ODBC or JDBC, it provides a proprietary HTTP interface
+on top.
 
 ## Vector store
 

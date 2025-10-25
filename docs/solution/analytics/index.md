@@ -5,24 +5,26 @@
 CrateDB provides real-time analytics on raw data stored for the long term.
 :::
 
-In all domains of real-time analytics where you absolutely must have access to all
-the records, and can't live with any down-sampled variants, because records are
-unique, and need to be accounted for within your analytics queries.
+CrateDB eliminates the trade-off between data accessibility and storage costs
+by keeping all high-volume raw data in the hot zone without requiring
+downsampling or aggregation. Unlike traditional systems that force you to
+choose between real-time query capabilities and long-term retention,
+CrateDB handles billions of unique records while maintaining fast query
+performance on the full dataset.
 
-If you find yourself in such a situation, you need a storage system which
-manages all the high-volume data in its hot zone, to be available right on
-your fingertips, for live querying. Batch jobs to roll up raw data into
-analytical results are not an option, because users' queries are too
-individual, so you need to run them on real data in real time.
+Traditional analytics pipelines rely on pre-aggregated rollups or batch
+processing to handle query loads, limiting users to predefined metrics
+and losing the granularity needed for ad-hoc analysis. CrateDB's
+distributed architecture scales horizontally to support individual,
+exploratory queries on complete raw datasets in real time, enabling
+analysts to discover insights that would be invisible in downsampled data.
 
-:::{todo}
-**Instructions:**
-Elaborate a bit longer about the topic domain and the ingredients of this section
-in an abstract way, concisely highlighting and summarizing relevant benefits,
-like the `../analytics/index`, `../industrial/index`, and `../longterm/index`
-pages are doing it already.
-Use concise language, active voice, and avoid yapping.
-:::
+By keeping all records immediately available for querying, you avoid the
+complexity of maintaining separate hot and cold storage tiers, ETL
+pipelines for aggregation, or data movement processes. Your analytics
+queries run directly on raw data across any time range, delivering the
+accuracy and flexibility that business intelligence and data science
+teams require.
 
 With CrateDB, compatible to PostgreSQL, you can do all of that using plain SQL.
 Other than integrating well with commodity systems using standard database
