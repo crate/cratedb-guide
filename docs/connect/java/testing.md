@@ -22,7 +22,7 @@ Testing Java applications against CrateDB.
 The popular [JUnit] framework is supported by *CrateDB Java Testing Classes*.
 The package includes `CrateTestServer` and `CrateTestCluster` classes for use
 as [JUnit external resources]. Both classes download and start CrateDB before
-test execution, and stop CrateDB afterwards.
+test execution, and stop CrateDB afterward.
 
 :::::{grid}
 ::::{grid-item}
@@ -43,7 +43,7 @@ corresponding project setup that you can use right away to get started.
 (testcontainers-java)=
 ## Testcontainers
 
-[Testcontainers] is an open source framework for providing throwaway,
+[Testcontainers] is an open-source framework for providing throwaway,
 lightweight instances of databases, message brokers, web browsers, or
 just about anything that can run in a Docker container.
 CrateDB provides Testcontainers implementations for both Java and Python

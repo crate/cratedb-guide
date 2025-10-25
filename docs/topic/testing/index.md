@@ -1,5 +1,5 @@
 (testing)=
-# Software testing
+# Software Testing
 
 :::{include} /_include/logos.md
 :::
