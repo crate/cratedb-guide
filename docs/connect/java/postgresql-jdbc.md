@@ -1,7 +1,16 @@
+:::{include} /_include/logos.md
+:::
+
 (pgjdbc)=
 (postgresql-jdbc)=
 
 # PostgreSQL JDBC
+
+```{div} .float-right
+[![PostgreSQL logo][PostgreSQL logo]{height=40px loading=lazy}][PostgreSQL home]
+```
+```{div} .clearfix
+```
 
 :::{include} /_include/links.md
 :::
@@ -16,7 +25,7 @@ Connect to CrateDB using PostgreSQL JDBC.
 :::{div}
 The [PostgreSQL JDBC Driver] is an open-source JDBC driver written in
 Pure Java (Type 4), which communicates using the PostgreSQL native
-network protocol.
+network protocol. PostgreSQL JDBC needs Java >= 8.
 :::
 
 :::{rubric} Synopsis
@@ -67,7 +76,7 @@ of `wget`.
 Invoke-WebRequest https://repo1.maven.org/maven2/org/postgresql/postgresql/42.7.8/postgresql-42.7.8.jar -OutFile postgresql-42.7.8.jar
 ```
 :::
-Invoke program. Needs Java >= 25 ([JEP 330]).
+Invoke program. Needs Java >= 21 ([JEP 445]), alternatively see [](#full-example).
 ```shell
 java -cp postgresql-42.7.8.jar example.java
 ```
@@ -133,4 +142,4 @@ dependencies {
 :::
 
 
-[JEP 330]: https://openjdk.org/jeps/330
+[JEP 445]: https://openjdk.org/jeps/445

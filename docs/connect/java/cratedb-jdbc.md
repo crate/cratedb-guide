@@ -1,7 +1,16 @@
+:::{include} /_include/logos.md
+:::
+
 (crate-jdbc)=
 (cratedb-jdbc)=
 
 # CrateDB JDBC
+
+```{div} .float-right
+[![CrateDB logo][CrateDB logo]{height=40px loading=lazy}][CrateDB home]
+```
+```{div} .clearfix
+```
 
 :::{include} /_include/links.md
 :::
@@ -16,7 +25,7 @@ Connect to CrateDB using CrateDB JDBC.
 :::{div}
 The [CrateDB JDBC Driver] is an open-source JDBC driver written in
 Pure Java (Type 4), which communicates using the PostgreSQL native
-network protocol.
+network protocol. CrateDB JDBC needs Java >= 11.
 :::
 
 :::{rubric} Synopsis
@@ -67,7 +76,7 @@ of `wget`.
 Invoke-WebRequest https://repo1.maven.org/maven2/io/crate/crate-jdbc-standalone/2.7.0/crate-jdbc-standalone-2.7.0.jar -OutFile crate-jdbc-standalone-2.7.0.jar
 ```
 :::
-Invoke program. Needs Java >= 25 ([JEP 330]).
+Invoke program. Needs Java >= 21 ([JEP 445]), alternatively see [](#full-example).
 ```shell
 java -cp crate-jdbc-standalone-2.7.0.jar example.java
 ```
@@ -135,4 +144,4 @@ dependencies {
 :::
 
 
-[JEP 330]: https://openjdk.org/jeps/330
+[JEP 445]: https://openjdk.org/jeps/445
