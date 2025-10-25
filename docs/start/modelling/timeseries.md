@@ -158,7 +158,7 @@ All types are supported within the same table or joined together.
 
 ## See also
 
-* **Documentation:** {ref}`Advanced Time Series Analysis <timeseries-analysis>`,
+* **Documentation:** {ref}`Advanced Time Series Analysis <timeseries-analysis-advanced>`,
   {ref}`Time Series Long Term Storage <timeseries-longterm>`
 * **Video:** [Time Series Data
   Modelling](https://cratedb.com/resources/videos/time-series-data-modeling) –
