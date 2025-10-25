@@ -42,8 +42,9 @@ on top.
 :columns: 12 6 3 3
 
 - {ref}`timeseries`
-- {ref}`machine-learning`
+- {ref}`longterm`
 - {ref}`industrial`
+- {ref}`machine-learning`
 +++
 Related topics in the same area.
 ::::
