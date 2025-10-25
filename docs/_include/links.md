@@ -35,6 +35,7 @@
 [Executable stack with Apache Kafka, Apache Flink, and CrateDB]: https://github.com/crate/cratedb-examples/tree/main/framework/flink/kafka-jdbcsink-java
 [Geospatial Data Model]: https://cratedb.com/data-model/geospatial
 [Geospatial Database]: https://cratedb.com/geospatial-spatial-database
+[Hibernate]: https://hibernate.org/
 [HNSW]: https://en.wikipedia.org/wiki/Hierarchical_navigable_small_world
 [HNSW paper]: https://arxiv.org/pdf/1603.09320
 [HoloViews]: https://www.holoviews.org/
@@ -45,6 +46,8 @@
 [inverted index]: https://en.wikipedia.org/wiki/Inverted_index
 [JDBC]: https://en.wikipedia.org/wiki/Java_Database_Connectivity
 [JOIN]: inv:crate-reference#sql_joins
+[jOOQ]: https://www.jooq.org/
+[JPA]: https://en.wikipedia.org/wiki/Jakarta_Persistence
 [JSON Database]: https://cratedb.com/solutions/json-database
 [kNN]: https://en.wikipedia.org/wiki/K-nearest_neighbor_algorithm
 [LangChain and CrateDB: Code Examples]: https://github.com/crate/cratedb-examples/tree/main/topic/machine-learning/langchain

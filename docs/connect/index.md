@@ -176,7 +176,7 @@ application
 :maxdepth: 1
 :hidden:
 
-java
+java/index
 javascript
 php
 python
