@@ -3,6 +3,12 @@
 
 # Solutions and use cases
 
+:::{div} sd-text-muted
+CrateDB is a distributed and scalable SQL database for storing and analyzing
+massive amounts of data in near real-time, even with complex queries. It is
+PostgreSQL-compatible, and based on Lucene.
+:::
+
 :::{toctree}
 :hidden:
 time-series/index
@@ -11,7 +17,6 @@ longterm/index
 analytics/index
 machine-learning/index
 :::
-
 
 ## Explanations
 
