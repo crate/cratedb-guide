@@ -29,7 +29,7 @@ tiers. Your historical data remains as queryable as your recent data, enabling
 seamless analysis across any time range without data movement, ETL pipelines,
 or rehydration processes.
 
-With CrateDB, compatible to PostgreSQL, you can do all of that using plain SQL.
+With CrateDB, compatible with PostgreSQL, you can do all of that using plain SQL.
 Other than integrating well with commodity systems using standard database
 access interfaces like ODBC or JDBC, it provides a proprietary HTTP interface
 on top.
