@@ -30,6 +30,7 @@ test execution, and stop CrateDB afterward.
 :Package: `io.crate:crate-testing`
 :Download: [io.crate:crate-testing] (Maven Central)
 :Repository: [crate-java-testing]
+:CI status: [![Java: JDBC, QA](https://github.com/crate/cratedb-examples/actions/workflows/lang-java-maven.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-java-maven.yml)
 ::::
 ::::{grid-item}
 :::{card} Using JUnit "crate-testing" with CrateDB
@@ -56,6 +57,7 @@ which are using its {ref}`OCI container image <oci>`.
 :Download: [org.testcontainers:testcontainers-cratedb] (Maven Central)
 :Repository: [testcontainers-cratedb sources]
 :Documentation: [Testcontainers CrateDB Module]
+:CI status: [![Testcontainers for Java](https://github.com/crate/cratedb-examples/actions/workflows/testing-testcontainers-java.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/testing-testcontainers-java.yml)
 ::::
 ::::{grid-item}
 :::{card} Using "Testcontainers for Java" with CrateDB
