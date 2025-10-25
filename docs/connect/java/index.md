@@ -71,11 +71,11 @@ A Quarkus/Panache example using Hibernate.
 A jOOQ example.
 ::::
 
-::::{grid-item-card} ![JUnit logo][JUnit logo]{height=40px} &nbsp; Software testing
+::::{grid-item-card} {material-outlined}`verified;2em` &nbsp; Software testing
 :link: java-testing
 :link-type: ref
 :link-alt: Software testing with CrateDB and Java
-JUnit and Testcontainers for CrateDB.
+JUnit support and Testcontainers for CrateDB.
 ::::
 
 :::::
