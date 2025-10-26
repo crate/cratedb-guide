@@ -7,7 +7,7 @@
 # PostgreSQL JDBC
 
 ```{div} .float-right
-[![PostgreSQL logo][PostgreSQL logo]{height=40px loading=lazy}][PostgreSQL home]
+[![Java: JDBC, QA](https://github.com/crate/cratedb-examples/actions/workflows/lang-java-maven.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-java-maven.yml)
 ```
 ```{div} .clearfix
 ```

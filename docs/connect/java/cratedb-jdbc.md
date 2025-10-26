@@ -7,7 +7,7 @@
 # CrateDB JDBC
 
 ```{div} .float-right
-[![CrateDB logo][CrateDB logo]{height=40px loading=lazy}][CrateDB home]
+[![Java: JDBC, QA](https://github.com/crate/cratedb-examples/actions/workflows/lang-java-maven.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-java-maven.yml)
 ```
 ```{div} .clearfix
 ```
