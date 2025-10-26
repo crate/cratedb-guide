@@ -55,7 +55,6 @@ CrateDB drivers and adapters for supported programming languages, frameworks, an
 :link-type: ref
 :class-body: sd-fs-1 sd-text-center
 :class-footer: sd-fs-5 sd-font-weight-bold
-
 ```{image} /_assets/icon/odbc-logo.png
 :height: 80px
 ```
@@ -67,11 +66,8 @@ Any (ODBC)
 :link: connect-csharp
 :link-type: ref
 :link-alt: Connect to CrateDB using C#
-:padding: 3
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-6
+:class-body: sd-fs-1 sd-text-center
+:class-footer: sd-fs-5 sd-font-weight-bold
 ```{image} /_assets/icon/csharp-logo.svg
 :height: 50px
 ```
@@ -84,7 +80,6 @@ C#
 :link-type: ref
 :class-body: sd-fs-1 sd-text-center
 :class-footer: sd-fs-5 sd-font-weight-bold
-
 ```{image} https://cdn.prod.website-files.com/6047a9e35e5dc54ac86ddd90/63064ea203056632171dfaa2_43c017db.png
 :width: 40px
 ```
@@ -106,11 +101,8 @@ Erlang
 :link: connect-fsharp
 :link-type: ref
 :link-alt: Connect to CrateDB using F#
-:padding: 3
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-6
+:class-body: sd-fs-1 sd-text-center
+:class-footer: sd-fs-5 sd-font-weight-bold
 ```{image} /_assets/icon/fsharp-logo.svg
 :height: 50px
 ```
@@ -183,7 +175,6 @@ R
 :link-type: ref
 :class-body: sd-fs-1 sd-text-center
 :class-footer: sd-fs-5 sd-font-weight-bold
-
 ```{image} /_assets/icon/ruby-logo.svg
 :height: 40px
 ```
@@ -217,11 +208,8 @@ Scala
 :link: connect-visualbasic
 :link-type: ref
 :link-alt: Connect to CrateDB using Visual Basic
-:padding: 3
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-6
+:class-body: sd-fs-1 sd-text-center
+:class-footer: sd-fs-5 sd-font-weight-bold
 ```{image} /_assets/icon/visualbasic-logo.svg
 :height: 50px
 ```
