@@ -2,6 +2,12 @@
 
 # Rust
 
+:::{div} .float-right .text-right
+[![Rust](https://github.com/crate/cratedb-examples/actions/workflows/lang-rust-postgres.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-rust-postgres.yml)
+:::
+:::{div} .clearfix
+:::
+
 :::{div} sd-text-muted
 Connect to CrateDB from Rust applications.
 :::
@@ -79,13 +85,11 @@ cargo run
 :::{card}
 :link: https://github.com/crate/cratedb-examples/tree/main/by-language/rust-postgres
 :link-type: url
-{material-outlined}`play_arrow;2em`
+{material-regular}`play_arrow;2em`
 Connecting to CrateDB with Rust.
 +++
 Demonstrates a basic example program that uses the Rust postgres package.
 :::
-
-[![Rust](https://github.com/crate/cratedb-examples/actions/workflows/lang-rust-postgres.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-rust-postgres.yml)
 
 
 [postgres]: https://crates.io/crates/postgres
