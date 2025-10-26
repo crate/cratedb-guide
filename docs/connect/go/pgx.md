@@ -29,11 +29,6 @@
 :::{rubric} Synopsis
 :::
 
-`go.mod`
-```text
-module github.com/cratedb-guide/connect/go/pgx
-require github.com/jackc/pgx/v5 v5.7.6
-```
 `example.go`
 ```go
 package main
@@ -69,6 +64,7 @@ func main() {
 :::{include} ../_cratedb.md
 :::
 ```shell
+go mod init github.com/cratedb-guide/connect/go/pgx
 go mod tidy
 go run example.go
 ```

@@ -9,11 +9,6 @@
 :::{rubric} Synopsis
 :::
 
-`go.mod`
-```text
-module github.com/cratedb-guide/connect/go/pq
-require github.com/lib/pq v1.10.9
-```
 `example.go`
 ```go
 package main
@@ -49,6 +44,7 @@ func main() {
 :::{include} ../_cratedb.md
 :::
 ```shell
+go mod init github.com/cratedb-guide/connect/go/pq
 go mod tidy
 go run example.go
 ```
