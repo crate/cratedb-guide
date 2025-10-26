@@ -17,6 +17,7 @@ The `pgx` and `pq` packages have been validated with CrateDB.
 :hidden:
 pgx
 pq
+ksql
 :::
 
 :::::{grid} 2 2 2 3
@@ -35,6 +36,13 @@ pgx is a pure Go driver and toolkit for PostgreSQL.
 :link-type: ref
 :link-alt: pq for Go
 pq is a pure Go PostgreSQL driver for Go's database/sql package.
+::::
+
+::::{grid-item-card} {octicon}`package;2em;sd-text-info` &nbsp; KSQL
+:link: go-ksql
+:link-type: ref
+:link-alt: KSQL for Go
+KSQL, the _Keep it Simple_ SQL library.
 ::::
 
 :::::
