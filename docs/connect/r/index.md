@@ -2,6 +2,12 @@
 
 # R
 
+:::{div} .float-right .text-right
+[![R](https://github.com/crate/cratedb-examples/actions/workflows/lang-r.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-r.yml)
+:::
+:::{div} .clearfix
+:::
+
 :::{div} sd-text-muted
 Connect to CrateDB from R applications and notebooks.
 :::
@@ -75,13 +81,11 @@ conn <- dbConnect(RPostgres::Postgres(),
 :::{card}
 :link: https://github.com/crate/cratedb-examples/tree/main/by-language/r
 :link-type: url
-{material-outlined}`play_arrow;2em`
+{material-regular}`play_arrow;2em`
 Connect to CrateDB and CrateDB Cloud using R.
 +++
 Demonstrates basic examples that use the R RPostgres and RPostgreSQL packages.
 :::
-
-[![R](https://github.com/crate/cratedb-examples/actions/workflows/lang-r.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-r.yml)
 
 
 [RPostgres]: https://cran.r-project.org/web/packages/RPostgres/
