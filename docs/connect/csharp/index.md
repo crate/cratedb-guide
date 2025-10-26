@@ -4,6 +4,13 @@
 (connect-csharp)=
 # C#
 
+:::{div} .float-right .text-right
+[![C# Npgsql](https://github.com/crate/cratedb-examples/actions/workflows/lang-csharp-npgsql.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-csharp-npgsql.yml)
+[![C# EF Core](https://github.com/crate/cratedb-examples/actions/workflows/lang-csharp-efcore.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-csharp-efcore.yml)
+:::
+:::{div} .clearfix
+:::
+
 :::{div} sd-text-muted
 Connect to CrateDB from C# .NET applications.
 :::
@@ -75,7 +82,7 @@ var connString = "Host=testcluster.cratedb.net;Port=5432;Username=admin;Password
 :::{card}
 :link: https://github.com/crate/cratedb-examples/tree/main/by-language/csharp-npgsql
 :link-type: url
-{material-outlined}`play_arrow;2em`
+{material-regular}`play_arrow;2em`
 Connect to CrateDB and CrateDB Cloud using .NET (C#)
 +++
 Demonstrates a basic example using Npgsql with CrateDB.
@@ -84,14 +91,11 @@ Demonstrates a basic example using Npgsql with CrateDB.
 :::{card}
 :link: https://github.com/crate/cratedb-examples/tree/main/by-language/csharp-efcore
 :link-type: url
-{material-outlined}`play_arrow;2em`
+{material-regular}`play_arrow;2em`
 Connect to CrateDB and CrateDB Cloud using the Npgsql Entity Framework
 +++
 Demonstrates the Npgsql Entity Framework Core provider for PostgreSQL with CrateDB.
 :::
-
-[![C# Npgsql](https://github.com/crate/cratedb-examples/actions/workflows/lang-csharp-npgsql.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-csharp-npgsql.yml)
-[![C# EF Core](https://github.com/crate/cratedb-examples/actions/workflows/lang-csharp-efcore.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-csharp-efcore.yml)
 
 ## See also
 
