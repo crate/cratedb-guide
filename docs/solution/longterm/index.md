@@ -4,6 +4,11 @@
 
 # Long-term store
 
+:::{toctree}
+:hidden:
+retention
+:::
+
 :::{div} sd-text-muted
 Never retire data just because your other systems can't handle the cardinality.
 :::
@@ -73,43 +78,6 @@ Set up CrateDB as a long-term observability backend for OpenTelemetry.
 
 ::::
 
-## Tools
-
-### Automatic retention and expiration
-
-When operating a system storing and processing large amounts of data,
-it is crucial to manage data flows and life-cycles well, which includes
-handling concerns of data expiry, size reduction, and archival.
-
-Optimally, corresponding tasks are automated rather than manually
-performed. CrateDB provides relevant integrations and standalone
-applications for automatic data retention purposes.
-
-:::{rubric} Apache Airflow
-:::
-
-{ref}`Build a hot/cold storage data retention policy <airflow-data-retention-hot-cold>`
-describes how to manage aging data by leveraging CrateDB cluster
-features to mix nodes with different hardware setups, i.e. hot
-nodes using the latest generation of NVMe drives for responding
-to analytics queries quickly, and cold nodes that have access to
-cheap mass storage for retaining historic data.
-
-:::{rubric} CrateDB Toolkit
-:::
-
-[CrateDB Toolkit Retention and Expiration] is a data retention and
-expiration policy management system for CrateDB, providing multiple
-retention strategies.
-
-:::{note}
-The system derives its concepts from [InfluxDB data retention] ideas and
-from the {ref}`Airflow-based data retention tasks for CrateDB <airflow-data-retention-policy>`,
-but aims to be usable as a standalone system in different software environments.
-Effectively, it is a Python library and CLI around a policy management
-table defined per [retention-policy-ddl.sql].
-:::
-
 ## Related sections
 
 {ref}`metrics-store` includes information about how to
@@ -119,6 +87,10 @@ like metrics and log data with CrateDB.
 {ref}`analytics` describes how
 CrateDB provides real-time analytics on raw data stored for the long term.
 Keep massive amounts of data ready in the hot zone for analytics purposes.
+
+{ref}`retention` illustrates how to optimally implement data retention
+procedures, to manage the life-cycle of data stored in CrateDB, handling
+concerns of data expiry, size reduction, and archival.
 
 [Optimizing storage efficiency for historic time series data]
 illustrates how to reduce table storage size by 80%,
@@ -130,7 +102,4 @@ use CrateDB for mass storage of synoptic weather observations,
 allowing you to query them efficiently.
 
 
-[CrateDB Toolkit Retention and Expiration]: https://cratedb-toolkit.readthedocs.io/retention.html
-[InfluxDB data retention]: https://docs.influxdata.com/influxdb/v1/guides/downsample_and_retain/
 [Optimizing storage efficiency for historic time series data]: https://community.cratedb.com/t/optimizing-storage-for-historic-time-series-data/762
-[retention-policy-ddl.sql]: https://github.com/crate/cratedb-toolkit/blob/main/cratedb_toolkit/retention/setup/schema.sql
