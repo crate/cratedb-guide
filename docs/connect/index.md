@@ -49,6 +49,34 @@ CrateDB drivers and adapters for supported programming languages, frameworks, an
 :gutter: 3
 :padding: 0
 
+::::{grid-item-card} C#
+:link: connect-csharp
+:link-type: ref
+:link-alt: Connect to CrateDB using C#
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+```{image} /_assets/icon/csharp-logo.svg
+:height: 50px
+```
+::::
+
+::::{grid-item-card} F#
+:link: connect-fsharp
+:link-type: ref
+:link-alt: Connect to CrateDB using F#
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+```{image} /_assets/icon/fsharp-logo.svg
+:height: 50px
+```
+::::
+
 ::::{grid-item-card} Java
 :link: connect-java
 :link-type: ref
@@ -106,6 +134,20 @@ CrateDB drivers and adapters for supported programming languages, frameworks, an
 :height: 40px
 ```
 
+::::
+
+::::{grid-item-card} Visual Basic
+:link: connect-visualbasic
+:link-type: ref
+:link-alt: Connect to CrateDB using Visual Basic
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+```{image} /_assets/icon/visualbasic-logo.svg
+:height: 50px
+```
 ::::
 
 :::::
@@ -176,11 +218,14 @@ application
 :maxdepth: 1
 :hidden:
 
+csharp/index
+fsharp/index
 java
 javascript
 php
 python
 ruby
+visualbasic/index
 natural
 All drivers <drivers>
 ```

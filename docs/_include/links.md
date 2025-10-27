@@ -3,6 +3,7 @@
 
 [ADBC]: https://arrow.apache.org/docs/format/ADBC.html
 [Admin UI]: inv:crate-admin-ui:*:label#index
+[ADO.NET Overview]: https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-overview
 [Amazon DynamoDB Streams]: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html
 [Amazon Kinesis Data Streams]: https://docs.aws.amazon.com/streams/latest/dev/introduction.html
 [Apache Airflow]: https://airflow.apache.org/
@@ -13,6 +14,7 @@
 [BM25]: https://en.wikipedia.org/wiki/Okapi_BM25
 [cloud-datashader-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/amo/cloud-datashader/topic/timeseries/explore/cloud-datashader.ipynb
 [cloud-datashader-github]: https://github.com/crate/cratedb-examples/blob/amo/cloud-datashader/topic/timeseries/explore/cloud-datashader.ipynb
+[Connection Strings in ADO.NET]: https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/connection-strings
 [CTE]: inv:crate-reference#sql_dql_with
 [CrateDB BLOB support]: inv:crate-reference:*:label#blob_support
 [CrateDB Cloud]: inv:cloud:*:label#index
