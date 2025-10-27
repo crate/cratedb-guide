@@ -49,6 +49,20 @@ CrateDB drivers and adapters for supported programming languages, frameworks, an
 :gutter: 3
 :padding: 0
 
+::::{grid-item-card} Dart
+:link: connect-dart
+:link-type: ref
+:link-alt: Connect to CrateDB using Dart
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+```{image} /_assets/icon/dart-logo.svg
+:height: 50px
+```
+::::
+
 ::::{grid-item-card} Java
 :link: connect-java
 :link-type: ref
@@ -176,6 +190,7 @@ application
 :maxdepth: 1
 :hidden:
 
+dart/index
 java
 javascript
 php
