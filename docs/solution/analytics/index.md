@@ -9,14 +9,14 @@ CrateDB eliminates the trade-off between data accessibility and storage costs
 by keeping all high-volume raw data in the hot zone without requiring
 downsampling or aggregation. Unlike traditional systems that force you to
 choose between real-time query capabilities and long-term retention,
-CrateDB handles billions of unique records while maintaining fast query
+CrateDB handles billions of records while maintaining fast query
 performance on the full dataset.
 
 Traditional analytics pipelines rely on pre-aggregated rollups or batch
 processing to handle query loads, limiting users to predefined metrics
 and losing the granularity needed for ad-hoc analysis. CrateDB's
-distributed architecture scales horizontally to support individual,
-exploratory queries on complete raw datasets in real time, enabling
+distributed architecture scales horizontally to support
+exploratory queries on complete raw datasets in near real time, enabling
 analysts to discover insights that would be invisible in downsampled data.
 
 By keeping all records immediately available for querying, you avoid the
