@@ -1,10 +1,16 @@
 (odbc-csharp)=
 
-# C#
+# ODBC with C#
+
+:::{rubric} About
+:::
 
 Use the ODBC .NET Data Provider to access data from your C Sharp ADO\.NET
 applications. The [.NET Framework Data Provider for ODBC] is available
 through the [System.Data.Odbc] namespace.
+
+:::{rubric} Synopsis
+:::
 
 `example.csproj`
 ```xml
@@ -46,15 +52,24 @@ command.Dispose();
 connection.Close();
 ```
 
-```text
-System.DllNotFoundException: Dependency unixODBC with minimum version 2.3.1 is required.
-Unable to load shared library 'libodbc.2.dylib' or one of its dependencies. In order to help diagnose loading problems, consider setting the DYLD_PRINT_LIBRARIES environment variable: dlopen(liblibodbc.2.dylib, 0x0001): tried: 'liblibodbc.2.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OSliblibodbc.2.dylib' (no such file), '/usr/lib/liblibodbc.2.dylib' (no such file, not in dyld cache), 'liblibodbc.2.dylib' (no such file), '/usr/local/lib/liblibodbc.2.dylib' (no such file), '/usr/lib/liblibodbc.2.dylib' (no such file, not in dyld cache
-```
+:::{rubric} Example
+:::
 
+Create the files `example.csproj` and `example.cs` including the synopsis code shared above.
+
+:::{include} ../_cratedb.md
+:::
+Invoke program.
 ```shell
-sudo ln -s /usr/local/lib/libodbc.2.dylib /usr/local/share/dotnet/shared/Microsoft.NETCore.App/9.0.10/
+dotnet run
 ```
 
+:::{rubric} CrateDB Cloud
+:::
+
+For connecting to CrateDB Cloud, use the `Sslmode=require` parameter,
+and replace username, password, and hostname with values matching
+your environment.
 ```csharp
 string connection_string = "Driver={PostgreSQL Unicode};Server=testcluster.cratedb.net;Port=5432;Sslmode=require;Uid=admin;Pwd=password";
 ```

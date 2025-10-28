@@ -9,8 +9,8 @@ The PostgreSQL ODBC driver is called [psqlODBC].
 :::::{tab-set}
 
 ::::{tab-item} Windows
-On Windows, download the latest 64-bit driver (MSI file)
-from the [psqlODBC download site] and install it.
+Please navigate to the [psqlODBC download site] to download and install
+the latest psqlODBC driver for Windows systems.
 [Installing PostgreSQL ODBC drivers on Windows] includes an illustrated walkthrough.
 ::::
 
