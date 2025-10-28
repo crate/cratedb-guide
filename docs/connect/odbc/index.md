@@ -10,11 +10,6 @@
 Connect to CrateDB with ODBC.
 :::
 
-## General information
-
-:::{rubric} About
-:::
-
 :::{div}
 Open Database Connectivity ([ODBC]) is a standard application programming
 interface (API) for accessing database management systems (DBMS),
@@ -23,14 +18,19 @@ The application uses ODBC functions through an _ODBC driver manager_ and
 addresses the driver and database using a _Data Source Name (DSN)_.
 :::
 
-:::{include} /connect/odbc/setup-widget.md
+## Installation
+
+:::{include} /connect/odbc/setup-body.md
+:::
+
+## Configuration
+
+:::{include} /connect/odbc/configure-body.md
 :::
 
 ## Examples
 
-A few examples to demonstrate CrateDB connectivity with ODBC. While the examples
-enumerated below use `Driver={PostgreSQL ODBC}` for addressing the driver, you can
-also address a named connection using `Dsn=your_dsn_name` instead.
+A few examples to demonstrate CrateDB connectivity with ODBC.
 
 ### C#
 
@@ -42,7 +42,7 @@ through the [System.Data.Odbc] namespace.
 using System.Data.Odbc;
 
 // Connect to database
-string connection_string = "ODBC;Driver={PostgreSQL ODBC};Server=localhost;Port=5432;Uid=crate;Pwd=crate;Database=doc;MaxVarcharSize=1073741824";
+string connection_string = "ODBC;Driver={PostgreSQL Unicode};Server=localhost;Port=5432;Uid=crate;Pwd=crate;Database=doc;MaxVarcharSize=1073741824";
 OdbcConnection connection = new OdbcConnection(connection_string);
 connection.Open();
 
@@ -72,7 +72,7 @@ with relational SQL-databases out of the box.
 
 ```erlang
 odbc:start(),
-{ok, Ref} = odbc:connect("Driver={PostgreSQL ODBC};Server=localhost;Port=5432;Uid=crate;Pwd=crate", []),
+{ok, Ref} = odbc:connect("Driver={PostgreSQL Unicode};Server=localhost;Port=5432;Uid=crate;Pwd=crate", []),
 io:fwrite("~p~n", [odbc:sql_query(Ref, "SELECT mountain, height FROM sys.summits ORDER BY height DESC LIMIT 3")]),
 ```
 
@@ -98,7 +98,7 @@ import pyodbc
 
 # Connect to database
 connection_string = \
-    "Driver={PostgreSQL ODBC};Server=localhost;Port=5432;" \
+    "Driver={PostgreSQL Unicode};Server=localhost;Port=5432;" \
     "Uid=crate;Pwd=crate;Database=doc;MaxVarcharSize=1073741824"
 connection = pyodbc.connect(connection_string)
 
@@ -129,7 +129,7 @@ import turbodbc
 
 # Connect to database
 connection_string = \
-    "Driver={PostgreSQL ODBC};Server=localhost;Port=5432;" \
+    "Driver={PostgreSQL Unicode};Server=localhost;Port=5432;" \
     "Uid=crate;Pwd=crate;Database=doc;MaxVarcharSize=1073741824"
 connection = turbodbc.connect(connection_string)
 
@@ -155,9 +155,11 @@ Enable with the [Python patch](https://github.com/crate/cratedb-guide/pull/403).
 
 ### Visual Basic
 
+:::{div}
 See also [psqlODBC with Visual Basic]. Please navigate to the
 [psqlODBC download site] to download and install the `psqlodbc`
 driver for Windows systems.
+:::
 
 ```visualbasic
 Dim cn as New ADODB.Connection
