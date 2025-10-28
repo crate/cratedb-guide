@@ -32,6 +32,11 @@ Elasticsearch are building upon the same technologies.
   some segments and discard the freed ones. This way, adding a new document does not require
   rebuilding the whole index structure completely.
 
+  CrateDB uses Lucene's default TieredMergePolicy. It merges segments of roughly equal size
+  and controls the number of segments per "tier" to balance search performance with merge
+  overhead. Lucene's [TieredMergePolicy] documentation explains in detail how CrateDB's
+  underlying merge policy decides when to combine segments.
+
 - **Column store**
 
   For text values, other than storing the row data as-is (and indexing each value by default),
@@ -105,3 +110,4 @@ indexing-and-storage
 
 
 [column-based store]: https://cratedb.com/docs/crate/reference/en/latest/general/ddl/storage.html
+[TieredMergePolicy]: https://lucene.apache.org/core/9_12_1/core/org/apache/lucene/index/TieredMergePolicy.html
