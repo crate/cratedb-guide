@@ -52,7 +52,7 @@ docker compose run --rm lorrystream lorry relay "mqtt://mosquitto/testdrive/%23?
 
 Publish a JSON message to an MQTT topic.
 ```shell
-echo '{"temperature": 42.84, "humidity": 83.1}' | docker compose exec --no-tty mosquitto mosquitto_pub -h mosquitto -t testdrive/channel1 -s
+docker compose exec --no-tty mosquitto mosquitto_pub -h mosquitto -t testdrive/channel1 -m '{"temperature":42.84,"humidity":83.1}'
 ```
 
 ## Explore data
