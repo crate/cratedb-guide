@@ -36,7 +36,7 @@ Verify installation.
 ```shell
 odbcinst -q -d
 ```
-```
+```text
 [PostgreSQL ANSI]
 [PostgreSQL Unicode]
 ```
@@ -63,7 +63,7 @@ Verify installation.
 ```shell
 odbcinst -q -d
 ```
-```
+```text
 [PostgreSQL Unicode]
 ```
 ::::

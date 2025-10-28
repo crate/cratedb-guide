@@ -9,8 +9,7 @@ using the driver, like `Driver={PostgreSQL Unicode}`.
 :::{rubric} DSN configuration
 :::
 
-For connecting to the database using a DSN,
-a typical connection string for CrateDB is:
+When using a DSN, a typical connection string for CrateDB is:
 ```text
 Dsn=CrateDB
 ```

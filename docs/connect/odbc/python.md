@@ -54,9 +54,16 @@ connection.close()
 :::{rubric} About
 :::
 
+```{div} .float-right .text-right
+[![Python turbodbc](https://github.com/crate/cratedb-examples/actions/workflows/lang-python-turbodbc.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/lang-python-turbodbc.yml)
+```
+
 [turbodbc] is a Python module to access relational databases via the Open
 Database Connectivity (ODBC) interface. turbodbc offers built-in NumPy and
 Apache Arrow for maximum performance.
+
+```{div} .clearfix
+```
 
 :::{rubric} Install
 :::
