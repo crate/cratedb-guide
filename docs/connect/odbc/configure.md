@@ -41,6 +41,11 @@ Pwd=crate
 MaxVarcharSize=1073741824
 ```
 
+::::
+
+:::::
+
+
 :::{rubric} DSN-less configuration
 :::
 
@@ -49,6 +54,3 @@ a typical connection string for CrateDB is:
 ```text
 Driver={PostgreSQL Unicode};Server=localhost;Port=5432;Uid=crate;Pwd=crate;MaxVarcharSize=1073741824
 ```
-::::
-
-:::::

@@ -20,12 +20,12 @@ addresses the driver and database using a _Data Source Name (DSN)_.
 
 ## Installation
 
-:::{include} /connect/odbc/setup-body.md
+:::{include} /connect/odbc/install.md
 :::
 
 ## Configuration
 
-:::{include} /connect/odbc/configure-body.md
+:::{include} /connect/odbc/configure.md
 :::
 
 ## Examples

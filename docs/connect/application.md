@@ -194,7 +194,7 @@ SQL interactively or in batches.
 The tools provide several useful features, including an option to generate
 output wrapped in an HTML table.
 
-:::{include} /connect/odbc/setup-widget.md
+:::{include} /connect/odbc/install-dropdown.md
 :::
 
 ::::{tab-set}
