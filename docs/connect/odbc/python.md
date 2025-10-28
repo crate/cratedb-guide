@@ -31,7 +31,7 @@ import pyodbc
 # Connect to database
 connection_string = \
     "Driver={PostgreSQL Unicode};Server=localhost;Port=5432;" \
-    "Uid=crate;Pwd=crate;Database=crate;MaxVarcharSize=1073741824"
+    "Uid=crate;Pwd=crate;MaxVarcharSize=1073741824"
 connection = pyodbc.connect(connection_string)
 
 # Invoke query
@@ -82,7 +82,7 @@ import turbodbc
 # Connect to database
 connection_string = \
     "Driver={PostgreSQL Unicode};Server=localhost;Port=5432;" \
-    "Uid=crate;Pwd=crate;Database=doc;MaxVarcharSize=1073741824"
+    "Uid=crate;Pwd=crate;MaxVarcharSize=1073741824"
 connection = turbodbc.connect(connection_string)
 
 # Invoke query
@@ -100,7 +100,7 @@ connection.close()
 
 :::{todo}
 Enable with the [Python patch](https://github.com/crate/cratedb-guide/pull/403).
-```
+```md
 - {ref}`Turbodbc -- a high-performance ODBC library <turbodbc>`
 ```
 :::
@@ -125,7 +125,7 @@ your environment.
 ```python
 connection_string = \
     "Driver={PostgreSQL Unicode};Server=testcluster.cratedb.net;Port=5432;" \
-    "Uid=admin;Pwd=password;Database=crate;MaxVarcharSize=1073741824"
+    "Uid=admin;Pwd=password;MaxVarcharSize=1073741824"
 ```
 
 

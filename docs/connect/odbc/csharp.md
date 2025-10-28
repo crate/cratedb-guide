@@ -34,7 +34,7 @@ using System;
 using System.Data.Odbc;
 
 // Connect to database
-string connection_string = "Driver={PostgreSQL Unicode};Server=localhost;Port=5432;Uid=crate;Pwd=crate;Database=crate;MaxVarcharSize=1073741824";
+string connection_string = "Driver={PostgreSQL Unicode};Server=localhost;Port=5432;Uid=crate;Pwd=crate;MaxVarcharSize=1073741824";
 OdbcConnection connection = new OdbcConnection(connection_string);
 connection.Open();
 

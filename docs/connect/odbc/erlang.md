@@ -23,7 +23,7 @@ io:fwrite("~p~n", [odbc:sql_query(Ref, "SELECT mountain, height FROM sys.summits
 
 :::{todo}
 Enable with the [Erlang patch](https://github.com/crate/cratedb-guide/pull/420).
-```
+```md
 - {ref}`connect-erlang`
 ```
 :::

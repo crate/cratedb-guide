@@ -30,7 +30,6 @@ cn.Open "Dsn=<MyDataSourceName>;" & _
         "Port=5432;" & _
         "Uid=crate;" & _
         "Pwd=crate;" & _
-        "Database=doc;" & _
         "MaxVarcharSize=1073741824;"
 
 'Invoke query
