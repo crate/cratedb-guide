@@ -178,7 +178,7 @@ application
 
 java/index
 javascript
-php
+php/index
 python
 ruby
 natural
