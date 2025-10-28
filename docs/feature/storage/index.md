@@ -106,7 +106,7 @@ for always-on analytics environments where data never stops flowing in.
 
   This process, known as segment merging, achieves three critical optimizations:
   - Space compaction: Merging removes deleted or superseded records, freeing disk
-    space automatically.
+  space automatically.
   - Faster queries: Larger segments reduce index overhead and improve cache efficiency.
   - No downtime: Merging occurs transparently, allowing continuous ingestion and querying.
 
