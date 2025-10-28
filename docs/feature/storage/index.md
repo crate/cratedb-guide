@@ -83,6 +83,10 @@ a column store for fast sorting and aggregations.
 
 How CrateDB stores data using Lucene.
 
+tldr; CrateDB never needs explicit VACUUMs, manual compactions, or
+reindexing. The system maintains itself dynamically, which is a key advantage
+for always-on analytics environments where data never stops flowing in.
+
 :Append-only segments:
 
   A Lucene index is composed of one or more sub-indexes. A sub-index is called a segment,
@@ -94,11 +98,34 @@ How CrateDB stores data using Lucene.
   some segments and discard the freed ones. This way, adding a new document does not require
   rebuilding the whole index structure completely.
 
+:Segment merges:
+
+  When new data is inserted into CrateDB, it is written into small, immutable
+  segments on disk. Over time, these segments are merged into larger ones by
+  background tasks, balancing I/O load with query performance.
+
+  This process, known as segment merging, achieves three critical optimizations:
+  - Space compaction: Merging removes deleted or superseded records, freeing disk
+    space automatically.
+  - Faster queries: Larger segments reduce index overhead and improve cache efficiency.
+  - No downtime: Merging occurs transparently, allowing continuous ingestion and querying.
+
   CrateDB uses Lucene's default TieredMergePolicy. It merges segments of roughly equal size
   and controls the number of segments per "tier" to balance search performance with merge
   overhead. Lucene's [TieredMergePolicy] documentation explains in detail how CrateDB's
   underlying merge policy decides when to combine segments.
 
+:Table refreshes:
+
+  CrateDB's refresh mechanism controls how often newly ingested data becomes visible
+  for querying. Instead of committing every write immediately, which would degrade
+  throughput, CrateDB batches writes in memory and periodically refreshes data
+  segments, typically once per second by default.
+
+  This approach strikes a balance between low-latency visibility and high ingestion
+  performance, allowing users to query the most recent data almost instantly while
+  maintaining efficient bulk ingestion without overwhelming the storage layer
+  or exhausting other cluster resources.
 
 ::::{todo}
 Enable after merging [GH-434: Indexing and storage](https://github.com/crate/cratedb-guide/pull/434).
