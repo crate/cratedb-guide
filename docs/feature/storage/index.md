@@ -1,3 +1,4 @@
+(storage-internals)=
 (storage-layer)=
 # Storage Layer
 
@@ -11,8 +12,8 @@ The CrateDB storage layer is based on Lucene.
 By default, all fields are indexed,
 nested or not, but the indexing can be turned off selectively.
 
-This page enumerates some concepts of Lucene. The article [Indexing and Storage in
-CrateDB] goes into more details by exploring its internal workings.
+This page enumerates some concepts of Lucene. The article {ref}`indexing-and-storage`
+goes into more details by exploring its internal workings.
 
 ## Lucene
 
@@ -49,7 +50,7 @@ Elasticsearch are building upon the same technologies.
 ## Data structures
 
 CrateDB uses three main data structures of Lucene:
-Inverted indexes for text values, BKD trees for numeric values, and DocValues.
+Inverted indexes for text values, BKD trees for numeric values, and doc values.
 
 - **Inverted index**
 
@@ -69,7 +70,7 @@ Inverted indexes for text values, BKD trees for numeric values, and DocValues.
 
   To optimize numeric range queries, Lucene uses an implementation of the Block KD (BKD)
   tree data structure. The BKD tree index structure is suitable for indexing large
-  multi-dimensional point data sets. It is an I/O-efficient dynamic data structure based
+  multidimensional point data sets. It is an I/O-efficient dynamic data structure based
   on the KD tree. Contrary to its predecessors, the BKD tree maintains its high space
   utilization and excellent query and update performance regardless of the number of
   updates performed on it.
@@ -78,17 +79,25 @@ Inverted indexes for text values, BKD trees for numeric values, and DocValues.
   including fields defined as `TIMESTAMP` types, supporting performant date range
   queries.
 
-- **DocValues**
+- **Doc values**
 
   Because Lucene's inverted index data structure implementation is not optimal for
   finding field values by given document identifier, and for performing column-oriented
-  retrieval of data, the DocValues data structure is used for those purposes instead.
+  retrieval of data, the doc values data structure is used for those purposes instead.
 
-  DocValues is a column-based data storage built at document index time. They store
+  Doc values is a column-based data storage built at document index time. They store
   all field values that are not analyzed as strings in a compact column, making it more
   effective for sorting and aggregations.
 
+## See also
+
+- {ref}`indexing-and-storage`
+
+
+:::{toctree}
+:hidden:
+indexing-and-storage
+:::
 
 
 [column-based store]: https://cratedb.com/docs/crate/reference/en/latest/general/ddl/storage.html
-[Indexing and Storage in CrateDB]: https://cratedb.com/blog/indexing-and-storage-in-cratedb

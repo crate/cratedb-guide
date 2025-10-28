@@ -84,23 +84,16 @@ with solutions from other vendors.
 
 
 
-::::{info-card}
-:::{grid-item}
-:columns: auto 9 9 9
-**Blog: Indexing and Storage in CrateDB**
-
-{{ '{}[Indexing and Storage in CrateDB]'.format(blog) }}
-
+::::{card} Blog: Indexing and Storage in CrateDB
+:link: indexing-and-storage
+:link-type: ref
 Learn about the fundamentals of the CrateDB storage layer,
 looking at the three main Lucene structures that are used within CrateDB:
-Inverted Indexes for text values, BKD-trees for numeric values, and Doc Values.
-:::
-:::{grid-item}
-:columns: auto 3 3 3
-{tags-primary}`Fundamentals` \
+Inverted indexes for text values, BKD trees for numeric values, and doc values.
++++
+{tags-primary}`Fundamentals`
 {tags-secondary}`Converged Indexing`
 {tags-secondary}`Deep Dive`
-:::
 ::::
 
 
@@ -159,7 +152,6 @@ bit thin.
 [Elasticsearch for Dummies]: https://dzone.com/articles/elasticsearch-for-dummies
 [Elasticsearch: Documents and Indices]: https://www.elastic.co/guide/en/elasticsearch/reference/current/documents-indices.html
 [Independent comparison of CrateDB and MongoDB using Time Series Benchmark Suite]: https://blog.nyrkio.com/wp-content/uploads/2024/07/Nyrkio-comparison-of-CrateDB-and-MongoDB-with-TSBS-v2.pdf
-[Indexing and Storage in CrateDB]: https://cratedb.com/blog/indexing-and-storage-in-cratedb
 [Searching and Indexing With Apache Lucene]: https://dzone.com/articles/apache-lucene-a-high-performance-and-full-featured
 [Time Series Benchmark on CrateDB and MongoDB]: https://blog.nyrkio.com/2024/07/11/timeseries-benchmark-on-cratedb-and-mongodb/
 [TimescaleDB Time Series Benchmark Suite (TSBS)]: https://github.com/timescale/tsbs

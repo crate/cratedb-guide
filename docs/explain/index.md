@@ -13,6 +13,11 @@ about applications and use cases of CrateDB, trying to put things into a
 bigger picture and joining things together to help answer the question _why_?
 
 
+:::{rubric} 2021
+:::
+
+- {ref}`indexing-and-storage`
+
 :::{rubric} 2018
 :::
 

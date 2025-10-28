@@ -1,5 +1,4 @@
 (indexing-and-storage)=
-(storage-internals)=
 
 # Indexing and storage in CrateDB
 
@@ -155,6 +154,9 @@ Lucene 6.0 adds an implementation of Block KD (BKD) tree data structure.
 
 ### BKD tree
 
+> Lucene's k-d tree geospatial data structure offers fast single- and
+multidimensional numeric range and geospatial point-in-shape filtering.
+
 To better understand the BKD tree data structure, let's begin with an
 introduction to KD trees. A KD tree is a binary tree for multidimensional
 queries. KD tree shares the same properties as binary search trees (BST), but
@@ -266,10 +268,6 @@ These values are quite fast to access at search time, since they are
 stored column-stride such that only the value for that one field needs
 to be decoded per row searched.
 
-:::{seealso}
--- [Document values with Apache Lucene]
-:::
-
 ### Column store
 
 CrateDB implements a {ref}`column store <crate-reference:ddl-storage-columnstore>`
@@ -305,9 +303,19 @@ the following:
 The use of a column store results in a small disk footprint, thanks to specialized
 compression algorithms such as delta encoding, bit packing, and GCD.
 
-Besides inverted indexes, the Lucene indexing strategy also relies on BKD trees
-and Doc Values that are successfully adopted by CrateDB as well as many popular
-search engines. With a better understanding of the storage layer, we move to
-another interesting topic: [Handling Dynamic Objects in CrateDB].
+## See also
+
+[Introducing Lucene Index Doc Values] is a technical deep dive into
+IndexDocValues introduced with Lucene 4.0.
+
+[Storing multidimensional points using BKD trees] is a comprehensive
+technical explanation about the benefits and design decisions
+behind the BKD tree geospatial data structure coming with Lucene 6.0.
+
+[Document values with Apache Lucene] highlights significant improvements to
+Apache Lucene 7.0 around how doc values are indexed and searched.
+
 
 [Document values with Apache Lucene]: https://www.elastic.co/blog/sparse-versus-dense-document-values-with-apache-lucene
+[Introducing Lucene Index Doc Values]: https://trifork.nl/blog/introducing-lucene-index-doc-values/
+[Storing multidimensional points using BKD trees]: https://www.elastic.co/blog/lucene-points-6-0
