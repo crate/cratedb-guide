@@ -127,9 +127,7 @@ for always-on analytics environments where data never stops flowing in.
   maintaining efficient bulk ingestion without overwhelming the storage layer
   or exhausting other cluster resources.
 
-::::{todo}
-Enable after merging [GH-434: Indexing and storage](https://github.com/crate/cratedb-guide/pull/434).
-```md
+
 ## Related sections
 
 {ref}`indexing-and-storage` illustrates the internal workings and data structures
@@ -139,8 +137,6 @@ of CrateDB's storage layer in more detail.
 :hidden:
 indexing-and-storage
 :::
-```
-::::
 
 
 [TieredMergePolicy]: https://lucene.apache.org/core/9_12_1/core/org/apache/lucene/index/TieredMergePolicy.html
