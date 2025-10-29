@@ -119,7 +119,7 @@ Integrate CrateDB with CDC applications and frameworks.
 :link-type: ref
 {material-outlined}`query_stats;2em` &nbsp; **Telemetry**
 +++
-Collect telemtry data into CrateDB.
+Collect telemetry data into CrateDB.
 Use CrateDB with metrics collection agents, brokers, and stores.
 ::::
 

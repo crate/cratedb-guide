@@ -8,7 +8,7 @@
 :class-body: sd-text-center
 :class-footer: sd-fs-6
 
-Today's data challenges and a high level overview of CrateDB.
+Today's data challenges and a high-level overview of CrateDB.
 :::{youtube} cByAOsaYddQ
 :::
 +++
@@ -26,8 +26,9 @@ informed decisions that drive meaningful impact.
 ::::{card} CrateDB curated videos
 :class-footer: sd-fs-6
 
-In [this video playlist] Simon Prickett shares videos he has been part of that
-show what CrateDB is and how you can use it for a variety of projects.
+In [this video playlist] Simon Prickett shares videos that
+show what CrateDB is and how you can apply it in various scenarios
+across many projects.
 Don't miss the relevant [CrateDB customer stories].
 ::::
 

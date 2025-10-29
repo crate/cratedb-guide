@@ -69,7 +69,7 @@ operations, all based on standard SQL.
 :::{rubric} Related sections
 :::
 Connect to CrateDB using traditional database drivers, and integrate CrateDB
-with popular 3rd-party applications in open source and proprietary software
+with popular 3rd-party applications in open-source and proprietary software
 landscapes.
 
 ::::{grid} 1 2 2 2
