@@ -9,6 +9,12 @@ Use the ODBC .NET Data Provider to access data from your C Sharp ADO\.NET
 applications. The [.NET Framework Data Provider for ODBC] is available
 through the [System.Data.Odbc] namespace.
 
+:::{rubric} Install
+:::
+
+:::{include} /connect/odbc/install-dropdown.md
+:::
+
 :::{rubric} Synopsis
 :::
 

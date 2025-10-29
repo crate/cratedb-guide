@@ -67,11 +67,8 @@
 [Multi-model Database]: https://cratedb.com/solutions/multi-model-database
 [nearest neighbor search]: https://en.wikipedia.org/wiki/Nearest_neighbor_search
 [Nested Data Structure]: https://cratedb.com/product/features/nested-data-structure
-[ODBC]: https://en.wikipedia.org/wiki/Open_Database_Connectivity
 [PostgreSQL JDBC Driver]: https://jdbc.postgresql.org/
 [PostgreSQL wire protocol]: https://www.postgresql.org/docs/current/protocol.html
-[psqlODBC]: https://odbc.postgresql.org/
-[psqlODBC download site]: https://www.postgresql.org/ftp/odbc/releases/
 [python-dbapi-by-example]: inv:crate-python:*:label#by-example
 [python-sqlalchemy-by-example]: inv:sqlalchemy-cratedb:*:label#by-example
 [query DSL based on JSON]: https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html
@@ -84,6 +81,5 @@
 [TF–IDF]: https://en.wikipedia.org/wiki/Tf%E2%80%93idf
 [timeseries-queries-and-visualization-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/timeseries/timeseries-queries-and-visualization.ipynb
 [timeseries-queries-and-visualization-github]: https://github.com/crate/cratedb-examples/blob/main/topic/timeseries/timeseries-queries-and-visualization.ipynb
-[unixODBC]: https://www.unixodbc.org/
 [Vector Database (Product)]: https://cratedb.com/solutions/vector-database
 [Vector Database]: https://en.wikipedia.org/wiki/Vector_database

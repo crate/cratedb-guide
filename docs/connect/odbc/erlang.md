@@ -8,6 +8,12 @@
 The [Erlang ODBC application] provides an interface to communicate
 with relational SQL-databases out of the box.
 
+:::{rubric} Install
+:::
+
+:::{include} /connect/odbc/install-dropdown.md
+:::
+
 :::{rubric} Synopsis
 :::
 

@@ -2,9 +2,6 @@
 
 # ODBC with Visual Basic
 
-:::{include} /_include/links.md
-:::
-
 :::{rubric} About
 :::
 

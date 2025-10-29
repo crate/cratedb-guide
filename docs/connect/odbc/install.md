@@ -2,9 +2,14 @@
 orphan: true
 ---
 
+:::{include} /connect/odbc/links.md
+:::
+
+:::{div}
 While Windows typically includes an ODBC driver manager, you can
 install the [unixODBC] driver manager on Linux and macOS systems.
 The PostgreSQL ODBC driver is called [psqlODBC].
+:::
 
 :::::{tab-set}
 

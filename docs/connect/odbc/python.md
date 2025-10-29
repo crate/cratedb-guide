@@ -17,6 +17,10 @@ convenience. For more information, please visit the
 :::{rubric} Install
 :::
 
+:::{include} /connect/odbc/install-dropdown.md
+:::
+
+Install the required Python package.
 ```shell
 pip install --upgrade pyodbc
 ```
@@ -127,7 +131,6 @@ connection_string = \
     "Driver={PostgreSQL Unicode};Server=testcluster.cratedb.net;Port=5432;" \
     "Uid=admin;Pwd=password;MaxVarcharSize=1073741824"
 ```
-
 
 
 [connecting to PostgreSQL with pyodbc]: https://github.com/mkleehammer/pyodbc/wiki/Connecting-to-PostgreSQL

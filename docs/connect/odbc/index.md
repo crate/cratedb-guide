@@ -11,7 +11,7 @@ Connect to CrateDB with ODBC.
 :::
 
 :::{div}
-Open Database Connectivity ([ODBC]) is a standard application programming
+Open Database Connectivity ([ODBC][ODBC definition]) is a standard application programming
 interface (API) for accessing database management systems (DBMS),
 conceived to be independent of database systems and operating systems.
 The application uses ODBC functions through an _ODBC driver manager_ and
@@ -40,3 +40,6 @@ Erlang <erlang>
 Python <python>
 Visual Basic <visualbasic>
 :::
+
+
+[ODBC definition]: https://en.wikipedia.org/wiki/Open_Database_Connectivity
