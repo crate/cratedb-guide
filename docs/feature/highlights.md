@@ -1,7 +1,10 @@
+(highlights)=
+
 # Feature highlights
 
-Important fundamental features of CrateDB, and how they are applied within software
-solutions and application platforms in different scenarios and environments.
+:::{div} sd-text-muted
+Important fundamental features of CrateDB.
+:::
 
 :{material-outlined}`article;1.75em` {ref}`Document store <document>`:
 
@@ -16,16 +19,17 @@ solutions and application platforms in different scenarios and environments.
 
 :{material-outlined}`manage_search;2em` {ref}`Unified search <search-overview>`:
 
-  Based on Apache Lucene, CrateDB offers native BM25 term search
-  and vector search, all using SQL.
-  Learn about how to set up your database for search,
-  and how to query data efficiently, to make sense
-  of large volumes of unstructured information.
-  
-  **What's inside:**
-  Like Elasticsearch and Solr, CrateDB is based on Lucene, the premier
-  industry-grade full-text search engine library.
+  Like Elasticsearch and Solr, CrateDB is based on Apache Lucene,
+  the premier industry-grade full-text search engine library.
 
+  CrateDB offers native BM25 term search and vector search
+  on large volumes of unstructured information, all using SQL.
+  CrateDB enables you to build powerful full-text and semantic
+  search experiences for websites, applications, and enterprise data.
+
+  **What's inside:**
+  Learn how to leverage full-text, geospatial-,
+  vector-, and hybrid-search capabilities.
 
 :{material-outlined}`engineering;2em` {ref}`Advanced querying <query>`:
 

@@ -66,3 +66,11 @@ Supported industry-standard systems and frameworks.
 
   Ingest telemetry data—metrics, logs, and traces—from monitoring
   and sensor collector systems.
+
+  Store metrics and telemetry data for the long term, with the benefits of
+  using standard database interfaces, SQL query language, and horizontal
+  scalability through clustering as you go.
+
+  **What's inside:**
+  Never retire old records to cold storage,
+  always have them ready for historical analysis.
