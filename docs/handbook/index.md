@@ -127,76 +127,16 @@ Use CrateDB with metrics collection agents, brokers, and stores.
 
 ## See also
 
-:::{rubric} Solutions and topics
-:::
-
-::::{grid} 1 2 2 2
-:gutter: 2
-:padding: 0
-
-:::{grid-item-card} {material-outlined}`lightbulb;2em` Solutions and use cases
-:link: solutions
-:link-type: ref
-:link-alt: Solutions built with CrateDB
-Learn how to use CrateDB for time series use-cases,
-about industry solutions built with CrateDB and
-how others are using CrateDB successfully with
-both standard software components and in
-proprietary system landscapes.
-+++
-**What's inside:**
-Time series data. Industrial big data.
-Real-time raw-data analytics. Machine learning.
-:::
-
-:::{grid-item-card} {material-outlined}`numbers;2em` Categories / Topics
-:link: topics
-:link-type: ref
-:link-alt: CrateDB topics overview
-Learn how to apply CrateDB's features to optimally cover
-different application categories and topic domains.
-For example, connect CrateDB with third-party
-software applications, libraries, and frameworks.
-+++
-**What's inside:**
-Business intelligence, data lineage, data migrations, data visualization,
-programming frameworks, software testing.
-:::
-
-::::
-
-:::{rubric} Feature highlights
-:::
-
 :::::{grid} 2 3 3 3
 :gutter: 2
 :padding: 0
 
 ::::{grid-item-card}
-:link: document
+:link: all-features
 :link-type: ref
-{material-outlined}`article;2em` &nbsp; **Document store**
+{material-outlined}`star;2em` &nbsp; **All features**
 +++
-Store JSON documents or other structured data, also nested, using
-CrateDB’s OBJECT and ARRAY container data types.
-::::
-
-::::{grid-item-card}
-:link: search-overview
-:link-type: ref
-{material-outlined}`manage_search;2em` &nbsp; **Search**
-+++
-Based on Apache Lucene, CrateDB offers native BM25 term search
-and vector search, all using SQL.
-::::
-
-::::{grid-item-card}
-:link: advanced-querying
-:link-type: ref
-{material-outlined}`engineering;2em` &nbsp; **Advanced querying**
-+++
-Mix full-text search with time series aspects, and run powerful
-aggregations or other kinds of complex queries on your data.
+All features of CrateDB at a glance.
 ::::
 
 :::::
