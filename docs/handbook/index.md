@@ -3,219 +3,132 @@
 # Handbook
 
 :::{div} sd-text-muted
-About using CrateDB and CrateDB Cloud in practice.
+Use CrateDB and CrateDB Cloud in practice.
 :::
 
+:::{rubric} Instructions, how-to guides, tutorials, and explanations
+:::
 
-::::{grid} 2 2 3 3
+:::::{grid} 2 3 3 3
 :gutter: 2
 :padding: 0
 
-:::{grid-item-card} Getting Started
-:link: getting-started
-:link-type: ref
-:link-alt: Getting started with CrateDB
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-{material-outlined}`rocket_launch;1.3em`
-:::
-
-:::{grid-item-card} Installation
+::::{grid-item-card}
 :link: install
 :link-type: ref
-:link-alt: Installing CrateDB
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-{material-outlined}`download_for_offline;1.3em`
-:::
+{material-outlined}`download_for_offline;2em` &nbsp; **Install CrateDB**
++++
+Install CrateDB on different operating systems and environments.
+::::
 
-:::{grid-item-card} Connect
+::::{grid-item-card}
 :link: connect
 :link-type: ref
-:link-alt: Connecting to CrateDB
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-{material-outlined}`settings_input_svideo;1.3em`
-:::
-
+{material-outlined}`settings_input_svideo;2em` &nbsp; **Connect to CrateDB**
++++
+Database drivers, libraries, adapters, and connectors.
 ::::
 
+:::::
 
-## Learn
 
-How-to guides, tutorials, and explanations.
-
-::::{grid} 2 2 3 3
+:::::{grid} 2 3 3 3
 :gutter: 2
 :padding: 0
 
-:::{grid-item-card} How-to guides
+::::{grid-item-card}
 :link: howtos
 :link-type: ref
-:link-alt: How-to guides about CrateDB
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-{material-outlined}`integration_instructions;1.3em`
-:::
-
-:::{grid-item-card} Tutorials
-:link: tutorials
-:link-type: ref
-:link-alt: Tutorials about CrateDB
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-{material-outlined}`school;1.3em`
-:::
-
-:::{grid-item-card} Explanations
-:link: explanations
-:link-type: ref
-:link-alt: Explanations about subject matters concerning CrateDB
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-{material-outlined}`lightbulb;1.3em`
-:::
-
-:::{grid-item-card} Administration
-:link: administration
-:link-type: ref
-:link-alt: CrateDB Administration
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-{material-outlined}`manage_accounts;1.3em`
-:::
-
-:::{grid-item-card} Performance guides
-:link: performance
-:link-type: ref
-:link-alt: CrateDB Performance guides
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-{material-outlined}`speed;1.3em`
-:::
-
+{material-outlined}`integration_instructions;2em` &nbsp; **How-to guides**
++++
+Instructions how to get tasks done with CrateDB.
 ::::
 
+::::{grid-item-card}
+:link: tutorials
+:link-type: ref
+{material-outlined}`school;2em` &nbsp; **Tutorials**
++++
+Acquire skills and knowledge about CrateDB.
+::::
 
-## Features
+::::{grid-item-card}
+:link: explanations
+:link-type: ref
+{material-outlined}`lightbulb;2em` &nbsp; **Explanations**
++++
+Broaden and deepen your knowledge and understanding of CrateDB.
+::::
 
-:::{rubric} Highlights
+:::::
+
+:::{rubric} Best practice guides
 :::
 
-::::{grid} 2 2 3 3
+:::::{grid} 2 3 3 3
 :gutter: 2
 :padding: 0
 
-:::{grid-item-card} Document Store
-:link: document
+::::{grid-item-card}
+:link: administration
 :link-type: ref
-:link-alt: Storing JSON documents using CrateDB's `OBJECT` data type
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-{material-outlined}`article;1.3em`
-:::
-
-:::{grid-item-card} Search
-:link: search-overview
-:link-type: ref
-:link-alt: About CrateDB's search capabilities
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-{material-outlined}`manage_search;1.3em`
-:::
-
-:::{grid-item-card} Advanced Querying
-:link: advanced-querying
-:link-type: ref
-:link-alt: About CrateDB's advanced querying capabilities
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-{material-outlined}`engineering;1.3em`
-:::
-
+{material-outlined}`manage_accounts;2em` &nbsp; **Administration**
++++
+Best practices for administering CrateDB database clusters.
 ::::
 
-:::{card} All features
-:link: all-features
+::::{grid-item-card}
+:link: performance
 :link-type: ref
-
-CrateDB is a distributed and scalable SQL database for storing and analyzing
-massive amounts of data in near real-time, even with complex queries. It is
-based on Lucene, combines a unique set of features, and is PostgreSQL-compatible.
-
-![CrateDB feature overview diagram](https://cratedb.com/hs-fs/hubfs/nativesql.png?width=800&name=nativesql.png)
+{material-outlined}`speed;2em` &nbsp; **Performance guides**
 +++
-Read about all features of CrateDB at a glance.
+Best practices and tips for sharding, scaling, and performance tuning.
+::::
+
+:::::
+
+:::{rubric} Data loading / import / ingestion
 :::
-
-
-## Data ingestion
 
 Load data from many sources into CrateDB.
 
-::::{grid} 2 2 3 3
+:::::{grid} 2 3 3 3
 :gutter: 2
 :padding: 0
 
-:::{grid-item-card} ETL
+::::{grid-item-card}
 :link: etl
 :link-type: ref
-:link-alt: Load and export data into/from CrateDB
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-{material-outlined}`transform;1.3em`
-:::
-
-:::{grid-item-card} CDC
-:link: cdc
-:link-type: ref
-:link-alt: Change Data Capture (CDC) into CrateDB
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-{material-outlined}`double_arrow;1.3em`
-:::
-
-:::{grid-item-card} Telemetry
-:link: telemetry
-:link-type: ref
-:link-alt: Use CrateDB with metrics collection agents, brokers, and stores
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-5
-{material-outlined}`query_stats;1.3em`
-:::
-
+{material-outlined}`transform;2em` &nbsp; **ETL**
++++
+Load and export data into/from CrateDB.
+Integrate CrateDB with ETL and ELT applications and frameworks.
 ::::
 
+::::{grid-item-card}
+:link: cdc
+:link-type: ref
+{material-outlined}`double_arrow;2em` &nbsp; **CDC**
++++
+Change Data Capture (CDC) into CrateDB.
+Integrate CrateDB with CDC applications and frameworks.
+::::
 
-## Solutions and topics
+::::{grid-item-card}
+:link: telemetry
+:link-type: ref
+{material-outlined}`query_stats;2em` &nbsp; **Telemetry**
++++
+Collect telemtry data into CrateDB.
+Use CrateDB with metrics collection agents, brokers, and stores.
+::::
+
+:::::
+
+## See also
+
+:::{rubric} Solutions and topics
+:::
 
 ::::{grid} 1 2 2 2
 :gutter: 2
@@ -252,6 +165,41 @@ programming frameworks, software testing.
 
 ::::
 
+:::{rubric} Feature highlights
+:::
+
+:::::{grid} 2 3 3 3
+:gutter: 2
+:padding: 0
+
+::::{grid-item-card}
+:link: document
+:link-type: ref
+{material-outlined}`article;2em` &nbsp; **Document store**
++++
+Store JSON documents or other structured data, also nested, using
+CrateDB’s OBJECT and ARRAY container data types.
+::::
+
+::::{grid-item-card}
+:link: search-overview
+:link-type: ref
+{material-outlined}`manage_search;2em` &nbsp; **Search**
++++
+Based on Apache Lucene, CrateDB offers native BM25 term search
+and vector search, all using SQL.
+::::
+
+::::{grid-item-card}
+:link: advanced-querying
+:link-type: ref
+{material-outlined}`engineering;2em` &nbsp; **Advanced querying**
++++
+Mix full-text search with time series aspects, and run powerful
+aggregations or other kinds of complex queries on your data.
+::::
+
+:::::
 
 
 ```{toctree}
