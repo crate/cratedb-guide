@@ -7,6 +7,9 @@
 CrateDB is a distributed and scalable SQL database for storing and analyzing
 massive amounts of data in near real-time, even with complex queries. It is
 PostgreSQL-compatible, and based on Lucene.
+
+Learn how its featuers are applied within software solutions and application
+platforms in different scenarios and environments.
 :::
 
 :::{toctree}
@@ -113,44 +116,6 @@ analytics applications on top of billions of records.
 **What's inside:**
 For scenarios where all records must be retained due
 to their unique value, downsampling is not applicable.
-:::
-
-::::
-
-## See also
-
-:::{div} sd-text-muted
-Other notable features of CrateDB.
-:::
-
-::::{grid} 1 2 2 2
-:margin: 4 4 0 0
-:padding: 0
-:gutter: 2
-
-:::{grid-item-card} {material-outlined}`search;2em` Full-text and semantic search
-:link: search-overview
-:link-type: ref
-:link-alt: About CrateDB's search features
-CrateDB enables you to build powerful search experiences for websites,
-applications, and enterprise data.
-+++
-**What's inside:**
-Learn how to leverage full-text, geospatial-,
-vector-, and hybrid-search capabilities.
-:::
-
-:::{grid-item-card} {material-outlined}`manage_history;2em` Metrics and telemetry data store
-:link: metrics-store
-:link-type: ref
-:link-alt: Using CrateDB as a long-term metrics store
-Store metrics and telemetry data for the long term, with the benefits of
-using standard database interfaces, SQL query language, and horizontal
-scalability through clustering as you go.
-+++
-**What's inside:**
-Never retire old records to cold storage,
-always have them ready for historical analysis.
 :::
 
 ::::
