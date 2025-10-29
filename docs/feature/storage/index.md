@@ -27,7 +27,7 @@ A single record in Lucene is called "document".
   off selectively.
 
 CrateDB uses three main data structures of Lucene: Inverted indexes for text values,
-BKD trees for numeric values, and doc values. On top of doc values, CrateDB implements
+BKD trees for numeric values, and doc values. Based on doc values, CrateDB implements
 a column store for fast sorting and aggregations.
 
 :Inverted index:
