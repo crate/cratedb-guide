@@ -114,10 +114,16 @@ always-on analytics environments where data never stops flowing in.
   - Faster queries: Larger segments reduce index overhead and improve cache efficiency.
   - No downtime: Merging occurs transparently, allowing continuous ingestion and querying.
 
-  CrateDB uses Lucene's default TieredMergePolicy. It merges segments of roughly equal size
+  CrateDB uses Lucene's default TieredMergePolicy for automatically merging segments
+  in the background. It merges segments of roughly equal size
   and controls the number of segments per "tier" to balance search performance with merge
   overhead. Lucene's [TieredMergePolicy] documentation explains in detail how CrateDB's
   underlying merge policy decides when to combine segments.
+
+  You can invoke segment merges manually by using the
+  {ref}`OPTIMIZE TABLE <crate-reference:sql-optimize>` SQL command.
+  This achieves the best optimization, especially after heavy insert operations.
+  For example, after initially loading table data from another system.
 
 :Table refreshes:
 
