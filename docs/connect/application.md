@@ -9,12 +9,92 @@
 Connect to CrateDB from database shells and IDEs.
 :::
 
+:::{rubric} Admin Tools
+:::
+
+Learn about the fundamental tools that support working directly with CrateDB.
+
+::::{grid} 2 2 2 4
+:gutter: 3
+:padding: 0
+
+:::{grid-item-card} CrateDB Admin UI
+:link: use-admin-ui
+:link-type: ref
+:link-alt: The CrateDB Admin UI
+:padding: 2
+:class-card: sd-pt-3
+:class-title: sd-fs-6
+:class-body: sd-text-center
+:class-footer: text-smaller
+{material-outlined}`admin_panel_settings;3.5em`
++++
+CrateDB includes a web administration interface.
+:::
+
+:::{grid-item-card} CrateDB Shell
+:link: use-crash
+:link-type: ref
+:link-alt: The Crash CLI
+:padding: 2
+:class-card: sd-pt-3
+:class-title: sd-fs-6
+:class-body: sd-text-center
+:class-footer: text-smaller
+{material-outlined}`terminal;3.5em`
++++
+The CrateDB command-line interface (CLI).
+:::
+
+::::
+
+(ide)=
+(connect-ide)=
+:::{rubric} Database IDEs
+:::
+
+Mostly through its PostgreSQL interface, CrateDB supports working with popular
+database IDE (Integrated Development Environment) applications.
+
+
+:::::{grid} 2 2 2 4
+:gutter: 3
+:padding: 0
+
+::::{grid-item-card} DataGrip
+:link: datagrip
+:link-type: ref
+:link-alt: Connect to CrateDB using DataGrip
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+```{image} /_assets/icon/datagrip-logo.svg
+:height: 60px
+```
+::::
+
+::::{grid-item-card} DBeaver
+:link: dbeaver
+:link-type: ref
+:link-alt: Connect to CrateDB using DBeaver
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+```{image} /_assets/icon/dbeaver-logo.svg
+:height: 60px
+```
+::::
+
+:::::
+
 
 (use-admin-ui)=
 ## CrateDB Admin UI
 :::{div}
 CrateDB ships with a browser-based administration interface called
-[Admin UI].
+{ref}`Admin UI <crate-admin-ui:index>`.
 :::
 The Admin UI is enabled on each CrateDB node. You can use it to inspect and
 interact with the whole CrateDB cluster in various ways.
@@ -40,9 +120,9 @@ a dedicated user account for accessing the Admin UI. See {ref}`create-user`.
 (use-crash)=
 ## CrateDB Shell
 
-The CrateDB Shell, called `crash`, is an interactive command-line interface
-(CLI) program for working with CrateDB on your favorite terminal. To learn more
-about it, please refer to its documentation at {ref}`crate-crash:index`.
+The {ref}`CrateDB Shell <crate-crash:index>`, called `crash`,
+is an interactive command-line interface
+(CLI) program for working with CrateDB on your favorite terminal.
 
 ![crash default screen after executing a query](https://cratedb.com/docs/crate/crash/en/latest/_images/query.png){width=320px}
 
@@ -223,46 +303,6 @@ echo '{"stmt": "SELECT 42.42;"}' \
 
 ::::
 
-
-(ide)=
-(connect-ide)=
-## Database IDEs
-
-Mostly through its PostgreSQL interface, CrateDB supports working with popular
-database IDE (Integrated Development Environment) applications.
-
-
-:::::{grid} 2 2 2 4
-:gutter: 3
-:padding: 0
-
-::::{grid-item-card} DataGrip
-:link: datagrip
-:link-type: ref
-:link-alt: Connect to CrateDB using DataGrip
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-6
-```{image} /_assets/icon/datagrip-logo.svg
-:height: 60px
-```
-::::
-
-::::{grid-item-card} DBeaver
-:link: dbeaver
-:link-type: ref
-:link-alt: Connect to CrateDB using DBeaver
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-6
-```{image} /_assets/icon/dbeaver-logo.svg
-:height: 60px
-```
-::::
-
-:::::
 
 
 [curl]: https://curl.se/

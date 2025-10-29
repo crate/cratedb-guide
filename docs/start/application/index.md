@@ -13,7 +13,7 @@
 :link-type: url
 A JavaScript guestbook app with several backend implementations.
 +++
-Each uses a different client library to communicate with CrateDB over HTTP.
+Each application uses a different client library to communicate with CrateDB over HTTP.
 :::
 
 :::{grid-item-card} Geospatial data
@@ -23,6 +23,15 @@ Geospatial data demo application using CrateDB and the Express.js framework.
 +++
 Select a point of interest on a map,
 then drill up to the corresponding region.
+:::
+
+:::{grid-item-card} Assorted examples
+:link: https://github.com/crate/cratedb-examples
+:link-type: url
+A collection of clear, concise examples about how to work with CrateDB.
++++
+The repository includes a variety of executable code snippets
+covering a wide range of clients and integrations.
 :::
 
 ::::

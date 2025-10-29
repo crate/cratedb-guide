@@ -72,7 +72,61 @@ and explore key features.
 :::{rubric} Learn more
 :::
 
-To learn more about CrateDB, we invite you to explore the other sections
+Learn more about CrateDB, guided and self-guided.
+
+::::{grid} 2 2 2 4
+:padding: 0
+:gutter: 0
+
+:::{grid-item-card}
+:link: handbook
+:link-type: ref
+:link-alt: The CrateDB Handbook
+:padding: 2
+:class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold sd-text-capitalize
+:class-body: sd-text-center sd-fs-5
+:class-footer: text-smaller
+The CrateDB Handbook
+^^^
+{material-outlined}`hiking;3.5em`
++++
+Guides and tutorials about how to use CrateDB in practice.
+:::
+
+:::{grid-item-card}
+:link: https://learn.cratedb.com/
+:link-alt: The CrateDB Academy
+:padding: 2
+:class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold sd-text-capitalize
+:class-body: sd-text-center sd-fs-5
+:class-footer: text-smaller
+Academy Courses
+^^^
+{material-outlined}`school;3.5em`
++++
+A learning hub dedicated to data enthusiasts.
+:::
+
+:::{grid-item-card}
+:link: https://community.cratedb.com/
+:link-alt: The CrateDB Community Portal
+:padding: 2
+:class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold sd-text-capitalize
+:class-body: sd-text-center sd-fs-5
+:class-footer: text-smaller
+Community Portal
+^^^
+{material-outlined}`groups;3.5em`
++++
+A hangout place for members of the CrateDB community.
+:::
+
+::::
+
+:::{rubric} See also
+:::
+
+We invite you to explore the other sections
 of the documentation.
 
 :::::{card}
@@ -190,16 +244,16 @@ Get access to more resources to continue learning.
 :::::
 
 
-
 ```{toctree}
 :maxdepth: 1
 :hidden:
 
-first-steps
+First steps <first-steps>
 modelling/index
 query/index
 ingest
 application/index
+video/index
 ```
 
 
