@@ -123,8 +123,9 @@ always-on analytics environments where data never stops flowing in.
 
   CrateDB's refresh mechanism controls how often newly ingested data becomes visible
   for querying. Instead of committing every write immediately, which would degrade
-  throughput, CrateDB batches writes in memory and periodically refreshes data
-  segments, typically once per second by default.
+  throughput, CrateDB batches writes in memory and refreshes data
+  segments when needed. For performance reasons, refreshes won't happen on shards
+  which aren't queried for some time (idling).
 
   This approach strikes a balance between low-latency visibility and high ingestion
   performance, allowing users to query the most recent data almost instantly while
