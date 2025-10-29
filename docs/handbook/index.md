@@ -139,6 +139,14 @@ Use CrateDB with metrics collection agents, brokers, and stores.
 All features of CrateDB at a glance.
 ::::
 
+::::{grid-item-card}
+:link: integrate
+:link-type: ref
+{material-outlined}`integration_instructions;2em` &nbsp; **Integrate**
++++
+Integrate with third-party applications and frameworks.
+::::
+
 :::::
 
 
