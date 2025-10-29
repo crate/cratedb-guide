@@ -21,60 +21,51 @@ analytics/index
 machine-learning/index
 :::
 
-## Explanations
+## Overview
 
 :::{div} sd-text-muted
 About time series and long-term data storage, real-time analytics, and machine learning.
 :::
 
-::::{grid} 1 2 2 2
-:gutter: 2
-:padding: 0
+:{material-outlined}`stacked_line_chart;1.5em` {ref}`Time series data <timeseries>`:
 
-:::{grid-item-card} {material-outlined}`stacked_line_chart;2em` Time series data
-:link: timeseries
-:link-type: ref
-:link-alt: About CrateDB for time series data analysis
-Enhance your understanding of how to use CrateDB for time series use-cases,
-and how to apply time series modeling and analysis procedures to your data.
-+++
-**What's inside:**
-- Advanced statistical analysis
-- Data visualization
-- Machine learning
-- Scientific computing
-:::
+  **About CrateDB for time series data analysis.**
+  
+  Enhance your understanding of how to use CrateDB for time series use-cases,
+  and how to apply time series modeling and analysis procedures to your data.
+  
+  **What's inside:**
+  - Advanced statistical analysis
+  - Data visualization
+  - Machine learning
+  - Scientific computing
 
-:::{grid-item-card} {material-outlined}`manage_history;2em` Long-term store
-:link: longterm-store
-:link-type: ref
-:link-alt: About storing time series data for the long term
-Permanently keeping your raw data accessible for querying yields insightful
-analysis opportunities other systems can't provide easily.
-+++
-**What's inside:**
-- Time-based bucketing.
-- Advanced querying.
-- Import data using Dask.
-- Optimizing storage for historic time series data.
-:::
+:{material-outlined}`manage_history;1.5em` {ref}`Long-term store <longterm-store>`:
 
-:::{grid-item-card} {material-outlined}`model_training;2em` Machine learning
-:link: machine-learning
-:link-type: ref
-:link-alt: About CrateDB for machine learning applications
-Get an overview of how CrateDB provides support for different kinds of
-machine learning tasks, and learn how to integrate CrateDB with machine
-learning frameworks and tools.
-+++
-**What's inside:**
-- Vector store: Vector search, Hybrid search, LangChain
-- Text-to-SQL: LlamaIndex, MCP, MindsDB
-- Time series analysis: R, TensorFlow
-- MLOps and model training: MLflow, PyCaret, scikit-learn
-:::
+  **About storing time series data for the long term.**
 
-::::
+  Permanently keeping your raw data accessible for querying yields insightful
+  analysis opportunities other systems can't provide easily.
+
+  **What's inside:**
+  - Time-based bucketing.
+  - Advanced querying.
+  - Import data using Dask.
+  - Optimizing storage for historic time series data.
+
+:{material-outlined}`model_training;2em` {ref}`Machine learning <machine-learning>`:
+
+  **About CrateDB for machine learning applications.**
+
+  Get an overview of how CrateDB provides support for different kinds of
+  machine learning tasks, and learn how to integrate CrateDB with machine
+  learning frameworks and tools.
+
+  **What's inside:**
+  - Vector store: Vector search, Hybrid search, LangChain
+  - Text-to-SQL: LlamaIndex, MCP, MindsDB
+  - Time series analysis: R, TensorFlow
+  - MLOps and model training: MLflow, PyCaret, scikit-learn
 
 
 ## Case studies
