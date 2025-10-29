@@ -105,8 +105,9 @@ always-on analytics environments where data never stops flowing in.
 :Segment merges:
 
   When data is written to CrateDB, it is written into subsequent immutable
-  segments on disk. Over time, these segments are merged into larger ones by
-  background tasks, balancing I/O load with query performance.
+  segments on disk. Over time, to reduce their number, these segments are
+  merged into larger ones by background tasks, balancing I/O load with
+  query performance.
 
   This process, known as segment merging, achieves three critical optimizations:
   - Space compaction: Merging removes deleted or superseded records, freeing disk
