@@ -88,6 +88,8 @@ linkcheck_ignore += [
     r"https://qz.surister.dev/",
     # Read timed out.
     r"https://flowfuse.com/",
+    # Azure DNS outage 2025-01-29: cannot resolve azuremarketplace.microsoft.com: Unknown host
+    r"https://azuremarketplace.microsoft.com/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
