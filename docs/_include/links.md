@@ -67,7 +67,6 @@
 [Multi-model Database]: https://cratedb.com/solutions/multi-model-database
 [nearest neighbor search]: https://en.wikipedia.org/wiki/Nearest_neighbor_search
 [Nested Data Structure]: https://cratedb.com/product/features/nested-data-structure
-[ODBC]: https://en.wikipedia.org/wiki/Open_Database_Connectivity
 [PostgreSQL JDBC Driver]: https://jdbc.postgresql.org/
 [PostgreSQL wire protocol]: https://www.postgresql.org/docs/current/protocol.html
 [python-dbapi-by-example]: inv:crate-python:*:label#by-example

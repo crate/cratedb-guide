@@ -186,6 +186,54 @@ crash --command "SELECT 42.42;"
 ::::
 
 
+(isql)=
+### isql
+
+`isql` and `iusql` are unixODBC command-line tools allowing users to execute
+SQL interactively or in batches.
+The tools provide several useful features, including an option to generate
+output wrapped in an HTML table.
+
+:::{include} /connect/odbc/install-dropdown.md
+:::
+
+::::{tab-set}
+
+:::{tab-item} CrateDB Cloud
+:sync: server
+```{code} ini
+[CrateDB Cloud]
+Driver      = PostgreSQL ODBC
+Servername  = testcluster.cratedb.net
+Port        = 5432
+Sslmode     = require
+Username    = admin
+Password    = password
+```
+```shell
+echo "SELECT 42.42" | iusql "CrateDB Cloud"
+```
+:::
+
+:::{tab-item} CrateDB on localhost
+:sync: localhost
+```{code} ini
+[CrateDB]
+Driver      = PostgreSQL ODBC
+Servername  = localhost
+Port        = 5432
+Sslmode     = disable
+Username    = crate
+Password    = crate
+```
+```shell
+echo "SELECT 42.42" | iusql "CrateDB"
+```
+:::
+
+::::
+
+
 (psql)=
 ### psql
 
