@@ -1,5 +1,7 @@
+(import)=
 (ingest)=
-# CrateDB data ingestion
+(load)=
+# Load data into CrateDB
 
 :::{div} sd-text-muted
 Data ingestion / loading / import methods for CrateDB at a glance.
@@ -34,7 +36,7 @@ Data import methods supported by CrateDB natively.
 
 ## {material-outlined}`cloud_upload;1.5em` Using CrateDB Cloud
 
-Data import methods provided by CrateDB Cloud.
+Additional data import methods provided by CrateDB Cloud.
 
 :{ref}`Import files <cluster-import>`:
 
@@ -51,7 +53,8 @@ Data import methods provided by CrateDB Cloud.
 
 ## {material-outlined}`arrow_circle_up;1.5em` Using external systems
 
-Supported industry-standard systems and frameworks.
+Supported industry-standard applications, frameworks, and systems
+for one-shot and continuous / streaming data imports.
 
 :{ref}`Extract Transform Load (ETL) <etl>`:
 
