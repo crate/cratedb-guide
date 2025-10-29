@@ -29,7 +29,7 @@ through the [System.Data.Odbc] namespace.
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Data.Odbc" Version="9.0.10" />
+    <PackageReference Include="System.Data.Odbc" Version="9.*" />
   </ItemGroup>
 
 </Project>
