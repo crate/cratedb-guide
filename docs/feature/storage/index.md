@@ -83,9 +83,13 @@ a column store for fast sorting and aggregations.
 
 How CrateDB stores data using Lucene.
 
-tldr; CrateDB never needs explicit VACUUMs, manual compactions, or
-reindexing. The system maintains itself dynamically, which is a key advantage
-for always-on analytics environments where data never stops flowing in.
+tldr; In daily operations, CrateDB never needs explicit VACUUMs, manual
+compactions, or reindexing. [^recreate-tables]
+The system maintains itself dynamically, which is a key advantage for
+always-on analytics environments where data never stops flowing in.
+
+[^recreate-tables]: While CrateDB is maintenance-free in daily operations,
+  you will need to [recreate tables] on major version upgrades.
 
 :Append-only segments:
 
@@ -139,4 +143,5 @@ indexing-and-storage
 :::
 
 
+[recreate tables]: https://cratedb.com/docs/crate/reference/en/latest/admin/system-information.html#tables-need-to-be-recreated
 [TieredMergePolicy]: https://lucene.apache.org/core/9_12_1/core/org/apache/lucene/index/TieredMergePolicy.html
