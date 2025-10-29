@@ -211,23 +211,6 @@ It is also not in the same shape as the other pages in this section.
 :::
 
 
-:::{seealso}
-**Features:**
-[](#relational)
-
-**Domains:**
-[](#metrics-store) •
-[](#analytics) •
-[](#industrial) •
-[](#timeseries) •
-[](#machine-learning)
-
-**Product:**
-[Relational Database] •
-[Indexing, Columnar Storage, and Aggregations]
-:::
-
-
 :::{toctree}
 :maxdepth: 1
 :hidden:
