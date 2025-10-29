@@ -104,7 +104,7 @@ always-on analytics environments where data never stops flowing in.
 
 :Segment merges:
 
-  When new data is inserted into CrateDB, it is written into small, immutable
+  When data is written into CrateDB, it is written into small, immutable
   segments on disk. Over time, these segments are merged into larger ones by
   background tasks, balancing I/O load with query performance.
 
