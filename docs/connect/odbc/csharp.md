@@ -41,21 +41,19 @@ using System.Data.Odbc;
 
 // Connect to database
 string connection_string = "Driver={PostgreSQL Unicode};Server=localhost;Port=5432;Uid=crate;Pwd=crate;MaxVarcharSize=1073741824";
-OdbcConnection connection = new OdbcConnection(connection_string);
-connection.Open();
+using (OdbcConnection connection = new OdbcConnection(connection_string))
+{
+    connection.Open();
 
-// Invoke query
-OdbcCommand command = new OdbcCommand("SELECT mountain, height FROM sys.summits ORDER BY height DESC LIMIT 5", connection);
-OdbcDataReader reader = command.ExecuteReader();
-
-// Display results
-while (reader.Read())
-    Console.WriteLine($"{reader.GetString(0)}: {reader.GetInt32(1)}");
-
-// Clean up
-reader.Close();
-command.Dispose();
-connection.Close();
+    // Invoke query
+    using (OdbcCommand command = new OdbcCommand("SELECT mountain, height FROM sys.summits ORDER BY height DESC LIMIT 5", connection))
+    using (OdbcDataReader reader = command.ExecuteReader())
+    {
+        // Display results
+        while (reader.Read())
+            Console.WriteLine($"{reader.GetString(0)}: {reader.GetInt32(1)}");
+    }
+}
 ```
 
 :::{rubric} Example
