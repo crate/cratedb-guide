@@ -53,7 +53,7 @@ curl -X POST http://localhost:3500/v1.0/bindings/crate \
   }
 }'
 
-# Submit DDL statements via the exec operation.
+# Submit DDL or DML statements via the exec operation.
 curl -X POST http://localhost:3500/v1.0/bindings/crate \
   -H "Content-Type: application/json" \
   -d '{
