@@ -37,14 +37,13 @@ LangChain has a number of components designed to help build Q&A applications,
 and RAG applications more generally. Those are typical applications you can
 build using LLMs:
 
-  - [LangChain: Retrieval augmented generation]
-  - [LangChain: Analyzing structured data]
-  - [LangChain: Chatbots]
-  - [LangChain: Q&A with SQL]
+  - [LangChain: Semantic search]
+  - [LangChain: RAG agent]
+  - [LangChain: SQL agent]
+  - The [LangChain Extraction Service] extracts structured data from unstructured sources.
 
 ```{div} .clearfix
 ```
-
 
 :::{rubric} Install
 :::
@@ -216,10 +215,10 @@ Usage <usage>
 [How to set up LangChain with CrateDB]: https://community.cratedb.com/t/how-to-set-up-langchain-with-cratedb/1576
 [How to Use Private Data in Generative AI]: https://youtu.be/icquKckM4o0?feature=shared
 [LangChain]: https://python.langchain.com/
-[LangChain: Analyzing structured data]: https://python.langchain.com/docs/how_to/#extraction
-[LangChain: Chatbots]: https://python.langchain.com/docs/how_to/#chatbots
-[LangChain: Q&A with SQL]: https://python.langchain.com/docs/how_to/#qa-over-sql--csv
-[LangChain: Retrieval augmented generation]: https://python.langchain.com/docs/tutorials/sql_qa/
+[LangChain Extraction Service]: https://blog.langchain.com/use-case-accelerant-extraction-service/
+[LangChain: RAG agent]: https://docs.langchain.com/oss/python/langchain/rag
+[LangChain: Semantic search]: https://docs.langchain.com/oss/python/langchain/knowledge-base
+[LangChain: SQL agent]: https://docs.langchain.com/oss/python/langchain/sql-agent
 [LangChain adapter for CrateDB]: https://pypi.org/project/langchain-cratedb/
 [LangChain Conceptual Documentation]: https://python.langchain.com/docs/introduction/
 [langchain-conversational-history-binder]: https://mybinder.org/v2/gh/crate/cratedb-examples/main?labpath=topic%2Fmachine-learning%2Flangchain%2Fconversational_memory.ipynb
