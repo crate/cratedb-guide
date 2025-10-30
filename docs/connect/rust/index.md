@@ -26,8 +26,11 @@ Connect to CrateDB from Rust applications.
 use postgres::{Client, NoTls};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
+
+    // Connect to database.
     let mut client = Client::connect("postgresql://crate@localhost:5432/?sslmode=disable", NoTls)?;
 
+    // Invoke query and display results.
     for row in client.query(
         "SELECT mountain, height FROM sys.summits ORDER BY height DESC LIMIT 3",
         &[],
@@ -60,9 +63,12 @@ use native_tls::TlsConnector;
 use postgres_native_tls::MakeTlsConnector;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
+
+    // Connect to database.
     let tls = MakeTlsConnector::new(TlsConnector::new()?);
     let mut client = Client::connect("postgresql://crate:<password>@<cluster-name>.<region>.cratedb.net:5432/?sslmode=require", tls)?;
 
+    // Invoke query and display results.
     for row in client.query(
         "SELECT mountain, height FROM sys.summits ORDER BY height DESC LIMIT 3",
         &[],
@@ -93,7 +99,10 @@ use r2d2_postgres::{
     r2d2::{ManageConnection, Pool},
     PostgresConnectionManager,
 };
+
 fn main() -> Result<(), Box<dyn std::error::Error>> {
+
+    // Connect to database.
     let pg_manager = PostgresConnectionManager::new(
         "postgresql://crate:crate@localhost:5432/?sslmode=disable"
             .parse()
@@ -105,9 +114,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .build(pg_manager)
         .expect("Postgres pool failed");
     let mut pg_conn = pg_pool.get().unwrap();
+
+    // Invoke query.
     let result = pg_conn.query("SELECT mountain, height FROM sys.summits ORDER BY height DESC LIMIT 3", &[]);
     let rows = result.unwrap().into_iter().collect::<Vec<Row>>();
 
+    // Display results.
     for row in rows {
         let mountain: &str = row.get(0);
         let height: i32 = row.get(1);
