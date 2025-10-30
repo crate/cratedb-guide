@@ -144,5 +144,5 @@ Superset instance, this ID might be incorrect.
 
 ## Clean up
 1. The development web server of Apache Superset can be terminated by hitting `CTRL+C`.
-2. The CrateDB database instance running in a container can be terminated by either hitting `CTRL+C`, or by invoking `docker rm cratedb --force`.
+2. The CrateDB database instance running in a container will be automatically cleaned up due to the `--rm` flag.
 3. The metadata database of Apache Superset, where user accounts and database connections are stored, can be deleted by invoking `rm ~/.superset/superset.db`.
