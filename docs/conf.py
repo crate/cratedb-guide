@@ -90,6 +90,8 @@ linkcheck_ignore += [
     r"https://flowfuse.com/",
     # Azure DNS outage 2025-01-29: cannot resolve azuremarketplace.microsoft.com: Unknown host
     r"https://azuremarketplace.microsoft.com/",
+    # 404 Client Error: Not Found
+    r"https://crates.io/crates/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
