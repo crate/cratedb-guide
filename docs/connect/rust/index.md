@@ -93,7 +93,7 @@ use r2d2_postgres::{
     r2d2::{ManageConnection, Pool},
     PostgresConnectionManager,
 };
-fn main {
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     let pg_manager = PostgresConnectionManager::new(
         "postgresql://crate:crate@localhost:5432/?sslmode=disable"
             .parse()
@@ -107,7 +107,12 @@ fn main {
     let mut pg_conn = pg_pool.get().unwrap();
     let result = pg_conn.query("SELECT mountain, height FROM sys.summits ORDER BY height DESC LIMIT 3", &[]);
     let rows = result.unwrap().into_iter().collect::<Vec<Row>>();
-    // TODO: Display results.
+
+    for row in rows {
+        let mountain: &str = row.get(0);
+        let height: i32 = row.get(1);
+        println!("{}: {}", mountain, height);
+    }
     Ok(())
 }
 ```
