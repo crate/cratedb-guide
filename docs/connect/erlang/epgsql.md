@@ -41,14 +41,6 @@ start() ->
     init:stop().
 ```
 
-:::{include} ../_cratedb.md
-:::
-```shell
-rebar3 compile
-erlc epgsql_example.erl
-rebar3 shell --eval 'epgsql_example:start().'
-```
-
 :::{rubric} CrateDB Cloud
 :::
 
@@ -69,6 +61,19 @@ start() ->
         ssl_opts => [{verify, verify_none}],
         timeout => 4000
     }),
+```
+
+:::{rubric} Example
+:::
+
+Create the files `rebar.config` and `epgsql_example.erl` including the synopsis code shared above.
+
+:::{include} ../_cratedb.md
+:::
+```shell
+rebar3 compile
+erlc epgsql_example.erl
+rebar3 shell --eval 'epgsql_example:start().'
 ```
 
 

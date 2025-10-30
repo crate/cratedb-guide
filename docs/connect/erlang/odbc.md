@@ -38,12 +38,6 @@ main(_) ->
     init:stop().
 ```
 
-:::{include} ../_cratedb.md
-:::
-```shell
-escript odbc_example.erl
-```
-
 :::{rubric} CrateDB Cloud
 :::
 
@@ -63,6 +57,18 @@ main(_) ->
     init:stop().
 ```
 
+:::{rubric} Example
+:::
+
+Create the file `odbc_example.erl` including the synopsis code shared above.
+
+:::{include} ../_cratedb.md
+:::
+```shell
+escript odbc_example.erl
+```
+
 
 [Erlang ODBC examples]: https://www.erlang.org/doc/apps/odbc/getting_started.html
 [ODBC application]: https://www.erlang.org/docs/28/apps/odbc/odbc.html
+[SSL application]: https://www.erlang.org/docs/28/apps/ssl/ssl_app.html
