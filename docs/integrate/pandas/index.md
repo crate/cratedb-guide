@@ -37,8 +37,8 @@ data structures and operations for manipulating numerical tables and time series
 - {ref}`pandas-tutorial-start`
 - {ref}`pandas-tutorial-jupyter`
 - {ref}`arrow-import-parquet`
-- {ref}`pandas-efficient-ingest`
-- See also: {ref}`dask-efficient-ingest`
+- {ref}`pandas-bulk-import`
+- See also: {ref}`dask-bulk-import`
 - See also: [Efficient batch/bulk INSERT operations with pandas, Dask, and SQLAlchemy]
 
 :::{rubric} Code examples

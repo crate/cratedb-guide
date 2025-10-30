@@ -1,5 +1,5 @@
-(pandas-efficient-ingest)=
-# Guide to efficient data ingestion to CrateDB with pandas
+(pandas-bulk-import)=
+# Efficient bulk imports with pandas
 
 ## Introduction
 Bulk insert is a technique for efficiently inserting large amounts of data into a database by submitting multiple rows of data in a single database transaction. Instead of executing multiple SQL `INSERT` statements for each individual row of data, the bulk insert allows the database to process and store a batch of data at once. This approach can significantly improve the performance of data insertion, especially when dealing with large datasets.

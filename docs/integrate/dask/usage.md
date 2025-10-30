@@ -1,6 +1,6 @@
 (dask-usage)=
-(dask-efficient-ingest)=
-# Efficient data ingestion with Dask and CrateDB
+(dask-bulk-import)=
+# Efficient bulk imports with Dask
 
 ## Introduction
 Dask is a parallel computing library that enables distributed computing for tasks such as data processing and machine learning.

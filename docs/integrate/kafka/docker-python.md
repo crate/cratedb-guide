@@ -4,7 +4,7 @@
 This walkthrough demonstrates how to load data from a Kafka topic into a
 CrateDB table, using a Python consumer and CrateDB's HTTP interface.
 
-## Starting services
+## Start services
 
 Start Kafka and CrateDB using Docker Compose.
 ```yaml
@@ -45,7 +45,7 @@ networks:
 docker compose up -d
 ```
 
-## Provisioning CrateDB and Kafka
+## Provision CrateDB and Kafka
 
 * CrateDB Admin UI: `http://localhost:4200`
 * Kafka broker (inside-compose hostname): kafka:9092
@@ -86,9 +86,9 @@ EOF
 
 Messages are newline-delimited JSON for simplicity.
 
-## Loading data
+## Data loading
 
-### Create a simple consumer using Python
+Create a simple consumer using Python.
 
 ```python
 # quick_consumer.py
@@ -146,7 +146,7 @@ python quick_consumer.py
 This shows the custom client path: transform/filter as you like, do idempotent upserts on (device_id, ts), and batch writes for speed.
 :::
 
-## Verifying the data
+## Explore data
 
 Use `curl` to submit a `SELECT` statement that verifies data has been stored in CrateDB.
 ```bash
