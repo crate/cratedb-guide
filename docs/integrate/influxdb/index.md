@@ -24,13 +24,32 @@ fast query response times to build user interfaces, monitoring, and automation s
 :::
 
 
-:::{rubric} Synopsis
+:::{rubric} Synopsis (Server API)
 :::
 
+Transfer data from InfluxDB bucket/measurement into CrateDB schema/table.
 ```shell
 ctk load table \
   "influxdb2://example:token@influxdb.example.org:8086/testdrive/demo" \
   --cluster-url="crate://user:password@cratedb.example.org:4200/testdrive/demo"
+```
+Query data in CrateDB.
+```shell
+crash -c 'SELECT * FROM testdrive.demo;'
+```
+
+:::{rubric} Synopsis (Line protocol)
+:::
+
+Transfer data from InfluxDB line protocol file into CrateDB schema/table.
+```shell
+ctk load table \
+  "https://github.com/influxdata/influxdb2-sample-data/raw/master/air-sensor-data/air-sensor-data.lp" \
+  --cluster-url="crate://user:password@cratedb.example.org:4200/testdrive/air-sensor-data"
+```
+Query data in CrateDB.
+```shell
+crash -c 'SELECT * FROM testdrive."air-sensor-data";'
 ```
 
 That's the blueprint for the InfluxDB URI:

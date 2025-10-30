@@ -5,34 +5,6 @@ In this quick usage guide, you will use the [CrateDB Toolkit InfluxDB I/O subsys
 to import data from [InfluxDB] into [CrateDB]. You can also import data directly
 from files in InfluxDB line protocol format.
 
-## Synopsis
-
-### InfluxDB Server
-Transfer data from InfluxDB bucket/measurement into CrateDB schema/table.
-```shell
-ctk load table \
-  "influxdb2://example:token@influxdb.example.org:8086/testdrive/demo" \
-  --cluster-url="crate://user:password@cratedb.example.org:4200/testdrive/demo"
-```
-Query data in CrateDB.
-```shell
-export CRATEPW=password
-crash --host=cratedb.example.org --username=user --command='SELECT * FROM testdrive.demo;'
-```
-
-### InfluxDB Line Protocol
-Transfer data from InfluxDB line protocol file into CrateDB schema/table.
-```shell
-ctk load table \
-  "https://github.com/influxdata/influxdb2-sample-data/raw/master/air-sensor-data/air-sensor-data.lp" \
-  --cluster-url="crate://user:password@cratedb.example.org:4200/testdrive/air-sensor-data"
-```
-Query data in CrateDB.
-```shell
-export CRATEPW=password
-crash --host=cratedb.example.org --username=user --command='SELECT * FROM testdrive."air-sensor-data";'
-```
-
 ## Prerequisites
 
 Use Docker or Podman to run all components. This approach works consistently
