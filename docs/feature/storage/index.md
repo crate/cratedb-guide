@@ -71,13 +71,14 @@ a column store for fast sorting and aggregations.
 
   CrateDB implements a {ref}`column store <crate-reference:ddl-storage-columnstore>`
   based on doc values in Lucene.
-  For text values, other than storing the row data as-is (and indexing each value by default),
-  each value term is stored into a column-based store by default.
-
   This storage layout improves the performance of sorting, grouping, and aggregations,
   by keeping field data for one column packed at one place rather than scattered across documents.
-  The column store is enabled by default in CrateDB and can be disabled only for text fields.
-  It does not support container or geographic data types.
+
+  The column store is enabled by default in CrateDB and can optionally be disabled
+  on a per-field level. It does not support container or geographic data types.
+
+  For all supported value types, other than storing the row data as-is, and indexing
+  each value by default, each value term is stored into a column-based store by default.
 
 ## Storage process
 
