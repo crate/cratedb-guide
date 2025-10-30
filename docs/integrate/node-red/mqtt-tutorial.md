@@ -23,19 +23,7 @@ You need:
 2. The [node-red-contrib-postgresql](https://github.com/alexandrainst/node-red-contrib-postgresql) module installed.
 3. A running MQTT broker. This tutorial uses [HiveMQ Cloud](https://www.hivemq.com/).
 
-## Producing data
-
-First, generate data to populate the MQTT topic with Node-RED. If you already
-have an MQTT topic with regular messages, you can skip this part.
-![Screenshot 2021-09-13 at 14.58.42|690x134, 50%](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/5722946039148ca6ce69702d963f9f842c4f972c.png){width=480px}
-
-The `inject` node creates a JSON payload with three attributes:
-![Screenshot 2021-09-13 at 14.56.42|690x293, 50%](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/8084a53e544d681e79f85d780c621a340a7d0d30.png){width=480px}
-
-In this example, two fields are static; only the timestamp changes.
-Download the full workflow definition: [flows-producer.json](https://community.cratedb.com/uploads/short-url/eOvAk3XzDkRbNZjcZV0pZ0SnGu4.json) (1.3 KB)
-
-## Consuming and ingesting data
+## Provision CrateDB
 
 First of all, we create the target table in CrateDB:
 ```sql
@@ -48,6 +36,20 @@ CREATE TABLE nodered_target (
 Store the payload as CrateDB’s {ref}`OBJECT data type
 <crate-reference:type-object>` to accommodate an evolving schema.
 For production, also consider the {ref}`partitioning and sharding guide <sharding-partitioning>`.
+
+## Publish messages to MQTT
+
+First, generate data to populate the MQTT topic with Node-RED. If you already
+have an MQTT topic with regular messages, you can skip this part.
+![Screenshot 2021-09-13 at 14.58.42|690x134, 50%](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/5722946039148ca6ce69702d963f9f842c4f972c.png){width=480px}
+
+The `inject` node creates a JSON payload with three attributes:
+![Screenshot 2021-09-13 at 14.56.42|690x293, 50%](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/8084a53e544d681e79f85d780c621a340a7d0d30.png){width=480px}
+
+In this example, two fields are static; only the timestamp changes.
+Download the full workflow definition: [flows-producer.json](https://community.cratedb.com/uploads/short-url/eOvAk3XzDkRbNZjcZV0pZ0SnGu4.json) (1.3 KB)
+
+## Consume messages into CrateDB
 
 To ingest efficiently, group messages into batches and use
 {ref}`multi-value INSERT statements <inserts-multiple-values>`

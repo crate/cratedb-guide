@@ -50,7 +50,7 @@ docker compose up -d
 * CrateDB Admin UI: `http://localhost:4200`
 * Kafka broker (inside-compose hostname): kafka:9092
 
-### Create a demo table in CrateDB
+### Create a CrateDB table
 
 The easiest way to do this is through the CrateDB Admin UI at `http://localhost:4200` and execute this using the console:
 
@@ -69,7 +69,7 @@ But this can also be done using `curl`:
 curl -sS -H 'Content-Type: application/json' -X POST http://localhost:4200/_sql -d '{"stmt":"CREATE TABLE IF NOT EXISTS sensor_readings (device_id TEXT, ts TIMESTAMPTZ, temperature DOUBLE PRECISION, humidity DOUBLE PRECISION, PRIMARY KEY (device_id, ts))"}'
 ```
 
-### Create a Kafka topic and send a couple of messages
+### Create a Kafka topic
 
 Creating a Kafka topic can be done in several ways, we are selecting to use
 `docker exec` in this way:
@@ -79,6 +79,7 @@ docker exec -it kafka kafka-topics.sh --create --topic sensors --bootstrap-serve
 
 ## Process events
 
+### Submit events to Kafka
 ```bash
 docker exec -it kafka kafka-console-producer.sh --bootstrap-server kafka:9092 --topic sensors <<'EOF'
 {"device_id":"alpha","ts":"2025-08-19T12:00:00Z","temperature":21.4,"humidity":48.0}
@@ -86,11 +87,12 @@ docker exec -it kafka kafka-console-producer.sh --bootstrap-server kafka:9092 --
 {"device_id":"beta","ts":"2025-08-19T12:00:00Z","temperature":19.8,"humidity":55.1}
 EOF
 ```
+Events (messages) are newline-delimited JSON for simplicity.
 
-Messages are newline-delimited JSON for simplicity.
+### Consume events into CrateDB
 
-
-Create a simple consumer using Python.
+Create a simple consumer application using Python. It consumes events from the
+Kafka topic and inserts them into the CrateDB database table.
 
 ```python
 # quick_consumer.py
