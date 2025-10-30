@@ -16,6 +16,7 @@ Connect to CrateDB from Rust applications.
 :::
 
 [postgres] is a synchronous Rust client for the PostgreSQL database.
+[r2d2] is a generic connection pool for Rust.
 
 :::{rubric} Synopsis (localhost)
 :::
@@ -73,12 +74,51 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 ```
+
+:::{include} ../_cratedb.md
+:::
 ```shell
 cargo init
 cargo add postgres postgres-native-tls native-tls
 cargo run
 ```
 
+:::{rubric} Synopsis (connection pool)
+:::
+
+`main.rs`
+```rust
+use postgres::{NoTls, Row};
+use r2d2_postgres::{
+    r2d2::{ManageConnection, Pool},
+    PostgresConnectionManager,
+};
+fn main {
+    let pg_manager = PostgresConnectionManager::new(
+        "postgresql://crate:crate@localhost:5432/?sslmode=disable"
+            .parse()
+            .unwrap(),
+        NoTls,
+    );
+    let pg_pool = Pool::builder()
+        .max_size(5)
+        .build(pg_manager)
+        .expect("Postgres pool failed");
+    let mut pg_conn = pg_pool.get().unwrap();
+    let result = pg_conn.query("SELECT mountain, height FROM sys.summits ORDER BY height DESC LIMIT 3", &[]);
+    let rows = result.unwrap().into_iter().collect::<Vec<Row>>();
+    // TODO: Display results.
+    Ok(())
+}
+```
+
+:::{include} ../_cratedb.md
+:::
+```shell
+cargo init
+cargo add postgres r2d2
+cargo run
+```
 
 ## Example
 
@@ -93,3 +133,4 @@ Demonstrates a basic example program that uses the Rust postgres package.
 
 
 [postgres]: https://crates.io/crates/postgres
+[r2d2]: https://crates.io/crates/r2d2
