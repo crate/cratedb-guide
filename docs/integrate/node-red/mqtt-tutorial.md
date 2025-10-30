@@ -1,5 +1,5 @@
 (node-red-tutorial)=
-# Ingesting MQTT messages into CrateDB using Node-RED
+# Load MQTT messages into CrateDB using Node-RED
 
 :::{article-info}
 ---
