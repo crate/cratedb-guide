@@ -1,5 +1,6 @@
+(start-import)=
 (start-ingest)=
-# Ingesting data
+# Importing data
 
 :::{rubric} Features
 :::
@@ -30,9 +31,17 @@ seamless and flexible ingestion strategies.
 :::{rubric} Next step
 :::
 
-:::{card} All data ingestion methods for CrateDB at a glance
+:::{card}
 :link: ingest
 :link-type: ref
-CrateDB's data ingestion guide provides an overview of how to efficiently bring
+:width: 75%
+:margin: auto
+The data ingestion guide provides an overview of how to efficiently bring
 data from various sources into CrateDB.
++++
+```{button-ref} ingest
+:color: primary
+:expand:
+All data ingestion methods for CrateDB at a glance
+```
 :::

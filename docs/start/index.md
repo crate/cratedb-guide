@@ -251,7 +251,7 @@ Get access to more resources to continue learning.
 First steps <first-steps>
 modelling/index
 query/index
-ingest
+import
 application/index
 video/index
 ```
