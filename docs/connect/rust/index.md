@@ -21,7 +21,7 @@ Connect to CrateDB from Rust applications.
 :::{rubric} Synopsis (localhost)
 :::
 
-`main.rs`
+`src/main.rs`
 ```rust
 use postgres::{Client, NoTls};
 
@@ -42,7 +42,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 ```
-
+Add the code into the file `src/main.rs` after running `cargo init`.
 :::{include} ../_cratedb.md
 :::
 ```shell
@@ -56,7 +56,7 @@ cargo run
 For CrateDB Cloud, add TLS support and update the connection string with
 your cluster details.
 
-`main.rs`
+`src/main.rs`
 ```rust
 use postgres::Client;
 use native_tls::TlsConnector;
@@ -80,7 +80,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 ```
-
+Add the code into the file `src/main.rs` after running `cargo init`.
 :::{include} ../_cratedb.md
 :::
 ```shell
@@ -92,11 +92,11 @@ cargo run
 :::{rubric} Synopsis (connection pool)
 :::
 
-`main.rs`
+`src/main.rs`
 ```rust
 use postgres::{NoTls, Row};
 use r2d2_postgres::{
-    r2d2::{ManageConnection, Pool},
+    r2d2::{Pool},
     PostgresConnectionManager,
 };
 
@@ -128,12 +128,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 ```
-
+Add the code into the file `src/main.rs` after running `cargo init`.
 :::{include} ../_cratedb.md
 :::
 ```shell
 cargo init
-cargo add postgres r2d2
+cargo add postgres r2d2_postgres
 cargo run
 ```
 
