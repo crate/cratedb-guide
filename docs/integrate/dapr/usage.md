@@ -43,7 +43,7 @@ To configure the output binding of your application:
 There are now two services running, the actual application (port 3000) and a web service with the so-called Dapr sidecar (port 3500). Below are some examples of how to interact with the PostgreSQL binding via the Dapr sidecar (see the PostgreSQL binding specification for reference):
 
 ```bash
-# SELECT statements via the query operation
+# Submit SELECT statements via the query operation.
 curl -X POST http://localhost:3500/v1.0/bindings/crate \
   -H "Content-Type: application/json" \
   -d '{
@@ -53,17 +53,17 @@ curl -X POST http://localhost:3500/v1.0/bindings/crate \
   }
 }'
 
-# DDL statements via the exec operation
+# Submit DDL statements via the exec operation.
 curl -X POST http://localhost:3500/v1.0/bindings/crate \
   -H "Content-Type: application/json" \
   -d '{
   "operation": "exec",
   "metadata": {
-    "sql": "INSERT INTO <schema name>.<table name> VALUES (NOW(), 123, \'some string...\')"
+    "sql": "INSERT INTO <schema name>.<table name> VALUES (NOW(), 123, '"'"'some string...'"'"')"
   }
 }'
 
-# closes the connection pool, no further queries will be possible
+# Close the connection pool, no further queries will be possible.
 curl -X POST http://localhost:3500/v1.0/bindings/crate \
   -H "Content-Type: application/json" \
   -d '{
