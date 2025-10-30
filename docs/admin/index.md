@@ -18,6 +18,7 @@ Best practices for administering CrateDB database clusters.
 bootstrap-checks
 create-user
 going-into-production
+monitoring/index
 memory
 circuit-breaker
 troubleshooting/index
