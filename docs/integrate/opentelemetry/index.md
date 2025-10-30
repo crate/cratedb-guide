@@ -25,24 +25,58 @@ can use [Telegraf].
 :::{rubric} Synopsis
 :::
 
-Configure OpenTelemetry Collector to send metrics data to the [CrateDB Prometheus Adapter].
+Configure OpenTelemetry Collector to send metrics data to the
+[CrateDB Prometheus Adapter] by configuring the `prometheusremotewrite`
+exporter endpoint.
 
-:::{literalinclude} collector/otelcol.yaml
-:lines: 26-34
-:::
-:::{literalinclude} collector/otelcol.yaml
-:lines: 38-43
-:::
+```yaml
+exporters:
+  prometheusremotewrite:
+    endpoint: "http://cratedb-prometheus-adapter:9268/write"
+    remote_write_queue:
+      enabled: false
+    external_labels:
+      subsystem: "otel-testdrive"
+  debug:
+    verbosity: detailed
+```
+```yaml
+service:
+  pipelines:
+    metrics:
+      receivers: [otlp, carbon]
+      processors: [batch]
+      exporters: [debug, prometheusremotewrite]
+```
 
 Configure Telegraf to store OpenTelemetry metrics data into CrateDB.
 
-:::{literalinclude} telegraf/telegraf.conf
-:lines: 1-6
-:::
-:::{literalinclude} telegraf/telegraf.conf
-:lines: 27-33
-:::
+```ini
+# OpenTelemetry Input Plugin
+# https://github.com/influxdata/telegraf/blob/release-1.36/plugins/inputs/opentelemetry/README.md
+[[inputs.opentelemetry]]
+```
+```ini
+# CrateDB Output Plugin
+# https://github.com/influxdata/telegraf/tree/master/plugins/outputs/cratedb
+[[outputs.cratedb]]
 
+  ## Connection parameters for accessing the database.
+  ## See https://pkg.go.dev/github.com/jackc/pgx/v4#ParseConfig for available options.
+  url = "postgres://crate:crate@cratedb/doc?sslmode=disable"
+
+  ## Timeout for all CrateDB queries.
+  # timeout = "5s"
+
+  ## Name of the table to store metrics in.
+  table = "metrics"
+
+  ## If true, and the metrics table does not exist, create it automatically.
+  table_create = true
+
+  ## The character(s) to replace any '.' in an object key with
+  # key_separator = "_"
+```
 
 :::{rubric} Learn
 :::
