@@ -3,7 +3,7 @@
 
 (systables)=
 
-# Diagnostics with System Tables
+# Diagnostics with system tables
 
 CrateDB maintains a set of diagnostic tables in the **sys** schema, which
 provide insights into the cluster state.
