@@ -1,6 +1,6 @@
 (start-import)=
 (start-ingest)=
-# Importing data
+# Import data
 
 :::{rubric} Features
 :::
