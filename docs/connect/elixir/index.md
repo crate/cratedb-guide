@@ -52,13 +52,6 @@ result = Postgrex.query!(conn, "SELECT region, mountain, height FROM sys.summits
 IO.inspect(result)
 ```
 
-:::{include} ../_cratedb.md
-:::
-```shell
-mix deps.get
-mix run example.exs
-```
-
 :::{rubric} CrateDB Cloud
 :::
 
@@ -79,7 +72,20 @@ options = [
 ]
 ```
 
-## Example
+:::{rubric} Quickstart example
+:::
+
+Create the files `mix.exs` and `example.exs` including the synopsis code shared above.
+
+:::{include} ../_cratedb.md
+:::
+```shell
+mix deps.get
+mix run example.exs
+```
+
+:::{rubric} Full example
+:::
 
 :::{card}
 :link: https://github.com/crate/cratedb-examples/tree/main/by-language/elixir-postgrex
