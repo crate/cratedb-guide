@@ -117,7 +117,7 @@ value.
 
 ### Calculating statistics
 
-After loading larger amounts of data into new or existing tables, it is
+After inserting larger amounts of data into new or existing tables, it is
 recommended to re-calculate the statistics by executing the `ANALYZE`
 command. The statistics will be used by the query optimizer to generate
 better execution plans.

@@ -73,10 +73,13 @@ curl -sS -H 'Content-Type: application/json' -X POST http://localhost:4200/_sql 
 
 Creating a Kafka topic can be done in several ways, we are selecting to use
 `docker exec` in this way:
-
 ```bash
 docker exec -it kafka kafka-topics.sh --create --topic sensors --bootstrap-server kafka:9092 --partitions 3 --replication-factor 1
+```
 
+## Process events
+
+```bash
 docker exec -it kafka kafka-console-producer.sh --bootstrap-server kafka:9092 --topic sensors <<'EOF'
 {"device_id":"alpha","ts":"2025-08-19T12:00:00Z","temperature":21.4,"humidity":48.0}
 {"device_id":"alpha","ts":"2025-08-19T12:01:00Z","temperature":21.5,"humidity":47.6}
@@ -86,7 +89,6 @@ EOF
 
 Messages are newline-delimited JSON for simplicity.
 
-## Data loading
 
 Create a simple consumer using Python.
 
