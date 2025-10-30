@@ -49,6 +49,18 @@ CrateDB drivers and adapters for supported programming languages, frameworks, an
 :gutter: 3
 :padding: 0
 
+::::{grid-item-card} Go
+:link: connect-go
+:link-type: ref
+:link-alt: Connect to CrateDB using Go
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+{fab}`golang`
+::::
+
 ::::{grid-item-card} Java
 :link: connect-java
 :link-type: ref
@@ -211,6 +223,7 @@ application
 :maxdepth: 1
 :hidden:
 
+go/index
 java/index
 javascript
 php
