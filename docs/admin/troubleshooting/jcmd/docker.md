@@ -65,13 +65,13 @@ Let's start by starting a `cratedb` container.
 docker run --rm -it --name=cratedb \
     --publish=4200:4200 --publish=5432:5432 \
     --env=CRATE_HEAP_SIZE=1g crate/crate:nightly \
-    -Cdiscovery.type=single-node
+    '-Cdiscovery.type=single-node'
 ```
 
 ```console
 docker exec -it --user=crate cratedb /bin/bash
 $ /crate/jdk/bin/jcmd -l
-1 io.crate.bootstrap.CrateDB -Cpath.home=/crate -Cdiscovery.type=single-node
+1 io.crate.bootstrap.CrateDB -Cpath.home=/crate '-Cdiscovery.type=single-node'
 301 jdk.jcmd/sun.tools.jcmd.JCmd -l
 ```
 

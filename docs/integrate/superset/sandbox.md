@@ -13,7 +13,7 @@ You will need Bash, Docker, Git, and Python to be installed on your workstation.
 
 Start CrateDB using Docker.
 ```shell
-docker run --rm --publish=4200:4200 --publish=5432:5432 --name=cratedb --env CRATE_HEAP_SIZE=1g crate:latest -Cdiscovery.type=single-node
+docker run --rm --publish=4200:4200 --publish=5432:5432 --name=cratedb --env CRATE_HEAP_SIZE=1g crate:latest '-Cdiscovery.type=single-node'
 ```
 
 Create an example table and insert a single record.

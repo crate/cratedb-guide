@@ -33,7 +33,7 @@ docker run \
   --publish 5433:5432 \
   --env CRATE_HEAP_SIZE=1g \
   crate:latest \
-  -Cdiscovery.type=single-node
+  '-Cdiscovery.type=single-node'
 ```
 ```shell
 docker run \
@@ -43,7 +43,7 @@ docker run \
   --publish 5434:5432 \
   --env CRATE_HEAP_SIZE=1g \
   crate:latest \
-  -Cdiscovery.type=single-node
+  '-Cdiscovery.type=single-node'
 ```
 
 We apply an offset to the ports of each cluster, so they don't overlap. The

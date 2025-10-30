@@ -21,7 +21,7 @@ Set up on macOS. Ensure Homebrew is installed and Docker Desktop is running.
 
 First, run CrateDB with Docker. With Docker Desktop running, copy the command from the CrateDB installation page and run it:
 ```bash
-docker run --publish=4200:4200 --publish=5432:5432 --env CRATE_HEAP_SIZE=1g crate:latest -Cdiscovery.type=single-node
+docker run --publish=4200:4200 --publish=5432:5432 --env CRATE_HEAP_SIZE=1g crate:latest '-Cdiscovery.type=single-node'
 ```
 
 With CrateDB running, you can now access the CrateDB Admin UI by going to
