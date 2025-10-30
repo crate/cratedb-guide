@@ -52,13 +52,6 @@ res <- dbGetQuery(conn, "SELECT * FROM sys.summits ORDER BY height DESC LIMIT 10
 print(res)
 ```
 
-:::{include} ../_cratedb.md
-:::
-```shell
-Rscript example.r
-```
-
-
 :::{rubric} CrateDB Cloud
 :::
 
@@ -76,7 +69,19 @@ conn <- dbConnect(RPostgres::Postgres(),
                   )
 ```
 
-## Example
+:::{rubric} Quickstart example
+:::
+
+Create the file `example.r` including the synopsis code shared above.
+
+:::{include} ../_cratedb.md
+:::
+```shell
+Rscript example.r
+```
+
+:::{rubric} Full example
+:::
 
 :::{card}
 :link: https://github.com/crate/cratedb-examples/tree/main/by-language/r
