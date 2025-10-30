@@ -96,6 +96,9 @@ always-on analytics environments where data never stops flowing in.
 
 :Append-only segments:
 
+  Lucene only appends data to segment files, which means that data written
+  to the disc will never be mutated.
+
   A Lucene index is composed of one or more sub-indexes. A sub-index is called a segment,
   it is immutable, and built from a set of documents.
 
@@ -127,8 +130,8 @@ always-on analytics environments where data never stops flowing in.
 
   You can invoke segment merges manually by using the
   {ref}`OPTIMIZE TABLE <crate-reference:sql-optimize>` SQL command.
-  This achieves the best optimization, especially after heavy insert operations.
-  For example, after initially loading table data from another system.
+  This achieves the best optimization, especially after heavy insert operations,
+  for example, after initially loading table data from another system.
 
 :Table refreshes:
 
