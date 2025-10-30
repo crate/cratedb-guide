@@ -77,8 +77,8 @@ a column store for fast sorting and aggregations.
   The column store is enabled by default in CrateDB and can optionally be disabled
   on a per-field level. It does not support container or geographic data types.
 
-  For all supported value types, other than storing the row data as-is, and indexing
-  each value by default, each value term is stored into a column-based store by default.
+  For all supported value types, field values are indexed and automatically stored
+  in the column-based store.
 
 ## Storage process
 
