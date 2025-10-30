@@ -74,11 +74,13 @@ a column store for fast sorting and aggregations.
   This storage layout improves the performance of sorting, grouping, and aggregations,
   by keeping field data for one column packed at one place rather than scattered across documents.
 
-  The column store is enabled by default in CrateDB and can optionally be disabled
-  on a per-field level. It does not support container or geographic data types.
-
   For all supported value types, field values are indexed and automatically stored
-  in the column-based store.
+  in the column-based store. It does not support container or geographic data types.
+
+  The column store is enabled by default in CrateDB and can optionally be disabled
+  on a per-field level. The purpose of disabling is to reduce storage requirements
+  and achieve better write performance, when the columnar store is not needed for
+  those columns.
 
 ## Storage process
 
