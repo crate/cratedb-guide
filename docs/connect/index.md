@@ -93,6 +93,18 @@ CrateDB drivers and adapters for supported programming languages, frameworks, an
 {fab}`python`
 ::::
 
+::::{grid-item-card} R
+:link: connect-r
+:link-type: ref
+:link-alt: Connect to CrateDB using R
+:padding: 3
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+{fab}`r-project`
+::::
+
 ::::{grid-item-card} Ruby
 :link: connect-ruby
 :link-type: ref
@@ -203,6 +215,7 @@ java/index
 javascript
 php
 python
+r/index
 ruby
 odbc/index
 natural
