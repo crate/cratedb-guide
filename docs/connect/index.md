@@ -45,117 +45,99 @@ Use CLI programs or database IDEs to connect to CrateDB.
 
 CrateDB drivers and adapters for supported programming languages, frameworks, and environments.
 
-:::::{grid} 2 2 2 4
-:gutter: 3
+
+:::::{grid} 2 3 4 5
+:gutter: 2
 :padding: 0
 
-::::{grid-item-card} Go
+::::{grid-item-card}
+:link: connect-odbc
+:link-type: ref
+:class-body: sd-fs-1 sd-text-center
+:class-footer: sd-fs-5 sd-font-weight-bold
+
+```{image} /_assets/icon/odbc-logo.png
+:height: 80px
+```
++++
+Any (ODBC)
+::::
+
+::::{grid-item-card}
 :link: connect-go
 :link-type: ref
-:link-alt: Connect to CrateDB using Go
-:padding: 3
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-6
+:class-body: sd-fs-1 sd-text-center
+:class-footer: sd-fs-5 sd-font-weight-bold
 {fab}`golang`
++++
+Go
 ::::
 
-::::{grid-item-card} Java
+::::{grid-item-card}
 :link: connect-java
 :link-type: ref
-:link-alt: Connect to CrateDB using Java
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-6
+:class-body: sd-fs-1 sd-text-center
+:class-footer: sd-fs-5 sd-font-weight-bold
 {fab}`java`
++++
+Java (JDBC)
 ::::
 
-::::{grid-item-card} JavaScript
+::::{grid-item-card}
 :link: connect-javascript
 :link-type: ref
-:link-alt: Connect to CrateDB using JavaScript
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-6
-{material-regular}`javascript;2em`
+:class-body: sd-fs-1 sd-text-center
+:class-footer: sd-fs-5 sd-font-weight-bold
+{material-regular}`javascript;1.5em`
++++
+JavaScript
 ::::
 
-::::{grid-item-card} PHP
+::::{grid-item-card}
 :link: connect-php
 :link-type: ref
-:link-alt: Connect to CrateDB using PHP
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-6
+:class-body: sd-fs-1 sd-text-center
+:class-footer: sd-fs-5 sd-font-weight-bold
 {fab}`php`
++++
+PHP
 ::::
 
-::::{grid-item-card} Python
+::::{grid-item-card}
 :link: connect-python
 :link-type: ref
-:link-alt: Connect to CrateDB using Python
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-6
+:class-body: sd-fs-1 sd-text-center
+:class-footer: sd-fs-5 sd-font-weight-bold
 {fab}`python`
++++
+Python
 ::::
 
-::::{grid-item-card} R
+::::{grid-item-card}
 :link: connect-r
 :link-type: ref
-:link-alt: Connect to CrateDB using R
-:padding: 3
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-6
+:class-body: sd-fs-1 sd-text-center
+:class-footer: sd-fs-5 sd-font-weight-bold
 {fab}`r-project`
++++
+R
 ::::
 
-::::{grid-item-card} Ruby
+::::{grid-item-card}
 :link: connect-ruby
 :link-type: ref
-:link-alt: Connect to CrateDB using Ruby
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-6
+:class-body: sd-fs-1 sd-text-center
+:class-footer: sd-fs-5 sd-font-weight-bold
 
 ```{image} /_assets/icon/ruby-logo.svg
 :height: 40px
 ```
-
++++
+Ruby
 ::::
 
 :::::
 
-:::{rubric} Language-agnostic drivers
-:::
-
-:::::{grid} 2 2 2 4
-:margin: 4 4 0 0
-:padding: 0
-
-::::{grid-item-card} ODBC
-:link: connect-odbc
-:link-type: ref
-:link-alt: Connect to CrateDB using ODBC
-:padding: 3
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-6
-```{image} /_assets/icon/odbc-logo.png
-:height: 80px
-```
-::::
-
-:::::
 
 
 :::{rubric} Protocol Support
