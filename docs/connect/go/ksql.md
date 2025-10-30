@@ -74,14 +74,6 @@ func main() {
 }
 ```
 
-:::{include} ../_cratedb.md
-:::
-```shell
-go mod init github.com/cratedb-guide/connect/go/ksql
-go mod tidy
-go run example.go
-```
-
 :::{rubric} CrateDB Cloud
 :::
 
@@ -90,6 +82,19 @@ replace username, password, and hostname with values matching
 your environment.
 ```go
 dbURL := "postgresql://admin:password@testcluster.cratedb.net:5432/doc?sslmode=require"
+```
+
+:::{rubric} Quickstart example
+:::
+
+Create the file `example.go` including the synopsis code shared above.
+
+:::{include} ../_cratedb.md
+:::
+```shell
+go mod init github.com/cratedb-guide/connect/go/ksql
+go mod tidy
+go run example.go
 ```
 
 

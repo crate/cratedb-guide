@@ -13,6 +13,12 @@ The `pgx` and `pq` packages have been validated with CrateDB.
 `pq` is in maintenance mode, so their authors recommend using
 `pgx` which is under active development.
 
+The `KSQL` package is a convenience wrapper that also uses the
+`pgx` library to connect to CrateDB.
+
+:::{rubric} Overview
+:::
+
 :::{toctree}
 :hidden:
 pgx

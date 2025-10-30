@@ -61,14 +61,6 @@ func main() {
 }
 ```
 
-:::{include} ../_cratedb.md
-:::
-```shell
-go mod init github.com/cratedb-guide/connect/go/pgx
-go mod tidy
-go run example.go
-```
-
 :::{rubric} CrateDB Cloud
 :::
 
@@ -79,7 +71,20 @@ your environment.
 conn, _ := pgx.Connect(ctx, "postgresql://admin:password@testcluster.cratedb.net:5432/doc?sslmode=require")
 ```
 
-:::{rubric} Example
+:::{rubric} Quickstart example
+:::
+
+Create the file `example.go` including the synopsis code shared above.
+
+:::{include} ../_cratedb.md
+:::
+```shell
+go mod init github.com/cratedb-guide/connect/go/pgx
+go mod tidy
+go run example.go
+```
+
+:::{rubric} Full example
 :::
 
 :::{card}
