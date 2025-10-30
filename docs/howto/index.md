@@ -41,7 +41,7 @@ Instructions how to get tasks done with CrateDB.
 - {ref}`Using JMeter with CrateDB <jmeter>`
 - {ref}`langchain-usage`
 - {ref}`metabase-usage`
-- {ref}`pandas-efficient-ingest`
+- {ref}`pandas-bulk-import`
 - {ref}`PyCaret and CrateDB <pycaret>`
 - {ref}`rill-usage`
 - {ref}`marquez-usage`
