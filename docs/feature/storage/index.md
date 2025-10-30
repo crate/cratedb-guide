@@ -142,16 +142,16 @@ always-on analytics environments where data never stops flowing in.
   maintaining efficient bulk ingestion without overwhelming the storage layer
   or exhausting other cluster resources.
 
-  CrateDB refreshes tables once per second by default, but this can be configured
+  CrateDB refreshes tables once per second by default, however this can be configured
   on a per-table level by using the {ref}`crate-reference:sql-create-table-refresh-interval`
   table parameter.
-  You can also force writes manually by using the
+  You can also "force a refresh" manually by using the
   {ref}`REFRESH TABLE <crate-reference:sql-refresh>` SQL command.
 
 ## Related sections
 
 {ref}`indexing-and-storage` illustrates the internal workings and data structures
-of CrateDB's storage layer in more detail.
+of Lucene in more detail, and how CrateDB's storage layer uses them.
 
 :::{toctree}
 :hidden:
