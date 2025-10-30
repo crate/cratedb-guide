@@ -111,6 +111,7 @@ always-on analytics environments where data never stops flowing in.
   segments on disk. Over time, to reduce their number, these segments are
   merged into larger ones by background tasks, balancing I/O load with
   query performance.
+  This process is called {ref}`optimization <crate-reference:optimize>`.
 
   This process, known as segment merging, achieves three critical optimizations:
   - Space compaction: Merging removes deleted or superseded records, freeing disk
