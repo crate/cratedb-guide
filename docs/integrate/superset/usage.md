@@ -38,13 +38,9 @@ superset init
 
 ## Start services
 
-Start CrateDB using Docker.
+Start CrateDB using Docker or Podman.
 ```shell
-docker run --interactive --rm --pull=always \
-  --publish=4200:4200 --publish=5432:5432 \
-  --name=cratedb \
-  --env CRATE_HEAP_SIZE=1g \
-  crate:latest '-Cdiscovery.type=single-node'
+docker run --rm --publish=4200:4200 docker.io/crate '-Cdiscovery.type=single-node'
 ```
 
 Run Superset server.
