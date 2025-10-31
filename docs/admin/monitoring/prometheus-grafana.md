@@ -30,7 +30,7 @@ nano /etc/default/crate
 ```
 
 This configuration file sets the JVM heap. Configure it to satisfy bootstrap checks:
-```
+```ini
 CRATE_HEAP_SIZE=4G
 ```
 
@@ -128,7 +128,7 @@ systemctl restart crate
 
 This can be set up with a one-liner:
 
-```
+```shell
 apt install prometheus-node-exporter
 ```
 
@@ -235,13 +235,16 @@ auto-start during install (e.g., with `policy-rcd-declarative`), then
 configure web auth using a YAML file.
 
 Create `/etc/prometheus/web.yml`:
-
-    basic_auth_users:
-      admin: <bcrypt hash>
+```yaml
+basic_auth_users:
+  admin: <bcrypt hash>
+```
 
 Point Prometheus at it (e.g., `/etc/default/prometheus`):
 
-    ARGS="--web.config.file=/etc/prometheus/web.yml --web.enable-lifecycle"
+```shell
+ARGS="--web.config.file=/etc/prometheus/web.yml --web.enable-lifecycle"
+```
 
 Restart Prometheus after setting ownership and 0640 permissions on `web.yml`.
 
