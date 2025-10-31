@@ -22,6 +22,33 @@ This enumeration includes a few popular and recommended options.
 :::{rubric} Types of interfaces
 :::
 
+:HTTP:
+
+  The HTTP interface root endpoint of CrateDB responds with status
+  information if the cluster is ready to receive and process requests.
+  :::{dropdown} Example
+  If `ok` isn't `true`, or `status` isn't 200, you can assume the
+  cluster is in an error state.
+  ```shell
+  curl --fail http://localhost:4200/
+  ```
+  ```json
+  {
+    "ok" : true,
+    "status" : 200,
+    "name" : "Montagne des Agneaux",
+    "cluster_name" : "crate",
+    "version" : {
+      "number" : "6.2.0",
+      "build_hash" : "186b70597ac02d66f1093755091f8b372eb6e31a",
+      "build_timestamp" : "NA",
+      "build_snapshot" : true,
+      "lucene_version" : "10.3.1"
+    }
+  }
+  ```
+  :::
+
 :JMX:
 
   CrateDB exposes telemetry data using the {ref}`jmx_monitoring`
