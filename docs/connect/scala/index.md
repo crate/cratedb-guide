@@ -14,17 +14,13 @@ Connect to CrateDB from Scala applications using JDBC.
 
 :::
 [JDBC] is a standard Java API that provides a common interface for accessing
-databases in Java.
+databases in {ref}`connect-java`.
 :::
 
 :::{rubric} Driver options
 :::
 
-:::{div}
-Like when using {ref}`connect-java`, you have two JDBC driver options:
-The [PostgreSQL JDBC Driver] and the {ref}`crate-jdbc:index`.
-PostgreSQL JDBC uses the `jdbc:postgresql://` protocol identifier,
-while CrateDB JDBC uses `jdbc:crate://`.
+:::{include} ../java/_driver_options.md
 :::
 
 :::{rubric} Synopsis
