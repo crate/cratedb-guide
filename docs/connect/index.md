@@ -77,6 +77,16 @@ Elixir
 ::::
 
 ::::{grid-item-card}
+:link: connect-erlang
+:link-type: ref
+:class-body: sd-fs-1 sd-text-center
+:class-footer: sd-fs-5 sd-font-weight-bold
+{fab}`erlang`
++++
+Erlang
+::::
+
+::::{grid-item-card}
 :link: connect-go
 :link-type: ref
 :class-body: sd-fs-1 sd-text-center
@@ -229,6 +239,7 @@ application
 :hidden:
 
 elixir/index
+erlang/index
 go/index
 java/index
 javascript
