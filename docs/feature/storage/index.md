@@ -119,27 +119,21 @@ always-on analytics environments where data never stops flowing in.
 :Segment merges:
 
   When data is written to CrateDB, it is written into subsequent immutable
-  segments on disk. Over time, to reduce their number, these segments are
-  merged into larger ones by background tasks, balancing I/O load with
-  query performance.
-  This process is called {ref}`optimization <crate-reference:optimize>`.
+  segments on disk.
+  Background tasks merge immutable segments into larger ones over time
+  to reduce their number, which reduces index overhead and improves cache
+  efficiency.
+  While merging, the process also eliminates deleted records, effectively
+  freeing disk space.
 
-  This process, known as segment merging, achieves three critical optimizations:
-  - Space compaction: Merging removes deleted or superseded records, freeing disk
-  space automatically.
-  - Faster queries: Larger segments reduce index overhead and improve cache efficiency.
-  - No downtime: Merging occurs transparently, allowing continuous ingestion and querying.
+  The merge process occurs transparently, using Lucene's TieredMergePolicy
+  to merge segments of roughly equal sizes without interrupting ingestion
+  or queries, while balancing query performance with merge I/O overhead.
+  See Lucene's [TieredMergePolicy] documentation for details.
 
-  CrateDB uses Lucene's default TieredMergePolicy for automatically merging segments
-  in the background. It merges segments of roughly equal size
-  and controls the number of segments per "tier" to balance search performance with merge
-  overhead. Lucene's [TieredMergePolicy] documentation explains in detail how CrateDB's
-  underlying merge policy decides when to combine segments.
-
-  You can invoke segment merges manually by using the
-  {ref}`OPTIMIZE TABLE <crate-reference:sql-optimize>` SQL command.
-  This achieves the best optimization, especially after heavy insert operations,
-  for example, after initially loading table data from another system.
+  You can invoke merges manually using {ref}`OPTIMIZE TABLE <crate-reference:sql-optimize>`,
+  to achieve {ref}`optimization <crate-reference:optimize>` especially after
+  heavy insert operations.
 
 :Table refreshes:
 
