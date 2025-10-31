@@ -172,6 +172,11 @@ indexing-and-storage
 {ref}`indexing-and-storage` illustrates the internal workings and data structures
 of Lucene in more detail, and how CrateDB's storage layer uses them.
 
+{ref}`crate-reference:concept-resiliency-consistency` describes the positive
+high-availability and performance effects of the eventual consistency model
+implemented by CrateDB's storage and cluster subsystems, and also
+what this means for application developers.
+
 
 [recreate tables]: https://cratedb.com/docs/crate/reference/en/latest/admin/system-information.html#tables-need-to-be-recreated
 [TieredMergePolicy]: https://lucene.apache.org/core/9_12_1/core/org/apache/lucene/index/TieredMergePolicy.html
