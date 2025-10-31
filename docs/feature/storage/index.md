@@ -98,6 +98,10 @@ always-on analytics environments where data never stops flowing in.
 
 :Sharded storage:
 
+  Sharding distributes data horizontally across multiple nodes, enabling
+  systems to handle datasets far larger than any single machine can store
+  or process.
+
   CrateDB shards every table, dividing and distributing it across cluster nodes.
   Each shard is a Lucene index composed of segments stored on the filesystem.
 
