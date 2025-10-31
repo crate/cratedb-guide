@@ -44,9 +44,10 @@ This enumeration includes a few popular and recommended options.
   works, and how to interpret the results. [^systables-more]
 
   {ref}`crate-reference:jobs_operations_logs` shares details
-  about how to inspect the activities currently taking place
-  in a cluster, reflected through cluster jobs and operations
-  system tables.
+  about how to inspect the activities taking place
+  in a cluster, reflected through two pairs of system tables, one
+  about cluster jobs, and one about their corresponding break-down
+  operations, separated into "currently active" vs. "completed" ones.
 
 :Prometheus:
 
