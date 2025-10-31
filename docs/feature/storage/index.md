@@ -84,7 +84,9 @@ a column store for fast sorting and aggregations.
 
 ## Storage process
 
-How CrateDB stores data using Lucene.
+The storage techniques used in CrateDB have been the foundation of big data
+architectures for over a decade, powering search engines, social
+networks, and analytics platforms at a massive scale.
 
 tldr; In daily operations, CrateDB never needs explicit VACUUMs, manual
 compactions, or reindexing. [^recreate-tables]
