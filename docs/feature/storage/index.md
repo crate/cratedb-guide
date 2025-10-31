@@ -164,13 +164,13 @@ always-on analytics environments where data never stops flowing in.
 
 ## Related sections
 
-{ref}`indexing-and-storage` illustrates the internal workings and data structures
-of Lucene in more detail, and how CrateDB's storage layer uses them.
-
 :::{toctree}
 :hidden:
 indexing-and-storage
 :::
+
+{ref}`indexing-and-storage` illustrates the internal workings and data structures
+of Lucene in more detail, and how CrateDB's storage layer uses them.
 
 
 [recreate tables]: https://cratedb.com/docs/crate/reference/en/latest/admin/system-information.html#tables-need-to-be-recreated
