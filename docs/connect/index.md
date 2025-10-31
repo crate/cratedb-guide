@@ -159,18 +159,16 @@ Ruby
 Rust
 ::::
 
-::::{grid-item-card} Scala
+::::{grid-item-card}
 :link: connect-scala
 :link-type: ref
-:link-alt: Connect to CrateDB using Scala
-:padding: 3
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-6
+:class-body: sd-fs-1 sd-text-center
+:class-footer: sd-fs-5 sd-font-weight-bold
 ```{image} /_assets/icon/scala-logo.svg
 :height: 50px
 ```
++++
+Scala
 ::::
 
 :::::
