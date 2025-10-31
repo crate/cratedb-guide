@@ -26,9 +26,9 @@ This enumeration includes a few popular and recommended options.
 
   CrateDB exposes telemetry data using the {ref}`jmx_monitoring`
   feature that needs to be enabled when starting CrateDB. It provides
-  statistical information about queries, thread pools, and circuit
-  breakers, and information about connections, server nodes,
-  and health status.
+  statistical information about queries, shards, thread pools, and circuit
+  breakers, and status information about connections, server nodes, shards,
+  and health.
 
   Information gathered by the JMX collectors can be provided to
   the Prometheus exporter or other observability and monitoring
