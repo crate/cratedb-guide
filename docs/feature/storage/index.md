@@ -96,13 +96,11 @@ always-on analytics environments where data never stops flowing in.
 
 :Sharded storage:
 
-  Every table in CrateDB is sharded, which means that tables are divided
-  and distributed across the nodes of a cluster. Each shard in CrateDB is
-  a Lucene index broken down into segments getting stored on the filesystem.
+  CrateDB shards every table, dividing and distributing it across cluster nodes.
+  Each shard is a Lucene index composed of segments stored on the filesystem.
 
-  {ref}`crate-reference:concept-storage-consistency` shares more details
-  about how storage operations work in sharded and optionally replicated
-  cluster environments.
+  {ref}`crate-reference:concept-storage-consistency` explains storage operations
+  in sharded and replicated cluster environments.
 
 :Append-only segments:
 
@@ -172,10 +170,9 @@ indexing-and-storage
 {ref}`indexing-and-storage` illustrates the internal workings and data structures
 of Lucene in more detail, and how CrateDB's storage layer uses them.
 
-{ref}`crate-reference:concept-resiliency-consistency` describes the positive
-high-availability and performance effects of the eventual consistency model
-implemented by CrateDB's storage and cluster subsystems, and also
-what this means for application developers.
+{ref}`crate-reference:concept-resiliency-consistency` explains how eventual consistency
+in CrateDB's storage and cluster subsystems delivers high availability and performance,
+and what this means for application developers.
 
 
 [recreate tables]: https://cratedb.com/docs/crate/reference/en/latest/admin/system-information.html#tables-need-to-be-recreated
