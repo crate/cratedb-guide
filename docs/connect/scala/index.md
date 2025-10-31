@@ -6,7 +6,7 @@
 :::
 
 :::{div} sd-text-muted
-Use JDBC to connect to CrateDB from Scala applications.
+Connect to CrateDB from Scala applications using JDBC.
 :::
 
 :::{rubric} About
@@ -76,12 +76,6 @@ object Example {
 }
 ```
 
-:::{include} ../_cratedb.md
-:::
-```shell
-sbt run
-```
-
 :::{rubric} CrateDB Cloud
 :::
 
@@ -92,4 +86,15 @@ your environment.
 val url = "jdbc:postgresql://testcluster.cratedb.net:5432/doc?sslmode=require"
 val username = "admin"
 val password = "password"
+```
+
+:::{rubric} Quickstart example
+:::
+
+Create the files `build.sbt` and `example.scala` including the synopsis code shared above.
+
+:::{include} ../_cratedb.md
+:::
+```shell
+sbt run
 ```
