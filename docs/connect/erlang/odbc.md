@@ -13,13 +13,11 @@ Erlang includes an [ODBC application] out of the box that provides an
 interface to communicate with relational SQL-databases, see also
 [Erlang ODBC examples].
 
-::::{todo}
-Enable this include with the [ODBC patch](https://github.com/crate/cratedb-guide/pull/411).
-```md
-:::{include} _odbc-setup-widget.md
+:::{rubric} Install
 :::
-```
-::::
+
+:::{include} ../odbc/install.md
+:::
 
 :::{rubric} Synopsis
 :::
@@ -33,7 +31,7 @@ installed on your system.
 
 main(_) ->
     odbc:start(),
-    {ok, Ref} = odbc:connect("Driver={PostgreSQL ODBC};Server=localhost;Port=5432;Uid=crate;Pwd=crate", []),
+    {ok, Ref} = odbc:connect("Driver={PostgreSQL Unicode};Server=localhost;Port=5432;Uid=crate;Pwd=crate", []),
     io:fwrite("~p~n", [odbc:sql_query(Ref, "SELECT mountain, height FROM sys.summits ORDER BY height DESC LIMIT 3")]),
     init:stop().
 ```
@@ -52,7 +50,7 @@ values matching your environment.
 main(_) ->
     ssl:start(),
     odbc:start(),
-    {ok, Ref} = odbc:connect("Driver={PostgreSQL};Server=testcluster.cratedb.net;Port=5432;sslmode=require;Uid=admin;Pwd=password", []),
+    {ok, Ref} = odbc:connect("Driver={PostgreSQL Unicode};Server=testcluster.cratedb.net;Port=5432;sslmode=require;Uid=admin;Pwd=password", []),
     io:fwrite("~p~n", [odbc:sql_query(Ref, "SELECT mountain, height FROM sys.summits ORDER BY height DESC LIMIT 3")]),
     init:stop().
 ```
