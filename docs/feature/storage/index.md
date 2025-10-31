@@ -94,6 +94,16 @@ always-on analytics environments where data never stops flowing in.
 [^recreate-tables]: While CrateDB is maintenance-free in daily operations,
   you will need to [recreate tables] on major version upgrades.
 
+:Sharded storage:
+
+  Every table in CrateDB is sharded, which means that tables are divided
+  and distributed across the nodes of a cluster. Each shard in CrateDB is
+  a Lucene index broken down into segments getting stored on the filesystem.
+
+  {ref}`crate-reference:concept-storage-consistency` shares more details
+  about how storage operations work in sharded and optionally replicated
+  cluster environments.
+
 :Append-only segments:
 
   Lucene only appends data to segment files, which means that data written
