@@ -86,6 +86,11 @@ LEFT JOIN pg_subscription_rel r ON s.oid = r.srsubid;
 
 ## Learn
 
+:::{toctree}
+:hidden:
+Usage <usage>
+:::
+
 Learn how to set up logical replication between CrateDB clusters.
 
 ::::{grid} 1 2 2 2
@@ -93,7 +98,7 @@ Learn how to set up logical replication between CrateDB clusters.
 :padding: 0
 
 :::{grid-item-card}
-:link: logical-replication-setup
+:link: ccr-usage
 :link-type: ref
 :link-alt: Logical replication setup between CrateDB clusters
 :class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold
@@ -101,8 +106,8 @@ Learn how to set up logical replication between CrateDB clusters.
 :class-footer: text-smaller
 Logical replication using Docker
 ^^^
-- Hands-on tutorial exercising publishing and subscribing end-to-end.
-- Uses a workstation setup based on two instances running on Docker or Podman.
+- Hands-on usage guide exercising publishing and subscribing end-to-end.
+- Uses a workstation setup based on two CrateDB instances running on Docker or Podman.
 +++
 How to configure logical replication on standalone clusters.
 :::
