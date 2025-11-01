@@ -2,6 +2,9 @@
 (monitoring)=
 
 # Monitoring and diagnostics
+:::{toctree}
+Prometheus+Grafana <prometheus-grafana>
+:::
 
 It is important to continuously monitor your CrateDB database cluster
 to detect anomalies and follow usage trends, so you can react to
