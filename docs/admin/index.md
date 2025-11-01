@@ -23,17 +23,17 @@ circuit-breaker
 troubleshooting/index
 ```
 +++
-Production and troubleshooting guidelines and system resource considerations.
+Production recommendations and troubleshooting guidelines.
 ::::
 
-::::{grid-item-card} {material-outlined}`speed;2em` Cluster
+::::{grid-item-card} {material-outlined}`speed;2em` Capacity Management
 ```{toctree}
-:maxdepth: 1
+:maxdepth: 2
 
 Scaling <scale/index>
 ```
 +++
-Best practices and tips for clustering, sharding, and partitioning.
+Best practices for scaling your cluster up and down.
 ::::
 
 ::::{grid-item-card} {material-outlined}`system_update_alt;2em` Software Upgrades
@@ -43,7 +43,7 @@ Best practices and tips for clustering, sharding, and partitioning.
 upgrade/index
 ```
 +++
-Guidelines for upgrading CrateDB clusters in production—from planning to execution.
+Upgrading CrateDB clusters in production—from planning to execution.
 ::::
 
 :::::
