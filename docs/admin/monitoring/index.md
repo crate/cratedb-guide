@@ -2,13 +2,11 @@
 (monitoring)=
 
 # Monitoring and diagnostics
-:::{toctree}
-Prometheus+Grafana <prometheus-grafana>
-:::
 
 It is important to continuously monitor your CrateDB database cluster
-to detect anomalies and follow usage trends, so you can react to
-them properly and timely.
+to detect anomalies, so you can react to them properly and timely.
+Collecting statistics and following usage trends is also important
+for proper capacity planning.
 
 CrateDB provides system information about the cluster as a whole,
 individual cluster nodes, and about the entities and resources it manages.
@@ -75,12 +73,12 @@ and for ad hoc use. Below are a few popular and recommended options.
 
 :Prometheus:
 
-  The [Crate JMX HTTP Exporter] is a Prometheus exporter that consumes
+  The {ref}`Crate JMX HTTP Exporter <prometheus-jmx-exporter>` is a Prometheus exporter that consumes
   metrics information from CrateDB's JMX collectors and exposes them
   via HTTP so they can be scraped by Prometheus, and, for example,
   subsequently displayed in Grafana, or processed into Alertmanager.
 
-  [Monitoring a CrateDB cluster with Prometheus and Grafana] illustrates
+  {ref}`monitoring-prometheus-grafana` illustrates
   a full setup for making CrateDB-specific metrics available to Prometheus.
   The tutorial uses the _Crate JMX HTTP Exporter_ for exposing telemetry
   information, the _Prometheus SQL Exporter_ for conducting system table
@@ -107,5 +105,9 @@ and for ad hoc use. Below are a few popular and recommended options.
   real-time information about the cluster, its nodes, and their shards.
 
 
-[Crate JMX HTTP Exporter]: https://github.com/crate/jmx_exporter
-[Monitoring a CrateDB cluster with Prometheus and Grafana]: https://community.cratedb.com/t/monitoring-a-self-managed-cratedb-cluster-with-prometheus-and-grafana/1236
+:::{toctree}
+:hidden:
+Prometheus and Grafana <prometheus-grafana>
+prometheus-jmx-exporter
+prometheus-sql-exporter
+:::
