@@ -1,11 +1,11 @@
 (install-configure)=
 
-# Configuration Settings
+# Configuration settings
 
 In order to configure CrateDB, please take note of the configuration file
 locations and the available environment variables.
 
-## Configuration Files
+## Configuration files
 
 When using the package-based setup flavor for {ref}`install-deb` or
 {ref}`install-rpm`, the main CrateDB configuration files are located within the
@@ -15,7 +15,7 @@ When using the {ref}`install-tarball` setup, or the {ref}`Microsoft Windows <ins
 setup, the configuration files are located within the `config/` directory relative to the
 working directory.
 
-## Environment Variables
+## Environment variables
 
 For the vanilla package-based setup flavor, the CrateDB startup script reads
 {ref}`crate-reference:conf-env` from the `/etc/default/crate` file as

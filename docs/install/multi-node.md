@@ -1,6 +1,6 @@
 (multi-node-setup)=
 
-# CrateDB multi-node setup
+# Multi-node setup
 
 CrateDB can run on a single node. However, in most environments, CrateDB is run
 as a cluster of three or more nodes.

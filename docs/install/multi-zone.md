@@ -1,6 +1,6 @@
 (multi-zone-setup)=
 
-# CrateDB multi-zone setup
+# Multi-zone setup
 
 If possible, we recommend running all CrateDB nodes of a cluster inside the
 same physical space to minimize network latency and maximize speed between the
