@@ -1,5 +1,7 @@
 (create-user)=
-# Create User
+(user-management)=
+
+# User management
 
 This part of the documentation sheds some light on the topics of
 [](inv:crate-reference#administration_user_management) and
