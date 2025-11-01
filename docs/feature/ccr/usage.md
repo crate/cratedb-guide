@@ -1,3 +1,4 @@
+(ccr-usage)=
 (logical-replication-setup)=
 
 # Logical replication setup between CrateDB clusters
