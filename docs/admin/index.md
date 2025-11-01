@@ -30,7 +30,6 @@ Production and troubleshooting guidelines and system resource considerations.
 ```{toctree}
 :maxdepth: 1
 
-clustering/index
 Scaling <scale/index>
 ```
 +++
