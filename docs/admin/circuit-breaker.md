@@ -1,6 +1,6 @@
 (circuit-breaker)=
 
-# Circuit Breaker
+# Circuit breaker
 
 CrateDB's circuit breakers prevent queries and background processes from exhausting node memory and destabilizing the cluster.
 This works by estimating the memory each operation will require and aborting the operation before the JVM heap space is exhausted.

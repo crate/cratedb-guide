@@ -1,6 +1,6 @@
 (memory)=
 
-# Memory Configuration
+# Memory configuration
 
 ## Introduction
 
