@@ -18,88 +18,12 @@ For what concerns CrateDB-specific metrics we recommend making these available t
 Containerized and [CrateDB Cloud] setups differ. This tutorial targets
 standalone and on‑premises installations.
 
-## First we need a CrateDB cluster
+## Configure and start a CrateDB cluster
 
-First things first, we will need a CrateDB cluster, you may have one already and that is great, but if you do not we can get one up quickly.
-
-You can review the installation documentation at {ref}`install` and {ref}`multi-node-setup`.
-
-On Ubuntu, start on the first node and run:
-```shell
-nano /etc/default/crate
-```
-
-This configuration file sets the JVM heap. Configure it to satisfy bootstrap checks:
-```ini
-CRATE_HEAP_SIZE=4G
-```
-
-We also need to create another configuration file:
-
-```shell
-mkdir /etc/crate
-nano /etc/crate/crate.yml
-```
-
-In my case I used the following values:
-
-```yaml
-network.host: _local_,_site_
-```
-
-This tells CrateDB to respond to requests both from localhost and the local network.
-
-```yaml
-discovery.seed_hosts:
-    - ubuntuvm1:4300
-    - ubuntuvm2:4300
-```
-
-This lists all the machines that make up our cluster, here I only have 2, but for production use, we recommend having at least 3 nodes so that a quorum can be established in case of network partition to avoid split-brain scenarios.
-
-```yaml
-cluster.initial_master_nodes:
-    - ubuntuvm1
-    - ubuntuvm2
-```
-
-This lists the nodes that are eligible to act as master nodes during bootstrap.
-
-```yaml
-auth.host_based.enabled: true
-auth:
-  host_based:
-    config:
-      0:
-        user: crate
-        address: _local_
-        method: trust
-      99:
-        method: password
-```
-
-This indicates that the `crate` super user will work for local connections but connections from other machines will require a username and password.
-
-```yaml
-gateway.recover_after_data_nodes: 2
-gateway.expected_data_nodes: 2
-```
-
-And this requires both nodes to be available for the cluster to operate in this case, but with more nodes, we could have set `recover_after_data_nodes` to a value smaller than the total number of nodes.
-
-Now let’s install CrateDB:
-
-```bash
-apt update
-apt install --yes gpg lsb-release wget
-wget -O- https://cdn.crate.io/downloads/deb/DEB-GPG-KEY-crate | gpg --dearmor | tee /usr/share/keyrings/crate.gpg >/dev/null
-echo "deb [signed-by=/usr/share/keyrings/crate.gpg] https://cdn.crate.io/downloads/deb/stable/ $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/crate.list
-apt update
-apt install crate -o Dpkg::Options::="--force-confold"
-```
-(`force-confold` is used to keep the configuration files we created earlier)
-
-Repeat the above steps on the other node.
+First things first, we will need a CrateDB cluster, you may have one already and
+that is great, but if you do not we can get one up quickly.
+{ref}`Multi-node setup instructions <multi-node-setup-example>` provides
+a quick walkthrough for Ubuntu Linux.
 
 ## Setup of the Crate JMX HTTP Exporter
 

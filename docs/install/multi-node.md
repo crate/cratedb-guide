@@ -326,11 +326,80 @@ sh$ bin/crate \
 [Metadata configuration settings]
 :::
 
+(multi-node-setup-example)=
 
-## Expand cluster
+## Example
 
-Learn how to add more nodes to an existing cluster at {ref}`scale-expand`.
+This walkthrough illustrates how to set up a multi-node CrateDB cluster
+on two Ubuntu machines.
 
+First, prepare CrateDB for a production setup by explicitly configuring
+its JVM heap size to satisfy bootstrap checks.
+```shell
+nano /etc/default/crate
+```
+```ini
+CRATE_HEAP_SIZE=4G
+```
+
+Then, configure the cluster setup using a YAML file.
+```shell
+mkdir /etc/crate
+nano /etc/crate/crate.yml
+```
+```yaml
+# Tell CrateDB to respond to requests both from localhost and the local network.
+network.host: _local_,_site_
+
+# List all the machines that make up our cluster.
+# For production use, we recommend to use at least three nodes so that a quorum
+# can be established in case of network partition to avoid split-brain scenarios.
+discovery.seed_hosts:
+  - ubuntuvm1:4300
+  - ubuntuvm2:4300
+
+# List the nodes that are eligible to act as master nodes during bootstrap.
+cluster.initial_master_nodes:
+  - ubuntuvm1
+  - ubuntuvm2
+
+# Require both nodes to be available for the cluster to operate.
+# With more nodes, we could have set `recover_after_data_nodes`
+# to a value smaller than the total number of nodes.
+gateway.recover_after_data_nodes: 2
+gateway.expected_data_nodes: 2
+
+# Configure that the `crate` superuser will be trusted to authenticate without
+# password for local connections, but connections from other machines will
+# require credentials.
+auth.host_based.enabled: true
+auth:
+  host_based:
+    config:
+      0:
+        user: crate
+        address: _local_
+        method: trust
+      99:
+        method: password
+```
+
+Install CrateDB from the Debian/Ubuntu package repository.
+```bash
+apt update
+apt install --yes gpg lsb-release wget
+wget -O- https://cdn.crate.io/downloads/debian/DEB-GPG-KEY-crate | gpg --dearmor | tee /usr/share/keyrings/crate.gpg >/dev/null
+echo "deb [signed-by=/usr/share/keyrings/crate.gpg] https://cdn.crate.io/downloads/debian/stable/ $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/crate.list
+apt update
+apt install crate -o Dpkg::Options::="--force-confold"
+```
+The `force-confold` option is used to keep the configuration files we created
+earlier. Otherwise, they would be overwritten.
+
+Repeat the above steps on the other node and start CrateDB on both machines.
+```bash
+systemctl start crate
+```
 
 (multi-node-other)=
 
@@ -438,6 +507,10 @@ setting. For a three-node cluster, you must declare all nodes to be master-eligi
 If you are using CrateDB 3.x or below, to configure every node with a list of
 seed nodes, you can use the [discovery.zen.ping.unicast.hosts] setting instead
 of {ref}`crate-reference:discovery.seed_hosts`.
+
+## Related sections
+
+{ref}`scale-expand` describes how to add more nodes to an existing cluster.
 
 
 [127.0.0.1:4200]: http://127.0.0.1:4200/
