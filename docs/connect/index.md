@@ -159,6 +159,18 @@ Ruby
 Rust
 ::::
 
+::::{grid-item-card}
+:link: connect-scala
+:link-type: ref
+:class-body: sd-fs-1 sd-text-center
+:class-footer: sd-fs-5 sd-font-weight-bold
+```{image} /_assets/icon/scala-logo.svg
+:height: 50px
+```
++++
+Scala
+::::
+
 :::::
 
 
@@ -237,6 +249,7 @@ python
 r/index
 ruby
 rust/index
+scala/index
 odbc/index
 natural
 All drivers <drivers>
