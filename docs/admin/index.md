@@ -31,7 +31,6 @@ Production and troubleshooting guidelines and system resource considerations.
 :maxdepth: 1
 
 clustering/index
-sharding-partitioning
 ```
 +++
 Best practices and tips for clustering, sharding, and partitioning.

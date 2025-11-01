@@ -15,7 +15,8 @@ Best practices and tips for sharding, scaling, and performance tuning.
 ```{toctree}
 :maxdepth: 1
 
-Sharding <sharding>
+sharding-partitioning
+sharding
 Scaling <scaling>
 Storage <storage>
 ```
