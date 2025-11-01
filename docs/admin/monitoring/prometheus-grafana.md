@@ -286,11 +286,18 @@ Restart the `prometheus` daemon if it was already started (`systemctl restart pr
 ## Grafana setup
 
 Grafana can be installed on the same machine where you installed Prometheus.
-To install Grafana on a Debian machine, please refer to its [documentation][grafana-debian].
+To install Grafana on a Debian or Ubuntu machine, use those commands:
+```shell
+echo "deb https://packages.grafana.com/oss/deb stable main" | tee -a /etc/apt/sources.list.d/grafana.list
+wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
+apt update
+apt install grafana
+```
 Then, start Grafana.
 ```shell
 systemctl start grafana-server
 ```
+For other systems, please refer to the [Grafana installation documentation][grafana-debian].
 
 Open `http://<grafana-host>:3000` to access the Grafana login screen.
 The default credentials are `admin`/`admin`; change the password immediately.
