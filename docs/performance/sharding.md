@@ -1,7 +1,7 @@
 (sharding-guide)=
 (sharding-performance)=
 
-# Sharding performance guide
+# Sharding recommendations
 
 :::{div} sd-text-muted
 Applying sharding can drastically improve the performance on large datasets.
