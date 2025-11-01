@@ -14,5 +14,4 @@ adding more nodes. This section of the documentation covers that topic.
 
 Multi-Node Setup <multi-node-setup>
 Multi-Zone Setup <multi-zone-setup>
-Scale Clusters <scale/index>
 ```
