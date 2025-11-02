@@ -51,27 +51,33 @@ a quick walkthrough for Ubuntu Linux.
 
 ## Set up Prometheus Exporters
 
-The fundamental exporters are included with Debian/Ubuntu.
-```shell
-apt install prometheus-node-exporter prometheus-sql-exporter
-```
-Then, set up the {ref}`prometheus-jmx-exporter` and configure the
-{ref}`prometheus-sql-exporter`.
-The [Prometheus Node Exporter] doesn't need much configuration.
+The Node Exporter and the JMX Exporter need to be installed on all
+machines that are running CrateDB nodes.
+
+1. Install the Prometheus Node Exporter.
+   ```shell
+   apt install prometheus-node-exporter
+   ```
+
+2. Install the {ref}`prometheus-jmx-exporter`.
 
 ## Set up Prometheus
 
-You would run this on a machine that is not part of the CrateDB cluster,
-and it can be installed with:
+You would typically run this on a machine that is not part of the
+CrateDB cluster.
+The {ref}`prometheus-sql-exporter` also does not need to be installed
+on each machine.
+
 ```shell
-apt install prometheus --no-install-recommends
+apt install prometheus prometheus-sql-exporter --no-install-recommends
 ```
+
 For advanced configuration options, see {ref}`prometheus-auth` and
 {ref}`prometheus-storage`.
 
 Now, configure Prometheus to scrape metrics from Node Exporters and
-JMX Exporters on all CrateDB machines, and also metrics from the Crate
-JMX HTTP Exporter.
+JMX Exporters on all CrateDB nodes, and also metrics from the SQL
+Exporter.
 ```shell
 nano /etc/prometheus/prometheus.yml
 ```
