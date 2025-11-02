@@ -12,14 +12,6 @@ More nodes also mean more resiliency to issues, on a scenario where we have for 
 
 Today we want to review how to add a new node to an existing on-premises cluster.
 
-## Related reading
-
-- [CrateDB multi-node setup — CrateDB: How-Tos](https://crate.io/docs/crate/howtos/en/latest/clustering/multi-node-setup.html)
-
-- [Clustering — CrateDB: Reference](https://crate.io/docs/crate/reference/en/latest/concepts/clustering.html)
-
-- [Storage and consistency — CrateDB: Reference](https://crate.io/docs/crate/reference/en/latest/concepts/storage-consistency.html)
-
 ## Discovery
 
 When a CrateDB node starts it needs a mechanism to get a list of the nodes that make up the cluster, this is called discovery.
@@ -97,3 +89,9 @@ These settings only play a role during restart, not at runtime, so you do not ne
 Please also note there is no need to update the `initial_master_nodes` list, this is only considered during the initial cluster bootstrapping.
 
 And that is it, we have scaled out our cluster and we are ready to work with larger volumes of data. I hope you find this useful and, as usual, please do not hesitate to raise any thoughts or questions in the [CrateDB Community](https://community.cratedb.com/).
+
+## See also
+
+- {ref}`multi-node-setup`
+- {ref}`crate-reference:concept-clustering`
+- {ref}`crate-reference:concept-storage-consistency`
