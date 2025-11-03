@@ -44,7 +44,7 @@ func main() {
     ctx := context.Background()
 
     // Connect to database.
-    conn, _ := pgx.Connect(ctx, "postgresql://crate:crate@localhost:5432/doc?sslmode=disable")
+    conn, _ := pgx.Connect(ctx, "postgresql://crate:crate@localhost:5432/?sslmode=disable")
     defer conn.Close(ctx)
 
     // Invoke basic query.
@@ -68,7 +68,7 @@ For connecting to CrateDB Cloud, use `sslmode=require`, and
 replace username, password, and hostname with values matching
 your environment.
 ```go
-conn, _ := pgx.Connect(ctx, "postgresql://admin:password@testcluster.cratedb.net:5432/doc?sslmode=require")
+conn, _ := pgx.Connect(ctx, "postgresql://admin:password@testcluster.cratedb.net:5432/?sslmode=require")
 ```
 
 :::{rubric} Quickstart example

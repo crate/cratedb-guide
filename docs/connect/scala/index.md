@@ -44,7 +44,7 @@ object Example {
 
     // Configure connection.
     val driver = "org.postgresql.Driver"
-    val url = "jdbc:postgresql://localhost:5432/doc?sslmode=disable"
+    val url = "jdbc:postgresql://localhost:5432/?sslmode=disable"
     val username = "crate"
     val password = "crate"
 
@@ -81,7 +81,7 @@ your environment.
 
 Also use this variant to connect to CrateDB Cloud.
 ```scala
-val url = "jdbc:postgresql://testcluster.cratedb.net:5432/doc?sslmode=require"
+val url = "jdbc:postgresql://testcluster.cratedb.net:5432/?sslmode=require"
 val username = "admin"
 val password = "password"
 ```

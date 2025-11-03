@@ -53,7 +53,7 @@ Telegraf output plugin configuration snippet for CrateDB.
 
   # A github.com/jackc/pgx/v4 connection string.
   # See https://pkg.go.dev/github.com/jackc/pgx/v4#ParseConfig
-  url = "postgres://crate@localhost/doc?sslmode=disable"
+  url = "postgres://crate:crate@localhost/?sslmode=disable"
 
   # Timeout for all CrateDB queries.
   timeout = "5s"

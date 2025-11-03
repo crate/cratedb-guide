@@ -23,7 +23,7 @@ import (
 func main() {
 
     // Connect to database.
-    connStr := "postgresql://crate:crate@localhost:5432/doc?sslmode=disable"
+    connStr := "postgresql://crate:crate@localhost:5432/?sslmode=disable"
     db, _ := sql.Open("postgres", connStr)
     defer db.Close()
 
@@ -48,7 +48,7 @@ For connecting to CrateDB Cloud, use `sslmode=require`, and
 replace username, password, and hostname with values matching
 your environment.
 ```go
-connStr := "postgresql://admin:password@testcluster.cratedb.net:5432/doc?sslmode=require"
+connStr := "postgresql://admin:password@testcluster.cratedb.net:5432/?sslmode=require"
 ```
 
 :::{rubric} Quickstart example

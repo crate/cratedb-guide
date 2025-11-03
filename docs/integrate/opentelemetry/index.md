@@ -63,7 +63,7 @@ Configure Telegraf to store OpenTelemetry metrics data into CrateDB.
 
   ## Connection parameters for accessing the database.
   ## See https://pkg.go.dev/github.com/jackc/pgx/v4#ParseConfig for available options.
-  url = "postgres://crate:crate@cratedb/doc?sslmode=disable"
+  url = "postgres://crate:crate@cratedb/?sslmode=disable"
 
   ## Timeout for all CrateDB queries.
   # timeout = "5s"

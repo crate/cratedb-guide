@@ -78,7 +78,7 @@ There are now three things you have to adjust before running Airflow:
 * Add your CrateDB credentials to the `.env` file. Open the file in a text editor, and add the following line, which takes the default credentials for CrateDB, with user = crate, and password = null. (note: my internal port for running CrateDB in Docker is 5433, which I use here. If using the standard Docker command with 5432, here it should also be 5432).
   ```bash
   # For local development only; do not commit real credentials
-  AIRFLOW_CONN_CRATEDB_CONNECTION=postgresql://crate:null@host.docker.internal:5433/doc?sslmode=disable
+  AIRFLOW_CONN_CRATEDB_CONNECTION=postgresql://crate:crate@host.docker.internal:5433/?sslmode=disable
   ```
 * If the default ports are unavailable, you can change them to free ports. Just open the `.astro/config.yaml` file in a text editor and update the web server port to 8081 (instead of default 8080) and Postgres port to 5435 (instead of the default 5432), like so:
   ```yaml

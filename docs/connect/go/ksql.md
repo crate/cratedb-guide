@@ -49,7 +49,7 @@ func main() {
     ctx := context.Background()
 
     // Connect to database.
-    dbURL := "postgresql://crate:crate@localhost:5432/doc?sslmode=disable"
+    dbURL := "postgresql://crate:crate@localhost:5432/?sslmode=disable"
     db, err := kpgx.New(ctx, dbURL, ksql.Config{})
     if err != nil {
         log.Fatalf("unable connect to database: %s", err)
@@ -81,7 +81,7 @@ For connecting to CrateDB Cloud, use `sslmode=require`, and
 replace username, password, and hostname with values matching
 your environment.
 ```go
-dbURL := "postgresql://admin:password@testcluster.cratedb.net:5432/doc?sslmode=require"
+dbURL := "postgresql://admin:password@testcluster.cratedb.net:5432/?sslmode=require"
 ```
 
 :::{rubric} Quickstart example

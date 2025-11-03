@@ -222,7 +222,7 @@ var conn *pgx.Conn
 
 func main() {
     var err error
-    conn, err = pgx.Connect(context.Background(), "postgresql://crate@localhost:5432/doc")
+    conn, err = pgx.Connect(context.Background(), "postgresql://crate:crate@localhost:5432/")
     if err != nil {
         log.Fatalf("unable to connect to database: %v\n", err)
     } else {

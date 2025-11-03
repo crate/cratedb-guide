@@ -39,7 +39,7 @@ In the following example, [HikariCP] is used as a [DataSource]:
 
 ```java
 HikariDataSource ds = new HikariDataSource();
-ds.setJdbcUrl("crate://localhost:5432/doc?user=crate");
+ds.setJdbcUrl("crate://localhost:5432/?user=crate");
 
 List<CompletableFuture<Integer>> futures = new ArrayList<>();
 IntStream.iterate(0, i -> i + 2)

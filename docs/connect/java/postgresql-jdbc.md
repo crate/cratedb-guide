@@ -42,7 +42,7 @@ void main() throws SQLException {
     properties.put("user", "crate");
     properties.put("password", "crate");
     Connection conn = DriverManager.getConnection(
-        "jdbc:postgresql://localhost:5432/doc?sslmode=disable",
+        "jdbc:postgresql://localhost:5432/?sslmode=disable",
         properties
     );
     conn.setAutoCommit(true);
@@ -71,7 +71,7 @@ your environment.
 properties.put("user", "admin");
 properties.put("password", "password");
 Connection conn = DriverManager.getConnection(
-    "jdbc:postgresql://testcluster.cratedb.net:5432/doc?sslmode=require",
+    "jdbc:postgresql://testcluster.cratedb.net:5432/?sslmode=require",
     properties
 );
 ```

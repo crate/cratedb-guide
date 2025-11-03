@@ -139,7 +139,7 @@ file. To learn about alternative ways, please check the
 [Astronomer Environment variables documentation].
 The first variable to define is one for the CrateDB connection, as follows:
 
-`AIRFLOW_CONN_CRATEDB_CONNECTION=postgresql://<user>:<password>@<host>/doc?sslmode=disable`
+`AIRFLOW_CONN_CRATEDB_CONNECTION=postgresql://<user>:<password>@<host>/?sslmode=disable`
 
 For TLS, set `sslmode=require`. To confirm that the variable is applied, start
 the project and open a bash session in the scheduler container:

@@ -33,7 +33,7 @@ To configure the output binding of your application:
         version: v1
         metadata:
           - name: url
-            value: "postgres://<CrateDB user>:<CrateDB password>@<CrateDB host>/doc?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory"
+            value: "postgres://crate:crate@testcluster.cratedb.net/?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory"
       ```
 
 4. Start the application. In case of the sample application via `dapr run --app-id nodeapp --app-port 3000 --dapr-http-port 3500 --components-path=./components node app.js`.
