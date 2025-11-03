@@ -1,4 +1,4 @@
-## Summary of the changes / Why this is an improvement
+## About
 
 ## Preview
 
