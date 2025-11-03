@@ -9,15 +9,9 @@ them properly and timely.
 
 CrateDB provides system information about the cluster as a whole,
 individual cluster nodes, and about the entities and resources it manages.
-Relevant information can be inquired using different protocols and tools.
-
-:::{rubric} Types of information
-:::
-
 Different kinds of observability interfaces and support utilities
 are available, for both continuous metrics collection and monitoring,
-and for ad hoc use.
-This enumeration includes a few popular and recommended options.
+and for ad hoc use. Below are a few popular and recommended options.
 
 :::{rubric} Types of interfaces
 :::
