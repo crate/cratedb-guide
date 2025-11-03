@@ -25,29 +25,19 @@ perform operations using conversational prompts.
 ::::{grid} 1 2 2 2
 :gutter: 2
 
-:::{grid-item-card} {material-outlined}`integration_instructions;2em` Python package
+:::{grid-item-card} {material-outlined}`description;2em` Documentation
+:link: https://cratedb-mcp.readthedocs.io/
+:link-type: url
+:link-alt: CrateDB MCP Server README
+About how to install and configure the CrateDB MCP Server,
+and what's inside.
+:::
+
+:::{grid-item-card} {octicon}`package;2em` Python package
 :link: https://pypi.org/project/cratedb-mcp/
 :link-type: url
 :link-alt: CrateDB MCP Server Python package `cratedb-mcp`
-
-For installing and using the package, please consult the README
-document.
-:::
-
-:::{grid-item-card} {material-outlined}`description;2em` Usage
-:link: https://github.com/crate/cratedb-mcp/blob/main/README.md
-:link-type: url
-:link-alt: CrateDB MCP Server README
-
-README document about how to install and configure the CrateDB MCP Server.
-:::
-
-:::{grid-item-card} {material-outlined}`not_started;2em` Examples
-:link: https://github.com/crate/cratedb-mcp/tree/main/examples
-:link-type: url
-:link-alt: CrateDB MCP Server examples
-
-Examples using the CrateDB MCP Server.
+The Python package `cratedb-mcp` for public consumption.
 :::
 
 ::::
