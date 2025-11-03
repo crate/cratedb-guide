@@ -52,12 +52,14 @@ result = Postgrex.query!(conn, "SELECT region, mountain, height FROM sys.summits
 IO.inspect(result)
 ```
 
-:::{rubric} CrateDB Cloud
+:::{rubric} SSL connection
 :::
 
-For connecting to CrateDB Cloud, adjust the `ssl: true` parameter,
+Adjust the `ssl: true` parameter,
 and replace hostname, username, and password with values matching your
 environment.
+
+Also use this variant to connect to CrateDB Cloud.
 ```elixir
 options = [
   hostname: "testcluster.cratedb.net",

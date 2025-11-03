@@ -51,10 +51,12 @@ cargo add postgres
 cargo run
 ```
 
-:::{rubric} Synopsis (CrateDB Cloud)
+:::{rubric} Synopsis (SSL connection)
 :::
-For CrateDB Cloud, add TLS support and update the connection string with
+Add TLS support and update the connection string with
 your cluster details.
+
+Also use this variant to connect to CrateDB Cloud.
 
 `src/main.rs`
 ```rust
