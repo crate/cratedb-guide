@@ -35,7 +35,7 @@ from pprint import pprint
 from conecta import read_sql
 
 table = read_sql(
-    "postgres://crate:crate@localhost:5432/doc",
+    "postgres://crate:crate@localhost:5432/",
     query="SELECT country, region, mountain, height, coordinates FROM sys.summits ORDER BY height DESC LIMIT 3",
 )
 

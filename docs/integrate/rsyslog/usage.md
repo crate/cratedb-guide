@@ -76,7 +76,7 @@ Let's now configure it to use the account we created earlier:
 
 ```bash
 echo 'module(load="ompgsql")' | sudo tee /etc/rsyslog.d/pgsql.conf
-echo '*.* action(type="ompgsql" conninfo="postgresql://rsyslog:pwd123@localhost/doc")' | sudo tee -a /etc/rsyslog.d/pgsql.conf
+echo '*.* action(type="ompgsql" conninfo="postgresql://rsyslog:pwd123@localhost/")' | sudo tee -a /etc/rsyslog.d/pgsql.conf
 sudo chmod 640 /etc/rsyslog.d/pgsql.conf
 sudo systemctl restart rsyslog
 ```

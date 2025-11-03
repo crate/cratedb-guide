@@ -129,7 +129,7 @@ more modern PostgreSQL and Python features, such as:
 ```python
 import psycopg
 
-with psycopg.connect("postgres://crate@localhost:5432/doc") as conn:
+with psycopg.connect("postgres://crate:crate@localhost:5432/") as conn:
     with conn.cursor() as cursor:
         cursor.execute("SELECT * FROM sys.summits")
         for record in cursor:

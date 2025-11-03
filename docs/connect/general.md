@@ -59,17 +59,17 @@ applications and drivers may obtain connection properties in different formats.
 
 **Native PostgreSQL, psql**
 ```text
-postgresql://<user>:<password>@<cluster>.cratedb.net:5432/doc
+postgresql://<user>:<password>@<cluster>.cratedb.net:5432/
 ```
 
 **JDBC: PostgreSQL pgJDBC**
 ```text
-jdbc:postgresql://<cluster>.cratedb.net:5432/doc?user=<user>&password=<password>
+jdbc:postgresql://<cluster>.cratedb.net:5432/?user=<user>&password=<password>
 ```
 
 **JDBC: CrateDB JDBC, e.g. Apache Flink**
 ```text
-jdbc:crate://<cluster>.cratedb.net:5432/doc?user=<user>&password=<password>
+jdbc:crate://<cluster>.cratedb.net:5432/?user=<user>&password=<password>
 ```
 
 **HTTP: Admin UI, CLI, CrateDB drivers**
@@ -119,17 +119,17 @@ crate://<user>:<password>@<cluster>.cratedb.net:4200/?schema=doc&ssl=true
 
 **Native PostgreSQL, psql**
 ```
-postgresql://crate@localhost:5432/doc
+postgresql://crate@localhost:5432/
 ```
 
 **JDBC: PostgreSQL pgJDBC**
 ```text
-jdbc:postgresql://localhost:5432/doc?user=crate
+jdbc:postgresql://localhost:5432/?user=crate
 ```
 
 **JDBC: CrateDB JDBC, e.g. Apache Flink**
 ```text
-jdbc:crate://localhost:5432/doc?user=<user>&password=<password>
+jdbc:crate://localhost:5432/?user=<user>&password=<password>
 ```
 
 **HTTP: Admin UI, CLI, CrateDB drivers**

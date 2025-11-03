@@ -110,7 +110,7 @@ Then [connect] to CrateDB, using the {ref}`crate-reference:interface-postgresql`
 (`5432`):
 
 ```js
-> const client = new Client({connectionString: 'postgresql://crate@localhost:5432/doc'})
+> const client = new Client({connectionString: 'postgresql://crate:crate@localhost:5432/'})
 ```
 
 ```js
@@ -245,7 +245,7 @@ Create a new file called `iss-position.js`:
 ```javascript
 const axios = require('axios').default;
 const { Pool } = require('pg')
-const pool = new Pool({connectionString: 'postgresql://crate@localhost:5432/doc'})
+const pool = new Pool({connectionString: 'postgresql://crate:crate@localhost:5432/'})
 
 // Sampling resolution
 const seconds = 10
