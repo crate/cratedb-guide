@@ -16,7 +16,8 @@ This page enumerates important concepts and implementations of Lucene used by Cr
 
 ## Data structures
 
-A single record in Lucene is called "document".
+A single record in Lucene is called "document",
+which is used to store a single table row in CrateDB.
 
 :Document:
 
