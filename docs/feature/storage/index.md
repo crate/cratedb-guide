@@ -9,50 +9,29 @@
 The CrateDB storage layer is based on Lucene.
 :::
 
-By default, all fields are indexed,
-nested or not, but the indexing can be turned off selectively.
-
-This page enumerates some concepts of Lucene. The article {ref}`indexing-and-storage`
-goes into more details by exploring its internal workings.
-
-## Lucene
-
-Lucene offers scalable and high-performance indexing which enables efficient search and
+Lucene offers scalable and high-performance indexing, which enables efficient search and
 aggregations over documents and rapid updates to the existing documents. Solr and
 Elasticsearch are building upon the same technologies.
-
-- **Documents**
-
-  A single record in Lucene is called "document", which is a unit of information for search
-  and indexing that contains a set of fields, where each field has a name and value. A Lucene
-  index can store an arbitrary number of documents, with an arbitrary number of different fields.
-
-- **Append-only segments**
-
-  A Lucene index is composed of one or more sub-indexes. A sub-index is called a segment,
-  it is immutable, and built from a set of documents. When new documents are added to the
-  existing index, they are added to the next segment, while previous segments are never
-  modified. If the number of segments becomes too large, the system may decide to merge
-  some segments and discard the freed ones. This way, adding a new document does not require
-  rebuilding the whole index structure completely.
-
-- **Column store**
-
-  For text values, other than storing the row data as-is (and indexing each value by default),
-  each value term is stored into a [column-based store] by default, which offers performance
-  improvements for global aggregations and groupings, and enables efficient ordering, because
-  the data for one column is packed at one place.
-
-  In CrateDB, the column store is enabled by default and can be disabled only for text fields,
-  not for other primitive types. Furthermore, CrateDB does not support storing values for
-  container and geospatial types in the column store.
+This page enumerates important concepts and implementations of Lucene used by CrateDB.
 
 ## Data structures
 
-CrateDB uses three main data structures of Lucene:
-Inverted indexes for text values, BKD trees for numeric values, and doc values.
+A single record in Lucene is called "document",
+which is used to store a single table row in CrateDB.
 
-- **Inverted index**
+:Document:
+
+  A document is a unit of information for search
+  and indexing that contains a set of fields, where each field has a name and value. A Lucene
+  index can store an arbitrary number of documents, with an arbitrary number of different fields.
+  By default, all fields are indexed, nested or not, but the indexing can be turned
+  off selectively.
+
+CrateDB uses three main data structures of Lucene: Inverted indexes for text values,
+BKD trees for numeric values, and doc values. Based on doc values, CrateDB implements
+a column store for fast sorting and aggregations.
+
+:Inverted index:
 
   The Lucene indexing strategy for text fields relies on a data structure called inverted
   index, which is defined as a "data structure storing a mapping from content, such as
@@ -66,7 +45,7 @@ Inverted indexes for text values, BKD trees for numeric values, and doc values.
 
   The inverted index enables a very efficient search over textual data.
 
-- **BKD tree**
+:BKD tree:
 
   To optimize numeric range queries, Lucene uses an implementation of the Block KD (BKD)
   tree data structure. The BKD tree index structure is suitable for indexing large
@@ -79,7 +58,7 @@ Inverted indexes for text values, BKD trees for numeric values, and doc values.
   including fields defined as `TIMESTAMP` types, supporting performant date range
   queries.
 
-- **Doc values**
+:Doc values:
 
   Because Lucene's inverted index data structure implementation is not optimal for
   finding field values by given document identifier, and for performing column-oriented
@@ -89,15 +68,113 @@ Inverted indexes for text values, BKD trees for numeric values, and doc values.
   all field values that are not analyzed as strings in a compact column, making it more
   effective for sorting and aggregations.
 
-## See also
+:Column store:
 
-- {ref}`indexing-and-storage`
+  CrateDB implements a {ref}`column store <crate-reference:ddl-storage-columnstore>`
+  based on doc values in Lucene.
+  This storage layout improves the performance of sorting, grouping, and aggregations,
+  by keeping field data for one column packed at one place rather than scattered across documents.
 
+  For all supported value types, field values are indexed and automatically stored
+  in the column-based store. It does not support container or geographic data types.
+
+  The column store is enabled by default in CrateDB and can optionally be disabled
+  on a per-field level. The purpose of disabling is to reduce storage requirements
+  and achieve better write performance, when the columnar store is not needed for
+  those columns.
+
+## Storage process
+
+The storage techniques used in CrateDB have been the foundation of big data
+architectures for over a decade, powering search engines, social
+networks, and analytics platforms at a massive scale.
+
+tldr; In daily operations, CrateDB never needs explicit VACUUMs, manual
+compactions, or reindexing. [^recreate-tables]
+The system maintains itself dynamically, which is a key advantage for
+always-on analytics environments where data never stops flowing in.
+
+[^recreate-tables]: While CrateDB is maintenance-free in daily operations,
+  you will need to [recreate tables] on major version upgrades.
+
+:Sharded storage:
+
+  Sharding distributes data horizontally across multiple nodes, enabling
+  systems to handle datasets far larger than any single machine can store
+  or process.
+
+  CrateDB shards every table, dividing and distributing it across cluster nodes.
+  Each shard is a Lucene index composed of segments stored on the filesystem.
+
+  {ref}`crate-reference:concept-storage-consistency` explains storage operations
+  in sharded and replicated cluster environments.
+
+:Append-only segments:
+
+  Lucene only appends data to segment files, which means that data written
+  to the disc will never be mutated.
+
+  A Lucene index is composed of one or more sub-indexes. A sub-index is called a segment,
+  it is immutable, and built from a set of documents.
+
+  When new documents are added to the
+  existing index, they are added to the next segment, while previous segments are never
+  modified. If the number of segments becomes too large, the system may decide to merge
+  some segments and discard the freed ones. This way, adding a new document does not require
+  rebuilding the whole index structure completely.
+
+:Segment merges:
+
+  When data is written to CrateDB, it is written into subsequent immutable
+  segments on disk.
+  Background tasks merge immutable segments into larger ones over time
+  to reduce their number, which reduces index overhead and improves cache
+  efficiency.
+  While merging, the process also eliminates deleted records, effectively
+  freeing disk space.
+
+  The merge process occurs transparently, using Lucene's TieredMergePolicy
+  to merge segments of roughly equal sizes without interrupting ingestion
+  or queries, while balancing query performance with merge I/O overhead.
+  See Lucene's [TieredMergePolicy] documentation for details.
+
+  You can invoke merges manually using {ref}`OPTIMIZE TABLE <crate-reference:sql-optimize>`,
+  to achieve {ref}`optimization <crate-reference:optimize>` especially after
+  heavy insert operations.
+
+:Table refreshes:
+
+  CrateDB's refresh mechanism controls how often newly ingested data becomes visible
+  for querying. Instead of committing every write immediately, which would degrade
+  throughput, CrateDB batches writes in memory and refreshes data
+  segments when needed. For performance reasons, refreshes won't happen on shards
+  which aren't queried for some time (idling).
+
+  This approach strikes a balance between low-latency visibility and high ingestion
+  performance, allowing users to query the most recent data almost instantly while
+  maintaining efficient bulk ingestion without overwhelming the storage layer
+  or exhausting other cluster resources.
+
+  CrateDB refreshes tables once per second by default, however this can be configured
+  on a per-table level by using the {ref}`crate-reference:sql-create-table-refresh-interval`
+  table parameter.
+  You can also "force a refresh" manually by using the
+  {ref}`REFRESH TABLE <crate-reference:sql-refresh>` SQL command.
+
+## Related sections
 
 :::{toctree}
 :hidden:
 indexing-and-storage
 :::
 
+{ref}`indexing-and-storage` illustrates the internal workings and data structures
+of Lucene in more detail, and how CrateDB's storage layer uses them.
 
-[column-based store]: https://cratedb.com/docs/crate/reference/en/latest/general/ddl/storage.html
+{ref}`crate-reference:concept-resiliency-consistency` explains how eventual consistency
+in CrateDB's storage and cluster subsystems delivers high availability and performance,
+and what this means for application developers.
+
+
+[recreate tables]: https://cratedb.com/docs/crate/reference/en/latest/admin/system-information.html#tables-need-to-be-recreated
+[TieredMergePolicy]: https://lucene.apache.org/core/9_12_1/core/org/apache/lucene/index/TieredMergePolicy.html
