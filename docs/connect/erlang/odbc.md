@@ -36,23 +36,19 @@ main(_) ->
     init:stop().
 ```
 
-:::{rubric} CrateDB Cloud
+:::{rubric} SSL connection
 :::
 
-For connecting to CrateDB Cloud, start the Erlang [SSL application],
-add `sslmode=require`, and replace `Server`, `Uid`, and `Pwd` with
+Start the Erlang [SSL application],
+add `Sslmode=require`, and replace `Server`, `Uid`, and `Pwd` with
 values matching your environment.
 
-`odbc_example.erl`
-```erlang
--module(odbc_example).
+Also use this variant to connect to CrateDB Cloud.
 
-main(_) ->
-    ssl:start(),
-    odbc:start(),
-    {ok, Ref} = odbc:connect("Driver={PostgreSQL Unicode};Server=testcluster.cratedb.net;Port=5432;sslmode=require;Uid=admin;Pwd=password", []),
-    io:fwrite("~p~n", [odbc:sql_query(Ref, "SELECT mountain, height FROM sys.summits ORDER BY height DESC LIMIT 3")]),
-    init:stop().
+```erlang
+ssl:start(),
+odbc:start(),
+{ok, Ref} = odbc:connect("Driver={PostgreSQL Unicode};Server=testcluster.cratedb.net;Port=5432;Sslmode=require;Uid=admin;Pwd=password", []),
 ```
 
 :::{rubric} Example
