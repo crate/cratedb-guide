@@ -107,13 +107,14 @@ systemctl restart prometheus
 
 ## Set up Grafana
 
-Grafana can be installed on the same machine where you installed Prometheus.
-To install Grafana on a Debian or Ubuntu machine, use those commands:
+Install Grafana on the same machine where you installed Prometheus.
+On a Debian or Ubuntu machine, run the following:
 ```shell
-echo "deb https://packages.grafana.com/oss/deb stable main" | tee -a /etc/apt/sources.list.d/grafana.list
-wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
+apt install --yes wget gpg
+wget -q -O - https://packages.grafana.com/gpg.key | gpg --dearmor | tee /usr/share/keyrings/grafana.gpg >/dev/null
+echo "deb [signed-by=/usr/share/keyrings/grafana.gpg] https://packages.grafana.com/oss/deb stable main" | tee /etc/apt/sources.list.d/grafana.list
 apt update
-apt install grafana
+apt install --yes grafana
 ```
 Then, start Grafana.
 ```shell

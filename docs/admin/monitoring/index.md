@@ -4,7 +4,7 @@
 # Monitoring and diagnostics
 
 It is important to continuously monitor your CrateDB database cluster
-to detect anomalies, so you can react to them properly and timely.
+to detect anomalies, so you can react to them promptly.
 Collecting statistics and following usage trends is also important
 for proper capacity planning.
 
