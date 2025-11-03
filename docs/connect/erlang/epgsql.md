@@ -41,13 +41,15 @@ start() ->
     init:stop().
 ```
 
-:::{rubric} CrateDB Cloud
+:::{rubric} SSL connection
 :::
 
-For connecting to CrateDB Cloud, start the Erlang [SSL application] first,
+Start the Erlang [SSL application] first,
 use the `ssl` and `ssl_opts` arguments on `epgsql:connect`, and
 replace username, password, and hostname with values matching
 your environment.
+
+Also use this variant to connect to CrateDB Cloud.
 ```erlang
 start() ->
     ssl:start(),
