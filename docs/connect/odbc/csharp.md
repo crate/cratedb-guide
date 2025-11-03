@@ -56,6 +56,18 @@ using (OdbcConnection connection = new OdbcConnection(connection_string))
 }
 ```
 
+:::{rubric} SSL connection
+:::
+
+Use the `Sslmode=require` parameter,
+and replace username, password, and hostname with values matching
+your environment.
+
+Also use this variant to connect to CrateDB Cloud.
+```csharp
+string connection_string = "Driver={PostgreSQL Unicode};Server=testcluster.cratedb.net;Port=5432;Sslmode=require;Uid=admin;Pwd=password";
+```
+
 :::{rubric} Example
 :::
 
@@ -66,16 +78,6 @@ Create the files `example.csproj` and `example.cs` including the synopsis code s
 Invoke program.
 ```shell
 dotnet run
-```
-
-:::{rubric} CrateDB Cloud
-:::
-
-For connecting to CrateDB Cloud, use the `Sslmode=require` parameter,
-and replace username, password, and hostname with values matching
-your environment.
-```csharp
-string connection_string = "Driver={PostgreSQL Unicode};Server=testcluster.cratedb.net;Port=5432;Sslmode=require;Uid=admin;Pwd=password";
 ```
 
 

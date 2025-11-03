@@ -52,12 +52,14 @@ res <- dbGetQuery(conn, "SELECT * FROM sys.summits ORDER BY height DESC LIMIT 10
 print(res)
 ```
 
-:::{rubric} CrateDB Cloud
+:::{rubric} SSL connection
 :::
 
-For connecting to CrateDB Cloud, use `sslmode = "require"`, and
+Use `sslmode = "require"`, and
 replace hostname, username, and password with values matching
 your environment.
+
+Also use this variant to connect to CrateDB Cloud.
 ```r
 conn <- dbConnect(RPostgres::Postgres(),
                   host = "testcluster.cratedb.net",

@@ -121,14 +121,16 @@ Invoke program.
 python example.py
 ```
 
-## CrateDB Cloud
+## SSL connection
 
-For connecting to CrateDB Cloud, use the `Sslmode=require` parameter,
+Use the `Sslmode=require` parameter,
 and replace username, password, and hostname with values matching
 your environment.
+
+Also use this variant to connect to CrateDB Cloud.
 ```python
 connection_string = \
-    "Driver={PostgreSQL Unicode};Server=testcluster.cratedb.net;Port=5432;" \
+    "Driver={PostgreSQL Unicode};Server=testcluster.cratedb.net;Port=5432;Sslmode=require;" \
     "Uid=admin;Pwd=password;MaxVarcharSize=1073741824"
 ```
 

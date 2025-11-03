@@ -41,17 +41,19 @@ func main() {
 }
 ```
 
-:::{rubric} CrateDB Cloud
+:::{rubric} SSL connection
 :::
 
-For connecting to CrateDB Cloud, use `sslmode=require`, and
+Use `sslmode=require`, and
 replace username, password, and hostname with values matching
 your environment.
+
+Also use this variant to connect to CrateDB Cloud.
 ```go
 connStr := "postgresql://admin:password@testcluster.cratedb.net:5432/doc?sslmode=require"
 ```
 
-:::{rubric} Quickstart example
+:::{rubric} Example
 :::
 
 Create the file `example.go` including the synopsis code shared above.

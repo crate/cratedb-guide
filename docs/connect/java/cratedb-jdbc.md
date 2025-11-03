@@ -61,12 +61,14 @@ void main() throws SQLException {
 }
 ```
 
-:::{rubric} CrateDB Cloud
+:::{rubric} SSL connection
 :::
 
-For connecting to CrateDB Cloud, use the `sslmode=require` parameter,
+Use the `sslmode=require` parameter,
 and replace username, password, and hostname with values matching
 your environment.
+
+Also use this variant to connect to CrateDB Cloud.
 ```java
 properties.put("user", "admin");
 properties.put("password", "password");
