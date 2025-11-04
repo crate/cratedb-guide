@@ -60,6 +60,8 @@ on behalf of [cratedb-examples] and [academy-fundamentals-course].
     <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/dataframe-dask.yml?branch=main&label=Dask" loading="lazy"></a>
 <a href="https://github.com/crate/cratedb-examples/actions/workflows/dataframe-pandas.yml" target="_blank">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/dataframe-pandas.yml?branch=main&label=pandas" loading="lazy"></a>
+<a href="https://github.com/crate/cratedb-examples/actions/workflows/dataframe-polars.yml" target="_blank">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/dataframe-polars.yml?branch=main&label=Polars" loading="lazy"></a>
 </td>
 </tr>
 

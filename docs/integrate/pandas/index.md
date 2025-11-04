@@ -1,12 +1,13 @@
 (pandas)=
 # pandas
 
-```{div}
-:style: "float: right"
-[![](https://pandas.pydata.org/static/img/pandas.svg){w=180px}](https://pandas.pydata.org/)
-```
-```{div} .clearfix
-```
+:::{div} .float-right .text-right
+[![pandas logo](https://pandas.pydata.org/static/img/pandas.svg){height=60px loading=lazy}][pandas]
+<br>
+[![pandas CI](https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/dataframe-pandas.yml?branch=main)](https://github.com/crate/cratedb-examples/actions/workflows/dataframe-pandas.yml)
+:::
+:::{div} .clearfix
+:::
 
 :::{rubric} About
 :::
@@ -15,35 +16,83 @@
 and manipulation tool, built on top of the Python programming language. It offers
 data structures and operations for manipulating numerical tables and time series.
 
-:::{rubric} Data Model
-:::
-- Pandas is built around data structures called Series and DataFrames. Data for these
-  collections can be imported from various file formats such as comma-separated values,
-  JSON, Parquet, SQL database tables or queries, and Microsoft Excel.
-- A Series is a 1-dimensional data structure built on top of NumPy's array.
-- Pandas includes support for time series, such as the ability to interpolate values
-  and filter using a range of timestamps.
-- By default, a Pandas index is a series of integers ascending from 0, similar to the
-  indices of Python arrays. However, indices can use any NumPy data type, including
-  floating point, timestamps, or strings.
-- Pandas supports hierarchical indices with multiple values per data point. An index
-  with this structure, called a "MultiIndex", allows a single DataFrame to represent
-  multiple dimensions, similar to a pivot table in Microsoft Excel. Each level of a
-  MultiIndex can be given a unique name.
+Pandas is built around data structures called Series and DataFrames. Data for these
+collections can be imported from various file formats such as comma-separated values,
+JSON, Parquet, SQL database tables or queries, and Microsoft Excel.
+A Series is a 1-dimensional data structure built on top of NumPy's array.
 
-
-:::{rubric} Learn
+:::{rubric} Install
 :::
+
+```shell
+pip install pandas sqlalchemy-cratedb
+```
+
+:::{rubric} Synopsis
+:::
+
+Write pandas dataframe to CrateDB.
+
+`example.py`
+```python
+import sqlalchemy as sa
+from sqlalchemy_cratedb import insert_bulk
+
+CRATEDB_URI = "crate://crate:crate@localhost:4200"
+TABLE_NAME = "example"
+
+df = makeTimeDataFrame(rows=500_000, freq="s")
+engine = sa.create_engine(CRATEDB_URI)
+df.to_sql(
+    name=TABLE_NAME,
+    con=engine,
+    if_exists="replace",
+    index=False,
+    chunksize=20_000,
+    method=insert_bulk,
+)
+```
+
+:::{rubric} Quickstart example
+:::
+
+Create the file `example.py` including the synopsis code shared above.
+Complete the example by using the `makeTimeDataFrame()` function.
+
+:::{literalinclude} ../pandas/makeTimeDataFrame.py
+:::
+
+:::{include} /connect/_cratedb.md
+:::
+```shell
+pip install pandas sqlalchemy-cratedb
+python example.py
+```
+
+:::{rubric} Full example
+:::
+
+:::{card}
+:link: https://github.com/crate/cratedb-examples/tree/main/by-dataframe/pandas
+:link-type: url
+{material-regular}`play_arrow;2em`
+Connect to CrateDB and CrateDB Cloud using pandas.
++++
+Includes basic examples of how to use pandas with CrateDB.
+:::
+
+:::{rubric} Guides
+:::
+
+- {ref}`pandas-efficient-import`
 - {ref}`pandas-tutorial-start`
 - {ref}`pandas-tutorial-jupyter`
-- {ref}`arrow-import-parquet`
-- {ref}`pandas-bulk-import`
-- See also: {ref}`dask-bulk-import`
-- See also: [Efficient batch/bulk INSERT operations with pandas, Dask, and SQLAlchemy]
 
-:::{rubric} Code examples
+:::{rubric} Related sections
 :::
-- [pandas code examples]
+
+- {ref}`Efficient batch/bulk INSERT operations for pandas, Dask, and Polars <sqlalchemy-cratedb:dataframe>`
+- {ref}`arrow-import-parquet`
 
 
 :::{toctree}
@@ -55,6 +104,4 @@ Efficient ingest <efficient-ingest>
 :::
 
 
-[Efficient batch/bulk INSERT operations with pandas, Dask, and SQLAlchemy]: https://cratedb.com/docs/python/en/latest/by-example/sqlalchemy/dataframe.html
 [pandas]: https://pandas.pydata.org/
-[pandas code examples]: https://github.com/crate/cratedb-examples/tree/main/by-dataframe/pandas
