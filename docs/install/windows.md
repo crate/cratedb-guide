@@ -26,11 +26,6 @@ us][contact us] so we can work with you on a solution.
    tar -xf .\crate-*.zip
    ```
 
-   Using unzip:
-   ```doscon
-   unzip -o crate-*.zip
-   ```
-
 3. On the terminal, change into the extracted `crate` directory:
 
    ```doscon
