@@ -16,13 +16,18 @@ us][contact us] so we can work with you on a solution.
    command-line shell or by using a GUI tool like [7-Zip]. We recommend
    using [PowerShell] when using terminal:
 
+   Using PowerShell:
    ```powershell
-   # Extract Zip archive
    Expand-Archive -Path .\crate-*.zip -DestinationPath .
    ```
 
+   Using tar (Windows 10 1803 and newer):
    ```doscon
-   # Extract Zip archive
+   tar -xf .\crate-*.zip
+   ```
+
+   Using unzip:
+   ```doscon
    unzip -o crate-*.zip
    ```
 
