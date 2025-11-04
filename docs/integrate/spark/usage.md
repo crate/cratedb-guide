@@ -67,7 +67,7 @@ This usage guide will work with a single-node Apache Spark installation running 
    ```
 
 4. Finally, as CrateDB communicates with Spark via JDBC, download the [Postgres JDBC driver](https://jdbc.postgresql.org/download/) in your working directory.
-   In this usage guide, we use the `postgresql-42.6.0.jar` driver.
+   In this usage guide, we use the `postgresql-42.7.8.jar` driver.
 
 
 ## Data analysis
@@ -80,7 +80,7 @@ You can load data from CrateDB into a PySpark DataFrame using the following code
 
 ```python
 from pyspark.sql import SparkSession
-spark = SparkSession.builder.appName("cratedb_test").config("spark.jars", "postgresql-42.6.0.jar").getOrCreate()
+spark = SparkSession.builder.appName("cratedb_test").config("spark.jars", "postgresql-42.7.8.jar").getOrCreate()
 df = spark.read.format("jdbc")
                .option("url", "jdbc:postgresql://host:port/crate?sslmode=require")
                .option("driver", "org.postgresql.Driver")

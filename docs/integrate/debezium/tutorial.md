@@ -157,7 +157,7 @@ cat > Dockerfile <<EOF
 FROM debezium/connect
 USER root:root
 COPY ./confluentinc-kafka-connect-jdbc-10.6.3/ /kafka/connect/
-RUN cd /kafka/libs && curl -sO https://jdbc.postgresql.org/download/postgresql-42.5.4.jar
+RUN cd /kafka/libs && curl -sO https://jdbc.postgresql.org/download/postgresql-42.7.8.jar
 USER 1001
 EOF
 sudo docker build -t cratedb-connect-debezium .

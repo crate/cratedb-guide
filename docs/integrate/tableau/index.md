@@ -37,7 +37,7 @@ In this usage guide, you will:
 :link: https://community.cratedb.com/t/using-cratedb-with-tableau/1192
 :link-type: url
 How to install the latest PostgreSQL JDBC driver (e.g.
-`postgresql-42.7.1.jar` or newer) for using Tableau.
+`postgresql-42.7.8.jar` or newer) for using Tableau.
 :::
 
 :::{grid-item-card} Repository: CrateDB Tableau Connector
