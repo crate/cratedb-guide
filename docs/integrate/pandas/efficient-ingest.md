@@ -1,4 +1,6 @@
 (pandas-bulk-import)=
+(pandas-efficient-import)=
+
 # Efficient bulk imports with pandas
 
 ## Introduction
