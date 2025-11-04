@@ -21,14 +21,14 @@ the CrateDB package repository:
 ```shell
 # Install prerequisites.
 sudo apt update
-sudo apt install --yes apt-transport-https apt-utils curl gnupg lsb-release
+sudo apt install --yes curl gnupg procps
 
 # Import the public GPG key for verifying the package signatures.
 curl -sS https://cdn.crate.io/downloads/debian/DEB-GPG-KEY-crate | \
-    sudo tee /etc/apt/trusted.gpg.d/cratedb.asc
+    gpg --dearmor | sudo tee /usr/share/keyrings/cratedb.gpg >/dev/null
 
 # Add CrateDB repository to Apt
-echo "deb https://cdn.crate.io/downloads/debian/stable/ default main" | \
+echo "deb [signed-by=/usr/share/keyrings/cratedb.gpg] https://cdn.crate.io/downloads/debian/stable/ default main" | \
     sudo tee /etc/apt/sources.list.d/crate-stable.list
 ```
 
@@ -52,7 +52,7 @@ repository is correctly registered.
 With everything set up, you can install CrateDB:
 
 ```shell
-sh$ sudo apt install crate
+sh$ sudo apt install --yes crate
 ```
 
 After the installation is finished, you can start the `crate` service:
