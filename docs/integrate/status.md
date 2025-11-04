@@ -149,14 +149,14 @@ on behalf of [cratedb-examples] and [academy-fundamentals-course].
 <div>
 <b>Machine Learning</b>
 <br>
-<a href="https://github.com/crate/cratedb-examples/actions/workflows/ml-automl.yml" target="_blank">
-    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/ml-automl.yml?branch=main&label=AutoML" loading="lazy"></a>
 <a href="https://github.com/crate/cratedb-examples/actions/workflows/ml-langchain.yml" target="_blank">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/ml-langchain.yml?branch=main&label=LangChain" loading="lazy"></a>
 <a href="https://github.com/crate/cratedb-examples/actions/workflows/ml-llamaindex.yml" target="_blank">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/ml-llamaindex.yml?branch=main&label=LlamaIndex" loading="lazy"></a>
 <a href="https://github.com/crate/cratedb-examples/actions/workflows/ml-mlflow.yml" target="_blank">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/ml-mlflow.yml?branch=main&label=MLflow" loading="lazy"></a>
+<a href="https://github.com/crate/cratedb-examples/actions/workflows/ml-pycaret.yml" target="_blank">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/ml-pycaret.yml?branch=main&label=PyCaret" loading="lazy"></a>
 </div>
 <div>
 <b>Time Series</b>
