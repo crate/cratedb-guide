@@ -393,8 +393,8 @@ echo "deb [signed-by=/usr/share/keyrings/crate.gpg] https://cdn.crate.io/downloa
 apt update
 apt install crate -o Dpkg::Options::="--force-confold"
 ```
-The `force-confold` option is used to keep the configuration files we created
-earlier. Otherwise, they would be overwritten.
+Use `force-confold` to keep the configuration files created earlier.
+Otherwise, they would be overwritten.
 
 Repeat the above steps on the other node and start CrateDB on both machines.
 ```bash

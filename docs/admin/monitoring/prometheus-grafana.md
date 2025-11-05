@@ -30,7 +30,7 @@ to fulfill those requirements.
 
 :Node Exporter:
 
-  Exposes a wide variety of hardware and kernel related metrics.
+  Exposes a wide variety of hardware and kernel-related metrics.
 
 :JMX Exporter:
 
@@ -120,7 +120,7 @@ Then, start Grafana.
 ```shell
 systemctl start grafana-server
 ```
-For other systems, please refer to the [Grafana installation documentation][grafana-debian].
+For other systems, see the [Grafana installation documentation][grafana-debian].
 
 :::{rubric} Data source
 :::
@@ -147,8 +147,8 @@ Prometheus data source.
 
 ## Alternative implementations
 
-If you decide to build your own dashboard or use an entirely different monitoring
-approach, we recommend still covering similar metrics as discussed in this article.
+Build your own dashboard or use an entirely different monitoring approach while
+still covering similar metrics discussed in this article.
 The list below is a good starting point for troubleshooting most operational issues.
 
 * CrateDB metrics (with example Prometheus queries based on the Crate JMX HTTP Exporter)
