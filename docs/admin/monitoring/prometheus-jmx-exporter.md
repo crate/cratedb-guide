@@ -2,10 +2,10 @@
 
 # Prometheus JMX Exporter
 
-The [Crate JMX HTTP Exporter] is a Prometheus exporter that consumes
-metrics information from CrateDB's JMX collectors and exposes them
-via HTTP so they can be scraped by Prometheus, and, for example,
-subsequently displayed in Grafana, or processed into Alertmanager.
+The [Crate JMX HTTP Exporter] is a Prometheus exporter that consumes metrics
+information from CrateDB's JMX collectors and exposes them via HTTP so they can
+be scraped by Prometheus, and, for example, subsequently displayed in Grafana,
+or processed into Alertmanager.
 
 :::{rubric} Setup
 :::

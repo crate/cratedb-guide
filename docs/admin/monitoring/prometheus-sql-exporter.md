@@ -2,22 +2,32 @@
 
 # Prometheus SQL Exporter
 
-The SQL Exporter allows running arbitrary SQL statements against a CrateDB cluster to retrieve additional information. As the cluster contains information from each node, we do not need to install the SQL Exporter on every node. Instead, we install it centrally on the same machine that also hosts Prometheus.
+The SQL Exporter allows running arbitrary SQL statements against a CrateDB
+cluster to retrieve additional information. As the cluster contains information
+from each node, we do not need to install the SQL Exporter on every node.
+Instead, we install it centrally on the same machine that also hosts Prometheus.
 
-Please note that it is not the same to set up a data source in Grafana pointing to CrateDB to display the output from queries in real-time as to use Prometheus to collect these values over time.
+Please note that it is not the same to set up a data source in Grafana pointing
+to CrateDB to display the output from queries in real-time as to use Prometheus
+to collect these values over time.
 
 Installing the package is straight-forward:
+
 ```shell
 apt install prometheus-sql-exporter
 ```
 
-For the SQL exporter to connect to the cluster, we need to create a new user `sql_exporter`. We grant the user reading access to the `sys` schema. Run the below commands on any CrateDB node:
+For the SQL exporter to connect to the cluster, we need to create a new user
+`sql_exporter`. We grant the user reading access to the `sys` schema. Run the
+below commands on any CrateDB node:
+
 ```shell
 curl -H 'Content-Type: application/json' -X POST 'http://localhost:4200/_sql' -d '{"stmt":"CREATE USER sql_exporter WITH (password = '\''insert_password'\'');"}'
 curl -H 'Content-Type: application/json' -X POST 'http://localhost:4200/_sql' -d '{"stmt":"GRANT DQL ON SCHEMA sys TO sql_exporter;"}'
 ```
 
-We then create a configuration file in `/etc/prometheus-sql-exporter.yml` with a sample query that retrieves the number of shards per node:
+We then create a configuration file in `/etc/prometheus-sql-exporter.yml` with a
+sample query that retrieves the number of shards per node:
 
 ```yaml
 jobs:
@@ -72,8 +82,12 @@ jobs:
         ) a ON s.primary = a.primary;
 ```
 
-*Please note: There exist two implementations of the SQL Exporter: [burningalchemist/sql_exporter](https://github.com/burningalchemist/sql_exporter) and [justwatchcom/sql_exporter](https://github.com/justwatchcom/sql_exporter). They don't share the same configuration options.
-Our example is based on the implementation that is shipped with the Ubuntu package, which is justwatchcom/sql_exporter.*
+*Please note: There exist two implementations of the SQL Exporter:
+[burningalchemist/sql_exporter](https://github.com/burningalchemist/sql_exporter)
+and [justwatchcom/sql_exporter](https://github.com/justwatchcom/sql_exporter).
+They don't share the same configuration options. Our example is based on the
+implementation that is shipped with the Ubuntu package, which is
+`justwatchcom/sql_exporter.*`.
 
 To apply the new configuration, we restart the service:
 
@@ -81,7 +95,9 @@ To apply the new configuration, we restart the service:
 systemctl restart prometheus-sql-exporter
 ```
 
-The SQL Exporter can also be used to monitor any business metrics as well, but be careful with regularly running expensive queries. Below are two more advanced monitoring queries of CrateDB that may be useful:
+The SQL Exporter can also be used to monitor any business metrics as well, but
+be careful with regularly running expensive queries. Below are two more advanced
+monitoring queries of CrateDB that may be useful:
 
 ```sql
 /* Time since the last successful snapshot (backup) */
