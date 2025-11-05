@@ -30,7 +30,7 @@ to fulfill those requirements.
 
 :Node Exporter:
 
-  Exposes a wide variety of hardware- and kernel-related metrics.
+  Exposes a wide variety of hardware and kernel related metrics.
 
 :JMX Exporter:
 
@@ -139,7 +139,7 @@ Confirm using "Save & test".
 An example dashboard based on the discussed setup is available for easy importing
 from [Grafana » CrateDB Monitoring Dashboard].
 In your Grafana installation, on the left-hand side, hover over the “Dashboards”
-icon and select “Import”. Specify the dashboard ID 17174 and load the dashboard.
+icon and select “Import”. Specify the dashboard ID **17174** and load the dashboard.
 On the next screen, finalize the setup by selecting the previously created
 Prometheus data source.
 
