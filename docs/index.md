@@ -90,23 +90,6 @@ Use CrateDB and CrateDB Cloud in practice.
 
 :::::
 
-:::{rubric} Testimonials
-:::
-
-> When using CrateDB, a project that got started around the same time, it's like
-you've stumbled into an alternative reality where Elastic is a proper database.
->
-> <small>-– Henrik Ingo, Nyrkiö Oy, independent database consultant, MongoDB</small>
-
-> CrateDB enables use cases we couldn't satisfy with other
-database systems, also with databases which are even stronger
-focused on the time series domain.
->
-> CrateDB is not your normal database!
->
-> <small>-- Daniel Hölbling-Inzko, Director of Engineering Analytics, Bitmovin</small>
-
-
 :::{rubric} Learn
 :::
 
