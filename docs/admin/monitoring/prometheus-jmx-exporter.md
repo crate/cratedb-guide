@@ -14,7 +14,7 @@ This is very simple, on each node run the following:
 
 ```shell
 cd /usr/share/crate/lib
-wget https://repo1.maven.org/maven2/io/crate/crate-jmx-exporter/1.2.0/crate-jmx-exporter-1.2.0.jar
+wget https://repo1.maven.org/maven2/io/crate/crate-jmx-exporter/1.2.3/crate-jmx-exporter-1.2.3.jar
 nano /etc/default/crate
 ```
 
@@ -22,7 +22,7 @@ then uncomment the `CRATE_JAVA_OPTS` line and change its value to:
 
 ```shell
 # Append to existing options (preserve other flags).
-CRATE_JAVA_OPTS="${CRATE_JAVA_OPTS:-} -javaagent:/usr/share/crate/lib/crate-jmx-exporter-1.2.0.jar=8080"
+CRATE_JAVA_OPTS="${CRATE_JAVA_OPTS:-} -javaagent:/usr/share/crate/lib/crate-jmx-exporter-1.2.3.jar=8080"
 ```
 
 and restart the crate daemon:
