@@ -255,7 +255,7 @@ erlang/index
 go/index
 java/index
 javascript
-php
+php/index
 python
 r/index
 ruby
