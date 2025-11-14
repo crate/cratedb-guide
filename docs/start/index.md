@@ -53,6 +53,19 @@ and explore key features.
 {fas}`magnifying-glass`
 ::::
 
+::::{grid-item-card} Data Modelling
+:link: data-modelling
+:link-type: ref
+:link-alt: Data Modelling
+:padding: 2
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+
+{fas}`diagram-project`
+::::
+
 ::::{grid-item-card} Ingesting Data
 :link: ingest
 :link-type: ref
