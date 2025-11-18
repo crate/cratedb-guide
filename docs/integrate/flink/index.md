@@ -225,9 +225,9 @@ The webinar includes a live demo of Apache Flink with CrateDB as source or sink.
 [Apache Flink]: https://flink.apache.org/
 [Build a data ingestion pipeline using Kafka, Flink, and CrateDB]: https://dev.to/crate/build-a-data-ingestion-pipeline-using-kafka-flink-and-cratedb-1h5o
 [Community Day: Stream processing with Apache Flink and CrateDB]: https://cratedb.com/event/cratedb-community-day-2023
-[Confluent Streaming Data Pipelines]: https://www.confluent.io/streaming-data-pipelines/
+[Confluent Streaming Data Pipelines]: https://www.confluent.io/product/stream/
 [CrateDB Community Day 2nd Edition: Summary and Highlights]: https://cratedb.com/blog/cratedb-community-day-2nd-edition-summary-and-highlights
-[Flink managed by Confluent]: https://www.datanami.com/2023/05/17/confluents-new-cloud-capabilities-address-data-streaming-hurdles/
+[Flink managed by Confluent]: https://www.confluent.io/product/flink/
 [Immerok Cloud]: https://web.archive.org/web/20230602085618/https://www.immerok.io/product
 [JdbcSink]: https://nightlies.apache.org/flink/flink-docs-release-1.20/docs/connectors/datastream/jdbc/
 [Streaming data with Apache Kafka, Apache Flink and CrateDB]: https://github.com/crate/cratedb-examples/tree/main/framework/flink/kafka-jdbcsink-python
