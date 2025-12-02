@@ -110,7 +110,7 @@ be lost. For production use, consult the {ref}`Docker guide
 ## 2. Access the Admin UI
 
 Once CrateDB is running, open your browser and navigate to
-<http://localhost:4200> to access the {ref}`Admin UI
+<http://localhost:4200/> to access the {ref}`Admin UI
 <crate-admin-ui:index>`. From here you can:
 
 * Browse tables and data

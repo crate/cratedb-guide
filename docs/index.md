@@ -71,7 +71,7 @@ Discover how CrateDB solves real-world problems.
 Start your free Cloud or self-hosted cluster and learn through simple tutorials
 or comprehensive courses.
 
-```{button-link} getting-started
+```{button-ref} getting-started
 :color: primary
 :expand:
 **Get Started →**
