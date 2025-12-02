@@ -17,7 +17,7 @@ handbook/index
 
 ```
 
-CrateDB is a fully open source **distributed SQL database** designed for
+CrateDB is a fully open-source **distributed SQL database** designed for
 **real-time analytics, search and AI** at scale. Whether you are working with
 time series data, full-text search, or large volumes of structured and
 semi-structured data, CrateDB gives you the **power of SQL**, the **scalability
@@ -162,7 +162,7 @@ Contact our support team for assistance with your CrateDB deployment.
 :::::
 
 
-:::{admonition} CrateDB is open source
+:::{admonition} CrateDB is open-source
 :class: tip
 
 **Join our community of contributors!** CrateDB is open-source software
