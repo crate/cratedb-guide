@@ -244,7 +244,7 @@ datasets, or use SQL `COPY FROM` as demonstrated in the tutorials.
 
 {material-outlined}`code;2em` **Connect**
 ^^^
-Connect to CrateDB from your application using drivers in your prefferred
+Connect to CrateDB from your application using drivers in your preferred
 programming language.
 ::::
 
