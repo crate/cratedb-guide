@@ -165,7 +165,7 @@ Contact our support team for assistance with your CrateDB deployment.
 :::{admonition} CrateDB is open source
 :class: tip
 
-**Join our community of contributors!** CrateDB is open source software
+**Join our community of contributors!** CrateDB is open-source software
 licensed under the Apache License 2.0. We appreciate contributions from
 everyone.
 
@@ -175,6 +175,6 @@ everyone.
 **Contribute to CrateDB:**
 - Report bugs or request features for CrateDB on
   [GitHub](https://github.com/crate/crate/issues)
-- Explore our other [open source projects](https://github.com/crate)
+- Explore our other [open-source projects](https://github.com/crate)
 
 :::
