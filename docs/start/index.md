@@ -2,280 +2,290 @@
 (getting-started)=
 # Getting Started
 
-:::{div} sd-text-muted
-Get up and running with CrateDB: Install, connect, run your first queries,
-and explore key features.
-:::
-
-:::{rubric} Warm up
-:::
-
-:::::{grid} 2 2 4 4
-:padding: 0
-:class-container: installation-grid
-
-::::{grid-item-card} First steps with CrateDB
-:link: first-steps
-:link-type: ref
-:link-alt: First steps with CrateDB
-:padding: 2
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-6
-
-{fas}`play`
-::::
-
-::::{grid-item-card} Connect to CrateDB
-:link: connect
-:link-type: ref
-:link-alt: Connect to CrateDB
-:padding: 2
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-6
-
-{fas}`link`
-::::
-
-::::{grid-item-card} Query Capabilities
-:link: query-capabilities
-:link-type: ref
-:link-alt: Query Capabilities
-:padding: 2
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-6
-
-{fas}`magnifying-glass`
-::::
-
-::::{grid-item-card} Data Modelling
-:link: data-modelling
-:link-type: ref
-:link-alt: Data Modelling
-:padding: 2
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-6
-
-{fas}`diagram-project`
-::::
-
-::::{grid-item-card} Ingesting Data
-:link: ingest
-:link-type: ref
-:link-alt: Ingesting Data
-:padding: 2
-:text-align: center
-:class-card: sd-pt-3
-:class-body: sd-fs-1
-:class-title: sd-fs-6
-
-{fas}`file-import`
-::::
-:::::
-
-(start-going-further)=
-
-:::{rubric} Learn more
-:::
-
-Learn more about CrateDB, guided and self-guided.
-
-::::{grid} 2 2 2 4
-:padding: 0
-:gutter: 0
-
-:::{grid-item-card}
-:link: handbook
-:link-type: ref
-:link-alt: The CrateDB Handbook
-:padding: 2
-:class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold sd-text-capitalize
-:class-body: sd-text-center sd-fs-5
-:class-footer: text-smaller
-The CrateDB Handbook
-^^^
-{material-outlined}`hiking;3.5em`
-+++
-Guides and tutorials about how to use CrateDB in practice.
-:::
-
-:::{grid-item-card}
-:link: https://learn.cratedb.com/
-:link-alt: The CrateDB Academy
-:padding: 2
-:class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold sd-text-capitalize
-:class-body: sd-text-center sd-fs-5
-:class-footer: text-smaller
-Academy Courses
-^^^
-{material-outlined}`school;3.5em`
-+++
-A learning hub dedicated to data enthusiasts.
-:::
-
-:::{grid-item-card}
-:link: https://community.cratedb.com/
-:link-alt: The CrateDB Community Portal
-:padding: 2
-:class-header: sd-text-center sd-fs-5 sd-align-minor-center sd-font-weight-bold sd-text-capitalize
-:class-body: sd-text-center sd-fs-5
-:class-footer: text-smaller
-Community Portal
-^^^
-{material-outlined}`groups;3.5em`
-+++
-A hangout place for members of the CrateDB community.
-:::
-
-::::
-
-:::{rubric} See also
-:::
-
-We invite you to explore the other sections
-of the documentation.
-
-:::::{card}
-
-::::{sd-table}
-:widths: 4 8
-:row-class: top-border
-
-:::{sd-row}
-```{sd-item} **Topic**
-```
-```{sd-item} **Description**
-```
-:::
-
-:::{sd-row}
-```{sd-item}
-:class: sd-font-weight-bolder
-{ref}`Data modelling <data-modelling>`
-```
-```{sd-item}
-Learn the different types of structured, semi-structured, and unstructured data.
-```
-:::
-
-:::{sd-row}
-```{sd-item}
-:class: sd-font-weight-bolder
-{ref}`Query capabilities <query-capabilities>`
-```
-```{sd-item}
-Explore CrateDB’s key query capabilities, such as aggregations, ad-hoc queries,
-search and AI integration on large datasets at scale.
-```
-:::
-
-:::{sd-row}
-```{sd-item}
-:class: sd-font-weight-bolder
-{ref}`Drivers <connect>`
-```
-```{sd-item}
-Connect CrateDB to your applications using official drivers. Also explore CrateDB CLI tools.
-```
-:::
-
-:::{sd-row}
-```{sd-item}
-:class: sd-font-weight-bolder
-{ref}`Integrations <integrate>`
-```
-```{sd-item}
-Use CrateDB with third-party adapters, connectors, data sources, and integrations.
-```
-:::
-
-:::{sd-row}
-```{sd-item}
-:class: sd-font-weight-bolder
-{ref}`Reference manual <crate-reference:index>`
-```
-```{sd-item}
-Access the complete technical reference manual for CrateDB, and learn about
-its concepts and details.
-```
-:::
-
-:::{sd-row}
-```{sd-item}
-:class: sd-font-weight-bolder
-{ref}`Sample applications <example-applications>`
-```
-```{sd-item}
-Explore ready-to-run sample projects that demonstrate how to build real-world solutions using CrateDB.
-```
-:::
-
-:::{sd-row}
-```{sd-item}
-:class: sd-font-weight-bolder
-{ref}`Database management <administration>`
-```
-```{sd-item}
-Learn to manage your cluster: configuration, sizing,
-production deployment, migration and upgrade procedures,
-sharding and partitioning, troubleshooting, user creation,
-and cost optimization. Explore monitoring, alerting, and automation.
-```
-:::
-
-:::{sd-row}
-```{sd-item}
-:class: sd-font-weight-bolder
-{ref}`performance`
-```
-```{sd-item}
-Learn about best practices and recommendations to ensure optimal
-system efficiency. Key points include performance tuning details around
-selecting your sharding strategy, storage advice, and query optimization guidelines.
-```
-:::
-
-:::{sd-row}
-```{sd-item}
-:class: sd-font-weight-bolder
-[Support and learning ↗](https://learn.cratedb.com/)
-```
-```{sd-item}
-Get access to more resources to continue learning.
-```
-:::
-
-::::
-
-:::::
-
-
 ```{toctree}
 :maxdepth: 1
 :hidden:
 
-First steps <first-steps>
+video/index
 modelling/index
 query/index
 import
 application/index
-video/index
 ```
 
 
+:::{div} sd-text-muted
+Get started fast with CrateDB: Setup or install CrateDB and try a few quick
+tutorials.
+:::
+
 :::{note}
-To learn more about all the details of CrateDB features, operations, and
-its SQL dialect, please also visit the [All Features] page and the
-[CrateDB Reference Manual].
+**Prefer video tutorials?** Then we have a more elaborate
+<a href="https://learn.cratedb.com/" target="_blank">Academy Fundamentals course</a>
+with hands-on video tutorials that walk you through setup or installation and key
+concepts step by step. Or take the quick route below with our text-based
+quickstart.
+:::
+
+We highly recommend to try out CrateDB with a free Cloud cluster for the
+smoothest experience with integrated tutorials - no install, no
+copy-pasting examples.
+<br>
+Alternatively, select "Local" below to install CrateDB with Docker and follow
+the more manual tutorials with a bit more copy/pasting examples.
+
+
+````{tab-set}
+```{tab-item} Cloud (Recommended)
+
+
+## 1. Create your free cluster
+
+Sign up for CrateDB Cloud and create your first cluster in 2 minutes.
+
+:::{button-link} https://console.cratedb.cloud/
+:color: primary
+**Start free with CrateDB Cloud →**
+:::
+
+After logging in you will see the Cloud Console Quickstart page, with
+options to try tutorials, import data, or connect programmatically.
+
+:::{figure} /_assets/img/getting-started/cloud-quickstart.png
+:alt: CrateDB Cloud Console showing Interactive Tutorials
+:width: 100%
+:figclass: sd-text-muted sd-font-italic sd-opacity-50
+
+The Cloud Quickstart page
 :::
 
 
-[All Features]: project:#features
-[CrateDB Reference Manual]: inv:crate-reference:*:label#index
+## 2. Run tutorials
+
+Once your cluster is ready, you can go through one or more of the
+**interactive tutorials** directly in the browser in ~5 minutes each.
+With the click of a button you will import data, execute queries, and
+see the results.
+
+
+## 3. Experiment in the Console
+
+After completing a tutorial, the sample data remains in your cluster. You
+can now use the **Console** in the Cloud UI to explore the data and run
+your own SQL queries, perhaps with inspiration from our
+{ref}`query-capabilities`.
+
+:::{figure} /_assets/img/getting-started/cloud-console.png
+:alt: CrateDB Cloud Console
+:width: 100%
+:figclass: sd-text-muted sd-font-italic sd-opacity-50
+
+The Cloud Console page
+:::
+
+
+```
+```{tab-item} Local
+
+
+## 1. Install CrateDB
+
+If you prefer to try CrateDB locally, the quickest way is using
+<a href="https://docs.docker.com/get-docker/" target="_blank">Docker</a>:
+
+:::{code} shell
+docker run -p 4200:4200 -p 5432:5432 crate:latest
+:::
+
+For other installation methods, see our {ref}`install` guide.
+
+:::{caution}
+By default, the CrateDB Docker container is ephemeral, so data will not be
+stored in a persistent manner. When you stop the container, all data will
+be lost. For production use, consult the {ref}`Docker guide
+<cratedb-docker>` to configure persistent disk volumes.
+:::
+
+
+## 2. Access the Admin UI
+
+Once CrateDB is running, open your browser and navigate to
+<http://localhost:4200> to access the {ref}`Admin UI
+<crate-admin-ui:index>`. From here you can:
+
+* Browse tables and data
+* Execute SQL queries
+* Monitor cluster health
+
+:::{figure} /_assets/img/getting-started/admin-ui-console.png
+:alt: CrateDB Admin UI Console
+:width: 100%
+:figclass: sd-text-muted sd-font-italic sd-opacity-50
+
+The Admin UI Console page
+:::
+
+You will use this in the next section to run SQL statements.
+
+
+## 3. Run tutorials
+
+Learn about fundamental features of CrateDB with hands-on example
+tutorials.
+
+:::::{grid} 2
+:gutter: 3
+:padding: 0
+
+::::{grid-item-card} Objects: Analyzing marketing data
+:link: objects-tutorial-marketing
+:link-type: ref
+CrateDB's dynamic OBJECT data type can store and analyze complex and
+nested data efficiently.
+::::
+
+::::{grid-item-card} Full-text: Exploring the Netflix catalog
+:link: search-tutorial-netflix
+:link-type: ref
+Learn how to make use of CrateDB's full-text search capabilities.
+::::
+
+::::{grid-item-card} Analyzing weather data
+:link: timeseries-tutorial-weather
+:link-type: ref
+Learn how to analyze time series data on behalf of a practical example.
+::::
+
+::::{grid-item-card} Analyzing device readings with metadata integration
+:link: timeseries-tutorial-metadata
+:link-type: ref
+Learn how to combine time series data with metadata.
+::::
+
+:::::
+
+## 4. Experiment in the Console
+
+After completing one or more tutorials, you can continue to explore the
+data in the Console with SQL queries, perhaps with inspiration from our
+{ref}`query-capabilities`.
+
+
+<!-- end tab-set -->
+```
+````
+
+
+## What's next?
+
+From here you can take several different directions.
+
+:::::{grid} 1 2 2 2
+:gutter: 3
+
+::::{grid-item-card}
+:link: https://learn.cratedb.com/
+:class-header: sd-text-center
+
+{material-outlined}`school;2em` **Learn through courses**
+^^^
+Get a detailed introduction to CrateDB with video explanations and
+hands-on exercises through our Academy courses.
+::::
+
+
+::::{grid-item-card}
+:link: example-applications
+:link-type: ref
+:class-header: sd-text-center
+
+{material-outlined}`lightbulb;2em` **Get inspired by sample applications**
+^^^
+Explore sample applications for inspiration when building your own
+applications with CrateDB.
+::::
+
+
+::::{grid-item-card}
+:link: data-modelling
+:link-type: ref
+:class-header: sd-text-center
+
+{material-outlined}`schema;2em` **Data modelling**
+^^^
+Learn how to model structured, semi-structured, and unstructured data in
+CrateDB.
+::::
+
+
+::::{grid-item-card}
+:link: query-capabilities
+:link-type: ref
+:class-header: sd-text-center
+
+{material-outlined}`search;2em` **Query capabilities**
+^^^
+Explore CrateDB's powerful querying features including aggregations,
+full-text search, and vector search.
+::::
+
+
+::::{grid-item-card}
+:link: start-import
+:link-type: ref
+:class-header: sd-text-center
+
+{material-outlined}`upload;2em` **Import data**
+^^^
+Import files directly via URL in CSV, JSON or Parquet format, load sample
+datasets, or use SQL `COPY FROM` as demonstrated in the tutorials.
+::::
+
+
+::::{grid-item-card}
+:link: connect
+:link-type: ref
+:class-header: sd-text-center
+
+{material-outlined}`code;2em` **Connect programmatically**
+^^^
+Connect to CrateDB from your application using drivers in your prefferred
+programming language.
+::::
+
+:::::
+
+
+{material-outlined}`menu_book;1.5em`
+Additionally, we recommend you explore the rest of the documentation via
+the left-hand navigation.
+
+<br>
+
+:::::{admonition} Need help?
+:class: tip
+<br>
+
+::::{grid} 1 2 2 2
+:gutter: 3
+
+:::{grid-item-card}
+:link: https://community.cratedb.com/
+:class-header: sd-text-center
+
+{material-outlined}`groups;2em` **Community**
+^^^
+Join our Community Forum to ask questions and connect with other CrateDB
+users.
+:::
+
+:::{grid-item-card}
+:link: https://cratedb.com/contact/
+:class-header: sd-text-center
+
+{material-outlined}`support;2em` **Support**
+^^^
+Contact our support team for assistance with your CrateDB deployment.
+:::
+::::
+:::::

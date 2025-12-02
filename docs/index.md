@@ -1,5 +1,4 @@
 (index)=
-
 # Welcome to CrateDB
 
 <!--
@@ -15,97 +14,167 @@ Look for the "Section A: Guide" section in the {% else %} branch.
 
 start/index
 handbook/index
+
 ```
 
-CrateDB is a **distributed SQL database** designed for **real-time analytics,
-search and AI** at scale. Whether you are working with time series data, full-text
-search, or large volumes of structured and semi-structured data, CrateDB gives
-you the **power of SQL**, the **scalability of NoSQL**, and the **flexibility
-of a modern data platform**.
+CrateDB is a fully open source **distributed SQL database** designed for
+**real-time analytics, search and AI** at scale. Whether you are working with
+time series data, full-text search, or large volumes of structured and
+semi-structured data, CrateDB gives you the **power of SQL**, the **scalability
+of NoSQL**, and the **flexibility of a modern data platform**.
 
-See our [product overview] and {ref}`features overview <features>` to learn
-more about high-level features and use cases.
+<br>
 
-This documentation is about helping you get started, explore in practice, and
-operate in details.
+## Is CrateDB right for me?
 
-:::{rubric} Start
-:::
+Learn about CrateDB's features, use cases, and capabilities.
 
-::::{grid} 2
-:gutter: 3
-
-:::{grid-item-card} {material-outlined}`arrow_circle_right;1.7em` CrateDB Cloud
-:link: https://console.cratedb.cloud/
-:link-type: url
-:link-alt: Getting started with CrateDB Cloud
-:class-title: sd-fs-5
-
-Start with a fully managed FREE FOREVER CrateDB instance to quickly explore
-features through guided tutorials or on your own with custom data.
-+++
-```{button-ref} first-steps
-:color: primary
-:expand:
-**Start with CrateDB Cloud**
-```
-:::
-
-:::{grid-item-card} {material-outlined}`download_for_offline;1.7em` Install CrateDB
-:link: install
-:link-type: ref
-:link-alt: Install CrateDB
-:class-title: sd-fs-5
-
-Install CrateDB on different operating systems and environments,
-for on-premises operations and development purposes.
-:::
-
-::::
-
-:::{rubric} Quick links
-:::
-
-:::::{grid} 2 2 2 3
+:::::{grid} 1 1 3 3
 :gutter: 2
 :padding: 0
 
-::::{grid-item-card} {material-outlined}`not_started;2em` &nbsp; Getting started
-:link: getting-started
-:link-type: ref
-Learn how to interact with the database for the first time.
+::::{grid-item-card} {material-outlined}`info;1.5em` Product Overview
+:link: https://cratedb.com/database
+:link-type: url
+:link-alt: CrateDB Product Overview
+Learn what CrateDB is and what it can do for you.
 ::::
 
-::::{grid-item-card} {material-outlined}`link;2em` &nbsp; Connect
-:link: connect
+::::{grid-item-card} {material-outlined}`stars;1.5em` Feature Overview
+:link: all-features
 :link-type: ref
-Database drivers, libraries, adapters, and connectors.
+:link-alt: All CrateDB Features
+Explore CrateDB's complete feature set at a glance.
 ::::
 
-::::{grid-item-card} {material-outlined}`auto_stories;2em` &nbsp; Handbook
-:link: handbook
+::::{grid-item-card} {material-outlined}`rocket_launch;1.5em` Use Cases
+:link: solutions
 :link-type: ref
-Use CrateDB and CrateDB Cloud in practice.
+:link-alt: CrateDB Use Cases
+Discover how CrateDB solves real-world problems.
 ::::
 
 :::::
 
-:::{rubric} Learn
-:::
 
-:::{card} All features
-:link: all-features
+<br>
+
+## New to CrateDB?
+
+::::{grid}
+:::{grid-item-card} {material-outlined}`arrow_circle_right;1.5em` Get Started
+:link: getting-started
 :link-type: ref
+:link-alt: Get started
+:class-title: sd-fs-5
 
-CrateDB is a distributed and scalable SQL database for storing and analyzing
-massive amounts of data in near real-time, even with complex queries. It is
-based on Lucene, combines a unique set of features, and is PostgreSQL-compatible.
+Start your free Cloud or self-hosted cluster and learn through simple tutorials
+or comprehensive courses.
 
-![CrateDB feature overview diagram](https://cratedb.com/hs-fs/hubfs/nativesql.png?width=800&name=nativesql.png)
-+++
-Read about all features of CrateDB at a glance.
+```{button-link} getting-started
+:color: primary
+:expand:
+**Get Started →**
+```
+:::
+::::
+
+<br>
+
+## Quick links
+
+:::::{grid} 2 2 3 3
+:gutter: 2
+:padding: 0
+
+::::{grid-item-card} {material-outlined}`link;1.5em` Connect
+:link: connect
+:link-type: ref
+:link-alt: Connect to CrateDB
+Database drivers, libraries, and client adapters.
+::::
+
+::::{grid-item-card} {material-outlined}`upload;1.5em` Ingest
+:link: ingest
+:link-type: ref
+:link-alt: Data Ingestion
+Methods for importing and loading data into CrateDB.
+::::
+
+::::{grid-item-card} {material-outlined}`hub;1.5em` Integrate
+:link: integrate
+:link-type: ref
+:link-alt: CrateDB Integrations
+Third-party tools, data pipelines, and frameworks.
+::::
+
+::::{grid-item-card} {material-outlined}`auto_stories;1.5em` Handbook
+:link: handbook
+:link-type: ref
+:link-alt: CrateDB Handbook
+Guides and tutorials for using CrateDB in practice.
+::::
+
+::::{grid-item-card} {material-outlined}`settings;1.5em` Admin
+:link: administration
+:link-type: ref
+:link-alt: Database Administration
+Deploy, monitor, maintain, and optimize clusters.
+::::
+
+::::{grid-item-card} {material-outlined}`menu_book;1.5em` Reference
+:link: crate-reference:index
+:link-type: ref
+:link-alt: CrateDB Reference Manual
+Complete SQL syntax, functions, and API reference.
+::::
+
+:::::
+
+<br>
+
+:::::{admonition} Need help?
+:class: tip
+<br>
+
+::::{grid} 1 2 2 2
+:gutter: 3
+
+:::{grid-item-card}
+:link: https://community.cratedb.com/
+:class-header: sd-text-center
+
+{material-outlined}`groups;2em` **Community**
+^^^
+Join our Community Forum to ask questions and connect with other CrateDB
+users.
 :::
 
+:::{grid-item-card}
+:link: https://cratedb.com/contact/
+:class-header: sd-text-center
+
+{material-outlined}`support;2em` **Support**
+^^^
+Contact our support team for assistance with your CrateDB deployment.
+:::
+::::
+:::::
 
 
-[Product overview]: https://cratedb.com/database
+:::{admonition} CrateDB is open source
+:class: tip
+
+**Join our community of contributors!** CrateDB is open source software
+licensed under the Apache License 2.0. We appreciate contributions from
+everyone.
+
+**Improve the documentation:**
+- Use the feedback widget (⚙️ top right) for quick feedback or PR on any page
+
+**Contribute to CrateDB:**
+- Report bugs or request features for CrateDB on
+  [GitHub](https://github.com/crate/crate/issues)
+- Explore our other [open source projects](https://github.com/crate)
+
+:::
