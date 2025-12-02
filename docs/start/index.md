@@ -32,7 +32,7 @@ smoothest experience with integrated tutorials - no install, no
 copy-pasting examples.
 <br>
 Alternatively, select "Local" below to install CrateDB with Docker and follow
-the more manual tutorials with a bit more copy/pasting examples.
+the more manual tutorials.
 
 
 ````{tab-set}
@@ -180,7 +180,10 @@ data in the Console with SQL queries, perhaps with inspiration from our
 
 From here you can take several different directions.
 
-:::::{grid} 1 2 2 2
+```{rubric} Continue learning
+```
+
+:::::{grid} 1 2 2 3
 :gutter: 3
 
 ::::{grid-item-card}
@@ -193,19 +196,6 @@ Get a detailed introduction to CrateDB with video explanations and
 hands-on exercises through our Academy courses.
 ::::
 
-
-::::{grid-item-card}
-:link: example-applications
-:link-type: ref
-:class-header: sd-text-center
-
-{material-outlined}`lightbulb;2em` **Get inspired by sample applications**
-^^^
-Explore sample applications for inspiration when building your own
-applications with CrateDB.
-::::
-
-
 ::::{grid-item-card}
 :link: data-modelling
 :link-type: ref
@@ -216,7 +206,6 @@ applications with CrateDB.
 Learn how to model structured, semi-structured, and unstructured data in
 CrateDB.
 ::::
-
 
 ::::{grid-item-card}
 :link: query-capabilities
@@ -229,6 +218,13 @@ Explore CrateDB's powerful querying features including aggregations,
 full-text search, and vector search.
 ::::
 
+:::::
+
+```{rubric} Start building
+```
+
+:::::{grid} 1 2 2 3
+:gutter: 3
 
 ::::{grid-item-card}
 :link: start-import
@@ -241,16 +237,26 @@ Import files directly via URL in CSV, JSON or Parquet format, load sample
 datasets, or use SQL `COPY FROM` as demonstrated in the tutorials.
 ::::
 
-
 ::::{grid-item-card}
 :link: connect
 :link-type: ref
 :class-header: sd-text-center
 
-{material-outlined}`code;2em` **Connect programmatically**
+{material-outlined}`code;2em` **Connect**
 ^^^
 Connect to CrateDB from your application using drivers in your prefferred
 programming language.
+::::
+
+::::{grid-item-card}
+:link: example-applications
+:link-type: ref
+:class-header: sd-text-center
+
+{material-outlined}`lightbulb;2em` **Get inspired**
+^^^
+Explore sample applications for inspiration when building your own
+applications with CrateDB.
 ::::
 
 :::::
