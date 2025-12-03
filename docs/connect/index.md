@@ -147,6 +147,19 @@ R
 ::::
 
 ::::{grid-item-card}
+:link: connect-raku
+:link-type: ref
+:class-body: sd-fs-1 sd-text-center
+:class-footer: sd-fs-5 sd-font-weight-bold
+
+```{image} https://upload.wikimedia.org/wikipedia/commons/8/85/Camelia.svg
+:width: 40px
+```
++++
+Raku
+::::
+
+::::{grid-item-card}
 :link: connect-ruby
 :link-type: ref
 :class-body: sd-fs-1 sd-text-center
@@ -258,6 +271,7 @@ javascript
 php
 python
 r/index
+raku/index
 ruby
 rust/index
 scala/index
