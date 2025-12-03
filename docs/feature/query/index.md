@@ -224,8 +224,8 @@ Recurrent queries <recurrent>
 [HyperLogLog]: https://en.wikipedia.org/wiki/HyperLogLog
 [HyperLogLog++]: https://research.google/pubs/hyperloglog-in-practice-algorithmic-engineering-of-a-state-of-the-art-cardinality-estimation-algorithm/
 [hyperloglog_distinct]: inv:crate-reference#aggregation-hyperloglog-distinct
-[Ingesting into CrateDB with UNNEST and Golang]: https://community.cratedb.com/t/connecting-to-cratedb-from-go/642#unnest-5
-[Ingesting into CrateDB with UNNEST and Node.js]: https://community.cratedb.com/t/connecting-to-cratedb-with-node-js/751#ingesting-into-cratedb-with-unnest-3
+[Ingesting into CrateDB with UNNEST and Golang]: https://community.cratedb.com/t/connecting-to-cratedb-from-go/642#p-1195-unnest-5
+[Ingesting into CrateDB with UNNEST and Node.js]: https://community.cratedb.com/t/connecting-to-cratedb-with-node-js/751#p-1521-ingesting-into-cratedb-with-unnest-3
 [Introducing: HyperLogLog]: https://cratedb.com/blog/feature-focus-making-things-hyper-fast-fast
 [Optimizing storage for historic time-series data]: https://community.cratedb.com/t/optimizing-storage-for-historic-time-series-data/762
 [Time Series: Analyze Weather Data]: project:#timeseries-analysis-weather
