@@ -37,7 +37,7 @@ a very minimal memory footprint.
 :::
 
 :::{grid-item}
-![Telegraf architecture overview](https://www.influxdata.com/wp-content/uploads/Main-Diagram_06.01.2022v1.png){loading=lazy}
+![Telegraf architecture overview](https://github.com/user-attachments/assets/6ba7bc11-b1c1-4f62-af85-6eb9684f1921){loading=lazy}
 :::
 
 ::::
