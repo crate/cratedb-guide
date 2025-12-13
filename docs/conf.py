@@ -92,6 +92,8 @@ linkcheck_ignore += [
     r"https://azuremarketplace.microsoft.com/",
     # 404 Client Error: Not Found
     r"https://crates.io/crates/",
+    # 500 Server Error: Internal Server Error
+    r"https://dlthub.com/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
