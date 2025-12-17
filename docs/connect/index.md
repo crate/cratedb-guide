@@ -254,6 +254,7 @@ elixir/index
 erlang/index
 go/index
 java/index
+crate-jdbc/index
 javascript
 php
 python
