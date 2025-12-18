@@ -136,7 +136,7 @@ bin/kafka-topics.sh --create --replication-factor 1 --partitions 1 --topic my_co
 exit
 ```
 
-Please note this is a very basic setup, for production purposes you may want to adjust some of [these settings](https://kafka.apache.org/documentation/#topicconfigs).
+Please note this is a very basic setup, for production purposes you may want to adjust some of [these settings](https://kafka.apache.org/41/configuration/topic-configs/).
 
 ## Prepare and start a Debezium container image
 
