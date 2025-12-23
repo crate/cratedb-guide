@@ -10,39 +10,44 @@
 ```{div} .clearfix
 ```
 
-:::{rubric} About
+The CrateDB team develops and supports a custom-built driver, [cratedb_django](https://github.com/crate/cratedb-django)
+
+:::{rubric} Getting started
 :::
 
-[Django] makes it easier to build better web apps more quickly and with less code.
+Installing the library:
+```shell
+pip install cratedb_django
+```
 
-::::{dropdown} **Details**
-Django is a high-level Python web framework that encourages rapid development and
-clean, pragmatic design. Built by experienced developers, it takes care of much of
-the hassle of web development, so you can focus on writing your app without needing
-to reinvent the wheel. It’s free and open source. 
+Once the library is installed, set it in the project's `settings`
 
-- **Ridiculously fast**: Django was designed to help developers take applications
-  from concept to completion as quickly as possible.
+```python
+DATABASES = {
+    "default": {
+        "ENGINE": "cratedb_django",
+        "SERVERS": ["localhost:4200"],
+    }
+}
+```
 
-- **Reassuringly secure**: Django takes security seriously and helps developers
-  avoid many common security mistakes.
+For a model to be compatible with CrateDB, import and use `CrateDBModel`:
 
-- **Exceedingly scalable**: Some of the busiest sites on the web leverage Django’s
-  ability to quickly and flexibly scale.
-::::
+```python
+from django.db import models
+from cratedb_django.models import CrateModel
 
-:::{rubric} Learn
-:::
+class Metrics(CrateModel):
+    value = models.IntegerField()
+```
 
-::::{grid} 2
+Django migrations can be run in CrateDB, default django migrations are tested.
+In spite of that, we recommend that you run anything transactional in a transactional database, 
+like PostgresSQL and use CrateDB as your analytical database.
 
-:::{grid-item-card} CrateDB Django connector
-:link: https://github.com/crate/cratedb-django
-:link-type: url
-Connector backend to use CrateDB as a database in Django ORM.
-:::
+## What's supported?
 
-::::
+Django ORM has many features, see [feature-list](https://github.com/crate/cratedb-django/issues/50) for a comprehensive list of supported features.
+Feel free to open a new issue if you need a new feature.
 
-
-[Django]: https://www.djangoproject.com/
+### Table of Contents
