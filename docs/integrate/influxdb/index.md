@@ -5,7 +5,7 @@
 :::
 
 ```{div} .float-right .text-right
-[![InfluxDB logo](https://upload.wikimedia.org/wikipedia/commons/c/c6/Influxdb_logo.svg){height=60px loading=lazy}][InfluxDB]
+[![InfluxDB logo](/_assets/icon/influxdb-logo.svg){height=60px loading=lazy}][InfluxDB]
 <br>
 <a href="https://github.com/crate/cratedb-toolkit/actions/workflows/influxdb.yml" target="_blank">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-toolkit/influxdb.yml?branch=main&label=CTK%2BInfluxDB" loading="lazy" alt="CI status: InfluxDB"></a>

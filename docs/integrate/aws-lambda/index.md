@@ -5,7 +5,7 @@
 :::
 
 ```{div} .float-right
-[![AWS Lambda logo](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Amazon_Lambda_architecture_logo.svg/281px-Amazon_Lambda_architecture_logo.svg.png){height=60px loading=lazy}][AWS Lambda]
+[![AWS Lambda logo](/_assets/icon/amazon-lambda-logo.png){height=60px loading=lazy}][AWS Lambda]
 ```
 ```{div} .clearfix
 ```

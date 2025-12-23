@@ -2,7 +2,7 @@
 # Trino
 
 ```{div} .float-right
-[![Trino logo](https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Trino-logo-w-bk.svg/330px-Trino-logo-w-bk.svg.png){height=60px loading=lazy}][Trino]
+[![Trino logo](/_assets/icon/trino-logo.png){height=60px loading=lazy}][Trino]
 ```
 ```{div} .clearfix
 ```
