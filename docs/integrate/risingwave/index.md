@@ -2,7 +2,7 @@
 # RisingWave
 
 ```{div} .float-right
-[![RisingWave logo](https://www.risingwave.com/_next/static/media/risingwave-logo-black-text.11ccd229.svg){height=60px loading=lazy}](https://www.risingwave.com/)
+[![RisingWave logo](/_assets/icon/risingwave-logo.svg){height=60px loading=lazy}](https://www.risingwave.com/)
 ```
 ```{div} .clearfix
 ```
