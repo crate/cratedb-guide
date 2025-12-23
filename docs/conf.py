@@ -94,6 +94,8 @@ linkcheck_ignore += [
     r"https://crates.io/crates/",
     # 500 Server Error: Internal Server Error
     r"https://dlthub.com/",
+    # Certificate has expired
+    r"https://tldp.org/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
