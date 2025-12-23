@@ -2,7 +2,7 @@
 # Node-RED
 
 ```{div} .float-right
-[![Node-RED logo](https://upload.wikimedia.org/wikipedia/commons/2/2b/Node-red-icon.png){height=60px loading=lazy}](https://nodered.org/)
+[![Node-RED logo](/_assets/icon/node-red-logo.png){height=60px loading=lazy}](https://nodered.org/)
 ```
 ```{div} .clearfix
 ```

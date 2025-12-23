@@ -27,7 +27,7 @@ that enables businesses to analyze data through a dashboard.
 :link: powerbi
 :link-type: ref
 ```{div} .float-right
-![PowerBI logo](https://upload.wikimedia.org/wikipedia/en/thumb/2/20/Power_BI_logo.svg/192px-Power_BI_logo.svg.png?20200923233425){height=40px loading=lazy}
+![PowerBI logo](/_assets/icon/powerbi-logo.svg){height=40px loading=lazy}
 ```
 Power BI is a powerful business intelligence tool that provides a
 set of data analytics and visualizations.
@@ -51,7 +51,7 @@ transforming data sets into powerful, opinionated dashboards using SQL.
 :link: tableau
 :link-type: ref
 ```{div} .float-right
-![Tableau logo](https://upload.wikimedia.org/wikipedia/en/thumb/0/06/Tableau_logo.svg/500px-Tableau_logo.svg.png?20200509180027){height=40px loading=lazy}
+![Tableau logo](/_assets/icon/tableau-logo.png){height=40px loading=lazy}
 ```
 Tableau is a visual business intelligence and analytics software platform.
 It expresses data by translating drag-and-drop actions into data queries

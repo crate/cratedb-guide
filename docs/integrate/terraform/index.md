@@ -2,7 +2,7 @@
 # Terraform
 
 ```{div} .float-right
-[![Terraform logo](https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Terraform_Logo.svg/330px-Terraform_Logo.svg.png){height=60px loading=lazy}][Terraform]
+[![Terraform logo](/_assets/icon/terraform-logo.png){height=60px loading=lazy}][Terraform]
 ```
 ```{div} .clearfix
 ```

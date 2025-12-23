@@ -6,7 +6,7 @@
 
 ```{div} .float-right
 :style: "margin-left: 0.5em"
-[![DBeaver logo](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/DBeaver_logo.svg/512px-DBeaver_logo.svg.png){w=120px loading=lazy}][DBeaver]
+[![DBeaver logo](/_assets/icon/dbeaver-logo.svg){w=120px loading=lazy}][DBeaver]
 ```
 
 [DBeaver] is a multipurpose cross-platform database tool for developers,

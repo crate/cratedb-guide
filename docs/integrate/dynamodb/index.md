@@ -5,7 +5,7 @@
 :::
 
 ```{div} .float-right .text-right
-[![DynamoDB logo](https://upload.wikimedia.org/wikipedia/commons/f/fd/DynamoDB.png){height=60px loading=lazy}][DynamoDB]
+[![DynamoDB logo](/_assets/icon/dynamodb-logo.png){height=60px loading=lazy}][DynamoDB]
 <br>
 <a href="https://github.com/crate/cratedb-toolkit/actions/workflows/dynamodb.yml" target="_blank">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-toolkit/dynamodb.yml?branch=main&label=CTK%2BDynamoDB" loading="lazy"></a>

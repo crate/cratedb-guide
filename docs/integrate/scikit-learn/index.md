@@ -3,7 +3,7 @@
 
 ```{div}
 :style: "float: right; margin-left: 1em"
-[![scikit-learn logo](https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/240px-Scikit_learn_logo_small.svg.png){w=180px}][scikit-learn]
+[![scikit-learn logo](/_assets/icon/scikit-learn-logo.svg){w=180px}][scikit-learn]
 
 [![pandas logo](https://pandas.pydata.org/static/img/pandas.svg){w=180px}][pandas]
 ```

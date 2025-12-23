@@ -2,7 +2,7 @@
 # Tableau
 
 ```{div} .float-right
-[![Tableau logo](https://upload.wikimedia.org/wikipedia/en/thumb/0/06/Tableau_logo.svg/500px-Tableau_logo.svg.png?20200509180027){height=60px loading=lazy}][Tableau]
+[![Tableau logo](/_assets/icon/tableau-logo.png){height=60px loading=lazy}][Tableau]
 ```
 ```{div} .clearfix
 ```

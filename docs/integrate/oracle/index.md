@@ -2,7 +2,7 @@
 # Oracle
 
 ```{div} .float-right
-[![oracle-logo](https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Oracle_logo.svg/500px-Oracle_logo.svg.png){height=60px loading=lazy}][Oracle Database]
+[![oracle-logo](/_assets/icon/oracle-logo.png){height=60px loading=lazy}][Oracle Database]
 ```
 ```{div} .clearfix
 ```

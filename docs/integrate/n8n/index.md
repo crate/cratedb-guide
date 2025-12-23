@@ -2,7 +2,7 @@
 # n8n
 
 ```{div} .float-right .text-right
-[![n8n logo](https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/N8n-logo-new.svg/330px-N8n-logo-new.svg.png){height=60px loading=lazy}][n8n]
+[![n8n logo](/_assets/icon/n8n-logo.png){height=60px loading=lazy}][n8n]
 ```
 ```{div} .clearfix
 ```
