@@ -31,7 +31,7 @@ DATABASES = {
 }
 ```
 
-For authentication, `USER` and `PASSWORD` need to be set, additionally `OPTIONS` can be set with `crate-python` options.
+For authentication, `USER` and `PASSWORD` need to be set, additional options can be set with `OPTIONS` to pass `crate-python` options.
 
 ```python
 DATABASES = {
@@ -48,6 +48,11 @@ DATABASES = {
 ```
 
 ## Default auto field
+`DEFAULT_AUTO_FIELD` specifies the type of auto-created primary key fields, it's recommended to set it to `AutoUUIDField`.
 
-It's recommended to set `DEFAULT_AUTO_FIELD = "cratedb_django.fields.AutoUUIDField"`, `AutoUUIDField` generates 
-unique UUIDs for primary keys. `cratedb_django.fields.AutoField` can be used if an integer based primary key is needed.
+```python
+DEFAULT_AUTO_FIELD = "cratedb_django.fields.AutoUUIDField"
+```
+
+`AutoUUIDField` generates unique UUIDs for primary keys. `cratedb_django.fields.AutoField`
+can be used if an integer based primary key is needed.
