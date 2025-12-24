@@ -55,6 +55,6 @@ Feel free to open a new issue if you need a new feature.
 ### Table of Contents
 
 - [Configuring the settings](settings.md)
-- Models
+- [Models](models.md)
 - Fields
 - Querying
