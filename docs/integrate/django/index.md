@@ -10,14 +10,14 @@
 ```{div} .clearfix
 ```
 
-The CrateDB team develops and supports a custom-built driver, [cratedb_django](https://github.com/crate/cratedb-django)
+The CrateDB team develops and supports a custom-built driver, [cratedb-django](https://github.com/crate/cratedb-django)
 
 :::{rubric} Getting started
 :::
 
 Installing the library:
 ```shell
-pip install cratedb_django
+pip install cratedb-django
 ```
 
 Once the library is installed, set it in the project's `settings`
@@ -29,16 +29,18 @@ DATABASES = {
         "SERVERS": ["localhost:4200"],
     }
 }
+
+DEFAULT_AUTO_FIELD = "cratedb_django.fields.AutoUUIDField"
 ```
 
 For a model to be compatible with CrateDB, import and use `CrateDBModel`:
 
 ```python
-from django.db import models
+from cratedb_django.models import fields
 from cratedb_django.models import CrateModel
 
 class Metrics(CrateModel):
-    value = models.IntegerField()
+    value = fields.IntegerField()
 ```
 
 Django migrations can be run in CrateDB, default django migrations are tested.
@@ -51,3 +53,8 @@ Django ORM has many features, see [feature-list](https://github.com/crate/crated
 Feel free to open a new issue if you need a new feature.
 
 ### Table of Contents
+
+- [Configuring the settings](settings.md)
+- Models
+- Fields
+- Querying
