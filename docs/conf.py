@@ -96,6 +96,8 @@ linkcheck_ignore += [
     r"https://dlthub.com/",
     # Certificate has expired
     r"https://tldp.org/",
+    # Read timed out
+    r"https://www.unixodbc.org/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
