@@ -11,7 +11,7 @@ Connect to CrateDB from F# .NET applications.
 :::{rubric} About
 :::
 
-[Npgsql] is an open source ADO\.NET Data Provider for PostgreSQL, for programs
+[Npgsql] is an open-source ADO\.NET Data Provider for PostgreSQL, for programs
 written in C#, F#, or Visual Basic.
 [Npgsql.FSharp] is a thin F#-friendly layer around it.
 
