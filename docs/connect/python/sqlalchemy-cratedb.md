@@ -7,10 +7,26 @@
 :::{div} .clearfix
 :::
 
-The [SQLAlchemy] dialect for CrateDB, based on the HTTP-based DB API client
+[SQLAlchemy] is the Python SQL toolkit and Object Relational Mapper that
+gives application developers the full power and flexibility of SQL.
+
+Python-based {ref}`dataframe`
+and {ref}`ML <machine-learning>` frameworks, and a few {ref}`ETL <etl>`
+frameworks, are using SQLAlchemy as database adapter library when connecting to
+[RDBMS].
+
+The [SQLAlchemy] dialect for CrateDB is based on the HTTP-based DB API client
 library {ref}`crate-python:index`.
-See the full documentation {ref}`here <sqlalchemy-cratedb:index>`.
-The package can be installed using `pip install sqlalchemy-cratedb`.
+
+:::{rubric} Install
+:::
+
+```shell
+pip install --upgrade sqlalchemy-cratedb
+```
+
+:::{rubric} Synopsis
+:::
 
 ```python
 import sqlalchemy as sa
@@ -23,21 +39,36 @@ for record in result.all():
     print(record)
 ```
 
-[SQLAlchemy] is the Python SQL toolkit and Object Relational Mapper that
-gives application developers the full power and flexibility of SQL.
+:::{rubric} See also
+:::
 
-Python-based {ref}`dataframe`
-and {ref}`ML <machine-learning>` frameworks, and a few {ref}`ETL <etl>`
-frameworks, are using SQLAlchemy as database adapter library when connecting to
-[RDBMS].
+:::::{grid} 2 2 2 3
+:gutter: 2
+:padding: 0
 
-- [The CrateDB SQLAlchemy Dialect]
-- [Working with SQLAlchemy and CrateDB]
-- [SQLAlchemy Code Examples]
+::::{grid-item-card} {octicon}`book;1.75em;sd-text-info` &nbsp; Documentation
+:link: sqlalchemy-cratedb:index
+:link-type: ref
+:link-alt: Python SQLAlchemy dialect for CrateDB
+The full documentation for the CrateDB SQLAlchemy dialect.
+::::
+
+::::{grid-item-card} {octicon}`book;1.75em;sd-text-info` &nbsp; By example
+:link: sqlalchemy-cratedb:by-example
+:link-type: ref
+:link-alt: CrateDB SQLAlchemy dialect by example
+Working with SQLAlchemy and CrateDB.
+::::
+
+::::{grid-item-card} {octicon}`code-square;1.75em;sd-text-info` &nbsp; Example
+:link: https://github.com/crate/cratedb-examples/tree/main/by-language/python-sqlalchemy
+:link-type: url
+:link-alt: SQLAlchemy code Examples
+An executable example using the SQLAlchemy dialect.
+::::
+
+:::::
 
 
 [RDBMS]: https://en.wikipedia.org/wiki/RDBMS
 [SQLAlchemy]: https://www.sqlalchemy.org/
-[SQLAlchemy Code Examples]: https://github.com/crate/cratedb-examples/tree/main/by-language/python-sqlalchemy
-[The CrateDB SQLAlchemy Dialect]: inv:sqlalchemy-cratedb:*:label#index
-[Working with SQLAlchemy and CrateDB]: inv:sqlalchemy-cratedb:*:label#by-example

@@ -7,10 +7,19 @@
 :::{div} .clearfix
 :::
 
-The `crate` Python package offers a database client implementation compatible
-with the Python Database API 2.0 specification, and also includes the CrateDB
-SQLAlchemy dialect. See the full documentation {ref}`here <crate-python:index>`.
-The package can be installed using `pip install crate`.
+The `crate` Python package provides a database client implementation compatible
+with the Python Database API 2.0 specification. It is used by the CrateDB
+SQLAlchemy dialect.
+
+:::{rubric} Install
+:::
+
+```shell
+pip install --upgrade crate
+```
+
+:::{rubric} Synopsis
+:::
 
 ```python
 from crate import client
@@ -24,7 +33,33 @@ with conn:
     print(result)
 ```
 
-- [Connect to CrateDB using the Python DB API]
 
+:::{rubric} See also
+:::
 
-[Connect to CrateDB using the Python DB API]: https://github.com/crate/cratedb-examples/tree/main/by-language/python-dbapi
+:::::{grid} 2 2 2 3
+:gutter: 2
+:padding: 0
+
+::::{grid-item-card} {octicon}`book;1.75em;sd-text-info` &nbsp; Documentation
+:link: crate-python:index
+:link-type: ref
+:link-alt: Python DBAPI driver for CrateDB
+The full documentation for the Python driver.
+::::
+
+::::{grid-item-card} {octicon}`code-square;1.75em;sd-text-info` &nbsp; Example
+:link: https://github.com/crate/cratedb-examples/tree/main/by-language/python-dbapi
+:link-type: url
+:link-alt: Python DBAPI example
+An executable example using the Python driver.
+::::
+
+::::{grid-item-card} {octicon}`arrow-right;1.75em;sd-text-info` &nbsp; SQLAlchemy dialect
+:link: sqlalchemy-cratedb:index
+:link-type: ref
+:link-alt: Documentation about CrateDB's SQLAlchemy dialect
+The SQLAlchemy dialect for CrateDB is based on the HTTP-based DB API client.
+::::
+
+:::::

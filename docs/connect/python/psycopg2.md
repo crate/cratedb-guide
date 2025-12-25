@@ -5,7 +5,16 @@
 Psycopg is a popular PostgreSQL database adapter for Python. Its main features
 are the complete implementation of the Python DB API 2.0 specification and the
 thread safety (several threads can share the same connection).
-For more information, see the [psycopg2 documentation].
+
+:::{rubric} Install
+:::
+
+```shell
+pip install --upgrade psycopg2-binary
+```
+
+:::{rubric} Synopsis
+:::
 
 ```python
 import psycopg2
@@ -19,5 +28,18 @@ with conn:
         print(result)
 ```
 
+:::{rubric} See also
+:::
 
-[psycopg2 documentation]: https://www.psycopg.org/docs/
+:::::{grid} 2 2 2 3
+:gutter: 2
+:padding: 0
+
+::::{grid-item-card} {octicon}`book;1.75em;sd-text-info` &nbsp; Documentation
+:link: https://www.psycopg.org/docs/
+:link-type: url
+:link-alt: psycopg2 documentation
+The full documentation for psycopg2.
+::::
+
+:::::
