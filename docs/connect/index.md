@@ -254,7 +254,7 @@ elixir/index
 erlang/index
 go/index
 java/index
-javascript
+javascript/index
 php
 python
 r/index
