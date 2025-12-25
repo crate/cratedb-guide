@@ -46,7 +46,7 @@ using Npgsql;
 using System;
 
 // Connect to database.
-var connString = "Host=localhost;Port=5432;Username=crate;Password=crate;Database=doc;Sslmode=disable";
+var connString = "Host=localhost;Port=5432;Username=crate;Password=crate;Sslmode=disable";
 var dataSourceBuilder = new NpgsqlDataSourceBuilder(connString);
 var dataSource = dataSourceBuilder.Build();
 var conn = dataSource.OpenConnection();
@@ -74,7 +74,7 @@ For connecting to CrateDB Cloud, use `Sslmode=require`, and
 replace hostname, username, and password with values matching
 your environment.
 ```c#
-var connString = "Host=testcluster.cratedb.net;Port=5432;Username=admin;Password=password;Database=doc;Sslmode=require";
+var connString = "Host=testcluster.cratedb.net;Port=5432;Username=admin;Password=password;Sslmode=require";
 ```
 
 ## Examples

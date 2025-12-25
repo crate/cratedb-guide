@@ -43,7 +43,6 @@ conn <- dbConnect(RPostgres::Postgres(),
                   sslmode = "disable",
                   user = "crate",
                   password = "crate",
-                  dbname = "doc"
                   )
 on.exit(DBI::dbDisconnect(conn), add = TRUE)
 
@@ -67,7 +66,6 @@ conn <- dbConnect(RPostgres::Postgres(),
                   sslmode = "require",
                   user = "admin",
                   password = "password",
-                  dbname = "doc"
                   )
 ```
 
