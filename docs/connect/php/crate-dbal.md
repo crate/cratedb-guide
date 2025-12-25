@@ -10,17 +10,19 @@
 
 DBAL is a PHP database abstraction layer that comes with database schema
 introspection, schema management, and PDO support.
-The {ref}`crate-dbal:index`, `crate/crate-dbal`, implements this specification,
+The `crate/crate-dbal` package implements this specification,
 wrapping access to CrateDB's HTTP interface.
-:::{warning}
-The adapter currently does not support recent versions of the Doctrine ORM,
-see [Add support for Doctrine 3] and [Add support for Doctrine 4]. Both
-patches currently stalled, so please explicitly let us know if you have
-any need for corresponding support.
+
+:::{rubric} Install
 :::
+
+```shell
+composer require crate/crate-dbal
+```
 
 :::{rubric} Synopsis
 :::
+
 ```php
 <?php
 require 'vendor/autoload.php';
@@ -41,6 +43,18 @@ print_r($result);
 ?>
 ```
 
+:::{rubric} See also
+:::
 
-[Add support for Doctrine 3]: https://github.com/crate/crate-dbal/pull/122
-[Add support for Doctrine 4]: https://github.com/crate/crate-dbal/pull/136
+:::::{grid} 2 2 2 3
+:gutter: 2
+:padding: 0
+
+::::{grid-item-card} {octicon}`book;1.75em;sd-text-info` &nbsp; Documentation
+:link: crate-dbal:index
+:link-type: ref
+:link-alt: crate/crate-dbal documentation
+The full documentation for crate/crate-dbal.
+::::
+
+:::::
