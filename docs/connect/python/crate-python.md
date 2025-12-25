@@ -18,13 +18,13 @@ SQLAlchemy dialect.
 pip install --upgrade crate
 ```
 
-:::{rubric} Synopsis
+:::{rubric} Synopsis (localhost)
 :::
 
 ```python
 from crate import client
 
-conn = client.connect("https://<name-of-your-cluster>.cratedb.net:4200", username="admin", password="<PASSWORD>", verify_ssl_cert=True)
+conn = client.connect("http://localhost:4200")
 
 with conn:
     cursor = conn.cursor()
@@ -33,6 +33,25 @@ with conn:
     print(result)
 ```
 
+:::{rubric} Synopsis (CrateDB Cloud)
+:::
+
+```python
+from crate import client
+
+conn = client.connect(
+    "https://<name-of-your-cluster>.cratedb.net:4200",
+    username="admin",
+    password="<PASSWORD>",
+    verify_ssl_cert=True,
+)
+
+with conn:
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM sys.summits")
+    result = cursor.fetchone()
+    print(result)
+```
 
 :::{rubric} See also
 :::
