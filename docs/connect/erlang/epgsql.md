@@ -31,7 +31,6 @@ start() ->
         host => "localhost",
         username => "crate",
         password => "crate",
-        database => "doc",
         port => 5432,
         timeout => 4000
     }),
@@ -57,7 +56,6 @@ start() ->
         host => "testcluster.cratedb.net",
         username => "admin",
         password => "password",
-        database => "doc",
         port => 5432,
         ssl => true,
         ssl_opts => [{verify, verify_none}],

@@ -46,7 +46,7 @@ Module Example
         Dim dr As NpgsqlDataReader
 
         'Connect to database.
-        cs = "Host=localhost;Port=5432;Username=crate;Password=crate;Database=doc;Sslmode=disable"
+        cs = "Host=localhost;Port=5432;Username=crate;Password=crate;Sslmode=disable"
         cn = New NpgsqlConnection(cs)
         cn.Open()
 
@@ -82,7 +82,7 @@ For connecting to CrateDB Cloud, use `Sslmode=require`, and
 replace hostname, username, and password with values matching
 your environment.
 ```visualbasic
-cs = "Host=testcluster.cratedb.net;Port=5432;Username=admin;Password=password;Database=doc;Sslmode=require"
+cs = "Host=testcluster.cratedb.net;Port=5432;Username=admin;Password=password;Sslmode=require"
 ```
 
 ## See also
