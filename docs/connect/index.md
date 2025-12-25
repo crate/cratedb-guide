@@ -292,7 +292,7 @@ erlang/index
 fsharp/index
 go/index
 java/index
-javascript
+javascript/index
 php
 python/index
 r/index

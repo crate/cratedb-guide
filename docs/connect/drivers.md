@@ -135,7 +135,7 @@ statements, cursors, streaming results, C/C++ bindings, rich type parsing, and m
 ```
 ```{sd-item}
 [![](https://img.shields.io/npm/v/pg?label=latest&color=blue)](https://github.com/brianc/node-postgres)
-[![](https://img.shields.io/badge/example-snippet-darkcyan)](#javascript)
+[![](https://img.shields.io/badge/example-snippet-darkcyan)](#node-postgres)
 ```
 :::
 
