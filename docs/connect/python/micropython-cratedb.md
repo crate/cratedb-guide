@@ -9,8 +9,16 @@
 :::
 
 A MicroPython library connecting to the CrateDB HTTP API.
-See the full documentation at <https://github.com/crate/micropython-cratedb>.
-The package can be installed using `mpremote mip install github:crate/micropython-cratedb`.
+
+:::{rubric} Install
+:::
+
+```shell
+mpremote mip install github:crate/micropython-cratedb
+```
+
+:::{rubric} Synopsis
+:::
 
 ```python
 import cratedb
@@ -29,3 +37,20 @@ response = crate.execute(
 
 print(response)
 ```
+
+
+:::{rubric} See also
+:::
+
+:::::{grid} 2 2 2 3
+:gutter: 2
+:padding: 0
+
+::::{grid-item-card} {octicon}`book;1.75em;sd-text-info` &nbsp; Documentation
+:link: https://github.com/crate/micropython-cratedb
+:link-type: url
+:link-alt: CrateDB MicroPython driver
+The full documentation for the CrateDB Driver for MicroPython.
+::::
+
+:::::

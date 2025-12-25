@@ -5,7 +5,16 @@
 aiopg is a python library for accessing a PostgreSQL database from the asyncio
 (PEP-3156/tulip) framework. It wraps asynchronous features of the Psycopg
 database driver.
-For more information, see the [aiopg documentation].
+
+:::{rubric} Install
+:::
+
+```shell
+pip install --upgrade aiopg
+```
+
+:::{rubric} Synopsis
+:::
 
 ```python
 import asyncio
@@ -23,5 +32,18 @@ loop = asyncio.get_event_loop()
 loop.run_until_complete(run())
 ```
 
+:::{rubric} See also
+:::
 
-[aiopg documentation]: https://aiopg.readthedocs.io/
+:::::{grid} 2 2 2 3
+:gutter: 2
+:padding: 0
+
+::::{grid-item-card} {octicon}`book;1.75em;sd-text-info` &nbsp; Documentation
+:link: https://aiopg.readthedocs.io/
+:link-type: url
+:link-alt: aiopg documentation
+The full documentation for aiopg.
+::::
+
+:::::
