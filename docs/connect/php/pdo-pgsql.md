@@ -8,8 +8,13 @@
 :::{div} .clearfix
 :::
 
-[PDO_PGSQL] is a PHP-native driver that implements the PHP Data Objects (PDO)
+PDO_PGSQL is a PHP-native driver that implements the PHP Data Objects (PDO)
 interface, which enables access from PHP to PostgreSQL databases. 
+
+:::{rubric} Install
+:::
+
+The module is mostly built into PHP itself.
 
 :::{rubric} Synopsis
 :::
@@ -21,10 +26,25 @@ print_r($cursor->fetchAll(PDO::FETCH_ASSOC));
 ?>
 ```
 
-:::{rubric} Example
+:::{rubric} See also
 :::
-- [Use the PDO_PGSQL driver with CrateDB]
 
+:::::{grid} 2 2 2 3
+:gutter: 2
+:padding: 0
 
-[PDO_PGSQL]: https://www.php.net/manual/en/ref.pdo-pgsql.php
-[Use the PDO_PGSQL driver with CrateDB]: https://github.com/crate/cratedb-examples/tree/main/by-language/php-pdo
+::::{grid-item-card} {octicon}`book;1.75em;sd-text-info` &nbsp; Documentation
+:link: https://www.php.net/manual/en/ref.pdo-pgsql.php
+:link-type: url
+:link-alt: PDO_PGSQL documentation
+The full documentation for PDO_PGSQL.
+::::
+
+::::{grid-item-card} {octicon}`code-square;1.75em;sd-text-info` &nbsp; Example
+:link: https://github.com/crate/cratedb-examples/tree/main/by-language/php-pdo
+:link-type: url
+:link-alt: PDO_PGSQL example
+An executable example using the PDO_PGSQL driver.
+::::
+
+:::::
