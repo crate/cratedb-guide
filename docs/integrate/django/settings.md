@@ -1,4 +1,4 @@
-# Django settings
+# Settings
 
 CrateDB specific options for a django project `settings`.
 

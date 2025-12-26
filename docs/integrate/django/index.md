@@ -20,7 +20,7 @@ Installing the library:
 pip install cratedb-django
 ```
 
-Once the library is installed, set it in the project's `settings`
+Once the library is installed, set the appropiate `settings.py`
 
 ```python
 DATABASES = {
@@ -43,18 +43,22 @@ class Metrics(CrateModel):
     value = fields.IntegerField()
 ```
 
-Django migrations can be run in CrateDB, default django migrations are tested.
-In spite of that, we recommend that you run anything transactional in a transactional database, 
+Django migrations can be run in CrateDB, all migrations for the default applications (contrib, auth, admin...) are
+tested and work. In spite of that it's recommended that you run anything transactional in a transactional database, 
 like PostgresSQL and use CrateDB as your analytical database.
+
+CrateDB has certain constraints that makes migration management different.
 
 ## What's supported?
 
 Django ORM has many features, see [feature-list](https://github.com/crate/cratedb-django/issues/50) for a comprehensive list of supported features.
 Feel free to open a new issue if you need a new feature.
 
-### Table of Contents
+## Table of Contents
 
-- [Configuring the settings](settings.md)
-- [Models](models.md)
-- Fields
-- Querying
+:::{toctree}
+:maxdepth: 1
+settings
+models
+fields
+:::

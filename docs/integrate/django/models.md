@@ -1,4 +1,4 @@
-# Django models
+# Models
 
 `CrateDBModels` is a Django model that enables CrateDB-specific features. While `django.models.Model` can be used,
 it's recommended to use the model provided by `cratedb_django`.
