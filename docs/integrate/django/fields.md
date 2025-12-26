@@ -36,4 +36,65 @@ print(person.uid)
 
 ### `GeneratedField`
 
+Generated fields are fields where the value is computed in the database, `virtual` or `db_persist` are ignored,
+every value is always persisted to the database.
 
+```python
+class UniquePerson(CrateModel):
+    name = fields.TextField()
+    user_uid = fields.GeneratedField(
+        # concat("name", gen_random_text_uuid())
+        expression=RawSQL("concat(%s, %s)", [F("name"), UUID()]),
+        output_field=fields.TextField()
+    )
+    huge_cardinality = fields.IntegerField()
+    partition_value = fields.GeneratedField(expression=F("some_value") % 10)
+    last_modified = fields.GeneratedField(functions.CURRENT_TIMESTAMP)
+
+    class Meta:
+        app_label = "test_app"
+```
+
+### ObjectField
+
+Objects support three different column policies, `strict`, `dynamic` and `ignored`. The default is dynamic.
+
+If the policy is strict, a `schema` needs to be provided, composed by a dictionary of fields describing the desired
+data model for the object. The schema can be nested.
+
+```python
+class SomeModel(CrateModel):
+    f = fields.ObjectField()
+    f1 = fields.ObjectField(policy="ignored")
+    
+    # Translates to: f2 OBJECT(strict) as (name varchar,obj OBJECT(strict) as (age integer)) NOT NULL
+    f2 = fields.ObjectField(
+        policy="strict",
+        schema={
+            "name": CharField(max_length=None),
+            "obj": fields.ObjectField(
+                policy="strict", schema={"age": fields.IntegerField()}
+            ),
+        },
+    )
+
+    class Meta:
+        app_label = "_crate_test"
+```
+
+
+### ArrayField
+
+Array fields can only be of one type and they can be arbitrarily nested.
+
+```python
+class SomeModel(CrateModel):
+    f1 = fields.ArrayField(fields.IntegerField())
+    f2 = fields.ArrayField(
+        fields.ArrayField(fields.CharField(max_length=120))
+    )
+    f3 = fields.ArrayField(fields.ArrayField(fields.ObjectField()))
+
+    class Meta:
+        app_label = "_crate_test"
+```
