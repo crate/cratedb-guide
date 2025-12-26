@@ -98,6 +98,8 @@ linkcheck_ignore += [
     r"https://tldp.org/",
     # Read timed out
     r"https://www.unixodbc.org/",
+    # [Errno 101] Network is unreachable
+    r"https://nightlies.apache.org/",
 ]
 
 linkcheck_anchors_ignore_for_url += [

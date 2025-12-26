@@ -135,7 +135,7 @@ statements, cursors, streaming results, C/C++ bindings, rich type parsing, and m
 ```
 ```{sd-item}
 [![](https://img.shields.io/npm/v/pg?label=latest&color=blue)](https://github.com/brianc/node-postgres)
-[![](https://img.shields.io/badge/example-snippet-darkcyan)](#javascript)
+[![](https://img.shields.io/badge/example-snippet-darkcyan)](#node-postgres)
 ```
 :::
 
@@ -279,7 +279,7 @@ For connecting to CrateDB from PHP.
 ```
 ```{sd-item}
 [![](https://img.shields.io/github/v/tag/crate/crate-pdo?label=latest)](https://github.com/crate/crate-pdo)
-[![](https://img.shields.io/badge/example-snippet-darkcyan)](#php)
+[![](https://img.shields.io/badge/example-snippet-darkcyan)](#connect-php)
 ```
 :::
 
@@ -294,7 +294,7 @@ For connecting to CrateDB from PHP, using DBAL and Doctrine.
 ```
 ```{sd-item}
 [![](https://img.shields.io/github/v/tag/crate/crate-dbal?label=latest)](https://github.com/crate/crate-dbal)
-[![](https://img.shields.io/badge/example-snippet-darkcyan)](#php)
+[![](https://img.shields.io/badge/example-snippet-darkcyan)](#connect-php)
 ```
 :::
 
