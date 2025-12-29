@@ -44,7 +44,7 @@ written in C#, F#, or Visual Basic.
 open Npgsql.FSharp
 open System
 
-let connString = "postgres://crate:crate@localhost:5432/doc?sslmode=disable";
+let connString = "postgres://crate:crate@localhost:5432/?sslmode=disable";
 
 type Record = {
     mountain: string
@@ -89,7 +89,7 @@ For connecting to CrateDB Cloud, use `Sslmode=require`, and
 replace hostname, username, and password with values matching
 your environment.
 ```f#
-let connString = "postgres://admin:password@testcluster.cratedb.net:5432/doc?sslmode=require";
+let connString = "postgres://admin:password@testcluster.cratedb.net:5432/?sslmode=require";
 ```
 
 ## See also
