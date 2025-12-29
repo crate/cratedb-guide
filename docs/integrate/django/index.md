@@ -12,15 +12,15 @@
 
 The CrateDB team develops and supports a custom-built driver, [cratedb-django](https://github.com/crate/cratedb-django)
 
-:::{rubric} Getting started
-:::
+## Getting started
+
 
 Installing the library:
 ```shell
 pip install cratedb-django
 ```
 
-Once the library is installed, set the appropiate `settings.py`
+Once the library is installed, set the appropriate `settings.py`
 
 ```python
 DATABASES = {
@@ -43,16 +43,17 @@ class Metrics(CrateModel):
     value = fields.IntegerField()
 ```
 
-Django migrations can be run in CrateDB, all migrations for the default applications (contrib, auth, admin...) are
-tested and work. In spite of that it's recommended that you run anything transactional in a transactional database, 
-like PostgresSQL and use CrateDB as your analytical database.
+Django migrations can be run in CrateDB, all migrations for the default 
+applications (contrib, auth, admin...) are tested and work.
+In spite of that, it's recommended that you run anything transactional in a
+transactional database, like PostgresSQL and use CrateDB as your analytical database.
 
 CrateDB has certain constraints that makes migration management different.
 
 ## What's supported?
 
-Django ORM has many features, see [feature-list](https://github.com/crate/cratedb-django/issues/50) for a comprehensive list of supported features.
-Feel free to open a new issue if you need a new feature.
+Django ORM has many features, see [feature-list](https://github.com/crate/cratedb-django/issues/50) for a comprehensive 
+list of supported features. Feel free to open a new issue if you need a new feature.
 
 ## Table of Contents
 

@@ -4,7 +4,8 @@ CrateDB specific options for a django project `settings`.
 
 ## Specifying a database
 
-The minimum needed to connect to a CrateDB instance in `localhost`.
+The minimum needed to connect to a CrateDB instance in `localhost` is 
+`ENGINE` and `SERVERS`.
 
 ```python
 DATABASES = {
@@ -32,6 +33,10 @@ DATABASES = {
     }
 }
 ```
+## Valid URIs
+`http://localhost:4200`<br>
+`https://localhost:4200`<br>
+`localhost:4200`
 
 ## Authentication
 
