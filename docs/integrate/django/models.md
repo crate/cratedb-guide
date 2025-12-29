@@ -9,17 +9,17 @@ from cratedb_django import fields
 
 
 class Metrics(CrateModel):
-    timestamp = fields.DateTimeField(primary_key=True)
-    labels_hash = fields.CharField(max_length=255, primary_key=True)
+    timestamp = fields.DateTimeField()
+    labels_hash = fields.CharField(max_length=255)
     labels = fields.ObjectField()
     value = fields.FloatField(null=True)
     valueRaw = fields.BigIntegerField(null=True)
     day_generated = fields.GeneratedField(
-        expression=DATE_TRUNC("day", F("timestamp")),
-        output_field=fields.TextField(),
+        expression=RawSQL("date_trunc('day', %s)", [F("timestamp")]),
+        output_field=fields.DateTimeField(),
         editable=False,
-        primary_key=True,
     )
+    pk = fields.CompositePrimaryKey("timestamp", "labels_hash", "day_generated")
 
     class Meta:
         app_label = "_crate_test"
@@ -44,8 +44,9 @@ CrateDB specific meta options:
 
 Due to
 the [eventual consistency model](https://cratedb.com/docs/crate/reference/en/latest/concepts/storage-consistency.html#consistency)
-of CrateDB, `select`, `update` and `delete` will not see newly modified data until a refresh operation is triggered.
-CrateDB triggers this refresh operation every 1s if the table is not idle. You should avoid refreshing a lot due to
+of CrateDB, `select`, `update` and `delete` will not see newly modified data
+until a refresh operation is triggered. CrateDB triggers this refresh operation
+every 1s if the table is not idle. You should avoid refreshing a lot due to
 performance reasons.
 
 To trigger a manual refresh on a model, call `refresh()`.
@@ -54,9 +55,8 @@ To trigger a manual refresh on a model, call `refresh()`.
 Metrics.refresh()
 ```
 
-To trigger a refresh automatically after every `insert` set `auto_refresh=True` in the Meta class. This will **not**
-trigger
-on deletes or updates.
+To trigger a refresh automatically after every `insert` set `auto_refresh=True`
+in the Meta class. This will **not** trigger on deletes or updates.
 
 ```python
 class SomeModel(CrateModel):
@@ -66,5 +66,28 @@ class SomeModel(CrateModel):
         auto_refresh = True
 ```
 
+### Composite primary keys
 
+To have several primary keys in a table, use `fields.CompositePrimaryKey`.
 
+For example, this model will generate:
+```python
+class Metrics(CrateModel):
+    timestamp = fields.DateTimeField()
+    some_value = fields.IntegerField()
+    day_generated = fields.GeneratedField(
+        expression=RawSQL("date_trunc('day', %s)", [F("timestamp")]),
+        output_field=fields.DateTimeField(),
+        editable=False,
+    )
+    pk = fields.CompositePrimaryKey("timestamp", "some_value", "day_generated")
+```
+
+```sql
+CREATE TABLE "_crate_test_metrics" (
+  "timestamp" timestamp with time zone NOT NULL,
+  "some_value" integer NOT NULL,
+  "day_generated" timestamp with time zone GENERATED ALWAYS AS ((date_trunc('day', % s))),
+  PRIMARY KEY ("timestamp", "some_value", "day_generated")
+)
+```
