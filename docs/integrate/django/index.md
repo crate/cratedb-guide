@@ -37,9 +37,9 @@ For a model to be compatible with CrateDB, import and use `CrateDBModel`:
 
 ```python
 from cratedb_django.models import fields
-from cratedb_django.models import CrateModel
+from cratedb_django.models import CrateDBModel
 
-class Metrics(CrateModel):
+class Metrics(CrateDBModel):
     value = fields.IntegerField()
 ```
 

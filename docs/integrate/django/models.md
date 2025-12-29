@@ -5,11 +5,11 @@
 it's recommended to use the model provided by `cratedb_django`.
 
 ```python
-from cratedb_django import CrateModel
+from cratedb_django import CrateDBModel
 from cratedb_django import fields
 
 
-class Metrics(CrateModel):
+class Metrics(CrateDBModel):
     timestamp = fields.DateTimeField()
     labels_hash = fields.CharField(max_length=255)
     labels = fields.ObjectField()
@@ -64,7 +64,7 @@ To trigger a refresh automatically after every `insert` set `auto_refresh=True`
 in the Meta class. This will **not** trigger on deletes or updates.
 
 ```python
-class SomeModel(CrateModel):
+class SomeModel(CrateDBModel):
     ...
 
     class Meta:
@@ -78,7 +78,7 @@ To have several primary keys in a table, use `fields.CompositePrimaryKey`.
 For example, this model will generate:
 
 ```python
-class Metrics(CrateModel):
+class Metrics(CrateDBModel):
     timestamp = fields.DateTimeField()
     some_value = fields.IntegerField()
     day_generated = fields.GeneratedField(
