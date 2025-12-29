@@ -15,12 +15,14 @@ DATABASES = {
 }
 ```
 
-The connector uses the [HTTP driver](https://github.com/crate/crate-python) therefore only the port `4200` is needed.
+The connector uses the [HTTP driver](https://github.com/crate/crate-python) therefore only the port `4200`
+is needed.
 
-Several URIs can be specified in `SERVERS`, if there are more than one queries will be sent in a round-robin fashion,
-this improves performance and availability. If there is a load balancer in front of the CrateDB cluster or the
-cluster is deployed using [CrateDB Cloud](https://console.cratedb.cloud/) there is **no need** to specify several URIs,
-only one (the load balancer's) is enough.
+Several URIs can be specified in `SERVERS`, if several servers are provided
+queries will be sent in a round-robin fashion, this improves performance
+and availability. If there is a load balancer in front of the CrateDB
+cluster or the cluster is deployed using [CrateDB Cloud](https://console.cratedb.cloud/) there is
+**no need** to specify several URIs, only one (the load balancer's) is enough.
 
 ```python
 DATABASES = {
@@ -31,7 +33,10 @@ DATABASES = {
 }
 ```
 
-For authentication, `USER` and `PASSWORD` need to be set, additional options can be set with `OPTIONS` to pass `crate-python` options.
+## Authentication
+
+For authentication, `USER` and `PASSWORD` need to be set, additional options 
+can be set with `OPTIONS` to pass `crate-python` options.
 
 ```python
 DATABASES = {
@@ -48,11 +53,13 @@ DATABASES = {
 ```
 
 ## Default auto field
-`DEFAULT_AUTO_FIELD` specifies the type of auto-created primary key fields, it's recommended to set it to `AutoUUIDField`.
+`DEFAULT_AUTO_FIELD` specifies the type of auto-created primary key fields,
+it's recommended to set it to `AutoUUIDField`.
 
 ```python
 DEFAULT_AUTO_FIELD = "cratedb_django.fields.AutoUUIDField"
 ```
 
-`AutoUUIDField` generates unique UUIDs for primary keys. `cratedb_django.fields.AutoField`
-can be used if an integer based primary key is needed.
+`AutoUUIDField` generates unique UUIDs for primary keys.
+`cratedb_django.fields.AutoField`can be used if an integer based primary 
+key is needed.
