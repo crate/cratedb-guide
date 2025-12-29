@@ -1,6 +1,7 @@
 # Models
 
-`CrateDBModels` is a Django model that enables CrateDB-specific features. While `django.models.Model` can be used,
+`CrateDBModels` is a Django model that enables CrateDB-specific features. While
+`django.models.Model` can be used,
 it's recommended to use the model provided by `cratedb_django`.
 
 ```python
@@ -28,17 +29,21 @@ class Metrics(CrateModel):
 
 ## Meta options
 
-In the class `Meta` you can specify table wide options, some will affect how the table will be created (DLL) others
+In the class `Meta` you can specify table wide options, some will affect how the
+table will be created (DLL) others
 will be tunable parameters.
 
 CrateDB specific meta options:
 
-| name             | value(s)             | descriptions                                       |
-|------------------|----------------------|----------------------------------------------------|
-| auto_refresh     | **False**/True       | Automatically refresh the table on inserts.        |
-| clustered        | ('col1', 'col2'...)  | The columns that the table will be clustered in.   |
-| partitioned      | ('col1', 'col2'...)  | The columns that the table will be partitioned by. |
-| number_of_shards | 6 (Defaults to None) | The number of shards per partitions.               |
+Any value that is `None` means that the default value is set by CrateDB, see
+[docs](https://cratedb.com/docs/crate/reference/en/latest/sql/statements/create-table.html)
+
+| name             | example             | Default | descriptions                                       |
+|------------------|---------------------|---------|----------------------------------------------------|
+| auto_refresh     | True                | False   | Automatically refresh the table on inserts.        |
+| clustered        | ('col1', 'col2'...) | None    | The columns that the table will be clustered in.   |
+| partitioned      | ('col1', 'col2'...) | None    | The columns that the table will be partitioned by. |
+| number_of_shards | 4                   | None    | The number of shards per partitions.               |
 
 ## Refresh
 
@@ -71,6 +76,7 @@ class SomeModel(CrateModel):
 To have several primary keys in a table, use `fields.CompositePrimaryKey`.
 
 For example, this model will generate:
+
 ```python
 class Metrics(CrateModel):
     timestamp = fields.DateTimeField()
@@ -84,10 +90,11 @@ class Metrics(CrateModel):
 ```
 
 ```sql
-CREATE TABLE "_crate_test_metrics" (
-  "timestamp" timestamp with time zone NOT NULL,
-  "some_value" integer NOT NULL,
-  "day_generated" timestamp with time zone GENERATED ALWAYS AS ((date_trunc('day', % s))),
-  PRIMARY KEY ("timestamp", "some_value", "day_generated")
+CREATE TABLE "_crate_test_metrics"
+(
+    "timestamp"     timestamp with time zone NOT NULL,
+    "some_value"    integer                  NOT NULL,
+    "day_generated" timestamp with time zone GENERATED ALWAYS AS ((date_trunc('day', % s))),
+    PRIMARY KEY ("timestamp", "some_value", "day_generated")
 )
 ```
