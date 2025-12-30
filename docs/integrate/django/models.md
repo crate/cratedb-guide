@@ -29,7 +29,7 @@ class Metrics(CrateDBModel):
 
 ## Meta options
 
-In the class `Meta` you can specify table wide options, some will affect how the
+In the class `Meta` you can specify table-wide options, some will affect how the
 table will be created (DLL) others
 will be tunable parameters.
 

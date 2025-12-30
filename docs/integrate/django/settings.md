@@ -1,6 +1,6 @@
 # Settings
 
-CrateDB specific options for a django project `settings`.
+CrateDB-specific options for a django project `settings`.
 
 ## Warnings
 
@@ -85,5 +85,5 @@ DEFAULT_AUTO_FIELD = "cratedb_django.fields.AutoUUIDField"
 ```
 
 `AutoUUIDField` generates unique UUIDs for primary keys.
-`cratedb_django.fields.AutoField`can be used if an integer based primary
+`cratedb_django.fields.AutoField` can be used if an integer-based primary
 key is needed.

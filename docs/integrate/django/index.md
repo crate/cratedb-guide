@@ -46,7 +46,8 @@ class Metrics(CrateDBModel):
 Django migrations can be run in CrateDB, all migrations for the default 
 applications (contrib, auth, admin...) are tested and work.
 In spite of that, it's recommended that you run anything transactional in a
-transactional database, like PostgresSQL and use CrateDB as your analytical database.
+transactional database, like Postgres and use CrateDB as your analytical 
+database.
 
 CrateDB has certain constraints that makes migration management different.
 

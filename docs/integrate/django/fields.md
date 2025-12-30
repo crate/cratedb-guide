@@ -10,9 +10,9 @@ All fields share functionalities regarding CrateDB column definitions.
 
 * `db_index=False` disable index creation. Example: `TextField(db_index=False)`
 
-## CrateDB specific fields
+## CrateDB-specific fields
 
-Fields that have a different implementation than their natives counterparts.
+Fields that have a different implementation than their native counterparts.
 
 
 ### `AutoUUIDField`
