@@ -30,7 +30,7 @@ class Metrics(CrateDBModel):
 ## Meta options
 
 In the class `Meta` you can specify table-wide options, some will affect how the
-table will be created (DLL) others
+table will be created (DDL) others
 will be tunable parameters.
 
 CrateDB specific meta options:

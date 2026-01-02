@@ -1,7 +1,8 @@
 # Fields
 
 While most built-in fields work out of the box, it's recommended to use the fields from `cratedb_django.fields`. All
-django fields are available in `cratedb_django.fields`. These fields enhance compatability and provide unique
+django fields are available in `cratedb_django.fields`. These fields enhance 
+compatibility and provide unique
 CrateDB features.
 
 ## Shared functionality

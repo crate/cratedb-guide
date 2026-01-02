@@ -4,7 +4,7 @@ CrateDB-specific options for a django project `settings`.
 
 ## Warnings
 
-`cratedb_django` emits certain warnings to notify about compatability issues.
+`cratedb_django` emits certain warnings to notify about compatibility issues.
 
 * `unique=True`. CrateDB only supports unique constraints on primary keys, any
   model field with unique=true will emit a warning to stdout.

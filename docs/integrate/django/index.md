@@ -49,14 +49,14 @@ In spite of that, it's recommended that you run anything transactional in a
 transactional database, like Postgres and use CrateDB as your analytical 
 database.
 
-CrateDB has certain constraints that makes migration management different.
+CrateDB has certain constraints that make migration management different.
 
 ## What's supported?
 
 Django ORM has many features, see [feature-list](https://github.com/crate/cratedb-django/issues/50) for a comprehensive 
 list of supported features. Feel free to open a new issue if you need a new feature.
 
-## Table of Contents
+## Table of contents
 
 :::{toctree}
 :maxdepth: 1
