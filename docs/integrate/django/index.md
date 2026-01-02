@@ -10,39 +10,59 @@
 ```{div} .clearfix
 ```
 
-:::{rubric} About
+The CrateDB team develops and supports a custom-built driver, [cratedb-django](https://github.com/crate/cratedb-django)
+
+## Getting started
+
+
+Installing the library:
+```shell
+pip install cratedb-django
+```
+
+Once the library is installed, set the appropriate `settings.py`
+
+```python
+DATABASES = {
+    "default": {
+        "ENGINE": "cratedb_django",
+        "SERVERS": ["localhost:4200"],
+    }
+}
+
+DEFAULT_AUTO_FIELD = "cratedb_django.fields.AutoUUIDField"
+```
+
+For a model to be compatible with CrateDB, import and use `CrateDBModel`:
+
+```python
+from cratedb_django.models import fields
+from cratedb_django.models import CrateDBModel
+
+class Metrics(CrateDBModel):
+    value = fields.IntegerField()
+```
+
+Django migrations can be run in CrateDB, all migrations for the default 
+applications (contrib, auth, admin...) are tested and work.
+In spite of that, it's recommended that you run anything transactional in a
+transactional database, like Postgres and use CrateDB as your analytical 
+database.
+
+CrateDB has certain constraints that make migration management different.
+
+## What's supported?
+
+Django ORM has many features, see [feature-list](https://github.com/crate/cratedb-django/issues/50) for a comprehensive 
+list of supported features. Feel free to open a new issue if you need a new feature.
+
+## Table of contents
+
+:::{toctree}
+:maxdepth: 1
+settings
+models
+fields
 :::
-
-[Django] makes it easier to build better web apps more quickly and with less code.
-
-::::{dropdown} **Details**
-Django is a high-level Python web framework that encourages rapid development and
-clean, pragmatic design. Built by experienced developers, it takes care of much of
-the hassle of web development, so you can focus on writing your app without needing
-to reinvent the wheel. It’s free and open source. 
-
-- **Ridiculously fast**: Django was designed to help developers take applications
-  from concept to completion as quickly as possible.
-
-- **Reassuringly secure**: Django takes security seriously and helps developers
-  avoid many common security mistakes.
-
-- **Exceedingly scalable**: Some of the busiest sites on the web leverage Django’s
-  ability to quickly and flexibly scale.
-::::
-
-:::{rubric} Learn
-:::
-
-::::{grid} 2
-
-:::{grid-item-card} CrateDB Django connector
-:link: https://github.com/crate/cratedb-django
-:link-type: url
-Connector backend to use CrateDB as a database in Django ORM.
-:::
-
-::::
-
 
 [Django]: https://www.djangoproject.com/
