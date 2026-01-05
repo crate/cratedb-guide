@@ -63,6 +63,7 @@ list of supported features. Feel free to open a new issue if you need a new feat
 settings
 models
 fields
+scalars
 :::
 
 [Django]: https://www.djangoproject.com/
