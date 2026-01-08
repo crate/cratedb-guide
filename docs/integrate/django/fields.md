@@ -1,15 +1,23 @@
 # Fields
 
-While most built-in fields work out of the box, it's recommended to use the fields from `cratedb_django.fields`. All
-django fields are available in `cratedb_django.fields`. These fields enhance 
-compatibility and provide unique
-CrateDB features.
+While most built-in fields work out of the box, it's recommended to use the 
+fields from `cratedb_django.fields`.
+All django fields are available in `cratedb_django.fields`.
+These fields enhance compatibility and provide unique CrateDB features.
 
 ## Shared functionality
 
 All fields share functionalities regarding CrateDB column definitions.
 
-* `db_index=False` disable index creation. Example: `TextField(db_index=False)`
+* `db_index=False` disable index creation. 
+* `column_store=False` disable columnstore, not recommended in versions >=5.10.
+
+Example:
+
+```python
+from cratedb_django.fields import TextField
+TextField(db_index=False, column_store=False)
+```
 
 ## CrateDB-specific fields
 
