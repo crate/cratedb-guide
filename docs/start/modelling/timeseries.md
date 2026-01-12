@@ -70,7 +70,7 @@ CrateDB offers built‑in SQL functions tailor‑made for time‑series analyses
 * **`DATE_BIN(interval, timestamp, origin)`** for bucketed aggregations
   (down‑sampling).
 * **Window functions** like `LAG()` and `LEAD()` to detect trends or gaps.
-* **`MAX_BY(returnField, SearchField)` / `MIN_BY(returnField, SearchField)` ** returns the value from one column matching the min/max value of
+* **`MAX_BY(returnField, SearchField)` / `MIN_BY(returnField, SearchField)`** returns the value from one column matching the min/max value of
   another column in a group.
 
 **Example**: compute hourly average battery levels and join with metadata:
