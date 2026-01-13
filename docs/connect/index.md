@@ -302,7 +302,6 @@ scala/index
 odbc/index
 visualbasic/index
 natural
-All drivers <drivers>
 ```
 
 
