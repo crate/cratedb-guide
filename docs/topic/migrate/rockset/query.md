@@ -135,7 +135,7 @@ under a different name, or there may be a simple workaround for your use cases.
 | TYPEOF(x)| `pg_typeof(x)`  |
 | YEARS(n)| `'n YEARS'::INTERVAL`  |
 
-[`array_to_string`]: https://cratedb.com/docs/crate/reference/en/latest/general/builtins/scalar-functions.html#array-to-string-anyarray-separator-null-string
+[`array_to_string`]: https://cratedb.com/docs/crate/reference/en/latest/general/builtins/scalar-functions.html#pg-catalog-array-to-string-anyarray-separator-null-string
 [`n_dimensional_distance`]: https://community.cratedb.com/t/user-defined-function-collection/773
 [`to_date`]: https://github.com/crate/crate/issues/9663#issuecomment-2178878930
 
