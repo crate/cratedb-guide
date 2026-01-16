@@ -53,6 +53,12 @@ with conn:
     print(result)
 ```
 
+```{toctree}
+:hidden:
+
+crate-python/index
+```
+
 :::{rubric} See also
 :::
 
@@ -61,8 +67,8 @@ with conn:
 :padding: 0
 
 ::::{grid-item-card} {octicon}`book;1.75em;sd-text-info` &nbsp; Documentation
-:link: crate-python:index
-:link-type: ref
+:link: crate-python
+:link-type: url
 :link-alt: Python DBAPI driver for CrateDB
 The full documentation for the Python driver.
 ::::
