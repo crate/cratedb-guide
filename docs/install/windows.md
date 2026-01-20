@@ -10,47 +10,61 @@ you would like to deploy CrateDB on Windows, please feel free to [contact
 us][contact us] so we can work with you on a solution.
 :::
 
-1. Download the latest [CrateDB release archive] for Windows.
+::::::{stepper}
+:::::{step} Download
+Download the latest [CrateDB release archive] for Windows.
+:::::
 
-2. Once downloaded, extract the archive either using your favorite terminal or
-   command-line shell or by using a GUI tool like [7-Zip]. We recommend
-   using [PowerShell] when using terminal:
+:::::{step} Extract the archive
+Once downloaded, extract the archive either using your favorite terminal or
+command-line shell or by using a GUI tool like [7-Zip]. We recommend
+using [PowerShell] when using terminal:
 
-   Using PowerShell:
-   ```powershell
-   Expand-Archive -Path .\crate-*.zip -DestinationPath .
-   ```
+Using PowerShell:
+```powershell
+Expand-Archive -Path .\crate-*.zip -DestinationPath .
+```
 
-   Using tar (Windows 10 1803 and newer):
-   ```doscon
-   tar -xf .\crate-*.zip
-   ```
+Using tar (Windows 10 1803 and newer):
+```doscon
+tar -xf .\crate-*.zip
+```
+:::::
 
-3. On the terminal, change into the extracted `crate` directory:
+:::::{step} Navigate to directory
+On the terminal, change into the extracted `crate` directory:
 
-   ```doscon
-   cd crate-*
-   ```
+```doscon
+cd crate-*
+```
+:::::
 
-4. Run a CrateDB single-node instance on the local network interface:
+:::::{step} Run CrateDB
+Run a CrateDB single-node instance on the local network interface:
 
-   ```doscon
-   ./bin/crate
-   ```
+```doscon
+./bin/crate
+```
+:::::
 
-5. You will be notified by an INFO message similar to this, when your
-   single-node cluster is started successfully:
+:::::{step} Verify startup
+You will be notified by an INFO message similar to this, when your
+single-node cluster is started successfully:
 
-   ```text
-   [2022-07-04T19:41:12,340][INFO ][o.e.n.Node] [Aiguille Verte] started
-   ```
+```text
+[2022-07-04T19:41:12,340][INFO ][o.e.n.Node] [Aiguille Verte] started
+```
+:::::
 
-6. In order to stop CrateDB again, use {kbd}`ctrl-c`. You will be asked to
-   terminate the job. Input {kbd}`Y`:
+:::::{step} Stop CrateDB
+In order to stop CrateDB again, use {kbd}`ctrl-c`. You will be asked to
+terminate the job. Input {kbd}`Y`:
 
-   ```text
-   Terminate batch job (Y/N)? Y
-   ```
+```text
+Terminate batch job (Y/N)? Y
+```
+:::::
+::::::
 
 :::{SEEALSO}
 Consult the {ref}`crate-reference:cli` documentation for further information

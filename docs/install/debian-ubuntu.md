@@ -13,8 +13,8 @@ Install CrateDB [deb] packages using the [apt] package manager.
 This installation method is suitable for Debian systems and derivatives
 like Ubuntu.
 
-## Package repository
-
+::::::{stepper}
+:::::{step} Configure package repository
 Configure your system to register with and trust packages from
 the CrateDB package repository:
 
@@ -46,9 +46,9 @@ sh$ sudo apt update
 
 You should see a success message. This indicates that the CrateDB package
 repository is correctly registered.
+:::::
 
-## Install CrateDB
-
+:::::{step} Install CrateDB
 With everything set up, you can install CrateDB:
 
 ```shell
@@ -66,11 +66,13 @@ Once the service is up and running, you can access CrateDB by visiting:
 ```text
 http://localhost:4200/
 ```
+:::::
 
-## Configure CrateDB
-
+:::::{step} Configure CrateDB
 Please visit the {ref}`install-configure` documentation section to learn
 about the location and meaning of CrateDB's configuration files.
+:::::
+::::::
 
 :::{include} _control-linux.md
 :::

@@ -17,28 +17,36 @@ manually building CrateDB suited for ARM-based macOS. Detailed instructions
 can be found in our [manual build guide].
 :::
 
-1. Download the latest [CrateDB release archive]. Please make sure to select
-   the right release archive matching your system.
+::::::{stepper}
+:::::{step} Download
+Download the latest [CrateDB release archive]. Please make sure to select
+the right release archive matching your system.
+:::::
 
-2. Once downloaded, extract the archive either using your favorite terminal or
-   command line shell or by using a GUI tool like [7-Zip]:
+:::::{step} Extract the archive
+Once downloaded, extract the archive either using your favorite terminal or
+command line shell or by using a GUI tool like [7-Zip]:
 
-   ```shell
-   # Extract tarball on Unix-like systems
-   tar -xzf crate-*.tar.gz
-   ```
+```shell
+# Extract tarball on Unix-like systems
+tar -xzf crate-*.tar.gz
+```
+:::::
 
-3. On the terminal, change into the extracted `crate` directory:
+:::::{step} Navigate to directory
+On the terminal, change into the extracted `crate` directory:
 
-   ```shell
-   cd crate-*
-   ```
+```shell
+cd crate-*
+```
+:::::
 
-4. Run a CrateDB single-node instance on the local network interface:
+:::::{step} Run CrateDB
+Run a CrateDB single-node instance on the local network interface:
 
-   ```shell
-   ./bin/crate
-   ```
+```shell
+./bin/crate
+```
 
 :::{NOTE}
 When running a specific version of CrateDB from tarball on a macOS
@@ -52,8 +60,12 @@ This is expected and can be fixed in your system settings:
     asked to confirm once more with **Open** button. After that CrateDB
     will run as expected.
 :::
+:::::
 
-5. In order to stop CrateDB again, use {kbd}`ctrl-c`.
+:::::{step} Stop CrateDB
+In order to stop CrateDB again, use {kbd}`ctrl-c`.
+:::::
+::::::
 
 :::{SEEALSO}
 Consult the {ref}`crate-reference:cli` documentation for further information

@@ -14,8 +14,8 @@ systems like Fedora, CentOS, Rocky Linux, AlmaLinux, Amazon Linux, Oracle Linux,
 Scientific Linux. Installation also works on openSUSE and SUSE Linux Enterprise Server
 (SLES) systems.
 
-## Package repository
-
+::::::{stepper}
+:::::{step} Configure package repository
 To register with the CrateDB package repository, create a file called `cratedb.repo`
 in the `/etc/yum.repos.d/` directory for Red Hat based distributions, or in the
 `/etc/zypp/repos.d/` directory for openSUSE-based distributions, containing:
@@ -49,9 +49,9 @@ the repository as indicated in the sample installation command below.
 
 CrateDB provides both *stable release* and *testing release* channels. You
 can read more about the [release workflow].
+:::::
 
-## Prerequisites
-
+:::::{step} Install prerequisites
 If `sudo` is missing, run this as root:
 ```shell
 # Red Hat-compatible systems (RHEL/CentOS 8+)
@@ -67,9 +67,9 @@ or:
 # SUSE-based systems
 zypper install sudo
 ```
+:::::
 
-## Install CrateDB
-
+:::::{step} Install CrateDB
 With everything set up, you can install CrateDB:
 
 ```shell
@@ -87,14 +87,14 @@ On older Red Hat and CentOS installations, please use the `yum` command
 instead of `dnf`. On SUSE-based installations, please use the `zypper`
 command.
 :::
+:::::
 
-## Configure CrateDB
-
+:::::{step} Configure CrateDB
 Please visit the {ref}`install-configure` documentation section to learn
 about the location and meaning of CrateDB's configuration files.
+:::::
 
-## Trust signing key
-
+:::::{step} Trust signing key (optional)
 In order to trust the package signing key upfront, before being prompted
 to do it on the first installation of CrateDB, you can also import it
 into your repository keyring, like that:
@@ -103,6 +103,8 @@ into your repository keyring, like that:
 # Import the public GPG key for verifying the package signatures.
 sudo rpm --import https://cdn.crate.io/downloads/yum/RPM-GPG-KEY-crate
 ```
+:::::
+::::::
 
 :::{include} _control-linux.md
 :::

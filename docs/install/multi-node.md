@@ -77,72 +77,82 @@ you can start a
 single-host three-node cluster with auto-bootstrapping by following these
 instructions.
 
-1. Unpack the tarball:
+::::::{stepper}
+:::::{step} Unpack the tarball
+```console
+sh$ tar -xzf crate-*.tar.gz
+```
+:::::
 
-   ```console
-   sh$ tar -xzf crate-*.tar.gz
-   ```
+:::::{step} Configure metadata gateway
+It is common to configure the {ref}`metadata gateway <metadata-gateway>` so
+that the cluster waits for all data nodes to be online before starting the
+recovery of the shards. In this case, let's set
+[gateway.expected_data_nodes] to **3** and
+[gateway.recover_after_data_nodes] also to **3**. You can specify these
+settings in the [configuration] file of the unpacked directory.
 
-2. It is common to configure the {ref}`metadata gateway <metadata-gateway>` so
-   that the cluster waits for all data nodes to be online before starting the
-   recovery of the shards. In this case, let's set
-   [gateway.expected_data_nodes] to **3** and
-   [gateway.recover_after_data_nodes] also to **3**. You can specify these
-   settings in the [configuration] file of the unpacked directory.
+:::{NOTE}
+Configuring the {ref}`metadata gateway <metadata-gateway>` is a safeguarding
+mechanism that is
+useful for production clusters. It is not strictly necessary when running
+in development. However, the {ref}`Admin UI <crate-admin-ui:index>` will
+issue warnings if you have not configured the metadata gateway.
+:::
 
-   :::{NOTE}
-   Configuring the {ref}`metadata gateway <metadata-gateway>` is a safeguarding
-   mechanism that is
-   useful for production clusters. It is not strictly necessary when running
-   in development. However, the {ref}`Admin UI <crate-admin-ui:index>` will
-   issue warnings if you have not configured the metadata gateway.
-   :::
+:::{SEEALSO}
+The {ref}`metadata gateway <metadata-gateway>` section includes examples.
+:::
+:::::
 
-   :::{SEEALSO}
-   The {ref}`metadata gateway <metadata-gateway>` section includes examples.
-   :::
+:::::{step} Copy directories for each node
+Copy the unpacked directory into a new directory, three times, one for each
+node. For example:
 
-3. Copy the unpacked directory into a new directory, three times, one for each
-   node. For example:
+```console
+sh$ cp -R crate-*/ node-01
+sh$ cp -R crate-*/ node-02
+sh$ cp -R crate-*/ node-03
+```
 
-   ```console
-   sh$ cp -R crate-*/ node-01
-   sh$ cp -R crate-*/ node-02
-   sh$ cp -R crate-*/ node-03
-   ```
+:::{TIP}
+Each directory will function as [CRATE_HOME] for that node
+:::
+:::::
 
-   :::{TIP}
-   Each directory will function as [CRATE_HOME] for that node
-   :::
+:::::{step} Start all nodes
+Start up all three nodes by changing into each node directory and running
+the [bin/crate] script.
 
-4. Start up all three nodes by changing into each node directory and running
-   the [bin/crate] script.
+:::{CAUTION}
+You must change into the appropriate node directory before running the
+[bin/crate] script.
 
-   :::{CAUTION}
-   You must change into the appropriate node directory before running the
-   [bin/crate] script.
+When you run [bin/crate], the script sets [CRATE_HOME] to your current
+directory. This directory must be the root of a CrateDB installation.
+:::
 
-   When you run [bin/crate], the script sets [CRATE_HOME] to your current
-   directory. This directory must be the root of a CrateDB installation.
-   :::
+:::{TIP}
+Because you are supposed to run [bin/crate] as a [daemon] (i.e., a
+long-running process), the most straightforward way to run multiple
+nodes for testing purposes is to start a new terminal session for each
+node. In each session, change into the appropriate node directory, run
+[bin/crate], and leave this process running. You should now have
+multiple concurrent [bin/crate] processes.
+:::
+:::::
 
-   :::{TIP}
-   Because you are supposed to run [bin/crate] as a [daemon] (i.e., a
-   long-running process), the most straightforward way to run multiple
-   nodes for testing purposes is to start a new terminal session for each
-   node. In each session, change into the appropriate node directory, run
-   [bin/crate], and leave this process running. You should now have
-   multiple concurrent [bin/crate] processes.
-   :::
+:::::{step} Verify the cluster
+Visit the {ref}`Admin UI <crate-admin-ui:index>` on one of the nodes. Check the
+[cluster browser] to
+verify that the cluster has auto-bootstrapped with three nodes. You should see
+something like this:
 
-5. Visit the {ref}`Admin UI <crate-admin-ui:index>` on one of the nodes. Check the
-   [cluster browser] to
-   verify that the cluster has auto-bootstrapped with three nodes. You should see
-   something like this:
-
-   ```{image} /_assets/img/multi-node-cluster.png
-   :alt: The CrateDB Admin UI showing a multi-node cluster
-   ```
+```{image} /_assets/img/multi-node-cluster.png
+:alt: The CrateDB Admin UI showing a multi-node cluster
+```
+:::::
+::::::
 
 (manual-bootstrapping)=
 
