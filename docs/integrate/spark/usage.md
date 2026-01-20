@@ -34,7 +34,7 @@ SELECT
         WHEN 2 THEN 'machine 3'
         ELSE 'machine 4'
    END AS machine
-FROM 
+FROM
   generate_series(1, 100) id;
 ```
 
@@ -89,9 +89,18 @@ df = spark.read.format("jdbc")
                .option("dbtable", "doc.sensor_data").load()
 ```
 
-1. First, you need to start a PySpark session and configure it to use the PostgreSQL JDBC driver by adding the JAR file to the Spark session's classpath.
-2. Once you have configured your PySpark session, you can use the `spark.read` API to load data from CrateDB into a DataFrame. You'll need to provide the JDBC URL and specify the table or query from which you want to retrieve data. Make sure to specify the correct URL, table name, and authentification details.
-3. In this example, we load all data from the `sensor_data` table. You can also use a SQL query instead of a table name you need to perform more complex data retrieval operations.
+1. First, you need to start a PySpark session and configure it to use the
+   PostgreSQL JDBC driver by adding the JAR file to the Spark session's
+   classpath.
+2. Once you have configured your PySpark session, you can use the `spark.read`
+   API to load data from CrateDB into a DataFrame. You'll need to provide the
+   JDBC URL and specify the table or query from which you want to retrieve
+   data. Make sure to specify the correct URL, table name, and authentication
+   details.
+3. In this example, we load all data from the `sensor_data` table. You can also
+   use a SQL query instead of a table name you need to perform more complex
+   data retrieval operations.
+:::::
 
 ### Perform data manipulation and analysis
 
