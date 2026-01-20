@@ -16,10 +16,9 @@ To use Metabase, you must have an existing data set in your CrateDB cluster.
 Feel free to use the sample dataset available in the [Cloud Console] or
 import your own data similarly to how it's done [in this how-to].
 
+::::::{stepper}
 (integration-metabase-config)=
-
-## Initial configuration
-
+:::::{step} Configure the database connection
 Metabase offers both a cloud version and a local installation. E.g.
 `` `shell
 podman run -d -p 3000:3000 --name metabase docker.io/metabase/metabase:v0.47.13
@@ -57,11 +56,10 @@ complete".
 ```{image} /_assets/img/integrations/metabase/metabase-sync-done.png
 :alt: Database sync complete
 ```
+:::::
 
 (integration-metabase-questions)=
-
-## Questions
-
+:::::{step} Visualize the data
 Now you are ready to visualize your data. Metabase works by asking questions.
 You ask a question, and Metabase answers it in a visual form. These questions
 can then be saved to form dashboards. To ask a question, go to `Home` and
@@ -87,6 +85,8 @@ to monitor your data.
 ```{image} /_assets/img/integrations/metabase/metabase-dashboard.png
 :alt: Dashboard
 ```
+:::::
+::::::
 
 (integration-metabase-conclusion)=
 

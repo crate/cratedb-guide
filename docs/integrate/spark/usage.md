@@ -12,8 +12,8 @@ Prerequisites:
 3. Java 11 or later
 
 ## Provision seed data to CrateDB
-
-The following commands create the `sensor_data` table in CrateDB and generate test data:
+The following commands create the `sensor_data` table in CrateDB and generate
+test data:
 
 ```sql
 CREATE TABLE IF NOT EXISTS "doc"."sensor_data" (
@@ -39,44 +39,56 @@ FROM
 ```
 
 ## Set up Apache Spark
+This usage guide will work with a single-node Apache Spark installation running
+on a Mac M1 machine. To set up Apache Spark on your machine use the following
+steps:
 
-This usage guide will work with a single-node Apache Spark installation running on a Mac M1 machine. To set up Apache Spark on your machine use the following steps:
+::::::{stepper}
+:::::{step} Install Java and Scala
+Apache Spark requires both Java and Scala to run:
 
-1. Install Java and Scala, as the Apache Spark requires both to run:
+```shell
+brew install openjdk@11
+brew install scala
+```
 
-   ```shell
-   brew install openjdk@11
-   brew install scala
-   ```
+Before verifying your Java installation, set the `JAVA_HOME` environment
+variable by adding the following line to your shell profile:
 
-   Before verifying your Java installation, set the `JAVA_HOME` environment variable by adding the following line to your shell profile:
+`export JAVA_HOME="/usr/local/opt/openjdk@11"`
+:::::
 
-   `export JAVA_HOME="/usr/local/opt/openjdk@11"`
+:::::{step} Install Apache Spark
+Install the latest version of Apache Spark (which includes PySpark):
 
-2. Install the latest version of Apache Spark (which includes PySpark):
+```shell
+brew install apache-spark
+```
+:::::
 
-   ```shell
-   brew install apache-spark
-   ```
+:::::{step} Verify the installation
+Verify the installation of apache-spark and pyspark:
 
-3. Verify the installation of apache-spark and pyspark:
+```shell
+spark-shell --version
+pyspark --version
+```
+:::::
 
-   ```shell
-   spark-shell --version
-   pyspark --version
-   ```
-
-4. Finally, as CrateDB communicates with Spark via JDBC, download the [Postgres JDBC driver](https://jdbc.postgresql.org/download/) in your working directory.
-   In this usage guide, we use the `postgresql-42.7.8.jar` driver.
-
+:::::{step} Download the JDBC driver
+As CrateDB communicates with Spark via JDBC, download the
+[Postgres JDBC driver](https://jdbc.postgresql.org/download/) in your working
+directory. In this usage guide, we use the `postgresql-42.7.8.jar` driver.
+:::::
+::::::
 
 ## Data analysis
-
 Load dataset from database, perform analysis, and write back the results.
 
-### Load data from CrateDB
-
-You can load data from CrateDB into a PySpark DataFrame using the following code:
+::::::{stepper}
+:::::{step} Load data from CrateDB
+You can load data from CrateDB into a PySpark DataFrame using the following
+code:
 
 ```python
 from pyspark.sql import SparkSession
@@ -95,24 +107,25 @@ df = spark.read.format("jdbc")
 2. Once you have configured your PySpark session, you can use the `spark.read`
    API to load data from CrateDB into a DataFrame. You'll need to provide the
    JDBC URL and specify the table or query from which you want to retrieve
-   data. Make sure to specify the correct URL, table name, and authentication
+   data. Make sure to specify the correct URL, table name, and authentification
    details.
 3. In this example, we load all data from the `sensor_data` table. You can also
    use a SQL query instead of a table name you need to perform more complex
    data retrieval operations.
 :::::
 
-### Perform data manipulation and analysis
-
-Once you have loaded the data into a PySpark DataFrame, you can perform various data manipulation and analysis tasks. For instance, you can filter, aggregate, and transform your data:
+:::::{step} Perform data manipulation and analysis
+Once you have loaded the data into a PySpark DataFrame, you can perform various
+data manipulation and analysis tasks. For instance, you can filter, aggregate,
+and transform your data:
 
 ```python
 filtered_data = df.filter(df["value"] > 25)
 grouped_df = df.groupBy("machine").agg({"value": "avg"})
 ```
+:::::
 
-### **Write results back to CrateDB**
-
+:::::{step} Write results back to CrateDB
 After processing your data, you can write the results back to CrateDB:
 
 ```python
@@ -124,13 +137,16 @@ grouped_df.write.format("jdbc").option("url", "jdbc:postgresql://host:port/crate
                 .save(mode="overwrite")
 ```
 
-This code writes the resulting DataFrame back to CrateDB in a table named `aggregated_sensor_data`. Make sure to replace the connection URL and table name as needed.
+This code writes the resulting DataFrame back to CrateDB in a table named
+`aggregated_sensor_data`. Make sure to replace the connection URL and table
+name as needed.
 
 After you're done with your Spark job, stop the Spark session:
 
 `spark.stop()`
 
-Now, you can run your code as any other Python application. After the execution is complete, you can check the content of the `aggregated_sensor_data` table:
+Now, you can run your code as any other Python application. After the execution
+is complete, you can check the content of the `aggregated_sensor_data` table:
 
 ```sql
 SELECT * FROM aggregated_sensor_data;
@@ -138,7 +154,10 @@ SELECT * FROM aggregated_sensor_data;
 
 ![Screenshot 2023-09-18 at 14.26.01|690x211](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/2/2dbf40b9655d79097d942d953f6f12ae59758c56.png)
 
-The result shows grouped data by the "machine" column and calculated average values.
+The result shows grouped data by the "machine" column and calculated average
+values.
+:::::
+::::::
 
 ## Wrap up
 

@@ -14,8 +14,8 @@ cluster, and a Python installation on your workstation. You can use
 [CrateDB Self-Managed] or [CrateDB Cloud].
 :::
 
-## Setup
-
+::::::{stepper}
+:::::{step} Setup
 To start a CrateDB instance for evaluation purposes, use Docker or Podman.
 ```shell
 docker run --rm --publish=4200:4200 --publish=5432:5432 --env=CRATE_HEAP_SIZE=1g crate:latest
@@ -29,8 +29,9 @@ pip install --upgrade 'dbt-cratedb2'
 dbt-cratedb2 is based on dbt-postgres, which uses [psycopg2] to connect to
 the database server.
 :::
+:::::
 
-## Configure
+:::::{step} Configure
 A minimal set of **dbt profile configuration** options, for example within a
 [`profiles.yml`] file at `~/.dbt/profiles.yml`.
 ```bash
@@ -52,8 +53,9 @@ cratedb_analytics:
 EOF
 ```
 Please note the values for `dbname`, `schema`, and `search_path` in this example.
+:::::
 
-## Project
+:::::{step} Project
 When working with dbt, you are working on behalf of a dbt project.
 A dbt project has a [specific structure][dbt-project-structure], and contains a
 combination of SQL, Jinja, YAML, and Markdown files.
@@ -62,6 +64,8 @@ a folder called `macros` can include macro override files.
 
 At [cratedb-examples » framework/dbt], you can explore a few ready-to-run dbt
 projects that demonstrate usage with CrateDB.
+:::::
+::::::
 
 ## Appendix
 

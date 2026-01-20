@@ -81,8 +81,8 @@ Before you begin, ensure you have the following installed on your system:
 - [Docker Compose]
 - CrateDB version of at least 4.7
 
-## Set Up the Project Directory
-
+::::::{stepper}
+:::::{step} Set up the project directory
 Create a dedicated directory for the Kafka-CrateDB integration and navigate
 into it:
 
@@ -98,9 +98,9 @@ JDBC drivers:
 mkdir kafka-connect-plugins
 mkdir jdbc-drivers
 ```
+:::::
 
-## Pull Kafka Connect Components
-
+:::::{step} Pull Kafka Connect components
 Use Docker to pull the necessary Kafka Connect components. These are connector 
 plugins that provide predefined functionality for integrating Kafka with 
 various systems. This command downloads the plugin into a local directory.
@@ -111,18 +111,18 @@ docker run --rm \
   confluentinc/cp-kafka-connect:7.4.0 \
   bash -c "confluent-hub install --no-prompt confluentinc/kafka-connect-jdbc:latest"
 ```
+:::::
 
-## Obtain the PostgreSQL JDBC Driver
-
+:::::{step} Obtain the PostgreSQL JDBC driver
 Download the PostgreSQL JDBC `.jar` file from the [PostgreSQL website]. Once 
 downloaded, move the `.jar` file to the `jdbc-drivers` directory:
 
 ```bash
 mv path/to/downloaded/postgresql-*.jar jdbc-drivers/
 ```
+:::::
 
-## Configure Docker Compose
-
+:::::{step} Configure Docker Compose
 Create a `docker-compose.yml` file with the following content to define the 
 services required for the integration:
 
@@ -225,19 +225,19 @@ data transfer:
   proper deserialization.
 
 * `Kafka Connect` Is responsible for integrating Kafka with 
-  external systems. It provides a reliable mechanism to stream data 
+  external systems. It provides a reliable mechanism to stream data
   between Kafka and various databases, like CrateDB.
+:::::
 
-## Start Up the Containers
-
+:::::{step} Start up the containers
 Launch all the services defined in the `docker-compose.yml` file:
 
 ```bash
 docker compose up -d
 ```
+:::::
 
-## Verify the Running Containers
-
+:::::{step} Verify the running containers
 Ensure that all services are up and running by listing the active containers:
 
 ```bash
@@ -251,9 +251,9 @@ You should see the following containers:
 - kafka
 - schema-registry
 - kafka-connect
+:::::
 
-## Configure the Sink Connector
-
+:::::{step} Configure the sink connector
 Create a `sink-connector.json` file with the following configuration to define 
 the JDBC sink connector for CrateDB:
 
@@ -282,18 +282,18 @@ the JDBC sink connector for CrateDB:
 ```
 
 These and more JDBC Sink Connector settings, like batch inserting or 
-parallelization, can be found in [Confluent Documentation]. 
+parallelization, can be found in [Confluent Documentation].
+:::::
 
-## Deploy the Sink Connector
-
+:::::{step} Deploy the sink connector
 Use `curl` to deploy the sink connector to Kafka Connect:
 
 ```bash
 curl -X POST -H "Content-Type: application/json" --data '@sink-connector.json' http://localhost:8083/connectors
 ```
+:::::
 
-## Validate the Connector Deployment
-
+:::::{step} Validate the connector deployment
 Check that the connector has been successfully deployed and is running:
 
 - **List all connectors:**
@@ -317,17 +317,17 @@ If you ever need to delete a connector, for example to test changes made to
   ```
 To test changes, simply delete it and then use the deployment `curl` again.
 :::
+:::::
 
-## Access the Kafka Connect Container
-
+:::::{step} Access the Kafka Connect container
 To interact directly with Kafka Connect, access its container:
 
 ```bash
 docker exec -it kafka-connect /bin/bash
 ```
+:::::
 
-## Produce Sample Avro Data
-
+:::::{step} Produce sample Avro data
 Once in the kafka-connect container, send sample sensor data to the 
 `sensor-data-topic` using the Avro console  producer. In this sample we 
 combine the schema definition and sending the data into single step.
@@ -352,9 +352,9 @@ echo '{"sensor_id":101,"timestamp":"2022-06-12T19:00:00Z","temperature":22.5,"hu
     ]
   }'
 ```
+:::::
 
-## Query Data in CrateDB
-
+:::::{step} Query data in CrateDB
 Last thing to do is verify that data was successfully sent. You can do so 
 via the {ref}`Admin UI <crate-admin-ui:index>`, in this case accessible at 
 `http://localhost:4200` or by {ref}`Crash <crate-crash:index>`, our CLI tool.
@@ -385,6 +385,8 @@ SELECT 5 rows in set (0.015 sec)
 ```
 :::
 ::::
+:::::
+::::::
 
 [Confluent Documentation]: https://docs.confluent.io/kafka-connectors/jdbc/current/sink-connector/sink_config_options.html
 [Docker]: https://docs.docker.com/get-docker
