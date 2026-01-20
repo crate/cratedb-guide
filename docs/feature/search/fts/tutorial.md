@@ -39,8 +39,8 @@ Each entry in our imaginary dataset will have the following attributes:
 To begin, let's create the schema for this dataset.
 
 
-## Creating the Table
-
+::::::{stepper}
+:::::{step} Create the table
 :::{div}
 The fastest and easiest way to get started with CrateDB is by deploying a
 free tier (CRFREE) cluster on [CrateDB Cloud][CrateDB Cloud Console]. Otherwise,
@@ -73,11 +73,11 @@ CREATE TABLE "netflix_catalog" (
 );
 :::
 
-Run the above SQL command in CrateDB to set up your table. With the table ready, 
+Run the above SQL command in CrateDB to set up your table. With the table ready,
 you’re now set to insert the dataset.
+:::::
 
-## Inserting Data
-
+:::::{step} Insert data
 Now, insert data into the table you just created, by using the `COPY FROM`
 SQL statement.
 
@@ -87,11 +87,11 @@ FROM 'https://cdn.crate.io/downloads/datasets/cratedb-datasets/cloud-tutorials/d
 WITH (format = 'json', compression='gzip');
 :::
 
-Run the above SQL command in CrateDB to import the dataset. After this commands 
+Run the above SQL command in CrateDB to import the dataset. After this command
 finishes, you are now ready to start querying the dataset.
+:::::
 
-## Using Full-text Search
-
+:::::{step} Use full-text search
 Start with a basic `SELECT` statement on all columns, and limit the output to
 display only 10 records, in order to quickly explore a few samples worth of data.
 
@@ -132,3 +132,5 @@ in descending order.
 Through these examples, you can see that CrateDB Cloud offers you a wide array
 of querying possibilities, from basic SQL queries to advanced full-text
 searches, making it a versatile choice for managing and querying your datasets.
+:::::
+::::::

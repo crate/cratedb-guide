@@ -42,8 +42,8 @@ Consider marketing data that captures details of various campaigns.
 
 To begin, let's create the schema for this dataset.
 
-## Creating the Table
-
+::::::{stepper}
+:::::{step} Create the table
 :::{div}
 The fastest and easiest way to get started with CrateDB is by deploying a
 free tier (CRFREE) cluster on [CrateDB Cloud][CrateDB Cloud Console]. Otherwise,
@@ -79,10 +79,9 @@ Let's highlight two features in this table definition:
 
 The table is designed to accommodate both fixed and dynamic attributes,
 providing a robust and flexible structure for storing your marketing data.
+:::::
 
-
-## Inserting Data
-
+:::::{step} Insert data
 Now, insert the data using the `COPY FROM` SQL statement.
 
 :::{code} sql
@@ -90,9 +89,9 @@ COPY marketing_data
 FROM 'https://cdn.crate.io/downloads/datasets/cratedb-datasets/cloud-tutorials/data_marketing.json.gz'
 WITH (format = 'json', compression='gzip');
 :::
+:::::
 
-## Analyzing Data
-
+:::::{step} Analyze data
 Start with a basic `SELECT` statement on the `metrics` column, and limit the
 output to display only 10 records, in order to quickly explore a few samples
 worth of data.
@@ -149,3 +148,5 @@ ORDER BY 2 DESC;
 
 In this tutorial, we explored the versatility and power of CrateDB's dynamic
 `OBJECT` data type for handling complex, nested marketing data.
+:::::
+::::::
