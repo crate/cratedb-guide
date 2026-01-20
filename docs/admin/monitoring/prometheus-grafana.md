@@ -43,14 +43,14 @@ to fulfill those requirements.
   statements against a CrateDB cluster to retrieve additional
   information from CrateDB's system tables.
 
-## Set up CrateDB cluster
-
+::::::{stepper}
+:::::{step} Set up CrateDB cluster
 First things first, you will need a CrateDB cluster.
 {ref}`Multi-node setup instructions <multi-node-setup-example>` provides
 a quick walkthrough for Ubuntu Linux.
+:::::
 
-## Set up Prometheus Exporters
-
+:::::{step} Set up Prometheus exporters
 The Node Exporter and the JMX Exporter need to be installed on all
 machines that are running CrateDB nodes.
 
@@ -60,9 +60,9 @@ machines that are running CrateDB nodes.
    ```
 
 2. Install the {ref}`prometheus-jmx-exporter`.
+:::::
 
-## Set up Prometheus
-
+:::::{step} Set up Prometheus
 You would typically run this on a machine that is not part of the
 CrateDB cluster.
 The {ref}`prometheus-sql-exporter` also does not need to be installed
@@ -104,9 +104,9 @@ Restart the Prometheus daemon if it was already started.
 ```shell
 systemctl restart prometheus
 ```
+:::::
 
-## Set up Grafana
-
+:::::{step} Set up Grafana
 Install Grafana on the same machine where you installed Prometheus.
 On a Debian or Ubuntu machine, run the following:
 ```shell
@@ -122,8 +122,7 @@ systemctl start grafana-server
 ```
 For other systems, see the [Grafana installation documentation][grafana-debian].
 
-:::{rubric} Data source
-:::
+**Data source**
 
 Navigate to `http://<grafana-host>:3000/` to access the Grafana login screen.
 The default credentials are `admin`/`admin`; change the password immediately.
@@ -133,8 +132,7 @@ If you configured basic authentication for Prometheus, this is where you
 would need to enter the credentials.
 Confirm using "Save & test".
 
-:::{rubric} Dashboard
-:::
+**Dashboard**
 
 An example dashboard based on the discussed setup is available for easy importing
 from [Grafana » CrateDB Monitoring Dashboard].
@@ -144,6 +142,8 @@ On the next screen, finalize the setup by selecting the previously created
 Prometheus data source.
 
 ![CrateDB monitoring dashboard in Grafana|690x396](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/0e01a3f0b8fc61ae97250fdeb2fe741f34ac7422.png){width=690px}
+:::::
+::::::
 
 ## Alternative implementations
 

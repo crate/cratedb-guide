@@ -25,21 +25,21 @@ To do a full restart upgrade with Docker, you must remove the CrateDB
 service and then recreate it.
 :::
 
-## Upgrade Process
+## Upgrade process
 
 :::{WARNING}
 Before upgrading, you should {ref}`back up your data
 <crate-reference:snapshot-restore>`.
 :::
 
-### Stop every node
-
+::::::{stepper}
+:::::{step} Stop every node
 Once you have backed up your data and made the necessary preparations for
 downtime, stop the `crate` daemon on every node in the cluster, using
 whatever method is appropriate to your setup.
+:::::
 
-### Upgrade every node
-
+:::::{step} Upgrade every node
 :::{WARNING}
 Make sure that every `crate` daemon has been stopped before you continue
 or you risk data corruption or data loss.
@@ -47,12 +47,14 @@ or you risk data corruption or data loss.
 
 Once the cluster has been stopped, upgrade the CrateDB software on every node
 in the cluster, using whatever method is appropriate to your setup.
+:::::
 
-### Start every node
-
+:::::{step} Start every node
 Once the CrateDB software on node in the cluster has been updated, start the
 `crate` daemon on every node in the cluster, using whatever method is
 appropriate to your setup.
+:::::
+::::::
 
 [arch linux aur package]: https://aur.archlinux.org/packages/crate/
 [release directory]: https://cdn.crate.io/downloads/releases/
