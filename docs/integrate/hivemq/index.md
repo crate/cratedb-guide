@@ -22,14 +22,26 @@ and transformations via a comfortable web interface.
 
 ::::{grid}
 
+:::{grid-item-card} Load data from HiveMQ using LorryStream
+:link: hivemq-usage
+:link-type: ref
+How to load data from an MQTT topic into CrateDB using LorryStream.
+:::
+
 :::{grid-item-card} Load data from HiveMQ using Node-RED
 :link: https://community.cratedb.com/t/ingesting-mqtt-messages-into-cratedb-using-node-red/803
 :link-type: url
-:width: 50%
 Ingesting MQTT messages into CrateDB using Node-RED.
 :::
 
 ::::
+
+
+:::{toctree}
+:maxdepth: 1
+:hidden:
+Usage <usage>
+:::
 
 
 [HiveMQ]: https://www.hivemq.com/
