@@ -45,6 +45,11 @@ Follow up with detailed tutorials about integrations with different MQTT brokers
 
 ::::{grid}
 
+:::{grid-item-card} Coreflux
+:link: coreflux
+:link-type: ref
+:::
+
 :::{grid-item-card} HiveMQ
 :link: hivemq
 :link-type: ref
