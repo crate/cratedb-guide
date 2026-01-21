@@ -279,7 +279,6 @@ file. To recreate the three-node cluster in the previous example, you can
 define your services like this:
 
 ```yaml
-version: '3.8'
 services:
   cratedb01:
     image: crate:latest
@@ -350,7 +349,6 @@ services:
 
 In the file above:
 
-- You specified the latest [compose file version].
 - You created three CrateDB services which pulls the latest CrateDB Docker
   image and maps the ports manually.
 - You created a file system volume per instance and defined a set of
@@ -487,7 +485,6 @@ sh$ docker run -d \
     crate -Cnetwork.host=_site_
 ```
 
-[compose file version]: https://docs.docker.com/compose/compose-file/compose-versioning/
 [containerization]: https://www.docker.com/resources/what-container
 [cratedb docker image]: https://hub.docker.com/_/crate/
 [default bridge network]: https://docs.docker.com/engine/network/drivers/bridge/#configure-the-default-bridge-network
