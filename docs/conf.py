@@ -100,6 +100,8 @@ linkcheck_ignore += [
     r"https://www.unixodbc.org/",
     # [Errno 101] Network is unreachable
     r"https://nightlies.apache.org/",
+    # -rate limited-
+    "https://github.com/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
