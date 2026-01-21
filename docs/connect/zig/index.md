@@ -14,6 +14,9 @@ Connect to CrateDB from Zig applications.
 :::{rubric} Synopsis
 :::
 
+- `build.zig` will build the example program.
+- `example.zig` is the program built by `build.zig`.
+
 `build.zig`
 ```zig
 const std = @import("std");
@@ -26,6 +29,7 @@ pub fn build(b: *std.Build) void {
     const exe = b.addExecutable(.{
         .name = "example",
         .root_module = b.createModule(.{
+            // `example.zig` is the program built by `build.zig`.
             .root_source_file = b.path("example.zig"),
             .target = b.graph.host,
         })
