@@ -102,6 +102,8 @@ linkcheck_ignore += [
     r"https://nightlies.apache.org/",
     # -rate limited-
     r"https://github.com/",
+    # HTTPSConnectionPool(host='opentelemetry.io', port=443): Read timed out. (read timeout=15)
+    r"https://opentelemetry.io/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
