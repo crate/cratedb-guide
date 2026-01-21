@@ -5,8 +5,10 @@ The usage guide will walk you through starting the [Coreflux MQTT Broker] and Cr
 publishing JSON data to an MQTT topic, subscribing to the topic to relay
 data into a CrateDB table continuously, and validating that the data has
 been stored successfully.
+
 The data transfer is supported by the [LorryStream MQTT source] data
-pipeline element.
+pipeline element. Because the guide includes continuous/blocking commands
+that need to keep running, please open separate terminal windows/tabs.
 
 ## Prerequisites
 
@@ -38,7 +40,7 @@ production, configure authentication/TLS.
 
 Subscribe to all MQTT topics on the broker to monitor any traffic.
 ```shell
-docker compose run --rm mosquitto mosquitto_sub -h coreflux -i acme -t "#" -v
+docker compose run --rm mosquitto mosquitto_sub -h coreflux -i acme-sub -t "#" -v
 ```
 
 Invoke the data transfer pipeline.
@@ -48,7 +50,7 @@ docker compose run --rm lorrystream lorry relay "mqtt://coreflux/testdrive/%23?c
 
 Publish a JSON message to an MQTT topic.
 ```shell
-docker compose run --rm mosquitto mosquitto_pub -h coreflux -i acme -t testdrive/channel1 -m '{"temperature":42.84,"humidity":83.1}'
+docker compose run --rm mosquitto mosquitto_pub -h coreflux -i acme-pub -t testdrive/channel1 -m '{"temperature":42.84,"humidity":83.1}'
 ```
 
 ## Explore data
@@ -67,5 +69,5 @@ SELECT 1 row in set (0.004 sec)
 ```
 
 
-[Coreflux MQTT Broker]: https://docs.digitalocean.com/products/marketplace/catalog/coreflux-mqtt-broker/
+[Coreflux MQTT Broker]: https://docs.coreflux.org/mqtt-broker/overview
 [LorryStream MQTT source]: https://lorrystream.readthedocs.io/source/mqtt.html
