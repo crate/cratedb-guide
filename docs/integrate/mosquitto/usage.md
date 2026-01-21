@@ -5,8 +5,10 @@ The usage guide will walk you through starting the [Eclipse Mosquitto] broker an
 publishing JSON data to an MQTT topic, subscribing to the topic to relay
 data into a CrateDB table continuously, and validating that the data has
 been stored successfully.
+
 The data transfer is supported by the [LorryStream MQTT source] data
-pipeline element.
+pipeline element. Because the guide includes continuous/blocking commands
+that need to keep running, please open separate terminal windows/tabs.
 
 ## Prerequisites
 

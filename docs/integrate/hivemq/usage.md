@@ -5,8 +5,11 @@ The usage guide will walk you through starting the [HiveMQ MQTT Broker] and Crat
 publishing JSON data to an MQTT topic, subscribing to the topic to relay
 data into a CrateDB table continuously, and validating that the data has
 been stored successfully.
+
 The data transfer is supported by the [LorryStream MQTT source] data
-pipeline element.
+pipeline element. Because the guide includes continuous/blocking commands
+that need to keep running, please open separate terminal windows/tabs
+accordingly.
 
 ## Prerequisites
 
@@ -38,7 +41,7 @@ production, configure authentication/TLS.
 
 Subscribe to all MQTT topics on the broker to monitor any traffic.
 ```shell
-docker compose run --rm mosquitto mosquitto_sub -h hivemq -i acme -t "#" -v
+docker compose run --rm mosquitto mosquitto_sub -h hivemq -i acme-sub -t "#" -v
 ```
 
 Invoke the data transfer pipeline.
@@ -48,7 +51,7 @@ docker compose run --rm lorrystream lorry relay "mqtt://hivemq/testdrive/%23?con
 
 Publish a JSON message to an MQTT topic.
 ```shell
-docker compose run --rm mosquitto mosquitto_pub -h hivemq -i acme -t testdrive/channel1 -m '{"temperature":42.84,"humidity":83.1}'
+docker compose run --rm mosquitto mosquitto_pub -h hivemq -i acme-pub -t testdrive/channel1 -m '{"temperature":42.84,"humidity":83.1}'
 ```
 
 ## Explore data
