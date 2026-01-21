@@ -8,13 +8,19 @@
 Instructions how to get tasks done with CrateDB.
 :::
 
+:::{rubric} 2026
+:::
+
+- {ref}`coreflux-usage`
+- {ref}`hivemq-usage`
+
 :::{rubric} 2025
 :::
 
 - {ref}`prometheus-usage`
 - {ref}`influxdb-usage`
 - {ref}`amqp-usage`
-- {ref}`mqtt-usage`
+- {ref}`mosquitto-usage`
 - {ref}`mongodb-usage`
 - {ref}`mysql-usage`
 - {ref}`oracle-usage`
