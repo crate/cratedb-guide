@@ -1,5 +1,5 @@
-(mqtt-usage)=
-# Load data from an MQTT topic into CrateDB
+(mosquitto-usage)=
+# Load data from Mosquitto into CrateDB
 
 The usage guide will walk you through starting the [Eclipse Mosquitto] broker and CrateDB,
 publishing JSON data to an MQTT topic, subscribing to the topic to relay
@@ -12,10 +12,6 @@ pipeline element.
 
 Use Docker or Podman to run all components. This approach works consistently
 across Linux, macOS, and Windows.
-
-You can also use a different MQTT broker such as
-EMQX, HiveMQ, VerneMQ, or RabbitMQ. Azure IoT Hub speaks MQTT as well, but with
-protocol and authentication specifics; adjust settings accordingly.
 
 ### Files
 
@@ -47,7 +43,7 @@ docker compose exec --no-tty mosquitto mosquitto_sub -h mosquitto -t "#" -v
 
 Invoke the data transfer pipeline.
 ```shell
-docker compose run --rm lorrystream lorry relay "mqtt://mosquitto/testdrive/%23?content-type=json" "crate://cratedb/?table=mqtt_demo"
+docker compose run --rm lorrystream lorry relay "mqtt://mosquitto/testdrive/%23?content-type=json" "crate://cratedb/?table=mosquitto"
 ```
 
 Publish a JSON message to an MQTT topic.
@@ -59,7 +55,7 @@ docker compose exec --no-tty mosquitto mosquitto_pub -h mosquitto -t testdrive/c
 
 Inspect data stored in CrateDB.
 ```shell
-docker compose exec cratedb crash -c "SELECT * FROM doc.mqtt_demo"
+docker compose exec cratedb crash -c "SELECT * FROM doc.mosquitto"
 ```
 ```psql
 +-------------+----------+

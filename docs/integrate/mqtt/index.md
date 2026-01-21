@@ -20,9 +20,16 @@ MQTT today is used in a wide variety of industries, such as automotive, manufact
 telecommunications, and oil and gas. It enables efficient, reliable messaging between
 devices and backends over constrained networks.
 
+Through CrateDB's MQTT integration you can use any MQTT broker such as Coreflux,
+Eclipse Mosquitto, EMQX, HiveMQ, VerneMQ, or RabbitMQ. Azure IoT Hub speaks MQTT
+as well, but with protocol and authentication specifics; please adjust settings
+accordingly.
+
 :::{rubric} Synopsis
 :::
 
+[LorryStream] is a lightweight and polyglot stream-processing library, used as a
+data backplane, message relay, or pipeline subsystem.
 Use LorryStream to receive JSON data from an MQTT topic, continuously loading
 records into CrateDB.
 ```shell
@@ -34,34 +41,22 @@ uvx --from=lorrystream lorry relay \
 :::{rubric} Learn
 :::
 
-[LorryStream] is a lightweight and polyglot stream-processing library, used as a
-data backplane, message relay, or pipeline subsystem.
-[Node-RED] is a workflow automation tool that allows you to orchestrate message flows
-and transformations via a comfortable web interface.
+Follow up with detailed tutorials about integrations with different MQTT brokers.
 
 ::::{grid}
 
-:::{grid-item-card} Load data from MQTT using LorryStream
-:link: mqtt-usage
+:::{grid-item-card} HiveMQ
+:link: hivemq
 :link-type: ref
-How to load data from an MQTT topic into CrateDB using LorryStream.
 :::
 
-:::{grid-item-card} Load data from MQTT using Node-RED
-:link: https://community.cratedb.com/t/ingesting-mqtt-messages-into-cratedb-using-node-red/803
-:link-type: url
-Ingesting MQTT messages into CrateDB using Node-RED.
+:::{grid-item-card} Mosquitto
+:link: mosquitto
+:link-type: ref
 :::
 
 ::::
 
-:::{toctree}
-:maxdepth: 1
-:hidden:
-Usage <usage>
-:::
-
 
 [LorryStream]: https://lorrystream.readthedocs.io/
 [MQTT]: https://mqtt.org/
-[Node-RED]: https://nodered.org/
