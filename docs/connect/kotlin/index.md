@@ -39,6 +39,8 @@ fun main() {
 
     // Connect to database.
     val jdbcUrl = "jdbc:postgresql://localhost:5432/doc?sslmode=disable"
+    // val jdbcUrl = "jdbc:crate://localhost:5432/doc?sslmode=disable"
+
     val connection = DriverManager.getConnection(jdbcUrl, "crate", "crate")
 
     // Invoke query.
@@ -68,6 +70,7 @@ repositories {
 
 dependencies {
     runtimeOnly("org.postgresql:postgresql:42.7.8")
+    // runtimeOnly("io.crate:crate-jdbc:2.7.0")
 }
 
 java {
@@ -101,5 +104,6 @@ replace username, password, and hostname with values matching
 your environment.
 ```kotlin
 val jdbcUrl = "jdbc:postgresql://testcluster.cratedb.net:5432/doc?sslmode=require"
+// val jdbcUrl = "jdbc:crate://testcluster.cratedb.net:5432/doc?sslmode=require"
 val connection = DriverManager.getConnection(jdbcUrl, "admin", "password")
 ```
