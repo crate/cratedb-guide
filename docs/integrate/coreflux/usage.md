@@ -68,5 +68,4 @@ SELECT 1 row in set (0.004 sec)
 
 
 [Coreflux MQTT Broker]: https://docs.digitalocean.com/products/marketplace/catalog/coreflux-mqtt-broker/
-[LorryStream]: https://lorrystream.readthedocs.io/
 [LorryStream MQTT source]: https://lorrystream.readthedocs.io/source/mqtt.html

@@ -11,12 +11,14 @@
 :::
 
 [MQTT] is an OASIS standard messaging protocol for the Internet of Things (IoT).
-[HiveMQ] is an enterprise MQTT platform based on a Java-based open source MQTT
+[HiveMQ] is an enterprise MQTT platform based on a Java-based open-source MQTT
 broker that fully supports MQTT 3.x and MQTT 5.
 
 :::{rubric} Learn
 :::
 
+[LorryStream] is a lightweight and polyglot stream-processing library, to be used as a
+data backplane-, message relay-, or pipeline-subsystem.
 [Node-RED] is a workflow automation tool that allows you to orchestrate message flows
 and transformations via a comfortable web interface.
 
@@ -45,5 +47,6 @@ Usage <usage>
 
 
 [HiveMQ]: https://www.hivemq.com/
+[LorryStream]: https://lorrystream.readthedocs.io/
 [MQTT]: https://mqtt.org/
 [Node-RED]: https://nodered.org/

@@ -68,5 +68,4 @@ SELECT 1 row in set (0.004 sec)
 
 
 [HiveMQ MQTT Broker]: https://www.hivemq.com/products/mqtt-broker/
-[LorryStream]: https://lorrystream.readthedocs.io/
 [LorryStream MQTT source]: https://lorrystream.readthedocs.io/source/mqtt.html
