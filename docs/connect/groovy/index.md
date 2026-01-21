@@ -41,9 +41,10 @@ class Example {
         // Configure database.
         Map dbConnParams = [
           url: 'jdbc:postgresql://localhost:5432/doc?sslmode=disable',
+          // url: 'jdbc:crate://localhost:5432/doc?sslmode=disable',
           user: 'crate',
           password: 'crate',
-          driver: 'org.postgresql.Driver']
+        ]
 
         // Connect to database, invoke query, and display results.
         Sql.withInstance(dbConnParams) { sql ->
@@ -69,6 +70,7 @@ repositories {
 dependencies {
     implementation 'org.codehaus.groovy:groovy-all:3.0.25'
     runtimeOnly 'org.postgresql:postgresql:42.7.8'
+    // runtimeOnly 'io.crate:crate-jdbc:2.7.0'
 }
 
 java {
@@ -101,7 +103,8 @@ your environment.
 ```groovy
 Map dbConnParams = [
   url: 'jdbc:postgresql://testcluster.cratedb.net:5432/doc?sslmode=require',
+  // url: 'jdbc:crate://testcluster.cratedb.net:5432/doc?sslmode=require',
   user: 'admin',
   password: 'password',
-  driver: 'org.postgresql.Driver']
+]
 ```
