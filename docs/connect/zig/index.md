@@ -76,12 +76,13 @@ zig build
 ./zig-out/bin/example
 ```
 
-:::{rubric} CrateDB Cloud
+:::{rubric} SSL connection
 :::
 
-For connecting to CrateDB Cloud, use the `sslmode=require` parameter,
-and replace username, password, and hostname with values matching your
-environment.
+Use the `sslmode=require` parameter, and replace username, password,
+and hostname with values matching your environment.
+Also use this variant to connect to CrateDB Cloud.
+
 ```zig
 const uri = try std.Uri.parse("postgresql://admin:password@testcluster.cratedb.net:5432/?sslmode=require");
 ```
