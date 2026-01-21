@@ -1,0 +1,30 @@
+# Service composition file for Docker Compose or Podman Compose
+# https://cratedb.com/docs/guide/integrate/hivemq/
+
+services:
+
+  cratedb:
+    image: docker.io/crate/crate:latest
+    command: >
+      crate -Cdiscovery.type=single-node
+    ports:
+      - "4200:4200/tcp"
+      - "5432:5432/tcp"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4200/"]
+      interval: 5s
+      timeout: 30s
+      retries: 5
+
+  hivemq:
+    image: docker.io/hivemq/hivemq-ce:latest
+    ports:
+      - "1883:1883/tcp"
+
+  mosquitto:
+    image: docker.io/eclipse-mosquitto:latest
+    profiles: ["cli"]
+
+  lorrystream:
+    image: ghcr.io/daq-tools/lorrystream:latest
+    profiles: ["cli"]
