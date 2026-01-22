@@ -44,7 +44,9 @@ on a Mac M1 machine. To set up Apache Spark on your machine use the following
 steps:
 
 ::::::{stepper}
-:::::{step} Install Java and Scala
+
+### Install Java and Scala
+
 Apache Spark requires both Java and Scala to run:
 
 ```shell
@@ -56,37 +58,37 @@ Before verifying your Java installation, set the `JAVA_HOME` environment
 variable by adding the following line to your shell profile:
 
 `export JAVA_HOME="/usr/local/opt/openjdk@11"`
-:::::
 
-:::::{step} Install Apache Spark
+### Install Apache Spark
+
 Install the latest version of Apache Spark (which includes PySpark):
 
 ```shell
 brew install apache-spark
 ```
-:::::
 
-:::::{step} Verify the installation
+### Verify the installation
+
 Verify the installation of apache-spark and pyspark:
 
 ```shell
 spark-shell --version
 pyspark --version
 ```
-:::::
 
-:::::{step} Download the JDBC driver
+### Download the JDBC driver
+
 As CrateDB communicates with Spark via JDBC, download the
 [Postgres JDBC driver](https://jdbc.postgresql.org/download/) in your working
 directory. In this usage guide, we use the `postgresql-42.7.8.jar` driver.
-:::::
+
 ::::::
 
 ## Data analysis
 Load dataset from database, perform analysis, and write back the results.
 
 ::::::{stepper}
-:::::{step} Load data from CrateDB
+### Load data from CrateDB
 You can load data from CrateDB into a PySpark DataFrame using the following
 code:
 
@@ -112,9 +114,9 @@ df = spark.read.format("jdbc")
 3. In this example, we load all data from the `sensor_data` table. You can also
    use a SQL query instead of a table name you need to perform more complex
    data retrieval operations.
-:::::
 
-:::::{step} Perform data manipulation and analysis
+### Perform data manipulation and analysis
+
 Once you have loaded the data into a PySpark DataFrame, you can perform various
 data manipulation and analysis tasks. For instance, you can filter, aggregate,
 and transform your data:
@@ -123,9 +125,9 @@ and transform your data:
 filtered_data = df.filter(df["value"] > 25)
 grouped_df = df.groupBy("machine").agg({"value": "avg"})
 ```
-:::::
 
-:::::{step} Write results back to CrateDB
+### Write results back to CrateDB
+
 After processing your data, you can write the results back to CrateDB:
 
 ```python
@@ -156,7 +158,7 @@ SELECT * FROM aggregated_sensor_data;
 
 The result shows grouped data by the "machine" column and calculated average
 values.
-:::::
+
 ::::::
 
 ## Wrap up

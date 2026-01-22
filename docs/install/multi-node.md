@@ -78,13 +78,15 @@ single-host three-node cluster with auto-bootstrapping by following these
 instructions.
 
 ::::::{stepper}
-:::::{step} Unpack the tarball
+
+### Unpack the tarball
+
 ```console
 sh$ tar -xzf crate-*.tar.gz
 ```
-:::::
 
-:::::{step} Configure metadata gateway
+### Configure metadata gateway
+
 It is common to configure the {ref}`metadata gateway <metadata-gateway>` so
 that the cluster waits for all data nodes to be online before starting the
 recovery of the shards. In this case, let's set
@@ -103,9 +105,9 @@ issue warnings if you have not configured the metadata gateway.
 :::{SEEALSO}
 The {ref}`metadata gateway <metadata-gateway>` section includes examples.
 :::
-:::::
 
-:::::{step} Copy directories for each node
+### Copy directories for each node
+
 Copy the unpacked directory into a new directory, three times, one for each
 node. For example:
 
@@ -118,9 +120,9 @@ sh$ cp -R crate-*/ node-03
 :::{TIP}
 Each directory will function as [CRATE_HOME] for that node
 :::
-:::::
 
-:::::{step} Start all nodes
+### Start all nodes
+
 Start up all three nodes by changing into each node directory and running
 the [bin/crate] script.
 
@@ -140,9 +142,9 @@ node. In each session, change into the appropriate node directory, run
 [bin/crate], and leave this process running. You should now have
 multiple concurrent [bin/crate] processes.
 :::
-:::::
 
-:::::{step} Verify the cluster
+### Verify the cluster
+
 Visit the {ref}`Admin UI <crate-admin-ui:index>` on one of the nodes. Check the
 [cluster browser] to
 verify that the cluster has auto-bootstrapped with three nodes. You should see
@@ -151,7 +153,6 @@ something like this:
 ```{image} /_assets/img/multi-node-cluster.png
 :alt: The CrateDB Admin UI showing a multi-node cluster
 ```
-:::::
 ::::::
 
 (manual-bootstrapping)=

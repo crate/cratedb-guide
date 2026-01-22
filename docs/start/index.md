@@ -39,7 +39,9 @@ the more manual tutorials.
 ```{tab-item} Cloud (Recommended)
 
 :::::{stepper}
-::::{step} Create your free cluster
+
+## Create your free cluster
+
 Sign up for CrateDB Cloud and create your first cluster in 2 minutes.
 
 :::{button-link} https://console.cratedb.cloud/
@@ -57,16 +59,14 @@ options to try tutorials, import data, or connect programmatically.
 
 The Cloud Quickstart page
 :::
-::::
 
-::::{step} Run tutorials
+## Run tutorials
 Once your cluster is ready, you can go through one or more of the
 **interactive tutorials** directly in the browser in ~5 minutes each.
 With the click of a button you will import data, execute queries, and
 see the results.
-::::
 
-::::{step} Experiment in the Console
+## Experiment in the Console
 After completing a tutorial, the sample data remains in your cluster. You
 can now use the **Console** in the Cloud UI to explore the data and run
 your own SQL queries, perhaps with inspiration from our
@@ -79,14 +79,15 @@ your own SQL queries, perhaps with inspiration from our
 
 The Cloud Console page
 :::
-::::
 :::::
 
 ```
 ```{tab-item} Local
 
 :::::::{stepper}
-::::::{step} Install CrateDB
+
+## Install CrateDB
+
 If you prefer to try CrateDB locally, the quickest way is using
 <a href="https://docs.docker.com/get-docker/" target="_blank">Docker</a>:
 
@@ -102,9 +103,9 @@ stored in a persistent manner. When you stop the container, all data will
 be lost. For production use, consult the {ref}`Docker guide
 <cratedb-docker>` to configure persistent disk volumes.
 :::
-::::::
 
-::::::{step} Access the Admin UI
+## Access the Admin UI
+
 Once CrateDB is running, open your browser and navigate to
 <http://localhost:4200/> to access the {ref}`Admin UI
 <crate-admin-ui:index>`. From here you can:
@@ -122,9 +123,9 @@ The Admin UI Console page
 :::
 
 You will use this in the next section to run SQL statements.
-::::::
 
-::::::{step} Run tutorials
+## Run tutorials
+
 Learn about fundamental features of CrateDB with hands-on example
 tutorials.
 
@@ -158,13 +159,12 @@ Learn how to combine time series data with metadata.
 ::::
 
 :::::
-::::::
 
-::::::{step} Experiment in the Console
+## Experiment in the Console
+
 After completing one or more tutorials, you can continue to explore the
 data in the Console with SQL queries, perhaps with inspiration from our
 {ref}`query-capabilities`.
-::::::
 :::::::
 
 <!-- end tab-set -->

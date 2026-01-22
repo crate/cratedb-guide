@@ -40,7 +40,9 @@ To begin, let's create the schema for this dataset.
 
 
 ::::::{stepper}
-:::::{step} Create the table
+
+## Create the table
+
 :::{div}
 The fastest and easiest way to get started with CrateDB is by deploying a
 free tier (CRFREE) cluster on [CrateDB Cloud][CrateDB Cloud Console]. Otherwise,
@@ -74,10 +76,10 @@ CREATE TABLE "netflix_catalog" (
 :::
 
 Run the above SQL command in CrateDB to set up your table. With the table ready,
-you’re now set to insert the dataset.
-:::::
+you're now set to insert the dataset.
 
-:::::{step} Insert data
+## Insert data
+
 Now, insert data into the table you just created, by using the `COPY FROM`
 SQL statement.
 
@@ -89,9 +91,9 @@ WITH (format = 'json', compression='gzip');
 
 Run the above SQL command in CrateDB to import the dataset. After this command
 finishes, you are now ready to start querying the dataset.
-:::::
 
-:::::{step} Use full-text search
+## Use full-text search
+
 Start with a basic `SELECT` statement on all columns, and limit the output to
 display only 10 records, in order to quickly explore a few samples worth of data.
 
@@ -101,7 +103,7 @@ FROM netflix_catalog
 LIMIT 10;
 :::
 
-CrateDB Cloud’s full-text search can be leveraged to find specific entries based
+CrateDB Cloud's full-text search can be leveraged to find specific entries based
 on text matching. In this query, you are using the `MATCH` function on the
 `description` field to find all movies or TV shows that contain the word "love".
 The results can be sorted by relevance score by using the synthetic `_score` column.
@@ -132,5 +134,5 @@ in descending order.
 Through these examples, you can see that CrateDB Cloud offers you a wide array
 of querying possibilities, from basic SQL queries to advanced full-text
 searches, making it a versatile choice for managing and querying your datasets.
-:::::
+
 ::::::

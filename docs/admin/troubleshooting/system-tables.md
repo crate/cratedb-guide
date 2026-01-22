@@ -14,7 +14,9 @@ analyze, identify the problem, and start mitigating it. While there is
 this guide runs you through the most common situations.
 
 :::::::{stepper}
-::::::{step} Inspect health checks
+
+## Inspect health checks
+
 A good point to start is the table **sys.check** that maintains a number of
 health checks. You may know it from the admin UI. Order them by severity:
 
@@ -31,9 +33,9 @@ If a check fails, the description offers some explanation on how to proceed.
 This synthetic table reports checks that verify your cluster layout, gives recommendations
 for configuration options, and warns you on incompatible software versions. More
 checks will be added as we go.
-::::::
 
-::::::{step} Check cluster activity
+## Check cluster activity
+
 Statements that are currently executed on the server are tracked in the tables
 **sys.jobs** and **sys.operations**. They give you the opportunity to view the
 ongoing activity in the cluster.
@@ -79,9 +81,9 @@ Find out more about the **node** system column in the next sections. If there
 are no current jobs nor operations that are causing problems, check the
 recorded history of finished jobs and operations in the tables **sys.jobs_log**
 and **sys.operations_log**, respectively.
-::::::
 
-::::::{step} Analyze cluster resources
+## Analyze cluster resources
+
 Sometimes it is not a single query that causes problems, but a component of your
 distributed cluster. To find out more about it, check the table
 **sys.cluster**, which holds a single row containing the name and ID of the
@@ -139,9 +141,9 @@ cr> SHOW columns IN nodes FROM sys;
 +-------------------------------------------------...+-----------...+
 SHOW ... rows in set (... sec)
 ```
-::::::
 
-::::::{step} Inspect partitions, shards, and replication
+## Inspect partitions, shards, and replication
+
 CrateDB divides the rows of each table into shards that are distinctively
 distributed to all nodes in your cluster. Replication uses the same mechanism
 to add redundancy and thus resilience to your data.
@@ -243,9 +245,9 @@ SELECT ... in set (... sec)
 :::{SEEALSO}
 {ref}`Bulk import: Shards and replicas <bulk-shards-replicas>`
 :::
-::::::
 
-::::::{step} Analyze allocation problems
+## Analyze allocation problems
+
 Related to the previous step about gaining insights about shards and
 replication is the step about cluster-wide shard allocations.
 
@@ -281,9 +283,9 @@ table, which lists all shards in the cluster.
   +------------+----------+---------+-------------+
   SELECT ... in set (... sec)
   ```
-::::::
 
-::::::{step} Analyze queries
+## Analyze queries
+
 To understand the load on the cluster, analyzing resource consumption of
 queries issued against the cluster can give good indications.
 
@@ -347,9 +349,9 @@ cr> SELECT
 +--...-+---...----+------------+-----+----------------------...------------------------+
 SELECT 1 row in set (... sec)
 ```
-::::::
 
-::::::{step} Manage snapshots
+## Manage snapshots
+
 Finally: if your repair efforts did not succeed, and your application or users
 accidentally deleted some data, recover one of the previously taken snapshots
 of your cluster. The tables **sys.snapshots** and **sys.repositories** assist
@@ -381,5 +383,5 @@ cr> SELECT * FROM sys.snapshots ORDER BY started DESC LIMIT 7;
 +------------------+----------+------+------------+---------+-------+---------+
 SELECT ... in set (... sec)
 ```
-::::::
+
 :::::::

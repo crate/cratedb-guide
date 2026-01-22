@@ -2,20 +2,20 @@
 # Using Confluent Kafka Connect
 
 This guide describes a dockerized procedure for integrating CrateDB with Kafka
-Connect. By following these steps, you will set up a pipeline to ingest data 
+Connect. By following these steps, you will set up a pipeline to ingest data
 from Kafka topics into CrateDB seamlessly.
 
 ## Abstract
 
 Kafka is a popular stream processing software used for building scalable data
-processing pipelines and applications. Many use cases might involve ingesting 
-data from a Kafka topic (or several topics) into CrateDB for further 
-enrichment, analysis, or visualization. This can be done using the 
+processing pipelines and applications. Many use cases might involve ingesting
+data from a Kafka topic (or several topics) into CrateDB for further
+enrichment, analysis, or visualization. This can be done using the
 supplementary component [Kafka Connect], which provides a set of connectors
 that can stream data to and from Kafka.
 
 Thanks to their compatibility [Kafka Connect JDBC connector] with the [
-PostgreSQL driver] allow to designate CrateDB as a sink target, with the 
+PostgreSQL driver] allow to designate CrateDB as a sink target, with the
 following example connector definition:
 
 ```json
@@ -48,13 +48,13 @@ This results in the following architecture:
 ![image](/_assets/img/integrations/kafka-connect.png){width=650px}
 
 ## Setup
-To illustrate how this architecture can be used, let's create a scenario 
-where machine sensor data from a series of weather stations is 
-ingested into a Kafka topic. This data could be used in a reactive sense: for 
-example, a micro-controller could consume from this topic to turn on air 
+To illustrate how this architecture can be used, let's create a scenario
+where machine sensor data from a series of weather stations is
+ingested into a Kafka topic. This data could be used in a reactive sense: for
+example, a micro-controller could consume from this topic to turn on air
 conditioning if the temperature were to rise above a certain threshold. Aside
-this use of the data, it should be stored into CrateDB. This allows 
-to do long term data analytics, like predicting the weather trends for 
+this use of the data, it should be stored into CrateDB. This allows
+to do long term data analytics, like predicting the weather trends for
 example. Payload from each sensor may look like this:
 
 ```json
@@ -82,7 +82,8 @@ Before you begin, ensure you have the following installed on your system:
 - CrateDB version of at least 4.7
 
 ::::::{stepper}
-:::::{step} Set up the project directory
+## Set up the project directory
+
 Create a dedicated directory for the Kafka-CrateDB integration and navigate
 into it:
 
@@ -91,18 +92,18 @@ mkdir kafka-cratedb-integration
 cd kafka-cratedb-integration
 ```
 
-Within this directory, create subdirectories for Kafka Connect plugins and 
+Within this directory, create subdirectories for Kafka Connect plugins and
 JDBC drivers:
 
 ```bash
 mkdir kafka-connect-plugins
 mkdir jdbc-drivers
 ```
-:::::
 
-:::::{step} Pull Kafka Connect components
-Use Docker to pull the necessary Kafka Connect components. These are connector 
-plugins that provide predefined functionality for integrating Kafka with 
+## Pull Kafka Connect components
+
+Use Docker to pull the necessary Kafka Connect components. These are connector
+plugins that provide predefined functionality for integrating Kafka with
 various systems. This command downloads the plugin into a local directory.
 
 ```bash
@@ -111,19 +112,19 @@ docker run --rm \
   confluentinc/cp-kafka-connect:7.4.0 \
   bash -c "confluent-hub install --no-prompt confluentinc/kafka-connect-jdbc:latest"
 ```
-:::::
 
-:::::{step} Obtain the PostgreSQL JDBC driver
-Download the PostgreSQL JDBC `.jar` file from the [PostgreSQL website]. Once 
+## Obtain the PostgreSQL JDBC driver
+
+Download the PostgreSQL JDBC `.jar` file from the [PostgreSQL website]. Once
 downloaded, move the `.jar` file to the `jdbc-drivers` directory:
 
 ```bash
 mv path/to/downloaded/postgresql-*.jar jdbc-drivers/
 ```
-:::::
 
-:::::{step} Configure Docker Compose
-Create a `docker-compose.yml` file with the following content to define the 
+## Configure Docker Compose
+
+Create a `docker-compose.yml` file with the following content to define the
 services required for the integration:
 
 ```yaml
@@ -208,36 +209,36 @@ services:
       CRATE_HEAP_SIZE: 1g
 ```
 
-Each tool in this stack plays an integral role for proper functioning of the 
+Each tool in this stack plays an integral role for proper functioning of the
 data transfer:
 
-* `CrateDB` Is the destination database that stores the sensor data 
+* `CrateDB` Is the destination database that stores the sensor data
   from Kafka and allows further enrichment or manipulation of the data.
 
 * `Zookeeper` Zookeeper acts as a centralized service to manage Kafka brokers
   and their metadata.
 
-* `Kafka`: Is a distributed message broker that handles the production and 
+* `Kafka`: Is a distributed message broker that handles the production and
   consumption of messages.
 
-* `Schema Registry`: Manages Avro schemas for Kafka messages. It ensures that 
-  all messages conform to predefined schemas, enabling compatibility and 
+* `Schema Registry`: Manages Avro schemas for Kafka messages. It ensures that
+  all messages conform to predefined schemas, enabling compatibility and
   proper deserialization.
 
-* `Kafka Connect` Is responsible for integrating Kafka with 
+* `Kafka Connect` Is responsible for integrating Kafka with
   external systems. It provides a reliable mechanism to stream data
   between Kafka and various databases, like CrateDB.
-:::::
 
-:::::{step} Start up the containers
+## Start up the containers
+
 Launch all the services defined in the `docker-compose.yml` file:
 
 ```bash
 docker compose up -d
 ```
-:::::
 
-:::::{step} Verify the running containers
+## Verify the running containers
+
 Ensure that all services are up and running by listing the active containers:
 
 ```bash
@@ -251,10 +252,10 @@ You should see the following containers:
 - kafka
 - schema-registry
 - kafka-connect
-:::::
 
-:::::{step} Configure the sink connector
-Create a `sink-connector.json` file with the following configuration to define 
+## Configure the sink connector
+
+Create a `sink-connector.json` file with the following configuration to define
 the JDBC sink connector for CrateDB:
 
 ```json
@@ -281,19 +282,19 @@ the JDBC sink connector for CrateDB:
 }
 ```
 
-These and more JDBC Sink Connector settings, like batch inserting or 
+These and more JDBC Sink Connector settings, like batch inserting or
 parallelization, can be found in [Confluent Documentation].
-:::::
 
-:::::{step} Deploy the sink connector
+## Deploy the sink connector
+
 Use `curl` to deploy the sink connector to Kafka Connect:
 
 ```bash
 curl -X POST -H "Content-Type: application/json" --data '@sink-connector.json' http://localhost:8083/connectors
 ```
-:::::
 
-:::::{step} Validate the connector deployment
+## Validate the connector deployment
+
 Check that the connector has been successfully deployed and is running:
 
 - **List all connectors:**
@@ -309,7 +310,7 @@ Check that the connector has been successfully deployed and is running:
   ```
 
 :::{note}
-If you ever need to delete a connector, for example to test changes made to 
+If you ever need to delete a connector, for example to test changes made to
 `.json` file, you can do it with following command:
 
   ```bash
@@ -317,19 +318,19 @@ If you ever need to delete a connector, for example to test changes made to
   ```
 To test changes, simply delete it and then use the deployment `curl` again.
 :::
-:::::
 
-:::::{step} Access the Kafka Connect container
+## Access the Kafka Connect container
+
 To interact directly with Kafka Connect, access its container:
 
 ```bash
 docker exec -it kafka-connect /bin/bash
 ```
-:::::
 
-:::::{step} Produce sample Avro data
-Once in the kafka-connect container, send sample sensor data to the 
-`sensor-data-topic` using the Avro console  producer. In this sample we 
+## Produce sample Avro data
+
+Once in the kafka-connect container, send sample sensor data to the
+`sensor-data-topic` using the Avro console  producer. In this sample we
 combine the schema definition and sending the data into single step.
 
 ```bash
@@ -352,11 +353,11 @@ echo '{"sensor_id":101,"timestamp":"2022-06-12T19:00:00Z","temperature":22.5,"hu
     ]
   }'
 ```
-:::::
 
-:::::{step} Query data in CrateDB
-Last thing to do is verify that data was successfully sent. You can do so 
-via the {ref}`Admin UI <crate-admin-ui:index>`, in this case accessible at 
+## Query data in CrateDB
+
+Last thing to do is verify that data was successfully sent. You can do so
+via the {ref}`Admin UI <crate-admin-ui:index>`, in this case accessible at
 `http://localhost:4200` or by {ref}`Crash <crate-crash:index>`, our CLI tool.
 
 ::::{tab-set}
@@ -385,7 +386,6 @@ SELECT 5 rows in set (0.015 sec)
 ```
 :::
 ::::
-:::::
 ::::::
 
 [Confluent Documentation]: https://docs.confluent.io/kafka-connectors/jdbc/current/sink-connector/sink_config_options.html

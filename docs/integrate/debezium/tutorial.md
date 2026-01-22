@@ -37,7 +37,8 @@ Enter Debezium. [Debezium](https://debezium.io/) is a standard open-source syste
 In this post I want to show an example replicating changes on a table from MSSQL to CrateDB.
 
 ::::::{stepper}
-:::::{step} Set up MSSQL
+## Set up MSSQL
+
 We will need a SQL Server instance with the SQL Server Agent service up and running. If you are running MSSQL on a container you can get the agent running by setting the environment variable `MSSQL_AGENT_ENABLED` to `True`.
 
 Connect to the instance with a client such as `sqlcmd`, SSMS, or [DBeaver](https://dbeaver.io/).
@@ -82,9 +83,9 @@ EXEC sys.sp_cdc_enable_table
   @filegroup_name='cdcfg',
   @supports_net_changes=0;
 ```
-:::::
 
-:::::{step} Set up CrateDB
+## Set up CrateDB
+
 You will need a CrateDB instance. For this example we can spin one up with:
 
 ```bash
@@ -121,9 +122,9 @@ CREATE TABLE dbo.tbltest (
   srcsystem TEXT
 );
 ```
-:::::
 
-:::::{step} Set up Zookeeper and Kafka
+## Set up Zookeeper and Kafka
+
 To use Debezium we will need to have working setups of Zookeeper and Kafka.
 
 For this example we will spin them up with containers on the same machine:
@@ -143,9 +144,9 @@ exit
 ```
 
 Please note this is a very basic setup. For production purposes you may want to adjust some of [these settings](https://kafka.apache.org/41/configuration/topic-configs/).
-:::::
 
-:::::{step} Prepare and start a Debezium container
+## Prepare and start a Debezium container
+
 We need to customize the base `debezium/connect` Docker image adding a JDBC sink and the PostgreSQL drivers.
 
 For this we need to download the zip file from [kafka-connect-jdbc](https://www.confluent.io/hub/confluentinc/kafka-connect-jdbc) and then run the below replacing `*************` with the appropriate URL:
@@ -185,9 +186,9 @@ sudo docker run -it --rm --name connect -p 8083:8083 \
 ```
 
 This assumes Kafka is running locally on the same server. You will need to adjust `BOOTSTRAP_SERVERS` if that is not the case.
-:::::
 
-:::::{step} Configure the source connector
+## Configure the source connector
+
 Let’s create a `connector.json` file as follows:
 
 ```json
@@ -223,9 +224,9 @@ Let’s deploy this:
 ```bash
 curl -i -X POST -H "Accept:application/json" -H "Content-Type:application/json" http://localhost:8083/connectors/ -d @connector.json
 ```
-:::::
 
-:::::{step} Configure the target connector
+## Configure the target connector
+
 Let’s create a `destination-connector.json` file as follows:
 
 ```json
@@ -261,9 +262,8 @@ Let’s deploy this:
 ```bash
 curl -i -X POST -H "Accept:application/json" -H "Content-Type:application/json" http://localhost:8083/connectors/ -d @destination-connector.json
 ```
-:::::
 
-:::::{step} Test the replication
+## Test the replication
 
 Let’s create a record from the MSSQL side:
 
@@ -288,7 +288,6 @@ WHERE id = 1
 ```
 
 ![CrateDB query result showing updated record](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/4476976451e1f943112082a7d1e0cd36524740a1.png)
-:::::
 ::::::
 
 ## Conclusion

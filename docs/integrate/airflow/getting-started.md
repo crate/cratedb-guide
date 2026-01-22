@@ -41,7 +41,8 @@ Since 2014, Apache Airflow and its ecosystem have grown significantly. To run Ai
 To simplify operations, use a managed Apache Airflow provider such as Astronomer. Astronomer runs on Kubernetes, abstracts infrastructure details, and provides a clean interface for building and operating workflows.
 
 ::::::{stepper}
-:::::{step} Set up a local Airflow project
+## Set up a local Airflow project
+
 The examples use an 8‑core machine with 30 GB RAM on Ubuntu 22.04 LTS. Install the Astronomer CLI (requires [Docker](https://www.docker.com/) 18.09+). On Ubuntu:
 ```shell
 curl -sSL install.astronomer.io | sudo bash -s
@@ -106,9 +107,9 @@ the Airflow UI at `http://localhost:8081`:
 ![Airflow UI landing page](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/f298a4c609312133e388555a9eba51733bfd5645.png)
 
 The landing page of Apache Airflow UI shows the list of all DAGs, their status, the time of the next and last run, and the metadata such as the owner and schedule. From the UI, you can manually trigger the DAG with the button in the Actions section, manually pause/unpause DAGs with the toggle button near the DAG name, and filter DAGs by tag. If you click on a specific DAG it will show the graph with tasks and dependencies between each task.
-:::::
 
-:::::{step} Create a GitHub repository
+## Create a GitHub repository
+
 To track the project with Git, execute from the `astro-project` directory: `git init`.
 
 Go to [https://github.com](https://github.com) and create a new repository.
@@ -127,9 +128,9 @@ git remote add origin https://github.com/username/new_repo
 git push -u origin main
 ```
 The initialized `astro-project` now has a home on GitHub.
-:::::
 
-:::::{step} Add database credentials
+## Add database credentials
+
 To configure the CrateDB connection, set an environment variable. On
 Astronomer, set it via the UI, `Dockerfile`, or the `.env` file
 (generated during initialization).
@@ -148,7 +149,6 @@ the project and open a bash session in the scheduler container:
 Run `env` to list the applied environment variables.
 
 This will output some variables set by Astronomer by default including the variable for the CrateDB connection.
-:::::
 ::::::
 
 [Apache Airflow]: https://airflow.apache.org/

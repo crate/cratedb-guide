@@ -18,12 +18,14 @@ can be found in our [manual build guide].
 :::
 
 ::::::{stepper}
-:::::{step} Download
+
+## Download
+
 Download the latest [CrateDB release archive]. Please make sure to select
 the right release archive matching your system.
-:::::
 
-:::::{step} Extract the archive
+## Extract the archive
+
 Once downloaded, extract the archive either using your favorite terminal or
 command line shell or by using a GUI tool like [7-Zip]:
 
@@ -31,17 +33,17 @@ command line shell or by using a GUI tool like [7-Zip]:
 # Extract tarball on Unix-like systems
 tar -xzf crate-*.tar.gz
 ```
-:::::
 
-:::::{step} Navigate to directory
+## Navigate to directory
+
 On the terminal, change into the extracted `crate` directory:
 
 ```shell
 cd crate-*
 ```
-:::::
 
-:::::{step} Run CrateDB
+## Run CrateDB
+
 Run a CrateDB single-node instance on the local network interface:
 
 ```shell
@@ -60,11 +62,11 @@ This is expected and can be fixed in your system settings:
     asked to confirm once more with **Open** button. After that CrateDB
     will run as expected.
 :::
-:::::
 
-:::::{step} Stop CrateDB
+## Stop CrateDB
+
 In order to stop CrateDB again, use {kbd}`ctrl-c`.
-:::::
+
 ::::::
 
 :::{SEEALSO}

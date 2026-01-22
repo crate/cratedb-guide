@@ -11,11 +11,13 @@ us][contact us] so we can work with you on a solution.
 :::
 
 ::::::{stepper}
-:::::{step} Download
-Download the latest [CrateDB release archive] for Windows.
-:::::
 
-:::::{step} Extract the archive
+## Download
+
+Download the latest [CrateDB release archive] for Windows.
+
+## Extract the archive
+
 Once downloaded, extract the archive either using your favorite terminal or
 command-line shell or by using a GUI tool like [7-Zip]. We recommend
 using [PowerShell] when using terminal:
@@ -29,41 +31,41 @@ Using tar (Windows 10 1803 and newer):
 ```doscon
 tar -xf .\crate-*.zip
 ```
-:::::
 
-:::::{step} Navigate to directory
+## Navigate to directory
+
 On the terminal, change into the extracted `crate` directory:
 
 ```doscon
 cd crate-*
 ```
-:::::
 
-:::::{step} Run CrateDB
+## Run CrateDB
+
 Run a CrateDB single-node instance on the local network interface:
 
 ```doscon
 ./bin/crate
 ```
-:::::
 
-:::::{step} Verify startup
+## Verify startup
+
 You will be notified by an INFO message similar to this, when your
 single-node cluster is started successfully:
 
 ```text
 [2022-07-04T19:41:12,340][INFO ][o.e.n.Node] [Aiguille Verte] started
 ```
-:::::
 
-:::::{step} Stop CrateDB
+## Stop CrateDB
+
 In order to stop CrateDB again, use {kbd}`ctrl-c`. You will be asked to
 terminate the job. Input {kbd}`Y`:
 
 ```text
 Terminate batch job (Y/N)? Y
 ```
-:::::
+
 ::::::
 
 :::{SEEALSO}

@@ -28,7 +28,7 @@ Before anything else, I must make sure I have my setup ready.
 So, let's get started.
 
 ::::::{stepper}
-:::::{step} Prerequisites
+## Prerequisites
 
 You will need access to a CrateDB cluster and a Jupyter environment with
 pandas and the psycopg2 packages installed.
@@ -67,9 +67,8 @@ and now I run the Notebook with the command
 Setup done!
 
 Now I can access my Jupyter Notebook by opening the URL printed in the terminal after running this last command. In my case, it is at http://localhost:8888/
-:::::
 
-:::::{step} Creating a Notebook
+## Creating a Notebook
 
 On Jupyter’s main page, I navigate to the **New** button on the top right and select **Python 3 (ipykernel)**
 
@@ -91,9 +90,8 @@ print('Hello World!')
 ![Hello World program](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/e25efa994ab0afefe946e2ec5b99d4b9b31cfad8.jpeg){w=800px}
 
 Great, it works! Now I can head to the following steps to download the financial data.
-:::::
 
-:::::{step} Getting all S&P-500 ticker symbols from Wikipedia
+## Getting all S&P-500 ticker symbols from Wikipedia
 
 When I read [yfinance](https://pypi.org/project/yfinance/)’s documentation (version 0.1.63), I find the `history` function, which gets a ticker symbol as a parameter and downloads the data from this company.
 
@@ -151,9 +149,8 @@ and it looks like this:
 ![get_sp500_ticker_symbols()](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/49935a7dbb2153ee7f6a24d99c44132f562e1e20.png){w=800px}
 
 Now that I have a list of all the stock tickers, I can move on and download their data with `yfinance`.
-:::::
 
-:::::{step} Downloading financial data with yfinance
+## Downloading financial data with yfinance
 
 [Pandas](https://pandas.pydata.org/) is a famous package in Python, often used for Data Science. It shortens the process of handling data, has complete yet straightforward data representation forms, and makes tasks like filtering data easy.
 
@@ -208,9 +205,8 @@ and it looks like this:
 
 ![calling-download-data|690x348](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/6174430a9bd94b8956e2ba012267ca67a335d53b.png){w=800px}
 
-:::::
 
-:::::{step} Connecting to CrateDB
+## Connecting to CrateDB
 
 In the **Overview** tab of my CrateDB Cloud Cluster I find several ways to connect to CrateDB with CLI, Python, JavaScript, among others. So I select the **Python** option and choose one of the variants, such as **psycopg2**.
 
@@ -230,9 +226,8 @@ print(result)
 When I run this code it prints `('my-cluster',)`, which is the name I have to my cluster, so the connection works!
 
 Now I can create more functions to create tables in CrateDB, insert my data values into a table, and retrieve data!
-:::::
 
-:::::{step} Creating functions for CrateDB
+## Creating functions for CrateDB
 
 ### Creating table
 
@@ -453,9 +448,8 @@ def update_table(table_name):
         data = download_data(ticker, period)
         insert_values(table_name, data)
 ```
-:::::
 
-:::::{step} Final Test
+## Final Test
 
 I have all the necessary functions ready to work!
 
@@ -494,7 +488,6 @@ And instantly get the results.
 ![apple-data|690x405](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/9e2fbb2abdf2946bf063466de4f8468650c6d578.png){w=800px}
 
 Now I can run this script whenever I want to update my database with new data!
-:::::
 ::::::
 
 ## Wrap up

@@ -26,7 +26,8 @@ set up a free [CrateDB Cloud cluster].
 ::::::{stepper}
 (grafana-load-dataset)=
 
-:::::{step} Load a sample dataset
+## Load a sample dataset
+
 To visualize data with Grafana, a dataset is needed first. In this sample,
 demo data is added directly via the CrateDB Cloud Console. To import the data
 go to the Overview page of your deployed cluster.
@@ -59,19 +60,18 @@ deployed the cluster.
 After executing the second SQL statement, the "nyc_taxi" table will be
 populated with data. Depending on your cluster configuration this can take
 around 40 minutes.
-:::::
 
 (grafana-install)=
 
-:::::{step} Install Grafana
+## Install Grafana
+
 To install Grafana locally, refer to the [Grafana documentation]. In this
 guide, local installation is used but you can also use Grafana cloud
 deployment.
-:::::
 
 (grafana-connect)=
 
-:::::{step} Connect Grafana to CrateDB Cloud
+## Connect Grafana to CrateDB Cloud
 
 After setting up and logging into Grafana, you should be greeted by
 Grafana Home page.
@@ -120,11 +120,10 @@ samplecluster.aks1.eastus.azure.cratedb-dev.net
 After submitting all that to the Grafana connection form, it should return
 "Database Connection OK". Then, the connection is established and you can move
 on to creating some dashboards.
-:::::
 
 (grafana-first-dashboard)=
 
-:::::{step} Build your first Grafana dashboard
+## Build your first Grafana dashboard
 
 Now that you've got the data imported to CrateDB Cloud and Grafana connected
 to it, it's time to visualize that data. In Grafana this is done using
@@ -230,7 +229,6 @@ Dashboard overview, you will have a collection of two very useful graphs.
 
 Now you know how to get started with data visualization in Grafana. To find
 out more, refer to the [Grafana documentation].
-:::::
 ::::::
 
 [epoch time]: https://en.wikipedia.org/wiki/Unix_time
