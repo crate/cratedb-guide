@@ -54,11 +54,10 @@ IO.inspect(result)
 :::{rubric} SSL connection
 :::
 
-Adjust the `ssl: true` parameter,
-and replace hostname, username, and password with values matching your
-environment.
-
+Use the `ssl: true` parameter, and replace username, password,
+and hostname with values matching your environment.
 Also use this variant to connect to CrateDB Cloud.
+
 ```elixir
 options = [
   hostname: "testcluster.cratedb.net",

@@ -85,8 +85,8 @@ import turbodbc
 
 # Connect to database
 connection_string = \
-    "Driver={PostgreSQL Unicode};Server=localhost;Port=5432;" \
-    "Uid=crate;Pwd=crate;MaxVarcharSize=1073741824"
+    "Driver={PostgreSQL Unicode};Server=localhost;Port=5432;Uid=crate;Pwd=crate;" \
+    "MaxVarcharSize=1073741824;Sslmode=disable;"
 connection = turbodbc.connect(connection_string)
 
 # Invoke query
@@ -121,17 +121,17 @@ Invoke program.
 python example.py
 ```
 
-## SSL connection
+:::{rubric} SSL connection
+:::
 
-Use the `Sslmode=require` parameter,
-and replace username, password, and hostname with values matching
-your environment.
-
+Use the `Sslmode=require` parameter, and replace username, password,
+and hostname with values matching your environment.
 Also use this variant to connect to CrateDB Cloud.
+
 ```python
 connection_string = \
-    "Driver={PostgreSQL Unicode};Server=testcluster.cratedb.net;Port=5432;Sslmode=require;" \
-    "Uid=admin;Pwd=password;MaxVarcharSize=1073741824"
+    "Driver={PostgreSQL Unicode};Server=testcluster.cratedb.net;Port=5432;Uid=admin;Pwd=password;" \
+    "MaxVarcharSize=1073741824;Sslmode=require;"
 ```
 
 

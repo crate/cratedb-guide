@@ -32,6 +32,7 @@ start() ->
         username => "crate",
         password => "crate",
         port => 5432,
+        ssl => false,
         timeout => 4000
     }),
     {ok, _, Result} = epgsql:squery(C, "SELECT mountain, height FROM sys.summits ORDER BY height DESC LIMIT 3"),
@@ -43,12 +44,12 @@ start() ->
 :::{rubric} SSL connection
 :::
 
-Start the Erlang [SSL application] first,
+Start the Erlang [SSL application],
 use the `ssl` and `ssl_opts` arguments on `epgsql:connect`, and
 replace username, password, and hostname with values matching
 your environment.
-
 Also use this variant to connect to CrateDB Cloud.
+
 ```erlang
 start() ->
     ssl:start(),

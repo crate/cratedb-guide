@@ -40,7 +40,7 @@ using System;
 using System.Data.Odbc;
 
 // Connect to database
-string connection_string = "Driver={PostgreSQL Unicode};Server=localhost;Port=5432;Uid=crate;Pwd=crate;MaxVarcharSize=1073741824";
+string connection_string = "Driver={PostgreSQL Unicode};Server=localhost;Port=5432;Uid=crate;Pwd=crate;MaxVarcharSize=1073741824;Sslmode=disable;";
 using (OdbcConnection connection = new OdbcConnection(connection_string))
 {
     connection.Open();
@@ -59,13 +59,12 @@ using (OdbcConnection connection = new OdbcConnection(connection_string))
 :::{rubric} SSL connection
 :::
 
-Use the `Sslmode=require` parameter,
-and replace username, password, and hostname with values matching
-your environment.
-
+Use the `Sslmode=require` parameter, and replace username, password,
+and hostname with values matching your environment.
 Also use this variant to connect to CrateDB Cloud.
+
 ```csharp
-string connection_string = "Driver={PostgreSQL Unicode};Server=testcluster.cratedb.net;Port=5432;Sslmode=require;Uid=admin;Pwd=password";
+string connection_string = "Driver={PostgreSQL Unicode};Server=testcluster.cratedb.net;Port=5432;Uid=admin;Pwd=password;MaxVarcharSize=1073741824;Sslmode=require;";
 ```
 
 :::{rubric} Example
