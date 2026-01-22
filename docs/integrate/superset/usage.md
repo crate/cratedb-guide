@@ -2,9 +2,9 @@
 # Set up Apache Superset with CrateDB
 
 ## Introduction
-This walkthrough will guide you through the process to quickly set up a Python environment with [Apache Superset](https://superset.apache.org/), load data into [CrateDB](https://cratedb.com/product), and integrate both with each other.
+This walkthrough will guide you through the process to quickly set up a Python environment with [Apache Superset], load data into [CrateDB], and integrate both with each other.
 
-It has been derived from a [corresponding recipe](https://github.com/crate/cratedb-examples/tree/main/application/apache-superset) we use on our CI systems to verify connectivity between Apache Superset and CrateDB.
+It has been derived from a [corresponding recipe] we use on our CI systems to verify connectivity between Apache Superset and CrateDB.
 
 ## Prerequisites
 You will need Bash, Docker, and Python to be installed on your workstation. All other prerequisites will be installed into your working tree.
@@ -52,7 +52,7 @@ superset run --port=9000 --with-threads
 ## Load data
 Import six million records worth of data from the venerable NYC Yellowcab taxi ride dataset. Depending on the speed of the internet connection between the location of your database instance, and AWS S3, where data is loaded from, it may take about one minute of time.
 
-This is a one-shot command using the [crash](https://cratedb.com/docs/crate/crash/) database shell running in a Docker container, which includes a relevant SQL DDL statement to create the database table schema, and a `COPY FROM` statement to import data from a compressed JSON file located on AWS S3.
+This is a one-shot command using the [crash] database shell running in a Docker container, which includes a relevant SQL DDL statement to create the database table schema, and a `COPY FROM` statement to import data from a compressed JSON file located on AWS S3.
 ```shell
 docker run --interactive --rm --network=host crate:latest crash <<EOF
 DROP TABLE IF EXISTS yellowcab;
@@ -101,11 +101,10 @@ You should be ready to go. Now, you can explore the loaded data through user int
 - navigate to `http://localhost:4200/#!/console` for exploring the CrateDB Admin UI.
 - navigate to `http://localhost:9000/sqllab/` for exploring your data in Apache Superset, log in with admin/admin.
 
-In order to work with data in Apache Superset, before being able to create dashboards, you will need to establish connectivity between Apache Superset and CrateDB. To do that, you will [connect a database instance](https://superset.apache.org/docs/databases/db-connection-ui/) and [register a database table](https://superset.apache.org/docs/creating-charts-dashboards/creating-your-first-dashboard/#registering-a-new-table) as a dataset.
-
+In order to work with data in Apache Superset, before being able to create dashboards, you will need to establish connectivity between Apache Superset and CrateDB. To do that, you will [connect a database instance] and [register a database table] as a dataset.
 
 ### HTTP API
-Using [Apache Superset's HTTP API](https://superset.apache.org/docs/api), you can automate the provisioning process. The commands outlined below are using [HTTPie](https://httpie.io/docs/cli) for that purpose, saving a few clicks and keystrokes.
+Using [Apache Superset's HTTP API], you can automate the provisioning process. The commands outlined below are using [HTTPie] for that purpose, saving a few clicks and keystrokes.
 
 **Connect a database instance**
 ```shell
@@ -146,3 +145,13 @@ Superset instance, this ID might be incorrect.
 1. The development web server of Apache Superset can be terminated by hitting `CTRL+C`.
 2. The CrateDB database instance running in a container will be automatically cleaned up due to the `--rm` flag.
 3. The metadata database of Apache Superset, where user accounts and database connections are stored, can be deleted by invoking `rm ~/.superset/superset.db`.
+
+
+[Apache Superset]: https://superset.apache.org/
+[Apache Superset's HTTP API]: https://superset.apache.org/docs/api/
+[crash]: https://cratedb.com/docs/crate/crash/
+[CrateDB]: https://cratedb.com/product
+[connect a database instance]: https://superset.apache.org/docs/databases/#connecting-through-the-ui
+[corresponding recipe]: https://github.com/crate/cratedb-examples/tree/main/application/apache-superset
+[HTTPie]: https://httpie.io/docs/cli
+[register a database table]: https://superset.apache.org/docs/using-superset/creating-your-first-dashboard/#registering-a-new-table

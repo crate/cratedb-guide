@@ -177,9 +177,9 @@ Sandbox <sandbox>
 [Apache Superset]: https://superset.apache.org/
 [CrateDB and Apache Superset]: https://cratedb.com/integrations/cratedb-and-apache-superset
 [CrateDB Cloud]: https://cratedb.com/product/cloud
-[CrateDB connector package]: https://superset.apache.org/docs/configuration/databases#cratedb
+[CrateDB connector package]: https://superset.apache.org/docs/databases/supported/cratedb
 [CrateDB Self-Managed]: https://cratedb.com/product/self-managed
-[how to install database drivers in Docker Images]: https://superset.apache.org/docs/configuration/databases#installing-drivers-in-docker-images
+[how to install database drivers in Docker Images]: https://superset.apache.org/docs/databases/#installing-drivers-in-docker
 [Preset]: https://preset.io/
 [Preset Cloud]: https://preset.io/product/
 [Verify Apache Superset with CrateDB]: https://github.com/crate/cratedb-examples/tree/main/application/apache-superset
