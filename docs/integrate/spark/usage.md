@@ -12,6 +12,7 @@ Prerequisites:
 3. Java 11 or later
 
 ## Provision seed data to CrateDB
+
 The following commands create the `sensor_data` table in CrateDB and generate
 test data:
 
@@ -39,6 +40,7 @@ FROM
 ```
 
 ## Set up Apache Spark
+
 This usage guide will work with a single-node Apache Spark installation running
 on a Mac M1 machine. To set up Apache Spark on your machine use the following
 steps:
@@ -85,10 +87,13 @@ directory. In this usage guide, we use the `postgresql-42.7.8.jar` driver.
 ::::::
 
 ## Data analysis
+
 Load dataset from database, perform analysis, and write back the results.
 
 ::::::{stepper}
+
 ### Load data from CrateDB
+
 You can load data from CrateDB into a PySpark DataFrame using the following
 code:
 
