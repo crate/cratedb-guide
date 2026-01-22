@@ -1,3 +1,6 @@
+:::{include} /_include/links.md
+:::
+
 (odbc-python)=
 
 # ODBC with Python
@@ -124,9 +127,11 @@ python example.py
 :::{rubric} SSL connection
 :::
 
+:::{div}
 Use the `Sslmode=require` parameter, and replace username, password,
 and hostname with values matching your environment.
-Also use this variant to connect to CrateDB Cloud.
+Also use this variant to connect to [CrateDB Cloud].
+:::
 
 ```python
 connection_string = \

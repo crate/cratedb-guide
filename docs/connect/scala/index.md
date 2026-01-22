@@ -1,9 +1,9 @@
+:::{include} /_include/links.md
+:::
+
 (connect-scala)=
 
 # Scala
-
-:::{include} /_include/links.md
-:::
 
 :::{div} sd-text-muted
 Connect to CrateDB from Scala applications using JDBC.
@@ -75,9 +75,11 @@ object Example {
 :::{rubric} SSL connection
 :::
 
+:::{div}
 Use the `sslmode=require` parameter, and replace username, password,
 and hostname with values matching your environment.
-Also use this variant to connect to CrateDB Cloud.
+Also use this variant to connect to [CrateDB Cloud].
+:::
 
 ```scala
 val url = "jdbc:postgresql://testcluster.cratedb.net:5432/?sslmode=require"

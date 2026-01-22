@@ -1,3 +1,6 @@
+:::{include} /_include/links.md
+:::
+
 (erlang-epgsql)=
 
 # Erlang epgsql
@@ -44,11 +47,13 @@ start() ->
 :::{rubric} SSL connection
 :::
 
+:::{div}
 Start the Erlang [SSL application],
 use the `ssl` and `ssl_opts` arguments on `epgsql:connect`, and
 replace username, password, and hostname with values matching
 your environment.
-Also use this variant to connect to CrateDB Cloud.
+Also use this variant to connect to [CrateDB Cloud].
+:::
 
 ```erlang
 start() ->

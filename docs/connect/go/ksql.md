@@ -1,3 +1,6 @@
+:::{include} /_include/links.md
+:::
+
 (go-ksql)=
 # KSQL
 
@@ -77,9 +80,11 @@ func main() {
 :::{rubric} SSL connection
 :::
 
+:::{div}
 Use the `sslmode=require` parameter, and replace username, password,
 and hostname with values matching your environment.
-Also use this variant to connect to CrateDB Cloud.
+Also use this variant to connect to [CrateDB Cloud].
+:::
 
 ```go
 dbURL := "postgresql://admin:password@testcluster.cratedb.net:5432/?sslmode=require"

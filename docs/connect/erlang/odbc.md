@@ -1,3 +1,6 @@
+:::{include} /_include/links.md
+:::
+
 (erlang-odbc)=
 
 # Erlang ODBC
@@ -39,10 +42,12 @@ main(_) ->
 :::{rubric} SSL connection
 :::
 
+:::{div}
 Start the Erlang [SSL application],
 add the `Sslmode=require` parameter,
 and replace `Server`, `Uid`, and `Pwd` with values matching your environment.
-Also use this variant to connect to CrateDB Cloud.
+Also use this variant to connect to [CrateDB Cloud].
+:::
 
 ```erlang
 ssl:start(),

@@ -1,3 +1,6 @@
+:::{include} /_include/links.md
+:::
+
 (connect-elixir)=
 
 # Elixir
@@ -54,9 +57,11 @@ IO.inspect(result)
 :::{rubric} SSL connection
 :::
 
+:::{div}
 Use the `ssl: true` parameter, and replace username, password,
 and hostname with values matching your environment.
-Also use this variant to connect to CrateDB Cloud.
+Also use this variant to connect to [CrateDB Cloud].
+:::
 
 ```elixir
 options = [

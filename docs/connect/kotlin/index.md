@@ -1,3 +1,6 @@
+:::{include} /_include/links.md
+:::
+
 (connect-kotlin)=
 
 # Kotlin
@@ -99,9 +102,11 @@ gradle run
 :::{rubric} SSL connection
 :::
 
+:::{div}
 Use the `sslmode=require` parameter, and replace username, password,
 and hostname with values matching your environment.
 Also use this variant to connect to CrateDB Cloud.
+:::
 
 ```kotlin
 val jdbcUrl = "jdbc:postgresql://testcluster.cratedb.net:5432/doc?sslmode=require"
