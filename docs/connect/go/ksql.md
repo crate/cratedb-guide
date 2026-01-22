@@ -77,11 +77,10 @@ func main() {
 :::{rubric} SSL connection
 :::
 
-Use `sslmode=require`, and
-replace username, password, and hostname with values matching
-your environment.
-
+Use the `sslmode=require` parameter, and replace username, password,
+and hostname with values matching your environment.
 Also use this variant to connect to CrateDB Cloud.
+
 ```go
 dbURL := "postgresql://admin:password@testcluster.cratedb.net:5432/?sslmode=require"
 ```

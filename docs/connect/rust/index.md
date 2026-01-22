@@ -51,11 +51,11 @@ cargo add postgres
 cargo run
 ```
 
-:::{rubric} Synopsis (SSL connection)
+:::{rubric} SSL connection
 :::
-Add TLS support and update the connection string with
-your cluster details.
 
+Add TLS support, and replace username, password,
+and hostname with values matching your environment.
 Also use this variant to connect to CrateDB Cloud.
 
 `src/main.rs`
@@ -68,7 +68,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     // Connect to database.
     let tls = MakeTlsConnector::new(TlsConnector::new()?);
-    let mut client = Client::connect("postgresql://crate:<password>@<cluster-name>.<region>.cratedb.net:5432/?sslmode=require", tls)?;
+    let mut client = Client::connect("postgresql://admin:password@testcluster.cratedb.net:5432/?sslmode=require", tls)?;
 
     // Invoke query and display results.
     for row in client.query(

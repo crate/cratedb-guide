@@ -31,7 +31,7 @@ installed on your system.
 
 main(_) ->
     odbc:start(),
-    {ok, Ref} = odbc:connect("Driver={PostgreSQL Unicode};Server=localhost;Port=5432;Uid=crate;Pwd=crate", []),
+    {ok, Ref} = odbc:connect("Driver={PostgreSQL Unicode};Server=localhost;Port=5432;Uid=crate;Pwd=crate;Sslmode=disable;", []),
     io:fwrite("~p~n", [odbc:sql_query(Ref, "SELECT mountain, height FROM sys.summits ORDER BY height DESC LIMIT 3")]),
     init:stop().
 ```
@@ -40,15 +40,14 @@ main(_) ->
 :::
 
 Start the Erlang [SSL application],
-add `Sslmode=require`, and replace `Server`, `Uid`, and `Pwd` with
-values matching your environment.
-
+add the `Sslmode=require` parameter,
+and replace `Server`, `Uid`, and `Pwd` with values matching your environment.
 Also use this variant to connect to CrateDB Cloud.
 
 ```erlang
 ssl:start(),
 odbc:start(),
-{ok, Ref} = odbc:connect("Driver={PostgreSQL Unicode};Server=testcluster.cratedb.net;Port=5432;Sslmode=require;Uid=admin;Pwd=password", []),
+{ok, Ref} = odbc:connect("Driver={PostgreSQL Unicode};Server=testcluster.cratedb.net;Port=5432;Uid=admin;Pwd=password;Sslmode=require;", []),
 ```
 
 :::{rubric} Example

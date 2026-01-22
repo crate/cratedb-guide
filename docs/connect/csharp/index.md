@@ -67,12 +67,13 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=true
 dotnet run
 ```
 
-:::{rubric} CrateDB Cloud
+:::{rubric} SSL connection
 :::
 
-For connecting to CrateDB Cloud, use `Sslmode=require`, and
-replace hostname, username, and password with values matching
-your environment.
+Use the `Sslmode=require` parameter, and replace username, password,
+and hostname with values matching your environment.
+Also use this variant to connect to CrateDB Cloud.
+
 ```c#
 var connString = "Host=testcluster.cratedb.net;Port=5432;Username=admin;Password=password;Sslmode=require";
 ```

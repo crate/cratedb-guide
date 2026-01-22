@@ -54,11 +54,10 @@ print(res)
 :::{rubric} SSL connection
 :::
 
-Use `sslmode = "require"`, and
-replace hostname, username, and password with values matching
-your environment.
-
+Use the `sslmode = "require"` parameter, and replace username, password,
+and hostname with values matching your environment.
 Also use this variant to connect to CrateDB Cloud.
+
 ```r
 conn <- dbConnect(RPostgres::Postgres(),
                   host = "testcluster.cratedb.net",
