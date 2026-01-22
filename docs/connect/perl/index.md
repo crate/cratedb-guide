@@ -17,9 +17,9 @@ Connect to CrateDB from Perl applications.
 `example.pl`
 ```perl
 use DBI;
-use DBD::Pg qw(:pg_types);
 
-$dbh = DBI->connect("dbi:Pg:host=localhost;port=5432;dbname=doc", "crate", "crate", {AutoCommit => 0});
+$dbh = DBI->connect("dbi:Pg:host=localhost;port=5432;sslmode=disable", "crate", "crate")
+  or die "Cannot connect: $DBI::errstr";
 $sth = $dbh->prepare("SELECT region, mountain, height FROM sys.summits ORDER BY height DESC LIMIT 3");
 $sth->execute();
 
@@ -34,14 +34,15 @@ cpan install DBD::Pg
 perl example.pl
 ```
 
-:::{rubric} CrateDB Cloud
+:::{rubric} SSL connection
 :::
 
-For connecting to CrateDB Cloud, replace username, password, and
-hostname with values matching your environment.
+Use the `sslmode=require` parameter, and replace username, password,
+and hostname with values matching your environment.
+Also use this variant to connect to CrateDB Cloud.
 
 ```perl
-$dbh = DBI->connect("dbi:Pg:host=testcluster.cratedb.net;port=5432;dbname=doc", "admin", "password", {AutoCommit => 0});
+$dbh = DBI->connect("dbi:Pg:host=testcluster.cratedb.net;port=5432;sslmode=require", "admin", "password");
 ```
 
 
