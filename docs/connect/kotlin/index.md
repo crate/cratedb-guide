@@ -5,9 +5,6 @@
 
 # Kotlin
 
-:::{include} /_include/links.md
-:::
-
 :::{div} sd-text-muted
 Use JDBC to connect to CrateDB from Kotlin applications.
 :::
