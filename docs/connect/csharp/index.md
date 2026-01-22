@@ -70,9 +70,11 @@ dotnet run
 :::{rubric} SSL connection
 :::
 
+:::{div}
 Use the `Sslmode=require` parameter, and replace username, password,
 and hostname with values matching your environment.
-Also use this variant to connect to CrateDB Cloud.
+Also use this variant to connect to [CrateDB Cloud].
+:::
 
 ```c#
 var connString = "Host=testcluster.cratedb.net;Port=5432;Username=admin;Password=password;Sslmode=require";

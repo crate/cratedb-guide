@@ -1,3 +1,6 @@
+:::{include} /_include/links.md
+:::
+
 (connect-perl)=
 
 # Perl
@@ -37,9 +40,11 @@ perl example.pl
 :::{rubric} SSL connection
 :::
 
+:::{div}
 Use the `sslmode=require` parameter, and replace username, password,
 and hostname with values matching your environment.
-Also use this variant to connect to CrateDB Cloud.
+Also use this variant to connect to [CrateDB Cloud].
+:::
 
 ```perl
 $dbh = DBI->connect("dbi:Pg:host=testcluster.cratedb.net;port=5432;sslmode=require", "admin", "password");

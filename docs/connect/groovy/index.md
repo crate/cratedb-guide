@@ -1,9 +1,9 @@
+:::{include} /_include/links.md
+:::
+
 (connect-groovy)=
 
 # Groovy
-
-:::{include} /_include/links.md
-:::
 
 :::{div} sd-text-muted
 Use JDBC to connect to CrateDB from Groovy applications.
@@ -97,9 +97,11 @@ gradle run
 :::{rubric} SSL connection
 :::
 
+:::{div}
 Use the `sslmode=require` parameter, and replace username, password,
 and hostname with values matching your environment.
-Also use this variant to connect to CrateDB Cloud.
+Also use this variant to connect to [CrateDB Cloud].
+:::
 
 ```groovy
 Map dbConnParams = [

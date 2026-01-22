@@ -1,3 +1,6 @@
+:::{include} /_include/links.md
+:::
+
 (connect-julia)=
 
 # Julia
@@ -43,9 +46,11 @@ julia example.jl
 :::{rubric} SSL connection
 :::
 
+:::{div}
 Use the `sslmode=require` parameter, and replace username, password,
 and hostname with values matching your environment.
-Also use this variant to connect to CrateDB Cloud.
+Also use this variant to connect to [CrateDB Cloud].
+:::
 
 ```julia
 conn = LibPQ.Connection("postgresql://admin:password@testcluster.cratedb.net:5432/?sslmode=require");

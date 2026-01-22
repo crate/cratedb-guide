@@ -1,3 +1,6 @@
+:::{include} /_include/links.md
+:::
+
 (connect-rust)=
 
 # Rust
@@ -54,9 +57,11 @@ cargo run
 :::{rubric} SSL connection
 :::
 
+:::{div}
 Add TLS support, and replace username, password,
 and hostname with values matching your environment.
-Also use this variant to connect to CrateDB Cloud.
+Also use this variant to connect to [CrateDB Cloud].
+:::
 
 `src/main.rs`
 ```rust

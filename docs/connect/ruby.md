@@ -1,3 +1,6 @@
+:::{include} /_include/links.md
+:::
+
 (connect-ruby)=
 
 # Ruby
@@ -6,7 +9,9 @@
 How to connect to CrateDB using Ruby.
 :::
 
-An example implementation of Ruby client library for CrateDB Cloud:
+:::{div}
+An example implementation of Ruby client library for [CrateDB Cloud]:
+:::
 
 ```ruby
 require 'crate_ruby'

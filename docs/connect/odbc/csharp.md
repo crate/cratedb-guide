@@ -1,3 +1,6 @@
+:::{include} /_include/links.md
+:::
+
 (odbc-csharp)=
 
 # ODBC with C#
@@ -59,9 +62,11 @@ using (OdbcConnection connection = new OdbcConnection(connection_string))
 :::{rubric} SSL connection
 :::
 
+:::{div}
 Use the `Sslmode=require` parameter, and replace username, password,
 and hostname with values matching your environment.
-Also use this variant to connect to CrateDB Cloud.
+Also use this variant to connect to [CrateDB Cloud].
+:::
 
 ```csharp
 string connection_string = "Driver={PostgreSQL Unicode};Server=testcluster.cratedb.net;Port=5432;Uid=admin;Pwd=password;MaxVarcharSize=1073741824;Sslmode=require;";
