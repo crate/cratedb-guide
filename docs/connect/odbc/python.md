@@ -37,7 +37,7 @@ import pyodbc
 
 # Connect to database
 connection_string = \
-    "Driver={PostgreSQL Unicode};Server=localhost;Port=5432;Uid=crate;Pwd=crate" \
+    "Driver={PostgreSQL Unicode};Server=localhost;Port=5432;Uid=crate;Pwd=crate;" \
     "MaxVarcharSize=1073741824;Sslmode=disable;"
 connection = pyodbc.connect(connection_string)
 

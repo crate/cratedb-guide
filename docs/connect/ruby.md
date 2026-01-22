@@ -29,4 +29,4 @@ p result.to_a
 
 For additional information see [our GitHub documentation].
 
-[our github documentation]: https://github.com/crate/crate_ruby/blob/main/README.rst
+[our GitHub documentation]: https://github.com/crate/crate_ruby/blob/main/README.rst
