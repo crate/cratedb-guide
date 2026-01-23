@@ -94,7 +94,7 @@ You should be ready to go. Now,
 - navigate to `http://localhost:8088/superset/sqllab/` for exploring your data in Apache Superset, log in with admin/admin.
 
 
-**Create a database connection**
+### Create a database connection
 
 For creating a database connection to CrateDB in Apache Superset, you can either use the user interface, or the HTTP API. Those steps will create the connection using the HTTP API, saving a few clicks and keystrokes.
 ```shell
@@ -108,7 +108,7 @@ CSRF_TOKEN=$(http --session=superset http://localhost:8088/api/v1/security/csrf_
 http --session=superset http://localhost:8088/api/v1/database/ database_name="CrateDB Testdrive" engine=crate sqlalchemy_uri=crate://crate@localhost:4200 Authorization:"Bearer ${AUTH_TOKEN}" X-CSRFToken:"${CSRF_TOKEN}"
 ```
 
-**Hacking**
+### Hacking
 
 Now, you can just go ahead and edit code on the CrateDB Python driver located on your workstation. The application will notice your changes and pick them up by reloading the daemon environment. Please make sure to watch the output on the first console, where `superset run` has been invoked, for any anomalies or stacktraces.
 
