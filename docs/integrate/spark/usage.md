@@ -114,7 +114,7 @@ df = spark.read.format("jdbc")
 2. Once you have configured your PySpark session, you can use the `spark.read`
    API to load data from CrateDB into a DataFrame. You'll need to provide the
    JDBC URL and specify the table or query from which you want to retrieve
-   data. Make sure to specify the correct URL, table name, and authentification
+   data. Make sure to specify the correct URL, table name, and authentication
    details.
 3. In this example, we load all data from the `sensor_data` table. You can also
    use a SQL query instead of a table name you need to perform more complex
