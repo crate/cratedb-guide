@@ -420,7 +420,8 @@ def get_period_to_download(last_date):
 ```
 The only thing missing is a method to wrap up everything. Let's move on to it!
 
-**Updating the table**
+- :::{rubric} Updating the table
+- :::
 
 This method wraps up all the others.
 
