@@ -124,7 +124,8 @@ systemctl start grafana-server
 ```
 For other systems, see the [Grafana installation documentation][grafana-debian].
 
-**Data source**
+:::{rubric} Data source
+:::
 
 Navigate to `http://<grafana-host>:3000/` to access the Grafana login screen.
 The default credentials are `admin`/`admin`; change the password immediately.
@@ -134,7 +135,8 @@ If you configured basic authentication for Prometheus, this is where you
 would need to enter the credentials.
 Confirm using "Save & test".
 
-**Dashboard**
+:::{rubric} Dashboard
+:::
 
 An example dashboard based on the discussed setup is available for easy importing
 from [Grafana » CrateDB Monitoring Dashboard].
