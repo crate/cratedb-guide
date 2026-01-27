@@ -44,14 +44,6 @@ Database drivers, libraries, adapters, and connectors.
 Acquire skills and knowledge about CrateDB.
 ::::
 
-::::{grid-item-card}
-:link: explanations
-:link-type: ref
-{material-outlined}`lightbulb;2em` &nbsp; **Explanations**
-+++
-Broaden and deepen your knowledge and understanding of CrateDB.
-::::
-
 :::::
 
 :::{rubric} Best practice guides
@@ -148,7 +140,6 @@ Integrate with third-party applications and frameworks.
 ../install/index
 ../connect/index
 ../tutorial/index
-../explain/index
 ../admin/index
 ../performance/index
 ../feature/index
