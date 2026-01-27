@@ -23,6 +23,7 @@ For the purposes of this guide, it is assumed that you
 have a CrateDB cluster up and running and can access the Console. If not, please
 set up a free [CrateDB Cloud cluster].
 
+::::::{stepper}
 (grafana-load-dataset)=
 
 ## Load a sample dataset
@@ -228,6 +229,7 @@ Dashboard overview, you will have a collection of two very useful graphs.
 
 Now you know how to get started with data visualization in Grafana. To find
 out more, refer to the [Grafana documentation].
+::::::
 
 [epoch time]: https://en.wikipedia.org/wiki/Unix_time
 [grafana]: https://www.grafana.com/

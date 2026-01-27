@@ -36,20 +36,21 @@ Enter Debezium. [Debezium](https://debezium.io/) is a standard open-source syste
 
 In this post I want to show an example replicating changes on a table from MSSQL to CrateDB.
 
-## Setup on the MSSQL side
+::::::{stepper}
+## Set up MSSQL
 
-We will need a SQL Server instance with the SQL Server Agent service up and running, if you are running MSSQL on a container you can get the agent running by setting the environment variable `MSSQL_AGENT_ENABLED` to `True`.
+We will need a SQL Server instance with the SQL Server Agent service up and running. If you are running MSSQL on a container you can get the agent running by setting the environment variable `MSSQL_AGENT_ENABLED` to `True`.
 
 Connect to the instance with a client such as `sqlcmd`, SSMS, or [DBeaver](https://dbeaver.io/).
 
-We are now going to go through a number of steps, if you already have a working system feel free to skip the operations you do not need.
+We are now going to go through a number of steps. If you already have a working system feel free to skip the operations you do not need.
 
 Let’s create a database with a test table on it:
 
 ```sql
 CREATE DATABASE erp;
 GO
-USE erp; 
+USE erp;
 CREATE TABLE dbo.tbltest (
   id INT PRIMARY KEY IDENTITY,
   createdon DATETIME DEFAULT getdate(),
@@ -83,16 +84,20 @@ EXEC sys.sp_cdc_enable_table
   @supports_net_changes=0;
 ```
 
-## Setup on the CrateDB side
+## Set up CrateDB
 
-We will need a CrateDB instance, for the purpose of this example we can spin one up with:
+You will need a CrateDB instance. For this example we can spin one up with:
 
 ```bash
 sudo apt install docker.io
 sudo docker run --publish 4200:4200 --publish 5432:5432 --env CRATE_HEAP_SIZE=1g crate:latest '-Cdiscovery.type=single-node'
 ```
 
-Now we need to run a couple of SQL commands on this instance, an easy way to do this is using the Admin UI that can be accessed navigating with a web browser to port 4200 on the server where CrateDB is running, for instance `http://localhost:4200` and then open the console (second icon from the top on the left-hand side navigation bar).
+Now we need to run a couple of SQL commands on this instance. An easy way to do
+this is using the Admin UI that can be accessed navigating with a web browser
+to port 4200 on the server where CrateDB is running, for instance
+`http://localhost:4200` and then open the console (second icon from the top on
+the left-hand side navigation bar).
 
 We will create a user account for Debezium to use:
 
@@ -100,13 +105,15 @@ We will create a user account for Debezium to use:
 CREATE USER debezium WITH (password='debeziumpwdincratedb123');
 ```
 
-The table on our MSSQL source is on the `dbo` schema, let’s imagine we want to have a `dbo` schema on CrateDB as well, the `debezium` account will need permissions on it:
+The table on our MSSQL source is on the `dbo` schema. Let's imagine we want to
+have a `dbo` schema on CrateDB as well. The `debezium` account will need
+permissions on it:
 
 ```sql
 GRANT DQL,DML,DDL ON SCHEMA dbo to debezium;
 ```
 
-And let’s create the structure of the table that will receive the data:
+And let's create the structure of the table that will receive the data:
 
 ```sql
 CREATE TABLE dbo.tbltest (
@@ -116,11 +123,11 @@ CREATE TABLE dbo.tbltest (
 );
 ```
 
-## Zookeeper and Kafka
+## Set up Zookeeper and Kafka
 
 To use Debezium we will need to have working setups of Zookeeper and Kafka.
 
-For the purpose of this example I will spin them up with containers on the same machine:
+For this example we will spin them up with containers on the same machine:
 
 ```bash
 sudo docker run -it --rm --name zookeeper -p 2181:2181 -p 2888:2888 -p 3888:3888 debezium/zookeeper
@@ -136,9 +143,9 @@ bin/kafka-topics.sh --create --replication-factor 1 --partitions 1 --topic my_co
 exit
 ```
 
-Please note this is a very basic setup, for production purposes you may want to adjust some of [these settings](https://kafka.apache.org/41/configuration/topic-configs/).
+Please note this is a very basic setup. For production purposes you may want to adjust some of [these settings](https://kafka.apache.org/41/configuration/topic-configs/).
 
-## Prepare and start a Debezium container image
+## Prepare and start a Debezium container
 
 We need to customize the base `debezium/connect` Docker image adding a JDBC sink and the PostgreSQL drivers.
 
@@ -178,9 +185,9 @@ sudo docker run -it --rm --name connect -p 8083:8083 \
   cratedb-connect-debezium
 ```
 
-This assumes Kafka is running locally on the same server, you will need to adjust `BOOTSTRAP_SERVERS` if that is not the case.
+This assumes Kafka is running locally on the same server. You will need to adjust `BOOTSTRAP_SERVERS` if that is not the case.
 
-## Configure a source connector
+## Configure the source connector
 
 Let’s create a `connector.json` file as follows:
 
@@ -190,18 +197,18 @@ Let’s create a `connector.json` file as follows:
   "config": {
     "connector.class": "io.debezium.connector.sqlserver.SqlServerConnector",
     "tasks.max": "1",
-    
+
     "database.history.kafka.bootstrap.servers": "host.docker.internal:9092",
     "schema.history.internal.kafka.bootstrap.servers": "host.docker.internal:9092",
     "topic.prefix": "cratedbdemo",
     "database.encrypt": "false",
-    
+
     "database.hostname": "host.docker.internal",
     "database.port": "1433",
     "database.user": "debeziumlogin",
     "database.password": "<enterStrongPasswordHere>",
     "database.server.name": "mssql-server",
-    
+
     "database.names": "erp",
     "table.whitelist": "dbo.tbltest",
     "database.history.kafka.topic": "schema-changes.mssql-server.tbltest",
@@ -218,7 +225,7 @@ Let’s deploy this:
 curl -i -X POST -H "Accept:application/json" -H "Content-Type:application/json" http://localhost:8083/connectors/ -d @connector.json
 ```
 
-## Configure a target
+## Configure the target connector
 
 Let’s create a `destination-connector.json` file as follows:
 
@@ -228,20 +235,20 @@ Let’s create a `destination-connector.json` file as follows:
   "config": {
     "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
     "tasks.max": "1",
-    
+
     "connection.url": "jdbc:postgresql://host.docker.internal:5432/",
     "connection.user": "debezium",
     "connection.password": "debeziumpwdincratedb123",
-    
+
     "topics": "cratedbdemo.erp.dbo.tbltest",
     "table.name.format": "dbo.tbltest",
     "auto.create": "false",
     "auto.evolve": "false",
-    
+
     "insert.mode": "upsert",
     "pk.fields": "id",
     "pk.mode": "record_value",
-    
+
     "transforms": "unwrap",
     "transforms.unwrap.type": "io.debezium.transforms.ExtractNewRecordState"
   }
@@ -256,9 +263,7 @@ Let’s deploy this:
 curl -i -X POST -H "Accept:application/json" -H "Content-Type:application/json" http://localhost:8083/connectors/ -d @destination-connector.json
 ```
 
-## Testing
-
-Let’s see this in action.
+## Test the replication
 
 Let’s create a record from the MSSQL side:
 
@@ -279,10 +284,11 @@ Let’s now try an update from the MSSQL side:
 ```sql
 UPDATE erp.dbo.tbltest
 SET srcsystem = 'Updated successfully'
-WHERE id = 1
+WHERE id = 1;
 ```
 
 ![CrateDB query result showing updated record](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/4476976451e1f943112082a7d1e0cd36524740a1.png)
+::::::
 
 ## Conclusion
 

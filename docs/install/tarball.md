@@ -17,28 +17,38 @@ manually building CrateDB suited for ARM-based macOS. Detailed instructions
 can be found in our [manual build guide].
 :::
 
-1. Download the latest [CrateDB release archive]. Please make sure to select
-   the right release archive matching your system.
+::::::{stepper}
 
-2. Once downloaded, extract the archive either using your favorite terminal or
-   command line shell or by using a GUI tool like [7-Zip]:
+## Download
 
-   ```shell
-   # Extract tarball on Unix-like systems
-   tar -xzf crate-*.tar.gz
-   ```
+Download the latest [CrateDB release archive]. Please make sure to select
+the right release archive matching your system.
 
-3. On the terminal, change into the extracted `crate` directory:
+## Extract the archive
 
-   ```shell
-   cd crate-*
-   ```
+Once downloaded, extract the archive either using your favorite terminal or
+command line shell or by using a GUI tool like [7-Zip]:
 
-4. Run a CrateDB single-node instance on the local network interface:
+```shell
+# Extract tarball on Unix-like systems
+tar -xzf crate-*.tar.gz
+```
 
-   ```shell
-   ./bin/crate
-   ```
+## Navigate to directory
+
+On the terminal, change into the extracted `crate` directory:
+
+```shell
+cd crate-*
+```
+
+## Run CrateDB
+
+Run a CrateDB single-node instance on the local network interface:
+
+```shell
+./bin/crate
+```
 
 :::{NOTE}
 When running a specific version of CrateDB from tarball on a macOS
@@ -53,7 +63,11 @@ This is expected and can be fixed in your system settings:
     will run as expected.
 :::
 
-5. In order to stop CrateDB again, use {kbd}`ctrl-c`.
+## Stop CrateDB
+
+In order to stop CrateDB again, use {kbd}`ctrl-c`.
+
+::::::
 
 :::{SEEALSO}
 Consult the {ref}`crate-reference:cli` documentation for further information

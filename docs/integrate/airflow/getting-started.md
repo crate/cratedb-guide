@@ -40,6 +40,7 @@ Since 2014, Apache Airflow and its ecosystem have grown significantly. To run Ai
 
 To simplify operations, use a managed Apache Airflow provider such as Astronomer. Astronomer runs on Kubernetes, abstracts infrastructure details, and provides a clean interface for building and operating workflows.
 
+::::::{stepper}
 ## Set up a local Airflow project
 
 The examples use an 8‑core machine with 30 GB RAM on Ubuntu 22.04 LTS. Install the Astronomer CLI (requires [Docker](https://www.docker.com/) 18.09+). On Ubuntu:
@@ -148,7 +149,7 @@ the project and open a bash session in the scheduler container:
 Run `env` to list the applied environment variables.
 
 This will output some variables set by Astronomer by default including the variable for the CrateDB connection.
-
+::::::
 
 [Apache Airflow]: https://airflow.apache.org/
 [Astronomer]: https://www.astronomer.io/

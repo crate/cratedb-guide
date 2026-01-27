@@ -95,14 +95,20 @@ If only 1 replica is configured one active shard suffices in order for
 write and delete operations to succeed.
 :::
 
-## Upgrade Process
+## Upgrade process
+
+::::::{stepper}
+
+### Backup
 
 :::{WARNING}
 Before upgrading, you should {ref}`back up your data
 <crate-reference:snapshot-restore>`.
 :::
 
-### Step 1: Disable allocations
+
+
+### Disable allocations
 
 First, you have to prevent the cluster from re-distributing shards and replicas
 while certain nodes are not available. You can do that by disabling
@@ -116,11 +122,11 @@ SET OK, 1 row affected (... sec)
 ```
 
 :::{NOTE}
-This step may be omited if you set the
+This step may be omitted if you set the
 `cluster.graceful_stop.min_availability` setting to `full`.
 :::
 
-### Step 2: Graceful stop
+### Graceful stop
 
 To initiate a graceful shutdown that behaves as described in the introduction
 of this document, the {ref}`DECOMMISSION <crate-reference:alter_cluster_decommission>`
@@ -164,7 +170,7 @@ enough nodes in the cluster to move shards or else the graceful shutdown
 procedure will fail!
 
 For example, if there are 4 nodes and 3 configured replicas, there will not
-be enough nodes to to fulfill the required replicas.
+be enough nodes to fulfill the required replicas.
 
 Also, if there is not enough disk space on other nodes to move the shards to
 the graceful stop procedure will fail.
@@ -173,10 +179,10 @@ the graceful stop procedure will fail.
 By default, only the `graceful stop` command considers the cluster settings
 described at {ref}`graceful stop <crate-reference:conf_graceful_stop>`.
 
-#### Observing the reallocation
+**Observe the reallocation**
 
 If you want to observe the reallocation process triggered by a `full` or
-`primaries` graceful-stop, you can issue the following sql queries regularly.
+`primaries` graceful-stop, you can issue the following SQL queries regularly.
 
 Get the number of shards remaining on your deallocating node:
 
@@ -231,7 +237,7 @@ If a query fails due to a missing node, the admin UI may falsely consider
 the cluster to be in a critical state.
 :::
 
-### Step 3: Upgrade CrateDB
+### Upgrade CrateDB
 
 After the node is stopped you can safely upgrade your CrateDB installation.
 Depending on your installation and operating system you can do it by
@@ -246,7 +252,7 @@ $sh yum update -y crate
 If you are in doubt how to upgrade an installed package, please refer to the
 man pages of your operating system or package manager.
 
-### Step 4: Start CrateDB
+### Start CrateDB
 
 Once the upgrade process is completed you can start the CrateDB process again
 by either invoking the bin/crate executable from the tarball directly:
@@ -263,11 +269,11 @@ Example for RHEL/YUM:
 sh$ service crate start
 ```
 
-### Step 5: Repeat
+### Repeat
 
-Repeat step two, three, and four for all other nodes.
+Repeat steps 2, 3, and 4 for all other nodes.
 
-### Step 6: Enable allocations
+### Enable allocations
 
 Finally, when all nodes are updated you can re-enable allocations
 again that have been disabled in the first step:
@@ -276,3 +282,5 @@ again that have been disabled in the first step:
 cr> SET GLOBAL TRANSIENT "cluster.routing.allocation.enable" = 'all';
 SET OK, 1 row affected (... sec)
 ```
+
+::::::

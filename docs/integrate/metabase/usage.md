@@ -18,7 +18,7 @@ import your own data similarly to how it's done [in this how-to].
 
 (integration-metabase-config)=
 
-## Initial configuration
+## Configure the database connection
 
 Metabase offers both a cloud version and a local installation. E.g.
 `` `shell
@@ -60,7 +60,7 @@ complete".
 
 (integration-metabase-questions)=
 
-## Questions
+## Visualize the data
 
 Now you are ready to visualize your data. Metabase works by asking questions.
 You ask a question, and Metabase answers it in a visual form. These questions

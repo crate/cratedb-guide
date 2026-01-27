@@ -14,6 +14,7 @@ cluster, and a Python installation on your workstation. You can use
 [CrateDB Self-Managed] or [CrateDB Cloud].
 :::
 
+::::::{stepper}
 ## Setup
 
 To start a CrateDB instance for evaluation purposes, use Docker or Podman.
@@ -31,6 +32,7 @@ the database server.
 :::
 
 ## Configure
+
 A minimal set of **dbt profile configuration** options, for example within a
 [`profiles.yml`] file at `~/.dbt/profiles.yml`.
 ```bash
@@ -54,6 +56,7 @@ EOF
 Please note the values for `dbname`, `schema`, and `search_path` in this example.
 
 ## Project
+
 When working with dbt, you are working on behalf of a dbt project.
 A dbt project has a [specific structure][dbt-project-structure], and contains a
 combination of SQL, Jinja, YAML, and Markdown files.
@@ -62,6 +65,7 @@ a folder called `macros` can include macro override files.
 
 At [cratedb-examples » framework/dbt], you can explore a few ready-to-run dbt
 projects that demonstrate usage with CrateDB.
+::::::
 
 ## Appendix
 

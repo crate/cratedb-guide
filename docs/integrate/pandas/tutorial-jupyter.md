@@ -25,8 +25,9 @@ companies and store it all in CrateDB using Python.
 
 Before anything else, I must make sure I have my setup ready.
 
-So, let’s get started.
+So, let's get started.
 
+::::::{stepper}
 ## Prerequisites
 
 You will need access to a CrateDB cluster and a Jupyter environment with
@@ -88,7 +89,7 @@ print('Hello World!')
 
 ![Hello World program](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/e25efa994ab0afefe946e2ec5b99d4b9b31cfad8.jpeg){w=800px}
 
-Great, it works! Now I can head to the following steps to download the financial data. 
+Great, it works! Now I can head to the following steps to download the financial data.
 
 ## Getting all S&P-500 ticker symbols from Wikipedia
 
@@ -417,9 +418,10 @@ def get_period_to_download(last_date):
     else:
         return '1y'
 ```
-The only thing missing is a method to wrap up everything. Let’s move on to it!
+The only thing missing is a method to wrap up everything. Let's move on to it!
 
-### Updating the table
+- :::{rubric} Updating the table
+- :::
 
 This method wraps up all the others.
 
@@ -487,6 +489,7 @@ And instantly get the results.
 ![apple-data|690x405](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/9e2fbb2abdf2946bf063466de4f8468650c6d578.png){w=800px}
 
 Now I can run this script whenever I want to update my database with new data!
+::::::
 
 ## Wrap up
 

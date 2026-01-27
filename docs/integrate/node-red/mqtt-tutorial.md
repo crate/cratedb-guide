@@ -23,6 +23,7 @@ You need:
 2. The [node-red-contrib-postgresql](https://github.com/alexandrainst/node-red-contrib-postgresql) module installed.
 3. A running MQTT broker. This tutorial uses [HiveMQ Cloud](https://www.hivemq.com/).
 
+::::::{stepper}
 ## Provision CrateDB
 
 First of all, we create the target table in CrateDB:
@@ -33,7 +34,7 @@ CREATE TABLE nodered_target (
 );
 ```
 
-Store the payload as CrateDB’s {ref}`OBJECT data type
+Store the payload as CrateDB's {ref}`OBJECT data type
 <crate-reference:type-object>` to accommodate an evolving schema.
 For production, also consider the {ref}`partitioning and sharding guide <sharding-partitioning>`.
 
@@ -72,7 +73,7 @@ content.
 
 Download the full workflow definition: [flows-consumer.json](https://community.cratedb.com/uploads/short-url/vWxIENgDPhYnoTZuQC7DKJoNdyY.json) (2.6 KB)
 
-## Testing
+## Test the workflow
 
 To test the workflow, click the square to the left of the timestamp node
 (![Screenshot 2021-09-13 at 14.24.50|70x68, 40%](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/d3e06521d875fe2daa959b3adc9f5bf6a22453e7.png){width=30px})
@@ -85,3 +86,4 @@ SELECT *
 FROM nodered_target;
 ```
 ![Screenshot 2021-09-13 at 16.05.33|690x419, 75%](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/37e20012ca132be3b1c810cc73340724640fb658.png){width=640px}
+::::::

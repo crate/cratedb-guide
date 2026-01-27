@@ -10,47 +10,63 @@ you would like to deploy CrateDB on Windows, please feel free to [contact
 us][contact us] so we can work with you on a solution.
 :::
 
-1. Download the latest [CrateDB release archive] for Windows.
+::::::{stepper}
 
-2. Once downloaded, extract the archive either using your favorite terminal or
-   command-line shell or by using a GUI tool like [7-Zip]. We recommend
-   using [PowerShell] when using terminal:
+## Download
 
-   Using PowerShell:
-   ```powershell
-   Expand-Archive -Path .\crate-*.zip -DestinationPath .
-   ```
+Download the latest [CrateDB release archive] for Windows.
 
-   Using tar (Windows 10 1803 and newer):
-   ```doscon
-   tar -xf .\crate-*.zip
-   ```
+## Extract the archive
 
-3. On the terminal, change into the extracted `crate` directory:
+Once downloaded, extract the archive either using your favorite terminal or
+command-line shell or by using a GUI tool like [7-Zip]. We recommend
+using [PowerShell] when using terminal:
 
-   ```doscon
-   cd crate-*
-   ```
+Using PowerShell:
+```powershell
+Expand-Archive -Path .\crate-*.zip -DestinationPath .
+```
 
-4. Run a CrateDB single-node instance on the local network interface:
+Using tar (Windows 10 1803 and newer):
+```doscon
+tar -xf .\crate-*.zip
+```
 
-   ```doscon
-   ./bin/crate
-   ```
+## Navigate to directory
 
-5. You will be notified by an INFO message similar to this, when your
-   single-node cluster is started successfully:
+On the terminal, change into the extracted `crate` directory:
 
-   ```text
-   [2022-07-04T19:41:12,340][INFO ][o.e.n.Node] [Aiguille Verte] started
-   ```
+```doscon
+cd crate-*
+```
 
-6. In order to stop CrateDB again, use {kbd}`ctrl-c`. You will be asked to
-   terminate the job. Input {kbd}`Y`:
+## Run CrateDB
 
-   ```text
-   Terminate batch job (Y/N)? Y
-   ```
+Run a CrateDB single-node instance on the local network interface:
+
+```doscon
+./bin/crate
+```
+
+## Verify startup
+
+You will be notified by an INFO message similar to this, when your
+single-node cluster is started successfully:
+
+```text
+[2022-07-04T19:41:12,340][INFO ][o.e.n.Node] [Aiguille Verte] started
+```
+
+## Stop CrateDB
+
+In order to stop CrateDB again, use {kbd}`ctrl-c`. You will be asked to
+terminate the job. Input {kbd}`Y`:
+
+```text
+Terminate batch job (Y/N)? Y
+```
+
+::::::
 
 :::{SEEALSO}
 Consult the {ref}`crate-reference:cli` documentation for further information

@@ -9,7 +9,8 @@ You will need Bash, Docker, Git, and Python to be installed on your workstation.
 
 ## Setup
 
-### CrateDB
+::::::{stepper}
+### Start CrateDB
 
 Start CrateDB using Docker.
 ```shell
@@ -33,10 +34,8 @@ EOF
 
 If you need more data to explore, follow [how to load 2.6M records from the NYC Yellowcab dataset into CrateDB](https://community.cratedb.com/t/quickly-starting-cratedb-with-2-5m-records-of-the-nyc-yellowcab-dataset/1162) instead.
 
+### Install Apache Superset from source
 
-### Sandbox
-
-#### Install Apache Superset from source
 You can copy this whole section verbatim into your terminal.
 ```shell
 # Acquire sources.
@@ -59,21 +58,24 @@ superset fab create-admin --username=admin --password=admin --firstname=admin --
 superset init
 ```
 
-#### Link the SQLAlchemy dialect for CrateDB
+### Link the SQLAlchemy dialect for CrateDB
+
 In order to link the filesystem location of the Python driver into the sandbox environment, install the package in ["editable" mode](https://pip.pypa.io/en/stable/topics/local-project-installs/#editable-installs).
 ```shell
 pip install --editable=/path/to/sqlalchemy-cratedb
 ```
 If you don't have the sources yet, you can obtain them from the Git repository using `git clone https://github.com/crate/sqlalchemy-cratedb`.
 
-#### Start backend
+### Start backend
+
 By using the `--reload` option, changes on the Python code will be automatically picked up.
 ```shell
 # Invoke development web server with code reload machinery.
 FLASK_ENV=development superset run -p 8088 --with-threads --reload --debugger
 ```
 
-#### Build and start frontend
+### Build and start frontend
+
 In another console, but also within the same virtualenv, you will need to build the frontend and run its development web server.
 ```shell
 source .venv/bin/activate
@@ -82,16 +84,18 @@ npm install
 npm run dev-server
 ```
 
+::::::
 
 ## Usage
 
-### User interface
 You should be ready to go. Now,
 
 - navigate to `http://localhost:4200/#!/console` for exploring the CrateDB Admin UI.
 - navigate to `http://localhost:8088/superset/sqllab/` for exploring your data in Apache Superset, log in with admin/admin.
 
+
 ### Create a database connection
+
 For creating a database connection to CrateDB in Apache Superset, you can either use the user interface, or the HTTP API. Those steps will create the connection using the HTTP API, saving a few clicks and keystrokes.
 ```shell
 # Authenticate and acquire a JWT token.
@@ -105,9 +109,11 @@ http --session=superset http://localhost:8088/api/v1/database/ database_name="Cr
 ```
 
 ### Hacking
+
 Now, you can just go ahead and edit code on the CrateDB Python driver located on your workstation. The application will notice your changes and pick them up by reloading the daemon environment. Please make sure to watch the output on the first console, where `superset run` has been invoked, for any anomalies or stacktraces.
 
 ## Clean up
+
 1. Both development web servers of Apache Superset (backend and frontend) can be terminated by hitting `CTRL+C`.
 2. The CrateDB database instance running in a container can be terminated by invoking `docker rm cratedb --force`.
 3. The metadata database of Apache Superset, where user accounts and database connections are stored, can be deleted by invoking `rm ~/.superset/superset.db`.

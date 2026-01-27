@@ -24,7 +24,11 @@ Use Locust to run load tests with a customizable set of SQL statements. [Locust]
 
 For this tutorial, we use a 3‑node local Docker cluster (see this [tutorial][]).
 
-First, set up the data model and load data. This example uses [DBeaver][], but you can also use the [CrateDB CLI tools][] or the Admin UI in self‑managed or [fully-managed][] CrateDB. 
+::::::{stepper}
+
+## Set up data model and load data
+
+First, set up the data model and load data. This example uses [DBeaver][], but you can also use the [CrateDB CLI tools][] or the Admin UI in self‑managed or [fully-managed][] CrateDB.
 
 Create the following tables:
 
@@ -485,6 +489,8 @@ On the second tab in Locust, you see the Charts of the same data.
 If you want to download the locust data, you can do that on the last tab.
 
 ![download-stats-100users|638x221](https://us1.discourse-cdn.com/flex020/uploads/crate/original/2X/b/b5a9a71f9db7275cd6c3465cdc1197eb4f54e41c.png)
+
+::::::
 
 ## Conclusion
 
