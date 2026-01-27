@@ -117,7 +117,7 @@ df = spark.read.format("jdbc")
    data. Make sure to specify the correct URL, table name, and authentication
    details.
 3. In this example, we load all data from the `sensor_data` table. You can also
-   use a SQL query instead of a table name you need to perform more complex
+   use a SQL query instead of a table name if you need to perform more complex
    data retrieval operations.
 
 ### Perform data manipulation and analysis
