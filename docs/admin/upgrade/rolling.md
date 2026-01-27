@@ -122,7 +122,7 @@ SET OK, 1 row affected (... sec)
 ```
 
 :::{NOTE}
-This step may be omited if you set the
+This step may be omitted if you set the
 `cluster.graceful_stop.min_availability` setting to `full`.
 :::
 
@@ -170,7 +170,7 @@ enough nodes in the cluster to move shards or else the graceful shutdown
 procedure will fail!
 
 For example, if there are 4 nodes and 3 configured replicas, there will not
-be enough nodes to to fulfill the required replicas.
+be enough nodes to fulfill the required replicas.
 
 Also, if there is not enough disk space on other nodes to move the shards to
 the graceful stop procedure will fail.
@@ -182,7 +182,7 @@ described at {ref}`graceful stop <crate-reference:conf_graceful_stop>`.
 **Observe the reallocation**
 
 If you want to observe the reallocation process triggered by a `full` or
-`primaries` graceful-stop, you can issue the following sql queries regularly.
+`primaries` graceful-stop, you can issue the following SQL queries regularly.
 
 Get the number of shards remaining on your deallocating node:
 
