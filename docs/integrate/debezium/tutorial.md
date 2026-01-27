@@ -284,7 +284,7 @@ Let’s now try an update from the MSSQL side:
 ```sql
 UPDATE erp.dbo.tbltest
 SET srcsystem = 'Updated successfully'
-WHERE id = 1
+WHERE id = 1;
 ```
 
 ![CrateDB query result showing updated record](https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/4476976451e1f943112082a7d1e0cd36524740a1.png)
