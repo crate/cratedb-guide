@@ -54,7 +54,7 @@ ingested into a Kafka topic. This data could be used in a reactive sense: for
 example, a micro-controller could consume from this topic to turn on air
 conditioning if the temperature were to rise above a certain threshold. Aside
 this use of the data, it should be stored into CrateDB. This allows
-to do long term data analytics, like predicting the weather trends for
+to do long-term data analytics, like predicting the weather trends for
 example. Payload from each sensor may look like this:
 
 ```json
