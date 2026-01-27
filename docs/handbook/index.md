@@ -6,7 +6,7 @@
 Use CrateDB and CrateDB Cloud in practice.
 :::
 
-:::{rubric} Instructions, how-to guides, tutorials, and explanations
+:::{rubric} Install and connect
 :::
 
 :::::{grid} 2 3 3 3
@@ -31,36 +31,6 @@ Database drivers, libraries, adapters, and connectors.
 
 :::::
 
-
-:::::{grid} 2 3 3 3
-:gutter: 2
-:padding: 0
-
-::::{grid-item-card}
-:link: howtos
-:link-type: ref
-{material-outlined}`integration_instructions;2em` &nbsp; **How-to guides**
-+++
-Instructions how to get tasks done with CrateDB.
-::::
-
-::::{grid-item-card}
-:link: tutorials
-:link-type: ref
-{material-outlined}`school;2em` &nbsp; **Tutorials**
-+++
-Acquire skills and knowledge about CrateDB.
-::::
-
-::::{grid-item-card}
-:link: explanations
-:link-type: ref
-{material-outlined}`lightbulb;2em` &nbsp; **Explanations**
-+++
-Broaden and deepen your knowledge and understanding of CrateDB.
-::::
-
-:::::
 
 :::{rubric} Best practice guides
 :::
@@ -155,9 +125,6 @@ Integrate with third-party applications and frameworks.
 
 ../install/index
 ../connect/index
-../howto/index
-../tutorial/index
-../explain/index
 ../admin/index
 ../performance/index
 ../feature/index
