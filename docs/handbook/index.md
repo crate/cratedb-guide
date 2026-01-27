@@ -37,14 +37,6 @@ Database drivers, libraries, adapters, and connectors.
 :padding: 0
 
 ::::{grid-item-card}
-:link: howtos
-:link-type: ref
-{material-outlined}`integration_instructions;2em` &nbsp; **How-to guides**
-+++
-Instructions how to get tasks done with CrateDB.
-::::
-
-::::{grid-item-card}
 :link: tutorials
 :link-type: ref
 {material-outlined}`school;2em` &nbsp; **Tutorials**
@@ -155,7 +147,6 @@ Integrate with third-party applications and frameworks.
 
 ../install/index
 ../connect/index
-../howto/index
 ../tutorial/index
 ../explain/index
 ../admin/index
