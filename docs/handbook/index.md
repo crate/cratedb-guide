@@ -6,7 +6,7 @@
 Use CrateDB and CrateDB Cloud in practice.
 :::
 
-:::{rubric} Instructions, how-to guides, tutorials, and explanations
+:::{rubric} Install and connect
 :::
 
 :::::{grid} 2 3 3 3
