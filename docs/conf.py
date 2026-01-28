@@ -110,6 +110,14 @@ linkcheck_ignore += [
     r"https://docs.astronomer.io/",
     r"https://www.confluent.io/",
     r"https://www.tensorflow.org/",
+    r"https://testcontainers.com/",
+    r"https://www.astronomer.io/",
+    r"https://www.hivemq.com/",
+    # 403 Client Error: Forbidden
+    r"https://mariadb.com/",
+    r"https://www.mariadb.com/",
+    # Exceeded 30 redirects.
+    r"https://junit.org/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
