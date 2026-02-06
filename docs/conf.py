@@ -118,6 +118,9 @@ linkcheck_ignore += [
     r"https://www.mariadb.com/",
     # Exceeded 30 redirects.
     r"https://junit.org/",
+    # Read timed out.
+    r"https://www.singer.io/",
+    r"https://meltano.com/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
