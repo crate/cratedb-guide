@@ -295,8 +295,8 @@ CI outcomes for a range of client drivers connecting your applications to CrateD
 ### CrateDB
 Adapters, drivers, dialects, and support utilities maintained by CrateDB.
 
-<a href="https://github.com/crate/crate-python/actions/workflows/nightly.yml" target="_blank">
-    <img src="https://img.shields.io/github/actions/workflow/status/crate/crate-python/nightly.yml?branch=main&label=crate-python" loading="lazy"></a>
+<a href="https://github.com/crate/crate-python/actions/workflows/tests.yml" target="_blank">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/crate-python/tests.yml?branch=main&label=crate-python" loading="lazy"></a>
 <a href="https://github.com/crate/sqlalchemy-cratedb/actions/workflows/nightly.yml" target="_blank">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/sqlalchemy-cratedb/nightly.yml?branch=main&label=sqlalchemy-cratedb" loading="lazy"></a>
 <a href="https://github.com/crate/micropython-cratedb/actions/workflows/tests.yml" target="_blank">
