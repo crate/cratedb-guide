@@ -123,12 +123,12 @@ Integrate with third-party applications and frameworks.
 ```{toctree}
 :hidden:
 
+Solutions <../solution/index>
 ../install/index
+Ingestion <../ingest/index>
 ../connect/index
+../integrate/index
+../feature/index
 ../admin/index
 ../performance/index
-../feature/index
-Ingestion <../ingest/index>
-Solutions <../solution/index>
-../integrate/index
 ```
