@@ -37,6 +37,13 @@ Database URI and connection properties for different drivers.
 Use CLI programs or database IDEs to connect to CrateDB.
 ::::
 
+:::{grid-item-card} {material-outlined}`integration_instructions;2em` Software Testing
+:link: testing
+:link-type: ref
+:link-alt: Software testing with CrateDB
+Learn how to do software testing with CrateDB.
+:::
+
 :::::
 
 
@@ -343,6 +350,7 @@ protocol.
 
 general
 application
+testing/index
 ```
 
 ```{toctree}

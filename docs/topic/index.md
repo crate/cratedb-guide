@@ -60,16 +60,6 @@ Learn how to use programming frameworks with CrateDB.
 Django, Gradio, Plotly, PyViz, QueryZen, Streamlit.
 :::
 
-:::{grid-item-card} {material-outlined}`integration_instructions;2em` Software Testing
-:link: testing
-:link-type: ref
-:link-alt: Software testing with CrateDB
-Learn how to do software testing with CrateDB.
-+++
-**What's inside:**
-Java, Python, Testcontainers.
-:::
-
 :::{grid-item-card} {material-outlined}`drive_file_move;2em` Warehouse Migrations
 :link: migrations
 :link-type: ref
@@ -112,6 +102,5 @@ Business Intelligence <bi/index>
 Data Lineage <lineage/index>
 Data Visualization <visualize/index>
 Programming Frameworks <framework/index>
-Software Testing <testing/index>
 migrate/index
 ```
