@@ -129,7 +129,6 @@ Integrate with third-party applications and frameworks.
 ../performance/index
 ../feature/index
 Ingestion <../ingest/index>
-../topic/index
 Solutions <../solution/index>
 ../integrate/index
 ```
