@@ -19,4 +19,4 @@ build:
     # Invoke the build using `uv`.
     build:
       html:
-        - PYTHONUNBUFFERED=true uv run sphinx-build -W -T -b html docs $READTHEDOCS_OUTPUT/html
+        - ${READTHEDOCS_VIRTUALENV_PATH}/bin/sphinx-build -W -T -b html docs $READTHEDOCS_OUTPUT/html
