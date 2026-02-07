@@ -48,6 +48,14 @@ on behalf of [cratedb-examples] and [academy-fundamentals-course].
     <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/application-ingestr.yml?branch=main&label=Ingestr" loading="lazy"></a>
 <a href="https://github.com/crate/cratedb-examples/actions/workflows/application-metabase.yml" target="_blank">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/application-metabase.yml?branch=main&label=Metabase" loading="lazy"></a>
+<a href="https://github.com/crate/cratedb-examples/actions/workflows/application-pgpool.yml" target="_blank">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/application-pgpool.yml?branch=main&label=Pgpool-II" loading="lazy"></a>
+<a href="https://github.com/crate/cratedb-examples/actions/workflows/application-records.yml" target="_blank">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/application-records.yml?branch=main&label=Records" loading="lazy"></a>
+<a href="https://github.com/crate/cratedb-examples/actions/workflows/application-roapi.yml" target="_blank">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/application-roapi.yml?branch=main&label=ROAPI" loading="lazy"></a>
+<a href="https://github.com/crate/cratedb-examples/actions/workflows/application-tinyetl.yml" target="_blank">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/application-tinyetl.yml?branch=main&label=TinyETL" loading="lazy"></a>
 </td>
 </tr>
 
@@ -80,6 +88,10 @@ on behalf of [cratedb-examples] and [academy-fundamentals-course].
     <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/framework-gradio.yml?branch=main&label=Gradio" loading="lazy"></a>
 <a href="https://github.com/crate/cratedb-examples/actions/workflows/framework-mcp.yml" target="_blank">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/framework-mcp.yml?branch=main&label=MCP" loading="lazy"></a>
+<a href="https://github.com/crate/cratedb-examples/actions/workflows/framework-meltano.yml" target="_blank">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/framework-meltano.yml?branch=main&label=Meltano" loading="lazy"></a>
+<a href="https://github.com/crate/cratedb-examples/actions/workflows/framework-records.yml" target="_blank">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/framework-records.yml?branch=main&label=Records" loading="lazy"></a>
 <a href="https://github.com/crate/cratedb-examples/actions/workflows/framework-streamlit.yml" target="_blank">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/framework-streamlit.yml?branch=main&label=Streamlit" loading="lazy"></a>
 </td>
@@ -120,6 +132,16 @@ on behalf of [cratedb-examples] and [academy-fundamentals-course].
       <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/lang-ruby.yml?branch=main&label=Ruby" loading="lazy"></a>
 <a href="https://github.com/crate/cratedb-examples/actions/workflows/lang-rust-postgres.yml" target="_blank">
       <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/lang-rust-postgres.yml?branch=main&label=Rust postgres" loading="lazy"></a>
+</td>
+</tr>
+
+<tr>
+<td>
+<b>Notebook</b>
+</td>
+<td>
+<a href="https://github.com/crate/cratedb-examples/actions/workflows/notebook-jupyter.yml" target="_blank">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/notebook-jupyter.yml?branch=main&label=Jupyter" loading="lazy"></a>
 </td>
 </tr>
 
