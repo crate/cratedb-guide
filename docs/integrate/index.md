@@ -9,17 +9,17 @@ This documentation section lists applications, frameworks, and libraries,
 which can be used together with CrateDB, and outlines how to use them
 optimally.
 
-:::{toctree}
-:maxdepth: 1
-:glob:
-
-*/index
-:::
-
-You can also explore integrations by other angles.
+Explore integrations by category.
 :::{toctree}
 :maxdepth: 1
 category/overview
+:::
+
+Explore integrations sorted alphanumerically.
+:::{toctree}
+:maxdepth: 1
+:glob:
+*/index
 :::
 
 
