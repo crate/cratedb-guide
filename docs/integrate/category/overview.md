@@ -64,6 +64,7 @@ Django, Gradio, Plotly, PyViz, QueryZen, Streamlit.
 :link: migrations
 :link-type: ref
 :link-alt: Migrate workloads to CrateDB
+:class-item: visually-hidden
 Guidelines, tools, and ETL recipes, to support migrating data
 warehouse workloads to CrateDB.
 +++
