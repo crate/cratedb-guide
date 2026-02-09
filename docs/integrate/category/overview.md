@@ -4,7 +4,7 @@
 (topic)=
 (topics)=
 
-# Topics
+# Categories
 
 :::{div} sd-text-muted
 Learn how to apply CrateDB within different use case scenarios.
@@ -60,16 +60,6 @@ Learn how to use programming frameworks with CrateDB.
 Django, Gradio, Plotly, PyViz, QueryZen, Streamlit.
 :::
 
-:::{grid-item-card} {material-outlined}`integration_instructions;2em` Software Testing
-:link: testing
-:link-type: ref
-:link-alt: Software testing with CrateDB
-Learn how to do software testing with CrateDB.
-+++
-**What's inside:**
-Java, Python, Testcontainers.
-:::
-
 :::{grid-item-card} {material-outlined}`drive_file_move;2em` Warehouse Migrations
 :link: migrations
 :link-type: ref
@@ -78,27 +68,7 @@ Guidelines, tools, and ETL recipes, to support migrating data
 warehouse workloads to CrateDB.
 +++
 **What's inside:**
-Java, Python, Testcontainers.
-:::
-
-::::
-
-:::{rubric} See also
-:::
-
-::::{grid} 1 2 2 2
-:margin: 4 4 0 0
-:gutter: 2
-:padding: 0
-
-:::{grid-item-card} {material-outlined}`model_training;2em` Machine Learning
-:link: machine-learning
-:link-type: ref
-:link-alt: Machine Learning with CrateDB
-Learn how to use CrateDB for machine learning.
-+++
-**What's inside:**
-CrateDB vector store, Text-to-SQL, Time series analysis, MLOps and model training.
+InfluxDB, MongoDB, Rockset.
 :::
 
 ::::
@@ -112,6 +82,5 @@ Business Intelligence <bi/index>
 Data Lineage <lineage/index>
 Data Visualization <visualize/index>
 Programming Frameworks <framework/index>
-Software Testing <testing/index>
 migrate/index
 ```

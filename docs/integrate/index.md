@@ -13,7 +13,13 @@ optimally.
 :maxdepth: 1
 :glob:
 
-**/index
+*/index
+:::
+
+You can also explore integrations by other angles.
+:::{toctree}
+:maxdepth: 1
+category/overview
 :::
 
 
