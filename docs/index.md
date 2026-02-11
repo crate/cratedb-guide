@@ -1,21 +1,40 @@
 (index)=
-# Welcome to CrateDB
 
 <!--
 NOTE: When adding or removing top-level entries in this toctree, you must also
-update the corresponding hardcoded links in the theme's sidebartoc.html file:
-https://github.com/crate/crate-docs-theme/blob/main/src/crate/theme/rtd/crate/sidebartoc.html
+update the corresponding hardcoded links in the theme's sidebartoc.py file:
+https://github.com/crate/crate-docs-theme/blob/main/src/crate/theme/rtd/sidebartoc.py
 
-Look for the "Section A: Guide" section in the {% else %} branch.
+Look for the "else" branch under the 'CrateDB: Guide' project check.
 -->
 
 ```{toctree}
 :hidden:
 
+overview/index
 start/index
-handbook/index
-
 ```
+
+```{toctree}
+:hidden:
+:caption: Build
+
+ingest/index
+connect/index
+integrate/index
+feature/index
+```
+
+```{toctree}
+:hidden:
+:caption: Operations
+
+install/index
+admin/index
+performance/index
+```
+
+# Welcome to CrateDB
 
 CrateDB is a fully open-source **distributed SQL database** designed for
 **real-time analytics, search and AI** at scale. Whether you are working with
@@ -76,6 +95,7 @@ or comprehensive courses.
 :expand:
 **Get Started →**
 ```
+
 :::
 ::::
 
@@ -106,13 +126,6 @@ Methods for importing and loading data into CrateDB.
 :link-type: ref
 :link-alt: CrateDB Integrations
 Third-party tools, data pipelines, and frameworks.
-::::
-
-::::{grid-item-card} {material-outlined}`auto_stories;1.5em` Handbook
-:link: handbook
-:link-type: ref
-:link-alt: CrateDB Handbook
-Guides and tutorials for using CrateDB in practice.
 ::::
 
 ::::{grid-item-card} {material-outlined}`settings;1.5em` Admin
@@ -161,7 +174,6 @@ Contact our support team for assistance with your CrateDB deployment.
 ::::
 :::::
 
-
 :::{admonition} CrateDB is open-source
 :class: tip
 
@@ -170,9 +182,11 @@ licensed under the Apache License 2.0. We appreciate contributions from
 everyone.
 
 **Improve the documentation:**
-- Use the feedback widget (⚙️ top right) for quick feedback or PR on any page
+
+- Use the feedback widget (top right) for quick feedback or PR on any page
 
 **Contribute to CrateDB:**
+
 - Report bugs or request features for CrateDB on
   [GitHub](https://github.com/crate/crate/issues)
 - Explore our other [open-source projects](https://github.com/crate)

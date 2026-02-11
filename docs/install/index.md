@@ -1,6 +1,6 @@
 (install)=
 
-# Install
+# Installation
 
 :::{div} sd-text-muted
 Install CrateDB on different operating systems and environments,
