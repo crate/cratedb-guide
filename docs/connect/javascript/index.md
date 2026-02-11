@@ -9,8 +9,13 @@ Connect to CrateDB and CrateDB Cloud from Node.js.
 
 :::{rubric} Driver options
 :::
+Choose one of two JavaScript (Node.js) drivers:
 
-:::{include} _driver_options.md
+- {ref}`node-postgres` - using PG Wire Protocol
+- {ref}`node-crate` - using HTTP/HTTPS
+
+Prefer `node-postgres` first for PostgreSQL-wire compatibility. If you need
+HTTP/REST features or run into PG-wire limitations, use `node-crate`.
 :::
 
 :::{toctree}
