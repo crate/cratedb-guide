@@ -11,6 +11,7 @@ Data ingestion / loading / import methods for CrateDB at a glance.
 :maxdepth: 2
 :hidden:
 
+fdw
 etl/index
 cdc/index
 telemetry/index
