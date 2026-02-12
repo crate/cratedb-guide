@@ -18,7 +18,7 @@ within CrateDB.
 ## Prerequisites
 
 Before configuring a Foreign Data Wrapper (FDW), you should have CrateDB and
-PostgreSQL instances up and running.
+PostgreSQL instances up and running, or other services that speak the PostgreSQL wire protocol.
 
 :::{note}
 To have access to FDW in CrateDB, make sure you have a cluster running
