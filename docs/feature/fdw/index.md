@@ -4,16 +4,11 @@
 
 :::{div} sd-text-muted
 Access PostgreSQL database tables on remote servers as if they were stored
-within CrateDB.
+within CrateDB and perform read-only queries on the data.
 :::
 
-## Limitations
 
-- **Read-only** – only SELECT (DQL) is supported on foreign tables.
-- **PostgreSQL support** – currently CrateDB only supports FDW for PostgreSQL.
-- **Filter push-down is best-effort** – use `EXPLAIN` to see what is pushed.
-- **Security guard-rail** – by default only the `crate` user may connect to
-  *localhost* targets. Override via `fdw.allow_local = true` if you must.
+This guide walks you through setting up and querying foreign data wrappers.
 
 ## Prerequisites
 
@@ -27,10 +22,13 @@ version 5.7 or above.
 
 ## Set up
 
+::::{stepper}
+
+### Set firewall rules
+
 Ensure outbound firewall rules allow CrateDB → remote DB traffic before
 proceeding with the following steps.
 
-::::{stepper}
 ### Create a server in CrateDB
 
 ```sql
@@ -127,6 +125,18 @@ You can drop the server once it is no longer used. The clauses available are:
   given servers exist. This is the default.
 - **CASCADE** – causes `DROP SERVER` to also delete all foreign tables and
   mapped users using the given servers.
+
+## Example
+
+:::{card}
+:link: https://github.com/crate/cratedb-examples/tree/main/application/roapi
+:link-type: url
+{material-regular}`play_arrow;2em`
+Integrating ROAPI data sources with CrateDB.
++++
+Demonstrates how to mount ROAPI data sources as tables in CrateDB
+using the PostgreSQL foreign data wrapper.
+:::
 
 :::{seealso}
 {ref}`Reference manual <crate-reference:administration-fdw>`
