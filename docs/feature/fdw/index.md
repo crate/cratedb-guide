@@ -1,83 +1,157 @@
 (fdw)=
-# Foreign Data Wrapper
 
-:::{include} /_include/links.md
+# Foreign data wrappers
+
+:::{div} sd-text-muted
+Access PostgreSQL database tables on remote servers as if they were stored
+within CrateDB and perform read-only queries on the data.
 :::
 
-:::::{grid}
-:padding: 0
 
-::::{grid-item}
-:class: rubric-slim
-:columns: auto 9 9 9
+This guide walks you through setting up and querying foreign data wrappers.
 
-:::{rubric} Overview
+## Prerequisites
+
+Before configuring a Foreign Data Wrapper (FDW), you should have CrateDB and
+PostgreSQL instances up and running, or other services that speak the PostgreSQL wire protocol.
+
+:::{note}
+To have access to FDW in CrateDB, make sure you have a cluster running
+version 5.7 or above.
 :::
-In the spirit of the PostgreSQL FDW implementation, CrateDB offers the
-possibility to access database tables on remote database servers as if
-they would be stored within CrateDB.
 
-:::{rubric} About
+## Set up
+
+::::{stepper}
+
+### Set firewall rules
+
+Ensure outbound firewall rules allow CrateDB → remote DB traffic before
+proceeding with the following steps.
+
+### Create a server in CrateDB
+
+```sql
+CREATE SERVER my_postgresql FOREIGN DATA WRAPPER jdbc
+OPTIONS (url 'jdbc:postgresql://example.com:5432/');
+```
+
+:::{note}
+By default only the `crate` user can use server definitions that connect to
+localhost. Other users are not allowed to connect to instances running on the
+same host as CrateDB. This is a security measure to prevent users from
+bypassing [Host-Based Authentication (HBA)] restrictions.
+See [fdw.allow_local].
+
+[Host-Based Authentication (HBA)]: inv:crate-reference:*:label#admin_hba
+[fdw.allow_local]: inv:crate-reference:*:label#fdw.allow_local
 :::
-Foreign Data Wrappers allow you to make data in
-foreign systems available as tables within CrateDB. You can then query
-these foreign tables like regular user tables.
+
+### Create a user mapping
+
+Use a DDL statement to map a CrateDB user to another user on a
+foreign server. If not set, your session details will be used instead.
+
+```sql
+CREATE USER MAPPING
+FOR mylocaluser
+SERVER my_postgresql
+OPTIONS ("user" 'myremoteuser', password '*****');
+```
+
+### Create foreign table
+
+Establish a view onto data in the foreign system:
+
+```sql
+CREATE FOREIGN TABLE remote_readings (
+  ts      timestamp,
+  device  text,
+  value   double
+) SERVER my_postgresql
+  OPTIONS (
+    schema_name 'public',  -- remote schema
+    table_name  'readings'
+  );
+```
 
 ::::
 
-::::{grid-item}
-:class: rubric-slim
-:columns: auto 3 3 3
+## Usage
 
-:::{rubric} Reference Manual
+### Query and debug
+
+You can query these foreign tables like regular user tables:
+
+```sql
+SELECT ts, value
+FROM   remote_readings
+WHERE  device = 'sensor-42';
+```
+
+Query clauses like `GROUP BY`, `HAVING`, `LIMIT` or `ORDER BY` are executed
+within CrateDB, not within the foreign system. `WHERE` clauses can in some
+circumstances be pushed to the foreign system, but that depends on the
+concrete foreign data wrapper implementation. You can check if this is the
+case by using the {ref}`crate-reference:ref-explain` statement.
+
+For example, in the following explain output there is a dedicated `Filter`
+node, indicating that the filter is executed within CrateDB:
+
+```sql
+EXPLAIN SELECT ts, value FROM remote_readings WHERE device = 'sensor-42';
+```
+
+```text
++--------------------------------------------------------------------------+
+| QUERY PLAN                                                               |
++--------------------------------------------------------------------------+
+| Filter[(device = 'sensor-42')] (rows=0)                                  |
+|   └ ForeignCollect[doc.remote_readings | [device] | true] (rows=unknown) |
++--------------------------------------------------------------------------+
+```
+
+### Drop server
+
+```sql
+DROP SERVER my_postgresql;
+```
+
+You can drop the server once it is no longer used. The clauses available are:
+
+- **IF EXISTS** – the statement won't raise an error if any servers listed
+  don't exist.
+- **RESTRICT** – raises an error if any foreign table or user mappings for the
+  given servers exist. This is the default.
+- **CASCADE** – causes `DROP SERVER` to also delete all foreign tables and
+  mapped users using the given servers.
+
+## Example
+
+:::{card}
+:link: https://github.com/crate/cratedb-examples/tree/main/application/roapi
+:link-type: url
+{material-regular}`play_arrow;2em`
+Integrating ROAPI data sources with CrateDB.
++++
+Demonstrates how to mount ROAPI data sources as tables in CrateDB
+using the PostgreSQL foreign data wrapper.
 :::
-- {ref}`crate-reference:administration-fdw`
-:::{rubric} SQL Functions
-:::
+
+:::{seealso}
+{ref}`Reference manual <crate-reference:administration-fdw>`
+
+**SQL Functions:**
 - {ref}`crate-reference:ref-create-server`
 - {ref}`crate-reference:ref-drop-server`
 - {ref}`crate-reference:ref-create-foreign-table`
 - {ref}`crate-reference:ref-drop-foreign-table`
-:::{rubric} System Tables
-:::
+
+**System Tables:**
 - {ref}`crate-reference:foreign_servers`
 - {ref}`crate-reference:foreign_server_options`
 - {ref}`crate-reference:foreign_tables`
 - {ref}`crate-reference:foreign_table_options`
 - {ref}`crate-reference:user_mappings`
 - {ref}`crate-reference:user_mapping_options`
-
-{tags-primary}`SQL`
-{tags-primary}`FDW`
-::::
-
-:::::
-
-
-## Synopsis
-Connect to a remote PostgreSQL server.
-```sql
-CREATE SERVER my_postgresql
-FOREIGN DATA WRAPPER jdbc
-OPTIONS (url 'jdbc:postgresql://example.com:5432/')
-```
-Mount a database table.
-```sql
-CREATE FOREIGN TABLE doc.remote_documents (name text)
-SERVER my_postgresql
-OPTIONS (schema_name 'public', table_name 'documents');
-```
-
-
-:::{note}
-{material-outlined}`construction;2em` This page is currently under construction.
-It includes not even the most basic essentials, and needs expansion. For example,
-the "Details", "Usage" and "Learn" sections are missing completely.
-:::
-
-
-
-:::{seealso}
-**Product:**
-[Relational Database]
 :::
