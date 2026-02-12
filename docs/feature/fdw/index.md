@@ -66,7 +66,7 @@ OPTIONS ("user" 'myremoteuser', password '*****');
 Establish a view onto data in the foreign system:
 
 ```sql
-CREATE FOREIGN TABLE doc.remote_readings (
+CREATE FOREIGN TABLE remote_readings (
   ts      timestamp,
   device  text,
   value   double
