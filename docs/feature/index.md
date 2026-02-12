@@ -50,21 +50,14 @@ architecture, inherited from Elasticsearch.
 ::::{grid-item-card} {material-outlined}`read_more;2em` Advanced
 :::{toctree}
 :maxdepth: 1
-:hidden:
 
 query/index
 generated/index
 cursor/index
+fdw/index
 udf/index
 ccr/index
 :::
-
-- {doc}`query/index`
-- {doc}`generated/index`
-- {doc}`cursor/index`
-- {ref}`Foreign data wrappers <fdw>`
-- {doc}`udf/index`
-- {doc}`ccr/index`
 +++
 Advanced features supporting daily data
 operations, all based on standard SQL.
