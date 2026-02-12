@@ -54,7 +54,7 @@ architecture, inherited from Elasticsearch.
 query/index
 generated/index
 cursor/index
-fdw/index
+../ingest/fdw
 udf/index
 ccr/index
 :::
