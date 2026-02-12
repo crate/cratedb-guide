@@ -51,7 +51,7 @@ See [fdw.allow_local].
 
 ### Create a user mapping
 
-This step is a DDL statement that maps a CrateDB user to another user on a
+Use a DDL statement to map a CrateDB user to another user on a
 foreign server. If not set, your session details will be used instead.
 
 ```sql
