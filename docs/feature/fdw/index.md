@@ -61,7 +61,7 @@ SERVER my_postgresql
 OPTIONS ("user" 'myremoteuser', password '*****');
 ```
 
-### Create foreign tables
+### Create foreign table
 
 Establish a view onto data in the foreign system:
 
