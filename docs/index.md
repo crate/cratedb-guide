@@ -1,5 +1,3 @@
-(index)=
-
 <!--
 NOTE: When adding or removing top-level entries in this toctree, you must also
 update the corresponding hardcoded links in the theme's sidebartoc.py file:
@@ -34,6 +32,7 @@ admin/index
 performance/index
 ```
 
+(index)=
 # Welcome to CrateDB
 
 CrateDB is a fully open-source **distributed SQL database** designed for
