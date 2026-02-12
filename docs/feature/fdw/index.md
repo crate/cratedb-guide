@@ -18,7 +18,7 @@ within CrateDB.
 ## Prerequisites
 
 Before configuring a Foreign Data Wrapper (FDW), you should have CrateDB and
-PostgreSQL instances up and running.
+PostgreSQL instances up and running, or other services that speak the PostgreSQL wire protocol.
 
 :::{note}
 To have access to FDW in CrateDB, make sure you have a cluster running
@@ -51,7 +51,7 @@ See [fdw.allow_local].
 
 ### Create a user mapping
 
-This step is a DDL statement that maps a CrateDB user to another user on a
+Use a DDL statement to map a CrateDB user to another user on a
 foreign server. If not set, your session details will be used instead.
 
 ```sql
@@ -61,12 +61,12 @@ SERVER my_postgresql
 OPTIONS ("user" 'myremoteuser', password '*****');
 ```
 
-### Create foreign tables
+### Create foreign table
 
 Establish a view onto data in the foreign system:
 
 ```sql
-CREATE FOREIGN TABLE doc.remote_readings (
+CREATE FOREIGN TABLE remote_readings (
   ts      timestamp,
   device  text,
   value   double
