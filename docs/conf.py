@@ -121,6 +121,8 @@ linkcheck_ignore += [
     # Read timed out.
     r"https://www.singer.io/",
     r"https://meltano.com/",
+    # 429 Client Error: Too Many Requests
+    r"https://blog.nyrkio.com/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
