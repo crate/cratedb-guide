@@ -18,8 +18,8 @@ When a CrateDB node starts it needs a mechanism to get a list of the nodes that 
 At the time of writing, there are 3 ways for a node to get this list:
 
 * The list of nodes can be defined in the `discovery.seed_hosts` setting in the configuration file (typically in `/etc/crate/crate.yml`)
-* The list can be retrieved with a DNS query, see https://crate.io/docs/crate/reference/en/5.4/config/cluster.html#discovery-via-dns
-* In AWS environments, the list of nodes can be looked up via the EC2 API, filtering on specific security groups, availability zones, and tags, see https://crate.io/docs/crate/reference/en/5.4/config/cluster.html#discovery-on-amazon-ec2
+* The list can be retrieved with a DNS query, see {ref}`conf_dns_discovery`
+* In AWS environments, the list of nodes can be looked up via the EC2 API, filtering on specific security groups, availability zones, and tags, see {ref}`conf_ec2_discovery`
 
 For the purpose of this post, we will work with the `discovery.seed_hosts` list.
 
@@ -69,9 +69,9 @@ Make sure the new node does not auto-bootstrap as a single-node instance, you ma
 On the configuration file for the new node:
 
 * Set `discovery.seed_hosts` to the full list of nodes, including the new one you are adding.
-* Optionally set a `node.name` , if not done the node get assigned a random name from the `sys.summits` table. You may wonder what those default names are about, they are the names of mountains in the area around our main office, we love mountains at [Crate.io](http://crate.io/).
+* Optionally set a `node.name` , if not done the node get assigned a random name from the `sys.summits` table. You may wonder what those default names are about, they are the names of mountains in the area around our main office, we love mountains at [Crate.io](http://cratedb.com/).
 * Set `cluster.name` to a value that matches the other nodes in the cluster, if not specified the default cluster name is `crate`.
-* Consider if you want to set the [cluster-wide settings](https://crate.io/docs/crate/reference/en/latest/config/cluster.html#metadata-gateway) `gateway.expected_data_nodes`, `gateway.recover_after_data_nodes`, and/or `gateway.recover_after_time` to prevent the unnecessary creation of new replicas and the rebalancing of shards when a node takes a little bit longer to start, or in case of transient issues, when the cluster is starting up from a situation where all nodes are shutdown. Please note these settings are used when the cluster is starting up from being offline, if you want to delay the allocation of replicas when a node becomes unavailable on a cluster that stays online there is [a different setting at table level](https://crate.io/docs/crate/reference/en/5.4/sql/statements/create-table.html#unassigned-node-left-delayed-timeout).
+* Consider if you want to set the {ref}`cluster-wide settings <metadata_gateway>` `gateway.expected_data_nodes`, `gateway.recover_after_data_nodes`, and/or `gateway.recover_after_time` to prevent the unnecessary creation of new replicas and the rebalancing of shards when a node takes a little bit longer to start, or in case of transient issues, when the cluster is starting up from a situation where all nodes are shut down. Please note these settings are used when the cluster is starting up from being offline, if you want to delay the allocation of replicas when a node becomes unavailable on a cluster that stays online there is {ref}`a different setting at table level <sql-create-table-unassigned.node-left-delayed-timeout>`.
 
 Now we can start the `crate` daemon, you will see the node joining the cluster and CrateDB will start using it for shards allocation.
 
