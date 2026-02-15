@@ -123,6 +123,9 @@ linkcheck_ignore += [
     r"https://meltano.com/",
     # 429 Client Error: Too Many Requests
     r"https://blog.nyrkio.com/",
+    # Read timed out.
+    r"https://streamlit.io",
+
 ]
 
 linkcheck_anchors_ignore_for_url += [
