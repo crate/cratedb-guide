@@ -20,7 +20,7 @@ services:
     restart: unless-stopped
 
   cratedb-ddl:
-    image: docker.io/crate/crate:latest
+    image: docker.io/crate:latest
     command: sh -c "crash --hosts http://cratedb:4200/ -c 'SELECT 1'; crash --hosts http://cratedb:4200/ < /var/ddl.sql"
     volumes:
       - ./ddl.sql:/var/ddl.sql
