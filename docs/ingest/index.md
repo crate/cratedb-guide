@@ -28,23 +28,23 @@ user tables.
 
 ## {material-outlined}`cloud_upload;1.5em` CrateDB Cloud
 
-CrateDB Cloud provides managed data loading (Zero ETL) from remote sources.
+CrateDB Cloud provides managed data loading from remote sources.
 
 - Supports {ref}`file import <cluster-import>` in CSV, JSONL (NDJSON), and
   Parquet formats from HTTP and Blob Storage (AWS S3, Azure Storage, Google GCS).
 
 - The {ref}`MongoDB CDC integration <integrations-mongo-cdc>`
   continuously ingests from MongoDB using Change Data Capture (CDC),
-  providing seamless, real-time synchronization of your data.
+  providing near real-time synchronization of your data.
 
 ## {material-outlined}`arrow_circle_up;1.5em` Integrations
 
-CrateDB is compatible with a range of applications and frameworks
+CrateDB integrates with a range of applications and frameworks
 for one-shot and continuous / streaming data imports.
 
 :{ref}`Extract Transform Load (ETL) <etl>`:
 
-  Ingest data from any source.
+  Ingest data from many sources.
 
 :{ref}`cdc`:
 
