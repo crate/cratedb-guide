@@ -81,7 +81,7 @@ sudo chmod 640 /etc/rsyslog.d/pgsql.conf
 sudo systemctl restart rsyslog
 ```
 
-If you are interested in more advanced setups involving queuing for additional reliability in production scenarios, you can read more about available settings in the [rsyslog documentation](https://www.rsyslog.com/doc/v8-stable/tutorials/high_database_rate.html).
+If you are interested in more advanced setups involving queuing for additional reliability in production scenarios, you can read more about available settings in the [rsyslog documentation](https://www.rsyslog.com/doc/tutorials/high_database_rate.html).
 
 ### MediaWiki
 
