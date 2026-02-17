@@ -16,64 +16,41 @@ cdc/index
 telemetry/index
 :::
 
-## {material-outlined}`file_upload;1.5em` Using CrateDB
+## {material-outlined}`file_upload;1.5em` CrateDB Server
 
-Data import methods supported by CrateDB natively.
+CrateDB natively supports data import using its {ref}`COPY FROM <sql-copy-from>`
+SQL statement. It can load data in CSV and JSONL (NDJSON) formats from the local
+filesystem or from remote sources (HTTP, FTP, Blob Storage).
 
-:{ref}`Import files <sql-copy-from>`:
+CrateDB's {ref}`fdw` subsystem makes data in remote database servers available
+as tables within CrateDB. You can then query these foreign tables like regular
+user tables.
 
-  Load data from the local filesystem or from remote sources using CrateDB's
-  native `COPY FROM` SQL statement.
+## {material-outlined}`cloud_upload;1.5em` CrateDB Cloud
 
-  **Protocols:** HTTP, FTP, Blob Storage (AWS S3, Azure)
-  <br>
-  **Formats:** CSV, JSON Lines
+CrateDB Cloud provides managed data loading (Zero ETL) from remote sources.
 
-:{ref}`fdw`:
+- Supports {ref}`file import <cluster-import>` in CSV, JSONL (NDJSON), and
+  Parquet formats from HTTP and Blob Storage (AWS S3, Azure Storage, Google GCS).
 
-  Make data in remote database servers available as tables within CrateDB.
-  You can then query these foreign tables like regular user tables.
+- The {ref}`MongoDB CDC integration <integrations-mongo-cdc>`
+  continuously ingests from MongoDB using Change Data Capture (CDC),
+  providing seamless, real-time synchronization of your data.
 
-## {material-outlined}`cloud_upload;1.5em` Using CrateDB Cloud
+## {material-outlined}`arrow_circle_up;1.5em` Integrations
 
-Additional data import methods provided by CrateDB Cloud.
-
-:{ref}`Import files <cluster-import>`:
-
-  Managed data loading from remote sources using CrateDB Cloud's ETL services.
-
-  **Protocols:** HTTP, Blob Storage (AWS S3, Azure)
-  <br>
-  **Formats:** CSV, JSON Lines, Parquet
-
-:{ref}`MongoDB CDC integration <integrations-mongo-cdc>`:
-
-  CrateDB Cloud enables continuous data ingestion from MongoDB using Change Data Capture
-  (CDC), providing seamless, real-time synchronization of your data.
-
-## {material-outlined}`arrow_circle_up;1.5em` Using external systems
-
-Supported industry-standard applications, frameworks, and systems
+CrateDB is compatible with a range of applications and frameworks
 for one-shot and continuous / streaming data imports.
 
 :{ref}`Extract Transform Load (ETL) <etl>`:
 
-  Ingest data with polyglot data integration platforms or libraries
-  and complete ETL solutions.
+  Ingest data from any source.
 
 :{ref}`cdc`:
 
-  Integrate with third-party change-data-capture (CDC) tools.
+  Integrate with change-data-capture (CDC) systems.
 
 :{ref}`telemetry`:
 
   Ingest telemetry data—metrics, logs, and traces—from monitoring
   and sensor collector systems.
-
-  Store metrics and telemetry data for the long term, with the benefits of
-  using standard database interfaces, SQL query language, and horizontal
-  scalability through clustering as you go.
-
-  **What's inside:**
-  Never retire old records to cold storage,
-  always have them ready for historical analysis.
