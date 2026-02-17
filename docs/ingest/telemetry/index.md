@@ -14,13 +14,11 @@
 :::{rubric} About
 :::
 
-Store metrics and telemetry data for the long term, with the benefits of
-using standard database interfaces, SQL query language, and horizontal
-scalability through clustering as you go.
+Provides long-term storage for metrics and telemetry data using standard
+database interfaces, SQL, and horizontal scalability through clustering.
 
-**What's inside:**
-Never retire old records to cold storage,
-always have them ready for historical analysis.
+CrateDB keeps historical records immediately available for analysis
+without cumbersome cold storage procedures.
 
 :::{rubric} Introduction
 :::
