@@ -125,6 +125,7 @@ linkcheck_ignore += [
     r"https://blog.nyrkio.com/",
     # Read timed out.
     r"https://streamlit.io",
+    r"https://matplotlib.org",
 
 ]
 
