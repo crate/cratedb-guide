@@ -4,7 +4,7 @@
 services:
 
   cratedb:
-    image: docker.io/crate/crate:latest
+    image: docker.io/crate:latest
     command: >
       crate -Cdiscovery.type=single-node
     ports:

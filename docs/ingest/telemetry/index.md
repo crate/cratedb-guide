@@ -11,6 +11,15 @@
 :class: rubric-slimmer
 :columns: auto 9 9 9
 
+:::{rubric} About
+:::
+
+Provides long-term storage for metrics and telemetry data using standard
+database interfaces, SQL, and horizontal scalability through clustering.
+
+CrateDB keeps historical records immediately available for analysis
+without cumbersome cold storage procedures.
+
 :::{rubric} Introduction
 :::
 
