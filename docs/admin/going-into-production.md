@@ -313,7 +313,7 @@ needs. You should also use storage with high [IOPS] when possible to
 improve CrateDB performance.
 :::
 
-On a Unix-like system, you might mount an external volume to a path like
+On a [Unix-like] system, you might mount an external volume to a path like
 `/opt/cratedb`. If you are installing CrateDB by hand, you can then set
 [CRATE_HOME] to `/opt/cratedb`. Make sure to set `CRATE_HOME` before
 running {ref}`bin/crate <crate-reference:cli-crate>`.
@@ -401,14 +401,39 @@ For security reasons, most production clusters should use wire encryption for
 network traffic between nodes and clients. Check out the reference manual on
 {ref}`secured communications <crate-reference:admin_ssl>` for more information.
 
+(prod-monitoring)=
+
+## Operational readiness
+
+Going into production is not a one-time step. Operating CrateDB reliably
+requires continuous monitoring, maintenance, and lifecycle management.
+The following checklist highlights important aspects to consider for production clusters.
+
+- **Cluster health and capacity management**
+  - **Shard sizes:** Monitor your shard sizes to remain around 50 GB ({ref}`sharding-partitioning`). Especially for partitioned tables, observe how your data volume changes over time.
+  - **Disk usage:** If the {ref}`low watermark threshold <cluster.routing.allocation.disk.watermark.low>` is exceeded, CrateDB will no longer allocate new shards on affected nodes. Monitor your disk usage to guarantee seamless shard allocation.
+  - **Shard count per node:** The number of open shards per node is limited. Monitor your shard count to prevent exceeding {ref}`cluster.max_shards_per_node`.
+  - **Cluster and node health:** Several system tables expose the status of various health checks. Regularly check {ref}`sys-node-checks`, {ref}`sys-health`, and {ref}`sys-cluster_health`.
+- **Lifecycle and maintenance management**
+  - **Keep CrateDB up-to-date:** Regularly upgrade CrateDB to stay within supported versions. Consult the [Support Terms] regarding end-of-life policies.
+  - **Keep your ecosystem up-to-date:** Keep drivers, frameworks, and other tools within versions that are supported by their respective providers.
+  - **Data hygiene:** Delete data you no longer need, such as old partitions, columns, or deprecated tables.
+- **Disaster scenarios and planning**
+  - **Plan scenarios:** Actively think about failure scenarios you want to be protected against and their implications on your setup, such as {ref}`replication <ddl-replication>`, number of nodes, {ref}`multi-zone setup <multi-zone-setup>`, etc.
+  - **Practice recovery:** Test your contingency plans, observe how CrateDB and other components in your stack behave and ensure you have error logging, retries, the ability to replay ingestion payloads, and similar mechanisms in place.
+- **Self-managed: additional requirements** (if you are not using CrateDB Cloud)
+  - **Monitoring:** Have both operating system/container-level metrics such as CPU, I/O, memory, and network-related metrics available, as well as CrateDB's own {ref}`jmx_monitoring`.
+  - **Snapshots:** Regular {ref}`snapshots <snapshot-restore>` enable point-in-time recovery.
+  - **Infrastructure lifecycle:** Apply regular updates to your operating system, container runtime, etc. as well. If you are running in the cloud, switch to recent VM and storage generations.
+  - **TLS certificates:** When using wire encryption, renew your certificates in time to prevent communication breakdowns.
+- **Support readiness**
+  - When engaging with CrateDB support, have logs and monitoring metrics ready to share. In certain situations, CrateDB support may also ask for a {ref}`jfr`, {ref}`heap dump <jcmd>`, or [system table export].
+
 [configuration]: inv:crate-reference#config
 [configure]: inv:crate-reference#config
 [crate_heap_dump_path]: inv:crate-reference#conf-env-dump-path
-[crate_heap_size]: inv:crate-reference#conf-env-heap-size
 [crate_home]: inv:crate-reference#conf-env-crate-home
-[crate_java_opts]: inv:crate-reference#conf-env-java-opts
 [data paths]: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#paths
-[filesystem hierarchy standard]: https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
 [iops]: https://en.wikipedia.org/wiki/IOPS
 [linux filesystem hierarchy]: https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/
 [localhost]: https://en.wikipedia.org/wiki/Localhost
@@ -416,11 +441,11 @@ network traffic between nodes and clients. Check out the reference manual on
 [network.host]: inv:crate-reference#network.host
 [node.name]: inv:crate-reference#node.name
 [path settings]: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#paths
-[path.data]: inv:crate-reference#path.data
-[raid 0]: https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_0
 [shared-nothing]: https://en.wikipedia.org/wiki/Shared-nothing_architecture
 [stderr]: https://en.wikipedia.org/wiki/Standard_streams
 [symbolic links]: https://en.wikipedia.org/wiki/Symbolic_link
 [systemd]: https://github.com/systemd/systemd
 [timeout settings]: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#garbage-collection
 [unix-like]: https://en.wikipedia.org/wiki/Unix-like
+[support terms]: https://cratedb.com/legal/support-terms
+[system table export]: https://cratedb-toolkit.readthedocs.io/cfr/systable.html
