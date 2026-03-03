@@ -155,7 +155,7 @@ Superset instance, this ID might be incorrect.
 [Apache Superset's HTTP API]: https://superset.apache.org/docs/api/
 [crash]: https://cratedb.com/docs/crate/crash/
 [CrateDB]: https://cratedb.com/product
-[connect a database instance]: https://superset.apache.org/docs/databases/#connecting-through-the-ui
+[connect a database instance]: https://superset.apache.org/user-docs/databases/#connecting-through-the-ui
 [corresponding recipe]: https://github.com/crate/cratedb-examples/tree/main/application/apache-superset
 [HTTPie]: https://httpie.io/docs/cli
-[register a database table]: https://superset.apache.org/docs/using-superset/creating-your-first-dashboard/#registering-a-new-table
+[register a database table]: https://superset.apache.org/user-docs/using-superset/creating-your-first-dashboard/#registering-a-new-table
