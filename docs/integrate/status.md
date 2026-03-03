@@ -44,6 +44,8 @@ on behalf of [cratedb-examples] and [academy-fundamentals-course].
     <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/application-apache-superset.yml?branch=main&label=Apache Superset" loading="lazy"></a>
 <a href="https://github.com/crate/cratedb-examples/actions/workflows/application-cratedb-toolkit.yml" target="_blank">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/application-cratedb-toolkit.yml?branch=main&label=CrateDB Toolkit" loading="lazy"></a>
+<a href="https://github.com/crate/cratedb-examples/actions/workflows/application-grafana.yml" target="_blank">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/application-grafana.yml?branch=main&label=Grafana" loading="lazy"></a>
 <a href="https://github.com/crate/cratedb-examples/actions/workflows/application-ingestr.yml" target="_blank">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/application-ingestr.yml?branch=main&label=Ingestr" loading="lazy"></a>
 <a href="https://github.com/crate/cratedb-examples/actions/workflows/application-metabase.yml" target="_blank">
