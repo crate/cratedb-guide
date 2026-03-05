@@ -94,6 +94,17 @@ then stored in CrateDB as plain text with a full‑text index and vector embeddi
 Users can ask questions of the knowledge base using natural language.
 :::
 
+:::{grid-item-card} Real-time analytics demo
+:link: https://github.com/crate/realtime-demo
+:link-type: url
+An end-to-end demo about CrateDB's real-time analytics capabilities.
++++
+A traditional data producer / data consumer architecture using
+AWS infrastructure components for ETL purposes with
+event streaming as data source (Amazon MSK / Kafka)
+and CrateDB as data sink. Data visualization is provided by Grafana.
+:::
+
 ::::
 
 
