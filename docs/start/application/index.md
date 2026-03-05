@@ -43,6 +43,15 @@ covering a wide range of clients and integrations.
 ::::{grid} 1 2 2 3
 :gutter: 2
 
+:::{grid-item-card} Real-time analytics demo
+:link: https://github.com/crate/realtime-demo
+:link-type: url
+End-to-end real-time analytics pipeline using AWS infrastructure and CrateDB.
++++
+Stream events from Kafka (Amazon MSK) through AWS ETL components,
+store them in CrateDB, and visualize with Grafana.
+:::
+
 :::{grid-item-card} UK offshore wind farms data » Workshop
 :link: https://github.com/crate/cratedb-examples/tree/main/topic/multi-model
 :link-type: url
@@ -92,15 +101,6 @@ A natural language chatbot powered by CrateDB using RAG techniques and data from
 Source data and knowledge are extracted from text and images inside PDF documents,
 then stored in CrateDB as plain text with a full‑text index and vector embeddings.
 Users can ask questions of the knowledge base using natural language.
-:::
-
-:::{grid-item-card} Real-time analytics demo
-:link: https://github.com/crate/realtime-demo
-:link-type: url
-End-to-end real-time analytics pipeline using AWS infrastructure and CrateDB.
-+++
-Stream events from Kafka (Amazon MSK) through AWS ETL components,
-store them in CrateDB, and visualize with Grafana.
 :::
 
 ::::
