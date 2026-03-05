@@ -97,12 +97,10 @@ Users can ask questions of the knowledge base using natural language.
 :::{grid-item-card} Real-time analytics demo
 :link: https://github.com/crate/realtime-demo
 :link-type: url
-An end-to-end demo about CrateDB's real-time analytics capabilities.
+End-to-end real-time analytics pipeline using AWS infrastructure and CrateDB.
 +++
-A traditional data producer / data consumer architecture using
-AWS infrastructure components for ETL purposes with
-event streaming as data source (Amazon MSK / Kafka)
-and CrateDB as data sink. Data visualization is provided by Grafana.
+Stream events from Kafka (Amazon MSK) through AWS ETL components,
+store them in CrateDB, and visualize with Grafana.
 :::
 
 ::::
