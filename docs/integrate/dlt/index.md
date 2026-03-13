@@ -188,6 +188,11 @@ The ingestr data import/export application uses dlt as a workhorse.
 
 ::::
 
+:::{rubric} Video tutorials
+:::
+
+<iframe width="480" height="320" src="https://www.youtube-nocookie.com/embed/iNxRemknAdQ?si=J0w5yG56Ld4fIXfm" title="dlt (data load tool) - Python data extraction / loading tool" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 
 :::{toctree}
 :maxdepth: 1

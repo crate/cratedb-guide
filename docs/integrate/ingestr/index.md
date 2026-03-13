@@ -128,6 +128,30 @@ load data from Kafka to CrateDB.
 
 ::::
 
+:::{rubric} Video tutorials
+:::
+
+A few video tutorials about using ingestr with Google Analytics, Shopify, and Kafka.
+
+::::{grid} 3
+:gutter: 4
+
+:::{grid-item}
+<iframe src="https://www.youtube-nocookie.com/embed/eHqFRcRW2Aw?si=J0w5yG56Ld4fIXfm" title="Ingest data from Shopify with ingestr" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+Ingest from Google Analytics
+:::
+
+:::{grid-item}
+<iframe src="https://www.youtube-nocookie.com/embed/FRd_h5TxsF4?si=J0w5yG56Ld4fIXfm" title="Ingest data from Shopify with ingestr" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+Ingest from Shopify
+:::
+
+:::{grid-item}
+<iframe src="https://www.youtube-nocookie.com/embed/Ms0LNsRbw0k?si=J0w5yG56Ld4fIXfm" title="Ingest data from Shopify with ingestr" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+Ingest from Kafka
+:::
+
+::::
 
 
 [databases supported by SQLAlchemy]: https://docs.sqlalchemy.org/en/20/dialects/
