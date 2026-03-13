@@ -339,9 +339,9 @@ and Python example programs.
 [open-source code base]: https://github.com/crate/crate
 [Rockset]: https://web.archive.org/web/20241108051635/https://rockset.com/product/
 [Rockset's pricing examples]: https://web.archive.org/web/20241108051635/https://docs.rockset.com/documentation/docs/billing#pricing-examples
-[Rockset HTTP API Adapter for CrateDB]: https://cratedb-toolkit.readthedocs.io/adapter/rockset.html
+[Rockset HTTP API Adapter for CrateDB]: inv:ctk:*:doc#adapter/rockset
 [Rockset HTTP API is sunsetting on September 30th, 2024]: https://web.archive.org/web/20241108051635/https://docs.rockset.com/documentation/docs/faq
-[Software Development Kit]: https://cratedb-toolkit.readthedocs.io/
+[Software Development Kit]: inv:ctk:*:label#index
 [The CrateDB Documentation]: https://cratedb.com/docs/
 [truly open-source software]: https://cratedb.com/blog/cratedb-doubling-down-on-permissive-licensing-and-the-elasticsearch-lockdown
 [UX]: https://en.wikipedia.org/wiki/User_experience

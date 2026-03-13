@@ -104,10 +104,9 @@ model
 :::
 
 :::{note}
-The MongoDB I/O component is based on the [migr8] migration utility package. Consult its
+The MongoDB I/O component is based on the {ref}`migr8` migration utility package. Consult its
 documentation for advanced capabilities when working with MongoDB.
 :::
 
 
 [Announcing MongoDB CDC Integration (Public Preview) in CrateDB Cloud]: https://cratedb.com/blog/announcing-mongodb-cdc-integration-public-preview-in-cratedb-cloud
-[migr8]: https://cratedb-toolkit.readthedocs.io/io/mongodb/migr8.html

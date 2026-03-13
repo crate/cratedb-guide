@@ -9,7 +9,7 @@
 [Apache Airflow]: https://airflow.apache.org/
 [Astronomer]: https://www.astronomer.io/
 [AWS Database Migration Service (AWS DMS)]: https://aws.amazon.com/dms/
-[AWS DMS Integration with CrateDB]: https://cratedb-toolkit.readthedocs.io/io/dms/
+[AWS DMS Integration with CrateDB]: https://cratedb-toolkit.readthedocs.io/io/database/dms/
 [AWS Lambda]: https://aws.amazon.com/lambda/
 [BM25]: https://en.wikipedia.org/wiki/Okapi_BM25
 [cloud-datashader-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/amo/cloud-datashader/topic/timeseries/explore/cloud-datashader.ipynb
@@ -32,8 +32,8 @@
 [Dynamic Database Schemas]: https://cratedb.com/product/features/dynamic-schemas
 [DynamoDB]: https://aws.amazon.com/dynamodb/
 [DynamoDB CDC Relay]: inv:ctk:*:label#dynamodb-cdc
-[DynamoDB CDC Relay with AWS Lambda]: inv:ctk:*:doc#io/dynamodb/cdc-lambda
-[DynamoDB Table Loader]: inv:ctk:*:label#dynamodb-loader
+[DynamoDB CDC Relay with AWS Lambda]: inv:ctk:*:doc#io/database/dynamodb/cdc-lambda
+[DynamoDB Table Loader]: inv:ctk:*:label#dynamodb
 [Executable stack with Apache Kafka, Apache Flink, and CrateDB]: https://github.com/crate/cratedb-examples/tree/main/framework/flink/kafka-jdbcsink-java
 [Geospatial Data Model]: https://cratedb.com/data-model/geospatial
 [Geospatial Database]: https://cratedb.com/geospatial-spatial-database
@@ -65,7 +65,7 @@
 [MongoDB CDC Relay]: inv:ctk:*:label#mongodb-cdc-relay
 [MongoDB Change Streams]: https://www.mongodb.com/docs/manual/changeStreams/
 [MongoDB collections and databases]: https://www.mongodb.com/docs/php-library/current/databases-collections/
-[MongoDB Table Loader]: inv:ctk:*:label#mongodb-loader
+[MongoDB Table Loader]: inv:ctk:*:label#mongodb
 [Multi-model Database]: https://cratedb.com/solutions/multi-model-database
 [nearest neighbor search]: https://en.wikipedia.org/wiki/Nearest_neighbor_search
 [Nested Data Structure]: https://cratedb.com/product/features/nested-data-structure
