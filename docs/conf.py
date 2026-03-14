@@ -127,6 +127,11 @@ linkcheck_ignore += [
     r"https://streamlit.io",
     r"https://matplotlib.org",
 
+    # Temporarily broken.
+    # https://community.cratedb.com/t/ingesting-mqtt-messages-into-cratedb-using-node-red/803
+    r"https://us1.discourse-cdn.com/flex020/.*",
+    r"https://community.cratedb.com/uploads/short-url/eOvAk3XzDkRbNZjcZV0pZ0SnGu4.json",
+    r"https://community.cratedb.com/uploads/short-url/vWxIENgDPhYnoTZuQC7DKJoNdyY.json",
 ]
 
 linkcheck_anchors_ignore_for_url += [
