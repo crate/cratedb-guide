@@ -40,8 +40,8 @@ uvx 'cratedb-toolkit[kinesis]' load table \
 ::::{grid} 2
 
 :::{grid-item-card} AWS DMS Processor
-:link: ctk:io/dms/index
-:link-type: doc
+:link: ctk:aws-dms
+:link-type: ref
 A full-load-and-cdc pipeline using AWS DMS and CrateDB, where an Amazon Kinesis Data
 Stream is selected as a DMS target, combined with a CrateDB-specific downstream
 processor element.

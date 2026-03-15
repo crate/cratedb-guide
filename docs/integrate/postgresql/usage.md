@@ -5,7 +5,7 @@ The usage guide will walk you through starting [PostgreSQL] and CrateDB,
 inserting a record into PostgreSQL, loading data into a CrateDB table,
 and validating that the data has been stored successfully.
 The data transfer is supported by the
-{ref}`CrateDB Toolkit Ingestr I/O <ctk:ingestr>` data pipeline elements.
+{ref}`CrateDB Toolkit Ingestr I/O <ctk:postgresql>` data pipeline elements.
 
 ## Prerequisites
 

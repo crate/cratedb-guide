@@ -6,7 +6,7 @@ The usage guide will walk you through starting [MariaDB] and CrateDB,
 inserting a record into MariaDB, loading data into a CrateDB table,
 and validating that the data has been stored successfully.
 The data transfer is supported by the
-{ref}`CrateDB Toolkit Ingestr I/O <ctk:ingestr>` data pipeline elements.
+{ref}`CrateDB Toolkit Ingestr I/O <ctk:mysql>` data pipeline elements.
 
 ## Prerequisites
 

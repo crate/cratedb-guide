@@ -57,8 +57,8 @@ uvx 'cratedb-toolkit[io-ingestr]' load table \
 ::::{grid}
 
 :::{grid-item-card} Ingestr Table Loader
-:link: https://cratedb-toolkit.readthedocs.io/io/ingestr/#amazon-kinesis-to-cratedb
-:link-type: url
+:link: ctk:kinesis
+:link-type: ref
 Relay Kinesis stream into CrateDB.
 :::
 
