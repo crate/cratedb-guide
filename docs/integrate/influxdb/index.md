@@ -70,7 +70,7 @@ format (ILP) into CrateDB.
 :::
 
 :::{grid-item-card} InfluxDB Table Loader
-:link: ctk:influxdb-loader
+:link: ctk:influxdb
 :link-type: ref
 Load InfluxDB collections into CrateDB.
 :::

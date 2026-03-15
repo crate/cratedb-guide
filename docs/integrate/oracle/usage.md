@@ -5,7 +5,7 @@ The usage guide will walk you through starting the [Oracle Database] and CrateDB
 inserting a record into Oracle, loading data into a CrateDB table,
 and validating that the data has been stored successfully.
 The data transfer is supported by the
-{ref}`CrateDB Toolkit Ingestr I/O <ctk:ingestr>` data pipeline elements.
+{ref}`CrateDB Toolkit Ingestr I/O <ctk:oracle>` data pipeline elements.
 
 ## Prerequisites
 

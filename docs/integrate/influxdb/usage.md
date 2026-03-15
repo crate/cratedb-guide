@@ -1,7 +1,7 @@
 (influxdb-usage)=
 # Load data from InfluxDB
 
-In this quick usage guide, you will use the [CrateDB Toolkit InfluxDB I/O subsystem]
+In this quick usage guide, you will use the [CrateDB Toolkit InfluxDB I/O adapter]
 to import data from [InfluxDB] into [CrateDB]. You can also import data directly
 from files in InfluxDB line protocol format.
 
@@ -60,5 +60,5 @@ SELECT 2 rows in set (0.027 sec)
 
 
 [CrateDB]: https://github.com/crate/crate
-[CrateDB Toolkit InfluxDB I/O subsystem]: https://cratedb-toolkit.readthedocs.io/io/influxdb/loader.html
+[CrateDB Toolkit InfluxDB I/O adapter]: inv:ctk:*:label#influxdb
 [InfluxDB]: https://github.com/influxdata/influxdb

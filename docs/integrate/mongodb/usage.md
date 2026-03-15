@@ -5,7 +5,7 @@ The usage guide will walk you through starting MongoDB and CrateDB,
 inserting a record into a MongoDB collection, transferring the collection
 into a CrateDB table, and validating that the data has
 been stored successfully.
-The data transfer is supported by the [CrateDB Toolkit MongoDB I/O] data
+The data transfer is supported by the [CrateDB Toolkit MongoDB I/O adapter] data
 pipeline elements.
 
 ## Prerequisites
@@ -65,5 +65,5 @@ Note: `mongoimport` is part of the [MongoDB Database tools].
 :::
 
 
-[CrateDB Toolkit MongoDB I/O]: https://cratedb-toolkit.readthedocs.io/io/mongodb/loader.html
+[CrateDB Toolkit MongoDB I/O adapter]: inv:ctk:*:label#mongodb
 [MongoDB Database tools]: https://www.mongodb.com/docs/database-tools/installation/installation-linux/

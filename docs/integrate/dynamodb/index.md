@@ -75,7 +75,7 @@ Relay table change stream CDC events from a DynamoDB table into CrateDB (`cdc`).
 :::
 
 :::{grid-item-card} DynamoDB CDC Relay using AWS Lambda
-:link: ctk:io/dynamodb/cdc-lambda
+:link: ctk:io/database/dynamodb/cdc-lambda
 :link-type: doc
 Use serverless replication based on AWS Lambda to
 relay CDC events into CrateDB (`cdc`).
