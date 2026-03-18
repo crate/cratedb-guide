@@ -29,9 +29,9 @@ fast query response times to build user interfaces, monitoring, and automation s
 
 Transfer data from InfluxDB bucket/measurement into CrateDB schema/table.
 ```shell
-ctk load table \
+ctk load \
   "influxdb2://example:token@influxdb.example.org:8086/testdrive/demo" \
-  --cluster-url="crate://user:password@cratedb.example.org:4200/testdrive/demo"
+  "crate://user:password@cratedb.example.org:4200/testdrive/demo"
 ```
 Query data in CrateDB.
 ```shell
@@ -43,9 +43,9 @@ crash -c 'SELECT * FROM testdrive.demo;'
 
 Transfer data from InfluxDB line protocol file into CrateDB schema/table.
 ```shell
-ctk load table \
+ctk load \
   "https://github.com/influxdata/influxdb2-sample-data/raw/master/air-sensor-data/air-sensor-data.lp" \
-  --cluster-url="crate://user:password@cratedb.example.org:4200/testdrive/air-sensor-data"
+  "crate://user:password@cratedb.example.org:4200/testdrive/air-sensor-data"
 ```
 Query data in CrateDB.
 ```shell

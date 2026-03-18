@@ -48,9 +48,9 @@ servers or infrastructure.
 :::
 
 ```shell
-uvx 'cratedb-toolkit[kinesis]' load table \
+uvx 'cratedb-toolkit[kinesis]' load \
   "kinesis+dynamodb+cdc://${AWS_ACCESS_KEY_ID}:${AWS_SECRET_ACCESS_KEY}@aws/cdc-stream?region=eu-central-1" \
-  --cluster-url="crate://crate:crate@localhost:4200/testdrive/demo"
+  "crate://crate:crate@localhost:4200/testdrive/demo"
 ```
 
 :::{rubric} Learn

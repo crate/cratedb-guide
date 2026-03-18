@@ -53,7 +53,7 @@ SQL
 
 Invoke the data transfer pipeline.
 ```shell
-docker compose run --rm --no-TTY ctk-ingest ctk load table "postgresql://postgres:postgres@postgresql:5432/test?table=public.demo" --cluster-url="crate://crate:crate@cratedb:4200/doc/postgresql_demo"
+docker compose run --rm --no-TTY ctk-ingest ctk load "postgresql://postgres:postgres@postgresql:5432/test?table=public.demo" "crate://crate:crate@cratedb:4200/doc/postgresql_demo"
 ```
 
 ## Explore data

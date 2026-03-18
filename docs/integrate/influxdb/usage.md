@@ -39,7 +39,7 @@ docker compose exec influxdb influx write --bucket=testdrive --org=example --tok
 Invoke the data transfer pipeline, importing data from
 InfluxDB bucket/measurement into CrateDB schema/table.
 ```shell
-docker compose run --rm --no-TTY cratedb-toolkit ctk load table "influxdb2://example:token@influxdb:8086/testdrive/demo" --cluster-url="crate://crate@cratedb:4200/doc/influxdb_demo"
+docker compose run --rm --no-TTY cratedb-toolkit ctk load "influxdb2://example:token@influxdb:8086/testdrive/demo" "crate://crate@cratedb:4200/doc/influxdb_demo"
 ```
 
 ## Explore data

@@ -16,9 +16,9 @@
 :::
 
 ```shell
-uvx 'cratedb-toolkit[io-ingestr]' load table \
+uvx 'cratedb-toolkit[io-ingestr]' load \
   "postgresql://postgres:postgres@localhost:5432/test?table=public.demo" \
-  --cluster-url="crate://crate:crate@localhost:4200/doc/postgresql_demo"
+  "crate://crate:crate@localhost:4200/doc/postgresql_demo"
 ```
 
 :::{rubric} Learn

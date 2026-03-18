@@ -29,9 +29,9 @@ Microsoft SQL Server, MongoDB, MySQL, Oracle, PostgreSQL, SAP ASE.
 :::
 
 ```shell
-uvx 'cratedb-toolkit[kinesis]' load table \
+uvx 'cratedb-toolkit[kinesis]' load \
   "kinesis+dms:///arn:aws:kinesis:eu-central-1:831394476016:stream/testdrive" \
-  --cluster-url="crate://crate:crate@localhost:4200/testdrive"
+  "crate://crate:crate@localhost:4200/testdrive"
 ```
 
 :::{rubric} Learn

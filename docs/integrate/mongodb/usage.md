@@ -37,7 +37,7 @@ docker compose run --rm --no-TTY mongodb mongosh --host mongodb --db test --eval
 
 Invoke the data transfer pipeline.
 ```shell
-docker compose run --rm --no-TTY cratedb-toolkit ctk load table "mongodb://mongodb/test/demo" --cluster-url="crate://cratedb/doc/mongodb_demo"
+docker compose run --rm --no-TTY cratedb-toolkit ctk load "mongodb://mongodb/test/demo" "crate://cratedb/doc/mongodb_demo"
 ```
 
 ## Explore data

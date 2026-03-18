@@ -76,14 +76,14 @@ How to load data from MongoDB Server and MongoDB Atlas into CrateDB.
 :::{grid-item-card} MongoDB Table Loader
 :link: ctk:mongodb-loader
 :link-type: ref
-Standalone CLI `ctk load table` for loading MongoDB collections into CrateDB
+Standalone CLI `ctk load` for loading MongoDB collections into CrateDB
 (`full-load`), optionally using transformations.
 :::
 
 :::{grid-item-card} MongoDB CDC Relay
 :link: ctk:mongodb-cdc-relay
 :link-type: ref
-Standalone CLI `ctk load table` for streaming changes of MongoDB collections
+Standalone CLI `ctk load` for streaming changes of MongoDB collections
 into CrateDB (`cdc`), optionally using transformations.
 :::
 
