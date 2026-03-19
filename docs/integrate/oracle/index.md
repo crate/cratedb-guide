@@ -20,7 +20,7 @@ warehousing (DW) and mixed (OLTP & DW) database workloads.
 :::
 
 ```shell
-uvx 'cratedb-toolkit[io-ingestr]' load \
+uvx 'cratedb-toolkit[io-ingest]' load \
   "oracle://sys:secret@localhost:1521/?service_name=freepdb1&table=sys.demo&mode=sysdba" \
   "crate://crate:crate@localhost:4200/doc/oracle_demo"
 ```
