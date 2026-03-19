@@ -16,7 +16,7 @@
 :::
 
 ```shell
-uvx 'cratedb-toolkit[io-ingestr]' load \
+uvx 'cratedb-toolkit[io-ingest]' load \
   "postgresql://postgres:postgres@localhost:5432/test?table=public.demo" \
   "crate://crate:crate@localhost:4200/doc/postgresql_demo"
 ```

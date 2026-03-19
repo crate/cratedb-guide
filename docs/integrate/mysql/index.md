@@ -30,7 +30,7 @@ open-source MySQL project to create MariaDB.
 :::
 
 ```shell
-uvx 'cratedb-toolkit[io-ingestr]' load \
+uvx 'cratedb-toolkit[io-ingest]' load \
   "mysql://root:secret@localhost:3306/?table=dbname.tablename" \
   "crate://crate:crate@localhost:4200/doc/mysql_demo"
 ```
