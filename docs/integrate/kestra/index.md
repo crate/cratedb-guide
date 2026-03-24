@@ -24,10 +24,6 @@ without the need for any coding skills.
 Plugins are at the core of Kestra's extensibility. Many plugins are available from
 the Kestra core team, and creating your own is easy. With plugins, you can add new
 functionality to Kestra.
-
-![](https://kestra.io/landing/features/declarative1.svg){height=120px loading=lazy}
-![](https://kestra.io/landing/features/flowable.svg){height=120px loading=lazy}
-![](https://kestra.io/landing/features/monitor.svg){height=120px loading=lazy}
 :::
 
 
