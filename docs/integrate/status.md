@@ -88,8 +88,10 @@ on behalf of [cratedb-examples] and [academy-fundamentals-course].
     <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/framework-dlt.yml?branch=main&label=dlt" loading="lazy"></a>
 <a href="https://github.com/crate/cratedb-examples/actions/workflows/framework-gradio.yml" target="_blank">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/framework-gradio.yml?branch=main&label=Gradio" loading="lazy"></a>
-<a href="https://github.com/crate/cratedb-examples/actions/workflows/framework-mcp.yml" target="_blank">
-    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/framework-mcp.yml?branch=main&label=MCP" loading="lazy"></a>
+<a href="https://github.com/crate/cratedb-examples/actions/workflows/framework-mcp-cratedb.yml" target="_blank">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/framework-mcp-cratedb.yml?branch=main&label=MCP (CrateDB)" loading="lazy"></a>
+<a href="https://github.com/crate/cratedb-examples/actions/workflows/framework-mcp-ecosystem.yml" target="_blank">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/framework-mcp-ecosystem.yml?branch=main&label=MCP (Ecosystem)" loading="lazy"></a>
 <a href="https://github.com/crate/cratedb-examples/actions/workflows/framework-meltano.yml" target="_blank">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/framework-meltano.yml?branch=main&label=Meltano" loading="lazy"></a>
 <a href="https://github.com/crate/cratedb-examples/actions/workflows/framework-records.yml" target="_blank">
