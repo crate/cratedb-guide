@@ -305,6 +305,19 @@ the following:
 The use of a column store results in a small disk footprint, thanks to specialized
 compression algorithms such as delta encoding, bit packing, and GCD.
 
+## Example
+
+Store data in CrateDB without the additional cost of the column store,
+but also without its benefits.
+```sql
+CREATE TABLE my_table_no_columnstore (
+    str_col TEXT STORAGE WITH (columnstore = false),
+    int_col INTEGER STORAGE WITH (columnstore = false),
+    timestamp_col TIMESTAMP STORAGE WITH (columnstore = false),
+    numeric_col NUMERIC(10, 3) STORAGE WITH (columnstore = false)
+);
+```
+
 ## See also
 
 [Introducing Lucene Index Doc Values] is a technical deep dive into
