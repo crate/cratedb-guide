@@ -127,11 +127,11 @@ linkcheck_ignore += [
     r"https://streamlit.io",
     r"https://matplotlib.org",
     # Temporarily broken.
-    # Temporarily offline.
-    r"https://www.rsyslog.com/",
     r"https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/37e20012ca132be3b1c810cc73340724640fb658.png",
     # 502 Server Error: Bad Gateway
     r"https://codeberg.org/",
+    # Max retries exceeded. Connection to www.7-zip.org timed out. (connect timeout=15).
+    r"https://www.7-zip.org/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
