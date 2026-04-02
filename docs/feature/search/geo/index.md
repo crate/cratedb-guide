@@ -266,8 +266,8 @@ flip dot sign. The software is written in JavaScript and runs on Node.js.
 [CrateDB: Querying Multi-Model Heterogeneous Time Series Data with SQL]: https://cratedb.com/resources/videos/unleashing-the-power-of-multi-model-data-querying-heterogeneous-time-series-data-with-sql-in-cratedb
 [GeoJSON]: https://en.wikipedia.org/wiki/GeoJSON
 [Geometric Shapes Indexing with BKD-trees]: https://cratedb.com/blog/geometric-shapes-indexing-with-bkd-trees
-[Geospatial Indexing & Search at Scale with Lucene]: https://portal.ogc.org/files/?artifact_id=90337
-[Geospatial Indexing with Apache Lucene and OpenSearch]: https://talks.osgeo.org/foss4g-2022/talk/KPQ97A/
+[Geospatial Indexing & Search at Scale with Lucene]: https://www.slideshare.net/slideshow/geospatial-indexing-and-search-at-scale-with-apache-lucene/170632547
+[Geospatial Indexing with Apache Lucene and OpenSearch]: https://www.youtube.com/watch?v=ERS-IvVn_Wc
 [Geospatial Queries with CrateDB]: https://cratedb.com/blog/geospatial-queries-with-crate-data
 [GolfNow chooses CrateDB]: https://cratedb.com/resources/videos/interview-golfnow-cratedb
 [MATCH predicate for geographical search]: inv:crate-reference#sql_dql_geo_match
