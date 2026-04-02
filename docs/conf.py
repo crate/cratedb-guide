@@ -126,16 +126,10 @@ linkcheck_ignore += [
     # Read timed out.
     r"https://streamlit.io",
     r"https://matplotlib.org",
-
     # Temporarily broken.
-    # https://community.cratedb.com/t/ingesting-mqtt-messages-into-cratedb-using-node-red/803
-    r"https://us1.discourse-cdn.com/flex020/.*",
-    r"https://community.cratedb.com/uploads/short-url/eOvAk3XzDkRbNZjcZV0pZ0SnGu4.json",
-    r"https://community.cratedb.com/uploads/short-url/vWxIENgDPhYnoTZuQC7DKJoNdyY.json",
-
     # Temporarily offline.
     r"https://www.rsyslog.com/",
-
+    r"https://us1.discourse-cdn.com/flex020/uploads/crate/original/1X/37e20012ca132be3b1c810cc73340724640fb658.png",
     # 502 Server Error: Bad Gateway
     r"https://codeberg.org/",
 ]
