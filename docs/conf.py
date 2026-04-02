@@ -135,6 +135,9 @@ linkcheck_ignore += [
 
     # Temporarily offline.
     r"https://www.rsyslog.com/",
+
+    # 502 Server Error: Bad Gateway
+    r"https://codeberg.org/",
 ]
 
 linkcheck_anchors_ignore_for_url += [
