@@ -287,7 +287,9 @@ a column store: {productID → 1, name → “Almond Milk“, quantity → 10
 
 This storage layout improves sorting, grouping, and aggregations by keeping field
 data together rather than scattered across documents. The column store is enabled
-by default in CrateDB and can be disabled only for text fields. It does not support
+by default in CrateDB and can be disabled for columns of type
+{ref}`TEXT <type-text>`, {ref}`TIMESTAMP <data-types-dates-times>`,
+and all {ref}`numeric <data-types-numeric>` data types. It does not support
 {ref}`container <container>` or {ref}`geographic <geospatial>` data types.
 
 Besides fields, CrateDB also supports the column store for the JSON representation
