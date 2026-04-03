@@ -7,18 +7,13 @@ Access PostgreSQL database tables on remote servers as if they were stored
 within CrateDB and perform read-only queries on the data.
 :::
 
-
-This guide walks you through setting up and querying foreign data wrappers.
-
 ## Prerequisites
 
-Before configuring a Foreign Data Wrapper (FDW), you should have CrateDB and
-PostgreSQL instances up and running, or other services that speak the PostgreSQL wire protocol.
-
-:::{note}
-To have access to FDW in CrateDB, make sure you have a cluster running
-version 5.7 or above.
-:::
+This guide walks you through setting up and querying foreign data wrappers.
+Before configuring a foreign data wrapper (FDW), you should have CrateDB and
+PostgreSQL instances up and running, or other services that speak the
+PostgreSQL wire protocol.
+Please note that FDW in CrateDB is available with version 5.7 and above.
 
 ## Set up
 
@@ -27,7 +22,7 @@ version 5.7 or above.
 ### Set firewall rules
 
 Ensure outbound firewall rules allow CrateDB → remote DB traffic before
-proceeding with the following steps.
+proceeding with the following steps. The default PostgreSQL port is 5432.
 
 ### Create a server in CrateDB
 
@@ -89,28 +84,6 @@ FROM   remote_readings
 WHERE  device = 'sensor-42';
 ```
 
-Query clauses like `GROUP BY`, `HAVING`, `LIMIT` or `ORDER BY` are executed
-within CrateDB, not within the foreign system. `WHERE` clauses can in some
-circumstances be pushed to the foreign system, but that depends on the
-concrete foreign data wrapper implementation. You can check if this is the
-case by using the {ref}`crate-reference:ref-explain` statement.
-
-For example, in the following explain output there is a dedicated `Filter`
-node, indicating that the filter is executed within CrateDB:
-
-```sql
-EXPLAIN SELECT ts, value FROM remote_readings WHERE device = 'sensor-42';
-```
-
-```text
-+--------------------------------------------------------------------------+
-| QUERY PLAN                                                               |
-+--------------------------------------------------------------------------+
-| Filter[(device = 'sensor-42')] (rows=0)                                  |
-|   └ ForeignCollect[doc.remote_readings | [device] | true] (rows=unknown) |
-+--------------------------------------------------------------------------+
-```
-
 ### Drop server
 
 ```sql
@@ -139,19 +112,19 @@ using the PostgreSQL foreign data wrapper.
 :::
 
 :::{seealso}
-{ref}`Reference manual <crate-reference:administration-fdw>`
-
+**Reference manual:** {ref}`Foreign data wrappers <crate-reference:administration-fdw>`
+<br>
 **SQL Functions:**
-- {ref}`crate-reference:ref-create-server`
-- {ref}`crate-reference:ref-drop-server`
-- {ref}`crate-reference:ref-create-foreign-table`
-- {ref}`crate-reference:ref-drop-foreign-table`
-
+{ref}`crate-reference:ref-create-server`
+• {ref}`crate-reference:ref-drop-server`
+• {ref}`crate-reference:ref-create-foreign-table`
+• {ref}`crate-reference:ref-drop-foreign-table`
+<br>
 **System Tables:**
-- {ref}`crate-reference:foreign_servers`
-- {ref}`crate-reference:foreign_server_options`
-- {ref}`crate-reference:foreign_tables`
-- {ref}`crate-reference:foreign_table_options`
-- {ref}`crate-reference:user_mappings`
-- {ref}`crate-reference:user_mapping_options`
+{ref}`crate-reference:foreign_servers`
+• {ref}`crate-reference:foreign_server_options`
+• {ref}`crate-reference:foreign_tables`
+• {ref}`crate-reference:foreign_table_options`
+• {ref}`crate-reference:user_mappings`
+• {ref}`crate-reference:user_mapping_options`
 :::
