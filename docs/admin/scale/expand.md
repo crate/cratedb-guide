@@ -69,7 +69,7 @@ Make sure the new node does not auto-bootstrap as a single-node instance, you ma
 On the configuration file for the new node:
 
 * Set `discovery.seed_hosts` to the full list of nodes, including the new one you are adding.
-* Optionally set a `node.name` , if not done the node get assigned a random name from the `sys.summits` table. You may wonder what those default names are about, they are the names of mountains in the area around our main office, we love mountains at [Crate.io](http://cratedb.com/).
+* Optionally set a `node.name` , if not done the node get assigned a random name from the `sys.summits` table. You may wonder what those default names are about, they are the names of mountains in the area around our main office, we love mountains at [CrateDB](https://cratedb.com/).
 * Set `cluster.name` to a value that matches the other nodes in the cluster, if not specified the default cluster name is `crate`.
 * Consider if you want to set the {ref}`cluster-wide settings <metadata_gateway>` `gateway.expected_data_nodes`, `gateway.recover_after_data_nodes`, and/or `gateway.recover_after_time` to prevent the unnecessary creation of new replicas and the rebalancing of shards when a node takes a little bit longer to start, or in case of transient issues, when the cluster is starting up from a situation where all nodes are shut down. Please note these settings are used when the cluster is starting up from being offline, if you want to delay the allocation of replicas when a node becomes unavailable on a cluster that stays online there is {ref}`a different setting at table level <sql-create-table-unassigned.node-left-delayed-timeout>`.
 
