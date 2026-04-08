@@ -26,7 +26,7 @@ as Singer taps and targets.
 ::::{grid}
 
 :::{grid-item-card} Examples
-:link: https://github.com/crate/cratedb-examples/tree/amo/meltano/framework/singer-meltano
+:link: https://github.com/crate/cratedb-examples/tree/main/framework/meltano
 :link-type: url
 Examples about working with CrateDB and Meltano.
 :::
