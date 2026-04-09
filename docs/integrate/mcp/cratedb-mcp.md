@@ -53,6 +53,16 @@ the user is interested in values which are beyond certain thresholds.
 ![Example Claude conversation screenshot using CrateDB MCP](https://github.com/user-attachments/assets/db127717-329a-4d0e-901c-3e3dcaefefb9)
 
 
+:::{card} {material-outlined}`not_started;2em` Code example
+:link: https://github.com/crate/cratedb-examples/tree/main/framework/mcp-cratedb
+:link-type: url
+:link-alt: CrateDB MCP Server example
+:class-footer: text-smaller
+
+Ready-to-run example program using the CrateDB MCP Server.
+:::
+
+
 :::{caution}
 
 **Experimental:** Please note that the CrateDB MCP Server is an experimental

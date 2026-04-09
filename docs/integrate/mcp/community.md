@@ -35,7 +35,7 @@ available configuration options.
 :::
 
 :::{grid-item-card} {material-outlined}`not_started;2em` Examples
-:link: https://github.com/crate/cratedb-examples/tree/main/framework/mcp
+:link: https://github.com/crate/cratedb-examples/tree/main/framework/mcp-ecosystem
 :link-type: url
 :link-alt: Community MCP Server examples
 :class-footer: text-smaller
