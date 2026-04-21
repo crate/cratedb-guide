@@ -282,6 +282,8 @@ to CrateDB.
 <b>SDK</b>
 </td>
 <td>
+<a href="https://github.com/crate/commons-codec/actions/workflows/tests.yml" target="_blank">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/commons-codec/tests.yml?branch=main&label=commons-codec" loading="lazy"></a>
 <a href="https://github.com/crate/cratedb-sqlparse/actions/workflows/python.yml" target="_blank">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-sqlparse/python.yml?branch=main&label=cratedb-sqlparse (python)" loading="lazy"></a>
 <a href="https://github.com/crate/cratedb-sqlparse/actions/workflows/javascript.yml" target="_blank">
