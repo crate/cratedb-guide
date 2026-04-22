@@ -240,6 +240,10 @@ to CrateDB.
     <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-fivetran-destination/tests.yml?branch=main&label=Fivetran" loading="lazy"></a>
 <a href="https://github.com/crate/langchain-cratedb/actions/workflows/ci.yml" target="_blank">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/langchain-cratedb/ci.yml?branch=main&label=LangChain" loading="lazy"></a>
+<a href="https://github.com/crate/meltano-tap-cratedb/actions/workflows/main.yml" target="_blank">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/meltano-tap-cratedb/main.yml?branch=main&label=Meltano Extractor" loading="lazy"></a>
+<a href="https://github.com/crate/meltano-target-cratedb/actions/workflows/main.yml" target="_blank">
+    <img src="https://img.shields.io/github/actions/workflow/status/crate/meltano-target-cratedb/main.yml?branch=main&label=Meltano Loader" loading="lazy"></a>
 <a href="https://github.com/crate/mlflow-cratedb/actions/workflows/main.yml" target="_blank">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/mlflow-cratedb/main.yml?branch=main&label=MLflow" loading="lazy"></a>
 <a href="https://github.com/crate/cratedb-tableau-connector/actions/workflows/main.yml" target="_blank">
