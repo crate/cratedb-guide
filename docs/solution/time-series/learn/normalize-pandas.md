@@ -72,7 +72,7 @@ You must have the following Python libraries installed:
 
 - [pandas] -- querying and data manipulation
 - [SQLAlchemy] -- a powerful database abstraction layer
-- The {ref}`crate-python:index` -- SQLAlchemy support for CrateDB
+- The {external+crate-python:ref}`index` -- SQLAlchemy support for CrateDB
 - [Matplotlib] -- data visualization
 - [geojson] -- Functions for encoding and decoding GeoJSON formatted data
 
@@ -166,8 +166,8 @@ To get started, import the `pandas` library:
 import pandas
 ```
 
-Pandas uses [SQLAlchemy] and the {ref}`sqlalchemy-cratedb:index` to provide support
-for `crate://` style {ref}`connection strings <sqlalchemy-cratedb:database-urls>`.
+Pandas uses [SQLAlchemy] and the {external+sqlalchemy-cratedb:ref}`index` to provide support
+for `crate://` style {external+sqlalchemy-cratedb:ref}`connection strings <database-urls>`.
 
 Then, query the raw data:
 
@@ -211,9 +211,9 @@ Here are a few ways to improve this result:
 * The ``timestamp`` column isn't human-readable. It would be easier to
   understand the results if this value was as a human-readable time.
 
-* The ``position`` column is a :ref:`crate-reference:data-types-geo`. This data
+* The ``position`` column uses a {external+crate-reference:ref}`geographic type <data-types-geo>`. This data
   type isn't easy to plot on a traditional graph. However, you can use the
-  :ref:`distance() <crate-reference:scalar-distance>` function to calculate the
+  {external+crate-reference:ref}`distance() <scalar-distance>` function to calculate the
   distance between two ``geo_point`` values. If you compare ``position`` to a
   fixed place, you can plot distance over time for a graph showing you how far
   away the ISS is from some location of interest.
@@ -243,13 +243,13 @@ Specifically:
 * You can define the `location`_ of Berlin and interpolate that into the query
   to calculate the `DISTANCE()` of the ISS ground point in kilometers.
 
-* You can use {ref}`CURRENT_TIMESTAMP <crate-reference:scalar-current_timestamp>` with an
-  interval {ref}`value expression <crate-reference:sql-value-expressions>`
+* You can use {external+crate-reference:ref}`CURRENT_TIMESTAMP <scalar-current_timestamp>` with an
+  interval {external+crate-reference:ref}`value expression <sql-value-expressions>`
   (``INTERVAL '1' DAY``) to calculate a timestamp that is 24 hours in the
-  past. You can then use a {ref}`WHERE clause <crate-reference:sql-select-where>`
+  past. You can then use a {external+crate-reference:ref}`WHERE clause <sql-select-where>`
   to filter out records with a ``timestamp`` older than one day.
 
-  An {ref}`ORDER BY clause <crate-reference:sql-select-order-by>` sorts the results
+  An {external+crate-reference:ref}`ORDER BY clause <sql-select-order-by>` sorts the results
   by ``timestamp``, oldest first.
 
 * You can use the ``parse_dates`` argument to specify which columns
@@ -376,23 +376,23 @@ high, creating an unnecessary large number of data points. Therefore, here is a
 basic approach to resample data at a lower frequency:
 
 > 1. Place values of the `time` column into bins for a given interval (using
->    {ref}`DATE_BIN() <crate-reference:date-bin>`).
+>    {external+crate-reference:ref}`DATE_BIN() <date-bin>`).
 >
 >    In this example, we are resampling the data per minute. This means that all
 >    rows with an identical `time` value on minute-level are placed into the
 >    same date bin.
 >
 > 2. Group rows per date bin (using
->    {ref}`GROUP BY <crate-reference:sql_dql_group_by>`).
+>    {external+crate-reference:ref}`GROUP BY <sql_dql_group_by>`).
 >
 >    The position index `1` is a reference to the first column of the
 >    `SELECT` clause so we don't need to repeat the whole `DATE_BIN` function call.
 >
-> 3. Calculate an {ref}`aggregate <crate-reference:aggregation>` value across the
+> 3. Calculate an {external+crate-reference:ref}`aggregate <aggregation>` value across the
 >    grouped rows.
 >
 >    For example, if you have six rows with six distances, you can calculate the
->    average distance (using {ref}`crate-reference:aggregation-avg`) and return a
+>    average distance (using {external+crate-reference:ref}`aggregation-avg`) and return a
 >    single value.
 
 :::{TIP}
@@ -506,14 +506,14 @@ You can perform null interpolation like so:
    of a join. You should resample this data at the same frequency as your null
    data.
 
-3. Join both tables with a left {ref}`inner join <crate-reference:inner-joins>` on
+3. Join both tables with a left {external+crate-reference:ref}`inner join <inner-joins>` on
    ``time`` to pull across any non-null values from the right-hand table.
 
 The result is a row set that has one row per interval for a fixed period with
 null values filling in for missing data.
 
 :::{SEEALSO}
-Read more about {ref}`how joins work <crate-reference:concept-joins>`.
+Read more about {external+crate-reference:ref}`how joins work <concept-joins>`.
 :::
 
 (ni-brief-example)=
@@ -587,16 +587,16 @@ Here, notice that:
 ```
 
 :::{SEEALSO}
-Read more about {ref}`pandas:missing_data` using pandas.
+Read more about {external+pandas:ref}`missing_data` using pandas.
 :::
 
 (ni-null-data)=
 
 #### Generate continuous null data for the past 24 hours
 
-You can generate continuous null data with the {ref}`generate_series()
-<crate-reference:table-functions-generate-series>` table function. A {ref}`table
-function <crate-reference:table-functions>` is a function that produces a set
+You can generate continuous null data with the {external+crate-reference:ref}`generate_series()
+<table-functions-generate-series>` table function. A {external+crate-reference:ref}`table
+function <table-functions>` is a function that produces a set
 of rows.
 
 For example, this query generates null values for every minute in the past 24
@@ -659,7 +659,7 @@ includes your resampled data.
 #### Bring it all together
 
 To combine the null data with your resampled data, you can write a new query
-that performs a left {ref}`crate-reference:inner-joins`, as per the previous
+that performs a left {external+crate-reference:ref}`inner-joins`, as per the previous
 {ref}`introductions <ni-interpolate>`.
 
 ```python
@@ -685,18 +685,18 @@ def data_24h():
 
 In the code above:
 
- * The {ref}`generate_series() <crate-reference:table-functions-generate-series>`
+ * The {external+crate-reference:ref}`generate_series() <table-functions-generate-series>`
    table function creates a row set called `time` that has one row per minute
    for the past 24 hours.
 
  * The `iss` table can be joined to the `time` series by truncating the
-   `iss.timestamp` column to the minute for the {ref}`join condition
-   <crate-reference:sql_joins>`.
+   `iss.timestamp` column to the minute for the {external+crate-reference:ref}`join condition
+   <sql_joins>`.
 
- * Like before, a {ref}`GROUP BY <crate-reference:sql_dql_group_by>` clause can be
+ * Like before, a {external+crate-reference:ref}`GROUP BY <sql_dql_group_by>` clause can be
    used to collapse multiple rows per minute into a single row per minute.
 
-   Similarly, the {ref}`crate-reference:aggregation-avg` function can be used to
+   Similarly, the {external+crate-reference:ref}`aggregation-avg` function can be used to
    compute an aggregate `DISTANCE` value across multiple rows. There is no
    need to check for null values here because the `AVG()` function discards
    null values.
