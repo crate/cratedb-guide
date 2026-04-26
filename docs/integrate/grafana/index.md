@@ -77,6 +77,6 @@ Tutorial <tutorial>
 
 
 [CrateDB and Grafana]: https://cratedb.com/integrations/cratedb-and-grafana
-[Grafana Cloud]: https://grafana.com/grafana/
-[Grafana Labs]: https://grafana.com/about/team/
+[Grafana Cloud]: https://grafana.com/products/cloud/
+[Grafana Labs]: https://grafana.com/about/grafana-labs/
 [Grafana OSS]: https://grafana.com/oss/grafana/
