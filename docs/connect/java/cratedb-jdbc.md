@@ -25,13 +25,21 @@ Connect to CrateDB using CrateDB JDBC.
 :::{div}
 The [CrateDB JDBC Driver] is an open-source JDBC driver written in
 Pure Java (Type 4), which communicates using the PostgreSQL native
-network protocol. CrateDB JDBC needs Java >= 11.
+network protocol. 
+
+This driver provides support for CrateDB-specific
+features (such as mapping the {ref}`OBJECT <document>` type,
+transaction handling, metadata, etc.). More information about the
+differences between pgJDBC and the Crate JDBC driver can be found in
+the [documentation](https://cratedb.com/docs/jdbc/).
+
+CrateDB JDBC needs Java >= 11.
 :::
 
 :::{rubric} Synopsis
 :::
 
-`example.java`
+`Example.java`
 ```java
 import java.sql.*;
 
