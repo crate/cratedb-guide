@@ -117,12 +117,41 @@ Assuring your data is safe is both recommended and crucial for {ref}`upgrading`
 your cluster to newer software releases.
 
 
+## Other backup strategies
+
+:::{warning}
+
+   Filesystem-level backups (including cloud disk snapshots) are not
+   cluster-consistent and must not be used as the primary backup method.
+:::
+
+Taking a snapshot using CrateDB’s built-in snapshot functionality is the
+**only reliable and supported way** to back up a CrateDB cluster.
+
+Backing up a cluster by copying the data directories of its nodes—whether via
+filesystem-level backups, volume snapshots (e.g. Kubernetes CSI or cloud disk
+snapshots), or other infrastructure-level mechanisms—is not guaranteed to 
+produce a consistent or restorable backup.
+
+CrateDB is a **distributed database** that stores data across multiple nodes
+and shards. A backup created by copying node-local data directories does not
+represent a consistent cluster-wide state at a single point in time. Even if
+such copies are taken simultaneously, or nodes are stopped during the process,
+important cluster-level consistency guarantees may still be violated.
+
+Such approaches operate at the storage level and are not aware of CrateDB’s
+distributed coordination, transaction visibility, and shard allocation
+mechanisms.
+
+In case infrastructure-level backups (e.g. cloud disk snapshots or Kubernetes volume
+snapshots) are a requirement, we recommend you shut down the cluster before initiating
+the backup.
+
 :::{note}
 {material-outlined}`construction;2em` This page is currently under construction.
 It only includes the most basic essentials, and needs expansion. For example,
 the "Learn" section is missing completely, referring to corresponding tutorials
 and other educational material.
 :::
-
 
 [Elasticsearch: Snapshot and restore]: https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshot-restore.html
