@@ -103,5 +103,5 @@ SELECT 2 rows in set (0.017 sec)
 
 
 :::{todo}
-Describe other full-text search options.
+WIP.
 :::
