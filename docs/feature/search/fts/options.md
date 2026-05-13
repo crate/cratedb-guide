@@ -16,10 +16,19 @@ compensate for search or spelling corrections, is to apply fuzzy searching.
 CrateDB's MATCH function accepts a `fuzziness` option which provides that
 feature.
 
-:::{rubric} Examples
-:::
+### Search across a single column (index)
 
-Using a single fulltext index.
+The example below shows how to query a single column with a full-text
+index enabled. 
+
+The query uses the `best_fields` match type, which
+increases the relevance of rows that match extremely well (for
+example, if a column contains all the tokens of the query term).
+
+`fuzziness` is set to 2, which means that the results will have a
+maximum [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance)
+of 2 from the query term.
+
 ```sql
 -- Start with a blank canvas.
 DROP TABLE IF EXISTS person;
@@ -54,12 +63,13 @@ ORDER BY _score DESC;
 SELECT 2 rows in set (0.009 sec)
 ```
 
-Using two fulltext indexes within a single query, and two typos.
+### Two full-text indexes, two languages, two typos
+
 ```sql
 -- Start with a blank canvas.
 DROP TABLE IF EXISTS documents;
 
--- Define table schema, using two full-text indexes on the "name" column.
+-- Define table schema, using two full-text indexes on the "description" column.
 CREATE TABLE documents (
   name STRING PRIMARY KEY,
   description TEXT,
@@ -101,7 +111,35 @@ ORDER BY _score DESC;
 SELECT 2 rows in set (0.017 sec)
 ```
 
+### Phrase matching
+
+Phrase matching, i.e., requiring that an exact phrase is found is
+possible with the `phrase` matching type. 
+
+Let's continue using the `documents` example above. The following
+query will search for documents that contain the phrase `lazy dog`.
+
+```sql
+SELECT name, _score
+FROM documents
+WHERE MATCH((ft_english, ft_german), 'lazy dog')
+    USING phrase
+ORDER BY _score DESC;
+```
+
+The result looks similar to this:
+
+```postgresql
++-----------+------------+
+| name      |     _score |
++-----------+------------+
+| Quick fox | 0.26152915 |
++-----------+------------+
+```
+
+However, if the query term is changed to `dog lazy`, no rows are
+returned.
 
 :::{todo}
-Describe other full-text search options.
+WIP.
 :::
