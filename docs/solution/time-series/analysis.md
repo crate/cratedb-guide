@@ -179,7 +179,7 @@ identify patterns.
 [forecasting-pycaret-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/pycaret/automl_timeseries_forecasting_with_pycaret.ipynb
 [MLflow]: https://mlflow.org/
 [MLflow and CrateDB]: https://github.com/crate/cratedb-examples/tree/main/topic/machine-learning/mlflow
-[PyCaret]: https://www.pycaret.org
+[PyCaret]: https://github.com/pycaret
 [Time series]: https://en.wikipedia.org/wiki/Time_series
 [timeseries-decomposition-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/timeseries/time-series-decomposition.ipynb
 [timeseries-decomposition-github]: https://github.com/crate/cratedb-examples/blob/main/topic/timeseries/time-series-decomposition.ipynb

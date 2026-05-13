@@ -3,7 +3,7 @@
 
 ```{div}
 :style: "float: right; margin-left: 1em"
-[![PyCaret logo](https://github.com/crate/crate-clients-tools/assets/453543/b17a59e2-6801-4f53-892f-ff472491095f){w=180px}](https://pycaret.org/)
+[![PyCaret logo](https://github.com/crate/crate-clients-tools/assets/453543/b17a59e2-6801-4f53-892f-ff472491095f){w=180px}](https://github.com/pycaret)
 ```
 ```{div}
 :style: "clear: both"
@@ -96,4 +96,4 @@ How to train time series forecasting models using PyCaret and CrateDB.
 [automl-forecasting-github]: https://github.com/crate/cratedb-examples/blob/main/topic/machine-learning/pycaret/automl_timeseries_forecasting_with_pycaret.ipynb
 [automl-forecasting-colab]: https://colab.research.google.com/github/crate/cratedb-examples/blob/main/topic/machine-learning/pycaret/automl_timeseries_forecasting_with_pycaret.ipynb
 [Introduction to hyperparameter tuning]: https://medium.com/analytics-vidhya/comparison-of-hyperparameter-tuning-algorithms-grid-search-random-search-bayesian-optimization-5326aaef1bd1
-[PyCaret]: https://www.pycaret.org
+[PyCaret]: https://github.com/pycaret
