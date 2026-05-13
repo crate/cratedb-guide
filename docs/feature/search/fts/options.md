@@ -111,6 +111,34 @@ ORDER BY _score DESC;
 SELECT 2 rows in set (0.017 sec)
 ```
 
+### Phrase matching
+
+Phrase matching, i.e., requiring that an exact phrase is found is
+possible with the `phrase` matching type. 
+
+Let's continue using the `documents` example above. The following
+query will search for documents that contain the phrase `lazy dog`.
+
+```sql
+SELECT name, _score
+FROM documents
+WHERE MATCH((ft_english, ft_german), 'lazy dog')
+    USING phrase
+ORDER BY _score DESC;
+```
+
+The result looks similar to this:
+
+```postgresql
++-----------+------------+
+| name      |     _score |
++-----------+------------+
+| Quick fox | 0.26152915 |
++-----------+------------+
+```
+
+However, if the query term is changed to `dog lazy`, no rows are
+returned.
 
 :::{todo}
 WIP.
