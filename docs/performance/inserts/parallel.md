@@ -19,7 +19,7 @@ response before sending another insert.
 :::{NOTE}
 Before trying to parallelize your queries, you should evaluate whether
 {ref}`inserts-bulk-operations` are a good fit. In many cases, you will see
-even better performance from bulk opperations.
+even better performance from bulk operations.
 :::
 
 ## Example
