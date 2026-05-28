@@ -128,7 +128,7 @@ Users can ask questions of the knowledge base using natural language.
 :::{rubric} Community
 :::
 
-:::::{grid} 1 2 2 3
+:::::{grid} 1 2 2 2
 :gutter: 2
 
 ::::{grid-item-card}
@@ -151,6 +151,28 @@ sources of raw weather data from domestic weather agencies.
 
 {tags-secondary}`pandas`
 {tags-secondary}`Polars`
+{tags-secondary}`SQL`
+::::
+
+::::{grid-item-card} Climate Monitor
+:link: https://github.com/felimet/climate-monitor
+:link-type: url
+:class-footer: text-smaller
+Smart climate monitoring system for TP-Link Tapo T315
+temperature and humidity sensors.
+
+Features CrateDB time-series storage, Superset visualization,
+and automated Synology NAS deployment via Docker.
++++
+**What's inside:**
+
+{tags-primary}`IoT`
+{tags-primary}`Metadata`
+{tags-primary}`Sensor data`
+{tags-primary}`Time series`
+
+{tags-secondary}`TP-Link: Kasa and Tapo`
+{tags-secondary}`Pydantic`
 {tags-secondary}`SQL`
 ::::
 
