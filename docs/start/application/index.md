@@ -5,7 +5,7 @@
 :::{rubric} Starter
 :::
 
-::::{grid} 1 2 2 3
+::::{grid} 1 2 2 2
 :gutter: 2
 
 :::{grid-item-card} JavaScript guestbook
@@ -25,6 +25,16 @@ Geospatial data demo application using CrateDB and the Express.js framework.
 +++
 Select a point of interest on a map,
 then drill up to the corresponding region.
+:::
+
+:::{grid-item-card} CrateDB Explore
+:link: https://github.com/crate/cratedb-explore
+:link-type: url
+:class-footer: text-smaller
+Project that accompanies the "CrateDB Explore: IoT Analytics hands-on demo".
++++
+The repository includes a Grafana setup and programs to walk you
+through a real-time IoT analytics application using weather data.
 :::
 
 :::{grid-item-card} Assorted examples
