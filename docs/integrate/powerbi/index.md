@@ -61,6 +61,6 @@ Power BI Service <service>
 
 [CrateDB and Power BI]: https://cratedb.com/integrations/cratedb-and-power-bi
 [PostgreSQL ODBC driver]: https://odbc.postgresql.org/
-[Power BI Desktop]: https://powerbi.microsoft.com/en-us/desktop/
-[Power BI Service]: https://powerbi.microsoft.com/en-us/
+[Power BI Desktop]: https://www.microsoft.com/en-us/power-platform/products/power-bi/desktop
+[Power BI Service]: https://www.microsoft.com/en-us/power-platform/products/power-bi/
 [Power Query PostgreSQL connector]: https://learn.microsoft.com/en-us/power-query/connectors/postgresql

@@ -69,5 +69,5 @@ SELECT 1 row in set (0.004 sec)
 ```
 
 
-[Coreflux MQTT Broker]: https://docs.coreflux.org/mqtt-broker/overview
+[Coreflux MQTT Broker]: https://docs.coreflux.org/v2.0/mqtt-broker/overview
 [LorryStream MQTT source]: https://lorrystream.readthedocs.io/source/mqtt.html

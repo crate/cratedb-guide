@@ -127,6 +127,8 @@ linkcheck_ignore += [
     r"https://codeberg.org/",
     # Max retries exceeded. Connection to www.7-zip.org timed out. (connect timeout=15).
     r"https://www.7-zip.org/",
+    # [Errno 101] Network is unreachable
+    r"https://www.jooq.org/",
 ]
 
 linkcheck_anchors_ignore_for_url += [

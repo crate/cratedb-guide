@@ -11,7 +11,7 @@
 :::
 
 [MindsDB] is the platform for customizing AI from enterprise data. With MindsDB
-and its nearly 200 integrations to [data sources] and [AI/ML frameworks], 
+and its nearly 200 integrations to [data sources] and other frameworks,
 any developer can use their enterprise data to customize AI for their purpose, 
 faster and more securely.
 
@@ -59,6 +59,5 @@ Learn more about MindsDB's integration with CrateDB and see examples.
 ::::
 
 
-[AI/ML frameworks]: https://docs.mindsdb.com/integrations/ai-overview 
 [data sources]: https://docs.mindsdb.com/integrations/data-overview 
 [MindsDB]: https://github.com/mindsdb/mindsdb
