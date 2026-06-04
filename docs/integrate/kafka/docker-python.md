@@ -106,7 +106,7 @@ c = Consumer({
 })
 c.subscribe(["sensors"])
 
-SQL_ENDPOINT = "http://localhost:4200/_bulk"
+SQL_ENDPOINT = "http://localhost:4200/_sql"
 
 def insert_batch(rows):
     # Bulk insert via HTTP; one statement, many parameter sets
