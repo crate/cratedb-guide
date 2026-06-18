@@ -45,4 +45,4 @@ crash --hosts 'https://admin:-..n@gray-wicket.aks1.westeurope.azure.cratedb.net:
 
 [cloud platform]: https://cloud.mongodb.com
 [CrateDB Cloud]: https://console.cratedb.cloud/
-[MongoDB Atlas]: https://www.mongodb.com/cloud/atlas
+[MongoDB Atlas]: https://www.mongodb.com/products/platform
