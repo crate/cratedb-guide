@@ -1,8 +1,6 @@
 :::{include} /_include/links.md
 :::
 
-(erlang-odbc)=
-
 # Erlang ODBC
 
 :::{div} sd-text-muted

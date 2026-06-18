@@ -105,11 +105,10 @@ cursor.close()
 connection.close()
 ```
 
-:::{todo}
-Enable with the [Python patch](https://github.com/crate/cratedb-guide/pull/403).
-```md
-- {ref}`Turbodbc -- a high-performance ODBC library <turbodbc>`
-```
+:::{seealso}
+
+{ref}`Turbodbc -- a high-performance ODBC library <turbodbc>`
+
 :::
 
 ## Example
