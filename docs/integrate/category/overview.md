@@ -69,7 +69,7 @@ Guidelines, tools, and ETL recipes, to support migrating data
 warehouse workloads to CrateDB.
 +++
 **What's inside:**
-InfluxDB, MongoDB, Rockset.
+InfluxDB, MongoDB.
 :::
 
 ::::
@@ -83,5 +83,4 @@ Business Intelligence <bi/index>
 Data Lineage <lineage/index>
 Data Visualization <visualize/index>
 Programming Frameworks <framework/index>
-migrate/index
 ```
