@@ -5,7 +5,7 @@
 [CrateDB logo]: https://avatars.githubusercontent.com/u/4048232?s=200&v=4
 [Flink home]: https://flink.apache.org/
 [Flink logo]: https://flink.apache.org/img/logo/png/50/color_50.png
-[Hibernate logo]: https://logo.svgcdn.com/devicon/hibernate-original.svg
+[Hibernate logo]: https://hibernate.org/images/hibernate-logo.svg
 [jOOQ logo]: https://www.jooq.org/img/jooq-logo-black.png
 [JUnit home]: https://junit.org/
 [JUnit logo]: https://avatars.githubusercontent.com/u/874086?s=200&v=4
