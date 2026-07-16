@@ -60,18 +60,6 @@ Learn how to use programming frameworks with CrateDB.
 Django, Gradio, Plotly, PyViz, QueryZen, Streamlit.
 :::
 
-:::{grid-item-card} {material-outlined}`drive_file_move;2em` Warehouse Migrations
-:link: migrations
-:link-type: ref
-:link-alt: Migrate workloads to CrateDB
-:class-item: visually-hidden
-Guidelines, tools, and ETL recipes, to support migrating data
-warehouse workloads to CrateDB.
-+++
-**What's inside:**
-InfluxDB, MongoDB.
-:::
-
 ::::
 
 
