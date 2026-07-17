@@ -142,7 +142,7 @@ shards for newly created tables or partitions.
 Use the {ref}`SET <crate-reference:ref-set>` command to do so:
 
 ```psql
-cr> SET GLOBAL TRANSIENT "cluster.routing.allocation.enable" = 'new_primaries';
+cr> SET GLOBAL TRANSIENT "cluster.routing.allocation.enable" = 'primaries';
 SET OK, 1 row affected (... sec)
 ```
 
