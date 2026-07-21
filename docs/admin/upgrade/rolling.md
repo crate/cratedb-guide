@@ -218,8 +218,8 @@ Example for RHEL (DNF package manager):
 dnf update -y crate
 ```
 
-If you are in doubt how to upgrade an installed package, please refer to the
-man pages of your operating system or package manager.
+If you are in doubt how to upgrade an installed package, please refer to your
+operating system documentation.
 
 ### Start CrateDB
 
