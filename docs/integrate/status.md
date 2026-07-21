@@ -234,8 +234,6 @@ to CrateDB.
     <img src="https://img.shields.io/github/actions/workflow/status/crate/dbt-cratedb2/integration-tests.yml?branch=main&label=dbt" loading="lazy"></a>
 <a href="https://github.com/surister/cratedb-django/actions/workflows/tests.yml" target="_blank">
     <img src="https://img.shields.io/github/actions/workflow/status/surister/cratedb-django/tests.yml?branch=master&label=Django" loading="lazy"></a>
-<a href="https://github.com/crate/cratedb-estuary">
-    <img src="https://img.shields.io/badge/Estuary-passing-success" loading="lazy"></a>
 <a href="https://github.com/crate/cratedb-fivetran-destination/actions/workflows/tests.yml" target="_blank">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-fivetran-destination/tests.yml?branch=main&label=Fivetran" loading="lazy"></a>
 <a href="https://github.com/crate/langchain-cratedb/actions/workflows/ci.yml" target="_blank">
@@ -246,8 +244,6 @@ to CrateDB.
     <img src="https://img.shields.io/github/actions/workflow/status/crate/meltano-target-cratedb/main.yml?branch=main&label=Meltano Loader" loading="lazy"></a>
 <a href="https://github.com/crate/mlflow-cratedb/actions/workflows/main.yml" target="_blank">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/mlflow-cratedb/main.yml?branch=main&label=MLflow" loading="lazy"></a>
-<a href="https://github.com/crate/cratedb-tableau-connector/actions/workflows/main.yml" target="_blank">
-    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-tableau-connector/main.yml?branch=main&label=Tableau" loading="lazy"></a>
 </td>
 </tr>
 
@@ -288,10 +284,6 @@ to CrateDB.
 <td>
 <a href="https://github.com/crate/commons-codec/actions/workflows/tests.yml" target="_blank">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/commons-codec/tests.yml?branch=main&label=commons-codec" loading="lazy"></a>
-<a href="https://github.com/crate/cratedb-sqlparse/actions/workflows/python.yml" target="_blank">
-    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-sqlparse/python.yml?branch=main&label=cratedb-sqlparse (python)" loading="lazy"></a>
-<a href="https://github.com/crate/cratedb-sqlparse/actions/workflows/javascript.yml" target="_blank">
-    <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-sqlparse/javascript.yml?branch=main&label=cratedb-sqlparse (javascript)" loading="lazy"></a>
 <br>
 <a href="https://github.com/crate/cratedb-toolkit/actions/workflows/main.yml" target="_blank">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-toolkit/main.yml?branch=main&label=CrateDB Toolkit" loading="lazy"></a>
@@ -345,24 +337,6 @@ Adapters, drivers, dialects, and support utilities maintained by CrateDB.
 
 <br>
 <br>
-
-### PostgreSQL
-Standard PostgreSQL drivers for different languages.
-
-<a href="https://github.com/pgjdbc/pgjdbc/actions/workflows/main.yml" target="_blank">
-    <img src="https://img.shields.io/github/actions/workflow/status/pgjdbc/pgjdbc/main.yml?branch=master&label=pgjdbc" loading="lazy"></a>
-<a href="https://github.com/npgsql/npgsql/actions/workflows/build.yml" target="_blank">
-    <img src="https://img.shields.io/github/actions/workflow/status/npgsql/npgsql/build.yml?branch=main&label=npgsql" loading="lazy"></a>
-<a href="https://github.com/psycopg/psycopg2/actions/workflows/tests.yml" target="_blank">
-    <img src="https://img.shields.io/github/actions/workflow/status/psycopg/psycopg2/tests.yml?branch=master&label=psycopg2" loading="lazy"></a>
-<a href="https://github.com/psycopg/psycopg/actions/workflows/tests.yml" target="_blank">
-    <img src="https://img.shields.io/github/actions/workflow/status/psycopg/psycopg/tests.yml?branch=master&label=psycopg3" loading="lazy"></a>
-<a href="https://github.com/MagicStack/asyncpg/actions/workflows/tests.yml" target="_blank">
-    <img src="https://img.shields.io/github/actions/workflow/status/MagicStack/asyncpg/tests.yml?branch=master&label=asyncpg" loading="lazy"></a>
-<a href="https://github.com/brianc/node-postgres/actions/workflows/ci.yml" target="_blank">
-    <img src="https://img.shields.io/github/actions/workflow/status/brianc/node-postgres/ci.yml?branch=master&label=node-postgres" loading="lazy"></a>
-
-<br><br>
 
 
 ```{note}
