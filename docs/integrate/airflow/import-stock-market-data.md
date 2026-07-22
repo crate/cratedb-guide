@@ -66,14 +66,16 @@ astro dev init
 
 Now you have the skeleton of your Airflow project, which looks like this:
 
-> ├── dags # directory containing all DAGs
-> ├── include # additional files which are used in DAGs
-> ├── .astro # project settings
-> ├── Dockerfile # runtime overrides for Astronomer Docker image
-> ├── packages.txt # specification of OS-level packages
-> ├── plugins # custom or community Airflow plugins
-> ├── setup # additional setup-related scripts/database schemas
-> └── requirements.txt # specification of Python packages
+```text
+├── dags # directory containing all DAGs
+├── include # additional files which are used in DAGs
+├── .astro # project settings
+├── Dockerfile # runtime overrides for Astronomer Docker image
+├── packages.txt # specification of OS-level packages
+├── plugins # custom or community Airflow plugins
+├── setup # additional setup-related scripts/database schemas
+└── requirements.txt # specification of Python packages
+```
 
 By default, PostgreSQL listens on 5432 and the web server on 8080. If these ports are in use, change them as shown below. The latest Airflow release is used automatically, we will need Airflow 2.3.0 or later.
 
