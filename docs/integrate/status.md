@@ -132,8 +132,6 @@ on behalf of [cratedb-examples] and [academy-fundamentals-course].
       <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/lang-python-turbodbc.yml?branch=main&label=Python turbodbc" loading="lazy"></a>
 <a href="https://github.com/crate/cratedb-examples/actions/workflows/lang-r.yml" target="_blank">
       <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/lang-r.yml?branch=main&label=R" loading="lazy"></a>
-<a href="https://github.com/crate/cratedb-examples/actions/workflows/lang-ruby.yml" target="_blank">
-      <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/lang-ruby.yml?branch=main&label=Ruby" loading="lazy"></a>
 <a href="https://github.com/crate/cratedb-examples/actions/workflows/lang-rust-postgres.yml" target="_blank">
       <img src="https://img.shields.io/github/actions/workflow/status/crate/cratedb-examples/lang-rust-postgres.yml?branch=main&label=Rust postgres" loading="lazy"></a>
 </td>
@@ -330,10 +328,6 @@ Adapters, drivers, dialects, and support utilities maintained by CrateDB.
     <img src="https://img.shields.io/github/actions/workflow/status/crate/crate-pdo/tests.yml?branch=main&label=crate-pdo" loading="lazy"></a>
 <a href="https://github.com/crate/crate-dbal/actions/workflows/tests.yml" target="_blank">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/crate-dbal/tests.yml?branch=main&label=crate-dbal" loading="lazy"></a>
-<a href="https://github.com/crate/crate_ruby/actions/workflows/tests.yml" target="_blank">
-    <img src="https://img.shields.io/github/actions/workflow/status/crate/crate_ruby/tests.yml?branch=main&label=crate_ruby" loading="lazy"></a>
-<a href="https://github.com/crate/activerecord-crate-adapter/actions/workflows/tests.yml" target="_blank">
-    <img src="https://img.shields.io/github/actions/workflow/status/crate/activerecord-crate-adapter/tests.yml?branch=main&label=activerecord-crate-adapter" loading="lazy"></a>
 
 <br>
 <br>
