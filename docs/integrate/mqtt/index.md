@@ -60,6 +60,11 @@ Follow up with detailed tutorials about integrations with different MQTT brokers
 :link-type: ref
 :::
 
+:::{grid-item-card} MonsterMQ 
+:link: monstermq 
+:link-type: ref
+:::
+
 ::::
 
 
