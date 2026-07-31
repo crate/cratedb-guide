@@ -294,5 +294,5 @@ features of Lucene 9, and about the journey of implementing HNSW from
 [making of Lucene vector search]: https://www.apachecon.com/acna2022/slides/04_lucene_vector_search_sokolov.pdf
 [Time series data in manufacturing]: https://github.com/crate/cratedb-datasets/raw/main/machine-learning/fulltext/White%20paper%20-%20Time-series%20data%20in%20manufacturing.pdf
 [Uwe Schindler - What's coming next with Apache Lucene?]: https://youtu.be/EHJjSYWjIF0?t=330s&feature=shared
-[Vector search in Elasticsearch]: https://www.elastic.co/search-labs/blog/articles/vector-search-elasticsearch-rationale
+[Vector search in Elasticsearch]: https://www.elastic.co/search-labs/articles/vector-search-elasticsearch-rationale
 [Vector support and KNN search in CrateDB]: https://cratedb.com/blog/unlocking-the-power-of-vector-support-and-knn-search-in-cratedb
