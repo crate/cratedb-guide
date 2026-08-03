@@ -138,6 +138,10 @@ linkcheck_anchors_ignore_for_url += [
     r"https://kafka.apache.org/.*",
 ]
 
+linkcheck_request_headers = {
+    "User-Agent": "CrateDB docs linkcheck"
+}
+
 # Configure intersphinx.
 if "sphinx.ext.intersphinx" not in extensions:
     extensions += ["sphinx.ext.intersphinx"]
