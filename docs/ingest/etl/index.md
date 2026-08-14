@@ -29,8 +29,6 @@ how to use them effectively. Additionally, see support for {ref}`cdc` solutions.
 - {ref}`influxdb`
 - {ref}`mongodb`
 - {ref}`mysql`
-- {ref}`oracle`
-- {ref}`postgresql`
 - {ref}`sql-server`
 +++
 Load data from database systems.

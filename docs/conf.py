@@ -118,6 +118,7 @@ linkcheck_ignore += [
     r"https://meltano.com/",
     # 429 Client Error: Too Many Requests
     r"https://blog.nyrkio.com/",
+    r"https://www.nasa.gov/mission_pages/station/main/index.html",
     # Read timed out.
     r"https://streamlit.io",
     r"https://matplotlib.org",

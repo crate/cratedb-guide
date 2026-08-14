@@ -26,25 +26,10 @@ When Oracle acquired Sun in 2010, Monty Widenius, MySQL's founder, forked the
 open-source MySQL project to create MariaDB.
 :::
 
-:::{rubric} Synopsis
-:::
-
-```shell
-uvx 'cratedb-toolkit[io-ingest]' load \
-  "mysql://root:secret@localhost:3306/?table=dbname.tablename" \
-  "crate://crate:crate@localhost:4200/doc/mysql_demo"
-```
-
 :::{rubric} Learn
 :::
 
 ::::{grid}
-
-:::{grid-item-card} Load data from MySQL/MariaDB.
-:link: mysql-usage
-:link-type: ref
-Load data from MySQL into CrateDB using CrateDB Toolkit.
-:::
 
 :::{grid-item-card} Use SQL and CSV
 :link: mysql-import-csv
@@ -54,14 +39,11 @@ Manually export CSV from MySQL, and import into CrateDB, all using SQL.
 
 ::::
 
-
 :::{toctree}
 :maxdepth: 1
 :hidden:
-Usage <usage>
 Use CSV <import-csv>
 :::
-
 
 [MariaDB]: https://mariadb.com/
 [MySQL]: https://www.mysql.com/
