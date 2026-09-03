@@ -354,6 +354,69 @@ sh$ systemctl cat crate
 ```
 :::
 
+(prod-storage-hardware)=
+
+## Storage hardware
+
+CrateDB stores each shard as a local Lucene index plus a per-shard
+write-ahead log (translog). Because writes are only acknowledged once the
+primary shard and a quorum of replicas have durably persisted them, the
+storage backend's write latency and durability semantics directly bound
+cluster write latency and correctness guarantees.
+
+Recommended:
+
+- **Local or low-latency block-backed SSDs** for any node holding actively
+  written shards. CrateDB's write path performs frequent small random I/O
+  (segment flushes, translog fsyncs, segment merges) rather than large
+  sequential writes, which spinning disks and high-latency network storage
+  handle poorly.
+- Storage with **high, consistent IOPS**, sized for your ingest rate rather
+  than only for capacity.
+- A **POSIX-compliant local filesystem** (ext4, XFS) under `path.data`.
+  CrateDB relies on local-filesystem semantics — correct file locking and
+  atomic file creation/rename — for safe concurrent access to shard data.
+
+Works, but performance-limited:
+
+- **HDDs / spinning disks.** Unlike the items below, this is a pure
+  performance tradeoff, not a correctness concern. The difference is IOPS
+  and random-I/O latency: CrateDB's segment-merge and translog-fsync pattern
+  is latency-sensitive random I/O, which HDDs handle far worse than SSDs, so
+  write-heavy or high-ingest-rate tables will bottleneck on disk sooner.
+  For read-mostly tables, low write volume, or archival/cold data, HDDs
+  can be a perfectly reasonable, working choice — CrateDB has no
+  hot/warm/cold storage tiering concept of its own, but nothing stops you
+  from putting less frequently written tables, or a node holding only
+  replicas of them, on slower disks.
+
+Not recommended for `path.data` (correctness risk, not just performance):
+
+- **NFS and other network/shared filesystems.** This is not a categorical
+  incompatibility — a correctly configured mount (NFSv4, with locking
+  enabled) can provide the file-locking guarantees CrateDB's storage
+  engine relies on. In practice, it's still discouraged, because: older
+  configurations (NFSv3, or any version mounted with locking disabled,
+  e.g. a `nolock` mount option) are known to fail this guarantee outright;
+  even a correctly configured mount adds network latency and latency
+  *variance* to every write, on top of CrateDB's own replication, for no
+  real benefit, since CrateDB already replicates shards across nodes
+  itself; and CrateDB has not tested or certified any specific NFS
+  configuration, so a failure mode you hit would be yours alone to
+  diagnose. If you have a specific, well-understood reason to use network
+  storage anyway, use NFSv4 with locking enabled, and test thoroughly
+  before trusting it with production data.
+- **Distributed filesystems** (e.g. Ceph, GlusterFS) mounted as the data
+  path — same caveats as NFS, generally with less real-world track record
+  under this kind of workload.
+
+CrateDB has not published a certified list of tested storage backends.
+The guidance above follows directly from CrateDB's write-path architecture
+(see [Storage and consistency])
+if you are evaluating a specific storage backend (a particular cloud
+provider's block storage, a specific NAS/SAN product, etc.), benchmark it
+against your expected ingest rate before committing to it in production.
+
 (prod-jvm)=
 
 ## Tune the JVM
@@ -449,3 +512,4 @@ The following checklist highlights important aspects to consider for production 
 [unix-like]: https://en.wikipedia.org/wiki/Unix-like
 [support terms]: https://cratedb.com/legal/support-terms
 [system table export]: https://cratedb-toolkit.readthedocs.io/cfr/systable.html
+[Storage and consistency]: https://cratedb.com/docs/crate/reference/en/master/concepts/storage-consistency.html
