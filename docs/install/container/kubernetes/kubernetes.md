@@ -307,6 +307,37 @@ achieved with [persistent volumes].
 Persistent volumes can be provisioned in many different ways, so the specific
 configuration will depend on your setup.
 
+#### Choosing a storage class
+
+CrateDB pods use a `StatefulSet` with a `PersistentVolumeClaim`
+mounted at `/data`, so any StorageClass your Kubernetes provider offers
+will technically work. In practice there is a trade-off between two
+volume types:
+
+- **Local volumes** (e.g. local NVMe/SSD via a local-volume provisioner)
+  give the best write/read performance, matching CrateDB's local-SSD
+  recommendation for {ref}`storage hardware <prod-storage-hardware>`.
+  Their tradeoff: a pod bound to a local volume cannot be rescheduled to
+  a different node if its host fails — it stays `Pending` until the
+  host recovers or you intervene manually.
+- **Network-attached volumes** (cloud block storage: AWS EBS, Azure
+  Managed Disks, GCP Persistent Disk, etc.) let Kubernetes reschedule a
+  failed pod onto a different host automatically, at some cost to write
+  latency compared to local SSD. Prefer SSD-backed variants
+  (e.g. `gp3`/`io2` on AWS, `Premium_LRS` on Azure, `pd-ssd` on GCP)
+  over HDD-backed tiers for write-heavy workloads — HDD-backed volumes
+  work correctly, they're just lower-IOPS, so they're a reasonable
+  choice for read-mostly or low-ingest-rate tables and a poor one for
+  high-throughput ingestion.
+
+Benchmark your chosen StorageClass against your expected
+ingest rate. If using network-attached volumes, set
+`volumeBindingMode: WaitForFirstConsumer` on the StorageClass so pods
+aren't scheduled onto a node before their volume is available, and use a
+`Delete` reclaim policy so scaled-down PVCs don't leave orphaned volumes
+behind.
+
+
 #### Microsoft Azure
 
 You can create a [StorageClass] for [Azure Managed Disks] with a
