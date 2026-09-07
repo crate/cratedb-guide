@@ -130,10 +130,8 @@ the [adbcBridge CrateDB entry] records the settings and what was measured.
 :::{rubric} Install
 :::
 
-:::{include} /connect/odbc/install-dropdown.md
-:::
-
-Install the Python package, which bundles the driver library.
+Install the PostgreSQL ODBC driver as described above, then the Python package,
+which bundles the driver library.
 ```shell
 pip install --upgrade adbcbridge
 ```
@@ -200,7 +198,6 @@ connection_string = \
 
 [adbcBridge CrateDB entry]: https://adbcbridge.org/matrix/#cratedb
 [adbcBridge]: https://github.com/singhpratech/adbcbridge
-[ADBC]: https://arrow.apache.org/adbc/
 [connecting to PostgreSQL with pyodbc]: https://github.com/mkleehammer/pyodbc/wiki/Connecting-to-PostgreSQL
 [pyodbc installation instructions]: https://github.com/mkleehammer/pyodbc/wiki/Install
 [pyodbc]: https://github.com/mkleehammer/pyodbc
