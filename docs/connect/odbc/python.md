@@ -113,13 +113,14 @@ connection.close()
 
 (odbc-adbcbridge)=
 
-## adbcBridge (Apache Arrow ADBC)
+## adbcBridge (ADBC over ODBC)
 
 :::{rubric} About
 :::
 
-[adbcBridge] is an [Apache Arrow ADBC] driver that loads an ODBC driver and returns
-query results as Arrow record batches. Against CrateDB it uses the same psqlODBC
+[adbcBridge] is an open-source driver for [ADBC], the Apache Arrow project's database
+connectivity API. It loads an ODBC driver and returns query results as Arrow record
+batches. Against CrateDB it uses the same psqlODBC
 connection string as pyodbc and turbodbc, and hands the result to pandas, Polars, DuckDB
 or anything else that consumes Arrow without a per-row conversion step. The same library
 serves Rust, Go, Java and C# through the ADBC driver managers of those languages.
@@ -199,7 +200,7 @@ connection_string = \
 
 [adbcBridge CrateDB entry]: https://adbcbridge.org/matrix/#cratedb
 [adbcBridge]: https://github.com/singhpratech/adbcbridge
-[Apache Arrow ADBC]: https://arrow.apache.org/adbc/
+[ADBC]: https://arrow.apache.org/adbc/
 [connecting to PostgreSQL with pyodbc]: https://github.com/mkleehammer/pyodbc/wiki/Connecting-to-PostgreSQL
 [pyodbc installation instructions]: https://github.com/mkleehammer/pyodbc/wiki/Install
 [pyodbc]: https://github.com/mkleehammer/pyodbc
