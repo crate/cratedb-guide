@@ -111,6 +111,63 @@ connection.close()
 
 :::
 
+(odbc-adbcbridge)=
+
+## adbcBridge (ADBC over ODBC)
+
+:::{rubric} About
+:::
+
+[adbcBridge] is an open-source driver for [ADBC], the Apache Arrow project's database
+connectivity API. It loads an ODBC driver and returns query results as Arrow record
+batches. Against CrateDB it uses the same psqlODBC
+connection string as pyodbc and turbodbc, and hands the result to pandas, Polars, DuckDB
+or anything else that consumes Arrow without a per-row conversion step. The same library
+serves Rust, Go, Java and C# through the ADBC driver managers of those languages.
+CrateDB is one of the databases it is verified against with one compatibility workload;
+the [adbcBridge CrateDB entry] records the settings and what was measured.
+
+:::{rubric} Install
+:::
+
+Install the PostgreSQL ODBC driver as described above, then the Python package,
+which bundles the driver library.
+```shell
+pip install --upgrade adbcbridge
+```
+
+:::{rubric} Synopsis
+:::
+
+`example.py`
+```python
+import adbcbridge
+
+# Connect to database
+connection_string = \
+    "Driver={PostgreSQL Unicode};Server=localhost;Port=5432;Uid=crate;Pwd=crate;" \
+    "MaxVarcharSize=1073741824;Sslmode=disable;"
+connection = adbcbridge.connect(uri=connection_string)
+
+# Invoke query
+cursor = connection.cursor()
+cursor.execute("SELECT * FROM sys.summits ORDER BY height DESC LIMIT 5")
+
+# Display results as an Arrow table
+table = cursor.fetch_arrow_table()
+print(table)
+
+# Clean up
+cursor.close()
+connection.close()
+```
+
+`fetch_arrow_table()` returns a `pyarrow.Table`; `table.to_pandas()` and
+`polars.from_arrow(table)` convert it without copying row by row. Bulk loading works the
+other way round with `cursor.adbc_ingest("my_table", table)`, which sends one multi-row
+`INSERT` per batch; run `REFRESH TABLE my_table` before counting the rows, as with any
+CrateDB write.
+
 ## Example
 
 Create the file `example.py` including the synopsis code shared above and
@@ -139,7 +196,9 @@ connection_string = \
 ```
 
 
+[adbcBridge CrateDB entry]: https://adbcbridge.org/matrix/#cratedb
+[adbcBridge]: https://github.com/singhpratech/adbcbridge
 [connecting to PostgreSQL with pyodbc]: https://github.com/mkleehammer/pyodbc/wiki/Connecting-to-PostgreSQL
-[pyodbc]: https://github.com/mkleehammer/pyodbc
 [pyodbc installation instructions]: https://github.com/mkleehammer/pyodbc/wiki/Install
+[pyodbc]: https://github.com/mkleehammer/pyodbc
 [turbodbc]: https://turbodbc.readthedocs.io/
