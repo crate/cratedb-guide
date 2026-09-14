@@ -196,7 +196,7 @@ connection_string = \
 ```
 
 
-[adbcBridge CrateDB entry]: https://adbcbridge.org/matrix/#cratedb
+[adbcBridge CrateDB entry]: https://adbcbridge.org/db/cratedb/
 [adbcBridge]: https://github.com/singhpratech/adbcbridge
 [connecting to PostgreSQL with pyodbc]: https://github.com/mkleehammer/pyodbc/wiki/Connecting-to-PostgreSQL
 [pyodbc installation instructions]: https://github.com/mkleehammer/pyodbc/wiki/Install
