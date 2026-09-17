@@ -65,10 +65,30 @@ Python's built-in [unittest] framework.
 lightweight instances of databases, message brokers, web browsers, or
 just about anything that can run in a Docker container.
 
-CrateDB provides Testcontainers implementations for both Java and Python.
+Testcontainers provides CrateDB modules for {ref}`Java <testcontainers-java>`,
+Python, and Rust.
+
+(testcontainers-python)=
+### Python
+
+The CrateDB module of [Testcontainers for Python] starts a single-node
+CrateDB, and provides a connection URL for the SQLAlchemy dialect.
+
+:Package: `testcontainers[cratedb]`, version 4.15.0 or later
+:Repository: [Testcontainers for Python CrateDB module sources]
+:CI status: [![Testcontainers for Python](https://github.com/crate/cratedb-examples/actions/workflows/testing-testcontainers-python.yml/badge.svg)](https://github.com/crate/cratedb-examples/actions/workflows/testing-testcontainers-python.yml)
 
 - [Using "Testcontainers for Python" with CrateDB and pytest]
 - [Using "Testcontainers for Python" with CrateDB and unittest]
+
+(testcontainers-rust)=
+### Rust
+
+The CrateDB module of [Testcontainers for Rust] is part of its community
+modules.
+
+:Package: `testcontainers-modules`, with the `cratedb` feature
+:Documentation: [Testcontainers for Rust CrateDB module]
 
 
 [cr8]: https://pypi.org/project/cr8/
@@ -76,6 +96,10 @@ CrateDB provides Testcontainers implementations for both Java and Python.
 [pytest-cratedb]: https://pypi.org/project/pytest-cratedb/
 [run-crate]: https://pypi.org/project/cr8/#run-crate
 [Testcontainers]: https://testcontainers.com/
+[Testcontainers for Python]: https://testcontainers-python.readthedocs.io/
+[Testcontainers for Python CrateDB module sources]: https://github.com/testcontainers/testcontainers-python/tree/main/src/testcontainers/community/cratedb
+[Testcontainers for Rust]: https://rust.testcontainers.org/
+[Testcontainers for Rust CrateDB module]: https://docs.rs/testcontainers-modules/latest/testcontainers_modules/cratedb/
 [unittest]: https://docs.python.org/3/library/unittest.html
 [Using "cr8" test layers with CrateDB and unittest]: https://github.com/crate/cratedb-examples/tree/main/testing/native/python-unittest
 [Using "pytest-cratedb" with CrateDB and pytest]: https://github.com/crate/cratedb-examples/tree/main/testing/native/python-pytest
