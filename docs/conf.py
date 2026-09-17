@@ -51,6 +51,12 @@ linkcheck_ignore += [
     r"https://www.softwareag.com/.*",
     # 403 Client Error: Forbidden for url
     r"https://dzone.com/.*",
+    # 403 Client Error: Forbidden for url
+    r"https://powerbi.microsoft.com/.*",
+    # 403 Client Error: Forbidden for url
+    r"https://www.ibm.com/docs/.*",
+    # 403 Client Error: Forbidden for url
+    r"https://docs.streamsets.com/.*",
     # 504 Client Error: Gateway Timeout for url
     r"https://web.archive.org/.*",
     # 403 Client Error: Forbidden for url
