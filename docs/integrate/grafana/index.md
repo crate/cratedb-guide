@@ -62,14 +62,21 @@ Connecting to a CrateDB cluster uses the Grafana PostgreSQL data source adapter.
 Production-grade monitoring and graphing of CrateDB metrics.
 :::
 
+:::{grid-item-card} CrateDB Monitoring Dashboard
+:link: grafana-dashboard
+:link-type: ref
+Import a prebuilt Grafana dashboard for CrateDB cluster metrics,
+capacity planning, and incident analysis.
+:::
+
 ::::
 
 :::{toctree}
 :maxdepth: 1
 :hidden:
 Tutorial <tutorial>
+Prebuilt dashboard <prebuilt-dashboard>
 :::
-
 
 ```{seealso}
 [CrateDB and Grafana]
