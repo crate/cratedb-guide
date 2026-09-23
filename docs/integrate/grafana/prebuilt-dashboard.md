@@ -315,9 +315,10 @@ If you are running multiple CrateDB clusters, add another entry to the `jobs` se
 
 To add the dashboard to Grafana, please follow these steps:
 
-1. Go to the "Dashboards" section
-2. Click "New" and "Import"
-3. Upload the dashboard JSON file. It will ask to select a Prometheus data source, select the one you just created.
+1. Download the dashboard JSON file. For Cloud users and Enterprise users, download it from your cluster's "Quickstart" page.
+2. Go to the "Dashboards" section
+3. Click "New" and "Import"
+4. Upload the dashboard JSON file you downloaded in step #1. It will ask to select a Prometheus data source, select the one you just created.
 
 ## Experimental: Use with LLM-based tools (e.g. Grafana MCP)
 
