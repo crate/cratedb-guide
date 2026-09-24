@@ -83,6 +83,19 @@ C#
 ::::
 
 ::::{grid-item-card}
+:link: connect-crystal
+:link-type: ref
+:link-alt: Connect to CrateDB using Crystal
+:class-body: sd-fs-1 sd-text-center
+:class-footer: sd-fs-5 sd-font-weight-bold
+```{image} /_assets/icon/crystal-logo.svg
+:height: 70px
+```
++++
+Crystal
+::::
+
+::::{grid-item-card}
 :link: connect-elixir
 :link-type: ref
 :class-body: sd-fs-1 sd-text-center
@@ -357,6 +370,7 @@ testing/index
 :maxdepth: 1
 :hidden:
 
+crystal/index
 csharp/index
 elixir/index
 erlang/index
