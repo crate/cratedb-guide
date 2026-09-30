@@ -2,7 +2,7 @@
 # TensorFlow
 
 :::{div} .float-right
-[![TensorFlow logo](https://www.gstatic.com/devrel-devsite/prod/v55e81371229cf93fbb4781915f01d3bef8e4cb4b674c7c839a1879ebb706855a/tensorflow/images/lockup.svg){height=60px loading=lazy}][TensorFlow]
+[![TensorFlow logo](/_assets/img/integrations/tensorflow.svg){height=60px loading=lazy}][TensorFlow]
 :::
 :::{div} .clearfix
 :::
