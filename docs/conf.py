@@ -57,6 +57,8 @@ linkcheck_ignore += [
     r"https://www.ibm.com/docs/.*",
     # 403 Client Error: Forbidden for url
     r"https://docs.streamsets.com/.*",
+    # 403 Client Error: Forbidden for url
+    r"https://wiki.openjdk.org/.*",
     # 504 Client Error: Gateway Timeout for url
     r"https://web.archive.org/.*",
     # 403 Client Error: Forbidden for url

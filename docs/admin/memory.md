@@ -115,7 +115,7 @@ gigabytes with the value `30500m`.
 :::
 
 [bootstrap.memory_lock]: https://cratedb.com/docs/crate/reference/en/latest/config/node.html#memory
-[compressed oops]: https://wiki.openjdk.java.net/display/HotSpot/CompressedOops
+[compressed oops]: https://wiki.openjdk.org/spaces/HotSpot/pages/11829259/CompressedOops
 [configuration]: inv:crate-reference#config
 [configurations]: inv:crate-reference#config
 [crate_heap_size]: inv:crate-reference#conf-env-heap-size

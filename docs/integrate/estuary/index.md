@@ -31,8 +31,6 @@ vendors, bearing a few excellent features:
 - Truly elastic scaling pipelines for maximum throughput
 - Batch-load for analytics, and stream for ops and AI
 
-![Estuary connectors](https://estuary.dev/static/f6d26b4e4c7ed825e241372f4c3d8804/9b7d3/real-time-graphic.webp){h=200px}
-
 > Build low-latency ETL and ELT pipelines using connectors for any database
 > or data warehouse, leveraging Change Data Capture (CDC) to power your
 > analytics, operations, and AI.
