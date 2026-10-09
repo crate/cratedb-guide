@@ -20,6 +20,26 @@ powerful data extraction and consolidation elements.
 as Singer taps and targets.
 
 
+:::{rubric} Adapters
+:::
+
+::::{grid}
+
+:::{grid-item-card} meltano-tap-cratedb
+:link: https://hub.meltano.com/extractors/tap-cratedb/
+:link-type: url
+A Singer tap / Meltano extractor for CrateDB.
+:::
+
+:::{grid-item-card} meltano-target-cratedb
+:link: https://hub.meltano.com/loaders/target-cratedb/
+:link-type: url
+A Singer target / Meltano loader for CrateDB.
+:::
+
+::::
+
+
 :::{rubric} Learn
 :::
 
@@ -31,24 +51,7 @@ as Singer taps and targets.
 Examples about working with CrateDB and Meltano.
 :::
 
-:::{grid-item-card} meltano-tap-cratedb
-:link: https://github.com/crate-workbench/meltano-tap-cratedb
-:link-type: url
-A Singer tap / Meltano extractor for CrateDB.
-:::
-
-:::{grid-item-card} meltano-target-cratedb
-:link: https://github.com/crate-workbench/meltano-target-cratedb
-:link-type: url
-A Singer target / Meltano loader for CrateDB.
-:::
-
 ::::
-
-
-:::{todo}
-🚧 These adapters are a work in progress, contributions and interest are welcome. 🚧
-:::
 
 
 [Meltano]: https://meltano.com/
