@@ -244,20 +244,6 @@ The drivers listed here all use the [CrateDB HTTP interface].
 :::
 
 :::{sd-row}
-```{sd-item} MicroPython
-```
-```{sd-item}
-[micropython-cratedb](https://github.com/crate/micropython-cratedb)
-```
-```{sd-item}
-A MicroPython library connecting to the CrateDB HTTP API.
-```
-```{sd-item}
-[![](https://img.shields.io/github/v/tag/crate/micropython-cratedb?label=latest)](https://github.com/crate/micropython-cratedb)
-```
-:::
-
-:::{sd-row}
 ```{sd-item} Node.js
 ```
 ```{sd-item}

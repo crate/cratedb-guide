@@ -35,11 +35,9 @@ Adapter clients and drivers for special requirements on the environment or
 on performance details.
 `conecta` uses Rust and Apache Arrow.
 `cratedb-async` uses `httpx`.
-`micropython-cratedb` uses MicroPython's standard `httplib`.
 :::{toctree}
 conecta
 cratedb-async
-micropython-cratedb
 :::
 
 (python-client-community)=
