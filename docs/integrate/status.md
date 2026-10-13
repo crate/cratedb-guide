@@ -321,8 +321,6 @@ Adapters, drivers, dialects, and support utilities maintained by CrateDB.
     <img src="https://img.shields.io/github/actions/workflow/status/crate/crate-python/tests.yml?branch=main&label=crate-python" loading="lazy"></a>
 <a href="https://github.com/crate/sqlalchemy-cratedb/actions/workflows/nightly.yml" target="_blank">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/sqlalchemy-cratedb/nightly.yml?branch=main&label=sqlalchemy-cratedb" loading="lazy"></a>
-<a href="https://github.com/crate/micropython-cratedb/actions/workflows/tests.yml" target="_blank">
-    <img src="https://img.shields.io/github/actions/workflow/status/crate/micropython-cratedb/tests.yml?branch=main&label=micropython-cratedb" loading="lazy"></a>
 <br>
 <a href="https://github.com/crate/crate-pdo/actions/workflows/tests.yml" target="_blank">
     <img src="https://img.shields.io/github/actions/workflow/status/crate/crate-pdo/tests.yml?branch=main&label=crate-pdo" loading="lazy"></a>
