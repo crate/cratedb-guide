@@ -40,21 +40,13 @@ How to install the latest PostgreSQL JDBC driver (e.g.
 `postgresql-42.7.8.jar` or newer) for using Tableau.
 :::
 
-:::{grid-item-card} Repository: CrateDB Tableau Connector
-:link: https://github.com/crate/cratedb-tableau-connector
-:link-type: url
-:columns: 12
-The native Tableau connector for CrateDB unlocks advanced SQL functionality
-and resolves compatibility issues beyond standard usage.
-:::
-
 ::::
 
 :::{rubric} Notes
 :::
 :::{note}
 We are tracking interoperability issues per [Tool: Tableau] and
-[Connector: Issues], and appreciate any contributions or reports.
+appreciate any contributions or reports.
 :::
 
 
@@ -62,7 +54,6 @@ We are tracking interoperability issues per [Tool: Tableau] and
 [CrateDB and Tableau]
 ```
 
-[Connector: Issues]: https://github.com/crate/cratedb-tableau-connector/issues
 [CrateDB and Tableau]: https://cratedb.com/integrations/cratedb-and-tableau
 [Tableau]: https://www.tableau.com/
 [Tool: Tableau]: https://github.com/crate/crate/labels/tool%3A%20Tableau
