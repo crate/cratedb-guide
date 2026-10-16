@@ -87,6 +87,19 @@ database IDE (Integrated Development Environment) applications.
 ```
 ::::
 
+::::{grid-item-card} VisuaLeaf
+:link: visualeaf
+:link-type: ref
+:link-alt: Connect to CrateDB using VisuaLeaf
+:text-align: center
+:class-card: sd-pt-3
+:class-body: sd-fs-1
+:class-title: sd-fs-6
+```{image} /_assets/icon/visualeaf-logo.svg
+:height: 60px
+```
+::::
+
 :::::
 
 
